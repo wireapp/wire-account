@@ -3,6 +3,7 @@
 .Icon
 /app/static/dev
 /app/static/min
+/app/version
 /dist
 /node_modules
 /temp
