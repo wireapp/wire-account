@@ -1,0 +1,8 @@
+# if config.DEVELOPMENT
+  <script src="/dev/script/ext.js?{{config.CURRENT_VERSION_ID}}"></script>
+  <script src="/dev/script/script.js?{{config.CURRENT_VERSION_ID}}"></script>
+  <script src="http://{{request.host.split(':')[0]}}:35729/livereload.js"></script>
+# else
+  <script src="/min/script/ext.js?{{config.CURRENT_VERSION_ID}}"></script>
+  <script src="/min/script/script.js?{{config.CURRENT_VERSION_ID}}"></script>
+# endif

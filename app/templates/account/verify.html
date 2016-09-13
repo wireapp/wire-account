@@ -1,0 +1,49 @@
+# extends 'base.html'
+# import 'macro/utils.html' as utils
+
+# block content
+  <link id="url"
+      data-url="{{url}}"
+      data-status="{{status}}"
+      # if (user_agent().is.ios or user_agent().is.android) and config.REDIRECT_VERIFY_URL
+        data-redirect="{{config.REDIRECT_VERIFY_URL}}"
+      # elif not (user_agent().is.osx or user_agent().is.windows)
+        data-redirect="{{config.WEBAPP_URL}}"
+      # endif
+    >
+
+  <div class="loading">
+    <h1>Verifying.</h1>
+    <p>Please wait…</p>
+  </div>
+
+  <div class="200 204 success hide">
+    <h1>Account created.</h1>
+    # if user_agent().is.mobile
+      <p>Install the app to start using Wire.</p>
+      {{utils.download_btn('Get Wire', 'wbtn green', 'verify')}}
+    # else
+      # if user_agent().is.osx
+        <p>To sign in and start using Wire, launch the application.</p>
+        <a class="wbtn green" href="{{config.DOWNLOAD_OSX_URL}}">Open OS X App</a>
+        <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open in Web</a>
+      # elif user_agent().is.windows
+        <a class="wbtn green" href="{{config.WIRE_DOWNLOAD_URL}}">Open Wire</a>
+        <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open in Web</a>
+      # else
+        <p>To sign in and start using Wire, launch the application.</p>
+        <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open Wire</a>
+      # endif
+    # endif
+  </div>
+
+  <div class="404 error hide">
+    <h1>Something went wrong.</h1/>
+    <p>Please try to create your account again.</p>
+  </div>
+
+  <div class="500 error hide">
+    <h1>Something went wrong.</h1>
+    <p>We are investigating the issue, please check back shortly.</p>
+  </div>
+# endblock

@@ -1,0 +1,29 @@
+# macro ga_event(category, action, value)
+  data-ga-category="{{category}}" data-ga-action="{{action}}" data-ga-value="{{value}}"
+# endmacro
+
+
+# macro download_btn(name, class, category, code)
+  # set user_agent_is = user_agent().is
+  <a class="{{class}}"
+      # if user_agent_is['android']
+        href="{{config.DOWNLOAD_ANDROID_URL}}{{'&referrer=%s' % code if code}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, 'download', 'android')}}
+      # elif user_agent_is['ios']
+        href="{{config.DOWNLOAD_IOS_URL}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, 'download', 'ios')}}
+      # elif user_agent_is['osx']
+        href="{{config.DOWNLOAD_OSX_URL}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, 'download', 'osx')}}
+      # elif user_agent_is['windows']
+        href="{{config.DOWNLOAD_WINDOWS_URL}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, 'download', 'windows')}}
+      # else
+        href="{{config.WIRE_DOWNLOAD_URL}}"
+      # endif
+    >{{name}}</a>
+# endmacro

@@ -1,0 +1,30 @@
+# import 'macro/utils.html' as utils
+
+<div class="header">
+  <div class="container">
+    <a class="logo" href="{{config.WIRE_URL}}">
+      # include 'svg/wire.svg'
+    </a>
+
+    <ul class="download-list {{'invisible' if status == 'success' or 'connect' in html_class}}">
+      <li class="get-the-app">
+        # if user_agent().is['osx']
+          {{utils.download_btn('Get OS X app', 'wbtn green', 'welcome')}}
+        # elif user_agent().is['windows']
+          {{utils.download_btn('Get Windows app', 'wbtn green', 'welcome')}}
+        # else
+          {{utils.download_btn('Get the app', 'wbtn green', 'welcome')}}
+        # endif
+      </li>
+      # if user_agent().is['desktop']
+        <li class="hidden-xs open-in-web">
+          <a href="{{config.WEBAPP_URL}}" class="wbtn blue">
+            Open in web
+          </a>
+        </li>
+      # endif
+    </ul>
+
+    <a class="special-link" href="https://support.wire.com">Support</a>
+  </div>
+</div>

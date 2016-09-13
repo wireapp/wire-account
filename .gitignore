@@ -1,0 +1,9 @@
+*.pyc
+.DS_Store
+.Icon
+/app/static/dev
+/app/static/min
+/dist
+/node_modules
+/temp
+npm-debug.log
