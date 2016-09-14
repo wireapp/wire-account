@@ -26,7 +26,7 @@ PRODUCTION = ENV != 'localhost'
 DEBUG = DEVELOPMENT = not PRODUCTION
 
 SECRET_KEY = os.environ.get('SECRET_KEY', '2.71828182845904523536028747135266')
-ANALYTICS_ID = os.environ.get('ANALYTICS_ID', '')
+ANALYTICS_ID = os.environ.get('ANALYTICS_ID', 'UA-56491034-3')
 
 BACKEND_URL = os.environ.get('BACKEND_URL', 'https://staging-nginz-https.zinfra.io')
 DOWNLOAD_ANDROID_URL = os.environ.get('DOWNLOAD_ANDROID_URL', 'https://play.google.com/store/apps/details?id=com.wire')

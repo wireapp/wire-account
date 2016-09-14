@@ -18,8 +18,7 @@
  */
 
 window.initVerify = function() {
-  var url;
-  url = $('#url').data('url');
+  var url = $('#url').data('url');
 
   if ($('#url').data('status') === 'success') {
     return verifySuccess(200);
@@ -46,14 +45,15 @@ window.verifyFail = function(status) {
   } else {
     $('.500').removeClass('hide');
   }
+  sendEvent('send', 'event', 'verify', 'fail', status, 1);
 };
 
 window.verifySuccess = function(status, data) {
-  var redirect;
   $('.loading').hide();
   $('.' + status).removeClass('hide');
   $('.download-list').addClass('invisible');
-  redirect = $('#url').data('redirect');
+  sendEvent('send', 'event', 'verify', 'success', status, 1);
+  var redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;
   }
