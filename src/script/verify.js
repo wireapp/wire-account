@@ -52,6 +52,7 @@ window.verifySuccess = function(status, data) {
   var redirect;
   $('.loading').hide();
   $('.' + status).removeClass('hide');
+  $('.download-list').addClass('invisible');
   redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;
