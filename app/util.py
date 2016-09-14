@@ -201,7 +201,7 @@ def track_event_to_ga(category, action, label=None, value=None):
     'ev': value,
   }
   result = requests.post(
-    'http://www.google-analytics.com/collect',
+    'https://www.google-analytics.com/collect',
     data=data,
     headers={'Content-Type': 'application/x-www-form-urlencoded'},
   )
