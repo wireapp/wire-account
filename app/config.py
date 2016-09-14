@@ -26,7 +26,7 @@ PRODUCTION = ENV != 'localhost'
 DEBUG = DEVELOPMENT = not PRODUCTION
 
 SECRET_KEY = os.environ.get('SECRET_KEY', '2.71828182845904523536028747135266')
-ANALYTICS_ID = os.environ.get('ANALYTICS_ID', 'UA-56491034-3')
+ANALYTICS_ID = os.environ.get('ANALYTICS_ID', '')
 
 BACKEND_URL = os.environ.get('BACKEND_URL', 'https://staging-nginz-https.zinfra.io')
 DOWNLOAD_ANDROID_URL = os.environ.get('DOWNLOAD_ANDROID_URL', 'https://play.google.com/store/apps/details?id=com.wire')
@@ -41,9 +41,9 @@ WIRE_DOWNLOAD_URL = os.environ.get('WIRE_DOWNLOAD_URL', 'https://wire.com/downlo
 
 try:
   with open(os.path.join(os.path.dirname(__file__), 'version')) as version:
-    CURRENT_VERSION_ID = version.readline()
+    VERSION = version.readline()
 except:
-  CURRENT_VERSION_ID = 'develop'
+  VERSION = 'develop'
 
 EXPIRES_MIMETYPES = [
   'application/javascript',

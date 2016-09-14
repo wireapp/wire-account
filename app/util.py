@@ -18,10 +18,12 @@
 
 # coding: utf-8
 
+import hashlib
 import datetime
 import re
 
 import flask
+import requests
 
 from libs import httpagentparser
 import config
@@ -75,7 +77,7 @@ def update_headers(response):
 
   # Custom headers
   response.headers['X-Wire'] = 'Great Conversations.'
-  response.headers['X-Wire-Version'] = config.CURRENT_VERSION_ID
+  response.headers['X-Wire-Version'] = config.VERSION
 
   if response.mimetype in config.EXPIRES_MIMETYPES:
     expiry_time = datetime.datetime.utcnow() + datetime.timedelta(365)
@@ -183,3 +185,24 @@ def value_exists(obj, path, value):
     return content.lower().find(value.lower()) >= 0
   except:
     return False
+
+
+def track_event_to_ga(category, action, label=None, value=None):
+  if not config.ANALYTICS_ID:
+    return 0
+  data = {
+    'v': '1',
+    'tid': config.ANALYTICS_ID,
+    'cid': hashlib.md5('%s%s' % (flask.request.remote_addr, config.VERSION)).hexdigest(),
+    't': 'event',
+    'ec': category,
+    'ea': action,
+    'el': label,
+    'ev': value,
+  }
+  result = requests.post(
+    'http://www.google-analytics.com/collect',
+    data=data,
+    headers={'Content-Type': 'application/x-www-form-urlencoded'},
+  )
+  return result.status_code

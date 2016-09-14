@@ -33,52 +33,62 @@ class MyFlask(flask.Flask):
   def process_response(self, response):
     return util.update_headers(response)
 
-app = MyFlask(__name__, static_url_path='/static')
-app.config.from_object(config)
-app.jinja_env.line_statement_prefix = '#'
-app.jinja_env.globals.update(
+application = MyFlask(__name__, static_url_path='/static')
+application.config.from_object(config)
+application.jinja_env.line_statement_prefix = '#'
+application.jinja_env.globals.update(
   user_agent=util.user_agent,
 )
-sslify = flask_sslify.SSLify(app, skips=['test'])
+sslify = flask_sslify.SSLify(application, skips=['test'])
 
 
 ###############################################################################
-# Main
+# Main - Special treatment for https://get.wire.com
 ###############################################################################
-@app.route('/<path:url>')
-@app.route('/')
+@application.route('/<path:url>')
+@application.route('/')
 def index(url='/'):
-  path = flask.request.path
-  query = flask.request.query_string
+  target = flask.request.url.replace(flask.request.host_url[:-1], config.WIRE_URL)
 
-  target = '%s%s' % (config.WIRE_URL, path)
-  if query:
-    target = '%s%s%s' % (target, '&' if '?' in target else '?', query)
+  if 'get.wire.com' in flask.request.url:
+    ua_is = util.user_agent()['is']
+    label = 'desktop'
+    target = '%s/?connect' % config.WEBAPP_URL
+    if ua_is['android']:
+      target = '%s&referrer=getwire' % config.DOWNLOAD_ANDROID_URL
+      label = 'android'
+    elif ua_is['ios']:
+      target = config.DOWNLOAD_IOS_URL
+      label = 'ios'
+    elif ua_is['safari']:
+      target = '%s?referrer=getwire' % config.WIRE_DOWNLOAD_URL
+      label = 'safari'
+    elif ua_is['ie']:
+      target = '%s?referrer=getwire' % config.WIRE_DOWNLOAD_URL
+      label = 'ie'
+    util.track_event_to_ga('get.wire.com', 'redirect', label, 1)
 
   if config.DEVELOPMENT:
-    return flask.render_template(
-      'index.html',
-      redirect=target,
-    )
+    return flask.render_template('index.html', redirect=target)
   return flask.redirect(target)
 
 
 ###############################################################################
 # Static
 ###############################################################################
-@app.route('/favicon.ico')
+@application.route('/favicon.ico')
 def favicon():
   return flask.send_from_directory(
-    os.path.join(app.root_path, 'static'),
+    os.path.join(application.root_path, 'static'),
     'favicon.ico',
     mimetype='image/vnd.microsoft.icon',
   )
 
 
-@app.route('/robots.txt')
+@application.route('/robots.txt')
 def robots():
   return flask.send_from_directory(
-    os.path.join(app.root_path, 'static'),
+    os.path.join(application.root_path, 'static'),
     'robots.txt',
     mimetype='text/plain',
   )
@@ -87,7 +97,7 @@ def robots():
 ###############################################################################
 # Test
 ###############################################################################
-@app.route('/test/')
+@application.route('/test/')
 def test():
   return flask.render_template(
     'test.html',
@@ -98,7 +108,7 @@ def test():
 ###############################################################################
 # Verify
 ###############################################################################
-@app.route('/verify/')
+@application.route('/verify/')
 def verify():
   key = util.param('key')
   code = util.param('code')
@@ -119,15 +129,15 @@ def verify():
 ###############################################################################
 # Error
 ###############################################################################
-@app.errorhandler(400)  # Bad Request
-@app.errorhandler(401)  # Unauthorized
-@app.errorhandler(403)  # Forbidden
-@app.errorhandler(404)  # Not Found
-@app.errorhandler(405)  # Method Not Allowed
-@app.errorhandler(406)  # Unsupported Browsers
-@app.errorhandler(410)  # Gone
-@app.errorhandler(418)  # I'm a Teapot
-@app.errorhandler(500)  # Internal Server Error
+@application.errorhandler(400)  # Bad Request
+@application.errorhandler(401)  # Unauthorized
+@application.errorhandler(403)  # Forbidden
+@application.errorhandler(404)  # Not Found
+@application.errorhandler(405)  # Method Not Allowed
+@application.errorhandler(406)  # Unsupported Browsers
+@application.errorhandler(410)  # Gone
+@application.errorhandler(418)  # I'm a Teapot
+@application.errorhandler(500)  # Internal Server Error
 def error_handler(e):
   try:
     e.code
@@ -136,11 +146,11 @@ def error_handler(e):
     e.name = 'Internal Server Error'
 
   handler = logging.StreamHandler()
-  app.logger.addHandler(handler)
-  app.logger.error('-=' * 40)
-  app.logger.error(flask.request.url)
-  app.logger.error('-=' * 40)
-  app.logger.exception(e)
+  application.logger.addHandler(handler)
+  application.logger.error('-=' * 40)
+  application.logger.error(flask.request.url)
+  application.logger.error('-=' * 40)
+  application.logger.exception(e)
 
   return flask.render_template(
       'error.html',
@@ -154,4 +164,4 @@ def error_handler(e):
 # Main :)
 ###############################################################################
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8080)
+  application.run(host='0.0.0.0', port=8080)
