@@ -44,9 +44,22 @@ sslify = flask_sslify.SSLify(application, skips=['test'])
 ###############################################################################
 # Controllers
 ###############################################################################
+@application.route('/<path:url>')
 @application.route('/')
-def index():
-  return flask.render_template('index.html')
+def index(url='/'):
+  path = flask.request.path
+  query = flask.request.query_string
+
+  target = '%s%s' % (config.WIRE_URL, path)
+  if query:
+    target = '%s%s%s' % (target, '&' if '?' in target else '?', query)
+
+  if config.DEVELOPMENT:
+    return flask.render_template(
+      'index.html',
+      redirect=target,
+    )
+  return flask.redirect(target)
 
 
 ###############################################################################
@@ -79,13 +92,6 @@ def verify():
     url=url,
     key=key,
   )
-
-
-@application.route('/<int:error>/')
-def error_demo(error):
-  if error in [400, 401, 403, 405, 410, 418, 500, 501]:
-    flask.abort(error)
-  flask.abort(404)
 
 
 ###############################################################################
