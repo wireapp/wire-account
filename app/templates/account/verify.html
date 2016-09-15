@@ -5,7 +5,7 @@
   <link id="url" data-url="{{url}}" data-status="{{status}}"
     # if (user_agent().is.ios or user_agent().is.android)
       data-redirect="{{config.REDIRECT_VERIFY_URL}}"
-    # elif not (user_agent().is.osx or user_agent().is.windows)
+    # elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows)
       data-redirect="{{config.WEBAPP_URL}}"
     # endif
   >
@@ -17,7 +17,10 @@
 
   <div class="200 204 success hide">
     <h1>Account created.</h1>
-    # if user_agent().is.osx
+    # if user_agent().is.mobile
+      <p>Install the app to start using Wire.</p>
+      {{utils.download_btn('Get Wire', 'wbtn green', 'verify')}}
+    # elif user_agent().is.osx
       <p>To sign in and start using Wire, launch the application.</p>
       <a class="wbtn green" href="{{config.DOWNLOAD_OSX_URL}}">Open OS X App</a>
       <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open in Web</a>
