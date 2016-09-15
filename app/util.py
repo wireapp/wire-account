@@ -59,23 +59,19 @@ def update_headers(response):
   response.headers['X-XSS-Protection'] = '1; mode=block'
 
   csp_values = ';'.join([
-    # Firefox <35 need this data: attribute for the grayscale filter based on SVG to work https://bugzilla.mozilla.org/show_bug.cgi?id=878608; in newer FF versions we use the new grayscale filter
-    "default-src data:",
-    "connect-src 'self' blob: https://*.unsplash.com https://maps.googleapis.com https://*.giphy.com https://api.raygun.io https://www.google.com https://*.wire.com https://wire.com wss://prod-nginz-ssl.wire.com https://*.zinfra.io wss://*.zinfra.io",
+    "connect-src 'self' blob: https://*.wire.com https://wire.com wss://*.wire.com https://*.zinfra.io wss://*.zinfra.io" + ' ws://localhost:35729' if config.DEVELOPMENT else '',
     "font-src 'self' data:",
     "frame-src 'self' https://accounts.google.com https://*.youtube.com https://*.soundcloud.com https://*.vimeo.com https://*.spotify.com",
-    "img-src 'self' blob: data: filesystem: https://*.giphy.com https://1-ps.googleusercontent.com https://*.localytics.com https://*.wire.com https://*.cloudfront.net https://*.zinfra.io https://csi.gstatic.com",
+    "img-src 'self' blob: data: filesystem: https://*.wire.com https://*.zinfra.io http://www.google-analytics.com",
     # Note: The "blob:" attribute needs to be explicitly set for Chrome 47+: https://code.google.com/p/chromium/issues/detail?id=473904
     "media-src blob: data: *",
     "object-src 'self' https://*.youtube.com 1-ps.googleusercontent.com",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://*.localytics.com https://api.raygun.io https://*.wire.com https://*.zinfra.io",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.wire.com https://*.zinfra.io http://www.google-analytics.com" + ' http://localhost:35729' if config.DEVELOPMENT else '',
     "style-src 'self' 'unsafe-inline' https://*.wire.com https://*.googleusercontent.com"
   ])
-  if config.PRODUCTION:
-    response.headers['Content-Security-Policy'] = csp_values
-    response.headers['X-Content-Security-Policy'] = csp_values
 
-  # Custom headers
+  response.headers['Content-Security-Policy'] = csp_values
+  response.headers['X-Content-Security-Policy'] = csp_values
   response.headers['X-Wire'] = 'Great Conversations.'
   response.headers['X-Wire-Version'] = config.VERSION
 

@@ -45,14 +45,14 @@ window.verifyFail = function(status) {
   } else {
     $('.500').removeClass('hide');
   }
-  sendEvent('send', 'event', 'verify', 'fail', status, 1);
+  sendEvent('verify', 'fail', status, 1);
 };
 
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
   $('.download-list').addClass('invisible');
-  sendEvent('send', 'event', 'verify', 'success', status, 1);
+  sendEvent('verify', 'success', status, 1);
   var redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;
