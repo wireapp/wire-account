@@ -29,7 +29,7 @@ window.initVerify = function() {
       url: url,
       xhrFields: {withCredentials: true}
     }).done(function(data, status_text, xhr) {
-      verifySuccess(xhr.status, data);
+      verifySuccess(xhr.status);
     }).fail(function(xhr) {
       verifyFail(xhr.status);
     });
@@ -48,7 +48,7 @@ window.verifyFail = function(status) {
   sendEvent('send', 'event', 'verify', 'fail', status, 1);
 };
 
-window.verifySuccess = function(status, data) {
+window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
   $('.download-list').addClass('invisible');

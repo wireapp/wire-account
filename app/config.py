@@ -28,7 +28,7 @@ DEBUG = DEVELOPMENT = not PRODUCTION
 SECRET_KEY = os.environ.get('SECRET_KEY', '2.71828182845904523536028747135266')
 ANALYTICS_ID = os.environ.get('ANALYTICS_ID', '')
 
-BACKEND_URL = os.environ.get('BACKEND_URL', 'https://staging-nginz-https.zinfra.io')
+BACKEND_URL = os.environ.get('BACKEND_URL', 'https://prod-nginz-https.wire.com')
 DOWNLOAD_ANDROID_URL = os.environ.get('DOWNLOAD_ANDROID_URL', 'https://play.google.com/store/apps/details?id=com.wire')
 DOWNLOAD_IOS_URL = os.environ.get('DOWNLOAD_IOS_URL', 'https://itunes.apple.com/app/wire/id930944768?mt=8')
 DOWNLOAD_OSX_URL = os.environ.get('DOWNLOAD_OSX_URL', 'https://itunes.apple.com/app/wire/id931134707?mt=12')

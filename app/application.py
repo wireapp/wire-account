@@ -61,10 +61,10 @@ def index(url='/'):
       target = config.DOWNLOAD_IOS_URL
       label = 'ios'
     elif ua_is['safari']:
-      target = '%s?referrer=getwire' % config.WIRE_DOWNLOAD_URL
+      target = config.WIRE_DOWNLOAD_URL
       label = 'safari'
     elif ua_is['ie']:
-      target = '%s?referrer=getwire' % config.WIRE_DOWNLOAD_URL
+      target = config.WIRE_DOWNLOAD_URL
       label = 'ie'
     util.track_event_to_ga('get.wire.com', 'redirect', label, 1)
 
