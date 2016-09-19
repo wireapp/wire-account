@@ -1,0 +1,32 @@
+# extends 'base.html'
+
+# block content
+  <h1>{{title}}</h1>
+  # if status == 'success'
+    <p>You can now log in with your new password.</p>
+  # elif status == 'error'
+    <p>Please try again.</p>
+    <a class="wbtn green" href="{{url_for('forgot')}}">Reset password</a>
+  # else
+    <form method="POST" action=".">
+      <input name="key" type="hidden" value="{{key}}">
+      <input name="code" type="hidden" value="{{code}}">
+      <input name="password" type="password" placeholder="Enter new password">
+      <p class="error">{{error}}</p>
+      <button type="submit" class="wbtn btn-block" data-loading-text="Please wait…">
+        Reset password
+      </button>
+    </form>
+  # endif
+# endblock
+
+
+# block scripts
+  # if (user_agent().is.ios or user_agent().is.android) and status == 'success'
+    <script>
+      $(function() {
+        window.location.href = "{{config.REDIRECT_RESET_URL}}";
+      });
+    </script>
+  # endif
+# endblock

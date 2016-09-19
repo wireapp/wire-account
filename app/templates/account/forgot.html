@@ -1,0 +1,16 @@
+# extends 'base.html'
+
+# block content
+  <h1>{{title}}</h1>
+  # if status == 'success'
+    <p>We sent you a link to reset your password. It is valid for 10 minutes.</p>
+  # else
+    <form method="POST" action="." novalidate>
+      <input type="email" name="email" placeholder="Email" autofocus>
+      <p class="error">{{error}}</p>
+      <button type="submit" class="wbtn" data-loading-text="Please wait…">
+        Reset password
+      </button>
+    </form>
+  # endif
+# endblock

@@ -21,6 +21,7 @@ body {
   font-family: @font-family-base;
   font-size: @font-size-base;
   font-weight: 300;
+  line-height: 1.5;
   -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
 }
@@ -41,14 +42,14 @@ a {
 }
 
 .special-link {
-  color: @w-gray-darker;
+  color: @w-graphite-dark;
   text-transform: uppercase;
   font-weight: 600;
   font-size: @font-size-small;
   &:hover {
-    color: darken(@w-gray-darker, 16%);
+    color: darken(@w-graphite-dark, 16%);
     svg path {
-      fill: darken(@w-gray-darker, 16%);
+      fill: darken(@w-graphite-dark, 16%);
     }
   }
 }
@@ -58,7 +59,7 @@ a {
 // Headings
 // ----------------------------------------------------------------------------
 h1, h2 {
-  color: @w-gray-darkest;
+  color: @w-graphite-darker;
 }
 
 h1 {

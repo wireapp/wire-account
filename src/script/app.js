@@ -23,3 +23,9 @@ $(function() {
     initVerify();
   });
 });
+
+$(function() {
+  $('html.account').each(function() {
+    initForms();
+  });
+});
