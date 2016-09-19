@@ -18,11 +18,13 @@
 
 # coding: utf-8
 
-import os
 from datetime import datetime
 import logging
+import os
+import re
 
 import flask
+import requests
 
 from libs import flask_sslify
 import config
@@ -122,6 +124,101 @@ def verify():
     title='Verify Account',
     status='success' if util.param('success') is not None else 'error',
     url=url,
+    key=key,
+  )
+
+
+###############################################################################
+# Forgot
+###############################################################################
+@application.route('/forgot/', methods=['GET', 'POST'])
+def forgot():
+  status = '' if util.param('success') is None else 'success'
+  error = ''
+
+  if flask.request.method == 'POST':
+    email = (util.param('email') or '').lower().strip()
+
+    if not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+      error = 'That does not look like an email.'
+      status = 'error'
+    else:
+      try:
+        result = requests.post(
+          '%s/password-reset' % (config.BACKEND_URL),
+          json={'email': email},
+          timeout=8,
+        )
+        if result.status_code == 201:
+          return flask.redirect(flask.url_for('forgot', success=True))
+        elif result.status_code == 400:
+          error = 'This is email is not in use.'
+          status = 'error'
+        elif result.status_code == 409:
+          error = 'We already sent you an email. The link is valid for 10 minutes.'
+          status = 'error'
+        else:
+          error = 'Something went wrong, please try again.'
+          status = 'error'
+      except requests.exceptions.ConnectTimeout:
+        error = 'That took longer than usual, please try again.'
+        status = 'error'
+
+  return flask.render_template(
+    'account/forgot.html',
+    html_class='account forgot',
+    title='Check your email' if status == 'success' else 'Change Password',
+    status=status,
+    error=error,
+  )
+
+
+###############################################################################
+# Reset
+###############################################################################
+@application.route('/reset/', methods=['GET', 'POST'])
+def reset():
+  status = 'error' if util.param('success') is None else 'success'
+  error = ''
+
+  code = util.param('code') or ''
+  key = util.param('key') or ''
+
+  if key and code:
+    status = 'init'
+
+  if flask.request.method == 'POST':
+    status = 'error'
+    password = util.param('password')
+
+    if len(password) < 8:
+      error = 'Choose a password that is at least 8 characters.'
+      status = 'fail'
+    elif key and code:
+      try:
+        result = requests.post(
+          '%s/password-reset/%s' % (config.BACKEND_URL, key),
+          json={'password': password, 'code': code},
+          timeout=8,
+        )
+        if result.status_code == 200:
+          return flask.redirect(flask.url_for('reset', success=True))
+        if result.status_code == 400:
+          status = 'error'
+        else:
+          error = 'Something went wrong, please try again.'
+          status = 'fail'
+      except requests.exceptions.ConnectTimeout:
+        error = 'That took longer than usual, please try again.'
+        status = 'fail'
+
+  return flask.render_template(
+    'account/reset.html',
+    html_class='account reset',
+    title='Password reset' if status != 'error' else 'The link is no longer valid',
+    status=status,
+    error=error,
+    code=code,
     key=key,
   )
 

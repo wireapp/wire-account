@@ -19,6 +19,31 @@
 
 .account {
   p {
-    margin-bottom: 48px;
+    margin: 0 auto 48px;
+    max-width: @content-width;
+  }
+
+  .error {
+    color: @w-graphite;
+  }
+
+  input {
+    width: 100%;
+    max-width: @content-width;
+    margin: 0 auto 8px;
+    position: relative;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid @w-graphite;
+    border-radius: 4px;
+    padding: 2px 12px;
+    box-shadow: 0 0 0 2px fade(@w-graphite, 40%);
+    &:focus{
+      outline: none;
+    }
+  }
+
+  form .wbtn {
+    min-width: 200px;
   }
 }
