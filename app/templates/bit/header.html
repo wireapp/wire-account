@@ -6,7 +6,7 @@
       # include 'svg/wire.svg'
     </a>
 
-    # if not (status == 'success' and 'verify' in html_class)
+    # if 'phone' not in html_class and not (status == 'success' and 'verify' in html_class)
       <div class="download-list">
         # if user_agent().is['osx']
           {{utils.download_btn('Get OS X app', 'wbtn green', 'welcome')}}

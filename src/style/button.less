@@ -23,7 +23,6 @@
   margin: 0 8px;
   height: 32px;
   vertical-align: middle;
-  color: #fff;
   background-image: none;
   background-color: @w-graphite-darker;
   border: 0px solid transparent;
@@ -40,9 +39,15 @@
   touch-action: manipulation;
   cursor: pointer;
 
-  &.blue   {color: #fff; background-color: @w-blue;   &:hover {background-color: darken(@w-blue, 4%);   }}
-  &.green  {color: #fff; background-color: @w-green;  &:hover {background-color: darken(@w-green, 4%);  }}
-  &.orange {color: #fff; background-color: @w-orange; &:hover {background-color: darken(@w-orange, 4%); }}
-  &.red    {color: #fff; background-color: @w-red;    &:hover {background-color: darken(@w-red, 4%);    }}
-  &.yellow {color: #fff; background-color: @w-yellow; &:hover {background-color: darken(@w-yellow, 4%); }}
+  &.blue   {background-color: @w-blue;   &:hover {background-color: darken(@w-blue, 4%);   }}
+  &.green  {background-color: @w-green;  &:hover {background-color: darken(@w-green, 4%);  }}
+  &.orange {background-color: @w-orange; &:hover {background-color: darken(@w-orange, 4%); }}
+  &.red    {background-color: @w-red;    &:hover {background-color: darken(@w-red, 4%);    }}
+  &.yellow {background-color: @w-yellow; &:hover {background-color: darken(@w-yellow, 4%); }}
+
+  &,
+  &:visited,
+  &:active {
+    color: #fff;
+  }
 }

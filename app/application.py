@@ -104,11 +104,12 @@ def test():
   return flask.render_template(
     'test.html',
     title='Test',
+    html_class='test',
   )
 
 
 ###############################################################################
-# Verify
+# Verify Email
 ###############################################################################
 @application.route('/verify/')
 def verify():
@@ -119,12 +120,26 @@ def verify():
     url = '%s/activate?key=%s&code=%s' % (config.BACKEND_URL, key, code)
 
   return flask.render_template(
-    'account/verify.html',
+    'account/verify_email.html',
     html_class='account verify',
     title='Verify Account',
     status='error' if util.param('success') is None else 'success',
     url=url,
     key=key,
+  )
+
+
+###############################################################################
+# Verify Phone
+###############################################################################
+@application.route('/v/<code>/')
+def verify_phone(code):
+
+  return flask.render_template(
+    'account/verify_phone.html',
+    html_class='account phone',
+    title='Verify Phone',
+    url='%s/%s' % (config.REDIRECT_PHONE_URL, code),
   )
 
 

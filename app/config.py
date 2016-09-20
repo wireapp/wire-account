@@ -34,6 +34,7 @@ DOWNLOAD_IOS_URL = os.environ.get('DOWNLOAD_IOS_URL', 'https://itunes.apple.com/
 DOWNLOAD_OSX_URL = os.environ.get('DOWNLOAD_OSX_URL', 'https://itunes.apple.com/app/wire/id931134707?mt=12')
 DOWNLOAD_WINDOWS_URL = os.environ.get('DOWNLOAD_WINDOWS_URL', 'https://wire-app.wire.com/win/prod/WireSetup.exe')
 REDIRECT_VERIFY_URL = os.environ.get('REDIRECT_VERIFY_URL', 'wire://email-verified')
+REDIRECT_PHONE_URL = os.environ.get('REDIRECT_PHONE_URL', 'wire://verify-phone')
 REDIRECT_RESET_URL = os.environ.get('REDIRECT_RESET_URL', 'wire://password-reset-successful')
 WEBAPP_URL = os.environ.get('WEBAPP_URL', 'https://app.wire.com')
 
