@@ -1,0 +1,28 @@
+# extends 'base.html'
+
+# block content
+  # if status == 'success'
+    <h1>Account deleted.</h1>
+    <p>All your data on Wire is now erased.</p>
+    <p>
+      Thanks for using Wire. If you’d like, you can
+      <a href="https://wireapp.typeform.com/to/oBhbcl">share your thoughts about it</a>.<br>
+      This will take no longer than a minute.
+    </p>
+  # elif status == 'error'
+    <h1>Something went wrong.</h1>
+    <p>Please try again to delete your account.</p>
+  # else
+    <h1>{{title}}</h1>
+    <p>Hi there,</p>
+    <p>We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes.'</p>
+    <form action="." method="POST">
+      <input name="key" type="hidden" value="{{key}}">
+      <input name="code" type="hidden" value="{{code}}">
+      <button class="wbtn red" type="submit" data-loading-text="Please wait…">
+        Delete Account
+      </button>
+    </form>
+    <p>If you did not ask for this, you should <a href="{{url_for('forgot')}}">reset your Wire password</a>.</p>
+  # endif
+# endblock

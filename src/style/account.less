@@ -18,18 +18,15 @@
  */
 
 .account {
-  p {
+  p,
+  form {
     margin: 0 auto 48px;
-    max-width: @content-width;
-  }
-
-  .error {
-    color: @w-graphite;
+    max-width: 380px;
   }
 
   input {
     width: 100%;
-    max-width: @content-width;
+    max-width: 320px;
     margin: 0 auto 8px;
     position: relative;
     height: 28px;
@@ -45,5 +42,9 @@
 
   form .wbtn {
     min-width: 200px;
+  }
+
+  .error {
+    color: @w-graphite;
   }
 }

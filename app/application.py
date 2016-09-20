@@ -122,7 +122,7 @@ def verify():
     'account/verify.html',
     html_class='account verify',
     title='Verify Account',
-    status='success' if util.param('success') is not None else 'error',
+    status='error' if util.param('success') is None else 'success',
     url=url,
     key=key,
   )
@@ -133,7 +133,7 @@ def verify():
 ###############################################################################
 @application.route('/forgot/', methods=['GET', 'POST'])
 def forgot():
-  status = '' if util.param('success') is None else 'success'
+  status = ''
   error = ''
 
   if flask.request.method == 'POST':
@@ -168,7 +168,7 @@ def forgot():
     'account/forgot.html',
     html_class='account forgot',
     title='Check your email' if status == 'success' else 'Change Password',
-    status=status,
+    status=status if util.param('success') is None else 'success',
     error=error,
   )
 
@@ -178,7 +178,7 @@ def forgot():
 ###############################################################################
 @application.route('/reset/', methods=['GET', 'POST'])
 def reset():
-  status = 'error' if util.param('success') is None else 'success'
+  status = 'error'
   error = ''
 
   code = util.param('code') or ''
@@ -216,10 +216,42 @@ def reset():
     'account/reset.html',
     html_class='account reset',
     title='Password reset' if status != 'error' else 'The link is no longer valid',
-    status=status,
+    status=status if util.param('success') is None else 'success',
     error=error,
     code=code,
     key=key,
+  )
+
+
+###############################################################################
+# Delete
+###############################################################################
+@application.route('/d/', methods=['GET', 'POST'])
+def delete():
+  key = util.param('key')
+  code = util.param('code')
+  status = 'init' if key and code else 'error'
+
+  if flask.request.method == 'POST' and key and code:
+    try:
+      result = requests.post(
+        '%s/delete' % (config.BACKEND_URL),
+        json={'key': key, 'code': code},
+        timeout=8,
+      )
+      if result.status_code == 200:
+        return flask.redirect(flask.url_for('delete', success=True))
+      status = 'error'
+    except requests.exceptions.ConnectTimeout:
+      status = 'error'
+
+  return flask.render_template(
+    'account/delete.html',
+    html_class='account delete',
+    title='Delete Account',
+    status=status if util.param('success') is None else 'success',
+    key=key,
+    code=code,
   )
 
 
