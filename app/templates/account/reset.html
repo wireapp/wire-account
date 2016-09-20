@@ -1,13 +1,15 @@
 # extends 'base.html'
 
 # block content
-  <h1>{{title}}</h1>
   # if status == 'success'
+    <h1>{{title}}</h1>
     <p>You can now log in with your new password.</p>
   # elif status == 'error'
+    <h1>The link is no longer valid</h1>
     <p>Please try again.</p>
     <a class="wbtn green" href="{{url_for('forgot')}}">Reset password</a>
   # else
+    <h1>{{title}}</h1>
     <form method="POST" action=".">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">

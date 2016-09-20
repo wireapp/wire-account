@@ -1,10 +1,11 @@
 # extends 'base.html'
 
 # block content
-  <h1>{{title}}</h1>
   # if status == 'success'
+    <h1>Check your email</h1>
     <p>We sent you a link to reset your password. It is valid for 10 minutes.</p>
   # else
+    <h1>{{title}}</h1>
     <form method="POST" action="." novalidate>
       <input type="email" name="email" placeholder="Email" autofocus>
       <p class="error">{{error}}</p>

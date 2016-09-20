@@ -167,7 +167,7 @@ def forgot():
   return flask.render_template(
     'account/forgot.html',
     html_class='account forgot',
-    title='Check your email' if status == 'success' else 'Change Password',
+    title='Change Password',
     status=status if util.param('success') is None else 'success',
     error=error,
   )
@@ -215,7 +215,7 @@ def reset():
   return flask.render_template(
     'account/reset.html',
     html_class='account reset',
-    title='Password reset' if status != 'error' else 'The link is no longer valid',
+    title='Password reset',
     status=status if util.param('success') is None else 'success',
     error=error,
     code=code,
