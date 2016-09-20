@@ -7,22 +7,18 @@
     </a>
 
     # if not (status == 'success' and 'verify' in html_class)
-      <ul class="download-list">
-        <li class="get-the-app">
-          # if user_agent().is['osx']
-            {{utils.download_btn('Get OS X app', 'wbtn green', 'welcome')}}
-          # elif user_agent().is['windows']
-            {{utils.download_btn('Get Windows app', 'wbtn green', 'welcome')}}
-          # else
-            {{utils.download_btn('Get the app', 'wbtn green', 'welcome')}}
-          # endif
-        </li>
-        # if user_agent().is['desktop']
-          <li class="hidden-xs open-in-web">
-            <a href="{{config.WEBAPP_URL}}" class="wbtn blue">Open in web</a>
-          </li>
+      <div class="download-list">
+        # if user_agent().is['osx']
+          {{utils.download_btn('Get OS X app', 'wbtn green', 'welcome')}}
+        # elif user_agent().is['windows']
+          {{utils.download_btn('Get Windows app', 'wbtn green', 'welcome')}}
+        # else
+          {{utils.download_btn('Get the app', 'wbtn green', 'welcome')}}
         # endif
-      </ul>
+        # if user_agent().is['desktop']
+          <a href="{{config.WEBAPP_URL}}" class="wbtn blue hidden-xs">Open in web</a>
+        # endif
+      </div>
     # endif
     <a class="special-link" href="https://support.wire.com">Support</a>
   </div>

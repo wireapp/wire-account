@@ -123,9 +123,9 @@ def user_agent():
   electron_version = ''.join(re.findall(r'Electron/(.*)\ ', user_agent)).strip()
   if electron_version:
     agent['wrapper'] = {
-        'name': 'Electron',
-        'version': electron_version,
-      }
+      'name': 'Electron',
+      'version': electron_version,
+    }
 
   is_media = {}
   is_media['electron'] = bool(electron_version)

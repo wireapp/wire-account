@@ -34,10 +34,16 @@ p {
 // Links
 // ----------------------------------------------------------------------------
 a {
+  color: @w-blue;
   transition: color .16s, background .16s;
   text-decoration: none;
   &:focus {
     outline: 0px none;
+  }
+
+  &:visited,
+  &:active {
+    color: @w-blue;
   }
 }
 
@@ -46,6 +52,9 @@ a {
   text-transform: uppercase;
   font-weight: 600;
   font-size: @font-size-small;
+  &:visited {
+    color: @w-graphite-dark;
+  }
   &:hover {
     color: darken(@w-graphite-dark, 16%);
     svg path {

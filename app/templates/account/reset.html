@@ -13,8 +13,8 @@
     <form method="POST" action=".">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
-      <input name="password" type="password" placeholder="Enter new password">
-      <p class="error">{{error}}</p>
+      <input name="password" type="password" placeholder="Enter new password" autofocus>
+      <p>{{error}}</p>
       <button type="submit" class="wbtn btn-block" data-loading-text="Please wait…">
         Reset password
       </button>
