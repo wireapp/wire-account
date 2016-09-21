@@ -51,7 +51,6 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  $('.download-list').addClass('invisible');
   sendEvent('verify', 'success', status, 1);
   var redirect = $('#url').data('redirect');
   if (redirect) {

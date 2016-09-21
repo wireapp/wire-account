@@ -5,21 +5,7 @@
     <a class="logo" href="{{config.WIRE_URL}}">
       # include 'svg/wire.svg'
     </a>
-
-    # if 'phone' not in html_class and not (status == 'success' and 'verify' in html_class)
-      <div class="download-list">
-        # if user_agent().is['osx']
-          {{utils.download_btn('Get OS X app', 'wbtn green', 'welcome')}}
-        # elif user_agent().is['windows']
-          {{utils.download_btn('Get Windows app', 'wbtn green', 'welcome')}}
-        # else
-          {{utils.download_btn('Get the app', 'wbtn green', 'welcome')}}
-        # endif
-        # if user_agent().is['desktop']
-          <a href="{{config.WEBAPP_URL}}" class="wbtn blue hidden-xs">Open in web</a>
-        # endif
-      </div>
-    # endif
+    <a class="wbtn blue" href="{{config.WIRE_URL}}">What is Wire?</a>
     <a class="special-link" href="https://support.wire.com">Support</a>
   </div>
 </div>
