@@ -241,6 +241,24 @@ def reset():
   )
 
 
+@application.route('/i/<invite>/')
+def invite(invite):
+  if util.user_agent()['is']['desktop']:
+    util.track_event_to_ga('account.invite', 'redirect', 'desktop', 1)
+    return flask.redirect('%s/auth/?invite=%s' % (config.WEBAPP_URL, invite))
+
+  if util.user_agent()['is']['ios']:
+    util.track_event_to_ga('account.invite', 'redirect', 'ios', 1)
+    return flask.redirect(config.DOWNLOAD_IOS_URL)
+
+  if util.user_agent()['is']['android']:
+    util.track_event_to_ga('account.invite', 'redirect', 'android', 1)
+    return flask.redirect('%s&referrer=invite-%s' % (config.DOWNLOAD_ANDROID_URL, invite))
+
+  util.track_event_to_ga('account.invite', 'redirect', 'other', 1)
+  return flask.redirect(config.WIRE_DOWNLOAD_URL)
+
+
 ###############################################################################
 # Delete
 ###############################################################################
