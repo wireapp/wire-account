@@ -1,60 +1,7 @@
 # import 'macro/utils.html' as utils
 
-<div class="footer">
+<footer>
   <div class="container">
-    <ul class="footer-links footer-icons">
-      <li>
-        <a class="special-link" href="https://wire.com/wire" rel="noopener noreferrer" target="_blank" {{utils.ga_event('footer', 'exit', 'twitter')}}>
-          # include 'svg/footer/footer-twitter.svg'
-        </a>
-      </li>
-      <li>
-        <a class="special-link" href="https://www.facebook.com/wire" rel="noopener noreferrer" target="_blank" {{utils.ga_event('footer', 'exit', 'facebook')}}>
-          #include 'svg/footer/footer-facebook.svg'
-        </a>
-      </li>
-      <li>
-        <a class="special-link" href="https://www.instagram.com/wireapp" rel="noopener noreferrer" target="_blank" {{utils.ga_event('footer', 'exit', 'instagram')}}>
-          #include 'svg/footer/footer-instagram.svg'
-        </a>
-      </li>
-      <li>
-        <a class="special-link" href="https://medium.com/@wireapp" rel="noopener noreferrer" target="_blank" {{utils.ga_event('footer', 'exit', 'medium')}}>
-          #include 'svg/footer/footer-medium.svg'
-        </a>
-      </li>
-      <li>
-        <a class="special-link" href="https://github.com/wireapp" rel="noopener noreferrer" target="_blank" {{utils.ga_event('footer', 'exit', 'github')}}>
-          #include 'svg/footer/footer-github.svg'
-        </a>
-      </li>
-      <li>
-        <a class="special-link" href="https://en.wikipedia.org/wiki/Wire_Swiss" rel="noopener noreferrer" target="_blank" {{utils.ga_event('footer', 'exit', 'wikipedia')}}>
-          #include 'svg/footer/footer-wikipedia.svg'
-        </a>
-      </li>
-    </ul>
-
-    <ul class="footer-links footer-links-nav">
-      <li>
-        {{utils.download_btn('Get', 'special-link', 'footer', code)}}
-        # if user_agent().is['desktop']
-          <span>·</span>
-          <a class="special-link" href="{{config.WEBAPP_URL}}">Open</a>
-        # endif
-      </li>
-      <li><a class="special-link" href="{{config.WIRE_URL}}/privacy/">Privacy</a></li>
-      <li><a class="special-link" href="https://support.wire.com">Support</a></li>
-      <li><a class="special-link" href="{{config.WIRE_URL}}/legal/">Legal</a></li>
-      <li><a class="special-link" href="{{config.WIRE_URL}}/jobs/">Jobs</a></li>
-      <li class="press">
-        <a class="special-link" href="{{config.WIRE_URL}}/press/" rel="nofollow" {{utils.ga_event('press', 'download', 'press-kit')}}>Press kit</a>
-        # include 'svg/footer/download-icon.svg'
-      </li>
-    </ul>
-
-    <ul class="footer-links footer-links-nav">
-      <li class="copyright"><a class="special-link" href="{{config.WIRE_URL}}/impressum/">&copy; WIRE SWISS GmbH</a></li>
-    </ul>
+    <a class="special-link" href="{{config.WIRE_URL}}/impressum/">&copy; WIRE SWISS GmbH</a>
   </div>
-</div>
+<footer>
