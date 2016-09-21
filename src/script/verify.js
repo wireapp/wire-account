@@ -29,8 +29,10 @@ window.initVerify = function() {
       url: url,
       xhrFields: {withCredentials: true}
     }).done(function(data, status_text, xhr) {
+      sendEvent('account.verify-email', 'success', xhr.status, 1);
       verifySuccess(xhr.status);
     }).fail(function(xhr) {
+      sendEvent('account.verify-email', 'fail', xhr.status, 1);
       verifyFail(xhr.status);
     });
   } else {
@@ -45,13 +47,11 @@ window.verifyFail = function(status) {
   } else {
     $('.500').removeClass('hide');
   }
-  sendEvent('verify', 'fail', status, 1);
 };
 
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  sendEvent('verify', 'success', status, 1);
   var redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;

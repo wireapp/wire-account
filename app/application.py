@@ -134,7 +134,7 @@ def verify():
 ###############################################################################
 @application.route('/v/<code>/')
 def verify_phone(code):
-
+  util.track_event_to_ga('account.verify-phone', 'success', 200, 1)
   return flask.render_template(
     'account/verify_phone.html',
     html_class='account phone',
@@ -164,6 +164,8 @@ def forgot():
           json={'email': email},
           timeout=8,
         )
+        util.track_event_to_ga('account.forgot', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+
         if result.status_code == 201:
           return flask.redirect(flask.url_for('forgot', success=True))
         elif result.status_code == 400:
@@ -216,6 +218,7 @@ def reset():
           json={'password': password, 'code': code},
           timeout=8,
         )
+        util.track_event_to_ga('account.reset', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
         if result.status_code == 200:
           return flask.redirect(flask.url_for('reset', success=True))
         if result.status_code == 400:
@@ -254,6 +257,7 @@ def delete():
         json={'key': key, 'code': code},
         timeout=8,
       )
+      util.track_event_to_ga('account.delete', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
       if result.status_code == 200:
         return flask.redirect(flask.url_for('delete', success=True))
       status = 'error'
