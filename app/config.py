@@ -56,3 +56,10 @@ EXPIRES_MIMETYPES = [
 NOCACHE_MIMETYPES = [
   'text/html',
 ]
+
+LOCALE_DEFAULT = 'en'
+LOCALE = {
+  'en': u'English',
+  'de': u'Deutsch',
+}
+LANGUAGES = [l.lower().replace('_', '-') for l in LOCALE.keys()]

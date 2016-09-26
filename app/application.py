@@ -23,7 +23,11 @@ import logging
 import os
 import re
 
+from babel import localedata
+from flask_babel import gettext as __
+from flask_babel import lazy_gettext as _
 import flask
+import flask_babel
 import requests
 
 from libs import flask_sslify
@@ -41,6 +45,8 @@ application.jinja_env.line_statement_prefix = '#'
 application.jinja_env.globals.update(
   user_agent=util.user_agent,
 )
+application.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
+babel = flask_babel.Babel(application)
 sslify = flask_sslify.SSLify(application, skips=['test'])
 
 
@@ -290,6 +296,44 @@ def delete():
     key=key,
     code=code,
   )
+
+
+###############################################################################
+# Babel Stuff
+###############################################################################
+def check_locale(locale):
+  locale = locale.lower()
+  if locale not in config.LOCALE:
+    locale = config.LOCALE_DEFAULT
+  return locale if localedata.exists(locale) else 'en'
+
+
+@babel.localeselector
+def get_locale():
+  if hasattr(flask.request, 'locale'):
+    return flask.request.locale
+  locale = flask.session.pop('locale', None)
+  if not locale:
+    locale = flask.request.cookies.get('locale', None)
+    if not locale:
+      locale = flask.request.accept_languages.best_match(
+          matches=config.LOCALE.keys(),
+          default=config.LOCALE_DEFAULT,
+        )
+  return check_locale(locale)
+
+
+@flask.request_started.connect_via(application)
+def request_started(sender, **extra):
+  hl = util.param('hl')
+  flask.request.locale = check_locale(hl) if hl else get_locale()
+  flask.request.locale_html = flask.request.locale.replace('_', '-')
+
+
+@flask.request_finished.connect_via(application)
+def request_finished(sender, response, **extra):
+  if util.param('hl'):
+    util.set_locale(check_locale(util.param('hl')), response)
 
 
 ###############################################################################

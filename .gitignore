@@ -1,8 +1,11 @@
+*.mo
 *.pyc
+*.pyo
 .DS_Store
 .Icon
 /app/static/dev
 /app/static/min
+/app/translations/messages.pot
 /app/version
 /dist
 /node_modules
