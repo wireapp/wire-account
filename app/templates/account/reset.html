@@ -3,20 +3,20 @@
 # block content
   # if status == 'success'
     <h1>{{title}}</h1>
-    <p>You can now log in with your new password.</p>
+    <p>{{_('You can now log in with your new password.')}}</p>
   # elif status == 'error'
-    <h1>The link is no longer valid</h1>
-    <p>Please try again.</p>
-    <a class="wbtn green" href="{{url_for('forgot')}}">Reset password</a>
+    <h1>{{_('The link is no longer valid')}}</h1>
+    <p>{{_('Please try again.')}}</p>
+    <a class="wbtn green" href="{{url_for('forgot')}}">{{_('Reset password')}}</a>
   # else
     <h1>{{title}}</h1>
     <form method="POST" action=".">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
-      <input name="password" type="password" placeholder="Enter new password" autofocus>
+      <input name="password" type="password" placeholder="{{_('Enter new password')}}" autofocus>
       <p>{{error}}</p>
-      <button type="submit" class="wbtn btn-block" data-loading-text="Please wait…">
-        Reset password
+      <button type="submit" class="wbtn btn-block" data-loading-text="{{_('Please wait…')}}">
+        {{_('Reset password')}}
       </button>
     </form>
   # endif

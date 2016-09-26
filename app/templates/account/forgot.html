@@ -2,15 +2,15 @@
 
 # block content
   # if status == 'success'
-    <h1>Check your email</h1>
-    <p>We sent you a link to reset your password. It is valid for 10 minutes.</p>
+    <h1>{{_('Check your email')}}</h1>
+    <p>{{_('We sent you a link to reset your password. It is valid for 10 minutes.')}}</p>
   # else
     <h1>{{title}}</h1>
     <form method="POST" action="." novalidate>
-      <input type="email" name="email" placeholder="Email" autofocus>
+      <input type="email" name="email" placeholder="{{_('Email')}}" autofocus>
       <p>{{error}}</p>
-      <button type="submit" class="wbtn" data-loading-text="Please wait…">
-        Reset password
+      <button type="submit" class="wbtn" data-loading-text="{{_('Please wait…')}}">
+        {{_('Reset password')}}
       </button>
     </form>
   # endif
