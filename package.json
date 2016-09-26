@@ -3,11 +3,12 @@
   "license": "LicenseRef-LICENSE",
   "scripts": {
     "start": "python app/application.py",
-    "babel-init": "pybabel init -i app/translations/messages.pot -d app/translations -l",
-    "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/messages.pot app",
-    "babel-update": "pybabel update -i app/translations/messages.pot -d app/translations --no-wrap",
+    "babel-init": "pybabel init -i app/translations/translations.pot -d app/translations -l",
+    "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/translations.pot app",
+    "babel-update": "pybabel update -i app/translations/translations.pot -d app/translations --no-wrap",
     "babel-compile": "pybabel compile -f -d app/translations",
-    "babel": "npm run -s babel-extract && npm run -s babel-update && npm run -s babel-compile"
+    "babel": "npm run -s babel-extract && npm run -s babel-update && npm run -s babel-compile",
+    "crowdin": "npm run -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && npm run -s babel && crowdin-cli --identity=keys/crowdin.yaml download"
   },
   "repository": {
     "type": "git",

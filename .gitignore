@@ -8,6 +8,7 @@
 /app/translations/messages.pot
 /app/version
 /dist
+/keys
 /node_modules
 /temp
 npm-debug.log

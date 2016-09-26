@@ -4,11 +4,11 @@ msgstr ""
 
 #: app/application.py:130
 msgid "Verify Account"
-msgstr "Konto bestätigen"
+msgstr ""
 
 #: app/application.py:146
 msgid "Verify Phone"
-msgstr "Telefonnummer- Bestätigung"
+msgstr ""
 
 #: app/application.py:163
 msgid "That does not look like an email."
@@ -16,35 +16,35 @@ msgstr ""
 
 #: app/application.py:177
 msgid "This is email is not in use."
-msgstr "Diese E-Mail wird nicht verwendet."
+msgstr ""
 
 #: app/application.py:180
 msgid "We already sent you an email. The link is valid for 10 minutes."
-msgstr "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für 10 Minuten gültig."
+msgstr ""
 
 #: app/application.py:183 app/application.py:232
 msgid "Something went wrong, please try again."
-msgstr "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+msgstr ""
 
 #: app/application.py:186 app/application.py:235
 msgid "That took longer than usual, please try again."
-msgstr "Das dauerte leider zu lange. Bitte versuche es erneut."
+msgstr ""
 
 #: app/application.py:192
 msgid "Change Password"
-msgstr "Passwort Ändern"
+msgstr ""
 
 #: app/application.py:217
 msgid "Choose a password that is at least 8 characters."
-msgstr "Wähle ein Passwort mit mindestens 8 Zeichen."
+msgstr ""
 
 #: app/application.py:241
 msgid "Password reset"
-msgstr "Passwort zurücksetzen"
+msgstr ""
 
 #: app/application.py:293 app/templates/account/delete.html:27
 msgid "Delete Account"
-msgstr "Benutzerkonto löschen"
+msgstr ""
 
 #: app/templates/account/delete.html:5
 msgid "Account deleted"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: app/templates/account/delete.html:6
 msgid "All your data on Wire is now erased."
-msgstr "Wir haben deine persönlichen Daten entfernt."
+msgstr ""
 
 #: app/templates/account/delete.html:9
 msgid "Thanks for using Wire."
@@ -65,11 +65,11 @@ msgstr ""
 
 #: app/templates/account/delete.html:10
 msgid "share your thoughts about it"
-msgstr "Feedback"
+msgstr ""
 
 #: app/templates/account/delete.html:11
 msgid "This will take no longer than a minute."
-msgstr "Dies dauert nicht länger als eine Minute."
+msgstr ""
 
 #: app/templates/account/delete.html:15
 msgid "Something went wrong"
@@ -77,20 +77,22 @@ msgstr ""
 
 #: app/templates/account/delete.html:16
 msgid "Please try again to delete your account."
-msgstr "Bitte versuche erneut, dein Benutzerkonto zu löschen."
+msgstr ""
 
 #: app/templates/account/delete.html:20
 msgid "Hi there,"
-msgstr "Hi,"
+msgstr ""
 
 #: app/templates/account/delete.html:21
-msgid "We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes."
-msgstr "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig."
+msgid ""
+"We’ve received a request to delete your Wire account. Click on the button"
+" below to proceed. It is valid for 10 minutes."
+msgstr ""
 
 #: app/templates/account/delete.html:26 app/templates/account/forgot.html:12
 #: app/templates/account/reset.html:18
 msgid "Please wait…"
-msgstr "Bitte warten…"
+msgstr ""
 
 #: app/templates/account/delete.html:33
 #, python-format
@@ -99,28 +101,28 @@ msgstr ""
 
 #: app/templates/account/delete.html:33
 msgid "reset your Wire password"
-msgstr "dein Wire-Passwort zurücksetzen"
+msgstr ""
 
 #: app/templates/account/forgot.html:5
 msgid "Check your email"
-msgstr "Überprüfe deinen E-Mail Posteingang."
+msgstr ""
 
 #: app/templates/account/forgot.html:6
 msgid "We sent you a link to reset your password. It is valid for 10 minutes."
-msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist 10 Minuten gültig."
+msgstr ""
 
 #: app/templates/account/forgot.html:10
 msgid "Email"
-msgstr "E-Mail"
+msgstr ""
 
 #: app/templates/account/forgot.html:13 app/templates/account/reset.html:10
 #: app/templates/account/reset.html:19
 msgid "Reset password"
-msgstr "Passwort zurücksetzen"
+msgstr ""
 
 #: app/templates/account/reset.html:6
 msgid "You can now log in with your new password."
-msgstr "Du kannst dich jetzt mit deinem neuen Passwort anmelden."
+msgstr ""
 
 #: app/templates/account/reset.html:8
 msgid "The link is no longer valid"
@@ -128,23 +130,23 @@ msgstr ""
 
 #: app/templates/account/reset.html:9
 msgid "Please try again."
-msgstr "Bitte versuche es erneut."
+msgstr ""
 
 #: app/templates/account/reset.html:16
 msgid "Enter new password"
-msgstr "Neues Passwort eingeben"
+msgstr ""
 
 #: app/templates/account/verify_phone.html:4
 msgid "Phone verification in progress"
-msgstr "Deine Telefonnummer wird bestätigt"
+msgstr ""
 
 #: app/templates/account/verify_phone.html:5
 msgid "To sign in and start using Wire, launch the application."
-msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
+msgstr ""
 
 #: app/templates/account/verify_phone.html:6
 msgid "Open Wire"
-msgstr "Öffne Wire"
+msgstr ""
 
 #: app/templates/bit/header.html:8
 msgid "What is Wire?"
@@ -152,5 +154,5 @@ msgstr ""
 
 #: app/templates/bit/header.html:9
 msgid "Support"
-msgstr "Hilfe"
+msgstr ""
 
