@@ -139,11 +139,11 @@ msgstr "Neues Passwort eingeben"
 
 #: app/templates/account/verify_email.html:14
 msgid "Verifying"
-msgstr ""
+msgstr "Beim Überprüfen"
 
 #: app/templates/account/verify_email.html:19
 msgid "Account created"
-msgstr ""
+msgstr "Benutzerkonto erstellt"
 
 #: app/templates/account/verify_email.html:21
 msgid "Install the app to start using Wire."
@@ -161,7 +161,7 @@ msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
 
 #: app/templates/account/verify_email.html:25
 msgid "OPEN macOS APP"
-msgstr ""
+msgstr "macOS App öffnen"
 
 #: app/templates/account/verify_email.html:26
 #: app/templates/account/verify_email.html:29
