@@ -1,6 +1,6 @@
 #: app/application.py:111
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: app/application.py:130
 msgid "Verify Account"
@@ -12,7 +12,7 @@ msgstr "Telefonnummer- Bestätigung"
 
 #: app/application.py:163
 msgid "That does not look like an email."
-msgstr ""
+msgstr "Dies sieht nicht nach einer E-Mail-Adresse aus."
 
 #: app/application.py:177
 msgid "This is email is not in use."
@@ -48,7 +48,7 @@ msgstr "Benutzerkonto löschen"
 
 #: app/templates/account/delete.html:5
 msgid "Account deleted"
-msgstr ""
+msgstr "Benutzerkonto gelöscht"
 
 #: app/templates/account/delete.html:6
 msgid "All your data on Wire is now erased."
@@ -56,12 +56,12 @@ msgstr "Wir haben deine persönlichen Daten entfernt."
 
 #: app/templates/account/delete.html:9
 msgid "Thanks for using Wire."
-msgstr ""
+msgstr "Danke für die Nutzung von Wire."
 
 #: app/templates/account/delete.html:10
 #, python-format
 msgid "If you’d like, you can %(survey)s."
-msgstr ""
+msgstr "Du hilfst uns, indem du %(survey)s."
 
 #: app/templates/account/delete.html:10
 msgid "share your thoughts about it"
@@ -73,7 +73,7 @@ msgstr "Dies dauert nicht länger als eine Minute."
 
 #: app/templates/account/delete.html:15
 msgid "Something went wrong"
-msgstr ""
+msgstr "Ein Fehler ist aufgetreten"
 
 #: app/templates/account/delete.html:16
 msgid "Please try again to delete your account."
@@ -95,7 +95,7 @@ msgstr "Bitte warten…"
 #: app/templates/account/delete.html:33
 #, python-format
 msgid "If you did not ask for this, you should %(forgot)s."
-msgstr ""
+msgstr "Falls du dies nicht selbst warst, solltest du %(forgot)s."
 
 #: app/templates/account/delete.html:33
 msgid "reset your Wire password"
@@ -124,7 +124,7 @@ msgstr "Du kannst dich jetzt mit deinem neuen Passwort anmelden."
 
 #: app/templates/account/reset.html:8
 msgid "The link is no longer valid"
-msgstr ""
+msgstr "Der Link ist nicht mehr gültig"
 
 #: app/templates/account/reset.html:9
 msgid "Please try again."
@@ -148,7 +148,7 @@ msgstr "Öffne Wire"
 
 #: app/templates/bit/header.html:8
 msgid "What is Wire?"
-msgstr ""
+msgstr "Was ist Wire?"
 
 #: app/templates/bit/header.html:9
 msgid "Support"
