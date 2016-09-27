@@ -1,2 +1,5 @@
+babel==2.3.4
+blinker==1.4
+flask-babel==0.11.1
 flask==0.11.1
 requests==2.11.1

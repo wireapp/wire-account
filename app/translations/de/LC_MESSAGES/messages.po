@@ -1,0 +1,196 @@
+#: app/application.py:111
+msgid "Test"
+msgstr "Test"
+
+#: app/application.py:130
+msgid "Verify Account"
+msgstr "Konto bestätigen"
+
+#: app/application.py:146
+msgid "Verify Phone"
+msgstr "Telefonnummer- Bestätigung"
+
+#: app/application.py:163
+msgid "That does not look like an email."
+msgstr "Dies sieht nicht nach einer E-Mail-Adresse aus."
+
+#: app/application.py:177
+msgid "This is email is not in use."
+msgstr "Diese E-Mail wird nicht verwendet."
+
+#: app/application.py:180
+msgid "We already sent you an email. The link is valid for 10 minutes."
+msgstr "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für 10 Minuten gültig."
+
+#: app/application.py:183 app/application.py:232
+msgid "Something went wrong, please try again."
+msgstr "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+
+#: app/application.py:186 app/application.py:235
+msgid "That took longer than usual, please try again."
+msgstr "Das dauerte leider zu lange. Bitte versuche es erneut."
+
+#: app/application.py:192
+msgid "Change Password"
+msgstr "Passwort Ändern"
+
+#: app/application.py:217
+msgid "Choose a password that is at least 8 characters."
+msgstr "Wähle ein Passwort mit mindestens 8 Zeichen."
+
+#: app/application.py:241
+msgid "Password reset"
+msgstr "Passwort zurücksetzen"
+
+#: app/application.py:293 app/templates/account/delete.html:27
+msgid "Delete Account"
+msgstr "Benutzerkonto löschen"
+
+#: app/templates/account/delete.html:5
+msgid "Account deleted"
+msgstr "Benutzerkonto gelöscht"
+
+#: app/templates/account/delete.html:6
+msgid "All your data on Wire is now erased."
+msgstr "Wir haben deine persönlichen Daten entfernt."
+
+#: app/templates/account/delete.html:9
+msgid "Thanks for using Wire."
+msgstr "Danke für die Nutzung von Wire."
+
+#: app/templates/account/delete.html:10
+#, python-format
+msgid "If you’d like, you can %(survey)s."
+msgstr "Du hilfst uns, indem du %(survey)s."
+
+#: app/templates/account/delete.html:10
+msgid "share your thoughts about it"
+msgstr "Feedback"
+
+#: app/templates/account/delete.html:11
+msgid "This will take no longer than a minute."
+msgstr "Dies dauert nicht länger als eine Minute."
+
+#: app/templates/account/delete.html:15
+#: app/templates/account/verify_email.html:37
+#: app/templates/account/verify_email.html:42
+msgid "Something went wrong"
+msgstr "Ein Fehler ist aufgetreten"
+
+#: app/templates/account/delete.html:16
+msgid "Please try again to delete your account."
+msgstr "Bitte versuche erneut, dein Benutzerkonto zu löschen."
+
+#: app/templates/account/delete.html:20
+msgid "Hi there,"
+msgstr "Hi,"
+
+#: app/templates/account/delete.html:21
+msgid "We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes."
+msgstr "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig."
+
+#: app/templates/account/delete.html:26 app/templates/account/forgot.html:12
+#: app/templates/account/reset.html:18
+#: app/templates/account/verify_email.html:15
+msgid "Please wait…"
+msgstr "Bitte warten…"
+
+#: app/templates/account/delete.html:33
+#, python-format
+msgid "If you did not ask for this, you should %(forgot)s."
+msgstr "Falls du dies nicht selbst warst, solltest du %(forgot)s."
+
+#: app/templates/account/delete.html:33
+msgid "reset your Wire password"
+msgstr "dein Wire-Passwort zurücksetzen"
+
+#: app/templates/account/forgot.html:5
+msgid "Check your email"
+msgstr "Überprüfe deinen E-Mail Posteingang."
+
+#: app/templates/account/forgot.html:6
+msgid "We sent you a link to reset your password. It is valid for 10 minutes."
+msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist 10 Minuten gültig."
+
+#: app/templates/account/forgot.html:10
+msgid "Email"
+msgstr "E-Mail"
+
+#: app/templates/account/forgot.html:13 app/templates/account/reset.html:10
+#: app/templates/account/reset.html:19
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+#: app/templates/account/reset.html:6
+msgid "You can now log in with your new password."
+msgstr "Du kannst dich jetzt mit deinem neuen Passwort anmelden."
+
+#: app/templates/account/reset.html:8
+msgid "The link is no longer valid"
+msgstr "Der Link ist nicht mehr gültig"
+
+#: app/templates/account/reset.html:9
+msgid "Please try again."
+msgstr "Bitte versuche es erneut."
+
+#: app/templates/account/reset.html:16
+msgid "Enter new password"
+msgstr "Neues Passwort eingeben"
+
+#: app/templates/account/verify_email.html:14
+msgid "Verifying"
+msgstr "Beim Überprüfen"
+
+#: app/templates/account/verify_email.html:19
+msgid "Account created"
+msgstr "Benutzerkonto erstellt"
+
+#: app/templates/account/verify_email.html:21
+msgid "Install the app to start using Wire."
+msgstr "Installiere die App, um Wire zu benutzen."
+
+#: app/templates/account/verify_email.html:22
+msgid "Get Wire"
+msgstr "Hol dir Wire"
+
+#: app/templates/account/verify_email.html:24
+#: app/templates/account/verify_email.html:31
+#: app/templates/account/verify_phone.html:5
+msgid "To sign in and start using Wire, launch the application."
+msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
+
+#: app/templates/account/verify_email.html:25
+msgid "OPEN macOS APP"
+msgstr "macOS App öffnen"
+
+#: app/templates/account/verify_email.html:26
+#: app/templates/account/verify_email.html:29
+msgid "Open in Web"
+msgstr "Öffne im Browser"
+
+#: app/templates/account/verify_email.html:28
+#: app/templates/account/verify_email.html:32
+#: app/templates/account/verify_phone.html:6
+msgid "Open Wire"
+msgstr "Öffne Wire"
+
+#: app/templates/account/verify_email.html:38
+msgid "Please try to create your account again."
+msgstr "Bitte versuche erneut ein Konto zu erstellen."
+
+#: app/templates/account/verify_email.html:43
+msgid "We are investigating the issue, please check back shortly."
+msgstr "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal."
+
+#: app/templates/account/verify_phone.html:4
+msgid "Phone verification in progress"
+msgstr "Deine Telefonnummer wird bestätigt"
+
+#: app/templates/bit/header.html:8
+msgid "What is Wire?"
+msgstr "Was ist Wire?"
+
+#: app/templates/bit/header.html:9
+msgid "Support"
+msgstr "Hilfe"
+

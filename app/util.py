@@ -86,6 +86,17 @@ def update_headers(response):
 
 
 ###############################################################################
+# Babel Stuff
+###############################################################################
+def set_locale(locale, response):
+  if not locale:
+    return response
+  response.set_cookie('locale', value=locale, path='/')
+  flask.session['locale'] = locale
+  return response
+
+
+###############################################################################
 # User Agent Stuff
 ###############################################################################
 def user_agent():

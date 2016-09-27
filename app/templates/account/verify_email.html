@@ -11,35 +11,35 @@
   >
 
   <div class="loading">
-    <h1>Verifying</h1>
-    <p>Please wait…</p>
+    <h1>{{_('Verifying')}}</h1>
+    <p>{{_('Please wait…')}}</p>
   </div>
 
   <div class="200 204 success hide">
-    <h1>Account created</h1>
+    <h1>{{_('Account created')}}</h1>
     # if user_agent().is.mobile
-      <p>Install the app to start using Wire.</p>
-      {{utils.download_btn('Get Wire', 'wbtn green', 'verify')}}
+      <p>{{_('Install the app to start using Wire.')}}</p>
+      {{utils.download_btn(_('Get Wire'), 'wbtn green', 'verify')}}
     # elif user_agent().is.osx
-      <p>To sign in and start using Wire, launch the application.</p>
-      <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">OPEN macOS APP</a>
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open in Web</a>
+      <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
+      <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
+      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
     # elif user_agent().is.windows
-      <a class="wbtn green" href="{{config.WIRE_DOWNLOAD_URL}}">Open Wire</a>
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open in Web</a>
+      <a class="wbtn green" href="{{config.WIRE_DOWNLOAD_URL}}">{{_('Open Wire')}}</a>
+      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
     # else
-      <p>To sign in and start using Wire, launch the application.</p>
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">Open Wire</a>
+      <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
+      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
     # endif
   </div>
 
   <div class="404 error hide">
-    <h1>Something went wrong</h1/>
-    <p>Please try to create your account again.</p>
+    <h1>{{_('Something went wrong')}}</h1>
+    <p>{{_('Please try to create your account again.')}}</p>
   </div>
 
   <div class="500 error hide">
-    <h1>Something went wrong</h1>
-    <p>We are investigating the issue, please check back shortly.</p>
+    <h1>{{_('Something went wrong')}}</h1>
+    <p>{{_('We are investigating the issue, please check back shortly.')}}</p>
   </div>
 # endblock

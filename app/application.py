@@ -23,7 +23,10 @@ import logging
 import os
 import re
 
+from babel import localedata
+from flask_babel import lazy_gettext as _
 import flask
+import flask_babel
 import requests
 
 from libs import flask_sslify
@@ -41,6 +44,8 @@ application.jinja_env.line_statement_prefix = '#'
 application.jinja_env.globals.update(
   user_agent=util.user_agent,
 )
+application.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
+babel = flask_babel.Babel(application)
 sslify = flask_sslify.SSLify(application, skips=['test'])
 
 
@@ -103,7 +108,7 @@ def robots():
 def test():
   return flask.render_template(
     'test.html',
-    title='Test',
+    title=_('Test'),
     html_class='test',
   )
 
@@ -122,7 +127,7 @@ def verify():
   return flask.render_template(
     'account/verify_email.html',
     html_class='account verify',
-    title='Verify Account',
+    title=_('Verify Account'),
     status='error' if util.param('success') is None else 'success',
     url=url,
     key=key,
@@ -138,7 +143,7 @@ def verify_phone(code):
   return flask.render_template(
     'account/verify_phone.html',
     html_class='account phone',
-    title='Verify Phone',
+    title=_('Verify Phone'),
     url='%s/%s' % (config.REDIRECT_PHONE_URL, code),
   )
 
@@ -155,7 +160,7 @@ def forgot():
     email = (util.param('email') or '').lower().strip()
 
     if not re.match(r'[^@]+@[^@]+\.[^@]+', email):
-      error = 'That does not look like an email.'
+      error = _('That does not look like an email.')
       status = 'error'
     else:
       try:
@@ -169,22 +174,22 @@ def forgot():
         if result.status_code == 201:
           return flask.redirect(flask.url_for('forgot', success=True))
         elif result.status_code == 400:
-          error = 'This is email is not in use.'
+          error = _('This is email is not in use.')
           status = 'error'
         elif result.status_code == 409:
-          error = 'We already sent you an email. The link is valid for 10 minutes.'
+          error = _('We already sent you an email. The link is valid for 10 minutes.')
           status = 'error'
         else:
-          error = 'Something went wrong, please try again.'
+          error = _('Something went wrong, please try again.')
           status = 'error'
       except requests.exceptions.ConnectTimeout:
-        error = 'That took longer than usual, please try again.'
+        error = _('That took longer than usual, please try again.')
         status = 'error'
 
   return flask.render_template(
     'account/forgot.html',
     html_class='account forgot',
-    title='Change Password',
+    title=_('Change Password'),
     status=status if util.param('success') is None else 'success',
     error=error,
   )
@@ -209,7 +214,7 @@ def reset():
     password = util.param('password')
 
     if len(password) < 8:
-      error = 'Choose a password that is at least 8 characters.'
+      error = _('Choose a password that is at least 8 characters.')
       status = 'fail'
     elif key and code:
       try:
@@ -224,16 +229,16 @@ def reset():
         if result.status_code == 400:
           status = 'error'
         else:
-          error = 'Something went wrong, please try again.'
+          error = _('Something went wrong, please try again.')
           status = 'fail'
       except requests.exceptions.ConnectTimeout:
-        error = 'That took longer than usual, please try again.'
+        error = _('That took longer than usual, please try again.')
         status = 'fail'
 
   return flask.render_template(
     'account/reset.html',
     html_class='account reset',
-    title='Password reset',
+    title=_('Password reset'),
     status=status if util.param('success') is None else 'success',
     error=error,
     code=code,
@@ -285,11 +290,49 @@ def delete():
   return flask.render_template(
     'account/delete.html',
     html_class='account delete',
-    title='Delete Account',
+    title=_('Delete Account'),
     status=status if util.param('success') is None else 'success',
     key=key,
     code=code,
   )
+
+
+###############################################################################
+# Babel Stuff
+###############################################################################
+def check_locale(locale):
+  locale = locale.lower()
+  if locale not in config.LOCALE:
+    locale = config.LOCALE_DEFAULT
+  return locale if localedata.exists(locale) else 'en'
+
+
+@babel.localeselector
+def get_locale():
+  if hasattr(flask.request, 'locale'):
+    return flask.request.locale
+  locale = flask.session.pop('locale', None)
+  if not locale:
+    locale = flask.request.cookies.get('locale', None)
+    if not locale:
+      locale = flask.request.accept_languages.best_match(
+          matches=config.LOCALE.keys(),
+          default=config.LOCALE_DEFAULT,
+        )
+  return check_locale(locale)
+
+
+@flask.request_started.connect_via(application)
+def request_started(sender, **extra):
+  hl = util.param('hl')
+  flask.request.locale = check_locale(hl) if hl else get_locale()
+  flask.request.locale_html = flask.request.locale.replace('_', '-')
+
+
+@flask.request_finished.connect_via(application)
+def request_finished(sender, response, **extra):
+  if util.param('hl'):
+    util.set_locale(check_locale(util.param('hl')), response)
 
 
 ###############################################################################

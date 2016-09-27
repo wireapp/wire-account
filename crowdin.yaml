@@ -1,0 +1,6 @@
+base_path: .
+
+files:
+  -
+    source: '/app/translations/account.pot'
+    translation: '/app/translations/%two_letters_code%/LC_MESSAGES/messages.po'

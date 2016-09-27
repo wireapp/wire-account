@@ -19,3 +19,18 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 ## wire-account
 
 >  For account verifications and forgotten passwords.
+
+
+### Translations
+
+#### To add a new languages
+
+```bash
+npm run babel-init -- ru
+```
+
+#### To extract/update/compile
+
+```bash
+npm run babel
+```
