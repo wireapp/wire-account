@@ -72,6 +72,8 @@ msgid "This will take no longer than a minute."
 msgstr "Dies dauert nicht länger als eine Minute."
 
 #: app/templates/account/delete.html:15
+#: app/templates/account/verify_email.html:37
+#: app/templates/account/verify_email.html:42
 msgid "Something went wrong"
 msgstr "Ein Fehler ist aufgetreten"
 
@@ -89,6 +91,7 @@ msgstr "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten
 
 #: app/templates/account/delete.html:26 app/templates/account/forgot.html:12
 #: app/templates/account/reset.html:18
+#: app/templates/account/verify_email.html:15
 msgid "Please wait…"
 msgstr "Bitte warten…"
 
@@ -134,17 +137,54 @@ msgstr "Bitte versuche es erneut."
 msgid "Enter new password"
 msgstr "Neues Passwort eingeben"
 
-#: app/templates/account/verify_phone.html:4
-msgid "Phone verification in progress"
-msgstr "Deine Telefonnummer wird bestätigt"
+#: app/templates/account/verify_email.html:14
+msgid "Verifying"
+msgstr ""
 
+#: app/templates/account/verify_email.html:19
+msgid "Account created"
+msgstr ""
+
+#: app/templates/account/verify_email.html:21
+msgid "Install the app to start using Wire."
+msgstr "Installiere die App, um Wire zu benutzen."
+
+#: app/templates/account/verify_email.html:22
+msgid "Get Wire"
+msgstr "Hol dir Wire"
+
+#: app/templates/account/verify_email.html:24
+#: app/templates/account/verify_email.html:31
 #: app/templates/account/verify_phone.html:5
 msgid "To sign in and start using Wire, launch the application."
 msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
 
+#: app/templates/account/verify_email.html:25
+msgid "OPEN macOS APP"
+msgstr ""
+
+#: app/templates/account/verify_email.html:26
+#: app/templates/account/verify_email.html:29
+msgid "Open in Web"
+msgstr "Öffne im Browser"
+
+#: app/templates/account/verify_email.html:28
+#: app/templates/account/verify_email.html:32
 #: app/templates/account/verify_phone.html:6
 msgid "Open Wire"
 msgstr "Öffne Wire"
+
+#: app/templates/account/verify_email.html:38
+msgid "Please try to create your account again."
+msgstr "Bitte versuche erneut ein Konto zu erstellen."
+
+#: app/templates/account/verify_email.html:43
+msgid "We are investigating the issue, please check back shortly."
+msgstr "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal."
+
+#: app/templates/account/verify_phone.html:4
+msgid "Phone verification in progress"
+msgstr "Deine Telefonnummer wird bestätigt"
 
 #: app/templates/bit/header.html:8
 msgid "What is Wire?"

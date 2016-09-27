@@ -72,6 +72,8 @@ msgid "This will take no longer than a minute."
 msgstr ""
 
 #: app/templates/account/delete.html:15
+#: app/templates/account/verify_email.html:37
+#: app/templates/account/verify_email.html:42
 msgid "Something went wrong"
 msgstr ""
 
@@ -91,6 +93,7 @@ msgstr ""
 
 #: app/templates/account/delete.html:26 app/templates/account/forgot.html:12
 #: app/templates/account/reset.html:18
+#: app/templates/account/verify_email.html:15
 msgid "Please wait…"
 msgstr ""
 
@@ -136,16 +139,53 @@ msgstr ""
 msgid "Enter new password"
 msgstr ""
 
-#: app/templates/account/verify_phone.html:4
-msgid "Phone verification in progress"
+#: app/templates/account/verify_email.html:14
+msgid "Verifying"
 msgstr ""
 
+#: app/templates/account/verify_email.html:19
+msgid "Account created"
+msgstr ""
+
+#: app/templates/account/verify_email.html:21
+msgid "Install the app to start using Wire."
+msgstr ""
+
+#: app/templates/account/verify_email.html:22
+msgid "Get Wire"
+msgstr ""
+
+#: app/templates/account/verify_email.html:24
+#: app/templates/account/verify_email.html:31
 #: app/templates/account/verify_phone.html:5
 msgid "To sign in and start using Wire, launch the application."
 msgstr ""
 
+#: app/templates/account/verify_email.html:25
+msgid "OPEN macOS APP"
+msgstr ""
+
+#: app/templates/account/verify_email.html:26
+#: app/templates/account/verify_email.html:29
+msgid "Open in Web"
+msgstr ""
+
+#: app/templates/account/verify_email.html:28
+#: app/templates/account/verify_email.html:32
 #: app/templates/account/verify_phone.html:6
 msgid "Open Wire"
+msgstr ""
+
+#: app/templates/account/verify_email.html:38
+msgid "Please try to create your account again."
+msgstr ""
+
+#: app/templates/account/verify_email.html:43
+msgid "We are investigating the issue, please check back shortly."
+msgstr ""
+
+#: app/templates/account/verify_phone.html:4
+msgid "Phone verification in progress"
 msgstr ""
 
 #: app/templates/bit/header.html:8
