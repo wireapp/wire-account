@@ -161,7 +161,7 @@ msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
 
 #: app/templates/account/verify_email.html:25
 msgid "OPEN macOS APP"
-msgstr "macOS App öffnen"
+msgstr "macOS APP HERUNTERLADEN"
 
 #: app/templates/account/verify_email.html:26
 #: app/templates/account/verify_email.html:29
