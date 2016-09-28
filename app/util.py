@@ -18,8 +18,9 @@
 
 # coding: utf-8
 
-import hashlib
 import datetime
+import hashlib
+import random
 import re
 
 import flask
@@ -195,6 +196,8 @@ def value_exists(obj, path, value):
 
 
 def track_event_to_ga(category, action, label=None, value=None):
+  track_event_to_piwik(category, action, label, value)
+
   if not config.ANALYTICS_ID:
     return 0
   data = {
@@ -211,5 +214,26 @@ def track_event_to_ga(category, action, label=None, value=None):
     'https://www.google-analytics.com/collect',
     data=data,
     headers={'Content-Type': 'application/x-www-form-urlencoded'},
+  )
+  return result.status_code
+
+
+def track_event_to_piwik(category, action, name=None, value=None):
+  if not (config.PIWIK_ID and config.PIWIK_HOSTNAME):
+    return 0
+  data = {
+    'idsite': config.PIWIK_ID,
+    'req': 1,
+    'url': flask.request.url,
+    'rand': random.random(),
+    'apiv': 1,
+    'e_c': category,
+    'e_a': action,
+    'e_n': name,
+    'e_v': value,
+  }
+  result = requests.post(
+    'https://%s/piwik.php' % config.PIWIK_HOSTNAME,
+    data=data,
   )
   return result.status_code
