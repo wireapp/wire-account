@@ -223,7 +223,7 @@ def track_event_to_piwik(category, action, name=None, value=None):
     return 0
   return requests.post('https://%s/piwik.php' % config.PIWIK_HOSTNAME, data={
     'idsite': config.PIWIK_ID,
-    'req': 1,
+    'rec': 1,
     'url': flask.request.url,
     'rand': random.random(),
     'apiv': 1,
