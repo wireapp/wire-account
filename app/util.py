@@ -19,7 +19,6 @@
 # coding: utf-8
 
 import datetime
-import hashlib
 import random
 import re
 
@@ -63,11 +62,11 @@ def update_headers(response):
     "connect-src 'self' blob: https://*.wire.com https://wire.com wss://*.wire.com https://*.zinfra.io wss://*.zinfra.io" + ' ws://localhost:35729' if config.DEVELOPMENT else '',
     "font-src 'self' data:",
     "frame-src 'self' https://accounts.google.com https://*.youtube.com https://*.soundcloud.com https://*.vimeo.com https://*.spotify.com",
-    "img-src 'self' blob: data: filesystem: https://*.wire.com https://*.zinfra.io http://www.google-analytics.com https://wire.innocraft.cloud",
+    "img-src 'self' blob: data: filesystem: https://*.wire.com https://*.zinfra.io https://wire.innocraft.cloud",
     # Note: The "blob:" attribute needs to be explicitly set for Chrome 47+: https://code.google.com/p/chromium/issues/detail?id=473904
     "media-src blob: data: *",
     "object-src 'self' https://*.youtube.com 1-ps.googleusercontent.com",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.wire.com https://*.zinfra.io http://www.google-analytics.com https://wire.innocraft.cloud" + ' http://localhost:35729' if config.DEVELOPMENT else '',
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.wire.com https://*.zinfra.io https://wire.innocraft.cloud" + ' http://localhost:35729' if config.DEVELOPMENT else '',
     "style-src 'self' 'unsafe-inline' https://*.wire.com https://*.googleusercontent.com"
   ])
 
