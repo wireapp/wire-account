@@ -195,29 +195,6 @@ def value_exists(obj, path, value):
     return False
 
 
-def track_event_to_ga(category, action, label=None, value=None):
-  track_event_to_piwik(category, action, label, value)
-
-  if not config.ANALYTICS_ID:
-    return 0
-  data = {
-    'v': '1',
-    'tid': config.ANALYTICS_ID,
-    'cid': hashlib.md5('%s%s' % (flask.request.remote_addr, config.VERSION)).hexdigest(),
-    't': 'event',
-    'ec': category,
-    'ea': action,
-    'el': label,
-    'ev': value,
-  }
-  result = requests.post(
-    'https://www.google-analytics.com/collect',
-    data=data,
-    headers={'Content-Type': 'application/x-www-form-urlencoded'},
-  )
-  return result.status_code
-
-
 def track_event_to_piwik(category, action, name=None, value=None):
   if not (config.PIWIK_ID and config.PIWIK_HOSTNAME):
     return 0
