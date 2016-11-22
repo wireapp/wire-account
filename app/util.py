@@ -18,8 +18,8 @@
 
 # coding: utf-8
 
-import hashlib
 import datetime
+import random
 import re
 
 import flask
@@ -62,11 +62,11 @@ def update_headers(response):
     "connect-src 'self' blob: https://*.wire.com https://wire.com wss://*.wire.com https://*.zinfra.io wss://*.zinfra.io" + ' ws://localhost:35729' if config.DEVELOPMENT else '',
     "font-src 'self' data:",
     "frame-src 'self' https://accounts.google.com https://*.youtube.com https://*.soundcloud.com https://*.vimeo.com https://*.spotify.com",
-    "img-src 'self' blob: data: filesystem: https://*.wire.com https://*.zinfra.io http://www.google-analytics.com",
+    "img-src 'self' blob: data: filesystem: https://*.wire.com https://*.zinfra.io https://wire.innocraft.cloud",
     # Note: The "blob:" attribute needs to be explicitly set for Chrome 47+: https://code.google.com/p/chromium/issues/detail?id=473904
     "media-src blob: data: *",
     "object-src 'self' https://*.youtube.com 1-ps.googleusercontent.com",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.wire.com https://*.zinfra.io http://www.google-analytics.com" + ' http://localhost:35729' if config.DEVELOPMENT else '',
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.wire.com https://*.zinfra.io https://wire.innocraft.cloud" + ' http://localhost:35729' if config.DEVELOPMENT else '',
     "style-src 'self' 'unsafe-inline' https://*.wire.com https://*.googleusercontent.com"
   ])
 
@@ -194,22 +194,17 @@ def value_exists(obj, path, value):
     return False
 
 
-def track_event_to_ga(category, action, label=None, value=None):
-  if not config.ANALYTICS_ID:
+def track_event_to_piwik(category, action, name=None, value=None):
+  if not (config.PIWIK_ID and config.PIWIK_HOSTNAME):
     return 0
-  data = {
-    'v': '1',
-    'tid': config.ANALYTICS_ID,
-    'cid': hashlib.md5('%s%s' % (flask.request.remote_addr, config.VERSION)).hexdigest(),
-    't': 'event',
-    'ec': category,
-    'ea': action,
-    'el': label,
-    'ev': value,
-  }
-  result = requests.post(
-    'https://www.google-analytics.com/collect',
-    data=data,
-    headers={'Content-Type': 'application/x-www-form-urlencoded'},
-  )
-  return result.status_code
+  return requests.post('https://%s/piwik.php' % config.PIWIK_HOSTNAME, data={
+    'idsite': config.PIWIK_ID,
+    'rec': 1,
+    'url': flask.request.url,
+    'rand': random.random(),
+    'apiv': 1,
+    'e_c': category,
+    'e_a': action,
+    'e_n': name,
+    'e_v': value,
+  }).status_code

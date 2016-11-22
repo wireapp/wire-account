@@ -18,7 +18,6 @@
 
 # coding: utf-8
 
-from uuid import uuid4
 import os
 
 ENV = os.environ.get('ENV', 'localhost')
@@ -26,7 +25,8 @@ PRODUCTION = ENV != 'localhost'
 DEBUG = DEVELOPMENT = not PRODUCTION
 
 SECRET_KEY = os.environ.get('SECRET_KEY', '2.71828182845904523536028747135266')
-ANALYTICS_ID = os.environ.get('ANALYTICS_ID', '')
+PIWIK_HOSTNAME = os.environ.get('PIWIK_HOSTNAME', '')
+PIWIK_ID = os.environ.get('PIWIK_ID', '')
 
 BACKEND_URL = os.environ.get('BACKEND_URL', 'https://prod-nginz-https.wire.com')
 DOWNLOAD_ANDROID_URL = os.environ.get('DOWNLOAD_ANDROID_URL', 'https://play.google.com/store/apps/details?id=com.wire')

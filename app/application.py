@@ -73,7 +73,7 @@ def index(url='/'):
     elif ua_is['ie']:
       target = config.WIRE_DOWNLOAD_URL
       label = 'ie'
-    util.track_event_to_ga('get.wire.com', 'redirect', label, 1)
+    util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
 
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
@@ -139,7 +139,7 @@ def verify():
 ###############################################################################
 @application.route('/v/<code>/')
 def verify_phone(code):
-  util.track_event_to_ga('account.verify-phone', 'success', 200, 1)
+  util.track_event_to_piwik('account.verify-phone', 'success', 200, 1)
   return flask.render_template(
     'account/verify_phone.html',
     html_class='account phone',
@@ -169,7 +169,7 @@ def forgot():
           json={'email': email},
           timeout=8,
         )
-        util.track_event_to_ga('account.forgot', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+        util.track_event_to_piwik('account.forgot', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
 
         if result.status_code == 201:
           return flask.redirect(flask.url_for('forgot', success=True))
@@ -223,7 +223,7 @@ def reset():
           json={'password': password, 'code': code},
           timeout=8,
         )
-        util.track_event_to_ga('account.reset', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+        util.track_event_to_piwik('account.reset', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
         if result.status_code == 200:
           return flask.redirect(flask.url_for('reset', success=True))
         if result.status_code == 400:
@@ -249,18 +249,18 @@ def reset():
 @application.route('/i/<invite>/')
 def invite(invite):
   if util.user_agent()['is']['desktop']:
-    util.track_event_to_ga('account.invite', 'redirect', 'desktop', 1)
+    util.track_event_to_piwik('account.invite', 'redirect', 'desktop', 1)
     return flask.redirect('%s/auth/?invite=%s' % (config.WEBAPP_URL, invite))
 
   if util.user_agent()['is']['ios']:
-    util.track_event_to_ga('account.invite', 'redirect', 'ios', 1)
+    util.track_event_to_piwik('account.invite', 'redirect', 'ios', 1)
     return flask.redirect(config.DOWNLOAD_IOS_URL)
 
   if util.user_agent()['is']['android']:
-    util.track_event_to_ga('account.invite', 'redirect', 'android', 1)
+    util.track_event_to_piwik('account.invite', 'redirect', 'android', 1)
     return flask.redirect('%s&referrer=invite-%s' % (config.DOWNLOAD_ANDROID_URL, invite))
 
-  util.track_event_to_ga('account.invite', 'redirect', 'other', 1)
+  util.track_event_to_piwik('account.invite', 'redirect', 'other', 1)
   return flask.redirect(config.WIRE_DOWNLOAD_URL)
 
 
@@ -280,7 +280,7 @@ def delete():
         json={'key': key, 'code': code},
         timeout=8,
       )
-      util.track_event_to_ga('account.delete', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+      util.track_event_to_piwik('account.delete', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
       if result.status_code == 200:
         return flask.redirect(flask.url_for('delete', success=True))
       status = 'error'

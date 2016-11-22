@@ -18,7 +18,7 @@
  */
 
 window.sendEvent = function(category, action, label, value) {
-  if (typeof ga === "function") {
-    ga('send', 'event', category, action, label, value);
+  if (typeof _paq !== 'undefined' && _paq !== null) {
+    _paq.push(['trackEvent', category, action, label, value]);
   }
 }
