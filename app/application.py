@@ -56,8 +56,7 @@ sslify = flask_sslify.SSLify(application, skips=['test'])
 @application.route('/')
 def index(url='/'):
   target = flask.request.url.replace(flask.request.host_url[:-1], config.WIRE_URL)
-
-  if 'get.wire.com' in flask.request.url:
+  if flask.request.url.find(u'get.wire.com') > 0:
     ua_is = util.user_agent()['is']
     label = 'desktop'
     target = '%s/?connect' % config.WEBAPP_URL
