@@ -72,11 +72,14 @@ def index(url='/'):
     elif ua_is['ie']:
       target = config.WIRE_DOWNLOAD_URL
       label = 'ie'
-    util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
 
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
-  return flask.redirect(target)
+  return flask.render_template(
+    'redirect.html',
+    redirect=target,
+    label=label,
+  )
 
 
 ###############################################################################
@@ -173,7 +176,7 @@ def forgot():
         if result.status_code == 201:
           return flask.redirect(flask.url_for('forgot', success=True))
         elif result.status_code == 400:
-          error = _('This is email is not in use.')
+          error = _('This email is not in use.')
           status = 'error'
         elif result.status_code == 409:
           error = _('We already sent you an email. The link is valid for 10 minutes.')
