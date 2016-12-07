@@ -1,48 +1,48 @@
-#: app/application.py:111
+#: app/application.py:110
 msgid "Test"
 msgstr ""
 
-#: app/application.py:130
+#: app/application.py:129
 msgid "Verify Account"
 msgstr ""
 
-#: app/application.py:146
+#: app/application.py:145
 msgid "Verify Phone"
 msgstr ""
 
-#: app/application.py:163
+#: app/application.py:162
 msgid "That does not look like an email."
 msgstr ""
 
-#: app/application.py:177
-msgid "This is email is not in use."
+#: app/application.py:176
+msgid "This email is not in use."
 msgstr ""
 
-#: app/application.py:180
+#: app/application.py:179
 msgid "We already sent you an email. The link is valid for 10 minutes."
 msgstr ""
 
-#: app/application.py:183 app/application.py:232
+#: app/application.py:182 app/application.py:231
 msgid "Something went wrong, please try again."
 msgstr ""
 
-#: app/application.py:186 app/application.py:235
+#: app/application.py:185 app/application.py:234
 msgid "That took longer than usual, please try again."
 msgstr ""
 
-#: app/application.py:192
+#: app/application.py:191
 msgid "Change Password"
 msgstr ""
 
-#: app/application.py:217
+#: app/application.py:216
 msgid "Choose a password that is at least 8 characters."
 msgstr ""
 
-#: app/application.py:241
+#: app/application.py:240
 msgid "Password reset"
 msgstr ""
 
-#: app/application.py:293 app/templates/account/delete.html:27
+#: app/application.py:292 app/templates/account/delete.html:27
 msgid "Delete Account"
 msgstr ""
 

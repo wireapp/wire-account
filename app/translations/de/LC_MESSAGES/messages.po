@@ -1,48 +1,69 @@
-#: app/application.py:111
+# German translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-12-06 17:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: app/application.py:110
 msgid "Test"
 msgstr "Test"
 
-#: app/application.py:130
+#: app/application.py:129
 msgid "Verify Account"
 msgstr "Konto bestätigen"
 
-#: app/application.py:146
+#: app/application.py:145
 msgid "Verify Phone"
 msgstr "Telefonnummer- Bestätigung"
 
-#: app/application.py:163
+#: app/application.py:162
 msgid "That does not look like an email."
 msgstr "Dies sieht nicht nach einer E-Mail-Adresse aus."
 
-#: app/application.py:177
-msgid "This is email is not in use."
+#: app/application.py:176
+msgid "This email is not in use."
 msgstr "Diese E-Mail wird nicht verwendet."
 
-#: app/application.py:180
+#: app/application.py:179
 msgid "We already sent you an email. The link is valid for 10 minutes."
 msgstr "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für 10 Minuten gültig."
 
-#: app/application.py:183 app/application.py:232
+#: app/application.py:182 app/application.py:231
 msgid "Something went wrong, please try again."
 msgstr "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
 
-#: app/application.py:186 app/application.py:235
+#: app/application.py:185 app/application.py:234
 msgid "That took longer than usual, please try again."
 msgstr "Das dauerte leider zu lange. Bitte versuche es erneut."
 
-#: app/application.py:192
+#: app/application.py:191
 msgid "Change Password"
 msgstr "Passwort Ändern"
 
-#: app/application.py:217
+#: app/application.py:216
 msgid "Choose a password that is at least 8 characters."
 msgstr "Wähle ein Passwort mit mindestens 8 Zeichen."
 
-#: app/application.py:241
+#: app/application.py:240
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: app/application.py:293 app/templates/account/delete.html:27
+#: app/application.py:292 app/templates/account/delete.html:27
 msgid "Delete Account"
 msgstr "Benutzerkonto löschen"
 
