@@ -133,6 +133,7 @@ def verify():
     status='error' if util.param('success') is None else 'success',
     url=url,
     key=key,
+    credentials='true',
   )
 
 
@@ -154,6 +155,7 @@ def verify_bot():
     status='error' if util.param('success') is None else 'success',
     url=url,
     key=key,
+    credentials='false',
   )
 
 
