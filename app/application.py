@@ -133,6 +133,29 @@ def verify():
     status='error' if util.param('success') is None else 'success',
     url=url,
     key=key,
+    credentials='true',
+  )
+
+
+###############################################################################
+# Verify Bot
+###############################################################################
+@application.route('/verify/bot/')
+def verify_bot():
+  key = util.param('key')
+  code = util.param('code')
+  url = ''
+  if key and code:
+    url = '%s/provider/activate?key=%s&code=%s' % (config.BACKEND_URL, key, code)
+
+  return flask.render_template(
+    'account/verify_email.html',
+    html_class='account verify',
+    title=_('Verify Bot'),
+    status='error' if util.param('success') is None else 'success',
+    url=url,
+    key=key,
+    credentials='false',
   )
 
 
