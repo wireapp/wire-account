@@ -72,14 +72,11 @@ def index(url='/'):
     elif ua_is['ie']:
       target = config.WIRE_DOWNLOAD_URL
       label = 'ie'
+    util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
 
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
-  return flask.render_template(
-    'redirect.html',
-    redirect=target,
-    label=label,
-  )
+  return flask.redirect(target)
 
 
 ###############################################################################
