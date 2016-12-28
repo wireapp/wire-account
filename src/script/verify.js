@@ -51,6 +51,7 @@ window.verifyFail = function(status) {
 
 window.verifySuccess = function(status) {
   $('.loading').hide();
+  console.log('dfdfsd', status);
   $('.' + status).removeClass('hide');
   var redirect = $('#url').data('redirect');
   if (redirect) {
