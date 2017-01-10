@@ -146,7 +146,7 @@ def verify_bot():
     url = '%s/provider/activate?key=%s&code=%s' % (config.BACKEND_URL, key, code)
 
   return flask.render_template(
-    'account/verify_email.html',
+    'account/verify_bot.html',
     html_class='account verify',
     title=_('Verify Bot'),
     status='error' if util.param('success') is None else 'success',
