@@ -56,8 +56,8 @@ sslify = flask_sslify.SSLify(application, skips=['test'])
 @application.route('/')
 def index(url='/'):
   target = flask.request.url.replace(flask.request.host_url[:-1], config.WIRE_URL)
+  ua_is = util.user_agent()['is']
   if flask.request.url.find(u'get.wire.com') > 0:
-    ua_is = util.user_agent()['is']
     label = 'desktop'
     target = '%s/?connect' % config.WEBAPP_URL
     if ua_is['android']:
@@ -73,6 +73,17 @@ def index(url='/'):
       target = config.WIRE_DOWNLOAD_URL
       label = 'ie'
     util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
+
+  if flask.request.url.find(u'startpunkt.wire.com') > 0:
+    label = 'desktop'
+    target = '%s/?connect' % config.WEBAPP_URL
+    if ua_is['android']:
+      target = 'http://a.localytics.com/redirect/ktb1xaqhs1196wfpeggb?partner=other_start_punkt&id=com.wire&referrer=utm_source%3Dother_start_punkt%26utm_medium%3Dvoucher%26utm_term%3Dreferral%26utm_campaign%3DStartPunkt'
+      label = 'android'
+    elif ua_is['ios']:
+      target = 'http://a.localytics.com/redirect/sshto9p7zu19102wzst2?partner=other_start_punkt&idfa='
+      label = 'ios'
+    util.track_event_to_piwik('startpunkt.wire.com', 'redirect', label, 1)
 
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
