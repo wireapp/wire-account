@@ -81,7 +81,7 @@ def index(url='/'):
       target = 'http://a.localytics.com/redirect/ktb1xaqhs1196wfpeggb?partner=other_start_punkt&id=com.wire&referrer=utm_source%3Dother_start_punkt%26utm_medium%3Dvoucher%26utm_term%3Dreferral%26utm_campaign%3DStartPunkt'
       label = 'android'
     elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/sshto9p7zu19102wzst2?partner=other_start_punkt&idfa='
+      target = 'http://a.localytics.com/redirect/sshto9p7zu19102wzst2?partner=other_start_punkt&idfa={IDFA}'
       label = 'ios'
     util.track_event_to_piwik('startpunkt.wire.com', 'redirect', label, 1)
 
