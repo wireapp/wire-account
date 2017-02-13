@@ -96,6 +96,17 @@ def index(url='/'):
       label = 'ios'
     util.track_event_to_piwik('bitundso.wire.com', 'redirect', label, 1)
 
+  if flask.request.url.find(u'geektalk.wire.com') > 0:
+    label = 'desktop'
+    target = '%s/?connect' % config.WEBAPP_URL
+    if ua_is['android']:
+      target = 'http://a.localytics.com/redirect/vorrx3mi73kzwjvi72xm?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcast%26utm_campaign%3DGeekTalk%2520Android'
+      label = 'android'
+    elif ua_is['ios']:
+      target = 'http://a.localytics.com/redirect/9o0642p1r365hz142jhl?partner=other_podcast&idfa={IDFA}'
+      label = 'ios'
+    util.track_event_to_piwik('bitundso.wire.com', 'redirect', label, 1)
+
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
   return flask.redirect(target)
