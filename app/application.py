@@ -129,6 +129,17 @@ def index(url='/'):
       label = 'ios'
     util.track_event_to_piwik('fanboys.wire.com', 'redirect', label, 1)
 
+  if flask.request.url.find(u'workingdraft.wire.com') > 0:
+    label = 'desktop'
+    target = '%s/?connect' % config.WEBAPP_URL
+    if ua_is['android']:
+      target = 'http://a.localytics.com/redirect/t60tj28far38qryubd8v?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownload%26utm_term%3Dpodcast%26utm_campaign%3DWorkingDraft%2520Android'
+      label = 'android'
+    elif ua_is['ios']:
+      target = 'http://a.localytics.com/redirect/81g9xaeahf3fptt2xrhj?partner=other_podcast&idfa={IDFA}'
+      label = 'ios'
+    util.track_event_to_piwik('workingdraft.wire.com', 'redirect', label, 1)
+
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
   return flask.redirect(target)
