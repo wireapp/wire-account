@@ -139,6 +139,18 @@ def index(url='/'):
       target = 'http://a.localytics.com/redirect/81g9xaeahf3fptt2xrhj?partner=other_podcast&idfa={IDFA}'
       label = 'ios'
     util.track_event_to_piwik('workingdraft.wire.com', 'redirect', label, 1)
+    
+ if flask.request.url.find(u'get.wire.com') > 0:
+    label = 'desktop'
+    target = '%s/?connect' % config.WEBAPP_URL
+    if ua_is['android']:
+      target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
+      label = 'android'
+    elif ua_is['ios']:
+      target = 'http://a.localytics.com/redirect/6c0xmquvrrbphni0zv1p?partner=other_invite&idfa={IDFA}'
+      label = 'ios'
+    util.track_event_to_piwik('get.wire.com attribution', 'redirect', label, 1)
+    
 
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
