@@ -61,10 +61,10 @@ def index(url='/'):
     label = 'desktop'
     target = '%s/?connect' % config.WEBAPP_URL
     if ua_is['android']:
-      target = '%s&referrer=getwire' % config.DOWNLOAD_ANDROID_URL
+      target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
       label = 'android'
     elif ua_is['ios']:
-      target = config.DOWNLOAD_IOS_URL
+      target = 'http://a.localytics.com/redirect/6c0xmquvrrbphni0zv1p?partner=other_invite&idfa={IDFA}'
       label = 'ios'
     elif ua_is['safari']:
       target = config.WIRE_DOWNLOAD_URL
