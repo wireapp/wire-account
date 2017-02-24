@@ -177,7 +177,8 @@ def user_agent():
   is_media['bingbot'] = user_agent.lower().find('bingbot') >= 0
   is_media['googlebot'] = user_agent.lower().find('googlebot') >= 0
   is_media['yahoobot'] = user_agent.lower().find('yahoo') >= 0
-  is_media['crawler'] = is_media['bingbot'] or is_media['googlebot'] or is_media['yahoobot']
+  is_media['twitterbot'] = user_agent.lower().find('twitter') >= 0
+  is_media['crawler'] = is_media['bingbot'] or is_media['googlebot'] or is_media['yahoobot'] or is_media['twitterbot']
 
   agent['is'] = is_media
 
