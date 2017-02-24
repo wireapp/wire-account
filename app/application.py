@@ -1,3 +1,5 @@
+# coding: utf-8
+
 #
 # Wire
 # Copyright (C) 2016 Wire Swiss GmbH
@@ -15,8 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see http://www.gnu.org/licenses/.
 #
-
-# coding: utf-8
 
 from datetime import datetime
 import logging
@@ -139,6 +139,14 @@ def index(url='/'):
       target = 'http://a.localytics.com/redirect/81g9xaeahf3fptt2xrhj?partner=other_podcast&idfa={IDFA}'
       label = 'ios'
     util.track_event_to_piwik('workingdraft.wire.com', 'redirect', label, 1)
+
+  if util.user_agent()['is']['crawler']:
+    return flask.render_template(
+      'og.html',
+      title=u'Wire · Modern communication, full privacy. For iOS, Android, macOS, Windows, Linux and web.',
+      description=u'Call, message and share files. Secure and in sync across your phone, tablet and computer.',
+      redirect=target,
+    )
 
   if config.DEVELOPMENT:
     return flask.render_template('index.html', redirect=target)
