@@ -20,6 +20,13 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 >  For account verifications and forgotten passwords.
 
+## Build Instructions
+
+```bash
+npm install
+npm start
+```
+
 
 ### Translations
 

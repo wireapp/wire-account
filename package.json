@@ -2,6 +2,7 @@
   "name": "wire-account",
   "license": "LicenseRef-LICENSE",
   "scripts": {
+    "postinstall": "pip install -r app/requirements.txt",
     "start": "python app/application.py",
     "babel-init": "pybabel init -i app/translations/account.pot -d app/translations -l",
     "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/account.pot app",
