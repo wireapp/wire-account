@@ -22,10 +22,9 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 ## Build Instructions
 
-```bash
-npm install
-npm start
-```
+1. Run `npm install`
+2. Run `npm start`
+3. Open [http://localhost:8080/](http://localhost:8080/)
 
 
 ### Translations

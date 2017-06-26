@@ -3,7 +3,7 @@
   "license": "LicenseRef-LICENSE",
   "scripts": {
     "postinstall": "pip install -r app/requirements.txt",
-    "start": "python app/application.py",
+    "start": "concurrently \"gulp\" \"python app/application.py\"",
     "babel-init": "pybabel init -i app/translations/account.pot -d app/translations -l",
     "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/account.pot app",
     "babel-update": "pybabel update -i app/translations/account.pot -d app/translations --no-wrap",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "coffee-script": "1.10.0",
+    "concurrently": "3.5.0",
     "del": "2.2.2",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "3.1.1",
