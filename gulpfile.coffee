@@ -164,7 +164,7 @@ gulp.task 'version', false, ->
 
 
 gulp.task 'zip', 'Zip Stuff.', ->
-  gulp.src 'app/**/*'
+  gulp.src 'app/**/*', {nodir: true}
   .pipe $.zip 'ebs.zip'
   .pipe gulp.dest 'dist'
 
