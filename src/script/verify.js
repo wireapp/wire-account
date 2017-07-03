@@ -52,8 +52,9 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  var redirect = $('#url').data('redirect');
-  if (redirect) {
-    window.location.href = redirect;
+  var redirectApp = $('#url').data('redirect');
+  var redirectTeam = $('#url').data('redirect-team');
+  if (redirectApp) {
+    window.location.href = redirectApp;
   }
 };
