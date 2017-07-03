@@ -3,6 +3,8 @@ branch-defaults:
     environment: wire-account-prod
   staging:
     environment: wire-account-staging
+  team-create:
+    environment: wire-account-staging
 deploy:
   artifact: dist/wire-account.zip
 global:
