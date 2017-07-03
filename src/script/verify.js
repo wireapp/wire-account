@@ -40,6 +40,40 @@ window.initVerify = function() {
   }
 };
 
+window.checkForAccess = function() {
+  var backendUrl = $('#url').data('backend-url');
+  var teamsUrl = $('#url').data('redirect-teams');
+  if (backendUrl && teamsUrl) {
+    $.ajax({
+      url: backendUrl + '/access',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      xhrFields: {withCredentials: true}
+    }).done(function(data, status_text, xhr) {
+      redirectToTeams(backendUrl, teamsUrl, data);
+    });
+  }
+}
+
+window.redirectToTeams = function (backendUrl, teamsUrl, accessTokenData) {
+  $.ajax({
+    url: backendUrl + '/teams',
+    headers: {
+      'Authorization': accessTokenData.token_type + ' ' + accessTokenData.access_token,
+      'Content-Type': 'application/json',
+    }
+  }).done(function(data, status_text, xhr) {
+    var teams = data.teams.filter(function(team){
+      return team.binding === true;
+    });
+    if (teams[0]) {
+      window.location.href = teamsUrl;
+    }
+  });
+}
+
 window.verifyFail = function(status) {
   $('.loading').hide();
   if (status === 404) {
@@ -52,8 +86,9 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  var redirect = $('#url').data('redirect');
-  if (redirect) {
-    window.location.href = redirect;
+  checkForAccess();
+  var redirectApp = $('#url').data('redirect');
+  if (redirectApp) {
+    window.location.href = redirectApp;
   }
 };

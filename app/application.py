@@ -22,6 +22,7 @@ from datetime import datetime
 import logging
 import os
 import re
+import random
 
 from babel import localedata
 from flask_babel import lazy_gettext as _
@@ -43,6 +44,7 @@ application.config.from_object(config)
 application.jinja_env.line_statement_prefix = '#'
 application.jinja_env.globals.update(
   user_agent=util.user_agent,
+  random=random.random,
 )
 application.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = flask_babel.Babel(application)
