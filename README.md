@@ -20,6 +20,16 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 >  For account verifications and forgotten passwords.
 
+## Build Instructions
+
+1. Run `npm install`
+2. Run `npm start`
+3. Open [http://localhost:8080/](http://localhost:8080/)
+
+## Deployment
+
+1. Run `gulp dist`
+2. Upload zip file (from `dist/`) via [AWS console](https://console.aws.amazon.com/elasticbeanstalk/home)
 
 ### Translations
 
