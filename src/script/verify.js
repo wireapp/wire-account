@@ -40,6 +40,34 @@ window.initVerify = function() {
   }
 };
 
+window.postAccess = function() {
+  var baseUrl = $('#url').data('url');
+  $.ajax({
+    url: baseUrl + '/access',
+    method: 'POST'
+    xhrFields: {withCredentials: true}
+  }).done(function(data, status_text, xhr) {
+    checkTeam(baseUrl, data);
+  });
+}
+
+window.checkTeam = function (baseUrl, accessTokenData) {
+  $.ajax({
+    url: baseUrl + '/teams',
+    headers: {
+      'Authorization': accessTokenData.token_type + ' ' + accessTokenData.access_token,
+      'Content-Type': 'application/json',
+    }
+  }).done(function(data, status_text, xhr) {
+    var team = data.filter(function(team){
+      return team.binding === true;
+    });
+    if (team) {
+      // verify redirect to admin page
+    }
+  });
+}
+
 window.verifyFail = function(status) {
   $('.loading').hide();
   if (status === 404) {
