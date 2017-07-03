@@ -8,7 +8,8 @@
     "babel-update": "pybabel update -i app/translations/account.pot -d app/translations --no-wrap",
     "babel-compile": "pybabel compile -f -d app/translations",
     "babel": "npm run -s babel-extract && npm run -s babel-update && npm run -s babel-compile",
-    "crowdin": "npm run -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && npm run -s babel && crowdin-cli --identity=keys/crowdin.yaml download"
+    "crowdin": "npm run -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && npm run -s babel && crowdin-cli --identity=keys/crowdin.yaml download",
+    "deploy": "gulp build && eb deploy"
   },
   "repository": {
     "type": "git",

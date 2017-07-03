@@ -165,7 +165,7 @@ gulp.task 'version', false, ->
 
 gulp.task 'zip', 'Zip Stuff.', ->
   gulp.src 'app/**/*'
-  .pipe $.zip 'ebs.zip'
+  .pipe $.zip 'wire-account.zip'
   .pipe gulp.dest 'dist'
 
 
