@@ -20,6 +20,20 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 >  For account verifications and forgotten passwords.
 
+## Build Instructions
+
+1. Run `npm install`
+2. Run `npm start`
+3. Open [http://localhost:8080/](http://localhost:8080/)
+
+## Deployment
+
+- Run `npm run deploy`
+
+Depending on the branch name it will be automatically deployed to the following environments:
+
+- `master` -> `wire-account-prod`
+- `staging` -> `wire-account-staging`
 
 ### Translations
 

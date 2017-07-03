@@ -36,8 +36,8 @@ DOWNLOAD_WINDOWS_URL = os.environ.get('DOWNLOAD_WINDOWS_URL', 'https://wire-app.
 REDIRECT_VERIFY_URL = os.environ.get('REDIRECT_VERIFY_URL', 'wire://email-verified')
 REDIRECT_PHONE_URL = os.environ.get('REDIRECT_PHONE_URL', 'wire://verify-phone')
 REDIRECT_RESET_URL = os.environ.get('REDIRECT_RESET_URL', 'wire://password-reset-successful')
+TEAMS_URL = os.environ.get('TEAMS_URL', 'https://teams.wire.com')
 WEBAPP_URL = os.environ.get('WEBAPP_URL', 'https://app.wire.com')
-
 WIRE_URL = os.environ.get('WIRE_URL', 'https://wire.com')
 WIRE_DOWNLOAD_URL = os.environ.get('WIRE_DOWNLOAD_URL', 'https://wire.com/download/')
 
