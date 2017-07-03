@@ -46,7 +46,7 @@ window.postAccess = function() {
   if (baseUrl && teamsUrl) {
     $.ajax({
       url: baseUrl + '/access',
-      method: 'POST'
+      method: 'POST',
       xhrFields: {withCredentials: true}
     }).done(function(data, status_text, xhr) {
       checkTeam(baseUrl, teamsUrl, data);
