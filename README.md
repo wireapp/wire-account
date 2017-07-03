@@ -28,8 +28,12 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 ## Deployment
 
-1. Run `gulp dist`
-2. Upload zip file (from `dist/`) via [AWS console](https://console.aws.amazon.com/elasticbeanstalk/home)
+- Run `npm run deploy`
+
+Depending on the branch name it will be automatically deployed to the following environments:
+
+- `master` -> `wire-account-prod`
+- `staging` -> `wire-account-staging`
 
 ### Translations
 
