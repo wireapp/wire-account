@@ -151,6 +151,8 @@ gulp.task 'clean', 'Delete temporary files and compiled Python files.', ->
 gulp.task 'clean:dev', false, ->
   del 'app/static/dev/'
 
+gulp.task 'clean:dist', false, ->
+  del 'dist/'
 
 gulp.task 'clean:min', false, ->
   del 'app/static/min/'
@@ -171,3 +173,6 @@ gulp.task 'zip', 'Zip Stuff.', ->
 
 gulp.task 'build', 'Build to prepare for deployment.',
   $.sequence 'clean', 'ext', 'script', 'style', 'version', 'zip'
+
+gulp.task 'dist', 'Creates Elastic Beanstalk ZIP file for production uploads.',
+  $.sequence 'clean:dist', 'build'
