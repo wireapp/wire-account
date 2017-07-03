@@ -53,7 +53,7 @@ window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
   var redirectApp = $('#url').data('redirect');
-  var redirectTeam = $('#url').data('redirect-team');
+  var redirectTeams = $('#url').data('redirect-teams');
   if (redirectApp) {
     window.location.href = redirectApp;
   }

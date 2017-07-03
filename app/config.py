@@ -40,7 +40,6 @@ TEAMS_URL = os.environ.get('TEAMS_URL', 'https://teams.wire.com')
 WEBAPP_URL = os.environ.get('WEBAPP_URL', 'https://app.wire.com')
 WIRE_URL = os.environ.get('WIRE_URL', 'https://wire.com')
 WIRE_DOWNLOAD_URL = os.environ.get('WIRE_DOWNLOAD_URL', 'https://wire.com/download/')
-TEAM_ADMIN_URL = os.environ.get('TEAM_ADMIN_URL', 'https://teams.wire.com')
 
 try:
   with open(os.path.join(os.path.dirname(__file__), 'version')) as version:
