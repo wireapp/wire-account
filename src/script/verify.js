@@ -42,16 +42,19 @@ window.initVerify = function() {
 
 window.postAccess = function() {
   var baseUrl = $('#url').data('url');
-  $.ajax({
-    url: baseUrl + '/access',
-    method: 'POST'
-    xhrFields: {withCredentials: true}
-  }).done(function(data, status_text, xhr) {
-    checkTeam(baseUrl, data);
-  });
+  var teamsUrl = $('#url').data('redirect-teams');
+  if (baseUrl && teamsUrl) {
+    $.ajax({
+      url: baseUrl + '/access',
+      method: 'POST'
+      xhrFields: {withCredentials: true}
+    }).done(function(data, status_text, xhr) {
+      checkTeam(baseUrl, teamsUrl, data);
+    });
+  }
 }
 
-window.checkTeam = function (baseUrl, accessTokenData) {
+window.checkTeam = function (baseUrl, teamsUrl, accessTokenData) {
   $.ajax({
     url: baseUrl + '/teams',
     headers: {
@@ -63,7 +66,7 @@ window.checkTeam = function (baseUrl, accessTokenData) {
       return team.binding === true;
     });
     if (team[0]) {
-      // verify redirect to admin page
+      window.location.href = teamsUrl;
     }
   });
 }
@@ -80,8 +83,8 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
+  postAccess();
   var redirectApp = $('#url').data('redirect');
-  var redirectTeams = $('#url').data('redirect-teams');
   if (redirectApp) {
     window.location.href = redirectApp;
   }
