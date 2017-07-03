@@ -65,10 +65,10 @@ window.checkTeam = function (backendUrl, teamsUrl, accessTokenData) {
       'Content-Type': 'application/json',
     }
   }).done(function(data, status_text, xhr) {
-    var team = data.filter(function(team){
+    var teams = data.teams.filter(function(team){
       return team.binding === true;
     });
-    if (team[0]) {
+    if (teams[0]) {
       window.location.href = teamsUrl;
     }
   });
