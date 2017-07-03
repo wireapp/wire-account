@@ -47,6 +47,9 @@ window.checkForAccess = function() {
     $.ajax({
       url: backendUrl + '/access',
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       xhrFields: {withCredentials: true}
     }).done(function(data, status_text, xhr) {
       redirectToTeams(backendUrl, teamsUrl, data);
