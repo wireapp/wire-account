@@ -62,7 +62,7 @@ window.checkTeam = function (baseUrl, accessTokenData) {
     var team = data.filter(function(team){
       return team.binding === true;
     });
-    if (team) {
+    if (team[0]) {
       // verify redirect to admin page
     }
   });
