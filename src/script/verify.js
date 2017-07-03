@@ -41,22 +41,22 @@ window.initVerify = function() {
 };
 
 window.postAccess = function() {
-  var baseUrl = $('#url').data('url');
+  var backendUrl = $('#url').data('backend-url');
   var teamsUrl = $('#url').data('redirect-teams');
-  if (baseUrl && teamsUrl) {
+  if (backendUrl && teamsUrl) {
     $.ajax({
-      url: baseUrl + '/access',
+      url: backendUrl + '/access',
       method: 'POST',
       xhrFields: {withCredentials: true}
     }).done(function(data, status_text, xhr) {
-      checkTeam(baseUrl, teamsUrl, data);
+      checkTeam(backendUrl, teamsUrl, data);
     });
   }
 }
 
-window.checkTeam = function (baseUrl, teamsUrl, accessTokenData) {
+window.checkTeam = function (backendUrl, teamsUrl, accessTokenData) {
   $.ajax({
-    url: baseUrl + '/teams',
+    url: backendUrl + '/teams',
     headers: {
       'Authorization': accessTokenData.token_type + ' ' + accessTokenData.access_token,
       'Content-Type': 'application/json',
