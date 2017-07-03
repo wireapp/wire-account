@@ -40,7 +40,7 @@ window.initVerify = function() {
   }
 };
 
-window.postAccess = function() {
+window.checkForAccess = function() {
   var backendUrl = $('#url').data('backend-url');
   var teamsUrl = $('#url').data('redirect-teams');
   if (backendUrl && teamsUrl) {
@@ -49,12 +49,12 @@ window.postAccess = function() {
       method: 'POST',
       xhrFields: {withCredentials: true}
     }).done(function(data, status_text, xhr) {
-      checkTeam(backendUrl, teamsUrl, data);
+      redirectToTeams(backendUrl, teamsUrl, data);
     });
   }
 }
 
-window.checkTeam = function (backendUrl, teamsUrl, accessTokenData) {
+window.redirectToTeams = function (backendUrl, teamsUrl, accessTokenData) {
   $.ajax({
     url: backendUrl + '/teams',
     headers: {
@@ -83,7 +83,7 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  postAccess();
+  checkForAccess();
   var redirectApp = $('#url').data('redirect');
   if (redirectApp) {
     window.location.href = redirectApp;
