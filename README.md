@@ -30,7 +30,7 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 - Run `npm run deploy`
 
-Depending on the branch name it will be autoamtically deployed to the following environments
+Depending on the branch name it will be automatically deployed to the following environments:
 
 - `master` -> `wire-account-prod`
 - `staging` -> `wire-account-staging`
