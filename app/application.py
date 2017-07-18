@@ -362,6 +362,7 @@ def invite(invite):
   return flask.redirect(config.WIRE_DOWNLOAD_URL)
 
 
+@application.route('/t/<team_code>')
 @application.route('/t/<team_code>/')
 def team_invite(team_code):
   return flask.redirect('%s/join/?team-code=%s' % (config.TEAMS_URL, team_code))
