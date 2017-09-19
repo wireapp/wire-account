@@ -19,31 +19,36 @@
 
 .wbtn {
   display: inline-block;
-  padding: 0 24px;
-  margin: 0 8px;
-  height: 32px;
-  vertical-align: middle;
-  background-image: none;
-  background-color: @w-graphite-darker;
-  border: 0px solid transparent;
-  border-radius: 16px;
-  font-size: @font-size-small;
-  font-weight: 600;
-  line-height: 32px;
-  text-align: center;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  text-decoration: none;
+  padding: 0 32px;
+  margin: 0 4px;
+  color: #fff;
+  background-color: @w-graphite-dark;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,.12);
+  min-width: 240px;
+  max-width: 100%;
+  height: 48px;
   white-space: nowrap;
   overflow: hidden;
-  touch-action: manipulation;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 48px;
+  border: 0;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all .24s;
 
-  &.blue   {background-color: @w-blue;   &:hover {background-color: darken(@w-blue, 4%);   }}
-  &.green  {background-color: @w-green;  &:hover {background-color: darken(@w-green, 4%);  }}
-  &.orange {background-color: @w-orange; &:hover {background-color: darken(@w-orange, 4%); }}
-  &.red    {background-color: @w-red;    &:hover {background-color: darken(@w-red, 4%);    }}
-  &.yellow {background-color: @w-yellow; &:hover {background-color: darken(@w-yellow, 4%); }}
+  &.blue   { background-color: @w-blue; }
+  &.green  { background-color: @w-green; }
+  &.orange { background-color: @w-orange; }
+  &.red    { background-color: @w-red; }
+  &.yellow { background-color: @w-yellow; }
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+  }
 
   &,
   &:visited,

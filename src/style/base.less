@@ -28,18 +28,7 @@ html {
 }
 
 .container {
-  width: calc(100% - 8px);
+  max-width: @container-width;
   margin: 0 auto;
-
-  @media (min-width: @screen-sm) {
-    width: @screen-sm - 24px;
-  }
-
-  @media (min-width: @screen-md) {
-    width: @screen-md - 24px;
-  }
-
-  @media (min-width: @screen-lg) {
-    width: @screen-lg - 24px;
-  }
+  padding: 0 24px;
 }
