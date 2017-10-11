@@ -23,12 +23,13 @@
     # if user_agent().is.mobile
       <p>{{_('Install the app to start using Wire.')}}</p>
       {{utils.download_btn(_('Get Wire'), 'wbtn green', 'verify')}}
-    # elif user_agent().is.osx
+    # elif user_agent().is.desktop
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
-      <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
-    # elif user_agent().is.windows
-      <a class="wbtn green" href="{{config.WIRE_DOWNLOAD_URL}}">{{_('Open Wire')}}</a>
+        # if user_agent().is.linux or user_agent().is.windows
+          <a class="wbtn green" href="{{config.WIRE_DOWNLOAD_URL}}">{{_('Get Wire')}}</a>
+        # elif  user_agent().is.osx
+          <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
+        # endif
       <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
     # else
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
