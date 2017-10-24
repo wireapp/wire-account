@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: wire-account-prod
+    environment: wire-account-prod-next
   staging:
     environment: wire-account-staging
 deploy:
