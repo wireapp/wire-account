@@ -145,8 +145,8 @@ def index(url='/'):
   if util.user_agent()['is']['crawler']:
     return flask.render_template(
       'og.html',
-      title=u'Wire · Modern communication, full privacy. For iOS, Android, macOS, Windows, Linux and web.',
-      description=u'Call, message and share files. Secure and in sync across your phone, tablet and computer.',
+      title=u'Wire · %s' % _(u'Secure messenger'),
+      description=_(u'End-to-end encrypted chats, calls and files, protected by European privacy laws.'),
       redirect=target,
     )
 
