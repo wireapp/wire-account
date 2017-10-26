@@ -1,1 +1,5 @@
-<title>{% block title %}{{title + ' · ' if title}}{% endblock %} Wire</title>
+# if html_class == 'index'
+  {{title}}
+# else
+  <title>{% block title %}{{title + ' · ' if title}}{% endblock %} Wire</title>
+# endif

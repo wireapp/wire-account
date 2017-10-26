@@ -1,249 +1,1632 @@
-# German translations for PROJECT.
-# Copyright (C) 2016 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-10-26 14:35+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: de\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+#: app/config.py:169
+msgid "Basic Information"
+msgstr "Grundlegende Informationen"
 
-#: app/application.py:148
+#: app/config.py:170
+msgid "ToU Updates"
+msgstr "Änderung der Nutzungsbedingungen"
+
+#: app/config.py:171
+msgid "Provision of the service"
+msgstr "Bereitstellung der Dienste"
+
+#: app/config.py:172
+msgid "Discontinuation of service"
+msgstr "Einstellung der Dienste"
+
+#: app/config.py:173
+msgid "Accounts and Security"
+msgstr "Konten und Sicherheit"
+
+#: app/config.py:174
+msgid "Apps Use Requirements"
+msgstr "Nutzungsanforderungen für Apps"
+
+#: app/config.py:175
+msgid "License, Restrictions and Conditions of Use"
+msgstr "Lizenz, Beschränkungen und Nutzungsbedingungen"
+
+#: app/config.py:176
+msgid "Links"
+msgstr "Links"
+
+#: app/config.py:177
+msgid "Intellectual Property"
+msgstr "Geistiges Eigentum"
+
+#: app/config.py:178
+msgid "Submitted Content"
+msgstr "Übermittelte Inhalte"
+
+#: app/config.py:179
+msgid "Children"
+msgstr "Minderjährige"
+
+#: app/config.py:180
+msgid "Disclaimer of Warranties"
+msgstr "Gewährleistungsausschluss"
+
+#: app/config.py:181
+msgid "Limitation of Liability; Sole and Exclusive Remedy"
+msgstr "Haftungsbeschränkung; Einziges und ausschließliches Rechtsmittel"
+
+#: app/config.py:182
+msgid "Indemnification"
+msgstr "Entschädigung"
+
+#: app/config.py:183
+msgid "Governing Law; Jurisdiction"
+msgstr "Geltendes Recht; Gerichtsstand"
+
+#: app/config.py:184
+msgid "Dispute Resolution; Arbitration"
+msgstr "Streitbeilegung; Schiedsverfahren"
+
+#: app/config.py:185
+msgid "General Terms"
+msgstr "Allgemeine Bedingungen"
+
+#: app/config.py:186
+msgid "Utilizing Your Computer or Other Devices"
+msgstr "Nutzung deines Computers oder anderer Geräte"
+
+#: app/config.py:187 app/config.py:200
+msgid "Questions? Contact Us"
+msgstr "Fragen? Kontaktiere uns"
+
+#: app/config.py:188 app/templates/legal/legal.html:44
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#: app/config.py:192
+msgid "Our Privacy Commitment"
+msgstr "Unsere Datenschutz-Verpflichtung"
+
+#: app/config.py:193
+msgid "Conversation content"
+msgstr "Unterhaltungsinhalt"
+
+#: app/config.py:194
+msgid "Logs"
+msgstr "Log-Dateien"
+
+#: app/config.py:195
+msgid "Profile Information that you provide"
+msgstr "Zur Verfügung gestellt Profil-Informationen"
+
+#: app/config.py:196
+msgid "Additional technical data"
+msgstr "Zusätzliche technische Daten"
+
+#: app/config.py:197
+msgid "Optional data"
+msgstr "Optionale Daten"
+
+#: app/config.py:198
+msgid "Third parties"
+msgstr "Dritte Parteien"
+
+#: app/config.py:199
+msgid "Notification of Changes"
+msgstr "Benachrichtigung über Änderungen"
+
+#: app/config.py:201 app/templates/legal/legal.html:43
+msgid "Terms of Use"
+msgstr "Nutzungsbedingungen"
+
+#: app/control/site.py:37 app/control/site.py:159
 msgid "Secure messenger"
 msgstr "Sicherer Messenger"
 
-#: app/application.py:149
+#: app/control/site.py:39 app/control/site.py:161
 msgid "End-to-end encrypted chats, calls and files, protected by European privacy laws."
 msgstr "Ende-zu-Ende verschlüsselte Chats, Anrufe und Dateien, geschützt durch europäische Datenschutzgesetze."
 
-#: app/application.py:186
-msgid "Test"
-msgstr "Test"
+#: app/control/site.py:48 app/templates/bit/footer.html:3
+#: app/templates/bit/header.html:13 app/templates/download.html:152
+#: app/templates/security.html:139
+msgid "Download"
+msgstr "Herunterladen"
 
-#: app/application.py:205
-msgid "Verify Account"
-msgstr "Konto bestätigen"
+#: app/control/site.py:50
+msgid "Download Wire — Available for iOS, Android, macOS, Windows, Linux and web."
+msgstr "Wire herunterladen — Verfügbar für iOS, Android, macOS, Windows, Linux und im Browser."
 
-#: app/application.py:227
-msgid "Verify Bot"
-msgstr "Bot bestätigen"
+#: app/control/site.py:59 app/templates/bit/footer.html:11
+msgid "Jobs"
+msgstr "Jobs"
 
-#: app/application.py:244
-msgid "Verify Phone"
-msgstr "Telefonnummer bestätigen"
+#: app/control/site.py:61
+msgid "Join Wire and help us bring secure messaging to everyone."
+msgstr "Werde teil des Teams von Wire und hilf uns sichere Kommunikation für alle anzubieten."
 
-#: app/application.py:261
-msgid "That does not look like an email."
-msgstr "Dies sieht nicht nach einer E-Mail-Adresse aus."
+#: app/control/site.py:70 app/templates/bit/footer.html:4
+#: app/templates/bit/header.html:14
+msgid "Features"
+msgstr "Features"
 
-#: app/application.py:275
-msgid "This email is not in use."
-msgstr "Diese E-Mail wird nicht verwendet."
+#: app/control/site.py:72 app/control/site.py:150
+msgid "Secure chats, file sharing and calls for businesses and personal use."
+msgstr "Sichere Chats, Dateiaustausch und Anrufe für Unternehmen und den privaten Gebrauch."
 
-#: app/application.py:278
-msgid "We already sent you an email. The link is valid for 10 minutes."
-msgstr "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für 10 Minuten gültig."
+#: app/control/site.py:85
+msgid "Security & Privacy"
+msgstr "Sicherheit & Datenschutz"
 
-#: app/application.py:281 app/application.py:330
-msgid "Something went wrong, please try again."
-msgstr "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+#: app/control/site.py:87
+msgid "End-to-end encrypted, independently audited multi-device messaging."
+msgstr "Ende-zu-Ende verschlüsseltes, unabhängig geprüftes Messaging für mehrere Geräte."
 
-#: app/application.py:284 app/application.py:333
-msgid "That took longer than usual, please try again."
-msgstr "Das dauerte leider zu lange. Bitte versuche es erneut."
+#: app/control/site.py:99 app/templates/bit/footer.html:13
+msgid "About"
+msgstr "Über Uns"
 
-#: app/application.py:290
-msgid "Change Password"
-msgstr "Passwort Ändern"
+#: app/control/site.py:101
+msgid "The team behind the Europe-based, open source, secure messenger."
+msgstr "Das Team hinter dem in Europa ansässigen, sicheren Messenger mit offenem Quellcode."
 
-#: app/application.py:315
-msgid "Choose a password that is at least 8 characters."
-msgstr "Wähle ein Passwort mit mindestens acht Zeichen."
+#: app/control/site.py:110
+msgid "Integration API for Developers"
+msgstr "Entwickler-API für Integrationen"
 
-#: app/application.py:339
-msgid "Password reset"
-msgstr "Passwort zurücksetzen"
+#: app/control/site.py:112
+msgid "Integrate external services with Wire, secured with end-to-end encryption."
+msgstr "Integriere externe Dienste mit Wire, geschützt durch Ende-zu-Ende-Verschlüsselung."
 
-#: app/application.py:397 app/templates/account/delete.html:27
-msgid "Delete Account"
-msgstr "Benutzerkonto löschen"
+#: app/control/site.py:123 app/templates/bit/footer.html:12
+msgid "Legal"
+msgstr "Datenschutz und AGB"
 
-#: app/templates/account/delete.html:5
-msgid "Account deleted"
-msgstr "Benutzerkonto gelöscht"
+#: app/control/site.py:125
+msgid "Before using Wire, there are a few things you should know."
+msgstr "Bevor du Wire benutzt, gibt es einige Dinge, die du wissen solltest."
 
-#: app/templates/account/delete.html:6
-msgid "All your data on Wire is now erased."
-msgstr "Wir haben deine persönlichen Daten entfernt."
+#: app/control/site.py:137 app/templates/bit/footer.html:5
+#: app/templates/bit/header.html:15 app/templates/security.html:151
+msgid "Pricing"
+msgstr "Preise"
 
-#: app/templates/account/delete.html:9
-msgid "Thanks for using Wire."
-msgstr "Danke für die Nutzung von Wire."
+#: app/control/site.py:139
+msgid "5€ per user per month with annual billing. Free for personal use."
+msgstr "5€ monatlich pro User bei jährlicher Abrechnung. Kostenlos für den persönlichen Gebrauch."
 
-#: app/templates/account/delete.html:10
+#: app/control/site.py:148 app/templates/pricing.html:25
+msgid "Teams"
+msgstr "Teams"
+
+#: app/templates/about.html:6
+msgid "The team behind Wire."
+msgstr "Das Team hinter Wire."
+
+#: app/templates/about.html:12
+msgid "Wire’s vision is to provide secure messaging for everyone. Businesses and other organisations can be confident their communication is secure from prying eyes. And friends and family can talk freely without sacrificing their privacy."
+msgstr "Wires Vision ist die sichere Kommunikation für alle. Unternehmen und andere Organisationen vertrauen darauf, dass Kommunikation vor neugierigen Blicken geschützt ist. Freunde und Familien sollen frei sprechen können, ohne ihre Privatsphäre preiszugeben."
+
+#: app/templates/about.html:14
+msgid "Building with experience"
+msgstr "Entwickelt mit Erfahrung"
+
+#: app/templates/about.html:16
+msgid "We are a European company with over 50 employees from 23 nationalities and a wide range of backgrounds. Our people have previously worked at companies like Skype, IBM, Telio, Cisco, Fjord, SoundCloud, and Gameloft."
+msgstr "Wir sind eine europäische Firma mit mehr als 50 Mitarbeitern aus 23 Ländern und einem breit gefächerten Hintergrund. Unsere Mitarbeiter haben Erfahrungen bei Firmen wie Skype, IBM, Telio, Cisco, Fjord, SoundCloud und Gameloft gesammelt."
+
+#: app/templates/about.html:17
+msgid "Many in our team worked at Skype in the early days, helping to change the telecom landscape, and contributing to real-time communication technologies that became WebRTC — which now powers tools used daily by hundreds of millions of people."
+msgstr "Viele von uns waren Teil des ursprünglichen Skype-Teams, haben den Wandel der Telekommunikations-Landschaft maßgeblich vorangetrieben und an den Technologien zur Echtzeit-Kommunikation mitgewirkt, aus denen WebRTC entstanden ist — ein Standard, der heute von Hunderten von Millionen Menschen täglich genutzt wird."
+
+#: app/templates/about.html:18
+msgid "Building on that foundation, we’re ready to revolutionize secure messaging."
+msgstr "Auf dieser Grundlage aufbauend sind wir auf dem Weg, die sichere Kommunikation zu revolutionieren."
+
+#: app/templates/about.html:19
+msgid "Join our Berlin-based development team"
+msgstr "Werde Teil unseres Berliner Entwicklungsteams"
+
+#: app/templates/about.html:19
+msgid "we’re hiring"
+msgstr "wir stellen ein"
+
+#: app/templates/about.html:21
+msgid "Key people"
+msgstr "Personen"
+
+#: app/templates/about.html:27
+msgid "Co-founder"
+msgstr "Mitgründer"
+
+#: app/templates/about.html:27
+msgid "CEO"
+msgstr "CEO"
+
+#: app/templates/about.html:28
+msgid "Alan Duric is an experienced entrepreneur with a strong background in real-time communications. He’s the co-founder and CTO of Telio Holding ASA that is now listed on the Oslo stock exchange, and Camino Networks, which was acquired by Skype/eBay. Alan is an early pioneer of VoIP technologies and a driving force in the standardization of the speech codecs that led to the WebRTC standard, which revolutionized how real-time communication products are built today."
+msgstr "Alan Duric ist ein erfahrener Unternehmer mit einem starken Hintergrund in der Echtzeit-Kommunikation. Er war Mitgründer und CTO von Telio Holding ASA, inzwischen an der Osloer Börse notiert, und Camino Networks, die von Skype/eBay übernommen wurde. Alan ist ein Pionier von VoIP-Technologien und eine treibende Kraft hinter der Standardisierung der Sprach-Codecs, die zum WebRTC-Standard geführt haben, der heutige Echtzeit-Kommunikations-Anwendungen revolutioniert hat."
+
+#: app/templates/about.html:40
 #, python-format
-msgid "If you’d like, you can %(survey)s."
-msgstr "Du hilfst uns, indem du %(survey)s."
+msgid "Janus is a serial entrepreneur and investor. He’s the co-founder of Kazaa, Skype and Starship Technologies. Janus is an investor in Wire via [Iconical](%(iconical)s)."
+msgstr "Janus ist ein Serial-Entrepreneur und Investor. Er ist unter anderem Mitgründer von Kazaa, Skype und Starship Technologies. Janus investiert über [Iconical](%(iconical)s) in Wire."
 
-#: app/templates/account/delete.html:10
-msgid "share your thoughts about it"
-msgstr "Feedback"
+#: app/templates/about.html:45
+msgid "Offices"
+msgstr "Büros"
 
-#: app/templates/account/delete.html:11
-msgid "This will take no longer than a minute."
-msgstr "Dies dauert nicht länger als eine Minute."
+#: app/templates/about.html:49
+msgid "Berlin"
+msgstr "Berlin"
 
-#: app/templates/account/delete.html:15
-#: app/templates/account/verify_bot.html:26
-#: app/templates/account/verify_bot.html:31
-#: app/templates/account/verify_email.html:39
-#: app/templates/account/verify_email.html:44
-msgid "Something went wrong"
-msgstr "Ein Fehler ist aufgetreten"
+#: app/templates/about.html:49
+msgid "Germany"
+msgstr "Deutschland"
 
-#: app/templates/account/delete.html:16
-msgid "Please try again to delete your account."
-msgstr "Bitte versuche erneut, dein Benutzerkonto zu löschen."
+#: app/templates/about.html:53 app/templates/about.html:68
+#: app/templates/compare/other.html:133 app/templates/compare/other.html:137
+msgid "Switzerland"
+msgstr "Schweiz"
 
-#: app/templates/account/delete.html:20
-msgid "Hi there,"
-msgstr "Hi,"
+#: app/templates/about.html:59
+msgid "Get in touch"
+msgstr "Kontaktiere uns"
 
-#: app/templates/account/delete.html:21
-msgid "We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes."
-msgstr "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig."
+#: app/templates/about.html:63
+msgid "General"
+msgstr "Allgemein"
 
-#: app/templates/account/delete.html:26 app/templates/account/forgot.html:12
-#: app/templates/account/reset.html:32 app/templates/account/verify_bot.html:16
-#: app/templates/account/verify_email.html:16
-msgid "Please wait…"
-msgstr "Bitte warten…"
+#: app/templates/about.html:67
+msgid "Zug"
+msgstr "Zug"
 
-#: app/templates/account/delete.html:33
-#, python-format
-msgid "If you did not ask for this, you should %(forgot)s."
-msgstr "Falls du dies nicht selbst warst, solltest du %(forgot)s."
+#: app/templates/about.html:73
+msgid "Press"
+msgstr "Presse"
 
-#: app/templates/account/delete.html:33
-msgid "reset your Wire password"
-msgstr "dein Wire-Passwort zurücksetzen"
+#: app/templates/about.html:75
+msgid "Company information"
+msgstr "Firmeninformationen"
 
-#: app/templates/account/forgot.html:5
-msgid "Check your email"
-msgstr "Überprüfe deinen E-Mail Posteingang."
+#: app/templates/about.html:76
+msgid "Press inquiries"
+msgstr "Presse-Anfragen"
 
-#: app/templates/account/forgot.html:6
-msgid "We sent you a link to reset your password. It is valid for 10 minutes."
-msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist 10 Minuten gültig."
+#: app/templates/about.html:77
+msgid "Media contacts"
+msgstr "Medienkontakt"
 
-#: app/templates/account/forgot.html:10
-msgid "Email"
-msgstr "E-Mail"
+#: app/templates/about.html:82
+msgid "Business"
+msgstr "Geschäftlich"
 
-#: app/templates/account/forgot.html:13 app/templates/account/reset.html:24
-#: app/templates/account/reset.html:33
-msgid "Reset password"
-msgstr "Passwort zurücksetzen"
+#: app/templates/about.html:84
+msgid "Product inquiries"
+msgstr "Produkt-Anfragen"
 
-#: app/templates/account/reset.html:7
-msgid "You can now log in with your new password."
-msgstr "Du kannst dich jetzt mit deinem neuen Passwort anmelden."
+#: app/templates/about.html:85
+msgid "Partnerships"
+msgstr "Partnerschaften"
 
-#: app/templates/account/reset.html:9 app/templates/account/reset.html:13
-#: app/templates/account/verify_email.html:23
-#: app/templates/account/verify_email.html:27
-msgid "Get Wire"
-msgstr "Hol dir Wire"
+#: app/templates/about.html:86
+msgid "Sales questions"
+msgstr "Verkauf"
 
-#: app/templates/account/reset.html:11
-#: app/templates/account/verify_email.html:25
-#: app/templates/account/verify_email.html:33
-#: app/templates/account/verify_phone.html:5
-msgid "To sign in and start using Wire, launch the application."
-msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
+#: app/templates/about.html:93
+msgid "Logo and resources"
+msgstr "Logo und Ressourcen"
 
-#: app/templates/account/reset.html:15
-#: app/templates/account/verify_email.html:29
-msgid "OPEN macOS APP"
-msgstr "macOS APP HERUNTERLADEN"
+#: app/templates/about.html:96
+msgid "Official Wire logo and product images, free to use. For detailed brand guidelines, see [brand.wire.com](http://brand.wire.com)."
+msgstr "Offizielles Wire-Logo und Produktabbildungen zur freien Verwendung. Schaue auf [brand.wire.com](http://brand.wire.com) für detaillierte Brand-Guidelines."
 
-#: app/templates/account/reset.html:17
-#: app/templates/account/verify_email.html:31
-msgid "Open in Web"
-msgstr "Öffne im Browser"
+#: app/templates/about.html:120
+msgid "Product family"
+msgstr "Produkte"
 
-#: app/templates/account/reset.html:19
-#: app/templates/account/verify_email.html:34
-#: app/templates/account/verify_phone.html:6
-msgid "Open Wire"
-msgstr "Öffne Wire"
+#: app/templates/about.html:126
+msgid "Mobile"
+msgstr "Handy"
 
-#: app/templates/account/reset.html:22
-msgid "The link is no longer valid"
-msgstr "Der Link ist nicht mehr gültig"
+#: app/templates/about.html:132
+msgid "Desktop"
+msgstr "Desktop"
 
-#: app/templates/account/reset.html:23
-msgid "Please try again."
-msgstr "Bitte versuche es erneut."
+#: app/templates/about.html:140
+msgid "Download Press Kit"
+msgstr "Presskit herunterladen"
 
-#: app/templates/account/reset.html:30
-msgid "Enter new password"
-msgstr "Neues Passwort eingeben"
+#: app/templates/bit/footer.html:6 app/templates/bit/header.html:16
+msgid "Security"
+msgstr "Sicherheit"
 
-#: app/templates/account/verify_bot.html:15
-#: app/templates/account/verify_email.html:15
-msgid "Verifying"
-msgstr "Beim Überprüfen"
-
-#: app/templates/account/verify_bot.html:20
-msgid "Thank you for registering"
-msgstr "Vielen dank für die Registrierung"
-
-#: app/templates/account/verify_bot.html:21
-msgid "Please note that upon successful verification of your e-mail, your Wire service provider account is still subject to approval through our staff, which usually happens within 24 hours."
-msgstr ""
-
-#: app/templates/account/verify_bot.html:22
-msgid "You will be informed of the approval via a separate e-mail."
-msgstr ""
-
-#: app/templates/account/verify_bot.html:27
-#: app/templates/account/verify_email.html:40
-msgid "Please try to create your account again."
-msgstr "Bitte versuche erneut ein Konto zu erstellen."
-
-#: app/templates/account/verify_bot.html:32
-#: app/templates/account/verify_email.html:45
-msgid "We are investigating the issue, please check back shortly."
-msgstr "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal."
-
-#: app/templates/account/verify_email.html:20
-msgid "Account created"
-msgstr "Benutzerkonto erstellt"
-
-#: app/templates/account/verify_email.html:22
-msgid "Install the app to start using Wire."
-msgstr "Installiere die App, um Wire zu benutzen."
-
-#: app/templates/account/verify_phone.html:4
-msgid "Phone verification in progress"
-msgstr "Deine Telefonnummer wird bestätigt"
-
-#: app/templates/bit/header.html:8
+#: app/templates/bit/footer.html:7 app/templates/bit/header.html:17
 msgid "Support"
 msgstr "Hilfe"
 
-#~ msgid "What is Wire?"
-#~ msgstr "Was ist Wire?"
+#: app/templates/bit/footer.html:10
+msgid "Developers"
+msgstr "Entwickler"
+
+#: app/templates/bit/header.html:19
+msgid "Log in"
+msgstr "Login"
+
+#: app/templates/compare/business.html:6 app/templates/compare/business.html:18
+#: app/templates/compare/business.html:28
+#: app/templates/compare/business.html:38
+#: app/templates/compare/business.html:48
+#: app/templates/compare/business.html:58
+#: app/templates/compare/business.html:68
+#: app/templates/compare/business.html:78
+msgid "Cloud-based email"
+msgstr "Cloud-basierte E-Mail"
+
+#: app/templates/compare/business.html:26
+msgid "Europe based"
+msgstr "In Europa beheimatet"
+
+#: app/templates/compare/business.html:46 app/templates/compare/other.html:78
+msgid "Secure group calls"
+msgstr "Sichere Gruppenanrufe"
+
+#: app/templates/compare/business.html:56 app/templates/compare/other.html:87
+msgid "Secure screen sharing"
+msgstr "Bildschirm sicher teilen"
+
+#: app/templates/compare/other.html:24
+msgid "No data sharing with advertisers"
+msgstr "Keine Datenweitergabe an Werbeindustrie"
+
+#: app/templates/compare/other.html:33
+msgid "Phone number not required"
+msgstr "Telefonnummer nicht erforderlich"
+
+#: app/templates/compare/other.html:42
+msgid "Always-on verifiable E2EE"
+msgstr "Stets aktivierte, verifizierbare E2E-Verschlüsselung"
+
+#: app/templates/compare/other.html:51
+msgid "Multi-device support for E2EE"
+msgstr "Mehr-Geräte Unterstützung für E2E-Verschlüsselung"
+
+#: app/templates/compare/other.html:54 app/templates/compare/other.html:56
+#: app/templates/compare/other.html:57
+msgid "limited"
+msgstr "eingeschränkt"
+
+#: app/templates/compare/other.html:60
+msgid "Secure group chats"
+msgstr "Sichere Gruppenchats"
+
+#: app/templates/compare/other.html:72 app/templates/compare/other.html:74
+#: app/templates/compare/other.html:75
+msgid "mobile only"
+msgstr "nur mobil"
+
+#: app/templates/compare/other.html:96
+msgid "Constant bitrate encoding (CBR) for audio calls."
+msgstr "Constant-Bitrate-Encoding (CBR) für Audioanrufe."
+
+#: app/templates/compare/other.html:96 app/templates/compare/other.html:105
+msgid "More"
+msgstr "Mehr"
+
+#: app/templates/compare/other.html:105
+msgid "Secure share extension."
+msgstr "Sichere Share Extension."
+
+#: app/templates/compare/other.html:114
+msgid "Message edit and delete"
+msgstr "Nachricht bearbeiten und löschen"
+
+#: app/templates/compare/other.html:116 app/templates/compare/other.html:119
+msgid "delete only"
+msgstr "nur löschen"
+
+#: app/templates/compare/other.html:123
+msgid "Standalone desktop version"
+msgstr "Eigenständig nutzbare Desktopversion"
+
+#: app/templates/compare/other.html:132
+msgid "Company jurisdiction"
+msgstr "Firmensitz"
+
+#: app/templates/compare/other.html:134 app/templates/compare/other.html:135
+#: app/templates/compare/other.html:138
+msgid "USA"
+msgstr "USA"
+
+#: app/templates/compare/other.html:136
+msgid "unknown"
+msgstr "unbekannt"
+
+#: app/templates/create_team.html:5
+msgid "Secure your business."
+msgstr "Das Unternehmen sichern."
+
+#: app/templates/create_team.html:9 app/templates/pricing.html:34
+msgid "per user per month with annual billing.<br>6€ when billed monthly."
+msgstr "monatlich pro Nutzer bei jährlicher Abrechnung.<br>6€ bei monatlicher Abrechnung."
+
+#: app/templates/create_team.html:10
+msgid "Start a trial"
+msgstr "Jetzt unverbindlich testen"
+
+#: app/templates/create_team.html:11
+msgid "30-day free."
+msgstr "30 Tage kostenlos."
+
+#: app/templates/create_team.html:11
+msgid "No credit card required."
+msgstr "Kreditkarte nicht erforderlich."
+
+#: app/templates/create_team.html:12
+msgid "Exclusively available for teams"
+msgstr "Ausschließlich in Teams verfügbar"
+
+#: app/templates/developers.html:6
+msgid "End-to-end encrypted integration API."
+msgstr "Ende-zu-Ende verschlüsselte API für Integrationen."
+
+#: app/templates/developers.html:12
+msgid "Wire is the first messaging platform to offer an API for secure, end-to-end&nbsp;encrypted integrations."
+msgstr "Wire ist die erste Messaging-Plattform, die eine API für sichere, Ende-zu-Ende verschlüsselte Integrationen anbietet."
+
+#: app/templates/developers.html:16
+msgid "Reaching people where they spend more and more of their time — in communication apps — no longer needs to come at the expense of privacy or security. With Wire’s API, businesses, brands and independent developers can securely connect external services to millions of users."
+msgstr "Nutzer dort zu erreichen, wo sie immer mehr ihrer Zeit verbringen — in Kommunikations-Apps — geht nicht länger auf Kosten der Privatsphäre. Mit Wires API können Unternehmen, Marken und unabhängige Entwickler sicher externe Dienste für Millionen von Benutzern einbinden."
+
+#: app/templates/developers.html:17
+#, python-format
+msgid "The integration API is currently in beta with code examples and documentation [available on GitHub](%(github)s)."
+msgstr "Die API für Integrationen ist derzeit in der Betaphase. Code-Beispiele und Dokumentation sind [auf GitHub verfügbar](%(github)s)."
+
+#: app/templates/download.html:8
+msgid "Works on all the popular platforms."
+msgstr "Unterstützt alle gängigen Plattformen."
+
+#: app/templates/download.html:12
+msgid "Download for Android"
+msgstr "Für Android herunterladen"
+
+#: app/templates/download.html:14 app/templates/download.html:23
+#: app/templates/download.html:29 app/templates/download.html:36
+#: app/templates/download.html:66 app/templates/download.html:77
+#: app/templates/download.html:85 app/templates/download.html:94
+msgid "or newer"
+msgstr "oder neuer"
+
+#: app/templates/download.html:16 app/templates/download.html:37
+#: app/templates/download.html:68 app/templates/download.html:95
+#: app/templates/download.html:114
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/download.html:22
+msgid "DOWNLOAD FOR iOS"
+msgstr "FÜR iOS HERUNTERLADEN"
+
+#: app/templates/download.html:28
+msgid "DOWNLOAD FOR macOS"
+msgstr "FÜR macOS HERUNTERLADEN"
+
+#: app/templates/download.html:34
+msgid "Download for Windows"
+msgstr "Für Windows herunterladen"
+
+#: app/templates/download.html:43
+msgid "Experimental binary"
+msgstr "Experimentelle App"
+
+#: app/templates/download.html:46 app/templates/download.html:176
+msgid "Downloads"
+msgstr "Downloads"
+
+#: app/templates/download.html:52
+msgid "Open Wire for web"
+msgstr "Öffne Wire im Browser"
+
+#: app/templates/download.html:56 app/templates/unsupported.html:37
+msgid "or"
+msgstr "oder"
+
+#: app/templates/download.html:125
+msgid "Android APK details"
+msgstr "Android APK-Details"
+
+#: app/templates/download.html:127 app/templates/download.html:150
+#: app/templates/download.html:172
+msgid "Latest version"
+msgstr "Aktuelle Version"
+
+#: app/templates/download.html:129
+msgid "Play Store"
+msgstr "Play Store"
+
+#: app/templates/download.html:133
+msgid "Certificate fingerprint (SHA256)"
+msgstr "Zertifikat-Fingerabdruck (SHA256)"
+
+#: app/templates/download.html:137 app/templates/download.html:159
+msgid "File checksum (SHA256)"
+msgstr "Datei-Prüfsumme (SHA256)"
+
+#: app/templates/download.html:148
+msgid "Windows download details"
+msgstr "Windows Download-Details"
+
+#: app/templates/download.html:155
+msgid "Certificate fingerprint (SHA1)"
+msgstr "Zertifikat-Fingerabdruck (SHA1)"
+
+#: app/templates/download.html:170
+msgid "Linux download details"
+msgstr "Linux Download-Details"
+
+#: app/templates/download.html:181
+msgid "Install via Debian repository"
+msgstr "Installation über Debian Repository"
+
+#: app/templates/error.html:8
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: app/templates/error.html:9
+#, python-format
+msgid "Sorry, we are unable to find the page. Visit our [home page](%(index)s) or [get in touch](%(about)s) if you can’t find what you are after."
+msgstr "Entschuldige, wir können die gesuchte Seite nicht finden. Besuche unsere [Homepage](%(index)s) oder [kontaktiere uns](%(about)s), wenn du dort nicht fündig wirst."
+
+#: app/templates/features.html:5
+msgid "Made for all your conversations."
+msgstr "Für alle deine Unterhaltungen."
+
+#: app/templates/features.html:11
+msgid "Wire combines strong encryption, a rich feature set and ease-of-use in one app like never before. No compromises."
+msgstr "Wire vereint sichere Verschlüsselung mit reichhaltigem Funktionsumfang und einfacher Bedienung in einer einzigen App. Keine Kompromisse."
+
+#: app/templates/features.html:19
+msgid "Secure chats"
+msgstr "Sichere Chats"
+
+#: app/templates/features.html:21
+msgid "1:1 and groups of up to 128 people"
+msgstr "1:1 und Gruppen bis zu 128 Personen"
+
+#: app/templates/features.html:22
+msgid "Mute, archive or delete chats"
+msgstr "Stummschalten, archivieren, löschen"
+
+#: app/templates/features.html:23
+msgid "Edit and recall messages"
+msgstr "Nachrichten bearbeiten oder zurückrufen"
+
+#: app/templates/features.html:25 app/templates/features.html:38
+#: app/templates/features.html:51 app/templates/features.html:64
+#: app/templates/features.html:77 app/templates/features.html:90
+#: app/templates/features.html:103 app/templates/features.html:115
+#: app/templates/features/teams.html:14 app/templates/features/teams.html:28
+#: app/templates/features/teams.html:41 app/templates/index.html:19
+#: app/templates/index.html:63
+msgid "Learn more"
+msgstr "Erfahre mehr"
+
+#: app/templates/features.html:32
+msgid "Secure voice and video calls"
+msgstr "Sichere Sprach- und Videoanrufe"
+
+#: app/templates/features.html:34
+msgid "Crystal clear quality"
+msgstr "Glasklare HD-Anrufe"
+
+#: app/templates/features.html:35
+msgid "Group calls with 10 people"
+msgstr "Gruppenanrufe mit bis zu 10 Personen"
+
+#: app/templates/features.html:36
+msgid "Screen sharing 1:1 and in groups"
+msgstr "Bildschirm in 1:1- und Gruppenunterhaltungen teilen"
+
+#: app/templates/compare/business.html:66 app/templates/features.html:45
+#: app/templates/pricing.html:14
+msgid "Secure file sharing"
+msgstr "Sicherer Dateiaustausch"
+
+#: app/templates/features.html:47
+msgid "All file types supported"
+msgstr "Alle Dateitypen werden unterstützt"
+
+#: app/templates/features.html:48
+msgid "PDFs, DOC, XLS and more"
+msgstr "PDFs, DOC, XLS und andere"
+
+#: app/templates/features.html:49
+msgid "Browse shared files"
+msgstr "Geteilte Dateien durchsuchen"
+
+#: app/templates/features.html:58
+msgid "Synced between devices"
+msgstr "Alle Geräte auf dem selben Stand"
+
+#: app/templates/features.html:60
+msgid "Available for all major platforms"
+msgstr "Für gängige Plattformen verfügbar"
+
+#: app/templates/features.html:61
+msgid "Log in on up to 8 devices"
+msgstr "Auf bis zu 8 Geräten zeitgleich"
+
+#: app/templates/features.html:62
+msgid "Chats and files always in sync"
+msgstr "Chats und Dateien stets synchronisiert"
+
+#: app/templates/features.html:71
+msgid "Rich conversations"
+msgstr "Lebendige Unterhaltungen"
+
+#: app/templates/features.html:73
+msgid "Pictures, GIFs, emojis and likes"
+msgstr "Bilder, GIFs, Emojis und Reaktionen"
+
+#: app/templates/features.html:74
+msgid "Link previews, embedded videos"
+msgstr "Linkvorschau, eingebettete Videos"
+
+#: app/templates/features.html:75
+msgid "Format text with bold, italics, lists"
+msgstr "Texte fett, kursiv oder Listen formatieren"
+
+#: app/templates/features.html:84
+msgid "Voice and video messages"
+msgstr "Sprach- und Videonachrichten"
+
+#: app/templates/features.html:86
+msgid "Easy to send"
+msgstr "Einfach zu versenden"
+
+#: app/templates/features.html:87
+msgid "Optimized file sizes"
+msgstr "Optimierte Dateigröße"
+
+#: app/templates/features.html:88
+msgid "Audio filters for voice messages"
+msgstr "Audiofilter für Sprachnachrichten"
+
+#: app/templates/features.html:97
+msgid "Timed messages"
+msgstr "Temporäre Nachrichten"
+
+#: app/templates/features.html:99
+msgid "Self-destruct when timer runs out"
+msgstr "Selbstzerstörend nach Zeitablauf"
+
+#: app/templates/features.html:100
+msgid "Great for keeping conversations tidy"
+msgstr "Hält Unterhaltungen aufgeräumt"
+
+#: app/templates/features.html:101
+msgid "Perfect for sharing sensitive data"
+msgstr "Perfekt, um sensible Daten zu teilen"
+
+#: app/templates/features.html:109
+msgid "Sketch"
+msgstr "Sketch"
+
+#: app/templates/features.html:111
+msgid "Annotate images"
+msgstr "Annotierte Bilder"
+
+#: app/templates/features.html:112
+msgid "Freehand drawing tools"
+msgstr "Freihändiges Skizzieren"
+
+#: app/templates/features.html:113
+msgid "Great for quick, visual feedback"
+msgstr "Ideal für schnelles, visuelles Feedback"
+
+#: app/templates/features.html:119
+msgid "Teams — built for business"
+msgstr "Teams — entwickelt für Unternehmen"
+
+#: app/templates/features.html:126 app/templates/index.html:9
+#: app/templates/index.html:89 app/templates/pricing.html:36
+msgid "Create a team"
+msgstr "Team erstellen"
+
+#: app/templates/features.html:127 app/templates/index.html:90
+msgid "To use Wire at work."
+msgstr "Um Wire geschäftlich zu nutzen."
+
+#: app/templates/features.html:130 app/templates/index.html:93
+#: app/templates/pricing.html:19
+msgid "Get the app"
+msgstr "Herunterladen"
+
+#: app/templates/features.html:131 app/templates/index.html:94
+msgid "To use Wire with friends and family."
+msgstr "Um Wire privat zu nutzen."
+
+#: app/templates/features/teams.html:6
+msgid "Team administration"
+msgstr "Team-Verwaltung"
+
+#: app/templates/features/teams.html:8
+msgid "Add and remove people"
+msgstr "Personen hinzufügen und entfernen"
+
+#: app/templates/features/teams.html:9
+msgid "Assign roles to each user"
+msgstr "Zuweisung von Benutzerrollen"
+
+#: app/templates/features/teams.html:10
+msgid "Invite guests to specific chats"
+msgstr "Gäste in spezifische Chats einladen"
+
+#: app/templates/features/teams.html:22
+msgid "Self-hosting <em>(coming in 2018)</em>"
+msgstr "Eigene Server <em>(ab 2018)</em>"
+
+#: app/templates/features/teams.html:24
+msgid "Host Wire on your own server"
+msgstr "Wire auf eigenen Servern hosten"
+
+#: app/templates/features/teams.html:25
+msgid "Keep all user data on premises"
+msgstr "Daten vor Ort behalten"
+
+#: app/templates/features/teams.html:26
+msgid "Federation as an option"
+msgstr "Föderation als Option"
+
+#: app/templates/features/teams.html:35
+msgid "Secure integrations <em>(in beta)</em>"
+msgstr "Sichere Integrationen <em>(in Beta)</em>"
+
+#: app/templates/features/teams.html:37
+msgid "Developer support"
+msgstr "Entwickler-Unterstützung"
+
+#: app/templates/features/teams.html:38
+msgid "Open integration API"
+msgstr "Offene API für Integrationen"
+
+#: app/templates/features/teams.html:39
+msgid "Sample integrations and bots"
+msgstr "Beispiel-Integrationen und Bots"
+
+#: app/templates/features/teams.html:47
+msgid "History backup <em>(coming in 2018)</em>"
+msgstr "Gesprächsverläufe sichern <em>(ab 2018)</em>"
+
+#: app/templates/features/teams.html:49
+msgid "Managed history backup"
+msgstr "Gesprächsverläufe zentral speichern"
+
+#: app/templates/features/teams.html:50
+msgid "Sync history between devices"
+msgstr "Gesprächsverläufe synchronisieren"
+
+#: app/templates/features/teams.html:51
+msgid "Compliance exports &amp; admin control"
+msgstr "Compliance-Exporte &amp; Verwaltung"
+
+#: app/templates/index.html:5
+msgid "Secure messaging"
+msgstr "Sicherer Messenger"
+
+#: app/templates/index.html:5
+msgid "for everyone."
+msgstr "für alle."
+
+#: app/templates/index.html:7
+msgid "Business and personal conversations secured with&nbsp;end‑to‑end&nbsp;encryption and protected by European&nbsp;privacy&nbsp;laws."
+msgstr "Geschäftliche und private Unterhaltungen werden durch Ende-zu-Ende-Verschlüsselung geschützt und durch europäische Datenschutzgesetze abgesichert."
+
+#: app/templates/index.html:10
+#, python-format
+msgid "30-day free trial. Free for [personal use](%(pricing)s)."
+msgstr "Kostenlose 30-Tage-Testversion. Kostenlos für den [persönlichen Gebrauch](%(pricing)s)."
+
+#: app/templates/index.html:16
+msgid "Protected group chats"
+msgstr "Sichere Gruppenchats"
+
+#: app/templates/index.html:17
+msgid "Conversations, files and images stay in sync between your phone and computer — and everything is protected with end-to-end encryption."
+msgstr "Unterhaltungen, Dateien und Bilder werden stets zwischen Telefon und Computer synchronisiert — immer geschützt durch Ende-zu-Ende-Verschlüsselung."
+
+#: app/templates/index.html:18
+msgid "Create team- or project-based chats, and even involve external partners. Mute noisy channels and keep the list clean by archiving old ones."
+msgstr "Erstelle Team- oder Projekt-spezifische Chats und beziehe dort auch externe Partner ein. Schalte störende Unterhaltungen stumm und halte die Liste durch Archivieren übersichtlich."
+
+#: app/templates/index.html:33
+msgid "Crystal clear calls"
+msgstr "Glasklare HD-Anrufe"
+
+#: app/templates/index.html:34
+msgid "Enjoy encrypted conference calls with up to 10 people or switch to video for some face-to-face time. Share your screen in one-to-one and group calls to make sure everyone’s on the same page."
+msgstr "Verschlüsselte Telefonkonferenzen mit bis zu 10 Personen — oder wechsele zu Video für ein Gespräch unter vier Augen. Teile deinen Bildschirminhalt in 1-1 und Konferenzgesprächen, damit alle das Gleiche im Blick haben."
+
+#: app/templates/index.html:35
+msgid "Built by the original audio engineers from Skype."
+msgstr "Von den ursprünglichen Audio-Ingenieuren von Skype entwickelt."
+
+#: app/templates/index.html:43
+msgid "Two in one"
+msgstr "Zwei in Einem"
+
+#: app/templates/index.html:44
+msgid "Wire is the first secure messenger that lets you log in to one app with multiple accounts."
+msgstr "Wire ist der erste sichere Messenger, bei dem zeitgleich mehrere Benutzerkonten in einer App genutzt werden können."
+
+#: app/templates/index.html:45
+msgid "You can switch between work and personal conversations, and use different profiles for colleagues, business partners, and friends."
+msgstr "Der Wechsel zwischen geschäftlichen und privaten Unterhaltungen ist einfach und ermöglicht die Verwendung von verschiedenen Profilen für Kollegen, Geschäftspartnern und Freunden."
+
+#: app/templates/index.html:46
+msgid "You can also talk to people outside of your team, no matter if they are part of a different organization, or use a personal account."
+msgstr "Kommunikation mit Personen außerhalb des Teams geht auch, ob sie Teil einer anderen Organisation sind oder ein privates Konto nutzen."
+
+#: app/templates/index.html:60
+msgid "Teams mean business"
+msgstr "Arbeitssicherheit"
+
+#: app/templates/index.html:61
+msgid "Ugrade the security of your work communications to secure customer data and protect your business from competitors and hackers."
+msgstr "Verbessere die Sicherheit der Arbeits-Kommunikation, um Kundendaten und das Unternehmen vor Wettbewerbern und Hackern zu schützen."
+
+#: app/templates/index.html:62
+msgid "Wire teams provide access control features for admins to add new users, assign roles, invite guests to specific chats, and revoke access when people leave the company."
+msgstr "Mit Teams können Administratoren den Zugriff steuern: neue Benutzer hinzufügen, Rollen zuweisen, Gäste zu bestimmten Chats einladen und den Zugriff widerrufen beim Ausscheiden von Mitarbeitern aus dem Unternehmen."
+
+#: app/templates/index.html:69
+msgid "Wire compared with…"
+msgstr "Wire verglichen mit…"
+
+#: app/templates/index.html:72
+msgid "Business communication apps"
+msgstr "Apps zur Unternehmens-Kommunikation"
+
+#: app/templates/index.html:73
+msgid "Other popular messengers"
+msgstr "Andere beliebte Messenger"
+
+#: app/templates/index.html:83
+#, python-format
+msgid "Secure = Everything secured with [end-to-end encryption](%(security)s)."
+msgstr "Sicher = Alles wird durch [Ende-zu-Ende-Verschlüsselung](%(security)s) geschützt."
+
+#: app/templates/jobs.html:6
+msgid "Ready to build on security."
+msgstr "Baue mit uns auf Sicherheit."
+
+#: app/templates/jobs.html:12
+msgid "We’re building a secure, easy-to-use and feature-rich communication tool with the latest technologies — in public. Join us and help bring secure messaging to everyone."
+msgstr "Wir entwickeln ein sicherer, einfach zu bedienender Messenger mit den neuesten Technologien —  Open-Source und für alle einsehbar. Werde teil des Teams und hilf uns sichere Kommunikation für alle zu ermöglichen."
+
+#: app/templates/jobs.html:15
+msgid "Open positions"
+msgstr "Stellenangebote"
+
+#: app/templates/jobs.html:29
+msgid "Human Resources"
+msgstr "Personalabteilung (HR)"
+
+#: app/templates/jobs.html:36
+msgid "What makes Wire unique"
+msgstr "Was Wire einzigartig macht"
+
+#: app/templates/jobs.html:41
+msgid "Driven by a mission"
+msgstr "Angetrieben von einem Ziel"
+
+#: app/templates/jobs.html:42
+msgid "There’s a bigger idea that drives and motivates our team. We believe that everyone deserves privacy online — a space to talk freely, without being tracked and without our data being sold to the highest bidder."
+msgstr "Eine größere Idee motiviert uns und treibt unser Team täglich an. Wir stehen für die Online-Privatsphäre aller ein — freie Meinungsäußerung ohne Angst vor Verfolgung und ohne den Verkauf unserer Daten an den Höchstbietenden."
+
+#: app/templates/jobs.html:45
+msgid "Open source production code"
+msgstr "Quellcode vollständig Open-Source"
+
+#: app/templates/jobs.html:46
+#, python-format
+msgid "All our development is open to the public — collaborate with the team and follow our commits, pull requests, issues and discussions on [GitHub](%(github)s). Come work for us and you’ll have something to show for it."
+msgstr "Unsere Entwicklung ist für alle vollständig einsehbar — arbeite mit dem Team zusammen und verfolge unsere Commits, Pull-Requests, Issues und Diskussionen auf [GitHub](%(github)s). Schließe dich unserem Team an und mache deine Arbeit für alle sichtbar."
+
+#: app/templates/jobs.html:49
+msgid "Tech early adopters, design leaders"
+msgstr "Early-Adopter von Technologien, Design-Vorreiter"
+
+#: app/templates/jobs.html:50
+msgid "Wire was one of the first to adopt Swift for an app of this size. We use Scala on Android and Haskell on our backend. Our design team creates an elegant user experience with a distinct visual language that has earned us a German Design Award and several others."
+msgstr "Wire hat als einer der ersten Swift für eine App dieser Größe verwendet. Auf Android entwickeln wir mit Scala. Das Backend ist in Haskell geschrieben. Elegante Nutzererfahrung und klare visuelle Sprache führten zum Designpreis der Bundesrepublik Deutschland und weitere Auszeichnungen."
+
+#: app/templates/jobs.html:53
+msgid "Pick your own tools"
+msgstr "Wähle deine eigenen Tools"
+
+#: app/templates/jobs.html:54
+msgid "Developer teams are free to choose which continuous integration solution, infrastructure and services to use. You can be creative with new technologies and tools, and benefit from sharing knowledge with other teams."
+msgstr "Die Entwickler-Teams wählen CI-Lösungen, Infrastruktur und Dienste selbstständig. Lasse deiner Kreativität mit neuen Technologien und Tools freien Lauf und profitiere vom Wissensaustausch zwischen den Teams."
+
+#: app/templates/jobs.html:61
+msgid "Diversity of people and opinions"
+msgstr "Diversität von Menschen und Meinungen"
+
+#: app/templates/jobs.html:62
+msgid "Wire is an inclusive workplace that embraces cultural diversity, with people from over 20 different nationalities. We encourage minorities to apply. Our family-friendly environment provides flexible working hours."
+msgstr "Wire ist ein integrativer Arbeitsplatz, der kulturelle Vielfalt mit Menschen aus mehr als 20 Nationen lebt. Wir ermutigen Minderheiten sich zu bewerben. Unser familienfreundliches Umfeld bietet flexible Arbeitszeiten."
+
+#: app/templates/jobs.html:65
+msgid "Plenty of benefits"
+msgstr "Viele Vorteile"
+
+#: app/templates/jobs.html:66
+msgid "We offer regular catering from local chefs, a free wellness plan with weekly workouts and yoga classes in the office, massages, access to a well-stocked kitchen, rooftop BBQs in central Berlin, and safe indoor bike storage."
+msgstr "Wir bieten regelmäßiges Catering von lokalen Köchen, einen kostenlosen Wellness-Plan mit wöchentlichen Trainingseinheiten und Yoga-Kursen im Büro, Massagen, Grillen auf der Dachterrasse mit Blick über Berlin und eine sichere Fahrradaufbewahrung."
+
+#: app/templates/jobs.html:69
+msgid "Close communication with great customers"
+msgstr "Enge Kommunikation mit unseren Kunden"
+
+#: app/templates/jobs.html:70
+msgid "There’s nothing more motivating than the frank feedback from our customers — from small non-profits fighting for human rights around the world, to IT security companies, automotive giants, international business consultants and think tanks."
+msgstr "Nichts ist motivierender als das direkte und ehrliche Feedback unserer Kunden — von kleinen, gemeinnützigen Organisationen, die auf der ganzen Welt für Menschenrechte kämpfen über IT-Sicherheitsfirmen und Automobil-Riesen zu internationalen Wirtschaftsberatern und Denkfabriken."
+
+#: app/templates/jobs.html:73
+msgid "Tech talks and dev meet ups"
+msgstr "Tech-Talks und Entwickler Meet-Ups"
+
+#: app/templates/jobs.html:74
+msgid "Join our regular tech talks or hold one yourself. We’ve had external speakers from a space agency, a neuroscientist, an astrophysicist, and human rights activists in addition to a broad range of user groups and other tech events."
+msgstr "Nimm an unseren regelmäßigen Tech-Talks teil oder halte selbst einen. Zusätzlich zu einem breiten Spektrum an Nutzergruppen und anderen Tech-Veranstaltungen haben bislang externe Referenten wie eine Raumfahrtagentur, Neurowissenschaftler, Astrophysiker und Menschenrechtsaktivisten unseren Horizont erweitert."
+
+#: app/templates/legal/legal.html:6
+msgid "Explaining the important."
+msgstr "Wichtiges einfach erklärt."
+
+#: app/templates/legal/legal.html:9
+msgid "About Wire"
+msgstr "Zu Wire"
+
+#: app/templates/legal/legal.html:11
+msgid "Please read, understand and agree with the materials on this page before you use Wire."
+msgstr "Bitte lies und stimme allen Vereinbarungen auf dieser Seite zu, bevor du Wire verwendest."
+
+#: app/templates/legal/legal.html:12
+msgid "Sometimes we update these documents. If you do not agree with the changes, please stop using Wire."
+msgstr "Von Zeit zu Zeit aktualisieren wir diese Vereinbarungen. Wenn du mit den Änderungen nicht einverstanden bist, beende die Nutzung von Wire."
+
+#: app/templates/legal/legal.html:13
+msgid "You need an account for Wire. You can stop using the account or delete the app at any time."
+msgstr "Du benötigst ein Benutzerkonto für Wire. Dessen Benutzung kannst du jederzeit beenden oder die App löschen."
+
+#: app/templates/legal/legal.html:14
+msgid "Wire is used for private communication. When using it, you are required to abide by any applicable laws. You can not use Wire for unlawful or illegal, defamatory, harmful, abusive, hateful, racially or ethnically offensive purposes. If you violate these terms, we may disable your access to Wire."
+msgstr "Wire ist für private Kommunikation gedacht. Bei der Verwendung musst du geltende Gesetze einhalten. Wire darf nicht für rechtswidrige, verleumderische, verletzende, beleidigende, hassverbreitende, rassistische oder ethnisch offensive Zwecke genutzt werden. Wenn du gegen diese Bestimmungen verstößt, kann dein Zugang zu Wire gesperrt werden."
+
+#: app/templates/legal/legal.html:15
+msgid "We do not approve or endorse any content included in your conversations. We respect copyright and the intellectual property rights of others. You are responsible for the content of all of your conversations on Wire."
+msgstr "Wir beziehen keine Stellung zu Inhalten deiner Gesprächen oder billigen diese. Wir respektieren das Urheberrecht und die Rechte am geistigen Eigentum anderer. Du bist verantwortlich für den Inhalt aller deiner Unterhaltungen auf Wire."
+
+#: app/templates/legal/legal.html:19
+msgid "This was a brief summary of our Terms of Use. Read it below, this will form your agreement with us. If you have any questions about it, please contact us via"
+msgstr "Dies ist eine kurze Zusammenfassung unserer Nutzungsbedingungen. Lies die vollständige Fassung und stimme der Vereinbarung zu. Bei Fragen kontaktiere uns bitte über den"
+
+#: app/templates/legal/legal.html:20
+msgid "Wire Support"
+msgstr "Wire Support"
+
+#: app/templates/legal/legal.html:23
+msgid "About Privacy"
+msgstr "Zum Datenschutz"
+
+#: app/templates/legal/legal.html:25
+msgid "Your privacy is very important to us."
+msgstr "Deine Privatsphäre ist uns äußerst wichtig."
+
+#: app/templates/legal/legal.html:25
+msgid "Find out more"
+msgstr "Erfahre mehr"
+
+#: app/templates/legal/legal.html:26
+msgid "Your conversations belong to you, not to Wire or to anyone else."
+msgstr "Deine Unterhaltungen gehören dir und nicht Wire oder anderen."
+
+#: app/templates/legal/legal.html:27
+msgid "There are no ads. Therefore your personal data or the content of your conversations is never sold or rented to anyone, it will never be used for any third party advertising."
+msgstr "Wire ist frei von Werbung. Deine persönlichen Daten und der Inhalt deiner Unterhaltungen werden nicht verkauft, vermietet oder anderweitig weitergegeben. Sie werden zu keinem Zeitpunkt durch Dritte für Werbezwecke verwendet."
+
+#: app/templates/legal/legal.html:28
+msgid "We are transparent about the data we collect and what we do and don’t do with it. Anonymized (hashed) contact information from address books will only be used to connect users on Wire."
+msgstr "Wir bieten vollständige Transparenz über die gesammelten Daten und deren Verwendung. Die durch Hashing anonymisierten Kontaktinformationen aus Adressbüchern werden ausschließlich zum Verbinden von Benutzern auf Wire verwendet."
+
+#: app/templates/legal/legal.html:29
+msgid "Wire follows European privacy laws."
+msgstr "Wire hält sich an europäische Datenschutzgesetze."
+
+#: app/templates/legal/legal.html:33
+msgid "This was a brief summary of our Privacy Policy. Read it below. If you have any questions about it, please contact us at"
+msgstr "Dies ist eine kurze Zusammenfassung unserer Datenschutzrichtlinie. Unten findest du die vollständige Fassung. Bei Fragen kontaktiere uns bitte unter"
+
+#: app/templates/legal/legal.html:45
+msgid "License Information"
+msgstr "Lizenzen"
+
+#: app/templates/legal/legal_licenses.html:9
+msgid "under"
+msgstr "unter"
+
+#: app/templates/legal/legal_privacy.html:4
+#: app/templates/legal/legal_terms.html:7
+msgid "Table of contents"
+msgstr "Inhaltsverzeichnis"
+
+#: app/templates/legal/legal_terms.html:5
+msgid "Please read this agreement carefully; this is a binding contract."
+msgstr "Bitte lies diese Vereinbarung sorgfältig; dies ist ein bindender Vertrag."
+
+#: app/templates/md/legal/privacy/01.md:1
+msgid "Wire Swiss GmbH (“Wire”) is committed to protecting your information. Wire does not rent or sell your data to third parties. Your data is also not used for targeted ads, or any other kind of profiling."
+msgstr "Wire Swiss GmbH (\"Wire\") bekennt sich zum Schutz deiner Daten. Wire verkauft oder gibt deine Daten nicht an Dritte weiter. Deine Daten werden weder für personalisierte Werbung noch\n"
+" andere Arten der Profilerstellung genutzt."
+
+#: app/templates/md/legal/privacy/02.md:1
+msgid "All conversation content is encrypted with strong encryption on the sender’s device and is only decrypted on the recipient’s device (also known as end-to-end encryption). Wire doesn’t hold the decryption keys, and our software contains no backdoor. Your conversations are yours — Wire has no access to them.\n\n"
+"In addition, Wire also uses transport encryption to encrypt temporary metadata.\n\n"
+"Wire only temporarily stores encrypted messages on its servers for the purpose of allowing those messages to later be delivered to offline clients once the clients get back online."
+msgstr "Alle Gesprächsinhalte sind mit starker Verschlüsselung auf den Gerät des Absenders verschlüsselt und können nur auf dem Gerät des Empfängers (auch bekannt als Ende-zu-Ende Verschlüsselung) entschlüsselt werden. Wire kennt die zur Entschlüsselung notwendigen Schlüssel. Unsere Software enthält keine Hintertür. Deine Gespräche gehören dir — Wire hat keinen Zugang zu ihnen.\n\n"
+"Darüber hinaus verwendet Wire auch Transport-Verschlüsselung, um temporäre Metadaten zu verschlüsseln.\n\n"
+"Wire speichert die verschlüsselte Nachrichten nur vorübergehend auf ihren Servern um diese Nachrichten später an Geräte, die zum Zeitpunkt des Sendens offline sind, ausliefern zu können."
+
+#: app/templates/md/legal/privacy/03.md:1
+msgid "Logs are only kept for 72 hours, for the sole purpose of facilitating troubleshooting, improving the service and preventing abuse."
+msgstr "Logs werden nur 72 Stunden gespeichert und das auch nur, um eine schnelle Fehlerbehebung zu ermöglichen, den Dienst zu verbessern und Missbrauch zu verhindern."
+
+#: app/templates/md/legal/privacy/04.md:1
+msgid "When you create a personal account on Wire, we ask you to provide a name and a mobile phone number or email address. When you create a Team Admin or Team Member account on Wire, we may ask you to provide additional information for billing purposes and might share it with the billing provider if required. The profile data that you provide is used to provide and support the service, and might be shown to other Wire users when they search for you or want to connect to you. You can change or delete your profile information at any time.\n\n"
+"To make purchases through the Service using a Team Admin account, Team Admins will be required to provide a payment method and may be required to provide additional account details, such as a billing address, phone number, email address and zip code if required for tax reasons or by the billing provider. Certain types of personal information relating to the specific transaction may also be collected, such as transaction amount and time.\n\n"
+"If you provided an email address, Wire might send you an email to notify you of important changes (e.g. to confirm your email address or to notify you that a new device was added to your account)."
+msgstr "Beim Anlegen eines Wire-Accounts wirst du aufgefordert, deinen Namen, einen Benutzernamen sowie deine Handynummer oder E-Mail-Adresse anzugeben. Die von dir angegebenen Nutzerdaten werden verwendet, um unseren Dienst bereitzustellen und zu unterstützen. Wenn andere Nutzer nach dir suchen, werden ihnen nur dein Name, Benutzername und Profilbild angezeigt.\n"
+"Du kannst deine Nutzerdaten jederzeit ändern oder löschen.\n"
+"Falls du eine E-Mail-Adresse angibst, sendet dir Wire gegebenenfalls eine E-Mail, um dich über wichtige Änderungen zu informieren (zum Beispiel, um deine E-Mail-Adresse zu bestätigen oder dich darüber in Kenntnis zu setzen, dass ein neues Gerät zu deinem Account hinzugefügt wurde)."
+
+#: app/templates/md/legal/privacy/05.md:1
+msgid "Wire stores additional technical data (such as a reference to devices on which you use the Wire applications) to be able to route data between users’ devices. The Wire service is designed to keep additional technical data to the minimum required to operate the service.\n\n"
+"More information about additional data can be found in the [Privacy Whitepaper and the Security Whitepaper](https://wire.com/privacy/#transparency)."
+msgstr "Wire speichert zusätzliche technische Daten (wie einen Verweis auf Geräte, auf denen du die Wire-Anwendungen verwendest), um Daten zwischen den verschiedenen Geräten des Nutzers zu synchronisieren. Die Anwendungen von Wire sind so konzipiert, dass zum Betrieb des Dienstes möglichst wenige zusätzliche technische Daten erforderlich sind.\n\n"
+"Weitere Informationen zu technischen Daten stehen im [Privacy Whitepaper und Security Whitepaper](https://wire.com/privacy/#transparency) zur Verfügung."
+
+#: app/templates/md/legal/privacy/06.md:1
+msgid "Sharing data like address book contacts\\*, anonymous usage statistics, and crash logs is completely optional on your part. You can opt-out anytime (see  [FAQ](https://support.wire.com/hc/articles/115000593705)).\n\n"
+"If you agree to give Wire access to your address book contacts, only hashed email addresses and hashed phone numbers will be used to match you with other users. The content of your address book is never stored on our servers.\n\n"
+"\\**On Android versions prior to Android M (6.0), the default will be changed from opt-out to opt-in shortly.*"
+msgstr "Ob du Daten wie Adressbuchkontakte\\*, anonyme Nutzungsstatistiken und Crashlogs freigeben möchtest, liegt ganz bei dir. Die Freigabe dieser Daten kann jederzeit deaktiviert werden (siehe [FAQ](https://support.wire.com/hc/articles/115000593705)).\n\n"
+"Falls du Wire Zugriff auf deine Adressbuchkontakte gewährst, werden für den Abgleich mit anderen Nutzern ausschließlich E-Mail-Adressen und Telefonnummern mit Hashfunktion verwendet. Der Inhalt deines Adressbuches wird zu keinem Zeitpunkt auf unseren Servern gespeichert.\n\n"
+"\\**Auf Android-Versionen vor Android M (6.0) wird die Standardeinstellung in Kürze von „opt-out“ zu „opt-in“ geändert.*"
+
+#: app/templates/md/legal/privacy/07.md:1
+msgid "If you use third party services like YouTube, Spotify, Giphy etc. via the Wire application, any data you share with these services is subject to their privacy policy.\n\n"
+"Wire may use its affiliates and third party service providers to help it provide the Wire application and service.  In any such instance, Wire asks that such providers comply with this privacy policy and obligations with respect to confidentiality.\n\n"
+"Wire will only access and share your data if required by law or legal process, to provide the service or solve customer support requests, to enforce the Terms of Use and/or protects its rights.\n\n"
+"Wire may share your personal information and data with a third party in the event we (or our affiliates) merge with or any of our assets or voting securities (or those of our affiliates) are acquired by that third party, or if we are otherwise involved in a transaction with similar financial effect. In such a situation, we would make reasonable efforts to request that the third party or new combined entity or other structure or successor follow this privacy policy with respect to your personal information. If your personal information was thereafter intended to be used differently from what is described in this privacy policy, we would ask the third party or successor to provide you with prior notice."
+msgstr "Bei der Verwendung von Diensten wie YouTube, Spotify, Giphy etc. über die Wire-Anwendung unterliegen alle an diese Dienste freigegebenen Daten den Datenschutzrichtlinien des jeweiligen Drittanbieters.\n\n"
+"Wire arbeitet gegebenenfalls mit Partnerunternehmen und Drittanbietern zusammen, um diese dabei zu unterstützen die Anwendung und den Dienst von Wire zur Verfügung zu stellen. In einem solchen Fall fordert Wire den Anbieter auf, die Wire-Datenschutzrichtlinie und die Pflichten in Bezug auf die Vertraulichkeit einzuhalten.\n\n"
+"Der Zugriff auf deine sowie die Freigabe deiner Daten durch Wire erfolgt nur, falls dies per Gesetz oder Gerichtsverfahren erforderlich ist, um den Dienst bereit zu stellen oder Supportanfragen des Nutzers zu beantworten, die Nutzungsbedingungen geltend zu machen und/oder die Rechte von Wire zu schützen.\n\n"
+"Wire gibt personenbezogene Daten und Informationen gegebenenfalls an einen Dritten weiter, falls wir uns mit diesem Dritten zusammenschließen oder dieser Dritte unser Vermögen oder unsere stimmberechtigten Wertpapiere erwirbt (dasselbe gilt auch für unsere Partnerunternehmen bzw. das Vermögen und die stimmberechtigten Wertpapiere unserer Partnerunternehmen) oder falls wir auf andere Weise an einer Transaktion mit ähnlicher finanzieller Auswirkung beteiligt sind. In einem solchen Fall würden wir angemessene Schritte unternehmen, um zu verlangen, dass dieser Dritte oder diese neue kombinierte Einheit oder diese andere Struktur oder dieser Rechtsnachfolger diese Datenschutzrichtlinie im Hinblick auf deine personenbezogenen Daten befolgt. Falls deine personenbezogenen Daten im Anschluss daran anders als in dieser Datenschutzrichtlinie beschrieben genutzt werden sollen, würden wir den Dritten oder Rechtsnachfolger bitten, dich darüber im Voraus zu informieren."
+
+#: app/templates/md/legal/privacy/08.md:1
+msgid "This Privacy Policy may change from time to time and we will make the changed Privacy Policy available through the Apps and post changed version of this Privacy Policy on the Site. You agree to review Privacy Policy regularly to be aware of any changes. You agree that your continued use of our Service after changes become effective constitutes your acceptance of the revised Privacy Policy."
+msgstr "Diese Datenschutzerklärung kann von Zeit zu Zeit geändert werden. Die geänderte Datenschutzerklärung wird durch die Apps und die aktualisierte Version dieser Datenschutzerklärung auf der Website zur Verfügung gestellt. Du erklärst dich damit einverstanden, die Datenschutzerklärung regelmäßig zu überprüfen, um über etwaige Veränderungen informiert zu sein. Du erklärst dich damit einverstanden, dass du mit der weiteren Nutzung unserer Dienste nach dem Inkrafttreten von Änderungen dieser geänderten Datenschutzerklärung zustimmst."
+
+#: app/templates/md/legal/privacy/09.md:1
+msgid "If you have any questions about our privacy practices or this Privacy Policy, please contact us by email at [privacy@wire.com](mailto:privacy@wire.com)."
+msgstr "Bei Fragen zu unseren Datenschutzpraktiken oder dieser Datenschutzerklärung, schreibe bitte eine E-Mail an [privacy@wire.com](mailto:privacy@wire.com)."
+
+#: app/templates/md/legal/privacy/10.md:1
+msgid "Please read the Terms of Use governing the use of the Site and the Service, as they also govern the terms of this Privacy Policy."
+msgstr "Bitte lies die Nutzungsbedingungen hinsichtlich der Nutzung dieser Website und der Dienste, da diese auch die Bestimmungen dieser Datenschutzerklärung regeln."
+
+#: app/templates/md/legal/terms/01.md:1
+msgid "1.1 By accepting this Wire™ Terms of Use (“**ToU**”) there is a valid and binding agreement between Wire Swiss GmbH (the “**Company**,” “**we**,” “**us**,” or “**our**”) and You (“**you**,” “**your**,” or “**yourself**”). This ToU governs your use of the Company’s website at www.wire.com (the “**Site**”), mobile software applications (the “**Mobile App**”), desktop application (the “**Desktop App**”), and web application (the \"**Web App**\") (the Mobile App, Desktop App, Web App and the Open Source App defined below are collectively referred to as the \"**Apps**\"), that enable you to use the software and services offered by us. Your access and use of the Apps, our Site and of the features, software, products and services provided by the Company through the Apps or the Site (individually and collectively, the “**Service**”) is subject to the terms and conditions in this ToU. If you compile the open source software that we make available from time to time to develop your own mobile, desktop or web application, and cause that application to connect to our servers for any purposes, we refer to that resulting application as an \"**Open Source App**\".  All Open Source Apps are subject to, and may only be used and/or commercialized in accordance with, this ToU.\n\n"
+"1.2 You must agree to this ToU in order to use the Apps, the Site and/or the Service. If you use the Apps, the Site and/or the Service, or click to join and/or sign in or agree to this ToU if presented to you in a user interface for the Service, we will understand this as your acceptance of this ToU and your agreement to all of its terms and conditions. By accepting this ToU or using the Apps, the Site and/or the Service, you represent and warrant that you have the legal capacity to enter a contract in the jurisdiction where you reside. If you are minor and are 13 years of age or older,  you must have parental consent to create an account or access the Service. If you do not accept this ToU, then you may not use the Apps, the Site and/or the Service. If you are using the Apps, the Site and/or the Service on behalf of your employer or another entity, you represent and warrant that you have full legal authority to bind your employer or such other entity to this ToU. If you do not have such authority, then you may not use the Apps, the Site and/or the Service on behalf of your employer and you must discontinue all use of the Apps, the Site and/or the Service immediately.\n\n"
+"THESE TOU ARE GOVERNED BY THE LAWS SET FORTH IN *SECTION 15*, DEPENDING ON THE TERRITORY IN WHICH YOU USE THE SERVICE. **IF YOU ARE IN THE UNITED STATES, YOU AGREE THAT DISPUTES WILL BE RESOLVED BY BINDING ARBITRATION AS SET FORTH IN *SECTION 16* AND YOU WAIVE ANY RIGHT TO PARTICIPATE IN A CLASS-ACTION LAWSUIT OR CLASS-WIDE ARBITRATION.**"
+msgstr "1.1 Durch die Annahme dieser Nutzungsbedingungen von Wire™ („**NB**”) kommt es zu einem rechtsgültigen und verbindlichen Vertrag zwischen der Wire Swiss GmbH (das „**Unternehmen**,” „**wir**,” „**uns**,” oder „**unser**”) und dir („**du**,” „**dein**,” oder „**du selbst**”). Diese NB regeln deine Nutzung der Unternehmenswebsite auf www.wire.com (die „**Website**”), der mobilen Softwareanwendungen (die „**Mobile App**”), der Desktop-Anwendung (die „**Desktop-App**”) und der Web-Anwendung (die „**Web-App**”) (die Mobile App, die Desktop-App, die Web-App und die unten definierte Open Source-App zusammen die „**Apps**”), die dir die Nutzung der von uns angebotenen Software und Dienste ermöglichen. Dein Zugang zu den Apps, zu unserer Website und den Features, der Software, den Produkten und den Diensten, die vom Unternehmen durch die Apps oder die Website bereitgestellt werden (jeweils einzeln und zusammen die „**Dienste**”), sowie die Nutzung derselben unterliegt den Bedingungen in diesen NB. Wenn du die Open Source-Software, die wir von Zeit zu Zeit zur Verfügung stellen, kompilierst, um deine eigene mobile, Desktop- oder Web-Anwendung zu entwickeln, und mit dieser Anwendung zu beliebigen Zwecken eine Verbindung zu unseren Servern herstellst, bezeichnen wir die sich daraus ergebende Anwendung als „**Open Source-App**”. Alle Open Source-Apps unterliegen diesen NB und dürfen ausschließlich gemäß diesen genutzt und/oder vermarktet werden.\n\n"
+"1.2 Du musst diesen NB zustimmen, um die Apps, die Website und/oder die Dienste zu nutzen. Wenn du die Apps, die Website und/oder die Dienste nutzt, oder darauf klickst, um beizutreten und/oder um sich anzumelden, oder diesen NB zustimmst, wenn sie dir auf einer Benutzeroberfläche für die Dienste angezeigt werden, sehen wir das als deine Annahme dieser NB und deine Zustimmung zu allen darin enthaltenen Bedingungen. Durch die Annahme dieser NB oder durch die Nutzung der Apps, der Website und/oder der Dienste, gewährleistest und garantierst du, dass du die Geschäftsfähigkeit für den Abschluss von Verträgen in dem Rechtssystem hast, in dem du deinen Wohnsitz hast. Wenn du minderjährig und 13 Jahre oder älter bist, brauchst du die Zustimmung der Eltern, um einen Account einzurichten oder auf die Dienste zuzugreifen. Wenn du diesen NB nicht zustimmst, darfst du die Apps, die Website und/oder die Dienste nicht nutzen. Wenn du die Apps, die Website und/oder die Dienste im Namen deines Arbeitgebers oder einer anderen juristischen Person nutzt, gewährleistest und garantierst du, dass du die volle rechtliche Befugnis hast, deinen Arbeitgeber oder eine sonstige juristische Person an diese NB zu binden. Wenn du eine solche Befugnis nicht hast, dann darfst du die Apps, die Website und/oder die Dienste im Namen deines Arbeitgebers nicht nutzen und du musst jegliche Nutzung der Apps, der Website und/oder der Dienste unverzüglich einstellen.\n\n"
+"DIESE NB UNTERLIEGEN DEN IN *ABSCHNITT 15* GENANNTEN GESETZEN UND SIND VOM GEBIET ABHÄNGIG, IN DEM DU DIE DIENSTE NUTZT."
+
+#: app/templates/md/legal/terms/02.md:1
+msgid "The Company may update and amend this ToU at any time and the Company will make the updated ToU available through the Apps and post the updated version of this ToU on the Site. You understand and agree that you will be deemed to have accepted the updated ToU if you use the Apps, the Site and/or the Service after the updated ToU is made available to you. If at any point you do not agree to any portion of the ToU then in effect, you should immediately stop using the Apps, the Site and/or the Service."
+msgstr "Das Unternehmen kann diese Nutzungsbedingungen jederzeit aktualisieren und ändern und das Unternehmen wird die aktualisierten Nutzungsbedingungen durch die Apps zur Verfügung stellen und die aktualisierte Version dieser Nutzungsbedingungen auf der Website veröffentlichen. Du verstehst und bist damit einverstanden, dass davon ausgegangen wird, dass du den aktualisierten Nutzungsbedingungen zugestimmt hast, wenn du die Apps, die Website und/oder die Dienste nutzt, nachdem dir die aktualisierten Nutzungsbedingungen zur Verfügung gestellt wurden. Wenn du zu irgendeinem Zeitpunkt mit einem Abschnitt der Nutzungsbedingungen, der zu diesem Zeitpunkt in Kraft ist, nicht einverstanden bist, solltest du sofort die Nutzung der Apps, der Website und/oder der Dienste beenden."
+
+#: app/templates/md/legal/terms/03.md:1
+msgid "You are solely responsible for all data, SMS and mobile carrier charges in connection with the mobile phones on which you have installed the Mobile App. You are responsible for any Internet connection and telecommunications fees and charges that you incur when accessing the Service or using the Desktop App and/or the Web App. You acknowledge and agree that the Company may make changes to the Apps, the Site and/or the Service at any time without notifying you in advance."
+msgstr "Du bist allein verantwortlich für alle Daten-, SMS- und Mobilfunkbetreibergebühren im Zusammenhang mit den Mobiltelefonen, auf denen Du die Mobile-App installiert hast. Du bist verantwortlich für alle Internetverbindungs- und Telekommunikationsgebühren und -kosten, die dir entstehen, wenn du auf die Dienste zugreifst oder die Desktop-App und/oder die Web-App nutzt. Du erkennst an und bist damit einverstanden, dass das Unternehmen jederzeit Änderungen an den Apps, der Website und/oder den Diensten vornehmen kann, ohne dich im Voraus zu benachrichtigen."
+
+#: app/templates/md/legal/terms/04.md:1
+msgid "The Company reserves the right to deny service to any person or entity at the Company’s sole and absolute discretion. You acknowledge and agree that the Company may stop providing the Apps, the Site and/or the Service or restrict your use of the Apps, the Site and/or the Service any time, without notifying you in advance, for any reason or no reason including, without limitation, for any violation of this ToU and/or if the Company suspects that you have used any aspect of the Service to conduct any fraudulent or illegal activity. If the Company disables your access to your account, you may be prevented from accessing the Service, your account details or any materials contained in your account."
+msgstr "Das Unternehmen behält sich das Recht vor, jeder natürlichen oder juristischen Person die Nutzung der Dienste nach eigenem und ausschließlichen Ermessen zu verweigern. Du erkennst an und bist damit einverstanden, dass das Unternehmen die Bereitstellung der Apps, der Website und/oder der Dienste einstellen kann oder deine Nutzung der Apps, der Website und/oder der Dienste mit oder ohne Angabe von Gründen einschränken kann, ohne dich im Voraus zu benachrichtigen. Zu diesen Gründen gehören unter anderem ein Verstoß gegen diese NB und/oder, wenn das Unternehmen vermutet, dass du eine Komponente der Dienste dazu genutzt hast, eine betrügerische oder illegale Handlung zu begehen. Wenn das Unternehmen den Zugang zu deinem Konto sperrt, könnte es sein, dass du nicht auf die Dienste, deine Kontodaten oder auf in deinem Konto enthaltene Inhalte zugreifen kannst."
+
+#: app/templates/md/legal/terms/05.md:1
+msgid "5.1 **Account**. To access the Service, you must have an account. Additionally, to utilize the Team Management Functionality, you must have an account linked to a Team. You can create an account by completing the registration process, which requires you to enter personal information, such as your name, phone number or email address. You will also have the option of uploading a profile picture and other information. You agree to submit information that belongs to you for service provisioning of your account. You agree that if you give the Apps permission to access your address book, anonymized phone numbers and emails from the address book will be uploaded to the Service for the purpose of connecting users. On certain platforms, it might be necessary to grant such permission in order to install the Apps, but this permission can be revoked after installation.\n\n"
+"5.2 **Fees**. If you are a Team Admin, you agree to pay all applicable fees and taxes incurred by you or anyone using your account or the accounts of your Team Members, including, without limitation, fees relating to transactions processed by your account or the accounts of your Team Members.  Unless otherwise noted, all currency references are in Euros.  All fees and charges are payable in accordance with the payment terms agreed to by you when establishing your Team Admin account. We may, from time to time, modify, amend, or supplement our rates, payment terms and billing procedures, and such changes shall be effective immediately upon posting a link to an update of this ToU or posting such changes elsewhere on the Site or the Apps. If there is a dispute regarding your payment of fees, or the Service, we shall have the right to terminate your account without prior notice. YOU ACKNOWLEDGE AND AGREE THAT ANY APPLICABLE FEES AND OTHER CHARGES ARE NON-REFUNDABLE BY COMPANY IN WHOLE OR IN PART UNLESS SPECIFIED OTHERWISE. YOU ARE FULLY LIABLE FOR ALL CHARGES TO YOUR ACCOUNT, INCLUDING ANY UNAUTHORIZED CHARGES.\n\n"
+"5.3 **Team Member Account Sharing or Transfers**. Team Admin and Team Member accounts are registered to a Team and may not be sold, traded, gifted or otherwise transferred at any time under any circumstances.  Team Admins and Team Members should not share accounts with, or disclose their passwords to, anyone else. If you are a Team Member, you acknowledge and agree that a Team Admin will have administrative controls over your account, including, without limitation, the ability manage your access to the account and the Apps as a Team Member.\n\n"
+"5.4 **Cancellation**. Team Admins may cancel your account or any account associated with any of your Team Members, at any time.  Team Admins may cancel such accounts by following the cancel instructions in the Apps.  Once you cancel a Team Member account, the Team Member’s personal information will no longer be viewable by other users.  However, information previously shared by the cancelled Team Member with other Team Members will remain viewable by those Team Members until they delete such information. Once a Team is cancelled all associated Team Member accounts will be cancelled as well and you may no longer have access to the content shared among the Team Members.\n\n"
+"5.5 **Removing Accounts**. We reserve the right to remove inactive accounts. Accounts are considered to be inactive when they are a) free accounts that haven’t been used for a long period of time (as determined by us in our reasonable discretion) or b) accounts linked to a Team that are no longer paid for.\n\n"
+"5.6 **Account Disabling by the Company**. The Company may at any time disable your account (including any Team Admin or Team Member account). The Company’s disabling of your account may result in the deletion of certain content on the Service and you may no longer have access to certain content; however, some content, such as your chat conversations with other users, will remain viewable by those users. The Company may choose to disable your account if:\n"
+"a. The Company determines that you are (a) in breach of or otherwise acting inconsistently with this ToU or (b) engaging in fraudulent or illegal activities or other conduct that may result in liability to the Company; b. The Company determines it is required by law to disable your account; or c. The Company decides to stop providing the Service or critical portions of the Service in the country where you reside, use the Apps, access the Site or use the Service or the Company determines that it is no longer in its business interests to continue providing the Service or critical portions of the Service.\n\n"
+"5.7 **Effect of Account Disabling or Cancellation**. Accounts disabled by the Company, including for any type of abuse (including without limitation a violation of this ToU), may not be able to be reactivated. If you voluntarily terminate your account or allow your account to lapse, you may reactivate that account by contacting us through Customer Support. Notwithstanding the disabling or termination of your account, the terms of this ToU will survive and continue to apply to you."
+msgstr "5.1 **Konto**. Um auf die Dienste zuzugreifen, musst du ein Konto haben. Du kannst ein Konto erstellen, indem du den Registrierungsvorgang abschließt. Dieser erfordert, dass du persönliche Daten, wie etwa deinen Namen, deine Telefonnummer oder E-Mail-Adresse, eingibst. Du hast auch die Möglichkeit, ein Profilbild oder andere Informationen hochzuladen. Du bist damit einverstanden, Informationen zu übermitteln, die dir gehören, damit deinem Konto Dienste bereitgestellt werden können. Du bist damit einverstanden, dass wenn du es der App erlaubst, auf dein Adressbuch zuzugreifen, anonymisierte Telefonnummern und E-Mail-Adressen aus dem Adressbuch an den Dienst hochgeladen werden, damit Nutzer kontaktiert werden können. Auf bestimmten Plattformen kann es notwendig sein, eine solche Erlaubnis zu erteilen, um die App zu installieren, jedoch kann diese Erlaubnis nach der Installation widerrufen werden.\n\n"
+"5.2 **Konten entfernen**. Wir behalten uns das Recht vor, ein Konto zu entfernen, das für eine längere Zeit nicht genutzt wurde (wie von uns nach billigem Ermessen festgelegt).\n\n"
+"5.3 **Kontosperrung durch das Unternehmen**. Das Unternehmen kann jederzeit dein Konto sperren. Das Sperren deines Kontos seitens des Unternehmens kann zur Löschung bestimmter Inhalte innerhalb des Dienstes führen und du hättest möglicherweise keinen Zugriff mehr auf bestimmte Inhalte; jedoch bleiben einige Inhalte, wie beispielsweise deine Chat-Gespräche mit anderen Nutzern, für diese Nutzer sichtbar. Das Unternehmen kann beschließen, dein Konto zu sperren, wenn:\n\n"
+"a. Das Unternehmen feststellt, dass du (a) gegen diese NB verstößt oder dein Handeln in einer anderen Weise mit diesen unvereinbar ist oder (b) dich an betrügerischen oder illegalen Handlungen beteiligst oder ein anderes Verhalten zeigst, das zur Haftung gegenüber dem Unternehmen führen kann; b. Das Unternehmen feststellt, dass es gesetzlich erforderlich ist, dein Konto zu sperren; oder c. Das Unternehmen beschließt, die Bereitstellung der Dienste oder entscheidende Teile der Dienste in dem Land, in dem du deinen Wohnsitz hast, die Apps nutzt, auf die Website zugreifst oder die Dienste nutzt, einzustellen, oder das Unternehmen beschließt, dass es nicht mehr in seinen Geschäftsinteressen liegt, die Bereitstellung der Dienste oder entscheidender Teile der Dienste fortzusetzen.\n\n"
+"5.4. **Auswirkungen der Kontosperrung**. Konten, die durch das Unternehmen gesperrt wurden, dazu gehören auch solche, die wegen irgendeiner Art von Missbrauch (einschließlich, aber nicht beschränkt auf einen Verstoß gegen diese NB) gesperrt wurden, können möglicherweise nicht wieder aktiviert werden. Ungeachtet der Sperrung oder Kündigung deines Kontos bestehen die Bestimmungen dieser NB fort und gelten für dich weiter."
+
+#: app/templates/md/legal/terms/06.md:1
+msgid "6.1 **Installation**. To use the Apps, you will be required to install the Mobile App on one or more mobile devices that you or your organization own or control and/or install the Desktop App on one or more computers that you or your organization own or control and that meet the minimum specifications provided by the Company. The Web App can be used in all supported browsers, no installation is required.\n\n"
+"6.2 **Updates**. The Company may require that you download and install updates to the Apps from time to time. You acknowledge and agree that the Company may update the Apps with or without notifying you and add or remove features or functions to the Apps at any time in its sole discretion. You acknowledge and agree that the Company has no obligation to make the Apps available to you, make any subsequent versions of the Apps available to you or to continue to support the Apps in any way. You acknowledge that your access to the Apps may not be continuous, features may change during your use of the Apps, and the Company may terminate your access to the Apps or stop offering the Apps at any time.\n\n"
+"6.3 **Agreements**. You acknowledge that you may only use the Apps in connection with the Service provided through the Apps in accordance with this Agreement. The requirements hereunder and this Agreement may change as the Apps and/or Service evolve.\n\n"
+"6.4 **Independent Apps**. If you desire to cause your Independent App to utilize and connect to our servers for any purposes, then, as a condition to your use of our servers and network infrastructure, your Independent App must comply with and may only be used in accordance with this ToU. Additionally, certain additional restrictions apply to any such App, as follows:\n"
+"a. You agree not to change the way the Independent App connects and interacts with our servers; b. You agree not to weaken any of the security features of the Independent App; c. You agree not to use our servers to store data for purposes other than the intended and original functionality of our source code underlying your Independent App; d. You acknowledge that you are solely responsible for any and all updates to your Independent App. For clarity, if you compile the open source software that we make available from time to time to develop your own mobile, desktop or web application, and do not cause that application to connect to our servers for any purposes, then that Independent App will not be limited under this ToU and this ToU will not apply to that application."
+msgstr "6.1 **Installation**. Um die Apps zu nutzen, ist es erforderlich, dass du die Mobile-App auf einem oder mehreren Mobilgeräten, die dir gehören bzw. die du bedienst, installierst und/oder die Desktop-App auf einem oder mehreren Computern, die dir gehören bzw. die du bedienst, und die die vom Unternehmen angegebenen Mindestanforderungen erfüllen, installierst. Die Web-App kann in allen unterstützten Browsern genutzt werden, es ist keine Installation erforderlich.\n\n"
+"6.2 **Aktualisierungen**. Das Unternehmen kann verlangen, dass du Aktualisierungen für die Apps von Zeit zu Zeit herunterlädst und installierst. Du erkennst an und bist damit einverstanden, dass das Unternehmen die Apps aktualisieren kann. Dies kann mit oder ohne Benachrichtigung erfolgen. Außerdem kann es die Apps jederzeit um Features oder Funktionen nach eigenem Ermessen erweitern. Du erkennst an und bist damit einverstanden, dass das Unternehmen nicht verpflichtet ist, dir die Apps zur Verfügung zu stellen, dir Folgeversionen der Apps zur Verfügung zu stellen oder die Apps in irgendeiner Weise weiterhin zu unterstützen. Du erkennst an, dass dein Zugriff auf die Apps möglicherweise nicht ununterbrochen ist, Features sich während deiner Nutzung der Apps ändern können, und dass das Unternehmen jederzeit deinen Zugriff auf die Apps beenden kann oder aufhören kann, die Apps anzubieten.\n\n"
+"6.3 **Vereinbarungen**. Du erkennst an, dass du die Apps ausschließlich im Zusammenhang mit den Diensten nutzen kannst, die durch die Apps gemäß dieser Vereinbarung angeboten werden. Die hierin enthaltenen Anforderungen und diese Vereinbarung können sich mit der Weiterentwicklung der Apps und/oder Dienste ändern.\n\n"
+"6.4 **Open Source-Apps**. Wenn du eine Open Source-App erstellen möchtest, gelten bestimmte Beschränkungen, die im Folgenden aufgeführt sind:\n"
+"a. Du bist damit einverstanden, keine Änderungen daran vorzunehmen, wie sich die Open Source-App mit unseren Servern verbindet und wie sie mit diesen interagiert; b. du bist damit einverstanden, keine Sicherheitsmerkmale der Open Source-App einzuschränken; c. du bist damit einverstanden, unsere Server nicht zum Speichern von Daten zu nutzen, ausgenommen für die Zwecke der vorgesehenen und ursprünglichen Funktionen der Open Source-App; d. du erkennst an, dass du für alle Updates deiner Open Source-App allein verantwortlich bist. Zur Klarstellung: Wenn du die Open Source-Software, die wir von Zeit zu Zeit zur Verfügung stellen, kompilierst, um deine eigene mobile, Desktop- oder Web-Anwendung zu entwickeln, und mit dieser Anwendung keine Verbindung zu beliebigen Zwecken zu unseren Servern herstellst, gilt diese Anwendung nicht als Open Source-App gemäß diesen NB und diese NB gelten nicht für diese Anwendung."
+
+#: app/templates/md/legal/terms/07.md:1
+msgid "7.1 **License for Personal Use**. Subject to the terms and conditions of this Agreement and for the sole purpose of using the Service, the Company hereby grants you a limited, non-exclusive, revocable, non-sublicensable, non-transferable license to (i) install the Mobile App on one or more mobile devices which are owned by you, are under your control and which meet the Company’s minimum specifications; (ii) install the Desktop App on one or more computers which are owned by you, are under your control and which meet the Company’s minimum specifications; and (iii) view, review and utilize the Apps and any related information provided to you by the Company.\n\n"
+"7.2 **License for Team Use**. Subject to the terms and conditions of this Agreement, the Company hereby grants you or your organization, as applicable, to the extent you are Team Admin or Team Member, a limited, non-exclusive, revocable, non-sublicenseable, non-transferable license to (i) install the Mobile App on one or more mobile devices which are owned by you or your organization which is a subscriber of the Team Management Functionality, or under your or your organizations’ control and which meet the Company’s minimum specifications; (ii) install the Desktop App on one or more computers which are owned by you or your organization which is a subscriber of the Team Management Functionality, or under your or your organizations’ control and which meet the Company’s minimum specifications; and (iii) view, review and utilize the Apps and any related information provided to you by the Company, in all events, for the sole purpose of using the Service within your organization or in connection with your organization’s bona fide business activities.\n\n"
+"7.3 **Accessing the Service**. You agree not to access, or attempt to access, the Service by any means other than through the Site or the Apps. You specifically agree not to access, or attempt to access, the Service through any automated means (including, without limitation, through the use of scripts, bots, unauthorized third party apps, spiders or web crawlers).\n\n"
+"7.4. **No Violation of Laws**. You agree that you will not, in connection with your use of the Apps, the Site and/or the Service, violate any applicable law, ordinance, rule, regulation or treaty.\n\n"
+"7.5 **Restrictions**. You shall not connect to or use the Apps, the Site and/or the Service in any way that is not expressly permitted by this ToU.\n\n"
+"a. You may not: (a) remove any proprietary notices from the Service or any copy of software provided to you by the Company (“**Software**”); (b) cause, permit or authorize the modification, creation of derivative works, translation, reverse engineering, decompiling, disassembling or hacking of the Apps, the Service or any Software; (c) sell, assign, rent, lease, act as a service bureau, or grant rights in the Apps, the Service or any Software, including, without limitation, through sublicense, to any other person or entity without the prior written consent of the Company; or (d) make any false, misleading or deceptive statement or representation regarding the Company and/or the Apps, the Site or the Service.\n\n"
+"b. Without limiting the foregoing, you agree that you will not: (i) institute, assist, or become involved in any type of attack, including without limitation denial of service attacks, upon the Apps, the Site and/or the Service (or any servers, systems or networks connected to the Apps, the Site and/or the Service) or otherwise attempt to obstruct, disrupt or interfere with the operation of the Apps, the Site and/or the Service or any other person’s or entity’s use of the Apps, the Site and/or the Service (or any servers, systems or networks connected to the Apps, the Site and/or the Service); (ii) attempt to gain unauthorized access to the Apps, the Site, the Service, accounts registered to other users, or any servers, systems or networks connected to the Apps, the Site and/or the Service, (iii) charge any person, or receive any compensation for, the use of the Apps, the Site and/or the Service, unless you are specifically authorized to do so in a separate written agreement with the Company; (iv) use the Apps, the Site and/or the Service to (a) develop, generate, transmit or store information that is unlawful or illegal, defamatory, harmful, abusive, hateful, racially or ethnically offensive that encourages conduct that would be considered a criminal offence; or (b) perform any unsolicited commercial communication not permitted by applicable law; or (v) engage in any activity that (a) constitutes harassment or a violation of privacy or threatens other people or groups of people; (b) is harmful to children in any manner; (c) constitutes phishing, pharming or impersonates any other person or entity, or steals or assumes any person’s identity (whether a real identity or online nickname or alias); or (d) violates any applicable law, ordinance, rule, regulation or treaty.\n\n"
+"c. Without limiting the foregoing, you agree that you will not (i) charge any person, or receive any compensation, for the use of the Service, or (ii) use the Service in any manner not permitted by the licenses granted herein; or (iii) use the Service to conduct any unlawful, prohibited, abnormal or unusual activity as the Company may determine, in the Company’s sole discretion.\n\n"
+"d. No licenses, express or implied, are granted under this ToU except as expressly set forth herein.  The Company reserves all rights in and to the Apps, the Site and/or the Service that are not expressly granted in this ToU.\n\n"
+"7.6 **No Data Mining or Harmful Code**. You agree that you will not (i) obtain or attempt to obtain any information from the Service, including without limitation email addresses or phone numbers of other account holders or other software data; or (ii) intercept, examine or otherwise observe any communications, conversations or chats between other account holders without the prior consent of those account holders; or (iii) use any type of software that is designed to provide a means of surreptitious or unauthorized access to, or distort, delete, damage or disassemble, the Apps, the Site and/or the Service.\n\n"
+"7.7 **No Access to Emergency Services**. The Service is not intended to support or carry emergency calls to any type of hospitals, law enforcement agencies, medical care unit or any other kind of services that connect a user to emergency services personnel or public safety answering points (**\"Emergency Services\"**). There are important differences between traditional telephone services and the Services. You acknowledge and agree that: (i) the Company is not required to offer access to Emergency Services under any applicable local and/or national rules, regulations or law; (ii) it is your responsibility to purchase, separately from the Services, traditional wireless (mobile) or fixed line telephone services that offer access to Emergency Services, and (iii) the Service is not a replacement for your primary telephone service.\n\n"
+"7.8 **Violation of this ToU**. You acknowledge and agree that you are solely responsible, and the Company has no responsibility or liability to you or any other person or entity, for any breach by you of this ToU or for the consequences of any such breach. The Company may at its option, terminate its relationship with you or your organization, or may disable your account (or that of your organization) immediately if it determines you are using the Service contrary to the restrictions found in this Section 7 or any other terms of this ToU."
+msgstr "7.1 **Lizenz**. Gemäß den Bedingungen dieser Vereinbarung und zum ausschließlichen Zweck der Nutzung der Dienste, gewährt dir das Unternehmen hiermit eine beschränkte, nicht ausschließliche, widerrufbare, nicht unterlizenzierbare, nicht übertragbare Lizenz, um (i) die Mobile-App auf einem oder mehreren Mobilgeräten, die dir gehören, von dir betrieben werden und die die Mindestanforderungen des Unternehmens erfüllen, zu installieren; (ii) die Desktop-App auf einem oder mehreren Computern, die dir gehören, von dir betrieben werden und die die Mindestanforderungen des Unternehmens erfüllen, zu installieren; und um (iii) die Apps und sämtliche dazugehörigen Informationen, die dir durch das Unternehmen bereitgestellt werden, anzuzeigen, zu überprüfen und zu nutzen.\n\n"
+"7.2 **Zugriff auf die Dienste**. Du bist damit einverstanden, auf die Dienste auf keinem anderen Wege als durch die Website oder die Apps zuzugreifen bzw. den Versuch eines Zugriffs auf anderem Wege zu unterlassen. Du bist ausdrücklich damit einverstanden, auf die Dienste nicht auf automatischem Wege (einschließlich, aber nicht beschränkt auf die Verwendung von Scripts, Bots, unerlaubten Apps Dritter, Spidern oder Web-Crawlern) zuzugreifen bzw. den Versuch eines Zugriffs auf automatischem Wege zu unterlassen.\n\n"
+"7.3 **Kein Verstoß gegen Gesetze**. Du bist damit einverstanden, dass du, im Zusammenhang mit deiner Nutzung der Apps, der Website und/oder der Dienste, gegen keine geltenden Gesetze, Verordnungen, Vorschriften, Richtlinien oder Abkommen verstoßen wirst.\n\n"
+"7.4 **Beschränkungen**. Du darfst in keiner Weise eine Verbindung zu den Apps, zur Website und/oder zu den Diensten herstellen bzw. diese nutzen, die nicht ausdrücklich durch diese NB erlaubt ist.\n\n"
+"a. Du darfst nicht: (a) Eigentumsvermerke von den Diensten oder Softwarekopien, die dir durch das Unternehmen bereitgestellt wurden („**Software**”), entfernen; (b) die Änderung, Erstellung von Derivativprodukten, Übersetzung, Zurückentwicklung, Dekompilierung, Disassemblierung oder das Hacken der Apps, der Dienste oder der Software veranlassen, genehmigen oder zulassen; (c) ohne die vorherige schriftliche Zustimmung des Unternehmens die Apps, die Dienste oder die Software verkaufen, übertragen, vermieten, leasen, als Serviceunternehmen für diese fungieren, oder Rechte an diesen, unter anderem durch Unterlizenzierung, gegenüber anderen natürlichen oder juristischen Personen gewähren; oder (d) falsche, irreführende oder täuschende Aussagen oder Darstellungen über das Unternehmen und/oder die Apps, die Website oder die Dienste machen.\n\n"
+"b. Ohne Einschränkung des Vorstehenden bist du damit einverstanden, dass du Folgendes unterlassen wirst: (i) Angriffe, einschließlich, jedoch ohne Beschränkung auf Angriffe, die Dienstleistungsverhinderungen bewirken, auf die Apps, die Website und/oder die Dienste (oder auf die Server, Systeme oder Netzwerke, die mit den Apps, der Website und/oder den Diensten verbunden sind) einzuleiten, zu unterstützen oder daran mitzuwirken oder anderweitig zu versuchen, das Betreiben der Apps, der Website und/oder der Dienste oder die Nutzung der Apps, der Website und/oder der Dienste (oder der Server, der Systeme oder Netzwerke, die mit den Apps, der Website und/oder den Diensten verbunden sind) durch eine andere natürliche oder juristische Person zu behindern, zu stören oder zu beeinträchtigen; (ii) den Versuch eines unerlaubten Zugriffs auf die Apps, die Website, die Dienste, die Konten, die auf andere Nutzer registriert sind, auf Server, Systeme oder Netzwerke, die mit den Apps, der Website und den Diensten verbunden sind; (iii) einer Person die Nutzung der Apps, der Website und/oder der Dienste in Rechnung zu stellen bzw. eine Entschädigung dafür zu bekommen, sofern du nicht durch eine gesonderte schriftliche Vereinbarung mit dem Unternehmen ausdrücklich dazu berechtigt bist; (iv) die Apps, die Website und/oder die Dienste zu nutzen, um (a) Informationen zu entwickeln, zu generieren, zu übermitteln oder zu speichern, die rechtswidrig oder illegal, diffamierend, verletzend, beleidigend, hasserfüllt, rassistisch oder ethisch anstößig sind, und die ein Verhalten fördern, das als eine Straftat betrachtet werden würde; oder (b) eine unerbetene kommerzielle Kommunikation zu realisieren, die durch geltendes Recht verboten ist; oder (v) sich an einer Handlung zu beteiligen, die (a) eine Belästigung oder Verletzung der Privatsphäre darstellt oder andere Personen oder Gruppen von Personen bedroht; (b) für Kinder in irgendeiner Weise schädlich ist; (c) Phishing, Pharming darstellt oder eine andere natürliche oder juristische Person nachahmt, oder durch die die Identität einer anderen Person gestohlen oder angenommen wird (unabhängig davon, ob es sich um eine reale Identität oder um einen Online-Spitznamen oder -Alias handelt); oder (d) gegen ein geltendes Gesetz, eine Verordnung, Vorschrift, Richtlinie oder ein Abkommen verstößt.\n\n"
+"c. Ohne Einschränkung des Vorstehenden bist du damit einverstanden, dass du (i) die Nutzung der Dienste nicht einer Person in Rechnung stellen bzw. eine Entschädigung dafür bekommen wirst; (ii) die Dienste nicht in einer Weise nutzen wirst, die nicht durch die in diesem Rahmen gewährten Lizenzen erlaubt ist; oder (iii) diese für andere rechtswidrige, verbotene, unnormale oder unübliche Tätigkeiten nutzen wirst, die das Unternehmen in seinem eigenen Ermessen definiert.\n\n"
+"7.5 **Kein Data-Mining oder schädlicher Code**. Du bist damit einverstanden, dass du (i) keine Informationen aus den Diensten beziehst oder versuchst, diese zu beziehen, einschließlich, aber nicht beschränkt auf E-Mail-Adressen oder Telefonnummern von anderen Kontoinhabern oder anderen Softwaredaten; oder (ii) Mitteilungen, Gespräche oder Chats zwischen Kontoinhabern ohne die vorherige Zustimmung dieser Kontoinhaber nicht abfangen, überprüfen oder anderweitig überwachen wirst; oder (iv) Software nutzen wirst, die dazu ausgelegt ist, ein Mittel zum betrügerischen und unbefugten Zugriff auf die Apps, die Website und/oder die Dienste zu ermöglichen bzw. diese zu verfälschen, zu löschen, zu beschädigen oder zu zerlegen.\n\n"
+"7.6 **Kein Zugriff auf Notfalldienste**. Die Dienste sind nicht dazu vorgesehen, Notrufe zu unterstützen oder diese an irgendwelche Krankenhäuser, Strafverfolgungsbehörden, medizinische Versorgungszentren oder an irgendwelche anderen Dienste weiterzuleiten, die einen Nutzer mit dem Personal der Notfalldienste oder mit öffentlichen Notrufabfragestellen („**Notfalldienste**”) verbinden. Es gibt wesentliche Unterschiede zwischen den herkömmlichen Telefondiensten und den Diensten. Du erkennst an und bist damit einverstanden, dass: (i) das Unternehmen nicht verpflichtet ist, Zugriff auf die Notfalldienste gemäß den geltenden lokalen und/oder nationalen Bestimmungen, Richtlinien oder Gesetzen anzubieten; (ii) es in deiner Verantwortung liegt, neben den Diensten, herkömmliche drahtlose (mobile) oder Festnetz-Telefondienste zu erwerben, die einen Zugriff auf die Notfalldienste anbieten, und (iii) die Dienste keinen Ersatz für deinen primären Telefondienst darstellen.\n\n"
+"7.7 **Verstoß gegen diese NB**. Du erkennst an und bist damit einverstanden, dass du für jegliche durch dich begangene Verstöße gegen die NB oder für die Folgen eines solchen Verstoßes allein verantwortlich bist, und dass das Unternehmen hierfür für dich oder eine andere natürliche oder juristische Person keinerlei Verantwortung oder Haftung übernimmt. Das Unternehmen kann nach eigenem Ermessen die Beziehung mit dir kündigen oder deinen Zugang sofort sperren, wenn es feststellt, dass deine Nutzung der Dienste im Widerspruch zum hier enthaltenen *Abschnitt 7* oder zu den Bestimmungen dieser NB steht."
+
+#: app/templates/md/legal/terms/08.md:1
+msgid "8.1 **Links from the Service**. The Service may contain links to websites operated by other parties. The Company provides these links to other websites as a convenience, and use of these websites is at your own risk. The linked websites are not under the control of the Company, and the Company is not responsible for the content available on the other websites. Such links do not imply the Company’s endorsement of information or material on any other website and the Company disclaims all liability with regard to your access to and use of such linked websites.\n\n"
+"8.2 **Links to the Site**. Unless otherwise set forth in a written agreement between you and the Company, you must adhere to the Company’s linking policy as follows: (i) the appearance, position and other aspects of the link may not be such as to damage or dilute the goodwill associated with the Company’s names and trademarks, (ii) the appearance, position and other attributes of the link may not create the false appearance that your organization or entity is sponsored by, affiliated with, or associated with the Company, and (iii) when selected by a user, the link must display the Site on full-screen and not within a “frame” on the linking Site. The Company reserves the right to revoke its consent to the link at any time and in its sole discretion."
+msgstr "8.1 **Links aus den Diensten**. Die Dienste können Links zu Websites enthalten, die von anderen betrieben werden. Das Unternehmen bietet diese Links zu anderen Websites als Annehmlichkeit an und die Nutzung dieser Websites erfolgt auf eigene Gefahr. Die verlinkten Websites unterliegen nicht der Kontrolle des Unternehmens und das Unternehmen ist nicht verantwortlich für die Inhalte, die auf den anderen Websites verfügbar sind. Diese Links implizieren nicht die Befürwortung der Informationen oder des Materials auf einer anderen Website seitens des Unternehmens und das Unternehmen lehnt jegliche Haftung in Bezug auf deinen Zugriff und die Nutzung dieser verlinkten Websites ab.\n\n"
+"8.2 **Links zur Website**. Sofern nicht anders in einer schriftlichen Vereinbarung zwischen dir und dem Unternehmen festgelegt, musst du die Verlinkungsrichtlinie des Unternehmens wie folgt befolgen: (i) das Aussehen, die Position und andere Aspekte des Links dürfen nicht das Potenzial haben, den Firmenwert im Zusammenhang mit den Namen und den Marken des Unternehmens zu schädigen, (ii) das Aussehen, die Position und andere Eigenschaften des Links dürfen nicht den falschen Anschein erwecken, dass deine Organisation oder dein Unternehmen vom Unternehmen gesponsert, mit diesem verbunden ist oder diesem nahesteht, und (iii) wenn durch den Nutzer ausgewählt, muss der Link die Website auf dem ganzen Bildschirm und nicht innerhalb eines „Rahmens” auf der verlinkenden Website darstellen. Das Unternehmen behält sich das Recht vor, seine Zustimmung zum Link jederzeit und nach eigenem Ermessen zu widerrufen."
+
+#: app/templates/md/legal/terms/09.md:1
+msgid "9.1 **Trademarks**. Wire™ and its associated logos are trademarks used under license by Wire Swiss GmbH. All rights reserved. Unless permitted in a separate written agreement with the Company, you do not have the right to use any of the Company’s trademarks, service marks or logos and your unauthorized use of any of these may be a violation of federal and state trademark laws.\n\n"
+"9.2. **Ownership**. You acknowledge and agree that the Company owns all rights, title and interest in and to the Apps, the Site and the Service (but not any Independent App), including all intellectual property, industrial property and proprietary rights recognized anywhere in the world at any time and that the Apps, the Site and the Service are protected by U.S. and international copyright laws. Further, you acknowledge that the Service may contain information that the Company has designated as confidential and you agree not to disclose such information without the Company’s prior written consent.\n\n"
+"9.3 **Third Party Software and Services**. The Apps and the Service may be incorporated into, and may incorporate, technology, software and services owned and controlled by third parties. Use of such third party software or services is subject to the terms and conditions of the applicable third party license agreements (including, without limitation, terms of use and terms of service agreements posted on third party websites and privacy policies posted on third party websites), and you agree to look solely to the applicable third party and not to the Company to enforce any of your rights in relation thereto."
+msgstr "9.1 **Marken**. Wire™ und seine dazugehörigen Logos sind Handelsmarken, die unter Lizenz von der Wire Swiss GmbH verwendet werden. Alle Rechte vorbehalten. Sofern nicht durch eine gesonderte schriftliche Vereinbarung mit dem Unternehmen erlaubt, bist du nicht berechtigt, die Marken, Dienstmarken und Logos des Unternehmens zu verwenden und die unerlaubte Nutzung derselben deinerseits kann einen Verstoß gegen die Markengesetze auf Bundes- und Landesebene darstellen.\n\n"
+"9.2 **Eigentum**. Du erkennst an und bist damit einverstanden, dass das Unternehmen alle Rechte, Titel und Anteile in und an den Apps, der Website und den Diensten, einschließlich jeglicher Rechte des geistigen Eigentums, gewerblicher Schutzrechte und Eigentumsrechte, die überall auf der Welt und zu jeder Zeit anerkannt sind, besitzt, und dass die Apps, die Website und die Dienste durch die US-amerikanischen und internationalen Urheberrechtsgesetze geschützt sind und US-amerikanische und internationale Patente dafür angemeldet sind. Darüber hinaus erkennst du an, dass die Dienste Informationen enthalten könnten, die das Unternehmen als vertraulich gekennzeichnet hat, und du bist damit einverstanden, solche Informationen ohne die vorherige schriftliche Zustimmung des Unternehmens nicht offenzulegen.\n\n"
+"9.3 **Software und Dienste von Drittanbietern**. Die Apps und Dienste können in Technologien, Software und Dienste integriert sein bzw. Technologien, Software und Dienste integrieren, die sich im Besitz oder unter der Kontrolle von Drittanbietern befinden. Die Nutzung dieser Software und Dienste von Drittanbietern unterliegt den Bedingungen der für Drittanbieter geltenden Lizenzvereinbarungen (einschließlich, aber nicht beschränkt auf Vereinbarungen zu den Nutzungsbedingungen und Dienstleistungsbedingungen, die auf den Websites der Drittanbieter veröffentlicht sind, Datenschutzrichtlinien, die auf den Websites der Drittanbieter veröffentlicht sind), und du bist damit einverstanden, etwaige Rechtsansprüche diesbezüglich ausschließlich gegenüber dem jeweiligen Drittanbieter und nicht gegenüber dem Unternehmen geltend zu machen."
+
+#: app/templates/md/legal/terms/10.md:1
+msgid "10.1. **Content of Communications**. The Company is not the source of, does not verify or endorse and takes no responsibility for the content of communications made using the Service. By using the Service, you agree that any content that you submit may be transmitted to the recipient of your communication. The content of communications is entirely the responsibility of the person from whom such content originated. The content of communications may be protected by intellectual property rights, which are owned by third parties. You are responsible for the content you choose to communicate and access using the Service. In particular, you are responsible for ensuring that you do not submit material that is (i) copyrighted, protected by trade secret or otherwise subject to third party proprietary rights, including privacy and publicity rights, unless you are the owner of such rights or have permission from their rightful owner; (ii) a falsehood or misrepresentation; (iii) unlawful or illegal, defamatory, harmful, abusive, hateful, racially or ethnically offensive that encourages conduct that would be considered a criminal offence; (iv) an advertisement or solicitation of business; or (v) impersonating another person. The Company may in its sole discretion terminate this ToU and disable your or your organization’s account if you use any content that is in breach of these Terms.\n\n"
+"10.2 The Company does not claim ownership of any communications or materials you submit or make available through the Apps, the Site and/or the Service (**\"Submitted Content\"**) via any function on the Site, the Apps and/or Service which allows you to post, upload, edit, and/or share content. With respect to such Submitted Content, you grant the Company a worldwide, royalty-free, fully paid-up and non-exclusive license to use and transmit such Submitted Content or any part of such Submitted Content solely on the Apps, the Site and/or the Service for the sole purpose of making available and operating the Apps, the Site and/or the Service. You hereby represent, warrant and covenant that any Submitted Content you provide does not include anything (including, but not limited to, text, images, music or video) to which you do not have the full right to grant the license specified in this Section 10.2. You acknowledge and agree that: (i) by using the Apps, the Site and/or Service, you may be exposed to content that you may find offensive or indecent and you do so at your own risk; (ii) you are solely responsible for, and the Company has no responsibility to you or any third party for any Submitted Content that you create, submit, post or publish on the Apps, the Site, and/or Service; and (iii) the Company is not responsible for any Submitted Content that you may have access to through your use of the Apps, the Site and/or Services and all Submitted Content are the responsibility of the person from whom such Submitted Content originated. We reserve the right to disable your or your organization’s account and/or your respective access to the Apps, the Site and/or Services if you violate this ToU. You acknowledge and agree that (i) the Company has no control over and is not responsible for the use of Submitted Content by a user, including any user that has uploaded such Submitted Content to such user’s personal device; and (ii) the Company may not be able to remove certain Submitted Content that is uploaded onto another user’s device. The Company does not endorse any Submitted Content or any opinion, recommendation, or advice expressed therein, and expressly disclaims any and all liability in connection with Submitted Content.\n\n"
+"10.3 You acknowledge that the Submitted Content is your sole responsibility. You are entirely responsible for the Submitted Content and agree, under no circumstance, will the Company be liable in any way for Submitted Content, including, but not limited to, for any errors or omissions in any Submitted Content, or any loss or damage of any kind incurred as a result of the use or distribution of any Submitted Content transmitted or otherwise made available via the Service. In addition to and without limiting any portion of this Section 10, if you are a Team Admin, you acknowledge and agree that you and/or your organization are solely responsible for any and all Submitted Content made available by you or any of your Team Members."
+msgstr "10.1 **Kommunikationsinhalte**. Das Unternehmen ist weder die Quelle der Kommunikationsinhalte noch überprüft oder befürwortet es diese und übernimmt ebenfalls keine Verantwortung für diese. Durch die Nutzung der Dienste, erklärst du dich damit einverstanden, dass jegliche Inhalte, die du einreichst, dem Empfänger deiner Kommunikation übermittelt werden. Die Kommunikationsinhalte unterliegen in vollem Umfang der Verantwortung der Person, von der diese Inhalte stammen. Die Kommunikationsinhalte können durch geistige Eigentumsrechte geschützt sein, die im Besitz von Dritten sind. Du bist verantwortlich für die Inhalte, die du kommunizieren möchtest und auf die du durch Nutzung der Dienste zugreifst. Du bist insbesondere dafür verantwortlich, sicherzustellen, dass du kein Material einreichst, das (i) urheberrechtlich geschützt, durch ein Geschäftsgeheimnis geschützt oder anderweitig den Eigentumsrechten von Drittanbietern unterliegt, einschließlich Datenschutz- und Veröffentlichungsrechte, es sei denn, du bist der Eigentümer dieser Rechte oder hast die Erlaubnis dazu durch den rechtmäßigen Eigentümer; (ii) eine Unwahrheit oder Falschdarstellung beinhaltet; (iii) rechtswidrig oder illegal, diffamierend, verletzend, beleidigend, hasserfüllt, rassistisch oder ethisch anstößig ist, und das ein Verhalten fördert, das als eine Straftat betrachtet werden würde; (iv) für ein Geschäft wirbt oder eine Geschäftsanfrage ist; oder (v) eine andere Person verkörpert. Das Unternehmen kann nach eigenem Ermessen diese NB kündigen und deinen Zugang sperren, wenn du Inhalte nutzt, die gegen diese Bestimmungen verstoßen.\n\n"
+"10.2 Das Unternehmen erhebt keinen Anspruch auf das Eigentum an der Kommunikation oder an den Materialien, die du übermittelst oder durch die Apps, die Website und/oder die Dienste zur Verfügung stellst („**Übermittelte Inhalte**”), indem du eine Funktion auf der Website, in den Apps und/oder in den Diensten nutzt, die dir das Posten, Hochladen, Bearbeiten und/oder Teilen der Inhalte ermöglicht. Hinsichtlich solcher übermittelter Inhalte gewährst du dem Unternehmen eine weltweite, gebührenfreie, voll bezahlte und nicht ausschließliche Lizenz, diese übermittelten Inhalte oder Teile von diesen übermittelten Inhalten ausschließlich in den Apps, auf der Website und/oder in den Diensten für den ausschließlichen Zweck der Zurverfügungstellung und des Betreibens der Apps, der Website und/oder der Dienste zu nutzen. Du versicherst, gewährleistest und verpflichtest dich hiermit, dass die übermittelten Inhalte, die du bereitstellst, nichts enthalten (einschließlich, aber nicht beschränkt auf Text, Bilder, Musik oder Videos), für das du nicht das volle Recht hast, die im hier enthaltenen Abschnitt 10.2 näher beschriebene Lizenz zu gewähren. Du erkennst an und bist damit einverstanden, dass: (i) durch die Nutzung der Apps, der Website und/oder der Dienste, du mit Inhalten konfrontiert werden könntest, die du als beleidigend oder anstößig empfindest, und dass du dies auf eigenem Risiko unternimmst; (ii) du allein für die übermittelten Inhalte, die du auf den Apps, der Website und/oder in den Diensten erstellst, einreichst, postest oder veröffentlichst, verantwortlich bist, und dass das Unternehmen dir gegenüber oder gegenüber einem Dritten hierfür nicht verantwortlich ist; und (iii) das Unternehmen nicht für übermittelte Inhalte verantwortlich ist, auf die du Zugriff durch deine Nutzung der Apps, der Website und/oder der Dienste hast, und dass sämtliche übermittelten Inhalten in der Verantwortung der Person liegen, von der diese übermittelten Inhalte stammen. Wir behalten uns das Recht vor, dein Konto und deinen Zugriff auf die Apps, die Website und/oder die Dienste zu sperren, wenn du gegen diese NB verstößt. Du erkennst an und bist damit einverstanden, dass (i) das Unternehmen keine Kontrolle über die Nutzung der übermittelten Inhalte durch einen Nutzer hat und dafür nicht verantwortlich ist. Dies schließt Nutzer ein, die solche übermittelten Inhalte auf die persönlichen Geräte dieser Nutzer hochgeladen haben; und (ii) das Unternehmen möglicherweise nicht in der Lage ist, bestimmte übermittelte Inhalte, die auf das Gerät eines anderen Nutzers hochgeladen wurden, zu entfernen. Das Unternehmen unterstützt keinerlei übermittelte Inhalte oder Meinungen, Empfehlungen oder Ratschläge, die darin zum Ausdruck gebracht werden, und lehnt ausdrücklich jegliche Haftung im Zusammenhang mit den übermittelten Inhalten ab.\n\n"
+"10.3 Du erkennst an, dass die übermittelten Inhalte in deiner alleinigen Verantwortung liegen. Du bist in vollem Umfang für die übermittelten Inhalte verantwortlich und bist damit einverstanden, dass das Unternehmen unter keinen Umständen und in keiner Weise für die übermittelten Inhalte haftet, einschließlich, aber nicht beschränkt auf etwaige Fehler oder Auslassungen in den übermittelten Inhalten, oder Verluste oder Schäden, die infolge der Nutzung oder der Verbreitung der übermittelten Inhalte entstanden sind, als diese übertragen oder auf anderem Wege über die Dienste bereitgestellt wurden."
+
+#: app/templates/md/legal/terms/11.md:1
+msgid "The Apps, the Site and the Service are not directed toward children under 13 years of age nor does the Company knowingly collect information from children under 13 or allow them to create an account or access account features. If you are minor and are 13 years of age or older,  you must have parental consent to create an account or access the Service.  We take children’s privacy seriously, and encourage parents to play an active role in their children’s online experience at all times."
+msgstr "Die Apps, die Website und die Dienste richten sich nicht an Kinder unter 13 Jahren. Weder werden persönliche Daten von Kindern unter 13 Jahren durch das Unternehmen wissentlich erfasst, noch ist es diesen gestattet, ein Konto einzurichten oder auf die Features der Konten zuzugreifen. Wenn du minderjährig und 13 Jahre oder älter bist, brauchst du die Zustimmung der Eltern, um einen Account einzurichten oder auf die Dienste zuzugreifen. Wir nehmen die Privatsphäre von Kindern ernst und fordern Eltern auf, stets aktiv an den Online-Aktivitäten ihrer Kinder teilzunehmen."
+
+#: app/templates/md/legal/terms/12.md:1
+msgid "**The following section is a disclaimer of our warranties. Please read it carefully.**\n\n"
+"12.1 You understand and agree that your use of the Apps, the Site and/or the Service is at your sole risk and that the Apps, the Site and/or the Service are provided on an “as is” and “as available” basis without warranties or conditions of any kind, either express or implied.\n\n"
+"12.2 To the maximum extent permitted by applicable law, the Company expressly disclaims all warranties and conditions including, without limitation, warranties and conditions of satisfactory quality, merchantability, fitness for a particular purpose, non-infringement, and those arising from course of dealing or usage of trade.\n\n"
+"12.3 The Company makes no warranty as to the accuracy, completeness or reliability of any materials, information or data available through, or the performance of, the Apps, the Site and/or the Service.\n\n"
+"12.4 The Company does not represent or warrant that (a) you will be able to access or use the Apps, the Site and/or the Service at the times or locations of your choosing; (b) that operation of the Apps, the Site and/or the Service will be uninterrupted, timely, error-free; (c) your use of the Apps, the Site and/or the Service will meet your requirements; (d) defects in the operation of the Apps, the Site and/or the Service will be corrected; or (e) the Apps, the Site and/or the Service is free of viruses or other harmful components.\n\n"
+"12.5 You acknowledge and agree that any material downloaded or otherwise obtained through the use of the Apps, the Site and/or the Service is at your own risk and that you will be solely responsible for any damage to your computer, mobile phone or other device or any loss of data resulting from downloading or obtaining such material.\n\n"
+"**Because some states or jurisdictions do not allow the disclaimer of implied warranties, the foregoing disclaimers may not apply to you.**"
+msgstr "**Der folgende Abschnitt beinhaltet unseren Gewährleistungsausschluss. Bitte lese ihn sorgfältig.**\n\n"
+"12.1 Du verstehst und bist damit einverstanden, dass deine Nutzung der Apps, der Website und/oder der Dienste auf deinem eigenen Risiko erfolgt, und dass die Apps, die Website und/oder die Dienste auf einer „Wie-gesehen-” und „Wie-verfügbar-Basis” bereitgestellt werden, und zwar ohne Gewährleistungen oder Zusicherungen jedweder Art, seien sie ausdrücklich oder stillschweigend.\n\n"
+"12.2 Soweit wie durch geltendes Recht zulässig, lehnt das Unternehmen sämtliche Gewährleistungen und Zusicherungen ab, einschließlich, aber nicht beschränkt auf Gewährleistungen und Zusicherungen der zufriedenstellenden Qualität, Marktgängigkeit, Eignung für einen bestimmten Zweck, Nichtverletzung und jener, die sich aus einer Geschäftsbeziehung oder aus dem Handelsbrauch ergeben.\n\n"
+"12.3 Das Unternehmen bietet keine Gewährleistung für die Richtigkeit, Vollständigkeit oder Zuverlässigkeit von Materialien, Informationen oder Daten, die durch die Apps, die Website und/oder die Dienste zur Verfügung stehen oder durch das Betreiben dieser vorliegen.\n\n"
+"12.4 Das Unternehmen gewährleistet und sichert nicht zu, dass (a) du in der Lage sein wirst, auf die Apps, die Website und/oder die Dienste jederzeit und von dem Ort, den du gewählt hast, zuzugreifen; (b) das Betreiben der Apps, der Website und/oder der Dienste ununterbrochen, zeitnah und fehlerfrei sein wird; (c) deine Nutzung der Apps, der Website und/oder der Dienste deine Anforderungen erfüllen wird; (d) Fehler im Betreiben der Apps, der Website und/oder der Dienste korrigiert werden; oder (e) die Apps, die Website und/oder die Dienste frei von Viren oder anderen schädlichen Komponenten sind. \n\n"
+"12.5 Du erkennst an und bist damit einverstanden, dass das Herunterladen von jeglichem Material durch die Nutzung der Apps, der Website und/oder der Dienste auf deinem eigenen Risiko erfolgt, und dass du allein für jegliche Schäden an deinem Computer, Mobiltelefon oder an einem anderen Gerät oder für den Verlust von Daten verantwortlich bist, die durch das Herunterladen oder durch den Erhalt von solchem Material entstehen.\n\n"
+"**Da einige Staaten oder Rechtssysteme nicht den Ausschluss von stillschweigenden Gewährleistungen zulassen, gelten möglicherweise die oben genannten Haftungsausschüsse nicht für dich.**"
+
+#: app/templates/md/legal/terms/13.md:1
+msgid "**The following section limits our liability. Please read it carefully.**\n\n"
+"13.1 To the maximum extent permitted by applicable law, the Company, its affiliates, licensors and business partners (collectively, the “**Related Parties**”) shall not be liable to you, under any contract, tort (including negligence), strict liability or other legal or equitable theory, for:\n\n"
+"a. Any direct, indirect, incidental, consequential, special or exemplary damages, including loss of profits, use, data or goodwill, arising out of or in any way connected with access to or use of the Apps, the Site and/or the Service, even if the Company and/or the Related Parties have been advised or should have been aware of the possibility of any such losses or damages;\n\n"
+"b. The cost of procurement of substitute goods, services or technology; or\n\n"
+"c. The deletion of, corruption of, or failure to store any materials, information or data maintained by or through your use of the Apps, the Site and/or the Service.\n\n"
+"13.2 Without limiting the foregoing, in no case shall the liability of the Company or any of the Related Parties exceed one hundred dollars ($100).\n\n"
+"**Because some states or jurisdictions do not allow the exclusion or the limitation of liability for consequential or incidental damages, in such states or jurisdictions, the liability of the Company and its Related Parties shall be limited to the fullest extent permitted by law.**"
+msgstr "**Der folgende Abschnitt beinhaltet die Beschränkung unserer Haftung. Lese ihn bitte sorgfältig.**\n\n"
+"13.1 Soweit gemäß geltendem Recht zulässig, haftet das Unternehmen, seine verbundenen Unternehmen, Lizenzgeber und Geschäftspartner (zusammen, die **„nahestehenden Parteien”**) dir gegenüber aufgrund von Vertrag, unerlaubter Handlung (einschließlich Fahrlässigkeit), verschuldungsunabhängiger Haftung oder sonstiger rechtlicher oder billigkeitsrechtlicher Theorie nicht für:\n\n"
+"a. Irgendwelche direkten, indirekten, zufälligen, Folge-, besonderen oder exemplarischen Schäden, einschließlich entgangenem Gewinn, Nutzungsausfall, Verlust von Daten oder Firmenwerten, die sich aus dem Zugriff oder aus der Nutzung der Apps, der Website und/oder der Dienste ergeben oder damit im Zusammenhang stehen, selbst wenn das Unternehmen und/oder die nahestehenden Parteien auf die Möglichkeit solcher Verluste oder Schäden hingewiesen wurden oder sich dieser hätten bewusst sein sollen;\n\n"
+"b. Die Kosten für die Beschaffung von Ersatzwaren, Diensten oder Technologie oder\n\n"
+"c. Die Löschung, Verfälschung oder das Unvermögen, Materialien, Informationen oder Daten zu speichern, die von oder durch die Nutzung der Apps, der Website und/oder der Dienste gesammelt werden.\n\n"
+"13.2 Ohne Einschränkung des Vorstehenden darf die Haftung des Unternehmens oder einer anderen nahestehenden Partei auf keinen Fall einhundert Dollar (100 USD) überschreiten.\n\n"
+"**Da einige Staaten oder Gerichtsstände den Ausschluss oder die Beschränkung der Haftung für Folgeschäden oder zufällige Schäden nicht zulassen, ist in solchen Staaten oder Rechtssystemen die Haftung des Unternehmens und seiner nahestehenden Parteien auf den maximalen gesetzlich zulässigen Umfang beschränkt.**"
+
+#: app/templates/md/legal/terms/14.md:1
+msgid "You agree to indemnify, defend and hold the Company and the Related Parties harmless from any and all claims, demands, damages or other losses, including without limitation reasonable attorneys’ fees, resulting from or arising out of (i) your use of the Apps, the Site and/or the Service, (ii) the Submitted Content, (iii) your inability to use the Service, including your inability to contact Emergency Services or any interaction with Emergency Services, or (iv) your breach of this ToU or any other policies that the Company may issue for the Apps, the Site and/or the Service from time to time."
+msgstr "Du bist damit einverstanden, das Unternehmen und die nahestehenden Parteien zu entschädigen, zu verteidigen und schadlos zu halten gegen sämtliche Ansprüche, Forderungen, Schäden oder andere Verluste, einschließlich, aber nicht beschränkt auf angemessene Anwaltskosten, die sich aus (i) deiner Nutzung der Apps, der Website und/oder der Dienste, (ii) den übermittelten Inhalten, (iii) deinem Unvermögen, die Dienste zu nutzen, einschließlich deinem Unvermögen, Notfalldienste zu kontaktieren oder dem Unvermögen einer anderen Interaktion mit den Notfalldiensten, oder (iv) dem Verstoß gegen diese NB oder andere Richtlinien, die das Unternehmen für die Apps, die Website und/oder die Dienste von Zeit zu Zeit herausgeben kann, ergeben oder darin begründet sind."
+
+#: app/templates/md/legal/terms/15.md:1
+msgid "15.1\tIf you are using the Service in any country within the European Union or otherwise outside of the United States the following applies: The laws applicable to the interpretation of these Terms of Service shall be the laws of Switzerland, without regard to any conflicts of law provisions. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Except as provided in *Section 16* below (and claims proceeding in any small claims court), you irrevocably submit to the personal and exclusive jurisdiction of the courts located within the Canton of Zug, Switzerland for all disputes arising out of or related to your use of any of the Service.\n\n"
+"15.2\tIf you are using the Service in the United States the following applies: These Terms of Service will be is governed by, and will be construed under, the laws of the United States of America and the laws of the State of California, without regard to choice of law principles. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Except as provided in *Section 16* below (and claims proceeding in any small claims court), all disputes arising out of or related to your use of the Service shall be subject to the exclusive jurisdiction of the state and federal courts located in San Francisco, California and you agree to submit to the personal jurisdiction and venue of such courts."
+msgstr "15.1 Falls du die Dienste in einem Land innerhalb der Europäischen Union oder sonst außerhalb der Vereinigten Staaten nutzt, gilt Folgendes: Die für die Auslegung dieser Dienstleistungsbedingungen geltenden Gesetze sind die Gesetze der Schweiz, ohne Rücksicht auf Konflikte zwischen gesetzlichen Bestimmungen. Die Anwendung des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenkauf ist ausdrücklich ausgeschlossen. Außer wie in Abschnitt 16 unten (und in Verfahren vor Gerichten für geringfügige Forderungen) vorgesehen, unterwirfst du dich unwiderruflich der persönlichen und ausschließlichen Zuständigkeit der Gerichte des Kantons Zug, Schweiz, in Bezug auf alle Streitigkeiten, die sich aus deiner Nutzung eines der Dienste ergeben oder damit im Zusammenhang stehen."
+
+#: app/templates/md/legal/terms/16.md:1
+msgid "If you are using the Service outside the United States, *Section 16.1* applies to you. If you are using the Service in the United States, *Sections 16.2, 16.3, 16.4, 16.5, 16.6 and 16.7* apply to you.\n\n"
+"16.1\t**Dispute Resolution Procedure**. You agree that, in the event any dispute or claim arises out of or relates to your use of the Apps, Site or the Service such dispute or claim shall be resolved in accordance with the following escalation procedure:\n\n"
+"a. you and the Company will attempt in good faith to negotiate a written resolution of the matter directly between the parties;\n\n"
+"b. if the parties are unable to resolve the dispute in accordance with *Section 16.1(a)* above, then they shall be free to pursue their respective remedies in accordance with applicable law or these ToU.\n\n"
+"16.2\t**Arbitration Procedures**. You and the Company agree that, except as provided in *Section 16.5* below, all disputes, controversies and claims related to this ToU (each a “**Claim**”), shall be finally and exclusively resolved by binding arbitration, which may be initiated by either party by sending a written notice requesting arbitration to the other party. Any election to arbitrate by one party shall be final and binding on the other. The arbitration will be conducted under the Streamlined Arbitration Rules and Procedures of JAMS that are in effect at the time the arbitration is initiated (the “**JAMS Rules**”) and under the terms set forth in this ToU. In the event of a conflict between the terms set forth in this *Section 16* and the JAMS Rules, the terms in this *Section 16* will control and prevail.\n\n"
+"Except as otherwise set forth in *Section 16.5*, you may seek any remedies available to you under federal, state or local laws in an arbitration action. As part of the arbitration, both you and the Company will have the opportunity for discovery of non-privileged information that is relevant to the Claim. The arbitrator will provide a written statement of the arbitrator’s decision regarding the Claim, the award given and the arbitrator’s findings and conclusions on which the arbitrator’s decision is based. The determination of whether a Claim is subject to arbitration shall be governed by the Federal Arbitration Act and determined by a court rather than an arbitrator. Except as otherwise provided in this ToU, (a) you and the Company may litigate in court to compel arbitration, stay proceedings pending arbitration, or confirm, modify, vacate or enter judgment on the award entered by the arbitrator; and (b) the arbitrator’s decision shall be final, binding on all parties and enforceable in any court that has jurisdiction, provided that any award may be challenged if the arbitrator fails to follow applicable law.\n\n"
+"BY AGREEING TO THIS ARBITRATION PROVISION, YOU UNDERSTAND THAT YOU AND THE COMPANY WAIVE THE RIGHT TO SUE IN COURT AND HAVE A JURY TRIAL.\n\n"
+"16.3\t**Location**. The arbitration will be conducted in the County of San Francisco, California, unless the parties agree to video, phone and/or internet connection appearances.\n\n"
+"16.4\t**Limitations**. You and the Company agree that any arbitration shall be limited to the Claim between the Company and you individually. YOU AND THE COMPANY AGREE THAT (a) THERE IS NO RIGHT OR AUTHORITY FOR ANY DISPUTE TO BE ARBITRATED ON A CLASS-ACTION BASIS OR TO UTILIZE CLASS ACTION PROCEDURES; (b) THERE IS NO RIGHT OR AUTHORITY FOR ANY DISPUTE TO BE BROUGHT IN A PURPORTED REPRESENTATIVE CAPACITY OR AS A PRIVATE ATTORNEY GENERAL; AND (c) NO ARBITRATION SHALL BE JOINED WITH ANY OTHER ARBITRATION.\n\n"
+"16.5\t**Exceptions to Arbitration**. You and the Company agree that the following Claims are not subject to the above provisions concerning negotiations and binding arbitration: (a) any Claim seeking to enforce or protect, or concerning the validity of, any of your or the Company’s intellectual property rights; or (b) any claim for equitable relief. In addition to the foregoing, either party may assert an individual action in small claims court for Claims that are within the scope of such court’s jurisdiction in lieu of arbitration.\n\n"
+"16.6\t**Arbitration Fees; Attorneys Fees**. If you initiate arbitration for a Claim, you will need to pay the JAMS arbitration initiation fee. If we are initiating arbitration for a Claim, we will pay all costs charged by JAMS for initiating the arbitration. All other fees and costs of the arbitration will be charged pursuant to the JAMS Rules.\n"
+"In the event any litigation or arbitration is brought by either party in connection with this ToU, the prevailing party shall be entitled to recover from the other party all the reasonable costs, attorneys’ fees and other expenses incurred by such prevailing party in the litigation or arbitration.\n\n"
+"16.7\t**Severability**. You and the Company agree that if any portion this *Section 16* is found illegal or unenforceable (except any portion of *Section 16.5*), that portion shall be severed and the remainder of the Section shall be given full force and effect. If *Section 16.5* is found to be illegal or unenforceable then neither you nor the Company will elect to arbitrate any Claim falling within that portion of *Section 16.5* found to be illegal or unenforceable and such Claim shall be exclusively decided by a court of competent jurisdiction within the County of San Francisco, State of California, United States of America, and you and the Company agree to submit to the personal jurisdiction of that court."
+msgstr "Falls du die Dienste außerhalb der Vereinigten Staaten nutzt, gilt für dich Abschnitt 16.1.\n\n"
+"16.1 **Verfahren zur Streitbeilegung**. Du bist damit einverstanden, dass wenn sich eine Streitigkeit oder ein Anspruch aus deiner Nutzung der Apps, der Website oder der Dienste ergibt oder damit im Zusammenhang steht, eine solche Streitigkeit oder ein solcher Anspruch entsprechend dem folgenden Eskalationsverfahren beigelegt wird: \n\n"
+"a. du und das Unternehmen versuchen in gutem Glauben eine schriftliche Lösung des Sachverhalts direkt zwischen den Parteien auszuhandeln;\n\n"
+"b. falls die Parteien nicht in der Lage sind, die Streitigkeit entsprechend Abschnitt 16.1 (a) oben beizulegen, dann steht ihnen frei, ihre jeweiligen Rechtsmittel gemäß dem geltenden Recht oder diesen NB anzustreben.\n\n"
+"16.7 **Salvatorische Klausel**. Du und das Unternehmen stimmen zu, dass, sollte ein Teil des hier enthaltenen Abschnitts 16 als rechtswidrig oder undurchsetzbar erachtet werden (mit Ausnahme des Abschnitts 16.5), dies nur für diesen Teil gilt und der übrige Teil des Abschnitts uneingeschränkt und vollumfänglich in Kraft bleibt. Wenn Abschnitt 16.5 als rechtswidrig oder undurchsetzbar erachtet wird, dann wirst du und auch das Unternehmen nicht beschließen, einen Anspruch, der in den Bereich dieses Teils des Abschnitts 16.5 fällt und als rechtswidrig oder undurchsetzbar erachtet wird, vor ein Schiedsgericht zu bringen, und ein solcher Anspruch wird ausschließlich durch ein Gericht des zuständigen Gerichtsstands im County von San Francisco, Bundesstaat Kalifornien, Vereinigte Staaten von Amerika, entschieden, und du und das Unternehmen erklären sich einverstanden, sich der persönlichen Zuständigkeit dieser Gerichte zu unterwerfen."
+
+#: app/templates/md/legal/terms/17.md:1
+msgid "17.1 No Partnership. You agree that no joint venture, partnership, employment, or agency relationship exists between you and the Company as a result of this ToU or your use of the Apps, the Site and/or the Service.\n\n"
+"17.2 Assignment. The Company may assign its rights under this ToU to any person or entity without your consent. The rights granted to you under this ToU may not be assigned without the Company’s prior written consent, and any attempted unauthorized assignment by you shall be null and void.\n\n"
+"17.3 Severability. If any part of this ToU is determined to be invalid or unenforceable, then that portion shall be severed, and the remainder of the ToU shall be given full force and effect.\n\n"
+"17.4 No Waiver. Our failure to enforce any provision of this ToU shall in no way be construed to be a present or future waiver of such provision, nor in any way affect our right to enforce the same provision at a later time. An express waiver by the Company of any provision, condition or requirement of this ToU shall not be understood as a waiver of your obligation to comply with the same provision, condition or requirement at a later time.\n\n"
+"17.5 Notices. All notices given by you or required under this ToU shall be in writing and addressed to: Wire Swiss GmbH, Gotthardstrasse 28, 6302 Zug, Switzerland, ATTN: Legal Department.\n\n"
+"17.6 Import and Export Administration. You must comply with all import and export laws and regulations of Switzerland and the United States  (“**Import and Export Controls**”) and you shall not import, export, direct or transfer any portion of the Apps, Site and/or the Service, or any direct product thereof, to any destination, person or entity restricted or prohibited by the Import and Export Controls.\n\n"
+"17.7 U.S. Government Rights. If you are, or are entering into this ToU on behalf of, any agency or instrumentality of the United States Government, the Software is “commercial computer software” and “commercial computer software documentation,” and pursuant to FAR 12.212 or DFARS 227.7202, and their successors, as applicable, use, reproduction, and disclosure of the Software are governed by the terms of this ToU.\n\n"
+"17.8 Equitable Remedies. You acknowledge and agree that the Company would be irreparably damaged if the terms of this ToU were not specifically enforced, and therefore you agree that we shall be entitled, without bond, other security, or proof of damages, to appropriate equitable remedies with respect to breaches of this ToU, in addition to such other remedies as we may otherwise have available to us under applicable laws.\n\n"
+"17.9 Entire Agreement. This ToU, including the documents referenced in this ToU, constitutes the entire agreement between you and the Company with respect to the Apps, the Site and/or the Service and supersedes any and all prior agreements between you and the Company relating to the Apps, the Site and/or the Service."
+msgstr "17.1 Keine Partnerschaft. Du erklärst, dass keine Beziehung eines Gemeinschaftsunternehmens, einer Partnerschaft einer Beschäftigung oder einer Agentur zwischen dir und dem Unternehmen infolge dieser NB oder deiner Nutzung der Apps, der Website und/oder der Dienste besteht.\n\n"
+"17.2 Abtretung. Das Unternehmen kann die Rechte gemäß diesen NB an eine natürliche oder juristische Person ohne deine Zustimmung abtreten. Die dir gemäß diesen NB gewährten Rechte dürfen nicht ohne die vorherige schriftliche Zustimmung des Unternehmens abgetreten werden, und jede versuchte unerlaubte Abtretung deinerseits ist ungültig.\n\n"
+"17.3 Salvatorische Klausel. Wenn festgestellt wird, dass ein Teil dieser NB rechtswidrig oder undurchsetzbar ist, dann gilt dies nur für diesen Teil und der übrige Teil der NB bleibt uneingeschränkt und vollumfänglich in Kraft.\n\n"
+"17.4 Kein Verzicht. Wenn wir eine Bestimmung dieser NB nicht durchsetzen können, dann darf dies auf keinen Fall dahingehend ausgelegt werden, dass gegenwärtig oder künftig auf diese Bestimmung verzichtet wird, noch darf dies in irgendeiner Weise unser Recht beeinträchtigen, diese Bestimmung zu einem späteren Zeitpunkt durchzusetzen. Ein ausdrücklicher Verzicht seitens des Unternehmens auf eine Bestimmung, Bedingung oder Anforderung dieser NB darf nicht als ein Verzicht auf deine Verpflichtung, diese Bestimmung, Bedingung oder Anforderung zu einem späteren Zeitpunkt einzuhalten, verstanden werden.\n\n"
+"17.5 Mitteilungen. Alle Mitteilungen, die du vornimmst oder gemäß diesen NB erforderlich sind, müssen schriftlich erfolgen und sind zu adressieren an: Wire Swiss GmbH, Gotthardstrasse 28, 6302 Zug, Schweiz, z. H.: Rechtsabteilung.\n\n"
+"17.6 Import- und Exportverwaltung. Du musst sämtliche Gesetze und Bestimmungen der Schweiz und der Vereinigten Staaten über Import und Export (**„Import- und Exportkontrollen”**) einhalten und du darfst nicht einen Teil der Apps, der Website und/oder der Dienste oder irgendein direktes Produkt davon an Bestimmungsorte, natürliche oder juristische Personen, die durch die Import- und Exportkontrollen beschränkt oder verboten sind, importieren, exportieren, weiterleiten oder übermitteln.\n\n"
+"17.7 -\n\n"
+"17.8 Billigkeitsrechtliche Rechtsmittel. Du erkennst an und stimmst zu, dass das Unternehmen eine irreparable Schädigung erleiden würde, wenn die Bedingungen dieser NB nicht ausdrücklich durchgesetzt werden, und daher bist du damit einverstanden, dass wir berechtigt sind, ohne Kaution, sonstige Sicherheiten oder Nachweis der Schäden, billigkeitsrechtliche Rechtsmittel in Bezug auf die Verstöße gegen diese NB einzusetzen, und zwar zusätzlich zu den Rechtsmitteln, die uns gemäß den geltenden Gesetzen zur Verfügung stehen.\n"
+"17.9 Gesamte Vereinbarung. Diese NB, einschließlich der darin zitierten Dokumente, stellen die Gesamtheit der Vereinbarung zwischen dir und dem Unternehmen in Bezug auf die Apps, die Website und/oder Dienste dar und ersetzen alle vorherigen Vereinbarungen zwischen dir und dem Unternehmen in Bezug auf die Apps, die Website und/oder die Dienste."
+
+#: app/templates/md/legal/terms/18.md:1
+msgid "In an effort to enhance the performance of the Service, the Service may access usage information on your computer or other applicable device, such as usage data and/or data transmission including crash reports sent to third parties. Such information is anonymized. You hereby, as a default setting, grant permission for the Service to monitor such anonymized information and to communicate information, including, without limitation, your account information, to the Company’s servers for the purposes of analyzing your device’s performance during use of the Service. Additionally, the Service will utilize the processor, bandwidth and hard drive (or other memory or storage hardware) and/or cache of your computer or other applicable device for the limited purpose of facilitating the communication between, and the transmittal of data, content, services or features to, you and other users, and to facilitate the operation of the network of computers running instances of the Service. All computer and/or device information will be anonymized and will not be personally identifiable with you. You can opt out of providing this information at any time by changing your settings / preferences within the App."
+msgstr "In dem Bemühen, die Leistung der Dienste zu verbessern, könnten die Dienste auf Nutzungsinformationen, wie etwa Nutzungsdaten und/oder Datenübertragung einschließlich Absturzberichte, die Dritten gesendet werden, auf deinem Computer oder auf anderen zutreffenden Geräten zugreifen. Solche Informationen sind anonymisiert. Hiermit erlaubst du als Standardeinstellung den Diensten, solche anonymisieren Informationen zu überwachen und Informationen, einschließlich, aber nicht beschränkt auf deine Kontoinformationen, an die Server des Unternehmens zum Zwecke der Analyse der Leistung deines Geräts während der Nutzung der Dienste zu übermitteln. Darüber hinaus nutzen die Dienste den Prozessor, die Bandbreite und die Festplatte (oder eine andere Speicherhardware) und/oder den Cache deines Computers oder eines anderen anwendbaren Geräts für den begrenzten Zweck der Vereinfachung der Kommunikation zwischen dir und anderen Nutzern und zur Übertragung von Daten, Inhalten, Diensten oder Features zu dir oder anderen Nutzern, und um den Betrieb der Netzwerke der Computer, auf denen die Instanzen der Dienste laufen, zu vereinfachen. Alle Computer- und/oder Geräteinformationen werden anonymisiert und du wirst durch sie nicht persönlich zu identifizieren sein. Du kannst dich jederzeit entscheiden, diese Informationen nicht zur Verfügung zu stellen, indem du deine Einstellungen innerhalb der App änderst."
+
+#: app/templates/md/legal/terms/19.md:1
+msgid "If you have any questions about our Terms of Use, please contact us by email at [legal@wire.com](mailto:legal@wire.com)."
+msgstr "Bei Fragen zu unseren Nutzungsbedingungen, kontaktiere uns bitte per E-Mail an [legal@wire.com](mailto:legal@wire.com)."
+
+#: app/templates/md/legal/terms/20.md:1
+msgid "You must read and agree to this ToU and the supporting [Privacy Policy](/legal/#privacy) to use the Apps, the Site and/or the Service. By using the Apps, the Site and/or the Service, you represent that you have read and consent to our Privacy Policy in addition to this ToU and agree with their content.  The Company may revise the Privacy Policy at any time and the new versions will be referenced in the Apps and published on the Site.  If at any point you do not agree to any portion of the Privacy Policy, you must immediately stop using the Apps, the Site and/or the Service. By using the Apps, the Site and/or the Service, you agree to the then-current versions of the ToU and Privacy Policy which will be posted and the Apps or the Site."
+msgstr "Du musst diese NB und die begleitende [Datenschutzerklärung](/legal/#privacy)  lesen und diesen zustimmen, um die Apps, die Website und/oder die Dienste nutzen zu können. Durch die Nutzung der Apps, der Website und/oder die Dienste erklärst du, dass du neben den NB die Datenschutzerklärung gelesen und dieser zugestimmt hast, sowie dass du mit dem Inhalt dieser einverstanden bist. Das Unternehmen kann jederzeit die Datenschutzerklärung überarbeiten. Auf die neuen Versionen wird in den Apps verwiesen und diese werden auf der Website veröffentlicht. Wenn du zu irgendeinem Zeitpunkt mit einem Abschnitt der Datenschutzerklärung nicht einverstanden bist, musst du sofort die Nutzung der Apps, der Website und/oder der Dienste beenden. Durch Nutzung der Apps, der Website und/oder der Dienste, stimmst du den zu diesem Zeitpunkt aktuellen Versionen der NB und der Datenschutzerklärung zu. Diese Versionen werden in den Apps oder auf der Website veröffentlicht."
+
+#: app/templates/pricing.html:5
+msgid "For business and personal matters."
+msgstr "Für Geschäftliches und Persönliches."
+
+#: app/templates/pricing.html:10
+msgid "Personal"
+msgstr "Privat"
+
+#: app/templates/pricing.html:12
+msgid "Encrypted chat"
+msgstr "Verschlüsselte Unterhaltungen"
+
+#: app/templates/compare/other.html:69 app/templates/pricing.html:13
+msgid "Secure calls"
+msgstr "Sichere Anrufe"
+
+#: app/templates/pricing.html:15 app/templates/pricing.html:30
+msgid "View full feature list"
+msgstr "Alle Features ansehen"
+
+#: app/templates/pricing.html:16
+msgid "Free"
+msgstr "Kostenlos"
+
+#: app/templates/pricing.html:24
+msgid "Free for 30 days"
+msgstr "30 Tage kostenlos"
+
+#: app/templates/compare/business.html:76 app/templates/pricing.html:27
+msgid "Team admin"
+msgstr "Team-Administration"
+
+#: app/templates/pricing.html:28
+msgid "User management"
+msgstr "Benutzerverwaltung"
+
+#: app/templates/pricing.html:29
+msgid "Priority support"
+msgstr "Vorrangiger Support"
+
+#: app/templates/pricing.html:42
+msgid "Enterprise"
+msgstr "Enterprise"
+
+#: app/templates/pricing.html:44
+msgid "Self-hosted server"
+msgstr "Eigene Server"
+
+#: app/templates/pricing.html:45
+msgid "Integration API"
+msgstr "API für Integrationen"
+
+#: app/templates/pricing.html:46
+msgid "Compliance"
+msgstr "Compliance-Exporte"
+
+#: app/templates/pricing.html:47
+msgid "Premium support"
+msgstr "Premium-Support"
+
+#: app/templates/pricing.html:48
+msgid "Custom"
+msgstr "Individuell"
+
+#: app/templates/pricing.html:51
+msgid "Contact"
+msgstr "Kontakt"
+
+#: app/templates/pricing.html:57
+msgid "Interested in becoming a distribution partner?"
+msgstr "Interessiert unser Vertriebspartner zu werden?"
+
+#: app/templates/pricing.html:58
+msgid "Contact us"
+msgstr "Kontaktiere uns"
+
+#: app/templates/security.html:6
+msgid "Secured with end‑to‑end&nbsp;encryption.<br>Protected by European privacy laws."
+msgstr "Von Ende-zu-Ende verschlüsselt.<br>Mit Datenschutz-Standards der EU."
+
+#: app/templates/compare/business.html:16 app/templates/security.html:13
+msgid "End-to-end encrypted"
+msgstr "Ende-zu-Ende verschlüsselt"
+
+#: app/templates/security.html:14
+msgid "Everything on Wire is secured with end-to-end encryption — text chats, conference calls, files."
+msgstr "Auf Wire ist alles durch Ende-zu-Ende-Verschlüsselung geschützt — Unterhaltungen, Anrufe, Dateien."
+
+#: app/templates/security.html:15
+msgid "Security white paper"
+msgstr "Sicherheits-Whitepaper"
+
+#: app/templates/security.html:22
+msgid "Independently audited"
+msgstr "Unabhängig geprüft"
+
+#: app/templates/security.html:23
+msgid "Wire’s protocol implementation has been audited by independent security experts."
+msgstr "Die Protokoll-Implementierung von Wire wurde unabhängig geprüft."
+
+#: app/templates/security.html:24
+msgid "Download report"
+msgstr "Bericht herunterladen"
+
+#: app/templates/security.html:31
+msgid "Multi-device messaging"
+msgstr "Kommunikation mit mehreren Geräten"
+
+#: app/templates/security.html:32
+msgid "One account works on up to 8 devices. <br>Messages are encrypted for each device."
+msgstr "Bis zu 8 Geräte pro Benutzer<br>Nachrichten werden für jedes Gerät einzeln verschlüsselt."
+
+#: app/templates/security.html:33 app/templates/security.html:42
+#: app/templates/security.html:53
+msgid "Read more"
+msgstr "Erfahre mehr"
+
+#: app/templates/security.html:40
+msgid "Trusted conversations"
+msgstr "Verifizierte Unterhaltungen"
+
+#: app/templates/security.html:41
+msgid "Verify each conversation partner’s device fingerprints for maximum security."
+msgstr "Höchstmögliche Sicherheit bei Verifizierung der Geräte-Fingerabdrücke aller Unterhaltungsteilnehmer."
+
+#: app/templates/security.html:49
+msgid "Forward and backward secrecy"
+msgstr "Forward- und Backward-Secrecy"
+
+#: app/templates/security.html:50
+msgid "New encryption keys are used for each message, so a compromised key has minimal impact."
+msgstr "Jede Nachricht wird mit neuen Schlüsseln verschlüsselt, so dass ein kompromittierter Schlüssel minimale Auswirkungen hat."
+
+#: app/templates/compare/business.html:36 app/templates/compare/other.html:15
+#: app/templates/security.html:62 app/templates/security.html:128
+msgid "Open source"
+msgstr "Open-Source"
+
+#: app/templates/security.html:63
+msgid "Wire’s source code is available on GitHub for anyone to verify, modify and improve."
+msgstr "Der Quellcode von Wire ist auf GitHub verfügbar und kann von allen überprüft, modifiziert und verbessert werden."
+
+#: app/templates/security.html:64
+msgid "Code on GitHub"
+msgstr "Quellcode auf GitHub"
+
+#: app/templates/security.html:69
+msgid "Technical overview"
+msgstr "Technischer Überblick"
+
+#: app/templates/security.html:70
+#, python-format
+msgid "Text messages and pictures use the [Proteus protocol](%(proteus)s) for end-to-end encryption. Proteus is based on the Axolotl ratchet and pre-keys that are optimized for mobile and multi-device messaging."
+msgstr "Textnachrichten und Bilder werden mit dem [Proteus-Protokoll](%(proteus)s) Ende-zu-Ende-verschlüsselt. Proteus basiert auf dem Axolotl-Ratchet und Pre-Keys, die für mobiles und Multi-Device-Messaging optimiert wurden."
+
+#: app/templates/security.html:71
+msgid "Voice and video calls use the WebRTC standard. More precisely, DTLS and KASE are used for key negotiation and authentication and SRTP is used for encrypted media transport. This means that voice calls are end-to-end encrypted with perfect forward secrecy enabled without compromising HD call quality."
+msgstr "Sprach- und Videoanrufe verwenden den WebRTC-Standard. Genauer gesagt werden DTLS und KASE für die Schlüsselaushandlung und Authentifizierung sowie SRTP für die Transportverschlüsselung der Mediendaten verwendet. Dies bedeutet, dass Anrufe ohne Einbußen bei der HD-Qualität mit perfekter Forward-Secrecy Ende-zu-Ende verschlüsselt sind."
+
+#: app/templates/security.html:72
+msgid "Wire’s encryption works transparently in the background and doesn’t need to be activated — it’s always on. There’s no need to compromise security for usability or settle for missing features. Wire keeps everything private while avoiding the complexity that is common to other secure messengers."
+msgstr "Wires Verschlüsselung arbeitet transparent im Hintergrund und muss nicht erst eingeschaltet werden — sie ist stets aktiviert. Kompromisse zwischen Sicherheit und Benutzerfreundlichkeit sind ebenso wenig erforderlich wie der Verzicht auf Funktionsumfang. Wire schützt die Privatsphäre ohne die Komplexität anderer vergleichbarer Apps."
+
+#: app/templates/security.html:75
+msgid "Download security whitepaper"
+msgstr "Sicherheits-Whitepaper herunterladen"
+
+#: app/templates/security.html:79
+msgid "Privacy"
+msgstr "Privatsphäre"
+
+#: app/templates/security.html:86
+msgid "Swiss headquarters, EU servers"
+msgstr "Sitz in der Schweiz, Server in der EU"
+
+#: app/templates/security.html:87
+msgid "Fully compliant with the strict data protection laws in Switzerland and the European Union."
+msgstr "Vollständig konform zu den strikten Datenschutzgesetzen der Schweiz und der EU."
+
+#: app/templates/security.html:89
+msgid "Simple Privacy Policy"
+msgstr "Einfache Datenschutzerklärung"
+
+#: app/templates/security.html:90
+msgid "We put privacy in simple terms that are easy for anyone to understand — not just for lawyers."
+msgstr "Wir fassen Privatsphäre in für jeden verständliche Worte — nicht nur für Anwälte."
+
+#: app/templates/security.html:92
+msgid "No advertising"
+msgstr "Keine Werbung"
+
+#: app/templates/security.html:93
+msgid "No ads, no banners, no popups, no takeovers — none of that nonsense."
+msgstr "Keine Werbung, keine Banner, keine Pop-ups — nichts davon."
+
+#: app/templates/security.html:99
+msgid "Detailed privacy white paper"
+msgstr "Datenschutz-Whitepaper"
+
+#: app/templates/security.html:100
+msgid "We’re transparent about the data we collect, and what we use it for."
+msgstr "Wir bieten vollständige Transparenz über die gesammelten Daten und deren Verwendung."
+
+#: app/templates/security.html:102
+msgid "No profiling"
+msgstr "Keine Profilerstellung"
+
+#: app/templates/security.html:103
+msgid "Wire does not sell analytics or usage data to advertising companies or anyone else."
+msgstr "Wire verkauft keine Nutzungsdaten — weder an die Werbewirtschaft noch anderweitig."
+
+#: app/templates/security.html:105
+msgid "No phone number required"
+msgstr "Keine Telefonnummer notwendig"
+
+#: app/templates/security.html:106
+msgid "Register with an email address and share a unique @username to connect with others."
+msgstr "Zur Registrierung genügt eine E-Mail-Adresse. Mit einem einzigartigen @-Benutzernamen finden dich andere."
+
+#: app/templates/security.html:113
+msgid "Wire is not in the business of collecting or selling data"
+msgstr "Wire sammelt und verkauft keine Daten"
+
+#: app/templates/security.html:114
+msgid "We store only the data we need to make sure your conversations stay in sync across devices, to detect fraud and spam, and to troubleshoot customer issues."
+msgstr "Wir speichern lediglich die Daten, die wir zur Synchronisation der Unterhaltungen zwischen den Geräten eines Nutzers, zur Erkennung von Betrug und Spam und zur Behebung von Kunden-Problemen benötigen."
+
+#: app/templates/security.html:117
+msgid "Download privacy whitepaper"
+msgstr "Datenschutz-Whitepaper herunterladen"
+
+#: app/templates/security.html:121
+msgid "Transparency"
+msgstr "Transparenz"
+
+#: app/templates/security.html:129
+msgid "Wire’s source code is available on GitHub with a GPLv3 licence.<br>A self-hosted server option will be available in 2018."
+msgstr "Der Quellcode von Wire ist unter GPLv3 Lizenz auf GitHub verfügbar.<br>Eine Option für selbst-gehostete Server wird 2018 verfügbar sein."
+
+#: app/templates/security.html:130
+msgid "GitHub"
+msgstr "GitHub"
+
+#: app/templates/security.html:136
+msgid "Transparency report"
+msgstr "Transparenz-Bericht"
+
+#: app/templates/security.html:137
+msgid "Wire publishes a regular transparency report detailing all lawful requests for user data."
+msgstr "Wire veröffentlicht regelmäßig einen Transparenz-Bericht, der alle rechtmäßigen Anfragen zu Benutzerdaten auflistet."
+
+#: app/templates/security.html:140
+msgid "Signature"
+msgstr "Signatur"
+
+#: app/templates/security.html:141
+msgid "Key"
+msgstr "Schlüssel"
+
+#: app/templates/security.html:149
+msgid "Clear business model"
+msgstr "Klares Geschäftsmodell"
+
+#: app/templates/security.html:150
+msgid "Wire does not sell or share its users’ data. We make money from paying customers and don’t rely on donations."
+msgstr "Wire verkauft oder teilt die Daten der Nutzer nicht. Wir verdienen durch zahlende Kunden Geld und sind nicht von Spenden abhängig."
+
+#: app/templates/security.html:155
+msgid "Independent security audits"
+msgstr "Unabhängige Sicherheitsaudits"
+
+#: app/templates/security.html:158
+msgid "Wire is committed to working with independent security experts to publish regular audits of different components of our app."
+msgstr "Wire hat sich der Zusammenarbeit mit unabhängigen Sicherheitsexperten verschrieben, um regelmäßig Audits verschiedener Komponenten unserer Apps zu veröffentlichen."
+
+#: app/templates/security.html:160
+msgid "Protocol implementation review"
+msgstr "Überprüfung der Protokoll-Implementation"
+
+#: app/templates/security.html:161
+msgid "Kudelski Security and X41 D-Sec, February, 2017"
+msgstr "Kudelski Security and X41 D-Sec, Februar 2017"
+
+#: app/templates/unsupported.html:8
+#, python-format
+msgid "Try Wire app on %(platform)s."
+msgstr "Installiere die Wire App für %(platform)s."
+
+#: app/templates/unsupported.html:10
+#, python-format
+msgid "[Download](%(download)s) the latest version for %(platform)s. Wire for web only works on computers."
+msgstr "Die aktuelle Version für %(platform)s [herunterladen](%(download)s). Wire funktioniert nur auf Computern auch im Browser."
+
+#: app/templates/unsupported.html:14 app/templates/unsupported.html:20
+#: app/templates/unsupported.html:26
+#, python-format
+msgid "Update to the latest version of Wire for %(platform)s."
+msgstr "Aktualisiere auf die neueste Version von Wire für %(platform)s."
+
+#: app/templates/unsupported.html:16 app/templates/unsupported.html:22
+#: app/templates/unsupported.html:28
+#, python-format
+msgid "[Download](%(download)s) the latest version for %(platform)s."
+msgstr "Die neueste Version für %(platform)s [herunterladen](%(download)s)."
+
+#: app/templates/unsupported.html:31
+msgid "This browser is not supported."
+msgstr "Dieser Browser wird nicht unterstützt."
+
+#: app/templates/unsupported.html:33
+msgid "Download the latest version of"
+msgstr "Lade die neueste Version von"
+
+#: app/templates/unsupported.html:39
+msgid "Wire for macOS and Microsoft Windows are available from"
+msgstr "Wire für macOS und Microsoft Windows sind verfügbar unter"
 

@@ -147,6 +147,7 @@ def index(url='/'):
       'og.html',
       title=u'Wire · %s' % _(u'Secure messenger'),
       description=_(u'End-to-end encrypted chats, calls and files, protected by European privacy laws.'),
+      html_class='index',
       redirect=target,
     )
 
