@@ -41,6 +41,8 @@ WEBAPP_URL = os.environ.get('WEBAPP_URL', 'https://app.wire.com')
 WIRE_URL = os.environ.get('WIRE_URL', 'https://wire.com')
 WIRE_DOWNLOAD_URL = os.environ.get('WIRE_DOWNLOAD_URL', 'https://wire.com/download/')
 
+OG_IMAGE = 'https://wire-docs.wire.com/kalina/wire-icon.png'
+
 try:
   with open(os.path.join(os.path.dirname(__file__), 'version')) as version:
     VERSION = version.readline()
