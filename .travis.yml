@@ -1,0 +1,43 @@
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  yarn: true
+
+notifications:
+  email: false
+
+before_deploy:
+  - npm run build
+
+deploy:
+  - provider: elasticbeanstalk
+    skip_cleanup: true
+    zip-file: "dist/wire-account.zip"
+    access-key-id:
+      secure: SiR/RIXoKWkmdaQ2SNF50ZVZqXD6qA+3VTU3HHqkxbekJiiZl4uF5j2v4u5K3BhITykPAlsV+PVG3KaQw+T35FsHvmYHQJhl/uzl2qWifm3mux/NzOCzlRA6uX34wJU37pJ5Z3StkPCkWlfz02Q/Bqjx2r8+Ub5lxrCZJiRDdS/FP1sbFrHuSdJYQHTzkbJ9pDxDSOhST2DTuYu8hNY+4ARaXRdgbC59M+HnHJ9XTmRGTuasNKNVNUmSm1VJ4kzQ/8usMB3JEg4VGaTIvr07Cna4yp0af9bjue1f9WeOuMKK4EASHtUSIocrlsRevkx+CK7UoaDUUIden6lAi+e/pfBSZENFUxHAiwuoNwZLPM/sxT3oUNrZecq62BIL+4x8LXOGuNzeo4i3kwjMWdJqii4L+TFjDIM584qBQarp0b4SBKvNNh95GdGeGrdo2JTdtQKeQD5g3l8vfBerKVEUXfBgxVBtPrVK1PX8mMsV1aEL6pqjFNup0DiLS70nfMEghRZDTZIXl+ZvGDJpTmiSzavF+Q+7cp7PchvSUlmIh6DnVPFyKN8yaqksNipfDP4UojwCQUb5SDLr5XqvqPCaaSP31l0suPw7LPs3oMk6Eq3oBwPprTeRiZB3kGCFMRmTVaNhWwSgDNo7sxvMWcthl+1PwRbQenkdGqr4eQNe2S4=
+    secret-access-key:
+      secure: A+/Cp8IZjf6e6ShQTBXZnf94i9F4Fq3hpvRJwCoNKv+aR79VYFZV6Hv9p8bQqM+qanY/iAUiblr4UxUB544AfCAJkogHC4MpKQhqN+j5rNKyKnZfZGqz49DqyYXvFamnLm1nZLbmp72pSh+XYxvr55yCjtqDL5a4hnn3OysxDzYN0GA3GrhvXJfMVnmFdOtBnByMw2PFzDRJDw+IKMAt6t90x5bL+gMZArTcOprBQ46cC05j/1VMxKWgDkmrgXDR1kaTir+UB7GMAJ8Xy516rVk8NdqKMs0ITk39V5s+eBHPwsuC9TUajiLTTu2HdIK1/2KyQwX2aZydxU3MCBfoDmpS8qZ10Y3q7L8PCMNryWN8pvjxA6xpgZ1M4ESmm4pCJbam7DC721w+yMJL69z+WXkFRack3FHK6mcS6MJBaxH0+gPNOgVc0e2JBlapbjix6z6rFQxsNq98K0YFlZjWydp7Ft2rNZs6uGfSoqaNTuV4xGGbabdW9aVXpSFFseXJO/Hlb7Ua/zlVF/LhaJIj2xBJYL5vSCb7AEghP+8Owz7WLwPp5lnEmi/L1h31gAwkHu9GON2d1NW25WWGuK+X03AWKyLpXsZv0Z/qVkvWeNoJpTUWe03LxhN+qAuw5gUxmtBGbwfm+QN53KaUaI8L0I6wxDqKyiojqhzW1lIZGAc=
+    region: eu-west-1
+    app: Account
+    env: wire-account-prod-new
+    bucket_name: wire-account
+    on:
+      repo: wireapp/wire-account
+      branch: master
+
+  - provider: elasticbeanstalk
+    skip_cleanup: true
+    zip-file: "dist/wire-account.zip"
+    access-key-id:
+      secure: SiR/RIXoKWkmdaQ2SNF50ZVZqXD6qA+3VTU3HHqkxbekJiiZl4uF5j2v4u5K3BhITykPAlsV+PVG3KaQw+T35FsHvmYHQJhl/uzl2qWifm3mux/NzOCzlRA6uX34wJU37pJ5Z3StkPCkWlfz02Q/Bqjx2r8+Ub5lxrCZJiRDdS/FP1sbFrHuSdJYQHTzkbJ9pDxDSOhST2DTuYu8hNY+4ARaXRdgbC59M+HnHJ9XTmRGTuasNKNVNUmSm1VJ4kzQ/8usMB3JEg4VGaTIvr07Cna4yp0af9bjue1f9WeOuMKK4EASHtUSIocrlsRevkx+CK7UoaDUUIden6lAi+e/pfBSZENFUxHAiwuoNwZLPM/sxT3oUNrZecq62BIL+4x8LXOGuNzeo4i3kwjMWdJqii4L+TFjDIM584qBQarp0b4SBKvNNh95GdGeGrdo2JTdtQKeQD5g3l8vfBerKVEUXfBgxVBtPrVK1PX8mMsV1aEL6pqjFNup0DiLS70nfMEghRZDTZIXl+ZvGDJpTmiSzavF+Q+7cp7PchvSUlmIh6DnVPFyKN8yaqksNipfDP4UojwCQUb5SDLr5XqvqPCaaSP31l0suPw7LPs3oMk6Eq3oBwPprTeRiZB3kGCFMRmTVaNhWwSgDNo7sxvMWcthl+1PwRbQenkdGqr4eQNe2S4=
+    secret-access-key:
+      secure: A+/Cp8IZjf6e6ShQTBXZnf94i9F4Fq3hpvRJwCoNKv+aR79VYFZV6Hv9p8bQqM+qanY/iAUiblr4UxUB544AfCAJkogHC4MpKQhqN+j5rNKyKnZfZGqz49DqyYXvFamnLm1nZLbmp72pSh+XYxvr55yCjtqDL5a4hnn3OysxDzYN0GA3GrhvXJfMVnmFdOtBnByMw2PFzDRJDw+IKMAt6t90x5bL+gMZArTcOprBQ46cC05j/1VMxKWgDkmrgXDR1kaTir+UB7GMAJ8Xy516rVk8NdqKMs0ITk39V5s+eBHPwsuC9TUajiLTTu2HdIK1/2KyQwX2aZydxU3MCBfoDmpS8qZ10Y3q7L8PCMNryWN8pvjxA6xpgZ1M4ESmm4pCJbam7DC721w+yMJL69z+WXkFRack3FHK6mcS6MJBaxH0+gPNOgVc0e2JBlapbjix6z6rFQxsNq98K0YFlZjWydp7Ft2rNZs6uGfSoqaNTuV4xGGbabdW9aVXpSFFseXJO/Hlb7Ua/zlVF/LhaJIj2xBJYL5vSCb7AEghP+8Owz7WLwPp5lnEmi/L1h31gAwkHu9GON2d1NW25WWGuK+X03AWKyLpXsZv0Z/qVkvWeNoJpTUWe03LxhN+qAuw5gUxmtBGbwfm+QN53KaUaI8L0I6wxDqKyiojqhzW1lIZGAc=
+    region: eu-west-1
+    app: Account
+    env: wire-account-staging-new
+    bucket_name: wire-account
+    on:
+      repo: wireapp/wire-account
+      branch: staging

@@ -27,14 +27,16 @@ window.initVerify = function() {
   if (url) {
     $.ajax({
       url: url,
-      xhrFields: {withCredentials: eval($('#url').data('credentials'))}
-    }).done(function(data, status_text, xhr) {
-      sendEvent('account.verify-email', 'success', xhr.status, 1);
-      verifySuccess(xhr.status);
-    }).fail(function(xhr) {
-      sendEvent('account.verify-email', 'fail', xhr.status, 1);
-      verifyFail(xhr.status);
-    });
+      xhrFields: {withCredentials: eval($('#url').data('credentials'))},
+    })
+      .done(function(data, status_text, xhr) {
+        sendEvent('account.verify-email', 'success', xhr.status, 1);
+        verifySuccess(xhr.status);
+      })
+      .fail(function(xhr) {
+        sendEvent('account.verify-email', 'fail', xhr.status, 1);
+        verifyFail(xhr.status);
+      });
   } else {
     verifyFail(404);
   }
