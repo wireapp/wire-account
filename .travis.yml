@@ -1,16 +1,15 @@
 language: node_js
 
 node_js:
-- '8'
+  - '8'
 
 notifications:
   email: false
 
 before_deploy:
-- npm run build
+  - npm run build
 
 deploy:
-  matrix:
   - provider: elasticbeanstalk
     skip_cleanup: true
     zip-file: dist/wire-account.zip
@@ -23,7 +22,9 @@ deploy:
     env: wire-account-prod-new
     bucket_name: wire-account
     on:
+      repo: wireapp/wire-account
       branch: master
+
   - provider: elasticbeanstalk
     skip_cleanup: true
     zip-file: dist/wire-account.zip
@@ -36,4 +37,5 @@ deploy:
     env: wire-account-staging-new
     bucket_name: wire-account
     on:
+      repo: wireapp/wire-account
       branch: staging
