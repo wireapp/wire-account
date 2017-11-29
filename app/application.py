@@ -349,7 +349,7 @@ def reset():
 def invite(invite):
   if util.user_agent()['is']['desktop']:
     util.track_event_to_piwik('account.invite', 'redirect', 'desktop', 1)
-    return flask.redirect('%s/auth/?invite=%s' % (config.WEBAPP_URL, invite))
+    return flask.redirect('%s/login/?invite=%s' % (config.WEBAPP_URL, invite))
 
   if util.user_agent()['is']['ios']:
     util.track_event_to_piwik('account.invite', 'redirect', 'ios', 1)
