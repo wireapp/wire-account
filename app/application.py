@@ -61,7 +61,7 @@ def index(url='/'):
   ua_is = util.user_agent()['is']
   if flask.request.url.find(u'get.wire.com') > 0:
     label = 'desktop'
-    target = '%s/?connect' % config.WEBAPP_URL
+    target = '%s/login/?connect' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
       label = 'android'
