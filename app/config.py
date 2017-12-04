@@ -28,14 +28,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '2.71828182845904523536028747135266')
 PIWIK_HOSTNAME = os.environ.get('PIWIK_HOSTNAME', '')
 PIWIK_ID = os.environ.get('PIWIK_ID', '')
 
+DOWNLOAD_ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.wire'
+DOWNLOAD_IOS_URL = 'https://itunes.apple.com/app/wire/id930944768?mt=8'
+DOWNLOAD_OSX_URL = 'https://itunes.apple.com/app/wire/id931134707?mt=12'
+DOWNLOAD_WINDOWS_URL = 'https://wire-app.wire.com/win/prod/WireSetup.exe'
+REDIRECT_VERIFY_URL = 'wire://email-verified'
+REDIRECT_PHONE_URL = 'wire://verify-phone'
+REDIRECT_RESET_URL = 'wire://password-reset-successful'
+
 BACKEND_URL = os.environ.get('BACKEND_URL', 'https://prod-nginz-https.wire.com')
-DOWNLOAD_ANDROID_URL = os.environ.get('DOWNLOAD_ANDROID_URL', 'https://play.google.com/store/apps/details?id=com.wire')
-DOWNLOAD_IOS_URL = os.environ.get('DOWNLOAD_IOS_URL', 'https://itunes.apple.com/app/wire/id930944768?mt=8')
-DOWNLOAD_OSX_URL = os.environ.get('DOWNLOAD_OSX_URL', 'https://itunes.apple.com/app/wire/id931134707?mt=12')
-DOWNLOAD_WINDOWS_URL = os.environ.get('DOWNLOAD_WINDOWS_URL', 'https://wire-app.wire.com/win/prod/WireSetup.exe')
-REDIRECT_VERIFY_URL = os.environ.get('REDIRECT_VERIFY_URL', 'wire://email-verified')
-REDIRECT_PHONE_URL = os.environ.get('REDIRECT_PHONE_URL', 'wire://verify-phone')
-REDIRECT_RESET_URL = os.environ.get('REDIRECT_RESET_URL', 'wire://password-reset-successful')
 TEAMS_URL = os.environ.get('TEAMS_URL', 'https://teams.wire.com')
 WEBAPP_URL = os.environ.get('WEBAPP_URL', 'https://app.wire.com')
 WIRE_URL = os.environ.get('WIRE_URL', 'https://wire.com')
