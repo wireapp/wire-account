@@ -28,10 +28,10 @@
         # elif  user_agent().is.osx
           <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
         # endif
-      <a class="wbtn blue" href="{{'%s/login/?reason=registration' % config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
+      <a class="wbtn blue" href="{{'%s/login/?reason=registration#login' % config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
     # else
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
-      <a class="wbtn blue" href="{{'%s/login/?reason=registration' % config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
+      <a class="wbtn blue" href="{{'%s/login/?reason=registration#login' % config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
     # endif
   </div>
 
