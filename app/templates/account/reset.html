@@ -14,9 +14,9 @@
         # elif  user_agent().is.osx
           <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
         # endif
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
+      <a class="wbtn blue" href="{{'%s/login/#login' % config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
     # else
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
+      <a class="wbtn blue" href="{{'%s/login/#login' % config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
     # endif
   # elif status == 'error'
     <h1>{{_('The link is no longer valid')}}</h1>
