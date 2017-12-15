@@ -61,7 +61,7 @@ def index(url='/'):
   ua_is = util.user_agent()['is']
   if flask.request.url.find(u'get.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
       label = 'android'
@@ -78,7 +78,7 @@ def index(url='/'):
 
   if flask.request.url.find(u'startpunkt.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/ktb1xaqhs1196wfpeggb?partner=other_start_punkt&id=com.wire&referrer=utm_source%3Dother_start_punkt%26utm_medium%3Dvoucher%26utm_term%3Dreferral%26utm_campaign%3DStartPunkt'
       label = 'android'
@@ -89,7 +89,7 @@ def index(url='/'):
 
   if flask.request.url.find(u'bitundso.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/31sv3ex7q8zcvi5eo7w1?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcasts%26utm_campaign%3DBitundso%2520Android'
       label = 'android'
@@ -100,7 +100,7 @@ def index(url='/'):
 
   if flask.request.url.find(u'geektalk.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/vorrx3mi73kzwjvi72xm?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcast%26utm_campaign%3DGeekTalk%2520Android'
       label = 'android'
@@ -111,7 +111,7 @@ def index(url='/'):
 
   if flask.request.url.find(u'ubercast.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/7196vou6vjmqk4i5ibth?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownload%26utm_term%3Dpodcast%26utm_campaign%3DUbercast%2520Android'
       label = 'android'
@@ -122,7 +122,7 @@ def index(url='/'):
 
   if flask.request.url.find(u'fanboys.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/ggqiyu3170yq7nt2qmby?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcast%26utm_campaign%3DFanboys%2520Android'
       label = 'android'
@@ -133,7 +133,7 @@ def index(url='/'):
 
   if flask.request.url.find(u'workingdraft.wire.com') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/?connect#createaccount' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/t60tj28far38qryubd8v?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownload%26utm_term%3Dpodcast%26utm_campaign%3DWorkingDraft%2520Android'
       label = 'android'
@@ -349,7 +349,7 @@ def reset():
 def invite(invite):
   if util.user_agent()['is']['desktop']:
     util.track_event_to_piwik('account.invite', 'redirect', 'desktop', 1)
-    return flask.redirect('%s/login/?invite=%s' % (config.WEBAPP_URL, invite))
+    return flask.redirect('%s/auth/?invite=%s#createaccount' % (config.WEBAPP_URL, invite))
 
   if util.user_agent()['is']['ios']:
     util.track_event_to_piwik('account.invite', 'redirect', 'ios', 1)
