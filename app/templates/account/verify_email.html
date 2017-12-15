@@ -6,7 +6,7 @@
     # if (user_agent().is.ios or user_agent().is.android)
       data-redirect="{{config.REDIRECT_VERIFY_URL}}"
     # elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows)
-      data-redirect="{{config.WEBAPP_URL}}"
+      data-redirect="{{'%s/login/?reason=registration' % config.WEBAPP_URL}}"
     # endif
     data-credentials="{{credentials}}"
   >
@@ -28,10 +28,10 @@
         # elif  user_agent().is.osx
           <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
         # endif
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
+      <a class="wbtn blue" href="{{'%s/login/?reason=registration' % config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
     # else
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
-      <a class="wbtn blue" href="{{config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
+      <a class="wbtn blue" href="{{'%s/login/?reason=registration' % config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
     # endif
   </div>
 
