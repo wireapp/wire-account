@@ -61,7 +61,7 @@ def index(url='/'):
   ua_is = util.user_agent()['is']
   if flask.request.url.find(u'get.wire.com') > 0 or flask.request.url.find(u'get.zinfra.io') > 0:
     label = 'desktop'
-    target = '%s/auth/?invite#createaccount' % config.WEBAPP_URL
+    target = '%s/auth/#invite' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
       label = 'android'
@@ -283,7 +283,7 @@ def reset():
 def invite(invite):
   if util.user_agent()['is']['desktop']:
     util.track_event_to_piwik('account.invite', 'redirect', 'desktop', 1)
-    return flask.redirect('%s/auth/?code=%s#personalinvite' % (config.WEBAPP_URL, invite))
+    return flask.redirect('%s/auth/#invite/%s' % (config.WEBAPP_URL, invite))
 
   if util.user_agent()['is']['ios']:
     util.track_event_to_piwik('account.invite', 'redirect', 'ios', 1)
