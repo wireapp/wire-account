@@ -59,9 +59,9 @@ sslify = flask_sslify.SSLify(application, skips=['test'])
 def index(url='/'):
   target = flask.request.url.replace(flask.request.host_url[:-1], config.WIRE_URL)
   ua_is = util.user_agent()['is']
-  if flask.request.url.find(u'get.wire.com') > 0:
+  if flask.request.url.find(u'get.wire.com') > 0 or flask.request.url.find(u'get.zinfra.io') > 0:
     label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
+    target = '%s/auth/#invite' % config.WEBAPP_URL
     if ua_is['android']:
       target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
       label = 'android'
@@ -75,72 +75,6 @@ def index(url='/'):
       target = config.WIRE_DOWNLOAD_URL
       label = 'ie'
     util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
-
-  if flask.request.url.find(u'startpunkt.wire.com') > 0:
-    label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
-    if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/ktb1xaqhs1196wfpeggb?partner=other_start_punkt&id=com.wire&referrer=utm_source%3Dother_start_punkt%26utm_medium%3Dvoucher%26utm_term%3Dreferral%26utm_campaign%3DStartPunkt'
-      label = 'android'
-    elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/sshto9p7zu19102wzst2?partner=other_start_punkt&idfa={IDFA}'
-      label = 'ios'
-    util.track_event_to_piwik('startpunkt.wire.com', 'redirect', label, 1)
-
-  if flask.request.url.find(u'bitundso.wire.com') > 0:
-    label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
-    if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/31sv3ex7q8zcvi5eo7w1?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcasts%26utm_campaign%3DBitundso%2520Android'
-      label = 'android'
-    elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/iwv1d6jibsehl9xk9rxx?partner=other_podcast&idfa={IDFA}'
-      label = 'ios'
-    util.track_event_to_piwik('bitundso.wire.com', 'redirect', label, 1)
-
-  if flask.request.url.find(u'geektalk.wire.com') > 0:
-    label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
-    if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/vorrx3mi73kzwjvi72xm?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcast%26utm_campaign%3DGeekTalk%2520Android'
-      label = 'android'
-    elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/9o0642p1r365hz142jhl?partner=other_podcast&idfa={IDFA}'
-      label = 'ios'
-    util.track_event_to_piwik('geektalk.wire.com', 'redirect', label, 1)
-
-  if flask.request.url.find(u'ubercast.wire.com') > 0:
-    label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
-    if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/7196vou6vjmqk4i5ibth?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownload%26utm_term%3Dpodcast%26utm_campaign%3DUbercast%2520Android'
-      label = 'android'
-    elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/43g3zti2unt7loyns8da?partner=other_podcast&idfa={IDFA}'
-      label = 'ios'
-    util.track_event_to_piwik('ubercast.wire.com', 'redirect', label, 1)
-
-  if flask.request.url.find(u'fanboys.wire.com') > 0:
-    label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
-    if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/ggqiyu3170yq7nt2qmby?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownloads%26utm_term%3Dpodcast%26utm_campaign%3DFanboys%2520Android'
-      label = 'android'
-    elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/ip4oc6umy1ult63tozil?partner=other_podcast&idfa={IDFA}'
-      label = 'ios'
-    util.track_event_to_piwik('fanboys.wire.com', 'redirect', label, 1)
-
-  if flask.request.url.find(u'workingdraft.wire.com') > 0:
-    label = 'desktop'
-    target = '%s/login/?connect' % config.WEBAPP_URL
-    if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/t60tj28far38qryubd8v?partner=other_podcast&id=com.wire&referrer=utm_source%3Dother_podcast%26utm_medium%3Ddownload%26utm_term%3Dpodcast%26utm_campaign%3DWorkingDraft%2520Android'
-      label = 'android'
-    elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/81g9xaeahf3fptt2xrhj?partner=other_podcast&idfa={IDFA}'
-      label = 'ios'
-    util.track_event_to_piwik('workingdraft.wire.com', 'redirect', label, 1)
 
   if util.user_agent()['is']['crawler']:
     return flask.render_template(
@@ -349,7 +283,7 @@ def reset():
 def invite(invite):
   if util.user_agent()['is']['desktop']:
     util.track_event_to_piwik('account.invite', 'redirect', 'desktop', 1)
-    return flask.redirect('%s/login/?invite=%s' % (config.WEBAPP_URL, invite))
+    return flask.redirect('%s/auth/#invite/%s' % (config.WEBAPP_URL, invite))
 
   if util.user_agent()['is']['ios']:
     util.track_event_to_piwik('account.invite', 'redirect', 'ios', 1)
