@@ -166,7 +166,7 @@ gulp.task 'version', false, ->
 
 
 gulp.task 'zip', 'Zip Stuff.', ->
-  gulp.src ['app/**/*', '!app/static/dev/**/*'], {nodir: true}
+  gulp.src ['app/**/*', '!app/static/dev/**/*'], {nodir: true, dot: true}
   .pipe $.zip 'wire-account.zip'
   .pipe gulp.dest 'dist'
 
