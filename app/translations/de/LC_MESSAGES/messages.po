@@ -145,7 +145,7 @@ msgstr "Überprüfe deinen E-Mail Posteingang."
 
 #: app/templates/account/forgot.html:6
 msgid "We sent you a link to reset your password. It is valid for 10 minutes."
-msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist 10 Minuten gültig."
+msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist eine Stunde gültig."
 
 #: app/templates/account/forgot.html:10
 msgid "Email"
