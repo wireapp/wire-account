@@ -1,62 +1,62 @@
-#: app/application.py:148
+#: app/application.py:82
 msgid "Secure messenger"
 msgstr ""
 
-#: app/application.py:149
+#: app/application.py:83
 msgid ""
 "End-to-end encrypted chats, calls and files, protected by European "
 "privacy laws."
 msgstr ""
 
-#: app/application.py:187
+#: app/application.py:121
 msgid "Test"
 msgstr ""
 
-#: app/application.py:206
+#: app/application.py:140
 msgid "Verify Account"
 msgstr ""
 
-#: app/application.py:228
+#: app/application.py:162
 msgid "Verify Bot"
 msgstr ""
 
-#: app/application.py:245
+#: app/application.py:179
 msgid "Verify Phone"
 msgstr ""
 
-#: app/application.py:262
+#: app/application.py:196
 msgid "That does not look like an email."
 msgstr ""
 
-#: app/application.py:276
+#: app/application.py:210
 msgid "This email is not in use."
 msgstr ""
 
-#: app/application.py:279
+#: app/application.py:213
 msgid "We already sent you an email. The link is valid for 10 minutes."
 msgstr ""
 
-#: app/application.py:282 app/application.py:331
+#: app/application.py:216 app/application.py:265
 msgid "Something went wrong, please try again."
 msgstr ""
 
-#: app/application.py:285 app/application.py:334
+#: app/application.py:219 app/application.py:268
 msgid "That took longer than usual, please try again."
 msgstr ""
 
-#: app/application.py:291
+#: app/application.py:225
 msgid "Change Password"
 msgstr ""
 
-#: app/application.py:316
+#: app/application.py:250
 msgid "Choose a password that is at least 8 characters."
 msgstr ""
 
-#: app/application.py:340
+#: app/application.py:274
 msgid "Password reset"
 msgstr ""
 
-#: app/application.py:398 app/templates/account/delete.html:27
+#: app/application.py:332 app/templates/account/delete.html:27
 msgid "Delete Account"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgid "Check your email"
 msgstr ""
 
 #: app/templates/account/forgot.html:6
-msgid "We sent you a link to reset your password. It is valid for 10 minutes."
+msgid "We sent you a link to reset your password. It is valid for 1 hour."
 msgstr ""
 
 #: app/templates/account/forgot.html:10

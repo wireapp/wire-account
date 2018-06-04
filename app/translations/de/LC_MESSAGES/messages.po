@@ -1,249 +1,1729 @@
-# German translations for PROJECT.
-# Copyright (C) 2016 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-10-26 14:35+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: de\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: wirecom\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: website.pot\n"
+"Project-Id-Version: wirecom\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Last-Translator: wire <siim@wire.com>\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"PO-Revision-Date: 2018-06-04 09:38-0400\n"
 
-#: app/application.py:148
+#: app/config.py:83
+msgid "Sep"
+msgstr "Sep"
+
+#: app/config.py:129
+msgid "Euros"
+msgstr "Euro"
+
+#: app/config.py:130
+msgid "US Dollars"
+msgstr "U.S. Dollar"
+
+#: app/config.py:131
+msgid "Swiss Francs"
+msgstr "Schweizer Franken"
+
+#: app/config.py:188 app/config.py:211
+msgid "Basic Information"
+msgstr "Grundlegende Informationen"
+
+#: app/config.py:189 app/config.py:212
+msgid "ToU Updates"
+msgstr "NB-Aktualisierungen"
+
+#: app/config.py:190 app/config.py:213
+msgid "Provision of the service"
+msgstr "Bereitstellung der Dienste"
+
+#: app/config.py:191 app/config.py:214
+msgid "Discontinuation of service"
+msgstr "Einstellung der Dienste"
+
+#: app/config.py:192 app/config.py:215
+msgid "Accounts and Security"
+msgstr "Konten und Sicherheit"
+
+#: app/config.py:193 app/config.py:216
+msgid "Apps Use Requirements"
+msgstr "Nutzungsanforderungen für Apps"
+
+#: app/config.py:194 app/config.py:217
+msgid "License, Restrictions and Conditions of Use"
+msgstr "Lizenz, Beschränkungen und Nutzungsbedingungen"
+
+#: app/config.py:195 app/config.py:218
+msgid "Links"
+msgstr "Links"
+
+#: app/config.py:196 app/config.py:219
+msgid "Intellectual Property"
+msgstr "Geistiges Eigentum"
+
+#: app/config.py:197 app/config.py:220
+msgid "Submitted Content"
+msgstr "Übermittelte Inhalte"
+
+#: app/config.py:198 app/config.py:221
+msgid "Children"
+msgstr "Kinder"
+
+#: app/config.py:199 app/config.py:222
+msgid "Disclaimer of Warranties"
+msgstr "Gewährleistungsausschluss"
+
+#: app/config.py:200 app/config.py:223
+msgid "Limitation of Liability; Sole and Exclusive Remedy"
+msgstr "Haftungsbeschränkung; einziges und ausschließliches Rechtsmittel"
+
+#: app/config.py:201 app/config.py:224
+msgid "Indemnification"
+msgstr "Freistellung"
+
+#: app/config.py:202 app/config.py:225
+msgid "Governing Law; Jurisdiction"
+msgstr "Geltendes Recht; Gerichtsstand"
+
+#: app/config.py:203 app/config.py:226
+msgid "Dispute Resolution; Arbitration"
+msgstr "Streitbeilegung; Schiedsverfahren"
+
+#: app/config.py:204 app/config.py:227
+msgid "General Terms"
+msgstr "Generelle Bedingungen"
+
+#: app/config.py:205 app/config.py:228
+msgid "Utilizing Your Computer or Other Devices"
+msgstr "Nutzung Ihres Computers oder anderer Geräte"
+
+#: app/config.py:206 app/config.py:229 app/config.py:244
+msgid "Questions? Contact Us"
+msgstr "Fragen? Kontaktieren Sie uns"
+
+#: app/config.py:207 app/config.py:230 app/templates/bit/demo.html:16
+#: app/templates/legal/legal.html:46
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#: app/config.py:234
+msgid "Our Privacy Commitment"
+msgstr "Unsere Verpflichtung zum Datenschutz"
+
+#: app/config.py:235
+msgid "Conversation content"
+msgstr "Inhalt der Unterhaltungen"
+
+#: app/config.py:236
+msgid "Logs"
+msgstr "Logs"
+
+#: app/config.py:237
+msgid "Profile Information that you provide"
+msgstr "Persönliche Nutzerdaten"
+
+#: app/config.py:238
+msgid "Additional technical data"
+msgstr "Zusätzliche technische Daten"
+
+#: app/config.py:239
+msgid "Optional data"
+msgstr "Optionale Angaben"
+
+#: app/config.py:240
+msgid "Support cases"
+msgstr "Support-Fälle"
+
+#: app/config.py:241
+msgid "Third parties"
+msgstr "Dritte"
+
+#: app/config.py:242
+msgid "Data protection officer"
+msgstr "Datenschutzbeauftragter"
+
+#: app/config.py:243
+msgid "Notification of Changes"
+msgstr "Benachrichtigung über Änderungen"
+
+#: app/config.py:245
+msgid "Terms of Use"
+msgstr "Nutzungsbedingungen"
+
+#: app/control/site.py:39
+msgid "The most secure collaboration platform"
+msgstr "Die sicherste Art, zusammen zu arbeiten"
+
+#: app/control/site.py:41
+msgid "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use."
+msgstr "Business-Chats, Telefonkonferenzen und Dateifreigabe — alles durch Ende-zu-Ende-Verschlüsselung geschützt. Auch erhältlich für den persönlichen Gebrauch."
+
+#: app/control/site.py:51 app/templates/bit/footer.html:3
+#: app/templates/bit/header.html:16 app/templates/download.html:152
+#: app/templates/security.html:141
+msgid "Download"
+msgstr "Herunterladen"
+
+#: app/control/site.py:53
+msgid "Download Wire for free for mobile devices or desktop. Available for iOS, Android, macOS, Windows, Linux, and web browsers."
+msgstr "Wire kostenlos für mobile Geräte oder Computer herunterladen. Verfügbar für iOS, Android, macOS, Windows, Linux und im Browser."
+
+#: app/control/site.py:62 app/templates/bit/footer.html:7
+msgid "Jobs"
+msgstr "Jobs"
+
+#: app/control/site.py:64
+msgid "Join Wire and help us bring secure collaboration and communication to everyone."
+msgstr "Werde Teil des Teams und hilf uns sichere Kommunikation und Zusammenarbeit für alle zu ermöglichen."
+
+#: app/control/site.py:73
+msgid "Features for secure communication"
+msgstr "Features zur sicheren Kommunikation"
+
+#: app/control/site.py:75
+msgid "Encrypted chats, conference and video calls, document sharing for organizations who need the best security."
+msgstr "Verschlüsselte Chats, Konferenz- und Video-Telefonate, Dateifreigabe für Organisationen, die die höchstmögliche Sicherheit erwarten."
+
+#: app/control/site.py:88
+msgid "Security & Privacy"
+msgstr "Sicherheit & Datenschutz"
+
+#: app/control/site.py:90
+msgid "End-to-end encrypted, open source, independently audited messaging and collaboration."
+msgstr "Ende-zu-Ende verschlüsseltes, unabhängig geprüfte Kommunikation und Zusammenarbeit."
+
+#: app/control/site.py:102 app/templates/bit/footer.html:8
+msgid "About"
+msgstr "Über Uns"
+
+#: app/control/site.py:104
+msgid "The team behind the Europe-based, open source, secure collaboration platform."
+msgstr "Das Team hinter der in Europa ansässigen, sicheren Plattform zur Zusammenarbeit mit offenem Quellcode."
+
+#: app/control/site.py:113
+msgid "Integration API for Developers"
+msgstr "Entwickler-API für Integrationen"
+
+#: app/control/site.py:115
+msgid "Integrate external services with Wire, secured with end-to-end encryption."
+msgstr "Integriere externe Dienste mit Wire, geschützt durch Ende-zu-Ende-Verschlüsselung."
+
+#: app/control/site.py:126 app/templates/bit/footer.html:12
+msgid "Legal"
+msgstr "Datenschutz und AGB"
+
+#: app/control/site.py:128
+msgid "Before using Wire, there are a few things you should know."
+msgstr "Bevor du Wire benutzt, gibt es einige Dinge, die du wissen solltest."
+
+#: app/control/site.py:153 app/templates/bit/footer.html:5
+#: app/templates/bit/header.html:18 app/templates/security.html:153
+msgid "Pricing"
+msgstr "Preise"
+
+#: app/control/site.py:155
+msgid "5€ per user per month with annual billing. Free for personal use."
+msgstr "5€ monatlich pro User bei jährlicher Abrechnung. Kostenlos für den persönlichen Gebrauch."
+
+#: app/control/site.py:164
+msgid "Teams"
+msgstr "Teams"
+
+#: app/control/site.py:166
+msgid "Secure chats, file sharing and calls for work. Perfect for organizations who need the best security."
+msgstr "Sichere Chats, Dateifreigabe und Anrufe für die Arbeit. Ideal für Organisationen, die die höchstmögliche Sicherheit erwarten."
+
+#: app/control/site.py:175
+msgid "Crisis communication software"
+msgstr "Krisenkommunikations-Software"
+
+#: app/control/site.py:177
+msgid "Wire Red guarantees business communication continuity and fast recovery when cyber attack takes your network offline."
+msgstr "Wire Red garantiert die Kontinuität der Geschäftskommunikation und eine schnelle Wiederherstellung, wenn Cyber-Attacken das Unternehmensnetzwerk unzugänglich machen."
+
+#: app/control/site.py:186
 msgid "Secure messenger"
 msgstr "Sicherer Messenger"
 
-#: app/application.py:149
-msgid "End-to-end encrypted chats, calls and files, protected by European privacy laws."
-msgstr "Ende-zu-Ende verschlüsselte Chats, Anrufe und Dateien, geschützt durch europäische Datenschutzgesetze."
+#: app/control/site.py:188
+msgid "End-to-end encrypted chats, calls and file sharing, protected by European privacy laws."
+msgstr "Ende-zu-Ende verschlüsselte Chats, Anrufe und Dateifreigabe, geschützt durch europäische Datenschutzgesetze."
 
-#: app/application.py:186
-msgid "Test"
-msgstr "Test"
+#: app/templates/about.html:6
+msgid "The team behind Wire."
+msgstr "Das Team hinter Wire."
 
-#: app/application.py:205
-msgid "Verify Account"
-msgstr "Konto bestätigen"
+#: app/templates/about.html:12
+msgid "Wire’s vision is to provide secure messaging for everyone. Businesses and other organisations can be confident their communication is secure from prying eyes. And friends and family can talk freely without sacrificing their privacy."
+msgstr "Wires Vision ist die sichere Kommunikation für alle. Unternehmen und andere Organisationen vertrauen darauf, dass Kommunikation vor neugierigen Blicken geschützt ist. Freunde und Familien sollen frei sprechen können, ohne ihre Privatsphäre preiszugeben."
 
-#: app/application.py:227
-msgid "Verify Bot"
-msgstr "Bot bestätigen"
+#: app/templates/about.html:14
+msgid "Building with experience"
+msgstr "Entwickelt mit Erfahrung"
 
-#: app/application.py:244
-msgid "Verify Phone"
-msgstr "Telefonnummer bestätigen"
+#: app/templates/about.html:16
+msgid "We are a European company with over 50 employees from 23 nationalities and a wide range of backgrounds. Our people have previously worked at companies like Skype, IBM, Telio, Cisco, Fjord, SoundCloud, and Gameloft."
+msgstr "Wir sind eine europäische Firma mit mehr als 50 Mitarbeitern aus 23 Ländern und einem breit gefächerten Hintergrund. Unsere Mitarbeiter haben Erfahrungen bei Firmen wie Skype, IBM, Telio, Cisco, Fjord, SoundCloud und Gameloft gesammelt."
 
-#: app/application.py:261
-msgid "That does not look like an email."
-msgstr "Dies sieht nicht nach einer E-Mail-Adresse aus."
+#: app/templates/about.html:17
+msgid "Many in our team worked at Skype in the early days, helping to change the telecom landscape, and contributing to real-time communication technologies that became WebRTC — which now powers tools used daily by hundreds of millions of people."
+msgstr "Viele von uns waren Teil des ursprünglichen Skype-Teams, haben den Wandel der Telekommunikations-Landschaft maßgeblich vorangetrieben und an den Technologien zur Echtzeit-Kommunikation mitgewirkt, aus denen WebRTC entstanden ist — ein Standard, der heute von Hunderten von Millionen Menschen täglich genutzt wird."
 
-#: app/application.py:275
-msgid "This email is not in use."
-msgstr "Diese E-Mail wird nicht verwendet."
+#: app/templates/about.html:18
+msgid "Building on that foundation, we’re ready to revolutionize secure messaging."
+msgstr "Auf dieser Grundlage aufbauend sind wir auf dem Weg, die sichere Kommunikation zu revolutionieren."
 
-#: app/application.py:278
-msgid "We already sent you an email. The link is valid for 10 minutes."
-msgstr "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für 10 Minuten gültig."
+#: app/templates/about.html:19
+msgid "Join our team"
+msgstr "Werde Teil unseres Teams"
 
-#: app/application.py:281 app/application.py:330
-msgid "Something went wrong, please try again."
-msgstr "Es ist ein Fehler aufgetreten. Bitte versuche es erneut."
+#: app/templates/about.html:19
+msgid "we’re hiring"
+msgstr "wir stellen ein"
 
-#: app/application.py:284 app/application.py:333
-msgid "That took longer than usual, please try again."
-msgstr "Das dauerte leider zu lange. Bitte versuche es erneut."
+#: app/templates/about.html:21
+msgid "Key people"
+msgstr "Personen"
 
-#: app/application.py:290
-msgid "Change Password"
-msgstr "Passwort Ändern"
+#: app/templates/about.html:28
+msgid "CEO"
+msgstr "CEO"
 
-#: app/application.py:315
-msgid "Choose a password that is at least 8 characters."
-msgstr "Wähle ein Passwort mit mindestens acht Zeichen."
+#: app/templates/about.html:29
+msgid "Based in San Francisco, Morten has over 20 years of experience in the technology industry and extensive go-to-market and SaaS experience, spanning the US and European markets. Most recently Morten was the CEO at Huddle, a content collaboration platform serving large professional services firms as well as UK and US governments. His previous experience includes leadership roles at Syniverse, MACH, Sunrise Switzerland, TDC Denmark, and ATEA."
+msgstr "Morten, in San Francisco ansässig, arbeitet seit mehr als 20 Jahren in der Technologiebranche und hat umfangreiche Go-to-Market- und SaaS-Expertise in amerikanischen und europäischen Märkten. Zuletzt war Morten CEO bei der Content-Collaboration-Plattform Huddle, zu deren Kunden auch große Unternehmensdienstleister sowie die Regierungen Großbritanniens und der USA gehören. Zu seinen bisherigen Erfahrungen zählen Führungspositionen bei Syniverse, MACH, Sunrise Schweiz, TDC Dänemark und ATEA."
 
-#: app/application.py:339
-msgid "Password reset"
-msgstr "Passwort zurücksetzen"
+#: app/templates/about.html:40
+msgid "Co-founder"
+msgstr "Mitgründer"
 
-#: app/application.py:397 app/templates/account/delete.html:27
-msgid "Delete Account"
-msgstr "Benutzerkonto löschen"
+#: app/templates/about.html:40
+msgid "CTO/COO"
+msgstr "CTO/COO"
 
-#: app/templates/account/delete.html:5
-msgid "Account deleted"
-msgstr "Benutzerkonto gelöscht"
+#: app/templates/about.html:41
+msgid "Alan is an experienced entrepreneur with a strong background in real-time communications. He’s the co-founder and CTO of Telio Holding ASA that is now listed on the Oslo stock exchange, and Camino Networks, which was acquired by Skype/eBay. Alan is an early pioneer of VoIP technologies and a driving force in the standardization of the speech codecs that led to the WebRTC standard, which revolutionized how real-time communication products are built today."
+msgstr "Alan ist ein erfahrener Unternehmer mit einem starken Hintergrund in der Echtzeit-Kommunikation. Er war Mitgründer und CTO von Telio Holding ASA, inzwischen an der Osloer Börse notiert, und Camino Networks, die von Skype/eBay übernommen wurde. Alan ist ein Pionier von VoIP-Technologien und eine treibende Kraft hinter der Standardisierung der Sprach-Codecs, die zum WebRTC-Standard geführt haben, der heutige Echtzeit-Kommunikations-Anwendungen revolutioniert hat."
 
-#: app/templates/account/delete.html:6
-msgid "All your data on Wire is now erased."
-msgstr "Wir haben deine persönlichen Daten entfernt."
+#: app/templates/about.html:52
+msgid "CRO"
+msgstr "CRO"
 
-#: app/templates/account/delete.html:9
-msgid "Thanks for using Wire."
-msgstr "Danke für die Nutzung von Wire."
+#: app/templates/about.html:53
+msgid "Throughout his career, Rasmus has delivered growth, exits, restructuring, strategic direction and customer retention across start-ups and established multi-million-dollar businesses. He joins Wire from Huddle, where he served as the company’s Chief Operating Officer. Rasmus has served in senior leadership roles at Syniverse, Oracle, Intec, Digiquant, and Nokia."
+msgstr "Im Laufe seiner Karriere hat Rasmus für Wachstum, Exits, Restrukturierungen, strategische Neuausrichtungen und Kundenbindung in Start-ups und etablierten Multi-Millionen-Dollar-Unternehmen gesorgt. Er kommt von Huddle zu Wire, wo er als Chief Operating Officer des Unternehmens arbeitete. Rasmus war zuvor in leitenden Führungspositionen bei Syniverse, Oracle, Intec, Digiquant und Nokia tätig."
 
-#: app/templates/account/delete.html:10
+#: app/templates/about.html:65
 #, python-format
-msgid "If you’d like, you can %(survey)s."
-msgstr "Du hilfst uns, indem du %(survey)s."
+msgid "Janus is a serial entrepreneur and investor. He’s the co-founder of Kazaa, Skype, and Starship Technologies. Janus is an investor in Wire via [Iconical](%(iconical)s)."
+msgstr "Janus ist ein Serial-Entrepreneur und Investor. Er ist unter anderem Mitgründer von Kazaa, Skype und Starship Technologies. Janus investiert über [Iconical](%(iconical)s) in Wire."
 
-#: app/templates/account/delete.html:10
-msgid "share your thoughts about it"
-msgstr "Feedback"
+#: app/templates/about.html:70
+msgid "Offices"
+msgstr "Büros"
 
-#: app/templates/account/delete.html:11
-msgid "This will take no longer than a minute."
-msgstr "Dies dauert nicht länger als eine Minute."
+#: app/templates/about.html:76
+msgid "Berlin"
+msgstr "Berlin"
 
-#: app/templates/account/delete.html:15
-#: app/templates/account/verify_bot.html:26
-#: app/templates/account/verify_bot.html:31
-#: app/templates/account/verify_email.html:39
-#: app/templates/account/verify_email.html:44
-msgid "Something went wrong"
-msgstr "Es ist ein Fehler aufgetreten"
+#: app/templates/about.html:77
+msgid "Germany"
+msgstr "Deutschland"
 
-#: app/templates/account/delete.html:16
-msgid "Please try again to delete your account."
-msgstr "Bitte versuche erneut, dein Benutzerkonto zu löschen."
+#: app/templates/about.html:85 app/templates/about.html:109
+#: app/templates/compare/other.html:133 app/templates/compare/other.html:137
+msgid "Switzerland"
+msgstr "Schweiz"
 
-#: app/templates/account/delete.html:20
-msgid "Hi there,"
-msgstr "Hi,"
+#: app/templates/about.html:92
+msgid "San Francisco"
+msgstr "San Francisco"
 
-#: app/templates/account/delete.html:21
-msgid "We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes."
-msgstr "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig."
+#: app/templates/about.html:93 app/templates/compare/other.html:134
+#: app/templates/compare/other.html:135 app/templates/compare/other.html:138
+msgid "USA"
+msgstr "USA"
 
-#: app/templates/account/delete.html:26 app/templates/account/forgot.html:12
-#: app/templates/account/reset.html:32 app/templates/account/verify_bot.html:16
-#: app/templates/account/verify_email.html:16
-msgid "Please wait…"
-msgstr "Bitte warten…"
+#: app/templates/about.html:100
+msgid "Get in touch"
+msgstr "Kontaktiere uns"
 
-#: app/templates/account/delete.html:33
+#: app/templates/about.html:104
+msgid "General"
+msgstr "Allgemein"
+
+#: app/templates/about.html:108
+msgid "Zug"
+msgstr "Zug"
+
+#: app/templates/about.html:114
+msgid "Press"
+msgstr "Presse"
+
+#: app/templates/about.html:116
+msgid "Company information"
+msgstr "Firmeninformationen"
+
+#: app/templates/about.html:117
+msgid "Press inquiries"
+msgstr "Presse-Anfragen"
+
+#: app/templates/about.html:118
+msgid "Media contacts"
+msgstr "Medienkontakt"
+
+#: app/templates/about.html:123
+msgid "Business"
+msgstr "Geschäftlich"
+
+#: app/templates/about.html:125
+msgid "Product inquiries"
+msgstr "Produkt-Anfragen"
+
+#: app/templates/about.html:126
+msgid "Partnerships"
+msgstr "Partnerschaften"
+
+#: app/templates/about.html:127
+msgid "Sales questions"
+msgstr "Verkauf"
+
+#: app/templates/about.html:134
+msgid "Logo and resources"
+msgstr "Logo und Ressourcen"
+
+#: app/templates/about.html:137
 #, python-format
-msgid "If you did not ask for this, you should %(forgot)s."
-msgstr "Falls du dies nicht selbst warst, solltest du %(forgot)s."
+msgid "Official Wire logo and product images, free to use. For detailed brand guidelines, see [brand.wire.com](%(brand)s)."
+msgstr "Offizielles Wire-Logo und Produktabbildungen zur freien Verwendung. Schaue auf [brand.wire.com](%(brand)s) für detaillierte Brand-Guidelines."
 
-#: app/templates/account/delete.html:33
-msgid "reset your Wire password"
-msgstr "dein Wire-Passwort zurücksetzen"
+#: app/templates/about.html:161
+msgid "Product family"
+msgstr "Produkte"
 
-#: app/templates/account/forgot.html:5
-msgid "Check your email"
-msgstr "Überprüfe deinen E-Mail Posteingang."
+#: app/templates/about.html:167
+msgid "Mobile"
+msgstr "Handy"
 
-#: app/templates/account/forgot.html:6
-msgid "We sent you a link to reset your password. It is valid for 10 minutes."
-msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist 10 Minuten gültig."
+#: app/templates/about.html:173
+msgid "Desktop"
+msgstr "Desktop"
 
-#: app/templates/account/forgot.html:10
-msgid "Email"
-msgstr "E-Mail"
+#: app/templates/about.html:181
+msgid "Download Press Kit"
+msgstr "Presskit herunterladen"
 
-#: app/templates/account/forgot.html:13 app/templates/account/reset.html:24
-#: app/templates/account/reset.html:33
-msgid "Reset password"
-msgstr "Passwort zurücksetzen"
+#: app/templates/bit/cta_demo.html:3 app/templates/bit/header.html:23
+msgid "Get a free demo"
+msgstr "Demo anfordern"
 
-#: app/templates/account/reset.html:7
-msgid "You can now log in with your new password."
-msgstr "Du kannst dich jetzt mit deinem neuen Passwort anmelden."
+#: app/templates/bit/cta_demo.html:6
+msgid "Free consultation session with our solutions expert."
+msgstr "Kostenlose Beratung mit unseren Experten."
 
-#: app/templates/account/reset.html:9 app/templates/account/reset.html:13
-#: app/templates/account/verify_email.html:23
-#: app/templates/account/verify_email.html:27
-msgid "Get Wire"
-msgstr "Hol dir Wire"
+#: app/templates/bit/cta_trial.html:4 app/templates/bit/cta_trial.html:6
+msgid "Start a free trial"
+msgstr "Jetzt unverbindlich testen"
 
-#: app/templates/account/reset.html:11
-#: app/templates/account/verify_email.html:25
-#: app/templates/account/verify_email.html:33
-#: app/templates/account/verify_phone.html:5
-msgid "To sign in and start using Wire, launch the application."
-msgstr "Starte die App, um dich anzumelden und Wire zu benutzen."
+#: app/templates/bit/cta_trial.html:10
+msgid "30-day free trial."
+msgstr "30 Tage kostenlos testen."
 
-#: app/templates/account/reset.html:15
-#: app/templates/account/verify_email.html:29
-msgid "OPEN macOS APP"
-msgstr "macOS APP HERUNTERLADEN"
+#: app/templates/bit/cta_trial.html:11
+msgid "No credit card required."
+msgstr "Kreditkarte nicht erforderlich."
 
-#: app/templates/account/reset.html:17
-#: app/templates/account/verify_email.html:31
-msgid "Open in Web"
-msgstr "Öffne im Browser"
+#: app/templates/bit/cta_trial.html:12
+msgid "Download for personal use."
+msgstr "Für den persönlichen Gebrauch herunterladen."
 
-#: app/templates/account/reset.html:19
-#: app/templates/account/verify_email.html:34
-#: app/templates/account/verify_phone.html:6
-msgid "Open Wire"
-msgstr "Öffne Wire"
+#: app/templates/bit/demo.html:9
+msgid "Thank you. We’ll be in touch shortly."
+msgstr "Vielen Dank. Wir werden uns in Kürze melden."
 
-#: app/templates/account/reset.html:22
-msgid "The link is no longer valid"
-msgstr "Der Link ist nicht mehr gültig"
+#: app/templates/bit/demo.html:11
+msgid "Loading..."
+msgstr "Lade..."
 
-#: app/templates/account/reset.html:23
-msgid "Please try again."
-msgstr "Bitte versuche es erneut."
+#: app/templates/bit/demo.html:13
+msgid "I want to receive news and product updates from Wire via email (optional)"
+msgstr "Ich möchte Neuigkeiten und Informationen zu Produktaktualisierungen von Wire per E-Mail erhalten (optional)"
 
-#: app/templates/account/reset.html:30
-msgid "Enter new password"
-msgstr "Neues Passwort eingeben"
+#: app/templates/bit/demo.html:15
+msgid "You can unsubscribe at any time."
+msgstr "Du kannst dich jederzeit abmelden."
 
-#: app/templates/account/verify_bot.html:15
-#: app/templates/account/verify_email.html:15
-msgid "Verifying"
-msgstr "Überprüfe"
+#: app/templates/bit/demo.html:16
+msgid "Check our"
+msgstr "Lies unsere"
 
-#: app/templates/account/verify_bot.html:20
-msgid "Thank you for registering"
-msgstr "Vielen Dank für die Registrierung"
+#: app/templates/bit/demo.html:19
+msgid "Please enter work email. Or get Wire for personal use from get.wire.com"
+msgstr "Bitte nutze eine geschäftliche E-Mail-Adresse. Oder lade Wire für die Privatnutzung von get.wire.com"
 
-#: app/templates/account/verify_bot.html:21
-msgid "Please note that upon successful verification of your e-mail, your Wire service provider account is still subject to approval through our staff, which usually happens within 24 hours."
-msgstr "Bitte beachte, dass das Service-Provider-Konto nach der Bestätigung der E-Mail-Adresse noch durch uns freigeschaltet werden muss. Dies erfolgt üblicherweise innerhalb von 24 Stunden."
+#: app/templates/bit/demo.html:23
+msgid "Free consultation session with our solutions expert"
+msgstr "Kostenlose Beratung mit unseren Experten"
 
-#: app/templates/account/verify_bot.html:22
-msgid "You will be informed of the approval via a separate e-mail."
-msgstr "Über die Freischaltung wirst du per E-Mail informiert."
+#: app/templates/bit/demo.html:30
+msgid "See Wire in action"
+msgstr "Erlebe Wire"
 
-#: app/templates/account/verify_bot.html:27
-#: app/templates/account/verify_email.html:40
-msgid "Please try to create your account again."
-msgstr "Bitte versuche erneut, ein Konto zu erstellen."
+#: app/templates/bit/demo.html:31
+msgid "Talk to our product expert."
+msgstr "Kostenlose Beratung durch unsere Experten."
 
-#: app/templates/account/verify_bot.html:32
-#: app/templates/account/verify_email.html:45
-msgid "We are investigating the issue, please check back shortly."
-msgstr "Wir untersuchen das Problem. Bitte versuche es in Kürze erneut."
+#: app/templates/bit/footer.html:4 app/templates/bit/header.html:17
+msgid "Features"
+msgstr "Features"
 
-#: app/templates/account/verify_email.html:20
-msgid "Account created"
-msgstr "Benutzerkonto erstellt"
+#: app/templates/bit/footer.html:6 app/templates/bit/header.html:19
+msgid "Security"
+msgstr "Sicherheit"
 
-#: app/templates/account/verify_email.html:22
-msgid "Install the app to start using Wire."
-msgstr "Installiere die App, um Wire zu benutzen."
+#: app/templates/bit/footer.html:11
+msgid "Crisis communication"
+msgstr "Krisenkommunikation"
 
-#: app/templates/account/verify_phone.html:4
-msgid "Phone verification in progress"
-msgstr "Deine Telefonnummer wird bestätigt"
-
-#: app/templates/bit/header.html:8
+#: app/templates/bit/footer.html:13
 msgid "Support"
 msgstr "Hilfe"
 
-#~ msgid "What is Wire?"
-#~ msgstr "Was ist Wire?"
+#: app/templates/bit/header.html:21
+msgid "Log in"
+msgstr "Login"
+
+#: app/templates/compare/business.html:6 app/templates/compare/business.html:18
+#: app/templates/compare/business.html:28
+#: app/templates/compare/business.html:38
+#: app/templates/compare/business.html:48
+#: app/templates/compare/business.html:58
+#: app/templates/compare/business.html:68
+#: app/templates/compare/business.html:78
+msgid "Cloud-based email"
+msgstr "Cloud-basierte E-Mail"
+
+#: app/templates/compare/business.html:26
+msgid "Europe based"
+msgstr "In Europa beheimatet"
+
+#: app/templates/compare/business.html:46 app/templates/compare/other.html:78
+msgid "Secure group calls"
+msgstr "Sichere Gruppenanrufe"
+
+#: app/templates/compare/business.html:56 app/templates/compare/other.html:87
+msgid "Secure screen sharing"
+msgstr "Bildschirm sicher teilen"
+
+#: app/templates/compare/other.html:24
+msgid "No data sharing with advertisers"
+msgstr "Keine Datenweitergabe an Werbeindustrie"
+
+#: app/templates/compare/other.html:33
+msgid "Phone number not required"
+msgstr "Telefonnummer nicht erforderlich"
+
+#: app/templates/compare/other.html:42
+msgid "Always-on verifiable E2EE"
+msgstr "Stets aktivierte, verifizierbare E2E-Verschlüsselung"
+
+#: app/templates/compare/other.html:51
+msgid "Multi-device support for E2EE"
+msgstr "Mehr-Geräte Unterstützung für E2E-Verschlüsselung"
+
+#: app/templates/compare/other.html:54 app/templates/compare/other.html:56
+#: app/templates/compare/other.html:57
+msgid "limited"
+msgstr "eingeschränkt"
+
+#: app/templates/compare/other.html:60
+msgid "Secure group chats"
+msgstr "Sichere Gruppenchats"
+
+#: app/templates/compare/other.html:69
+msgid "Secure calls"
+msgstr "Sichere Anrufe"
+
+#: app/templates/compare/other.html:72 app/templates/compare/other.html:74
+#: app/templates/compare/other.html:75
+msgid "mobile only"
+msgstr "nur mobil"
+
+#: app/templates/compare/other.html:96
+msgid "Constant bitrate encoding (CBR) for audio calls."
+msgstr "Constant-Bitrate-Encoding (CBR) für Audioanrufe."
+
+#: app/templates/compare/other.html:96 app/templates/compare/other.html:105
+msgid "More"
+msgstr "Mehr"
+
+#: app/templates/compare/other.html:105
+msgid "Secure share extension."
+msgstr "Sichere Share Extension."
+
+#: app/templates/compare/other.html:114
+msgid "Message edit and delete"
+msgstr "Nachricht bearbeiten und löschen"
+
+#: app/templates/compare/other.html:116 app/templates/compare/other.html:117
+#: app/templates/compare/other.html:119
+msgid "delete only"
+msgstr "nur löschen"
+
+#: app/templates/compare/other.html:123
+msgid "Standalone desktop version"
+msgstr "Eigenständig nutzbare Desktopversion"
+
+#: app/templates/compare/other.html:132
+msgid "Company jurisdiction"
+msgstr "Firmensitz"
+
+#: app/templates/compare/other.html:136
+msgid "unknown"
+msgstr "unbekannt"
+
+#: app/templates/create_team.html:5
+msgid "Secure your business."
+msgstr "Das Unternehmen sichern."
+
+#: app/templates/create_team.html:9
+msgid "per user per month with 24 month contract. <br>5€ with 12 month contract and 6€ when billed monthly."
+msgstr "monatlich pro Nutzer bei 24-monatiger Vertragslaufzeit. <br>5€ bei jährlicher und 6€ bei monatlicher Abrechnung."
+
+#: app/templates/create_team.html:11
+msgid "Exclusively available for teams"
+msgstr "Ausschließlich in Teams verfügbar"
+
+#: app/templates/crisis/crisis.html:6
+msgid "Wire Red"
+msgstr "Wire Red"
+
+#: app/templates/crisis/crisis.html:7
+msgid "The secure way to"
+msgstr "Der sichere Weg, um"
+
+#: app/templates/crisis/crisis.html:7
+msgid "communicate in a crisis."
+msgstr "in Krisen zu kommunizieren."
+
+#: app/templates/crisis/crisis.html:9
+msgid "Wire Red guarantees business communication continuity and fast recovery when your network is compromised or unavailable."
+msgstr "Wire Red garantiert die Kontinuität der Geschäftskommunikation, wenn das Unternehmensnetzwerk kompromittiert wird oder nicht verfügbar ist."
+
+#: app/templates/crisis/crisis.html:16
+msgid "Ready on demand"
+msgstr "Im Bedarfsfall bereit"
+
+#: app/templates/crisis/crisis.html:17
+msgid "Your business can’t afford to go offline. In 2017, the world’s largest shipping company was hit by a malware attack that took its computers and network down for 10 days. The incident cost the company an estimated $275m in lost revenue."
+msgstr "Dein Unternehmen kann es sich nicht leisten, offline zu gehen. Im Jahr 2017 wurde die weltweit größte Reederei von einer Cyber-Attacke heimgesucht, die ihre Computer und das Netzwerk zehn Tage lang lahm legte. Der Vorfall kostete das Unternehmen geschätzte 275 Millionen US-Dollar Umsatz."
+
+#: app/templates/crisis/crisis.html:18
+msgid "Don’t let this happen to your company."
+msgstr "Schütze dein Unternehmen davor."
+
+#: app/templates/crisis/crisis.html:19
+msgid "Wire Red is a secure communication solution that is pre-provisioned and always ready to ensure business readiness and recovery."
+msgstr "Wire Red ist eine sichere Kommunikationslösung, die vorab eingerichtet wird und stets einsatzbereit ist, um die Geschäftsfähigkeit im Ernstfall wiederherzustellen."
+
+#: app/templates/crisis/crisis.html:22
+msgid "Ready for emergencies"
+msgstr "Bereit für den Ernstfall"
+
+#: app/templates/crisis/crisis.html:23
+msgid "Cloud-based"
+msgstr "Cloud-basiert"
+
+#: app/templates/crisis/crisis.html:24
+msgid "Available on mobile, desktop, tablets"
+msgstr "Verfügbar auf Mobilgeräten, Desktops und Tablets"
+
+#: app/templates/crisis/crisis.html:40
+msgid "As secure as it gets"
+msgstr "Höchstmögliche Sicherheit"
+
+#: app/templates/crisis/crisis.html:41
+msgid "Wire’s industry-leading security architecture protects all communication — messages, calls, shared documents — with end-to-end encryption. Message encryption keys never leave the device and are changed for each message for maximum security."
+msgstr "Die branchenführende Sicherheitsarchitektur von Wire schützt die gesamte Kommunikation — inkl. Nachrichten, Anrufe, geteilte Dokumente — mit Ende-zu-Ende-Verschlüsselung. Die Schlüssel verlassen nie das Gerät und werden zur höchstmöglichen Sicherheit für jede Nachricht geändert."
+
+#: app/templates/crisis/crisis.html:42
+msgid "Sensitive information can be protected further with timed messages that self-destruct on expiration."
+msgstr "Sensible Informationen können als temporäre Nachrichten, die sich nach Zeitablauf selbst zerstören, zusätzlich geschützt werden."
+
+#: app/templates/crisis/crisis.html:43
+msgid "Wire software is regularly audited by independent experts and audit reports are published on our website together with the security whitepaper."
+msgstr "Die Software von Wire wird regelmäßig von unabhängigen Experten geprüft. Die Prüfungsberichte werden zusammen mit dem Sicherheits-Whitepaper auf unserer Website veröffentlicht."
+
+#: app/templates/crisis/crisis.html:51
+msgid "Visit security page"
+msgstr "Mehr über unsere Sicherheit"
+
+#: app/templates/crisis/crisis.html:62
+msgid "Full feature coverage"
+msgstr "Alle Features verfügbar"
+
+#: app/templates/crisis/crisis.html:63
+msgid "Wire Red comes with everything you need for crisis communication and recovery. Alert your whole team, track availability, broadcast updates to smaller groups — or to the entire company."
+msgstr "Wire Red bietet alles, was für die Kommunikation in Krisensituationen benötigt wird. Benachrichtige das gesamte Team, überprüfe die Verfügbarkeit, sende Nachrichten an kleinere Gruppen — oder an das gesamte Unternehmen."
+
+#: app/templates/crisis/crisis.html:64
+msgid "Messaging, group calls, and file sharing are just the start. Wire Red can be extended with custom integrations and bot-services, all hosted by Wire so your network downtime doesn’t affect availability."
+msgstr "Nachrichten, Gruppenanrufe und Dateiaustausch sind nur der Anfang. Wire Red kann mit Integrationen angepasst und Bot-Diensten erweitert werden. Wire stellt die Verfügbarkeit sicher, damit sie nicht durch Ausfallzeiten des Unternehmensnetzwerks beeinträchtigt wird."
+
+#: app/templates/crisis/crisis.html:67
+msgid "Message, conference call, send documents"
+msgstr "Nachrichten, Konferenzgespräche, Dateiaustausch"
+
+#: app/templates/crisis/crisis.html:68
+msgid "Secure access for guests"
+msgstr "Sicherer Zugang für Gäste"
+
+#: app/templates/crisis/crisis.html:69
+msgid "Pre-defined groups"
+msgstr "Vordefinierte Gruppen"
+
+#: app/templates/crisis/crisis.html:79
+msgid "Enterprise-ready"
+msgstr "Einsatzbereit für Großunternehmen"
+
+#: app/templates/crisis/crisis.html:80
+msgid "Wire is used by over 100,000 people daily, with a network built to scale to millions of active users. A dedicated team will help your company to onboard, integrate and configure just the right setup for your needs."
+msgstr "Wire wird täglich von mehr als 100.000 Personen genutzt und basiert auf einer Netzwerk-Struktur, die darauf ausgelegt ist auf Millionen aktiver Nutzer zu skalieren. Ein engagiertes Team hilft Wire im Unternehmen einzurichten, es zu integrieren und speziell auf die Bedürfnisse anzupassen."
+
+#: app/templates/crisis/crisis.html:81
+msgid "Pre-provisioned accounts for everyone, with groups set up for executives, operations, communications and other teams to ensure that your organization is ready to go when IT systems are compromised."
+msgstr "Vorab eingerichtete Benutzerkonten für jeden und Gruppen für Führungskräfte, Operations, die Unternehmenskommunikation oder andere Teams stellen sicher, dass das Unternehmen bei Beeinträchtigung der IT-Systeme bereit ist."
+
+#: app/templates/crisis/crisis.html:84
+msgid "Service Level Agreement"
+msgstr "Service-Level-Vereinbarung"
+
+#: app/templates/crisis/crisis.html:85
+msgid "Dedicated customer support"
+msgstr "Dedizierter Kundensupport"
+
+#: app/templates/crisis/crisis.html:86
+msgid "Pre-provisioned accounts, groups"
+msgstr "Vorab eingerichtete Konten und Gruppen"
+
+#: app/templates/crisis/crisis.html:96
+msgid "Compliance"
+msgstr "Compliance"
+
+#: app/templates/crisis/crisis.html:97
+msgid "Your Wire Red setup can be part of the compliance system of choice in your company. It can be audited and tested in the framework that governs the rest of your systems and processes."
+msgstr "Wire Red kann als Teil eines frei wählbaren Compliance-Systems aufgesetzt werden. Es kann im Rahmen der Bestimmungen bestehender Systeme und Prozesse geprüft und getestet werden."
+
+#: app/templates/crisis/crisis.html:98
+msgid "Full administrative controls help to battle the “shadow IT” of staff using personal messengers as a backchannel while giving them the functionality and user-friendliness of modern solutions."
+msgstr "Die volle administrative Kontrolle gepaart mit umfangreicher Funktionalität und der Benutzerfreundlichkeit moderner Lösungen hilft bei der Bekämpfung von \"Schatten IT\", bei der Mitarbeiter auf private Messenger zurückgreifen und außerhalb der firmeninternen IT-Infrastruktur kommunizieren."
+
+#: app/templates/crisis/crisis.html:101
+msgid "ISO, GDPR, SOX-ready"
+msgstr "Bereit für ISO, DSGVO, SOX"
+
+#: app/templates/crisis/crisis.html:102
+msgid "Fully transparent, 100&#37; open source"
+msgstr "Vollständig transparent, 100&#37; Open-Source"
+
+#: app/templates/crisis/crisis.html:103
+msgid "Data export support"
+msgstr "Unterstützung des Datenexports"
+
+#: app/templates/crisis/crisis.html:114
+msgid "Wire Red works everywhere"
+msgstr "Wire Red funktioniert überall"
+
+#: app/templates/developers.html:6
+msgid "End-to-end encrypted integration API."
+msgstr "Ende-zu-Ende verschlüsselte API für Integrationen."
+
+#: app/templates/developers.html:12
+msgid "Wire is the first messaging platform to offer an API for secure, end-to-end&nbsp;encrypted integrations."
+msgstr "Wire ist die erste Messaging-Plattform, die eine API für sichere, Ende-zu-Ende verschlüsselte Integrationen anbietet."
+
+#: app/templates/developers.html:16
+msgid "Reaching people where they spend more and more of their time — in communication apps — no longer needs to come at the expense of privacy or security. With Wire’s API, businesses, brands and independent developers can securely connect external services to millions of users."
+msgstr "Nutzer dort zu erreichen, wo sie immer mehr ihrer Zeit verbringen — in Kommunikations-Apps — geht nicht länger auf Kosten der Privatsphäre. Mit Wires API können Unternehmen, Marken und unabhängige Entwickler sicher externe Dienste für Millionen von Benutzern einbinden."
+
+#: app/templates/developers.html:17
+#, python-format
+msgid "The integration API is currently in beta with code examples and documentation [available on GitHub](%(github)s)."
+msgstr "Die API für Integrationen ist derzeit in der Betaphase. Code-Beispiele und Dokumentation sind [auf GitHub verfügbar](%(github)s)."
+
+#: app/templates/download.html:8
+msgid "Works on all popular platforms."
+msgstr "Unterstützt alle gängigen Plattformen."
+
+#: app/templates/download.html:12
+msgid "Download for Android"
+msgstr "Für Android herunterladen"
+
+#: app/templates/download.html:14 app/templates/download.html:23
+#: app/templates/download.html:29 app/templates/download.html:36
+#: app/templates/download.html:66 app/templates/download.html:77
+#: app/templates/download.html:85 app/templates/download.html:94
+msgid "or newer"
+msgstr "oder neuer"
+
+#: app/templates/download.html:16 app/templates/download.html:37
+#: app/templates/download.html:68 app/templates/download.html:95
+#: app/templates/download.html:114
+msgid "Details"
+msgstr "Details"
+
+#: app/templates/download.html:22
+msgid "DOWNLOAD FOR iOS"
+msgstr "FÜR iOS HERUNTERLADEN"
+
+#: app/templates/download.html:28
+msgid "DOWNLOAD FOR macOS"
+msgstr "FÜR macOS HERUNTERLADEN"
+
+#: app/templates/download.html:34
+msgid "Download for Windows"
+msgstr "Für Windows herunterladen"
+
+#: app/templates/download.html:43
+msgid "Experimental binary"
+msgstr "Experimentelle App"
+
+#: app/templates/download.html:46 app/templates/download.html:176
+msgid "Downloads"
+msgstr "Downloads"
+
+#: app/templates/download.html:52
+msgid "Open Wire for web"
+msgstr "Öffne Wire im Browser"
+
+#: app/templates/download.html:56 app/templates/unsupported.html:37
+msgid "or"
+msgstr "oder"
+
+#: app/templates/download.html:125
+msgid "Android APK details"
+msgstr "Android APK-Details"
+
+#: app/templates/download.html:127 app/templates/download.html:150
+#: app/templates/download.html:172
+msgid "Latest version"
+msgstr "Aktuelle Version"
+
+#: app/templates/download.html:129
+msgid "Play Store"
+msgstr "Play Store"
+
+#: app/templates/download.html:133
+msgid "Certificate fingerprint (SHA256)"
+msgstr "Zertifikat-Fingerabdruck (SHA256)"
+
+#: app/templates/download.html:137 app/templates/download.html:159
+msgid "File checksum (SHA256)"
+msgstr "Datei-Prüfsumme (SHA256)"
+
+#: app/templates/download.html:148
+msgid "Windows download details"
+msgstr "Windows Download-Details"
+
+#: app/templates/download.html:155
+msgid "Certificate fingerprint (SHA1)"
+msgstr "Zertifikat-Fingerabdruck (SHA1)"
+
+#: app/templates/download.html:170
+msgid "Linux download details"
+msgstr "Linux Download-Details"
+
+#: app/templates/download.html:181
+msgid "Install via Debian repository"
+msgstr "Installation über Debian Repository"
+
+#: app/templates/error.html:8
+msgid "Page not found"
+msgstr "Seite nicht gefunden"
+
+#: app/templates/error.html:9
+#, python-format
+msgid "Sorry, we are unable to find the page. Visit our [home page](%(index)s) or [get in touch](%(about)s) if you can’t find what you are after."
+msgstr "Entschuldige, wir können die gesuchte Seite nicht finden. Besuche unsere [Homepage](%(index)s) oder [kontaktiere uns](%(about)s), wenn du dort nicht fündig wirst."
+
+#: app/templates/features.html:5
+msgid "Communicate securely.<br>Any way you want."
+msgstr "Sicher kommunizieren. <br>So wie du es willst."
+
+#: app/templates/features.html:8
+msgid "Wire combines strong encryption, a rich feature set and ease-of-use in a single app."
+msgstr "Wire vereint sichere Verschlüsselung mit einem reichhaltigen Funktionsumfang und einfacher Bedienung in einer einzigen App."
+
+#: app/templates/compare/business.html:76 app/templates/features.html:17
+msgid "Team admin"
+msgstr "Team-Administration"
+
+#: app/templates/features.html:19 app/templates/features/teams.html:8
+msgid "Add and remove people"
+msgstr "Personen hinzufügen und entfernen"
+
+#: app/templates/features.html:20
+msgid "Role management"
+msgstr "Rollenverwaltung"
+
+#: app/templates/features.html:21
+msgid "Access and history removal"
+msgstr "Zugang und Verlauf entfernen"
+
+#: app/templates/features.html:25 app/templates/features.html:42
+#: app/templates/features.html:57 app/templates/features.html:70
+#: app/templates/features.html:83 app/templates/features.html:96
+#: app/templates/features.html:109 app/templates/features.html:122
+#: app/templates/features.html:136 app/templates/features.html:150
+#: app/templates/features.html:163 app/templates/features.html:176
+#: app/templates/features.html:189 app/templates/features/teams.html:14
+#: app/templates/features/teams.html:28 app/templates/features/teams.html:41
+#: app/templates/index/index.html:18 app/templates/index/index.html:62
+msgid "Learn more"
+msgstr "Erfahre mehr"
+
+#: app/templates/features.html:34
+msgid "Always encrypted"
+msgstr "Immer verschlüsselt"
+
+#: app/templates/features.html:36
+msgid "End-to-end encryption"
+msgstr "Ende-zu-Ende-Verschlüsselung"
+
+#: app/templates/features.html:37
+msgid "Verified security"
+msgstr "Geprüfte Sicherheit"
+
+#: app/templates/crisis/crisis.html:48 app/templates/features.html:38
+msgid "100&#37; open source"
+msgstr "100&#37; Open-Source"
+
+#: app/templates/features.html:51
+msgid "Secure chats"
+msgstr "Sichere Chats"
+
+#: app/templates/features.html:53
+msgid "1:1 and unlimited group chats"
+msgstr "1:1 und unbegrenzt Gruppenchats"
+
+#: app/templates/features.html:54
+msgid "Group chats with 128 people"
+msgstr "Gruppenchats mit bis zu 128 Personen"
+
+#: app/templates/features.html:55
+msgid "Delete messages for everyone"
+msgstr "Nachrichten für alle löschen"
+
+#: app/templates/features.html:64
+msgid "Voice calls"
+msgstr "Sprachanrufe"
+
+#: app/templates/features.html:66
+msgid "Crystal clear quality"
+msgstr "Glasklare HD-Anrufe"
+
+#: app/templates/features.html:67
+msgid "Group calls with 10 people"
+msgstr "Gruppenanrufe mit bis zu 10 Personen"
+
+#: app/templates/features.html:68 app/templates/features.html:79
+msgid "Fully encrypted"
+msgstr "Vollständig verschlüsselt"
+
+#: app/templates/features.html:77
+msgid "Video calls"
+msgstr "Videoanrufe"
+
+#: app/templates/features.html:80
+msgid "Optimized data usage"
+msgstr "Optimierte Datennutzung"
+
+#: app/templates/features.html:81
+msgid "1:1 calls, groups planned"
+msgstr "1:1 Anrufe, geplant für Gruppen"
+
+#: app/templates/compare/business.html:66 app/templates/features.html:90
+msgid "Secure file sharing"
+msgstr "Sicherer Dateiaustausch"
+
+#: app/templates/features.html:92
+msgid "All file types supported"
+msgstr "Alle Dateitypen werden unterstützt"
+
+#: app/templates/features.html:93
+msgid "PDFs, DOC, XLS and more"
+msgstr "PDFs, DOC, XLS und andere"
+
+#: app/templates/features.html:94
+msgid "Easily find shared files"
+msgstr "Einfaches Finden geteilter Dateien"
+
+#: app/templates/features.html:103
+msgid "Screen sharing"
+msgstr "Bildschirm teilen"
+
+#: app/templates/features.html:105
+msgid "With up to 10 people"
+msgstr "Mit bis zu 10 Personen"
+
+#: app/templates/features.html:106
+msgid "From desktop to mobile"
+msgstr "Vom Desktop zum Handy"
+
+#: app/templates/features.html:107
+msgid "Great for collaboration"
+msgstr "Ideal für die Zusammenarbeit"
+
+#: app/templates/features.html:116
+msgid "Synced between devices"
+msgstr "Alle Geräte auf dem selben Stand"
+
+#: app/templates/features.html:118
+msgid "Chats and files always in sync"
+msgstr "Chats und Dateien stets synchronisiert"
+
+#: app/templates/features.html:119
+msgid "Log in on up to 8 devices"
+msgstr "Auf bis zu 8 Geräten zeitgleich"
+
+#: app/templates/features.html:120
+msgid "Available for all major platforms"
+msgstr "Für gängige Plattformen verfügbar"
+
+#: app/templates/features.html:129
+msgid "Secure guest rooms"
+msgstr "Sichere Gästebereiche"
+
+#: app/templates/features.html:131
+msgid "Anyone can join the conversation"
+msgstr "Jeder kann der Unterhaltung beitreten"
+
+#: app/templates/features.html:132
+msgid "No account or app required"
+msgstr "Benutzerkonto oder App nicht notwendig"
+
+#: app/templates/features.html:133
+msgid "Works in browser, fully encrypted"
+msgstr "Funktioniert im Browser, 100&#37; verschlüsselt"
+
+#: app/templates/features.html:144
+msgid "Timed messages"
+msgstr "Temporäre Nachrichten"
+
+#: app/templates/features.html:146
+msgid "Self-destruct when timer runs out"
+msgstr "Selbstzerstörend nach Zeitablauf"
+
+#: app/templates/features.html:147
+msgid "Perfect for sharing sensitive data"
+msgstr "Perfekt, um sensible Daten zu teilen"
+
+#: app/templates/features.html:148
+msgid "Great for keeping conversations tidy"
+msgstr "Hält Unterhaltungen aufgeräumt"
+
+#: app/templates/features.html:157
+msgid "Voice and video messages"
+msgstr "Sprach- und Videonachrichten"
+
+#: app/templates/features.html:159
+msgid "Easy to send"
+msgstr "Einfach zu versenden"
+
+#: app/templates/features.html:160
+msgid "Optimized file sizes"
+msgstr "Optimierte Dateigröße"
+
+#: app/templates/features.html:161
+msgid "Great when driving or walking"
+msgstr "Praktisch beim Fahren oder Laufen"
+
+#: app/templates/features.html:170
+msgid "Rich conversations"
+msgstr "Lebendige Unterhaltungen"
+
+#: app/templates/features.html:172
+msgid "Pictures, GIFs, emojis and likes"
+msgstr "Bilder, GIFs, Emojis und Reaktionen"
+
+#: app/templates/features.html:173
+msgid "Link previews, embedded videos"
+msgstr "Linkvorschau, eingebettete Videos"
+
+#: app/templates/features.html:174
+msgid "Markdown support for text formatting"
+msgstr "Markdown für Textformatierung"
+
+#: app/templates/features.html:183
+msgid "Sketch"
+msgstr "Sketch"
+
+#: app/templates/features.html:185
+msgid "Annotate images"
+msgstr "Bilder mit Anmerkungen"
+
+#: app/templates/features.html:186
+msgid "Freehand drawing tools"
+msgstr "Freihändiges Skizzieren"
+
+#: app/templates/features.html:187
+msgid "Great for quick, visual feedback"
+msgstr "Ideal für schnelles, visuelles Feedback"
+
+#: app/templates/features/teams.html:6
+msgid "Team administration"
+msgstr "Team-Verwaltung"
+
+#: app/templates/features/teams.html:9
+msgid "Assign roles to each user"
+msgstr "Zuweisung von Benutzerrollen"
+
+#: app/templates/features/teams.html:10
+msgid "Invite guests to specific chats"
+msgstr "Gäste in spezifische Chats einladen"
+
+#: app/templates/features/teams.html:22
+msgid "Self-hosting <em>(coming in 2018)</em>"
+msgstr "Eigene Server <em>(ab 2018)</em>"
+
+#: app/templates/features/teams.html:24
+msgid "Host Wire on your own server"
+msgstr "Wire auf eigenen Servern hosten"
+
+#: app/templates/features/teams.html:25
+msgid "Keep all user data on premises"
+msgstr "Daten vor Ort behalten"
+
+#: app/templates/features/teams.html:26
+msgid "Federation as an option"
+msgstr "Föderation als Option"
+
+#: app/templates/features/teams.html:35
+msgid "Secure integrations <em>(in beta)</em>"
+msgstr "Sichere Integrationen <em>(in Beta)</em>"
+
+#: app/templates/features/teams.html:37
+msgid "Developer support"
+msgstr "Entwickler-Unterstützung"
+
+#: app/templates/features/teams.html:38
+msgid "Open integration API"
+msgstr "Offene API für Integrationen"
+
+#: app/templates/features/teams.html:39
+msgid "Sample integrations and bots"
+msgstr "Beispiel-Integrationen und Bots"
+
+#: app/templates/features/teams.html:47
+msgid "History backup <em>(coming in 2018)</em>"
+msgstr "Gesprächsverläufe sichern <em>(ab 2018)</em>"
+
+#: app/templates/features/teams.html:49
+msgid "Managed history backup"
+msgstr "Gesprächsverläufe zentral speichern"
+
+#: app/templates/features/teams.html:50
+msgid "Sync history between devices"
+msgstr "Gesprächsverläufe synchronisieren"
+
+#: app/templates/features/teams.html:51
+msgid "Compliance exports &amp; admin control"
+msgstr "Compliance-Exporte &amp; Verwaltung"
+
+#: app/templates/index/index.html:6
+msgid "The most secure"
+msgstr "Die sicherste Art,"
+
+#: app/templates/index/index.html:6
+msgid "collaboration platform."
+msgstr "zusammen zu arbeiten."
+
+#: app/templates/index/index.html:8
+msgid "Business chats, one-click conference calls and shared documents — all protected with end-to-end encryption."
+msgstr "Business-Chats, Telefonkonferenzen und Dateifreigabe — alles durch Ende-zu-Ende-Verschlüsselung geschützt."
+
+#: app/templates/index/index.html:15
+msgid "Protected group chats"
+msgstr "Sichere Gruppenchats"
+
+#: app/templates/index/index.html:16
+msgid "Conversations, files and images stay in sync between your phone and computer — and everything is protected with end-to-end encryption."
+msgstr "Unterhaltungen, Dateien und Bilder werden stets zwischen Telefon und Computer synchronisiert — immer geschützt durch Ende-zu-Ende-Verschlüsselung."
+
+#: app/templates/index/index.html:17
+msgid "Create chats for specific teams or projects, and involve external partners. Mute noisy channels and keep the list clean by archiving old ones."
+msgstr "Erstelle Chats für bestimmte Team-Projekte und beziehe in diese auch externe Partner ein. Schalte störende Unterhaltungen stumm und halte die Liste durch Archivieren übersichtlich."
+
+#: app/templates/index/index.html:32
+msgid "Crystal clear calls"
+msgstr "Glasklare HD-Anrufe"
+
+#: app/templates/index/index.html:33
+msgid "Enjoy encrypted conference calls with up to 10 people or switch to video for some face-to-face time. Share your screen in one-to-one and group calls to make sure everyone’s on the same page."
+msgstr "Verschlüsselte Telefonkonferenzen mit bis zu 10 Personen — oder wechsele zu Video für ein Gespräch unter vier Augen. Teile deinen Bildschirminhalt in 1:1 und Konferenzgesprächen, damit alle das Gleiche im Blick haben."
+
+#: app/templates/index/index.html:34
+msgid "Built by the original audio engineers from Skype."
+msgstr "Von den ursprünglichen Audio-Ingenieuren von Skype entwickelt."
+
+#: app/templates/index/index.html:42
+msgid "Two in one"
+msgstr "Zwei in Einem"
+
+#: app/templates/index/index.html:43
+msgid "Wire is the first secure messenger that lets you log in to one app with multiple accounts."
+msgstr "Wire ist der erste sichere Messenger, bei dem zeitgleich mehrere Benutzerkonten in einer App genutzt werden können."
+
+#: app/templates/index/index.html:44
+msgid "You can switch between work and personal conversations, and use different profiles for colleagues, business partners, and friends."
+msgstr "Der Wechsel zwischen geschäftlichen und privaten Unterhaltungen ist einfach und ermöglicht die Verwendung von verschiedenen Profilen für Kollegen, Geschäftspartner und Freunde."
+
+#: app/templates/index/index.html:45
+msgid "You can also talk to people outside of your team, no matter if they are part of a different organization, or use a personal account."
+msgstr "Kommunikation mit Personen außerhalb des Teams geht auch, egal ob sie Teil einer anderen Organisation sind oder ein privates Konto nutzen."
+
+#: app/templates/index/index.html:59
+msgid "Teams mean business"
+msgstr "Arbeitssicherheit"
+
+#: app/templates/index/index.html:60
+msgid "Upgrade the security of your work communications to secure customer data and protect your business from competitors and hackers."
+msgstr "Verbessere die Sicherheit der Arbeits-Kommunikation, um Kundendaten und das Unternehmen vor Wettbewerbern und Hackern zu schützen."
+
+#: app/templates/index/index.html:61
+msgid "Wire teams provide access control for admins to add new users, assign roles, invite guests to specific chats, and revoke access when people leave the company."
+msgstr "In Teams auf Wire haben Administratoren die Kontrolle, neue Benutzer hinzuzufügen, ihnen Rollen zuzuweisen, Gäste in bestimmte Chats einzuladen und den Zugriff beim Ausscheiden von Mitarbeitern aus dem Unternehmen zu widerrufen."
+
+#: app/templates/index/index.html:69
+msgid "Wire compared with…"
+msgstr "Wire verglichen mit…"
+
+#: app/templates/index/index.html:71
+msgid "Business communication apps"
+msgstr "Apps zur Unternehmens-Kommunikation"
+
+#: app/templates/index/index.html:72
+msgid "Other popular messengers"
+msgstr "Andere beliebte Messenger"
+
+#: app/templates/index/index.html:75
+msgid "Wire compared with other communication apps"
+msgstr "Wire im Vergleich zu anderen Kommunikations-Apps"
+
+#: app/templates/index/index.html:84
+#, python-format
+msgid "Secure = Everything secured with [end-to-end encryption](%(security)s)."
+msgstr "Sicher = Alles wird durch [Ende-zu-Ende-Verschlüsselung](%(security)s) geschützt."
+
+#: app/templates/jobs.html:6
+msgid "Ready to build on security."
+msgstr "Baue mit uns auf Sicherheit."
+
+#: app/templates/jobs.html:12
+msgid "We’re building a secure, easy-to-use and feature-rich communication tool with the latest technologies — in public. Join us and help bring secure messaging to everyone."
+msgstr "Wir entwickeln mit den neuesten Technologien einen sicheren, einfach zu bedienenden Messenger —  Open-Source und für alle einsehbar. Werde Teil des Teams und hilf uns sichere Kommunikation für alle zu ermöglichen."
+
+#: app/templates/jobs.html:15
+msgid "Open positions"
+msgstr "Stellenangebote"
+
+#: app/templates/jobs.html:34
+msgid "Human Resources"
+msgstr "Personalabteilung (HR)"
+
+#: app/templates/jobs.html:41
+msgid "What makes Wire unique"
+msgstr "Was Wire einzigartig macht"
+
+#: app/templates/jobs.html:46
+msgid "Driven by a mission"
+msgstr "Angetrieben von einem Ziel"
+
+#: app/templates/jobs.html:47
+msgid "There’s a bigger idea that drives and motivates our team. We believe that everyone deserves privacy online — a space to talk freely, without being tracked and without our data being sold to the highest bidder."
+msgstr "Eine größere Idee motiviert uns und treibt unser Team täglich an. Wir stehen für die Online-Privatsphäre aller ein — freie Meinungsäußerung ohne Angst vor Verfolgung und ohne den Verkauf unserer Daten an den Höchstbietenden."
+
+#: app/templates/jobs.html:50
+msgid "Open source production code"
+msgstr "Quellcode vollständig Open-Source"
+
+#: app/templates/jobs.html:51
+#, python-format
+msgid "All our development is open to the public — collaborate with the team and follow our commits, pull requests, issues and discussions on [GitHub](%(github)s). Come work for us and you’ll have something to show for it."
+msgstr "Unsere Entwicklung ist für alle vollständig einsehbar — arbeite mit dem Team zusammen und verfolge unsere Commits, Pull-Requests, Issues und Diskussionen auf [GitHub](%(github)s). Schließe dich unserem Team an und mache deine Arbeit für alle sichtbar."
+
+#: app/templates/jobs.html:54
+msgid "Tech early adopters, design leaders"
+msgstr "Early-Adopter von Technologien, Design-Vorreiter"
+
+#: app/templates/jobs.html:55
+msgid "Wire was one of the first to adopt Swift for an app of this size. We use Scala on Android and Haskell on our backend. Our design team creates an elegant user experience with a distinct visual language that has earned us a German Design Award and several others."
+msgstr "Wire hat als einer der ersten Swift für eine App dieser Größe verwendet. Auf Android entwickeln wir mit Scala. Das Backend ist in Haskell geschrieben. Elegante Nutzererfahrung und klare visuelle Sprache führten zum Designpreis der Bundesrepublik Deutschland und weitere Auszeichnungen."
+
+#: app/templates/jobs.html:58
+msgid "Pick your own tools"
+msgstr "Wähle deine eigenen Tools"
+
+#: app/templates/jobs.html:59
+msgid "Developer teams are free to choose which continuous integration solution, infrastructure and services to use. You can be creative with new technologies and tools, and benefit from sharing knowledge with other teams."
+msgstr "Die Entwickler-Teams wählen CI-Lösungen, Infrastruktur und Dienste selbstständig. Lasse deiner Kreativität mit neuen Technologien und Tools freien Lauf und profitiere vom Wissensaustausch zwischen den Teams."
+
+#: app/templates/jobs.html:66
+msgid "Diversity of people and opinions"
+msgstr "Diversität von Menschen und Meinungen"
+
+#: app/templates/jobs.html:67
+msgid "Wire is an inclusive workplace that embraces cultural diversity, with people from over 20 different nationalities. We encourage minorities to apply. Our family-friendly environment provides flexible working hours."
+msgstr "Wire ist ein integrativer Arbeitsplatz, der kulturelle Vielfalt mit Menschen aus mehr als 20 Nationen lebt. Wir ermutigen Minderheiten sich zu bewerben. Unser familienfreundliches Umfeld bietet flexible Arbeitszeiten."
+
+#: app/templates/jobs.html:70
+msgid "Plenty of benefits"
+msgstr "Viele Vorteile"
+
+#: app/templates/jobs.html:71
+msgid "We offer regular catering from local chefs, a free wellness plan with weekly workouts and yoga classes in the office, massages, access to a well-stocked kitchen, rooftop BBQs in central Berlin, and safe indoor bike storage."
+msgstr "Wir bieten regelmäßiges Catering von lokalen Köchen, einen kostenlosen Wellness-Plan mit wöchentlichen Trainingseinheiten und Yoga-Kursen im Büro, Massagen, Grillen auf der Dachterrasse mit Blick über Berlin und eine sichere Fahrradaufbewahrung."
+
+#: app/templates/jobs.html:74
+msgid "Close communication with great customers"
+msgstr "Enge Kommunikation mit unseren Kunden"
+
+#: app/templates/jobs.html:75
+msgid "There’s nothing more motivating than the frank feedback from our customers — from small non-profits fighting for human rights around the world, to IT security companies, automotive giants, international business consultants and think tanks."
+msgstr "Nichts ist motivierender als das direkte und ehrliche Feedback unserer Kunden — von kleinen, gemeinnützigen Organisationen, die auf der ganzen Welt für Menschenrechte kämpfen über IT-Sicherheitsfirmen und Automobil-Riesen zu internationalen Wirtschaftsberatern und Denkfabriken."
+
+#: app/templates/jobs.html:78
+msgid "Tech talks and dev meet ups"
+msgstr "Tech-Talks und Entwickler Meet-Ups"
+
+#: app/templates/jobs.html:79
+msgid "Join our regular tech talks or hold one yourself. We’ve had external speakers from a space agency, a neuroscientist, an astrophysicist, and human rights activists in addition to a broad range of user groups and other tech events."
+msgstr "Nimm an unseren regelmäßigen Tech-Talks teil oder halte selbst einen. Zusätzlich zu einem breiten Spektrum an Nutzergruppen und anderen Tech-Veranstaltungen haben bislang externe Referenten wie eine Raumfahrtagentur, Neurowissenschaftler, Astrophysiker und Menschenrechtsaktivisten unseren Horizont erweitert."
+
+#: app/templates/legal/legal.html:6
+msgid "Explaining the important."
+msgstr "Wichtiges einfach erklärt."
+
+#: app/templates/legal/legal.html:9
+msgid "About Wire"
+msgstr "Zu Wire"
+
+#: app/templates/legal/legal.html:11
+msgid "Please read, understand and agree with the materials on this page before you use Wire."
+msgstr "Bitte lies und stimme allen Vereinbarungen auf dieser Seite zu, bevor du Wire verwendest."
+
+#: app/templates/legal/legal.html:12
+msgid "Sometimes we update these documents. If you do not agree with the changes, please stop using Wire."
+msgstr "Von Zeit zu Zeit aktualisieren wir diese Vereinbarungen. Wenn du mit den Änderungen nicht einverstanden bist, beende die Nutzung von Wire."
+
+#: app/templates/legal/legal.html:13
+msgid "You need an account for Wire. You can stop using the account or delete the app at any time."
+msgstr "Du benötigst ein Benutzerkonto für Wire. Dessen Benutzung kannst du jederzeit beenden oder die App löschen."
+
+#: app/templates/legal/legal.html:14
+msgid "Wire is used for private communication. When using it, you are required to abide by any applicable laws. You can not use Wire for unlawful or illegal, defamatory, harmful, abusive, hateful, racially or ethnically offensive purposes. If you violate these terms, we may disable your access to Wire."
+msgstr "Wire ist für private Kommunikation gedacht. Bei der Verwendung musst du geltende Gesetze einhalten. Wire darf nicht für rechtswidrige, verleumderische, verletzende, beleidigende, hassverbreitende, rassistische oder ethnisch offensive Zwecke genutzt werden. Wenn du gegen diese Bestimmungen verstößt, kann dein Zugang zu Wire gesperrt werden."
+
+#: app/templates/legal/legal.html:15
+msgid "We do not approve or endorse any content included in your conversations. We respect copyright and the intellectual property rights of others. You are responsible for the content of all of your conversations on Wire."
+msgstr "Wir beziehen keine Stellung zu Inhalten deiner Gesprächen oder billigen diese. Wir respektieren das Urheberrecht und die Rechte am geistigen Eigentum anderer. Du bist verantwortlich für den Inhalt aller deiner Unterhaltungen auf Wire."
+
+#: app/templates/legal/legal.html:19
+msgid "This was a brief summary of our Terms of Use. Read the complete version below; this will form your agreement with us. If you have any questions about it, please contact us via"
+msgstr "Dies ist eine kurze Zusammenfassung unserer Nutzungsbedingungen. Lies die vollständige Fassung und stimme der Vereinbarung zu. Bei Fragen kontaktiere uns bitte über den"
+
+#: app/templates/legal/legal.html:20
+msgid "Wire Support"
+msgstr "Wire Support"
+
+#: app/templates/legal/legal.html:23
+msgid "About Privacy"
+msgstr "Zum Datenschutz"
+
+#: app/templates/legal/legal.html:25
+msgid "Your privacy is very important to us."
+msgstr "Deine Privatsphäre ist uns äußerst wichtig."
+
+#: app/templates/legal/legal.html:25
+msgid "Find out more"
+msgstr "Erfahre mehr"
+
+#: app/templates/legal/legal.html:26
+msgid "Your conversations belong to you, not to Wire or to anyone else."
+msgstr "Deine Unterhaltungen gehören dir und nicht Wire oder anderen."
+
+#: app/templates/legal/legal.html:27
+msgid "There are no ads. Therefore your personal data or the content of your conversations is never sold or rented to anyone, it will never be used for any third-party advertising."
+msgstr "Wire ist frei von Werbung. Deine persönlichen Daten und der Inhalt deiner Unterhaltungen werden nicht verkauft, vermietet oder anderweitig weitergegeben. Sie werden zu keinem Zeitpunkt durch Dritte für Werbezwecke verwendet."
+
+#: app/templates/legal/legal.html:28
+msgid "We are transparent about the data we collect and what we do and don’t do with it. Anonymized (hashed) contact information from address books will only be used to connect users on Wire."
+msgstr "Wir bieten vollständige Transparenz über die gesammelten Daten und deren Verwendung. Die durch Hashing anonymisierten Kontaktinformationen aus Adressbüchern werden ausschließlich zum Verbinden von Benutzern auf Wire verwendet."
+
+#: app/templates/legal/legal.html:29
+msgid "Wire follows European privacy laws."
+msgstr "Wire hält sich an europäische Datenschutzgesetze."
+
+#: app/templates/legal/legal.html:33
+msgid "This was a brief summary of our Privacy Policy. Read the complete version below. If you have any questions about it, please contact us at"
+msgstr "Dies ist eine kurze Zusammenfassung unserer Datenschutzrichtlinie. Unten findest du die vollständige Fassung. Bei Fragen kontaktiere uns bitte unter"
+
+#: app/templates/legal/legal.html:44
+msgid "Terms of Use (Personal)"
+msgstr "Nutzungsbedingungen (Privat)"
+
+#: app/templates/legal/legal.html:45
+msgid "Terms of Use (Business)"
+msgstr "Nutzungsbedingungen (Geschäftlich)"
+
+#: app/templates/legal/legal.html:47
+msgid "License Information"
+msgstr "Lizenzen"
+
+#: app/templates/legal/legal_licenses.html:9
+msgid "under"
+msgstr "unter"
+
+#: app/templates/legal/legal_privacy.html:6
+#: app/templates/legal/legal_teams.html:8
+#: app/templates/legal/legal_terms.html:8
+msgid "Table of contents"
+msgstr "Inhaltsverzeichnis"
+
+#: app/templates/legal/legal_teams.html:6
+#: app/templates/legal/legal_terms.html:6
+msgid "Please read this agreement carefully; this is a binding contract."
+msgstr "Bitte lies diese Vereinbarung sorgfältig; dies ist ein bindender Vertrag."
+
+#: app/templates/pricing.html:5
+msgid "Secure collaboration is now affordable."
+msgstr "Sichere Zusammenarbeit ist jetzt erschwinglich."
+
+#: app/templates/pricing.html:8 app/templates/pricing.html:27
+msgid "Monthly"
+msgstr "Monatlich"
+
+#: app/templates/pricing.html:9 app/templates/pricing.html:28
+msgid "12 months"
+msgstr "12 Monate"
+
+#: app/templates/pricing.html:10 app/templates/pricing.html:29
+msgid "24 months"
+msgstr "24 Monate"
+
+#: app/templates/pricing.html:17
+msgid "Team admin to manage access"
+msgstr "Team-Admin zur Zugriffsverwaltung"
+
+#: app/templates/pricing.html:18
+msgid "Encrypted chat with 128 people"
+msgstr "Verschlüsselte Chats mit 128 Personen"
+
+#: app/templates/pricing.html:19
+msgid "Secure calls with 10 people"
+msgstr "Sichere Anrufe mit zehn Personen"
+
+#: app/templates/pricing.html:20
+msgid "Secure screen sharing with 10 people"
+msgstr "Bildschirm sicher mit zehn Personen teilen"
+
+#: app/templates/pricing.html:21
+msgid "Secure 1:1 video calls"
+msgstr "Sichere 1:1 Videoanrufe"
+
+#: app/templates/pricing.html:22
+msgid "Secure document sharing"
+msgstr "Sicheres Teilen von Dokumenten"
+
+#: app/templates/pricing.html:31
+msgid "Free for 30 days"
+msgstr "30 Tage kostenlos"
+
+#: app/templates/pricing.html:35 app/templates/pricing.html:42
+#: app/templates/pricing.html:49
+msgid "per user per month"
+msgstr "pro Nutzer pro Monat"
+
+#: app/templates/pricing.html:59
+msgid "Wire for large enterprises"
+msgstr "Wire für Großunternehmen"
+
+#: app/templates/pricing.html:60
+msgid "Enterprise customers have different collaboration, compliance and IT policy requirements than small- and medium-sized businesses."
+msgstr "Großunternehmen haben andere Bedürfnisse als kleine und mittelständige Unternehmen in Bezug auf Zusammenarbeit, Compliance- und IT-Rahmenbedingungen."
+
+#: app/templates/pricing.html:61
+msgid "How can Wire help your organization?"
+msgstr "Wie kann Wire deinem Unternehmen helfen?"
+
+#: app/templates/pricing.html:62
+msgid "Contact us"
+msgstr "Kontaktiere uns"
+
+#: app/templates/security.html:6
+msgid "Secured with end‑to‑end&nbsp;encryption.<br>Protected by European privacy laws."
+msgstr "Von Ende-zu-Ende verschlüsselt.<br>Mit Datenschutz-Standards der EU."
+
+#: app/templates/compare/business.html:16 app/templates/crisis/crisis.html:46
+#: app/templates/security.html:13
+msgid "End-to-end encrypted"
+msgstr "Ende-zu-Ende verschlüsselt"
+
+#: app/templates/security.html:14
+msgid "Everything on Wire is secured with end-to-end encryption — text chats, conference calls, files."
+msgstr "Auf Wire ist alles durch Ende-zu-Ende-Verschlüsselung geschützt — Unterhaltungen, Anrufe, Dateien."
+
+#: app/templates/security.html:15
+msgid "Security white paper"
+msgstr "Sicherheits-Whitepaper"
+
+#: app/templates/crisis/crisis.html:47 app/templates/security.html:22
+msgid "Independently audited"
+msgstr "Unabhängig geprüft"
+
+#: app/templates/security.html:23
+msgid "Wire is the most extensively publicly audited collaboration and communication software on the market."
+msgstr "Wire ist die am ausführlichsten öffentlich geprüfte Software zur Zusammenarbeit und Kommunikation."
+
+#: app/templates/security.html:24
+msgid "Download reports"
+msgstr "Berichte herunterladen"
+
+#: app/templates/security.html:31
+msgid "Multi-device messaging"
+msgstr "Kommunikation mit mehreren Geräten"
+
+#: app/templates/security.html:32
+msgid "One account works on up to 8 devices. <br>Messages are encrypted for each device."
+msgstr "Bis zu 8 Geräte pro Benutzer<br>Nachrichten werden für jedes Gerät einzeln verschlüsselt."
+
+#: app/templates/security.html:33 app/templates/security.html:42
+#: app/templates/security.html:53
+msgid "Read more"
+msgstr "Erfahre mehr"
+
+#: app/templates/security.html:40
+msgid "Trusted conversations"
+msgstr "Verifizierte Unterhaltungen"
+
+#: app/templates/security.html:41
+msgid "Verify each conversation partner’s device fingerprints for maximum security."
+msgstr "Höchstmögliche Sicherheit bei Verifizierung der Geräte — Fingerabdrücke aller Unterhaltungsteilnehmer."
+
+#: app/templates/security.html:49
+msgid "Forward and backward secrecy"
+msgstr "Forward- und Backward-Secrecy"
+
+#: app/templates/security.html:50
+msgid "New encryption keys are used for each message, so a compromised key has minimal impact."
+msgstr "Jede Nachricht wird mit neuen Schlüsseln verschlüsselt, so dass ein kompromittierter Schlüssel minimale Auswirkungen hat."
+
+#: app/templates/compare/business.html:36 app/templates/compare/other.html:15
+#: app/templates/security.html:62 app/templates/security.html:130
+msgid "Open source"
+msgstr "Open-Source"
+
+#: app/templates/security.html:63
+msgid "Wire’s source code is available on GitHub for anyone to verify, modify and improve."
+msgstr "Der Quellcode von Wire ist auf GitHub verfügbar und kann von allen überprüft, modifiziert und verbessert werden."
+
+#: app/templates/security.html:64
+msgid "Code on GitHub"
+msgstr "Quellcode auf GitHub"
+
+#: app/templates/security.html:71
+msgid "Technical overview"
+msgstr "Technischer Überblick"
+
+#: app/templates/security.html:72
+#, python-format
+msgid "Text messages and pictures use the [Proteus protocol](%(proteus)s) for end-to-end encryption. Proteus is based on the Axolotl ratchet and pre-keys that are optimized for mobile and multi-device messaging."
+msgstr "Textnachrichten und Bilder werden mit dem [Proteus-Protokoll](%(proteus)s) Ende-zu-Ende-verschlüsselt. Proteus basiert auf dem Axolotl-Ratchet und Pre-Keys, die für mobiles und Multi-Device-Messaging optimiert wurden."
+
+#: app/templates/security.html:73
+msgid "Voice and video calls use the WebRTC standard. More precisely, DTLS and KASE are used for key negotiation and authentication and SRTP is used for encrypted media transport. This means that voice calls are end-to-end encrypted with perfect forward secrecy enabled without compromising HD call quality."
+msgstr "Sprach- und Videoanrufe verwenden den WebRTC-Standard. Genauer gesagt werden DTLS und KASE für die Schlüsselaushandlung und Authentifizierung sowie SRTP für die Transportverschlüsselung der Mediendaten verwendet. Dies bedeutet, dass Anrufe ohne Einbußen bei der HD-Qualität mit perfekter Forward-Secrecy Ende-zu-Ende verschlüsselt sind."
+
+#: app/templates/security.html:74
+msgid "Wire’s encryption works transparently in the background and doesn’t need to be activated — it’s always on. There’s no need to compromise security for usability or settle for missing features. Wire keeps everything private while avoiding the complexity that is common to other secure messengers."
+msgstr "Wires Verschlüsselung arbeitet transparent im Hintergrund und muss nicht erst eingeschaltet werden — sie ist stets aktiviert. Kompromisse zwischen Sicherheit und Benutzerfreundlichkeit sind ebenso wenig erforderlich wie der Verzicht auf Funktionsumfang. Wire schützt die Privatsphäre ohne die Komplexität anderer vergleichbarer Apps."
+
+#: app/templates/security.html:77
+msgid "Download security whitepaper"
+msgstr "Sicherheits-Whitepaper herunterladen"
+
+#: app/templates/security.html:81
+msgid "Privacy"
+msgstr "Privatsphäre"
+
+#: app/templates/security.html:88
+msgid "Swiss headquarters, EU servers"
+msgstr "Sitz in der Schweiz, Server in der EU"
+
+#: app/templates/security.html:89
+msgid "Fully compliant with the strict data protection laws in Switzerland and the European Union."
+msgstr "Vollständig konform zu den strikten Datenschutzgesetzen der Schweiz und der EU."
+
+#: app/templates/security.html:91
+msgid "Simple Privacy Policy"
+msgstr "Einfache Datenschutzerklärung"
+
+#: app/templates/security.html:92
+msgid "We put privacy in simple terms that are easy for anyone to understand — not just for lawyers."
+msgstr "Wir fassen Privatsphäre in für jeden verständliche Worte — nicht nur für Anwälte."
+
+#: app/templates/security.html:94
+msgid "No advertising"
+msgstr "Keine Werbung"
+
+#: app/templates/security.html:95
+msgid "No ads, no banners, no popups, no takeovers — none of that nonsense."
+msgstr "Keine Werbung, keine Banner, keine Pop-ups — nichts davon."
+
+#: app/templates/security.html:101
+msgid "Detailed privacy white paper"
+msgstr "Datenschutz-Whitepaper"
+
+#: app/templates/security.html:102
+msgid "We’re transparent about the data we collect, and what we use it for."
+msgstr "Wir bieten vollständige Transparenz über die gesammelten Daten und deren Verwendung."
+
+#: app/templates/security.html:104
+msgid "No profiling"
+msgstr "Keine Profilerstellung"
+
+#: app/templates/security.html:105
+msgid "Wire does not sell analytics or usage data to advertising companies or anyone else."
+msgstr "Wire verkauft keine Nutzungsdaten — weder an die Werbewirtschaft noch anderweitig."
+
+#: app/templates/security.html:107
+msgid "No phone number required"
+msgstr "Keine Telefonnummer notwendig"
+
+#: app/templates/security.html:108
+msgid "Register with an email address and share a unique @username to connect with others."
+msgstr "Zur Registrierung genügt eine E-Mail-Adresse. Mit einem einzigartigen @-Benutzernamen finden dich andere."
+
+#: app/templates/security.html:115
+msgid "Wire is not in the business of collecting or selling data"
+msgstr "Wire sammelt und verkauft keine Daten"
+
+#: app/templates/security.html:116
+msgid "We store only the data we need to make sure your conversations stay in sync across devices, to detect fraud and spam, and to troubleshoot customer issues."
+msgstr "Wir speichern lediglich die Daten, die wir zur Synchronisation der Unterhaltungen zwischen den Geräten eines Nutzers, zur Erkennung von Betrug und Spam und zur Behebung von Kunden-Problemen benötigen."
+
+#: app/templates/security.html:119
+msgid "Download privacy whitepaper"
+msgstr "Datenschutz-Whitepaper herunterladen"
+
+#: app/templates/security.html:123
+msgid "Transparency"
+msgstr "Transparenz"
+
+#: app/templates/security.html:131
+msgid "Wire’s source code is available on GitHub with a GPLv3 licence.<br>A self-hosted server option will be available in 2018."
+msgstr "Der Quellcode von Wire ist unter GPLv3-Lizenz auf GitHub verfügbar.<br>Eine Option für selbst-gehostete Server wird 2018 verfügbar sein."
+
+#: app/templates/security.html:132
+msgid "GitHub"
+msgstr "GitHub"
+
+#: app/templates/security.html:138
+msgid "Transparency report"
+msgstr "Transparenz-Bericht"
+
+#: app/templates/security.html:139
+msgid "Wire publishes a regular transparency report detailing all lawful requests for user data."
+msgstr "Wire veröffentlicht regelmäßig einen Transparenz-Bericht, der alle rechtmäßigen Anfragen zu Benutzerdaten auflistet."
+
+#: app/templates/security.html:142
+msgid "Signature"
+msgstr "Signatur"
+
+#: app/templates/security.html:143
+msgid "Key"
+msgstr "Schlüssel"
+
+#: app/templates/security.html:151
+msgid "Clear business model"
+msgstr "Klares Geschäftsmodell"
+
+#: app/templates/security.html:152
+msgid "Wire does not sell or share its users’ data. We make money from paying customers and don’t rely on donations."
+msgstr "Nutzerdaten werden weder verkauft noch geteilt. Wir verdienen Geld durch zahlende Kunden und sind nicht von Spenden abhängig."
+
+#: app/templates/security.html:158
+msgid "Independent security audits"
+msgstr "Unabhängige Sicherheitsaudits"
+
+#: app/templates/security.html:161
+msgid "Wire is committed to working with independent security experts to publish regular audits of different components of our app."
+msgstr "Wire hat sich der Zusammenarbeit mit unabhängigen Sicherheitsexperten verschrieben, um regelmäßig Audits verschiedener Komponenten unserer Apps zu veröffentlichen."
+
+#: app/templates/security.html:163
+msgid "iOS client review"
+msgstr "Überprüfung der iOS-App"
+
+#: app/templates/security.html:164 app/templates/security.html:168
+#: app/templates/security.html:172
+msgid "March, 2018"
+msgstr "März 2018"
+
+#: app/templates/security.html:164 app/templates/security.html:168
+#: app/templates/security.html:172 app/templates/security.html:176
+msgid "Kudelski Security and X41 D-Sec"
+msgstr "Kudelski Security und X41 D-Sec"
+
+#: app/templates/security.html:167
+msgid "Android client review"
+msgstr "Überprüfung der Android-App"
+
+#: app/templates/security.html:171
+msgid "Web application, calling review"
+msgstr "Überprüfung der Web-App und Telefonie"
+
+#: app/templates/security.html:175
+msgid "Protocol implementation review"
+msgstr "Überprüfung der Protokoll-Implementation"
+
+#: app/templates/security.html:176
+msgid "February, 2017"
+msgstr "Februar 2017"
+
+#: app/templates/unsupported.html:8
+#, python-format
+msgid "Try Wire app on %(platform)s."
+msgstr "Installiere die Wire App für %(platform)s."
+
+#: app/templates/unsupported.html:10
+#, python-format
+msgid "[Download](%(download)s) the latest version for %(platform)s. Wire for web only works on computers."
+msgstr "Die aktuelle Version für %(platform)s [herunterladen](%(download)s). Wire funktioniert nur auf Computern auch im Browser."
+
+#: app/templates/unsupported.html:14 app/templates/unsupported.html:20
+#: app/templates/unsupported.html:26
+#, python-format
+msgid "Update to the latest version of Wire for %(platform)s."
+msgstr "Aktualisiere auf die neueste Version von Wire für %(platform)s."
+
+#: app/templates/unsupported.html:16 app/templates/unsupported.html:22
+#: app/templates/unsupported.html:28
+#, python-format
+msgid "[Download](%(download)s) the latest version for %(platform)s."
+msgstr "Die neueste Version für %(platform)s [herunterladen](%(download)s)."
+
+#: app/templates/unsupported.html:31
+msgid "This browser is not supported."
+msgstr "Dieser Browser wird nicht unterstützt."
+
+#: app/templates/unsupported.html:33
+msgid "Download the latest version of"
+msgstr "Lade die neueste Version von"
+
+#: app/templates/unsupported.html:39
+msgid "Wire for macOS and Microsoft Windows is available from"
+msgstr "Wire für macOS und Microsoft Windows ist verfügbar unter"
 
