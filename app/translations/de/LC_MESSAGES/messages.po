@@ -1,81 +1,74 @@
-# German translations for PROJECT.
-# Copyright (C) 2016 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-10-26 14:35+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: de\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: wirecom\n"
+"X-Crowdin-Language: de\n"
+"X-Crowdin-File: account.pot\n"
+"Project-Id-Version: wirecom\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Last-Translator: wire <siim@wire.com>\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"PO-Revision-Date: 2018-06-20T07:41:43+0000\n"
 
-#: app/application.py:148
-msgid "Secure messenger"
-msgstr "Sicherer Messenger"
+#: app/application.py:82
+msgid "The most secure collaboration platform"
+msgstr "Die sicherste Art, zusammen zu arbeiten"
 
-#: app/application.py:149
-msgid "End-to-end encrypted chats, calls and files, protected by European privacy laws."
-msgstr "Ende-zu-Ende verschlüsselte Chats, Anrufe und Dateien, geschützt durch europäische Datenschutzgesetze."
+#: app/application.py:83
+msgid "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use."
+msgstr "Business-Chats, Telefonkonferenzen und Dateifreigabe - alles durch Ende-zu-Ende-Verschlüsselung geschützt. Auch erhältlich für den persönlichen Gebrauch."
 
-#: app/application.py:186
+#: app/application.py:121
 msgid "Test"
 msgstr "Test"
 
-#: app/application.py:205
+#: app/application.py:140
 msgid "Verify Account"
 msgstr "Konto bestätigen"
 
-#: app/application.py:227
+#: app/application.py:162
 msgid "Verify Bot"
 msgstr "Bot bestätigen"
 
-#: app/application.py:244
+#: app/application.py:179
 msgid "Verify Phone"
 msgstr "Telefonnummer bestätigen"
 
-#: app/application.py:261
+#: app/application.py:196
 msgid "That does not look like an email."
 msgstr "Dies sieht nicht nach einer E-Mail-Adresse aus."
 
-#: app/application.py:275
+#: app/application.py:210
 msgid "This email is not in use."
 msgstr "Diese E-Mail wird nicht verwendet."
 
-#: app/application.py:278
+#: app/application.py:213
 msgid "We already sent you an email. The link is valid for 10 minutes."
 msgstr "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für 10 Minuten gültig."
 
-#: app/application.py:281 app/application.py:330
+#: app/application.py:216 app/application.py:265
 msgid "Something went wrong, please try again."
 msgstr "Es ist ein Fehler aufgetreten. Bitte versuche es erneut."
 
-#: app/application.py:284 app/application.py:333
+#: app/application.py:219 app/application.py:268
 msgid "That took longer than usual, please try again."
 msgstr "Das dauerte leider zu lange. Bitte versuche es erneut."
 
-#: app/application.py:290
+#: app/application.py:225
 msgid "Change Password"
 msgstr "Passwort Ändern"
 
-#: app/application.py:315
+#: app/application.py:250
 msgid "Choose a password that is at least 8 characters."
 msgstr "Wähle ein Passwort mit mindestens acht Zeichen."
 
-#: app/application.py:339
+#: app/application.py:274
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: app/application.py:397 app/templates/account/delete.html:27
+#: app/application.py:332 app/templates/account/delete.html:27
 msgid "Delete Account"
 msgstr "Benutzerkonto löschen"
 
@@ -110,7 +103,7 @@ msgstr "Dies dauert nicht länger als eine Minute."
 #: app/templates/account/verify_email.html:39
 #: app/templates/account/verify_email.html:44
 msgid "Something went wrong"
-msgstr "Es ist ein Fehler aufgetreten"
+msgstr "Ein Fehler ist aufgetreten"
 
 #: app/templates/account/delete.html:16
 msgid "Please try again to delete your account."
@@ -144,8 +137,8 @@ msgid "Check your email"
 msgstr "Überprüfe deinen E-Mail Posteingang."
 
 #: app/templates/account/forgot.html:6
-msgid "We sent you a link to reset your password. It is valid for 10 minutes."
-msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist 10 Minuten gültig."
+msgid "We sent you a link to reset your password. It is valid for 1 hour."
+msgstr "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist eine Stunde gültig."
 
 #: app/templates/account/forgot.html:10
 msgid "Email"
@@ -226,7 +219,7 @@ msgstr "Bitte versuche erneut, ein Konto zu erstellen."
 #: app/templates/account/verify_bot.html:32
 #: app/templates/account/verify_email.html:45
 msgid "We are investigating the issue, please check back shortly."
-msgstr "Wir untersuchen das Problem. Bitte versuche es in Kürze erneut."
+msgstr "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal."
 
 #: app/templates/account/verify_email.html:20
 msgid "Account created"
@@ -238,12 +231,9 @@ msgstr "Installiere die App, um Wire zu benutzen."
 
 #: app/templates/account/verify_phone.html:4
 msgid "Phone verification in progress"
-msgstr "Deine Telefonnummer wird bestätigt"
+msgstr "Telefonnummer wird bestätigt"
 
 #: app/templates/bit/header.html:8
 msgid "Support"
 msgstr "Hilfe"
-
-#~ msgid "What is Wire?"
-#~ msgstr "Was ist Wire?"
 
