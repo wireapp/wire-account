@@ -79,8 +79,8 @@ def index(url='/'):
   if util.user_agent()['is']['crawler']:
     return flask.render_template(
       'og.html',
-      title=u'Wire · %s' % _(u'Secure messenger'),
-      description=_(u'End-to-end encrypted chats, calls and files, protected by European privacy laws.'),
+      title=u'Wire · %s' % _(u'The most secure collaboration platform'),
+      description=_(u'Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.'),
       html_class='index',
       redirect=target,
     )
