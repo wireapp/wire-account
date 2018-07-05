@@ -1215,12 +1215,11 @@ gulp-plumber@1.1.0:
     gulp-util "^3"
     through2 "^2"
 
-gulp-sequence@0.4.6:
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/gulp-sequence/-/gulp-sequence-0.4.6.tgz#e388d64311046e05547af43035352d9495501c50"
+gulp-sequence@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-sequence/-/gulp-sequence-1.0.0.tgz#862f93e6503e67c350a42948fa666953cf88ba67"
   dependencies:
-    gulp-util ">=3.0.0"
-    thunks "^4.5.1"
+    thunks "^4.9.0"
 
 gulp-size@2.1.0:
   version "2.1.0"
@@ -1286,7 +1285,7 @@ gulp-util@3.0.8:
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp-util@>=3.0.0, gulp-util@^3, gulp-util@^3.0.0, gulp-util@^3.0.2:
+gulp-util@^3, gulp-util@^3.0.0, gulp-util@^3.0.2:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.7.tgz#78925c4b8f8b49005ac01a011c557e6218941cbb"
   dependencies:
@@ -3071,9 +3070,9 @@ through@2, through@~2.3, through@~2.3.1:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
-thunks@^4.5.1:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/thunks/-/thunks-4.8.0.tgz#63d5fff7f6a957d6953c46dc72829dd5462a8ab4"
+thunks@^4.9.0:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/thunks/-/thunks-4.9.2.tgz#aac2d353812512160a4611e3008d7a96e3756f8e"
 
 tildify@^1.0.0:
   version "1.2.0"
