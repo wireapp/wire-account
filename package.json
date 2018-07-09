@@ -43,7 +43,7 @@
     "gulp-util": "3.0.8",
     "gulp-zip": "4.1.0",
     "less": "3.5.3",
-    "uglify-js": "3.4.3"
+    "uglify-js": "3.4.4"
   },
   "private": true
 }
