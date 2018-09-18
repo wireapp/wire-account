@@ -22,13 +22,13 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 ## Build Instructions
 
-1. Run `npm install`
-2. Run `npm start`
+1. Run `yarn`
+2. Run `yarn start`
 3. Open [http://localhost:8080/](http://localhost:8080/)
 
 ## Deployment
 
-- Run `npm run deploy`
+- Run `yarn deploy`
 
 Depending on the branch name it will be automatically deployed to the following environments:
 
@@ -40,11 +40,11 @@ Depending on the branch name it will be automatically deployed to the following 
 #### To add a new languages
 
 ```bash
-npm run babel-init -- ru
+yarn babel-init -- ru
 ```
 
 #### To extract/update/compile
 
 ```bash
-npm run babel
+yarn babel
 ```

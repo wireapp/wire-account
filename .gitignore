@@ -1,8 +1,8 @@
+.DS_Store
+.Icon
 *.mo
 *.pyc
 *.pyo
-.DS_Store
-.Icon
 /app/static/dev
 /app/static/min
 /app/translations/account.pot
@@ -12,3 +12,4 @@
 /node_modules
 /temp
 npm-debug.log
+package-lock.json
