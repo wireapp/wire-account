@@ -61,19 +61,13 @@ def index(url='/'):
   ua_is = util.user_agent()['is']
   if flask.request.url.find(u'get.wire.com') > 0 or flask.request.url.find(u'get.zinfra.io') > 0:
     label = 'desktop'
-    target = '%s/auth/#invite' % config.WEBAPP_URL
+    target = config.WIRE_DOWNLOAD_URL
     if ua_is['android']:
-      target = 'http://a.localytics.com/redirect/hy2bh0o51dd686k6ux6n?partner=other_invite&id=com.wire&referrer=utm_source%3Dother_invite%26utm_medium%3Dinvite%26utm_term%3Dinvite%26utm_campaign%3Dget.wire.com'
+      target = config.DOWNLOAD_ANDROID_URL
       label = 'android'
     elif ua_is['ios']:
-      target = 'http://a.localytics.com/redirect/6c0xmquvrrbphni0zv1p?partner=other_invite&idfa={IDFA}'
+      target = config.DOWNLOAD_IOS_URL
       label = 'ios'
-    elif ua_is['safari']:
-      target = config.WIRE_DOWNLOAD_URL
-      label = 'safari'
-    elif ua_is['ie']:
-      target = config.WIRE_DOWNLOAD_URL
-      label = 'ie'
     util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
 
   if util.user_agent()['is']['crawler']:
