@@ -273,12 +273,6 @@ def reset():
   )
 
 
-@application.route('/t/<team_code>')
-@application.route('/t/<team_code>/')
-def team_invite(team_code):
-  return flask.redirect('%s/join/?team-code=%s' % (config.TEAMS_URL, team_code))
-
-
 ###############################################################################
 # Delete
 ###############################################################################
