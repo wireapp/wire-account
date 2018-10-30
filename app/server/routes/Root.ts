@@ -21,7 +21,10 @@ import {Router} from 'express';
 import {ServerConfig} from '../config';
 
 const Root = (config: ServerConfig) => [
-  Router().get('/', (req, res) => res.render('index')),
+  Router().get('/', (req, res) => {
+    const redirect = 'redirect';
+    config.DEVELOPMENT ? res.render('index', {redirect}) : res.redirect(redirect);
+  }),
   Router().get('/delete', (req, res) => res.render('account/delete')),
   Router().get('/forgot', (req, res) => res.render('account/forgot')),
   Router().get('/reset', (req, res) => res.render('account/reset')),

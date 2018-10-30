@@ -39,7 +39,7 @@ class Server {
   private server?: http.Server;
 
   constructor(private config: ServerConfig) {
-    if (this.config.SERVER.DEVELOPMENT) {
+    if (this.config.DEVELOPMENT) {
       console.log(JSON.stringify(this.config, null, 2));
     }
     this.app = express();
@@ -63,15 +63,15 @@ class Server {
 
 
   private initCaching() {
-    if (this.config.SERVER.DEVELOPMENT) {
+    if (this.config.DEVELOPMENT) {
       this.app.use(helmet.noCache());
     } else {
       this.app.use((req, res, next) => {
         const milliSeconds = 1000;
-        res.header('Cache-Control', `public, max-age=${this.config.SERVER.CACHE_DURATION_SECONDS}`);
+        res.header('Cache-Control', `public, max-age=${this.config.CACHE_DURATION_SECONDS}`);
         res.header(
           'Expires',
-          new Date(Date.now() + this.config.SERVER.CACHE_DURATION_SECONDS * milliSeconds).toUTCString()
+          new Date(Date.now() + this.config.CACHE_DURATION_SECONDS * milliSeconds).toUTCString()
         );
         next();
       });
@@ -81,7 +81,7 @@ class Server {
   private initForceSSL(): void {
     const SSLMiddleware: express.RequestHandler = (req, res, next) => {
       // Redirect to HTTPS
-      const isDevelopment = this.config.SERVER.DEVELOPMENT || req.url.match(/_health\/?/);
+      const isDevelopment = this.config.DEVELOPMENT || req.url.match(/_health\/?/);
       const isInsecure = !req.secure || req.get('X-Forwarded-Proto') !== 'https';
 
       if (isInsecure && !isDevelopment) {
@@ -114,9 +114,9 @@ class Server {
     this.app.use(
       helmet.contentSecurityPolicy({
         browserSniff: true,
-        directives: this.config.SERVER.CSP,
+        directives: this.config.CSP,
         disableAndroid: false,
-        loose: !this.config.SERVER.DEVELOPMENT,
+        loose: !this.config.DEVELOPMENT,
         reportOnly: false,
         setAllHeaders: false,
       })
@@ -147,7 +147,7 @@ class Server {
         req.path.startsWith('/apple-app-site-association') ||
         req.path.startsWith('/unsupported');
 
-      if (ignoredPath || this.config.SERVER.DEVELOPMENT) {
+      if (ignoredPath || this.config.DEVELOPMENT) {
         return next();
       }
 
@@ -193,8 +193,8 @@ class Server {
     return new Promise((resolve, reject) => {
       if (this.server) {
         reject('Server is already running.');
-      } else if (this.config.SERVER.PORT_HTTP) {
-        this.server = this.app.listen(this.config.SERVER.PORT_HTTP, () => resolve(this.config.SERVER.PORT_HTTP));
+      } else if (this.config.PORT_HTTP) {
+        this.server = this.app.listen(this.config.PORT_HTTP, () => resolve(this.config.PORT_HTTP));
       } else {
         reject('Server port not specified.');
       }
