@@ -62,9 +62,39 @@ const Root = (config: ServerConfig) => [
   Router().get('/delete', (req, res) => res.render('account/delete')),
   Router().get('/forgot', (req, res) => res.render('account/forgot')),
   Router().get('/reset', (req, res) => res.render('account/reset')),
-  Router().get('/verify_bot', (req, res) => res.render('account/verify_bot')),
-  Router().get('/verify_email', (req, res) => res.render('account/verify_email')),
-  Router().get('/verify_phone', (req, res) => res.render('account/verify_phone')),
+  Router().get('/verify', (req, res) => {
+    const _ = req.app.locals._;
+    const payload = {
+      url: `${config.BACKEND_REST}/activate?key=${req.query.key}&code=${req.query.code}`,
+      html_class: 'account verify',
+      title: _('Verify Account'),
+      status: req.query.success ? 'success' : 'error',
+      credentials: 'true',
+    };
+    return res.render('account/verify_email', payload);
+  }),
+  Router().get('/verify/bot', (req, res) => {
+    const _ = req.app.locals._;
+    const payload = {
+      url: `${config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`,
+      html_class: 'account verify',
+      title: _('Verify Bot'),
+      status: req.query.success ? 'success' : 'error',
+      credentials: 'false',
+    };
+    res.render('account/verify_bot', payload);
+  }),
+  Router().get('/v/:code/', (req, res) => {
+    // TODO Track piwik
+    // util.track_event_to_piwik('account.verify-phone', 'success', 200, 1)
+    const _ = req.app.locals._;
+    const payload = {
+      url: `${config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,
+      html_class: 'account phone',
+      title: _('Verify Phone'),
+    };
+    res.render('account/verify_phone', payload);
+  }),
 ];
 
 export default Root;

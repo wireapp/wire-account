@@ -96,6 +96,7 @@ function mergedCSP(): HelmetCSP {
 export interface ServerConfig {
   APP_BASE: string;
   APP_NAME: string;
+  BACKEND_REST: string;
   CACHE_DURATION_SECONDS: number;
   CSP: HelmetCSP;
   DEVELOPMENT?: boolean;
@@ -134,6 +135,7 @@ const nodeEnvironment = process.env.NODE_ENV || 'production';
 const config: ServerConfig = {
   APP_BASE: process.env.APP_BASE,
   APP_NAME: process.env.APP_NAME,
+  BACKEND_REST: process.env.BACKEND_REST,
   CACHE_DURATION_SECONDS: 300,
   CSP: mergedCSP(),
   DEVELOPMENT: nodeEnvironment === 'development',
