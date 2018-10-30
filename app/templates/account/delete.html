@@ -7,7 +7,7 @@
     <p>
       {% autoescape false %}
         {{_('Thanks for using Wire.')}}
-        {{_('If you’d like, you can %(survey)s.', survey='<a href="https://wireapp.typeform.com/to/oBhbcl">%s</a>' % (_('share your thoughts about it')))}}
+        {{_('If you’d like, you can %(survey)s.', survey='<a href="{{config.URL.ACCOUNT_DELETE_SURVEY}}">%s</a>' % (_('share your thoughts about it')))}}
         {{_('This will take no longer than a minute.')}}
       {% endautoescape %}
     </p>

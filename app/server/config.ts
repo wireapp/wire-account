@@ -94,68 +94,74 @@ function mergedCSP(): HelmetCSP {
 }
 
 export interface ServerConfig {
-  CLIENT: {
-    APP_NAME: string;
-    ENVIRONMENT: string;
-    URL: {
-      ACCOUNT_BASE: string;
-      MOBILE_BASE: string;
-      TEAMS_BASE: string;
-      WEBSITE_BASE: string;
-    };
-    FEATURE: {
-      CHECK_CONSENT: boolean;
-      ENABLE_DEBUG: boolean;
-      ENABLE_SSO: boolean;
-    };
-    VERSION?: string;
+  APP_BASE: string;
+  APP_NAME: string;
+  CACHE_DURATION_SECONDS: number;
+  CSP: HelmetCSP;
+  DEVELOPMENT?: boolean;
+  ENVIRONMENT: string;
+  URL: {
+    ACCOUNT_DELETE_SURVEY: string;
+    DOWNLOAD_ANDROID_BASE: string;
+    DOWNLOAD_IOS_BASE: string;
+    DOWNLOAD_OSX_BASE: string;
+    DOWNLOAD_WINDOWS_BASE: string;
+    REDIRECT_PHONE_BASE: string;
+    REDIRECT_RESET_BASE: string;
+    REDIRECT_VERIFY_BASE: string;
+    SUPPORT_BASE: string;
+    TEAMS_BASE: string;
+    WEBAPP_BASE: string;
+    WEBSITE_BASE: string;
   };
-  SERVER: {
-    APP_BASE: string;
-    CACHE_DURATION_SECONDS: number;
-    CSP: HelmetCSP;
-    DEVELOPMENT?: boolean;
-    ENVIRONMENT: string;
-    PORT_HTTP: number;
-    ROBOTS: {
-      ALLOWED_HOSTS: string[];
-      ALLOW: string;
-      DISALLOW: string;
-    };
+  FEATURE: {
+    ENABLE_DEBUG: boolean;
+  };
+  VERSION?: string;
+  PORT_HTTP: number;
+  PIWIK_HOSTNAME: string;
+  PIWIK_ID: string;
+  ROBOTS: {
+    ALLOWED_HOSTS: string[];
+    ALLOW: string;
+    DISALLOW: string;
   };
 }
 
 const nodeEnvironment = process.env.NODE_ENV || 'production';
 
 const config: ServerConfig = {
-  CLIENT: {
-    APP_NAME: process.env.APP_NAME,
-    ENVIRONMENT: nodeEnvironment,
-    FEATURE: {
-      CHECK_CONSENT: process.env.FEATURE_CHECK_CONSENT == 'false' ? false : true,
-      ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
-      ENABLE_SSO: process.env.FEATURE_ENABLE_SSO == 'true' ? true : false,
-    },
-    URL: {
-      ACCOUNT_BASE: process.env.URL_ACCOUNT_BASE,
-      MOBILE_BASE: process.env.URL_MOBILE_BASE,
-      TEAMS_BASE: process.env.URL_TEAMS_BASE,
-      WEBSITE_BASE: process.env.URL_WEBSITE_BASE,
-    },
-    VERSION: undefined,
+  APP_BASE: process.env.APP_BASE,
+  APP_NAME: process.env.APP_NAME,
+  CACHE_DURATION_SECONDS: 300,
+  CSP: mergedCSP(),
+  DEVELOPMENT: nodeEnvironment === 'development',
+  ENVIRONMENT: nodeEnvironment,
+  FEATURE: {
+    ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
   },
-  SERVER: {
-    APP_BASE: process.env.APP_BASE,
-    CACHE_DURATION_SECONDS: 300,
-    CSP: mergedCSP(),
-    DEVELOPMENT: nodeEnvironment === 'development',
-    ENVIRONMENT: nodeEnvironment,
-    PORT_HTTP: Number(process.env.PORT) || 21080,
-    ROBOTS: {
-      ALLOW: '',
-      ALLOWED_HOSTS: ['account.wire.com'],
-      DISALLOW: '',
-    },
+  URL: {
+    ACCOUNT_DELETE_SURVEY: process.env.URL_ACCOUNT_DELETE_SURVEY,
+    DOWNLOAD_ANDROID_BASE: process.env.URL_DOWNLOAD_ANDROID_BASE,
+    DOWNLOAD_IOS_BASE: process.env.URL_DOWNLOAD_IOS_BASE,
+    DOWNLOAD_OSX_BASE: process.env.URL_DOWNLOAD_OSX_BASE,
+    DOWNLOAD_WINDOWS_BASE: process.env.URL_DOWNLOAD_WINDOWS_BASE,
+    REDIRECT_PHONE_BASE: process.env.URL_REDIRECT_PHONE_BASE,
+    REDIRECT_RESET_BASE: process.env.URL_REDIRECT_RESET_BASE,
+    REDIRECT_VERIFY_BASE: process.env.URL_REDIRECT_VERIFY_BASE,
+    SUPPORT_BASE: process.env.URL_SUPPORT_BASE,
+    TEAMS_BASE: process.env.URL_TEAMS_BASE,
+    WEBAPP_BASE: process.env.URL_WEBAPP_BASE,
+    WEBSITE_BASE: process.env.URL_WEBSITE_BASE,
+  },
+  VERSION: undefined,
+  PORT_HTTP: Number(process.env.PORT) || 21080,
+  PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
+  PIWIK_ID: process.env.PIWIK_ID,
+  ROBOTS: {
+    ALLOW: '',
+    ALLOWED_HOSTS: ['account.wire.com'],
+    DISALLOW: '',
   },
 };
 
@@ -166,19 +172,19 @@ const versionFile = path.join(__dirname, 'version');
 
 if (fileIsReadable(robotsAllowFile, true)) {
   try {
-    config.SERVER.ROBOTS.ALLOW = readFile(robotsAllowFile, true);
+    config.ROBOTS.ALLOW = readFile(robotsAllowFile, true);
   } catch (error) {}
 }
 
 if (fileIsReadable(robotsDisallowFile, true)) {
   try {
-    config.SERVER.ROBOTS.DISALLOW = readFile(robotsDisallowFile, true);
+    config.ROBOTS.DISALLOW = readFile(robotsDisallowFile, true);
   } catch (error) {}
 }
 
 if (fileIsReadable(versionFile, true)) {
   try {
-    config.CLIENT.VERSION = readFile(versionFile, true);
+    config.VERSION = readFile(versionFile, true);
   } catch (error) {}
 }
 

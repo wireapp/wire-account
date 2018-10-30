@@ -4,9 +4,9 @@
 {% block content %}
   <link id="url" data-url="{{url}}" data-status="{{status}}"
     {% if (user_agent().is.ios or user_agent().is.android) %}
-      data-redirect="{{config.REDIRECT_VERIFY_URL}}"
+      data-redirect="{{config.URL.REDIRECT_VERIFY_BASE}}"
     {% elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows) %}
-      data-redirect="{{config.WEBAPP_URL}}"
+      data-redirect="{{config.URL.WEBAPP_BASE}}"
     {% endif %}
     data-credentials="{{credentials}}"
   >

@@ -24,12 +24,12 @@ const ConfigRoute = (config: ServerConfig) =>
     res.type('application/javascript').send(`
       window.wire = window.wire ? window.wire : {};
       window.wire.env = {
-        APP_BASE: '${config.SERVER.APP_BASE}',
-        APP_NAME: '${config.CLIENT.APP_NAME}',
-        ENVIRONMENT: '${config.CLIENT.ENVIRONMENT}',
-        VERSION: '${config.CLIENT.VERSION}',
-        URL: JSON.parse('${JSON.stringify(config.CLIENT.URL || {})}'),
-        FEATURE: JSON.parse('${JSON.stringify(config.CLIENT.FEATURE || {})}'),
+        APP_BASE: '${config.APP_BASE}',
+        APP_NAME: '${config.APP_NAME}',
+        ENVIRONMENT: '${config.ENVIRONMENT}',
+        VERSION: '${config.VERSION}',
+        URL: JSON.parse('${JSON.stringify(config.URL || {})}'),
+        FEATURE: JSON.parse('${JSON.stringify(config.FEATURE || {})}'),
       };
     `);
   });

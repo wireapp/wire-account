@@ -1,5 +1,5 @@
 {% if config.SERVER.DEVELOPMENT %}
-  <link rel="stylesheet" href="/static/dev/style/style.css?{{config.CLIENT.VERSION}}">
+  <link rel="stylesheet" href="/static/dev/style/style.css?{{config.VERSION}}">
 
   <style>
     {
@@ -7,5 +7,5 @@
     }
   </style>
 {% else %}
-  <link rel="stylesheet" href="/static/min/style/style.css?{{config.CLIENT.VERSION}}">
+  <link rel="stylesheet" href="/static/min/style/style.css?{{config.VERSION}}">
 {% endif %}

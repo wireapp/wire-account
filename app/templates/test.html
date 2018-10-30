@@ -4,24 +4,23 @@
   <h1>{{title}}</h1>
 
 <pre>
-ENV:                   {{config.ENV}}
-PRODUCTION:            {{config.PRODUCTION}}
-DEBUG:                 {{config.DEBUG}}
-BACKEND_URL:           {{config.BACKEND_URL}}
+ENVIRONMENT:           {{config.ENVIRONMENT}}
+DEVELOPMENT:           {{config.DEVELOPMENT}}
+DEBUG:                 {{config.FEATURE.ENABLE_DEBUG}}
+BACKEND_REST:          {{config.BACKEND_REST}}
 VERSION:               {{config.VERSION}}
 
-DOWNLOAD_ANDROID_URL:  {{config.DOWNLOAD_ANDROID_URL}}
-DOWNLOAD_IOS_URL:      {{config.DOWNLOAD_IOS_URL}}
-DOWNLOAD_OSX_URL:      {{config.DOWNLOAD_OSX_URL}}
-DOWNLOAD_WINDOWS_URL:  {{config.DOWNLOAD_WINDOWS_URL}}
-WEBAPP_URL:            {{config.WEBAPP_URL}}
+DOWNLOAD_ANDROID_URL:  {{config.URL.DOWNLOAD_ANDROID_BASE}}
+DOWNLOAD_IOS_URL:      {{config.URL.DOWNLOAD_IOS_BASE}}
+DOWNLOAD_OSX_URL:      {{config.URL.DOWNLOAD_OSX_BASE}}
+DOWNLOAD_WINDOWS_URL:  {{config.URL.DOWNLOAD_WINDOWS_BASE}}
+WEBAPP_URL:            {{config.URL.WEBAPP_BASE}}
 
-REDIRECT_VERIFY_URL:   {{config.REDIRECT_VERIFY_URL}}
-REDIRECT_PHONE_URL:    {{config.REDIRECT_PHONE_URL}}
-REDIRECT_RESET_URL:    {{config.REDIRECT_RESET_URL}}
+REDIRECT_VERIFY_URL:   {{config.URL.REDIRECT_VERIFY_BASE}}
+REDIRECT_PHONE_URL:    {{config.URL.REDIRECT_PHONE_BASE}}
+REDIRECT_RESET_URL:    {{config.URL.REDIRECT_RESET_BASE}}
 
-WIRE_URL:              {{config.WIRE_URL}}
-WIRE_DOWNLOAD_URL:     {{config.WIRE_DOWNLOAD_URL}}
+WIRE_URL:              {{config.URL.WEBAPP_BASE}}
 PIWIK_HOSTNAME:        {{config.PIWIK_HOSTNAME}}
 PIWIK_ID:              {{config.PIWIK_ID}}
 </pre>
