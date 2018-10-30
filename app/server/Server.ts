@@ -130,7 +130,7 @@ class Server {
 
   private initStaticRoutes() {
     // this.app.use(RedirectRoutes(this.config));
-    this.app.use('/static', express.static(path.join(__dirname, '..', 'app', 'static')));
+    this.app.use('/', express.static(path.join(__dirname, '..', 'app', 'static')));
   }
 
   public initLatestBrowserRequired() {
@@ -184,7 +184,10 @@ class Server {
     });
     this.app.set('view engine', 'html');
     this.app.locals.config = this.config;
-    this.app.locals._ = (i18nkey: string) => console.log('attempting to translate string: ', i18nkey);
+    this.app.locals._ = (translationKey: string) => {
+      console.log('Attempting to translate string: ', translationKey);
+      return translationKey;
+    }
     this.app.locals.JSON = JSON;
     this.app.locals.random = Math.random;
   }

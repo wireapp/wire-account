@@ -19,11 +19,45 @@
 
 import {Router} from 'express';
 import {ServerConfig} from '../config';
+import * as BrowserUtil from '../util/BrowserUtil';
 
 const Root = (config: ServerConfig) => [
   Router().get('/', (req, res) => {
-    const redirect = 'redirect';
-    config.DEVELOPMENT ? res.render('index', {redirect}) : res.redirect(redirect);
+    const _ = req.app.locals._;
+    const userAgent = req.header('User-Agent');
+    const parsedUserAgent = BrowserUtil.parseUserAgent(userAgent);
+    const defaultRedirect = `${config.URL.WEBSITE_BASE}${req.originalUrl}`;
+    const payload: {redirect: string, label?: string} = {
+      redirect: defaultRedirect,
+    };
+
+    const hasRequestedGetWire = req.hostname.includes('get.wire.com') || req.hostname.includes('get.zinfra.io');
+    if (hasRequestedGetWire) {
+      payload.label = 'desktop';
+      payload.redirect = `${config.URL.WEBSITE_BASE}/download`;
+      if (parsedUserAgent.is.android) {
+        payload.redirect = config.URL.DOWNLOAD_ANDROID_BASE;
+        payload.label = 'android'
+      }
+      if (parsedUserAgent.is.ios) {
+        payload.redirect = config.URL.DOWNLOAD_IOS_BASE;
+        payload.label = 'ios'
+      }
+      // TODO track piwik event
+      // util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
+    }
+
+    if (parsedUserAgent.is.crawler) {
+      const openGraphPayload = {
+        title: `Wire · ${_('The most secure collaboration platform')}`,
+        description: _('Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.'),
+        html_class: 'index',
+        redirect: payload.redirect,
+      };
+      return res.render('og', openGraphPayload);
+    }
+
+    return config.DEVELOPMENT ? res.render('index', payload) : res.redirect(payload.redirect);
   }),
   Router().get('/delete', (req, res) => res.render('account/delete')),
   Router().get('/forgot', (req, res) => res.render('account/forgot')),
