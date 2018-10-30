@@ -101,6 +101,17 @@ export interface ServerConfig {
   CSP: HelmetCSP;
   DEVELOPMENT?: boolean;
   ENVIRONMENT: string;
+  FEATURE: {
+    ENABLE_DEBUG: boolean;
+  };
+  PIWIK_HOSTNAME: string;
+  PIWIK_ID: string;
+  PORT_HTTP: number;
+  ROBOTS: {
+    ALLOWED_HOSTS: string[];
+    ALLOW: string;
+    DISALLOW: string;
+  };
   URL: {
     ACCOUNT_DELETE_SURVEY: string;
     DOWNLOAD_ANDROID_BASE: string;
@@ -116,18 +127,7 @@ export interface ServerConfig {
     WEBAPP_BASE: string;
     WEBSITE_BASE: string;
   };
-  FEATURE: {
-    ENABLE_DEBUG: boolean;
-  };
   VERSION?: string;
-  PORT_HTTP: number;
-  PIWIK_HOSTNAME: string;
-  PIWIK_ID: string;
-  ROBOTS: {
-    ALLOWED_HOSTS: string[];
-    ALLOW: string;
-    DISALLOW: string;
-  };
 }
 
 const nodeEnvironment = process.env.NODE_ENV || 'production';
@@ -142,6 +142,14 @@ const config: ServerConfig = {
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {
     ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
+  },
+  PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
+  PIWIK_ID: process.env.PIWIK_ID,
+  PORT_HTTP: Number(process.env.PORT) || 21080,
+  ROBOTS: {
+    ALLOW: '',
+    ALLOWED_HOSTS: ['account.wire.com'],
+    DISALLOW: '',
   },
   URL: {
     ACCOUNT_DELETE_SURVEY: process.env.URL_ACCOUNT_DELETE_SURVEY,
@@ -159,14 +167,6 @@ const config: ServerConfig = {
     WEBSITE_BASE: process.env.URL_WEBSITE_BASE,
   },
   VERSION: undefined,
-  PORT_HTTP: Number(process.env.PORT) || 21080,
-  PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
-  PIWIK_ID: process.env.PIWIK_ID,
-  ROBOTS: {
-    ALLOW: '',
-    ALLOWED_HOSTS: ['account.wire.com'],
-    DISALLOW: '',
-  },
 };
 
 const robotsDir = path.join(__dirname, 'robots');

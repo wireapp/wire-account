@@ -2,7 +2,7 @@
   "name": "wire-account",
   "license": "LicenseRef-LICENSE",
   "scripts": {
-    "build:server": "yarn tsc -P ./tsconfig.json",
+    "build:server": "yarn lint:ts && yarn tsc -P ./tsconfig.json",
     "babel": "yarn -s babel-extract && yarn -s babel-update && yarn -s babel-compile",
     "babel-compile": "pybabel compile -f -d app/translations",
     "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/account.pot app",
@@ -11,6 +11,7 @@
     "build": "gulp build",
     "crowdin": "yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml download",
     "postinstall": "exit 0; pip install --user -r app/requirements.txt",
+    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
     "start": "concurrently \"gulp\" \"python app/application.py\"",
     "start:dev": "node ./dist/index.js",
     "test": "exit 0"
@@ -21,8 +22,10 @@
   },
   "dependencies": {
     "@wireapp/commons": "0.9.1",
+    "axios": "0.18.0",
     "dotenv": "6.0.0",
     "express": "4.16.3",
+    "express-formidable": "1.2.0",
     "express-useragent": "1.0.12",
     "gulp": "3.9.1",
     "helmet": "3.13.0",
@@ -35,6 +38,7 @@
   "devDependencies": {
     "@types/dotenv": "4.0.3",
     "@types/express": "4.16.0",
+    "@types/express-formidable": "1.0.3",
     "@types/express-useragent": "0.2.21",
     "@types/helmet": "0.0.42",
     "@types/node": "10.12.0",

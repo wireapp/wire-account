@@ -19,82 +19,28 @@
 
 import {Router} from 'express';
 import {ServerConfig} from '../config';
-import * as BrowserUtil from '../util/BrowserUtil';
+import {DeleteController} from '../controller/DeleteController';
+import {ForgotController} from '../controller/ForgotController';
+import {ResetController} from '../controller/ResetController';
+import {RootController} from '../controller/RootController';
+import {VerifyController} from '../controller/VerifyController';
 
-const Root = (config: ServerConfig) => [
-  Router().get('/', (req, res) => {
-    const _ = req.app.locals._;
-    const userAgent = req.header('User-Agent');
-    const parsedUserAgent = BrowserUtil.parseUserAgent(userAgent);
-    const defaultRedirect = `${config.URL.WEBSITE_BASE}${req.originalUrl}`;
-    const payload: {redirect: string, label?: string} = {
-      redirect: defaultRedirect,
-    };
-
-    const hasRequestedGetWire = req.hostname.includes('get.wire.com') || req.hostname.includes('get.zinfra.io');
-    if (hasRequestedGetWire) {
-      payload.label = 'desktop';
-      payload.redirect = `${config.URL.WEBSITE_BASE}/download`;
-      if (parsedUserAgent.is.android) {
-        payload.redirect = config.URL.DOWNLOAD_ANDROID_BASE;
-        payload.label = 'android'
-      }
-      if (parsedUserAgent.is.ios) {
-        payload.redirect = config.URL.DOWNLOAD_IOS_BASE;
-        payload.label = 'ios'
-      }
-      // TODO track piwik event
-      // util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
-    }
-
-    if (parsedUserAgent.is.crawler) {
-      const openGraphPayload = {
-        title: `Wire · ${_('The most secure collaboration platform')}`,
-        description: _('Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.'),
-        html_class: 'index',
-        redirect: payload.redirect,
-      };
-      return res.render('og', openGraphPayload);
-    }
-
-    return config.DEVELOPMENT ? res.render('index', payload) : res.redirect(payload.redirect);
-  }),
-  Router().get('/delete', (req, res) => res.render('account/delete')),
-  Router().get('/forgot', (req, res) => res.render('account/forgot')),
-  Router().get('/reset', (req, res) => res.render('account/reset')),
-  Router().get('/verify', (req, res) => {
-    const _ = req.app.locals._;
-    const payload = {
-      url: `${config.BACKEND_REST}/activate?key=${req.query.key}&code=${req.query.code}`,
-      html_class: 'account verify',
-      title: _('Verify Account'),
-      status: req.query.success ? 'success' : 'error',
-      credentials: 'true',
-    };
-    return res.render('account/verify_email', payload);
-  }),
-  Router().get('/verify/bot', (req, res) => {
-    const _ = req.app.locals._;
-    const payload = {
-      url: `${config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`,
-      html_class: 'account verify',
-      title: _('Verify Bot'),
-      status: req.query.success ? 'success' : 'error',
-      credentials: 'false',
-    };
-    res.render('account/verify_bot', payload);
-  }),
-  Router().get('/v/:code/', (req, res) => {
-    // TODO Track piwik
-    // util.track_event_to_piwik('account.verify-phone', 'success', 200, 1)
-    const _ = req.app.locals._;
-    const payload = {
-      url: `${config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,
-      html_class: 'account phone',
-      title: _('Verify Phone'),
-    };
-    res.render('account/verify_phone', payload);
-  }),
-];
+const Root = (config: ServerConfig) => {
+  const forgotController = new ForgotController(config);
+  const verifyController = new VerifyController(config);
+  const rootController = new RootController(config);
+  const deleteController = new DeleteController();
+  const resetController = new ResetController();
+  return [
+    Router().get('/', rootController.handleGet),
+    Router().get('/delete', deleteController.handleGet),
+    Router().get('/forgot', forgotController.handleGet),
+    Router().post('/forgot', forgotController.handlePost),
+    Router().get('/reset', resetController.handleGet),
+    Router().get('/verify', verifyController.handleEmailGet),
+    Router().get('/verify/bot', verifyController.handleBotGet),
+    Router().get('/v/:code', verifyController.handlePhoneGet),
+  ];
+}
 
 export default Root;

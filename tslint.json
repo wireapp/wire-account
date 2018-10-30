@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint-config-prettier", "tslint-plugin-prettier"],
+  "extends": [],
   "rules": {
     "array-type": [true, "array"],
     "ban-comma-operator": true,
@@ -13,6 +13,7 @@
     "no-object-literal-type-assertion": true,
     "no-return-await": true,
     "no-sparse-arrays": true,
+    "no-shadowed-variable": true,
     "ordered-imports": [
       true,
       {
@@ -27,7 +28,6 @@
     "prefer-object-spread": true,
     "prefer-readonly": true,
     "prefer-template": true,
-    "prettier": true,
     "space-within-parens": [true, 0]
   },
   "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],

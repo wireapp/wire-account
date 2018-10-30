@@ -6,7 +6,7 @@
     <p>{{_('We sent you a link to reset your password. It is valid for 1 hour.')}}</p>
   {% else %}
     <h1>{{title}}</h1>
-    <form method="POST" action="." novalidate>
+    <form method="POST" action="/forgot" novalidate>
       <input type="email" name="email" placeholder="{{_('Email')}}" autofocus>
       <p>{{error}}</p>
       <button type="submit" class="wbtn" data-loading-text="{{_('Please wait…')}}">
