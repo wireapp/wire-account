@@ -1,8 +1,8 @@
-# extends 'base.html'
+{% extends 'base.html' %}
 
-# block content
+{% block content %}
   <h1>Hello, Account!</h1>
   <p>On production this will be redirected to:</p>
-  <p><a href="{{redirect}}">{{redirect}}</a></p>
-  {{redirect_for_bots}}
-# endblock
+  <p><a href="{{ redirect }}">{{ redirect }}</a></p>
+  {{ redirect_for_bots }}
+{% endblock %}

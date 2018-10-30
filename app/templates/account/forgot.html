@@ -1,10 +1,10 @@
-# extends 'base.html'
+{% extends 'base.html' %}
 
-# block content
-  # if status == 'success'
+{% block content %}
+  {% if status == 'success' %}
     <h1>{{_('Check your email')}}</h1>
     <p>{{_('We sent you a link to reset your password. It is valid for 1 hour.')}}</p>
-  # else
+  {% else %}
     <h1>{{title}}</h1>
     <form method="POST" action="." novalidate>
       <input type="email" name="email" placeholder="{{_('Email')}}" autofocus>
@@ -13,5 +13,5 @@
         {{_('Reset password')}}
       </button>
     </form>
-  # endif
-# endblock
+  {% endif %}
+{% endblock %}

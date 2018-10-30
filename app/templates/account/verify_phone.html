@@ -1,12 +1,12 @@
-# extends 'base.html'
+{% extends 'base.html' %}
 
-# block content
+{% block content %}
   <h1>{{_('Phone verification in progress')}}</h1>
   <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
   <a class="wbtn" href="{{url}}">{{_('Open Wire')}}</a>
-# endblock
+{% endblock %}
 
 
-# block scripts
+{% block scripts %}
   <script>setTimeout(function(){window.location.href = '{{url}}';}, 1000);</script>
-# endblock
+{% endblock %}

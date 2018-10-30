@@ -1,11 +1,11 @@
-# if config.DEVELOPMENT
-  <link rel="stylesheet" href="/static/dev/style/style.css?{{config.VERSION}}">
+{% if config.SERVER.DEVELOPMENT %}
+  <link rel="stylesheet" href="/static/dev/style/style.css?{{config.CLIENT.VERSION}}">
 
   <style>
     {
       outline: 1px solid rgba(255,0,0,.32);
     }
   </style>
-# else
-  <link rel="stylesheet" href="/static/min/style/style.css?{{config.VERSION}}">
-# endif
+{% else %}
+  <link rel="stylesheet" href="/static/min/style/style.css?{{config.CLIENT.VERSION}}">
+{% endif %}

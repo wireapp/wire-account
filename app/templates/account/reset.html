@@ -1,28 +1,28 @@
-# extends 'base.html'
-# import 'macro/utils.html' as utils
+{% extends 'base.html' %}
+{% import 'macro/utils.html' as utils %}
 
-# block content
-  # if status == 'success'
+{% block content %}
+  {% if status == 'success' %}
     <h1>{{title}}</h1>
     <p>{{_('You can now log in with your new password.')}}</p>
-    # if user_agent().is.mobile
+    {% if user_agent().is.mobile %}
       {{utils.download_btn(_('Get Wire'), 'wbtn green', 'verify')}}
-    # elif user_agent().is.desktop
+    {% elif user_agent().is.desktop %}
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
-        # if user_agent().is.linux or user_agent().is.windows
+        {% if user_agent().is.linux or user_agent().is.windows %}
           <a class="wbtn green" href="{{config.WIRE_DOWNLOAD_URL}}">{{_('Get Wire')}}</a>
-        # elif  user_agent().is.osx
+        {% elif  user_agent().is.osx %}
           <a class="wbtn green no-capital" href="{{config.DOWNLOAD_OSX_URL}}">{{_('OPEN macOS APP')}}</a>
-        # endif
+        {% endif %}
       <a class="wbtn blue" href="{{'%s/auth/#login' % config.WEBAPP_URL}}">{{_('Open in Web')}}</a>
-    # else
+    {% else %}
       <a class="wbtn blue" href="{{'%s/auth/#login' % config.WEBAPP_URL}}">{{_('Open Wire')}}</a>
-    # endif
-  # elif status == 'error'
+    {% endif %}
+  {% elif status == 'error' %}
     <h1>{{_('The link is no longer valid')}}</h1>
     <p>{{_('Please try again.')}}</p>
     <a class="wbtn green" href="{{url_for('forgot')}}">{{_('Reset password')}}</a>
-  # else
+  {% else %}
     <h1>{{title}}</h1>
     <form method="POST" action=".">
       <input name="key" type="hidden" value="{{key}}">
@@ -33,16 +33,16 @@
         {{_('Reset password')}}
       </button>
     </form>
-  # endif
-# endblock
+  {% endif %}
+{% endblock %}
 
 
-# block scripts
-  # if (user_agent().is.ios or user_agent().is.android) and status == 'success'
+{% block scripts %}
+  {% if (user_agent().is.ios or user_agent().is.android) and status == 'success' %}
     <script>
       $(function() {
         window.location.href = "{{config.REDIRECT_RESET_URL}}";
       });
     </script>
-  # endif
-# endblock
+  {% endif %}
+{% endblock %}

@@ -1,6 +1,6 @@
-# extends 'base.html'
+{% extends 'base.html' %}
 
-# block content
+{% block content %}
   <h1>{{title}}</h1>
 
 <pre>
@@ -25,4 +25,4 @@ WIRE_DOWNLOAD_URL:     {{config.WIRE_DOWNLOAD_URL}}
 PIWIK_HOSTNAME:        {{config.PIWIK_HOSTNAME}}
 PIWIK_ID:              {{config.PIWIK_ID}}
 </pre>
-# endblock
+{% endblock %}

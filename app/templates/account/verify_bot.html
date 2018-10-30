@@ -1,13 +1,13 @@
-# extends 'base.html'
-# import 'macro/utils.html' as utils
+{% extends 'base.html' %}
+{% import 'macro/utils.html' as utils %}
 
-# block content
+{% block content %}
   <link id="url" data-url="{{url}}" data-status="{{status}}"
-    # if (user_agent().is.ios or user_agent().is.android)
+    {% if (user_agent().is.ios or user_agent().is.android) %}
       data-redirect="{{config.REDIRECT_VERIFY_URL}}"
-    # elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows)
+    {% elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows) %}
       data-redirect="{{config.WEBAPP_URL}}"
-    # endif
+    {% endif %}
     data-credentials="{{credentials}}"
   >
 
@@ -31,4 +31,4 @@
     <h1>{{_('Something went wrong')}}</h1>
     <p>{{_('We are investigating the issue, please check back shortly.')}}</p>
   </div>
-# endblock
+{% endblock %}
