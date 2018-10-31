@@ -64,7 +64,7 @@ export class ResetController {
     let error = '';
 
     const code = req.fields.code as string;
-    const key = req.fields.code as string;
+    const key = req.fields.key as string;
     const password = req.fields.password as string;
 
     if (!password || password.length < 8) {

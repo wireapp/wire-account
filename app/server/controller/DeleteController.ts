@@ -17,21 +17,75 @@
  *
  */
 
+import Axios from "axios";
 import {Request, Response, Router} from "express";
+import {ServerConfig} from "../config";
 
 export class DeleteController {
 
-  public static readonly ROUTE_DELETE = '/delete';
+  public static readonly ROUTE_DELETE = '/d';
 
   private static readonly TEMPLATE_DELETE = 'account/delete';
+
+  constructor(private readonly config: ServerConfig) {}
 
   public getRoutes = () => {
     return [
       Router().get(DeleteController.ROUTE_DELETE, this.handleGet),
+      Router().post(DeleteController.ROUTE_DELETE, this.handlePost),
     ];
   };
 
+  private readonly postAccountDelete = async (key: string, code: string) => {
+    return Axios.post(`${this.config.BACKEND_REST}/delete`, {params: {key, code}})
+  };
+
   private readonly handleGet = async (req: Request, res: Response) => {
-    return res.render(DeleteController.TEMPLATE_DELETE);
+    const _ = req.app.locals._;
+    let status = 'error';
+
+    const key = req.query.key;
+    const code = req.query.code;
+
+    if (key && code) {
+      status = 'init';
+    }
+
+    const payload = {
+      code,
+      html_class: 'account delete',
+      key,
+      status: status,
+      title: _('Delete Account'),
+    };
+    return res.render(DeleteController.TEMPLATE_DELETE, payload);
+  };
+
+  private readonly handlePost = async (req: Request, res: Response) => {
+    const _ = req.app.locals._;
+    let status = 'error';
+
+    const code = req.fields.code as string;
+    const key = req.fields.key as string;
+
+    if (key && code){
+      try {
+        await this.postAccountDelete(key, code);
+        // TODO track piwik
+        // util.track_event_to_piwik('account.delete', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+        status = 'success';
+      } catch (requestError) {
+        status = 'error';
+      }
+    }
+
+    const payload = {
+      code,
+      html_class: 'account delete',
+      key,
+      status,
+      title: _('Delete Account'),
+    };
+    return res.render(DeleteController.TEMPLATE_DELETE, payload)
   }
 };

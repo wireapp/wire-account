@@ -17,6 +17,7 @@
  *
  */
 
+const autoescape = require('nunjucks-autoescape');
 import * as express from 'express';
 import * as formidable from 'express-formidable';
 import * as helmet from 'helmet';
@@ -133,10 +134,13 @@ class Server {
   }
 
   private initTemplateEngine() {
-    nunjucks.configure(path.join(__dirname, '..', 'app', 'templates'), {
+    const env = nunjucks.configure(path.join(__dirname, '..', 'app', 'templates'), {
       autoescape: true,
       express: this.app,
     });
+    const AutoEscapeExtension = autoescape(nunjucks);
+    env.addExtension('AutoEscapeExtension', new AutoEscapeExtension(env));
+
     this.app.set('view engine', 'html');
     this.app.locals.config = this.config;
     this.app.locals._ = (translationKey: string) => {

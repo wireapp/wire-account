@@ -29,7 +29,7 @@ const Root = (config: ServerConfig) => {
     ...new ForgotController(config).getRoutes(),
     ...new VerifyController(config).getRoutes(),
     ...new RootController(config).getRoutes(),
-    ...new DeleteController().getRoutes(),
+    ...new DeleteController(config).getRoutes(),
     ...new ResetController(config).getRoutes(),
   ];
 }

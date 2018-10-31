@@ -5,11 +5,11 @@
     <h1>{{_('Account deleted')}}</h1>
     <p>{{_('All your data on Wire is now erased.')}}</p>
     <p>
+      {{_('Thanks for using Wire.')}}
       {% autoescape false %}
-        {{_('Thanks for using Wire.')}}
-        {{_('If you’d like, you can %(survey)s.', survey='<a href="{{config.URL.ACCOUNT_DELETE_SURVEY}}">%s</a>' % (_('share your thoughts about it')))}}
-        {{_('This will take no longer than a minute.')}}
+      {{_('If you’d like, you can %(survey)s.', survey='<a href="{{config.URL.ACCOUNT_DELETE_SURVEY}}">%s</a>' % (_('share your thoughts about it')))}}
       {% endautoescape %}
+      {{_('This will take no longer than a minute.')}}
     </p>
   {% elif status == 'error' %}
     <h1>{{_('Something went wrong')}}</h1>
@@ -20,7 +20,7 @@
       {{_('Hi there,')}}<br>
       {{_('We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes.')}}
     </p>
-    <form action="." method="POST">
+    <form action="{{routes.deleteAccount}}" method="POST">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
       <button class="wbtn red" type="submit" data-loading-text="{{_('Please wait…')}}">
@@ -30,7 +30,7 @@
 
     <p>
       {% autoescape false %}
-        {{_('If you did not ask for this, you should %(forgot)s.', forgot='<a href="%s">%s</a>' % (url_for('forgot'), _('reset your Wire password')))}}
+      {{_('If you did not ask for this, you should %(forgot)s.', forgot='<a href="%s">%s</a>' % (url_for('forgot'), _('reset your Wire password')))}}
       {% endautoescape %}
     </p>
   {% endif %}
