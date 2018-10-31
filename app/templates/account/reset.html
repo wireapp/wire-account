@@ -21,10 +21,10 @@
   {% elif status == 'error' %}
     <h1>{{_('The link is no longer valid')}}</h1>
     <p>{{_('Please try again.')}}</p>
-    <a class="wbtn green" href="{{url_for('forgot')}}">{{_('Reset password')}}</a>
+    <a class="wbtn green" href="{{routes.resetPassword}}">{{_('Reset password')}}</a>
   {% else %}
     <h1>{{title}}</h1>
-    <form method="POST" action=".">
+    <form method="POST" action="{{routes.resetPassword}}">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
       <input name="password" type="password" placeholder="{{_('Enter new password')}}" autofocus>

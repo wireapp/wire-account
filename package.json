@@ -2,7 +2,7 @@
   "name": "wire-account",
   "license": "LicenseRef-LICENSE",
   "scripts": {
-    "build:server": "yarn lint:ts && yarn tsc -P ./tsconfig.json",
+    "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
     "babel": "yarn -s babel-extract && yarn -s babel-update && yarn -s babel-compile",
     "babel-compile": "pybabel compile -f -d app/translations",
     "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/account.pot app",

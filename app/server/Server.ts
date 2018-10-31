@@ -17,7 +17,6 @@
  *
  */
 
-import {CommonConfig} from '@wireapp/commons';
 import * as express from 'express';
 import * as formidable from 'express-formidable';
 import * as helmet from 'helmet';
@@ -25,16 +24,14 @@ import * as http from 'http';
 import * as nunjucks from 'nunjucks';
 import * as path from 'path';
 import {ServerConfig} from './config';
+import {ROUTES} from './controller';
 import HealthCheckRoute from './routes/_health/HealthRoute';
 import ConfigRoute from './routes/config/ConfigRoute';
 import {InternalErrorRoute, NotFoundRoute} from './routes/error/ErrorRoutes';
 // import RedirectRoutes from './routes/RedirectRoutes';
 import Root from './routes/Root';
-import * as BrowserUtil from './util/BrowserUtil';
-
 
 const STATUS_CODE_MOVED = 301;
-const STATUS_CODE_FOUND = 302;
 
 class Server {
   private readonly app: express.Express;
@@ -55,7 +52,6 @@ class Server {
     this.initCaching();
     this.initForceSSL();
     this.initSecurityHeaders();
-    this.initLatestBrowserRequired();
     this.initStaticRoutes();
     this.app.use(Root(this.config));
     this.app.use(HealthCheckRoute());
@@ -136,50 +132,6 @@ class Server {
     this.app.use('/', express.static(path.join(__dirname, '..', 'app', 'static')));
   }
 
-  public initLatestBrowserRequired() {
-    this.app.use((req, res, next) => {
-      const fileExtensionRegx = /\.[^/]+$/;
-      const ignoredPath =
-        fileExtensionRegx.test(req.path) ||
-        req.path.startsWith('/test') ||
-        req.path.startsWith('/demo') ||
-        req.path.startsWith('/_health') ||
-        req.path.startsWith('/join') ||
-        req.path.startsWith('/auth') ||
-        req.path.startsWith('/google') ||
-        req.path.startsWith('/apple-app-site-association') ||
-        req.path.startsWith('/unsupported');
-
-      if (ignoredPath || this.config.DEVELOPMENT) {
-        return next();
-      }
-
-      const userAgent = req.header('User-Agent');
-      const parsedUserAgent = BrowserUtil.parseUserAgent(userAgent);
-      const invalidBrowser = parsedUserAgent.is.mobile || parsedUserAgent.is.franz;
-
-      const supportedBrowser = (() => {
-        const browserName = parsedUserAgent.browser.name.toLowerCase();
-        const supportedBrowserVersionObject = CommonConfig.WEBAPP_SUPPORTED_BROWSERS[browserName];
-        const supportedBrowserVersion = supportedBrowserVersionObject && supportedBrowserVersionObject.major;
-
-        try {
-          const browserVersionString = (parsedUserAgent.browser.version.split('.') || [])[0];
-          const browserVersion = parseInt(browserVersionString, 10);
-          return supportedBrowserVersion && browserVersion >= supportedBrowserVersion;
-        } catch (err) {
-          return false;
-        }
-      })();
-
-      if (!parsedUserAgent || invalidBrowser || !supportedBrowser) {
-        return res.redirect(STATUS_CODE_FOUND, '/unsupported/');
-      }
-
-      return next();
-    });
-  }
-
   private initTemplateEngine() {
     nunjucks.configure(path.join(__dirname, '..', 'app', 'templates'), {
       autoescape: true,
@@ -193,6 +145,7 @@ class Server {
     }
     this.app.locals.JSON = JSON;
     this.app.locals.random = Math.random;
+    this.app.locals.routes = ROUTES;
   }
 
   start(): Promise<number> {

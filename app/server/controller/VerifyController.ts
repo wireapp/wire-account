@@ -1,11 +1,27 @@
-import {Request, Response} from "express";
+import {Request, Response, Router} from "express";
 import {ServerConfig} from "../config";
 
 export class VerifyController {
 
+  public static readonly ROUTE_VERIFY_EMAIL = '/verify';
+  public static readonly ROUTE_VERIFY_BOT = '/verify/bot';
+  public static readonly ROUTE_VERIFY_PHONE = '/v/:code';
+
+  private static readonly TEMPLATE_VERIFY_EMAIL = 'account/verify_email';
+  private static readonly TEMPLATE_VERIFY_BOT = 'account/verify_bot';
+  private static readonly TEMPLATE_VERIFY_PHONE = 'account/verify_phone';
+
   constructor(private readonly config: ServerConfig) {}
 
-  handleEmailGet = async (req: Request, res: Response) => {
+  public getRoutes = () => {
+    return [
+      Router().get(VerifyController.ROUTE_VERIFY_EMAIL, this.handleEmailGet),
+      Router().get(VerifyController.ROUTE_VERIFY_BOT, this.handleBotGet),
+      Router().get(VerifyController.ROUTE_VERIFY_PHONE, this.handlePhoneGet),
+    ];
+  };
+
+  private readonly handleEmailGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
     const payload = {
       credentials: 'true',
@@ -14,10 +30,10 @@ export class VerifyController {
       title: _('Verify Account'),
       url: `${this.config.BACKEND_REST}/activate?key=${req.query.key}&code=${req.query.code}`,
     };
-    return res.render('account/verify_email', payload);
+    return res.render(VerifyController.TEMPLATE_VERIFY_EMAIL, payload);
   }
 
-  handleBotGet = async (req: Request, res: Response) => {
+  private readonly handleBotGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
     const payload = {
       credentials: 'false',
@@ -26,10 +42,10 @@ export class VerifyController {
       title: _('Verify Bot'),
       url: `${this.config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`,
     };
-    return res.render('account/verify_bot', payload);
+    return res.render(VerifyController.TEMPLATE_VERIFY_BOT, payload);
   }
 
-  handlePhoneGet = async (req: Request, res: Response) => {
+  private readonly handlePhoneGet = async (req: Request, res: Response) => {
     // TODO Track piwik
     // util.track_event_to_piwik('account.verify-phone', 'success', 200, 1)
     const _ = req.app.locals._;
@@ -38,6 +54,6 @@ export class VerifyController {
       title: _('Verify Phone'),
       url: `${this.config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,
     };
-    return res.render('account/verify_phone', payload);
+    return res.render(VerifyController.TEMPLATE_VERIFY_PHONE, payload);
   }
 };

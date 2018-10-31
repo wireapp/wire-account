@@ -17,7 +17,6 @@
  *
  */
 
-import {Router} from 'express';
 import {ServerConfig} from '../config';
 import {DeleteController} from '../controller/DeleteController';
 import {ForgotController} from '../controller/ForgotController';
@@ -26,20 +25,12 @@ import {RootController} from '../controller/RootController';
 import {VerifyController} from '../controller/VerifyController';
 
 const Root = (config: ServerConfig) => {
-  const forgotController = new ForgotController(config);
-  const verifyController = new VerifyController(config);
-  const rootController = new RootController(config);
-  const deleteController = new DeleteController();
-  const resetController = new ResetController();
   return [
-    Router().get('/', rootController.handleGet),
-    Router().get('/delete', deleteController.handleGet),
-    Router().get('/forgot', forgotController.handleGet),
-    Router().post('/forgot', forgotController.handlePost),
-    Router().get('/reset', resetController.handleGet),
-    Router().get('/verify', verifyController.handleEmailGet),
-    Router().get('/verify/bot', verifyController.handleBotGet),
-    Router().get('/v/:code', verifyController.handlePhoneGet),
+    ...new ForgotController(config).getRoutes(),
+    ...new VerifyController(config).getRoutes(),
+    ...new RootController(config).getRoutes(),
+    ...new DeleteController().getRoutes(),
+    ...new ResetController(config).getRoutes(),
   ];
 }
 
