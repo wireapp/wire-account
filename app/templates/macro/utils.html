@@ -2,6 +2,10 @@
   data-ga-category="{{category}}" data-ga-action="{{action}}" data-ga-value="{{value}}"
 {% endmacro %}
 
+{% macro link(href, text, external=true) %}
+  <a href="{{href}}" {% if external %}rel="noopener noreferrer" target="_blank"{% endif %}>{{text}}</a>
+{% endmacro %}
+
 
 {% macro download_btn(name, class, category, code) %}
   {% set user_agent_is = user_agent().is %}

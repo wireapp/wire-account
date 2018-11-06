@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% import 'macro/utils.html' as utils %}
 
 {% block content %}
   {% if status == 'success' %}
@@ -7,7 +8,8 @@
     <p>
       {{_('Thanks for using Wire.')}}
       {% autoescape false %}
-      {{_('If you’d like, you can %(survey)s.', survey='<a href="{{config.URL.ACCOUNT_DELETE_SURVEY}}">%s</a>' % (_('share your thoughts about it')))}}
+        {% set surveyText %}If you’d like, you can {{utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('share your thoughts about it.'))}}{% endset %}
+        {{_(surveyText)}}
       {% endautoescape %}
       {{_('This will take no longer than a minute.')}}
     </p>
@@ -30,7 +32,8 @@
 
     <p>
       {% autoescape false %}
-      {{_('If you did not ask for this, you should %(forgot)s.', forgot='<a href="%s">%s</a>' % (url_for('forgot'), _('reset your Wire password')))}}
+        {% set forgot %}If you did not ask for this, you should {{utils.link(routes.forgot, _('reset your Wire password.'), false)}}{% endset %}
+        {{_(forgot)}}
       {% endautoescape %}
     </p>
   {% endif %}
