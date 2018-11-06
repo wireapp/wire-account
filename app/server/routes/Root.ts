@@ -18,6 +18,7 @@
  */
 
 import {ServerConfig} from '../config';
+import {Client} from '../controller/Client';
 import {DeleteController} from '../controller/DeleteController';
 import {ForgotController} from '../controller/ForgotController';
 import {ResetController} from '../controller/ResetController';
@@ -25,12 +26,13 @@ import {RootController} from '../controller/RootController';
 import {VerifyController} from '../controller/VerifyController';
 
 const Root = (config: ServerConfig) => {
+  const client = new Client();
   return [
-    ...new ForgotController(config).getRoutes(),
-    ...new VerifyController(config).getRoutes(),
-    ...new RootController(config).getRoutes(),
-    ...new DeleteController(config).getRoutes(),
-    ...new ResetController(config).getRoutes(),
+    ...new ForgotController(config, client).getRoutes(),
+    ...new VerifyController(config, client).getRoutes(),
+    ...new RootController(config, client).getRoutes(),
+    ...new DeleteController(config, client).getRoutes(),
+    ...new ResetController(config, client).getRoutes(),
   ];
 }
 

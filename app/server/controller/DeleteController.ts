@@ -17,9 +17,10 @@
  *
  */
 
-import Axios from "axios";
 import {Request, Response, Router} from "express";
 import {ServerConfig} from "../config";
+import {Client} from "./Client";
+import {TrackingController} from "./TrackingController";
 
 export class DeleteController {
 
@@ -27,7 +28,11 @@ export class DeleteController {
 
   private static readonly TEMPLATE_DELETE = 'account/delete';
 
-  constructor(private readonly config: ServerConfig) {}
+  private readonly trackingController: TrackingController;
+
+  constructor(private readonly config: ServerConfig, private readonly client: Client) {
+    this.trackingController = new TrackingController(config, client);
+  }
 
   public getRoutes = () => {
     return [
@@ -37,7 +42,7 @@ export class DeleteController {
   };
 
   private readonly postAccountDelete = async (key: string, code: string) => {
-    return Axios.post(`${this.config.BACKEND_REST}/delete`, {params: {key, code}})
+    return this.client.post(`${this.config.BACKEND_REST}/delete`, {params: {key, code}})
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -70,12 +75,12 @@ export class DeleteController {
 
     if (key && code){
       try {
-        await this.postAccountDelete(key, code);
-        // TODO track piwik
-        // util.track_event_to_piwik('account.delete', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+        const result = await this.postAccountDelete(key, code);
+        this.trackingController.trackEvent(req.originalUrl, 'account.delete', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
         status = 'error';
+        this.trackingController.trackEvent(req.originalUrl, 'account.delete', 'fail', requestError.status, 1);
       }
     }
 

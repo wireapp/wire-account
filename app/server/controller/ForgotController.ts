@@ -17,16 +17,21 @@
  *
  */
 
-import Axios from "axios";
 import {Request, Response, Router} from "express";
 import {ServerConfig} from "../config";
+import {Client} from "./Client";
+import {TrackingController} from "./TrackingController";
 
 export class ForgotController {
 
   public static readonly ROUTE_FORGOT = '/forgot';
   private static readonly TEMPLATE_PATH = 'account/forgot';
 
-  constructor(private readonly config: ServerConfig) {}
+  private readonly trackingController: TrackingController;
+
+  constructor(private readonly config: ServerConfig, private readonly client: Client) {
+    this.trackingController = new TrackingController(config, client);
+  }
 
   public getRoutes = () => {
     return [
@@ -36,7 +41,7 @@ export class ForgotController {
   };
 
   private readonly postPasswordReset = async (email: string) => {
-    return Axios.post(`${this.config.BACKEND_REST}/password-reset`, {params: {email}});
+    return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {params: {email}});
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -62,11 +67,11 @@ export class ForgotController {
       status = 'error';
     } else {
       try {
-        await this.postPasswordReset(email);
-        // TODO Track piwik
-        // util.track_event_to_piwik('account.forgot', 'success' if result.status_code < 300 else 'fail', result.status_code, 1)
+        const result = await this.postPasswordReset(email);
+        this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
+        this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.status, 1);
         switch (requestError.response.data.code) {
           case 400: {
             error = _('This email is not in use.');

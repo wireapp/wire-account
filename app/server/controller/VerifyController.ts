@@ -19,6 +19,8 @@
 
 import {Request, Response, Router} from "express";
 import {ServerConfig} from "../config";
+import {Client} from "./Client";
+import {TrackingController} from "./TrackingController";
 
 export class VerifyController {
 
@@ -30,7 +32,11 @@ export class VerifyController {
   private static readonly TEMPLATE_VERIFY_BOT = 'account/verify_bot';
   private static readonly TEMPLATE_VERIFY_PHONE = 'account/verify_phone';
 
-  constructor(private readonly config: ServerConfig) {}
+  private readonly trackingController: TrackingController;
+
+  constructor(private readonly config: ServerConfig, client: Client) {
+    this.trackingController = new TrackingController(config, client);
+  }
 
   public getRoutes = () => {
     return [
@@ -65,8 +71,7 @@ export class VerifyController {
   }
 
   private readonly handlePhoneGet = async (req: Request, res: Response) => {
-    // TODO Track piwik
-    // util.track_event_to_piwik('account.verify-phone', 'success', 200, 1)
+    this.trackingController.trackEvent(req.originalUrl, 'account.verify-phone', 'success', 200, 1);
     const _ = req.app.locals._;
     const payload = {
       html_class: 'account phone',

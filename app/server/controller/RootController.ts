@@ -20,6 +20,8 @@
 import {Request, Response, Router} from "express";
 import {ServerConfig} from "../config";
 import * as BrowserUtil from '../util/BrowserUtil';
+import {Client} from "./Client";
+import {TrackingController} from "./TrackingController";
 
 export class RootController {
 
@@ -28,8 +30,11 @@ export class RootController {
   private static readonly TEMPLATE_INDEX = 'index';
   private static readonly TEMPLATE_OPEN_GRAPH = 'og';
 
+  private readonly trackingController: TrackingController;
 
-  constructor(private readonly config: ServerConfig) {}
+  constructor(private readonly config: ServerConfig, client: Client) {
+    this.trackingController = new TrackingController(config, client);
+  }
 
   public getRoutes = () => {
     return [
@@ -58,8 +63,7 @@ export class RootController {
         payload.redirect = this.config.URL.DOWNLOAD_IOS_BASE;
         payload.label = 'ios'
       }
-      // TODO track piwik event
-      // util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
+      this.trackingController.trackEvent(req.originalUrl, 'get.wire.com', 'redirect', payload.label, 1);
     }
 
     if (parsedUserAgent.is.crawler) {
