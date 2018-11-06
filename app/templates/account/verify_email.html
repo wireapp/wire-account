@@ -6,7 +6,7 @@
     {% if (user_agent().is.ios or user_agent().is.android) %}
       data-redirect="{{config.URL.REDIRECT_VERIFY_BASE}}"
     {% elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows) %}
-      data-redirect="{{'%s/auth/?immediate_login#login' % config.URL.WEBAPP_BASE}}"
+      data-redirect="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login"
     {% endif %}
     data-credentials="{{credentials}}"
   >
@@ -28,10 +28,10 @@
         {% elif  user_agent().is.osx %}
           <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('OPEN macOS APP')}}</a>
         {% endif %}
-      <a class="wbtn blue" href="{{'%s/auth/?immediate_login#login' % config.URL.WEBAPP_BASE}}">{{_('Open in Web')}}</a>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('Open in Web')}}</a>
     {% else %}
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
-      <a class="wbtn blue" href="{{'%s/auth/?immediate_login#login' % config.URL.WEBAPP_BASE}}">{{_('Open Wire')}}</a>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('Open Wire')}}</a>
     {% endif %}
   </div>
 
