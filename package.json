@@ -13,7 +13,7 @@
     "postinstall": "exit 0; pip install --user -r app/requirements.txt",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
     "start": "concurrently \"gulp\" \"python app/application.py\"",
-    "start:dev": "node ./dist/index.js",
+    "start:dev": "yarn build:server && node ./dist/index.js",
     "test": "yarn build:server && jasmine --config=jasmine.json"
   },
   "repository": {
