@@ -26,7 +26,6 @@
     "prefer-conditional-expression": true,
     "prefer-const": true,
     "prefer-object-spread": true,
-    "prefer-readonly": true,
     "prefer-template": true,
     "space-within-parens": [true, 0]
   },

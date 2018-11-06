@@ -28,7 +28,7 @@ export class DeleteController {
 
   private static readonly TEMPLATE_DELETE = 'account/delete';
 
-  private readonly trackingController: TrackingController;
+  private trackingController: TrackingController;
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);

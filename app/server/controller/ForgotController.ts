@@ -27,7 +27,7 @@ export class ForgotController {
   public static readonly ROUTE_FORGOT = '/forgot';
   private static readonly TEMPLATE_PATH = 'account/forgot';
 
-  private readonly trackingController: TrackingController;
+  private trackingController: TrackingController;
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);
