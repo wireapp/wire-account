@@ -2,4 +2,4 @@ babel==2.6.0
 blinker==1.4
 flask-babel==0.12.2
 flask==1.0.2
-requests==2.20.0
+requests==2.20.1
