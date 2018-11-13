@@ -22,6 +22,9 @@ import * as express from 'express';
 import * as formidable from 'express-formidable';
 import * as helmet from 'helmet';
 import * as http from 'http';
+import * as i18next from 'i18next';
+import * as i18nextMiddleware from 'i18next-express-middleware';
+import * as i18nextLoadLocales from 'i18next-node-fs-backend';
 import * as nunjucks from 'nunjucks';
 import * as path from 'path';
 import {ServerConfig} from './config';
@@ -49,6 +52,7 @@ class Server {
   private init(): void {
     // The order is important here, please don't sort!
     this.app.use(formidable());
+    this.initInternationalization();
     this.initTemplateEngine();
     this.initCaching();
     this.initForceSSL();
@@ -59,6 +63,40 @@ class Server {
     this.app.use(ConfigRoute(this.config));
     this.app.use(NotFoundRoute());
     this.app.use(InternalErrorRoute());
+  }
+
+  private initInternationalization() {
+    console.log('Initializing internationalization...');
+    i18next
+      .use(i18nextMiddleware.LanguageDetector)
+      .use(i18nextLoadLocales)
+      .init({
+        backend: {
+          addPath: '/../locales/{{lng}}/{{ns}}.missing.json',
+          jsonIndent: 2,
+          loadPath: '/../locales/{{lng}}/{{ns}}.json',
+        },
+        detection: {caches: false},
+        preload: ["en", "de"],
+      });
+    // i18n.configure({
+    //   // api: {
+    //   //   '__': '_',
+    //   //   '__n': '_n'
+    //   // },
+    //   defaultLocale: 'en',
+    //   directory: `${__dirname}/../locales`,
+    //   locales:['en', 'de'],
+    //   logDebugFn: function (msg) {
+    //     console.log('debug', msg);
+    //   },
+    //   queryParameter: 'hl',
+    // });
+
+    // this.app.use(i18n.init);
+    // i18n.setLocale('de');
+
+    this.app.use(i18nextMiddleware.handle(i18next));
   }
 
 

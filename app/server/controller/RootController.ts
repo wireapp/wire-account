@@ -43,7 +43,7 @@ export class RootController {
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const __ = req['t'] as Function;
     const userAgent = req.header('User-Agent');
     const parsedUserAgent = BrowserUtil.parseUserAgent(userAgent);
     const defaultRedirect = `${this.config.URL.WEBSITE_BASE}${req.originalUrl}`;
@@ -68,10 +68,10 @@ export class RootController {
 
     if (parsedUserAgent.is.crawler) {
       const openGraphPayload = {
-        description: _('Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.'),
+        description: __('Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.'),
         html_class: 'index',
         redirect: payload.redirect,
-        title: `Wire · ${_('The most secure collaboration platform')}`,
+        title: `Wire · ${__('The most secure collaboration platform')}`,
       };
       return res.render(RootController.TEMPLATE_OPEN_GRAPH, openGraphPayload);
     }

@@ -1,8 +1,10 @@
-project_identifier: wirecom
-base_path: .
-
-files:
-  -
-    source: '/app/translations/account.pot'
-    translation: '/app/translations/%two_letters_code%/LC_MESSAGES/messages.po'
-    update_option: 'update_as_unapproved'
+"project_identifier": "wirecom"
+"base_path": "/Users/mkoppen/git/wire-account"
+"preserve_hierarchy": true
+"files": [
+  {
+    "source": "/i18n/account.pot",
+    "translation": "/i18n/%two_letters_code%/account.po",
+    "update_option": "update_as_unapproved"
+  }
+]
