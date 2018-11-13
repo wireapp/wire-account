@@ -7,7 +7,7 @@
     "babel-extract": "pybabel extract -k _ -k __ -F app/translations/babel.cfg --sort-by-file --omit-header -o app/translations/account.pot app",
     "babel-init": "pybabel init -i app/translations/account.pot -d app/translations -l",
     "babel-update": "pybabel update -i app/translations/account.pot -d app/translations --no-wrap",
-    "build": "yarn build:front && yarn build:server",
+    "build": "yarn build:server && yarn build:front",
     "build:front": "gulp build",
     "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
     "crowdin": "yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml download",
