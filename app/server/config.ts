@@ -169,7 +169,7 @@ const config: ServerConfig = {
   VERSION: undefined,
 };
 
-const robotsDir = path.join(__dirname, 'robots');
+const robotsDir = path.join(__dirname, 'static');
 const robotsAllowFile = path.join(robotsDir, 'robots.txt');
 const robotsDisallowFile = path.join(robotsDir, 'robots-disallow.txt');
 const versionFile = path.join(__dirname, 'version');

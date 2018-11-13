@@ -130,11 +130,11 @@ class Server {
 
   private initStaticRoutes() {
     // this.app.use(RedirectRoutes(this.config));
-    this.app.use('/', express.static(path.join(__dirname, '..', 'app', 'static')));
+    this.app.use('/', express.static(path.join(__dirname, 'static')));
   }
 
   private initTemplateEngine() {
-    const env = nunjucks.configure(path.join(__dirname, '..', 'app', 'templates'), {
+    const env = nunjucks.configure(path.join(__dirname, 'templates'), {
       autoescape: true,
       express: this.app,
     });
