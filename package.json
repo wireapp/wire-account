@@ -13,7 +13,7 @@
     "crowdin": "yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml download",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
     "start": "concurrently \"gulp\" \"node ./dist/index.js\"",
-    "start:prod": "node ./dist/index.js",
+    "start:prod": "node ./index.js",
     "test": "yarn build:server && yarn test:server",
     "test:server": "jasmine --config=jasmine.json"
   },
