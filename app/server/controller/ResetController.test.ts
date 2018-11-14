@@ -19,7 +19,7 @@ describe('ResetController', () => {
     await controller['postPasswordReset'](key, code, password);
     expect(postResetSpy.calls.count()).toBe(1);
     expect(postResetSpy.calls.mostRecent().args.length).toBe(2);
-    expect(postResetSpy.calls.mostRecent().args[0]).toBe(`${config.BACKEND_REST}/password-reset/${key}`);
-    expect(postResetSpy.calls.mostRecent().args[1]).toEqual({code, password});
+    expect(postResetSpy.calls.mostRecent().args[0]).toBe(`${config.BACKEND_REST}/password-reset/complete`);
+    expect(postResetSpy.calls.mostRecent().args[1]).toEqual({code, key, password});
   });
 });
