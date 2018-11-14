@@ -53,13 +53,7 @@ describe('DeleteController', () => {
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
       expect(renderSpy.calls.mostRecent().args[0]).toBe(DeleteController['TEMPLATE_DELETE']);
-      expect(renderSpy.calls.mostRecent().args[1]).toEqual({
-        code: undefined,
-        html_class: 'account delete',
-        key: undefined,
-        status: 'error',
-        title: 'Delete Account',
-      });
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
     });
   });
 });
