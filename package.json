@@ -12,7 +12,7 @@
     "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
     "crowdin": "yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml download",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
-    "start": "concurrently \"gulp\" \"node ./dist/index.js\"",
+    "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
     "start:prod": "node ./index.js",
     "test": "yarn build:server && yarn test:server",
     "test:server": "jasmine --config=jasmine.json"
@@ -66,6 +66,7 @@
     "gulp-zip": "4.2.0",
     "jasmine": "3.3.0",
     "less": "3.8.1",
+    "nodemon": "1.18.6",
     "tslint": "5.11.0",
     "tslint-eslint-rules": "5.4.0",
     "typescript": "3.1.3",
