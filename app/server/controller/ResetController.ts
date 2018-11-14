@@ -49,13 +49,19 @@ export class ResetController {
   private readonly handleGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
     let status = 'error';
+    const error: any = undefined;
+    const key = req.query.key;
+    const code = req.query.code;
 
-    if (req.query.key && req.query.code) {
+    if (key && code) {
       status = 'init';
     }
 
     const payload = {
+      code,
+      error,
       html_class: 'account forgot',
+      key,
       status,
       title: _('Change Password'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
@@ -82,7 +88,7 @@ export class ResetController {
         status = 'success';
       } catch (requestError) {
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', requestError.status, 1);
-        switch (requestError.response.data.code) {
+        switch (requestError.response.status) {
           case 400: {
             status = 'error';
             break;

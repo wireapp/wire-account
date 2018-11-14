@@ -81,7 +81,7 @@ export class ForgotController {
             break;
           }
           case 409: {
-            error = _('We already sent you an email. The link is valid for 10 minutes.');
+            error = _('We already sent you an email. The link is valid for 1 hour.');
             status = 'error';
             break;
           }
