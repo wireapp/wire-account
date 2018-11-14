@@ -39,9 +39,7 @@ class Server {
   private server?: http.Server;
 
   constructor(private readonly config: ServerConfig) {
-    if (this.config.DEVELOPMENT) {
-      console.log(JSON.stringify(this.config, null, 2));
-    }
+    console.log(JSON.stringify(this.config, null, 2));
     this.app = express();
     this.init();
   }
