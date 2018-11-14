@@ -52,7 +52,7 @@ timestamp = ->
 # Init
 ###############################################################################
 gulp.task 'init', 'Initial Tasks.',
-  $.sequence 'clean:dev', 'ext:dev', 'script:dev', 'style:dev'
+  $.sequence 'clean', 'ext:dev', 'script:dev', 'style:dev'
 
 
 gulp.task 'default', 'Watch for changes and reload browser automatically.',
@@ -70,7 +70,7 @@ gulp.task 'style', false, ->
     discardComments: removeAll: true
     zindex: false
   .pipe $.size {title: 'Minified styles'}
-  .pipe gulp.dest 'dist/static/min/style'
+  .pipe gulp.dest 'dist/static/style'
 
 
 gulp.task 'style:dev', false, ->
@@ -80,7 +80,7 @@ gulp.task 'style:dev', false, ->
   .pipe $.less()
   .pipe $.autoprefixer {map: true}
   .pipe $.sourcemaps.write()
-  .pipe gulp.dest 'dist/static/dev/style'
+  .pipe gulp.dest 'dist/static/style'
 
 
 ###############################################################################
@@ -92,7 +92,7 @@ gulp.task 'ext', false, ->
   .pipe $.concat 'ext.js'
   .pipe $.uglify()
   .pipe $.size {title: 'Minified ext libs'}
-  .pipe gulp.dest 'dist/static/min/script'
+  .pipe gulp.dest 'dist/static/script'
 
 
 gulp.task 'ext:dev', false, ->
@@ -101,7 +101,7 @@ gulp.task 'ext:dev', false, ->
   .pipe $.sourcemaps.init()
   .pipe $.concat 'ext.js'
   .pipe $.sourcemaps.write()
-  .pipe gulp.dest 'dist/static/dev/script'
+  .pipe gulp.dest 'dist/static/script'
 
 
 gulp.task 'script', false, ->
@@ -110,7 +110,7 @@ gulp.task 'script', false, ->
   .pipe $.concat 'script.js'
   .pipe $.uglify()
   .pipe $.size {title: 'Minified scripts'}
-  .pipe gulp.dest 'dist/static/min/script'
+  .pipe gulp.dest 'dist/static/script'
 
 
 gulp.task 'script:dev', false, ->
@@ -119,7 +119,7 @@ gulp.task 'script:dev', false, ->
   .pipe $.sourcemaps.init()
   .pipe $.concat 'script.js'
   .pipe $.sourcemaps.write()
-  .pipe gulp.dest 'dist/static/dev/script'
+  .pipe gulp.dest 'dist/static/script'
 
 
 ###############################################################################
@@ -128,8 +128,8 @@ gulp.task 'script:dev', false, ->
 gulp.task 'reload', false, ->
   $.livereload.listen 35729
   gulp.watch([
-    'dist/static/dev/**/*.{css,js}'
-    'dist/**/*.{html}'
+    'dist/static/**/*.{css,js}'
+    'dist/templates/**/*.{html}'
   ]).on 'change', $.livereload.changed
 
 
@@ -142,17 +142,10 @@ gulp.task 'watch', false, ->
 ###############################################################################
 # Clean
 ###############################################################################
-gulp.task 'clean', 'Delete temporary files and compiled Python files.', ->
-  del './**/*.pyc'
-  del './**/*.pyo'
-  del './**/*.~'
 
-
-gulp.task 'clean:dev', false, ->
-  del 'dist/static/dev/'
-
-gulp.task 'clean:min', false, ->
-  del 'dist/static/min/'
+gulp.task 'clean', false, ->
+  del 'dist/static/script/'
+  del 'dist/static/style/'
 
 
 ###############################################################################
@@ -163,7 +156,7 @@ gulp.task 'version', false, ->
 
 
 gulp.task 'zip', 'Zip Stuff.', ->
-  gulp.src ['package.json', 'dist/**/*', '!dist/static/dev/**/*', '!dist/*.zip'], {nodir: true, dot: true}
+  gulp.src ['package.json', 'dist/**/*', '!dist/*.zip'], {nodir: true, dot: true}
   .pipe $.zip 'wire-account.zip'
   .pipe gulp.dest 'dist'
 
@@ -172,4 +165,4 @@ gulp.task 'build', 'Build to prepare for deployment.',
   $.sequence 'clean', 'ext', 'script', 'style', 'version', 'zip'
 
 gulp.task 'dist', 'Creates Elastic Beanstalk ZIP file for production uploads.',
-  $.sequence 'clean:dev', 'clean:min', 'build'
+  $.sequence 'clean', 'build'
