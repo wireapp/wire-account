@@ -43,7 +43,7 @@ export class ResetController {
   };
 
   private readonly postPasswordReset = async (key: string, code: string, password: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/password-reset/${key}`, {password, code})
+    return this.client.post(`${this.config.BACKEND_REST}/password-reset/complete`, {password, key, code})
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
