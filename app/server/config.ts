@@ -25,40 +25,17 @@ import {fileIsReadable, readFile} from './util/FileUtil';
 dotenv.config();
 
 const defaultCSP: HelmetCSP = {
-  connectSrc: [
-    "'self'",
-    'blob:',
-    'data:',
-    'https://wire.com',
-    'https://www.google.com',
-    'https://*.giphy.com',
-    'https://*.unsplash.com',
-    'https://apis.google.com',
-  ],
+  connectSrc: ["'self'"],
   defaultSrc: ["'self'"],
-  fontSrc: ["'self'", 'data:'],
-  frameSrc: [
-    'https://*.soundcloud.com',
-    'https://*.spotify.com',
-    'https://*.vimeo.com',
-    'https://*.youtube-nocookie.com',
-    'https://accounts.google.com',
-  ],
-  imgSrc: [
-    "'self'",
-    'blob:',
-    'data:',
-    'https://*.cloudfront.net',
-    'https://*.giphy.com',
-    'https://1-ps.googleusercontent.com',
-    'https://csi.gstatic.com',
-  ],
+  fontSrc: ["'self'"],
+  frameSrc: [],
+  imgSrc: ["'self'", 'blob:', 'data:'],
   manifestSrc: [],
-  mediaSrc: ["'self'", 'blob:', 'data:', '*'],
-  objectSrc: ["'self'", 'https://*.youtube-nocookie.com', 'https://1-ps.googleusercontent.com'],
+  mediaSrc: ["'self'", 'blob:', 'data:'],
+  objectSrc: ["'self'"],
   prefetchSrc: [],
-  scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", 'https://apis.google.com'],
-  styleSrc: ["'self'", "'unsafe-inline'", 'https://*.googleusercontent.com'],
+  scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
+  styleSrc: ["'self'", "'unsafe-inline'"],
   workerSrc: [],
 };
 
