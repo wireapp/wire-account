@@ -8,4 +8,4 @@ ENV PATH=$PATH:/deploy/node_modules/.bin
 WORKDIR /deploy
 RUN yarn && yarn build
 EXPOSE 8080
-ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/src/run.sh"]
+ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/deploy/run.sh"]
