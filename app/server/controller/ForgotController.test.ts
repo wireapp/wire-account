@@ -18,6 +18,6 @@ describe('ForgotController', () => {
     expect(postForgotSpy.calls.count()).toBe(1);
     expect(postForgotSpy.calls.mostRecent().args.length).toBe(2);
     expect(postForgotSpy.calls.mostRecent().args[0]).toBe(`${config.BACKEND_REST}/password-reset`);
-    expect(postForgotSpy.calls.mostRecent().args[1]).toEqual({params: {email}});
+    expect(postForgotSpy.calls.mostRecent().args[1]).toEqual({email});
   });
 });

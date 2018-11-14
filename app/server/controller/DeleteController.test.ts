@@ -21,7 +21,7 @@ describe('DeleteController', () => {
     expect(postDeleteSpy.calls.count()).toBe(1);
     expect(postDeleteSpy.calls.mostRecent().args.length).toBe(2);
     expect(postDeleteSpy.calls.mostRecent().args[0]).toBe(`${config.BACKEND_REST}/delete`);
-    expect(postDeleteSpy.calls.mostRecent().args[1]).toEqual({params: {key, code}});
+    expect(postDeleteSpy.calls.mostRecent().args[1]).toEqual({key, code});
   });
 
   describe('handlePost', () => {
