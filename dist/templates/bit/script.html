@@ -1,8 +1,5 @@
+<script src="/script/ext.js?{{config.VERSION}}"></script>
+<script src="/script/script.js?{{config.VERSION}}"></script>
 {% if config.DEVELOPMENT %}
-  <script src="/script/ext.js?{{random()}}"></script>
-  <script src="/script/script.js?{{random()}}"></script>
   <script src="http://localhost:35729/livereload.js"></script>
-{% else %}
-  <script src="/script/ext.js?{{config.VERSION}}"></script>
-  <script src="/script/script.js?{{config.VERSION}}"></script>
 {% endif %}
