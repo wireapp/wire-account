@@ -103,6 +103,7 @@ export interface ServerConfig {
   ENVIRONMENT: string;
   FEATURE: {
     ENABLE_DEBUG: boolean;
+    ENFORCE_HTTPS: boolean;
   };
   PIWIK_HOSTNAME: string;
   PIWIK_ID: string;
@@ -142,6 +143,7 @@ const config: ServerConfig = {
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {
     ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
+    ENFORCE_HTTPS: process.env.FEATURE_ENFORCE_HTTPS == 'false' ? false : true,
   },
   PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
   PIWIK_ID: process.env.PIWIK_ID,

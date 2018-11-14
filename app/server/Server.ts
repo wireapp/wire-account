@@ -80,11 +80,10 @@ class Server {
 
   private initForceSSL(): void {
     const SSLMiddleware: express.RequestHandler = (req, res, next) => {
-      // Redirect to HTTPS
-      const isDevelopment = this.config.DEVELOPMENT || req.url.match(/_health\/?/);
+      const shouldEnforceHttps = this.config.FEATURE.ENFORCE_HTTPS && !req.url.match(/_health\/?/);
       const isInsecure = !req.secure || req.get('X-Forwarded-Proto') !== 'https';
 
-      if (isInsecure && !isDevelopment) {
+      if (isInsecure && shouldEnforceHttps) {
         return res.redirect(STATUS_CODE_MOVED, `https://${req.headers.host}${req.url}`);
       }
 
