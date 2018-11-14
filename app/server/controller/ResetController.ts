@@ -43,7 +43,7 @@ export class ResetController {
   };
 
   private readonly postPasswordReset = async (key: string, code: string, password: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/password-reset/${key}`, {params: {password, code}})
+    return this.client.post(`${this.config.BACKEND_REST}/password-reset/${key}`, {password, code})
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -56,7 +56,7 @@ export class ResetController {
 
     const payload = {
       html_class: 'account forgot',
-      status: req.query.success ? 'success' : status,
+      status,
       title: _('Change Password'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
@@ -100,7 +100,7 @@ export class ResetController {
       error,
       html_class: 'account reset',
       key,
-      status: req.query.success ? 'success' : status,
+      status,
       title: _('Password reset'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };

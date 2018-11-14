@@ -5,8 +5,8 @@
 *.pyo
 app/version
 dist/*
-dist/static/dev/**/*
-dist/static/min/**/*
+dist/static/script/**/*
+dist/static/style/**/*
 !dist/static
 !dist/templates
 !dist/.ebextensions

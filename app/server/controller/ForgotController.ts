@@ -41,14 +41,16 @@ export class ForgotController {
   };
 
   private readonly postPasswordReset = async (email: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {params: {email}});
+    return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {email});
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
+    const error: string = undefined;
     const payload = {
+      error,
       html_class: 'account forgot',
-      status: req.query.success ? 'success' : 'error',
+      status: 'init',
       title: _('Change Password'),
     };
     return res.render(ForgotController.TEMPLATE_PATH, payload);
@@ -94,7 +96,7 @@ export class ForgotController {
     const payload = {
       error,
       html_class: 'account forgot',
-      status: req.query.success ? 'success' : status,
+      status,
       title: _('Change Password'),
     };
     return res.render(ForgotController.TEMPLATE_PATH, payload);

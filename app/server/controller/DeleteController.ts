@@ -42,7 +42,7 @@ export class DeleteController {
   };
 
   private readonly postAccountDelete = async (key: string, code: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/delete`, {params: {key, code}})
+    return this.client.post(`${this.config.BACKEND_REST}/delete`, {key, code})
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -60,7 +60,7 @@ export class DeleteController {
       code,
       html_class: 'account delete',
       key,
-      status: status,
+      status,
       title: _('Delete Account'),
     };
     return res.render(DeleteController.TEMPLATE_DELETE, payload);

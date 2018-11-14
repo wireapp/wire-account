@@ -51,7 +51,7 @@ export class VerifyController {
     const payload = {
       credentials: 'true',
       html_class: 'account verify',
-      status: req.query.success ? 'success' : 'error',
+      status: 'success',
       title: _('Verify Account'),
       url: `${this.config.BACKEND_REST}/activate?key=${req.query.key}&code=${req.query.code}`,
     };
@@ -63,7 +63,7 @@ export class VerifyController {
     const payload = {
       credentials: 'false',
       html_class: 'account verify',
-      status: req.query.success ? 'success' : 'error',
+      status: 'success',
       title: _('Verify Bot'),
       url: `${this.config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`,
     };
