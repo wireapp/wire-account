@@ -57,11 +57,20 @@ export class VerifyController {
       title: _('Verify Account'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
+
+    const userAgent = BrowserUtil.parseUserAgent(req.header('User-Agent'));
+    if (userAgent.is.ios || userAgent.is.android) {
+      payload.redirect = this.config.URL.REDIRECT_VERIFY_BASE;
+    } else if (userAgent.is.desktop && !(userAgent.is.osx || userAgent.is.windows)) {
+      payload.redirect = `${this.config.URL.WEBAPP_BASE}/auth/?immediate_login#login`;
+    }
+
     if (key && code) {
       payload.url = `${this.config.BACKEND_REST}/activate?key=${key}&code=${code}`;
       payload.status = 'success';
     } else {
-      payload.status = 'error';
+      payload.status = req.query.success === '' ? 'success' : 'error';
+      payload.redirect = '';
     }
     return res.render(VerifyController.TEMPLATE_VERIFY_EMAIL, payload);
   }
@@ -73,16 +82,24 @@ export class VerifyController {
     const payload: any = {
       credentials: 'false',
       html_class: 'account verify',
-      status: 'success',
       title: _('Verify Bot'),
 
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
+
+    const userAgent = BrowserUtil.parseUserAgent(req.header('User-Agent'));
+    if (userAgent.is.ios || userAgent.is.android) {
+      payload.redirect = this.config.URL.REDIRECT_VERIFY_BASE;
+    } else if (userAgent.is.desktop && !(userAgent.is.osx || userAgent.is.windows)) {
+      payload.redirect = this.config.URL.WEBAPP_BASE;
+    }
+
     if (key && code) {
       payload.url = `${this.config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`;
       payload.status = 'success';
     } else {
-      payload.status = 'error';
+      payload.status = req.query.success === '' ? 'success' : 'error';
+      payload.redirect = '';
     }
     return res.render(VerifyController.TEMPLATE_VERIFY_BOT, payload);
   }
