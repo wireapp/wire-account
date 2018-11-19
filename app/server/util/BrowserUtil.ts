@@ -79,16 +79,16 @@ function parseUserAgent(userAgent?: string): ParsedUserAgent | null {
   const wireVersion = getVersion('Wire');
   const franzVersion = getVersion('Franz');
 
-  const isBingBot = userAgent.includes('bingbot');
-  const isBingbot = userAgent.includes('bingbot');
-  const isBlackberryTablet = agent.isBlackberry && userAgent.includes('tablet');
+  const isBingBot = userAgent.toLowerCase().includes('bingbot');
+  const isBingbot = userAgent.toLowerCase().includes('bingbot');
+  const isBlackberryTablet = agent.isBlackberry && userAgent.toLowerCase().includes('tablet');
   const isElectron = !!electronVersion;
   const isFranz = !!franzVersion;
-  const isGoogleBot = userAgent.includes('googlebot');
-  const isIOS = agent.platform.includes('ios');
-  const isOSX = agent.platform.includes('mac');
+  const isGoogleBot = userAgent.toLowerCase().includes('googlebot');
+  const isIOS = agent.platform.toLowerCase().includes('ios');
+  const isOSX = agent.platform.toLowerCase().includes('mac');
   const isWire = !!wireVersion;
-  const isYahooBot = userAgent.includes('yahoo');
+  const isYahooBot = userAgent.toLowerCase().includes('yahoo');
 
   const isCrawler = isBingBot || isGoogleBot || isYahooBot;
   const isPhone = !agent.isTablet && (isIOS || agent.isAndroid || agent.isWindowsPhone || agent.isBlackberry);
