@@ -35,15 +35,7 @@ const InternalErrorRoute = (): express.ErrorRequestHandler => (err, req, res, ne
     message: 'Internal server error',
     stack: err.stack,
   };
-  const request = {
-    date: req.headers.date,
-    host: req.hostname,
-    ip: req.ip,
-    url: req.url,
-  };
-  req.app.locals.error = error;
-  req.app.locals.request = request;
-  return res.render('error', {error: {message: 'lala', code: 12}});
+  return res.render('error', {error});
 };
 
 const NotFoundRoute = () =>
@@ -52,15 +44,7 @@ const NotFoundRoute = () =>
       code: 404,
       message: 'Not found',
     };
-    const request = {
-      date: req.headers.date,
-      host: req.hostname,
-      ip: req.ip,
-      url: req.url,
-    };
-    req.app.locals.error = error;
-    req.app.locals.request = request;
-    return res.render('error', {error: {message: 'lala', code: 12}});
+    return res.render('error', {error});
   });
 
 export {InternalErrorRoute, NotFoundRoute};
