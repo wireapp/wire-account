@@ -76,7 +76,6 @@ export interface ServerConfig {
   BACKEND_REST: string;
   CACHE_DURATION_SECONDS: number;
   CSP: HelmetCSP;
-  DEVELOPMENT?: boolean;
   ENVIRONMENT: string;
   FEATURE: {
     ENABLE_DEBUG: boolean;
@@ -116,7 +115,6 @@ const config: ServerConfig = {
   BACKEND_REST: process.env.BACKEND_REST,
   CACHE_DURATION_SECONDS: 300,
   CSP: mergedCSP(),
-  DEVELOPMENT: nodeEnvironment === 'development',
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {
     ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,

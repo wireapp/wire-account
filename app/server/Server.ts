@@ -60,7 +60,7 @@ class Server {
 
 
   private initCaching() {
-    if (this.config.DEVELOPMENT) {
+    if (this.config.ENVIRONMENT === 'development') {
       this.app.use(helmet.noCache());
     } else {
       this.app.use((req, res, next) => {
@@ -112,7 +112,7 @@ class Server {
         browserSniff: true,
         directives: this.config.CSP,
         disableAndroid: false,
-        loose: !this.config.DEVELOPMENT,
+        loose: this.config.ENVIRONMENT !== 'development',
         reportOnly: false,
         setAllHeaders: false,
       })
@@ -143,8 +143,6 @@ class Server {
       return translationKey;
     }
     this.app.locals.JSON = JSON;
-    this.app.locals.console = console;
-    this.app.locals.random = Math.random;
     this.app.locals.routes = ROUTES;
   }
 
