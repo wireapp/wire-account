@@ -23,7 +23,7 @@
     {% elif user_agent().is.desktop %}
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('Get Wire')}}</a>
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download/">{{_('Get Wire')}}</a>
         {% elif  user_agent().is.osx %}
           <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('OPEN macOS APP')}}</a>
         {% endif %}
