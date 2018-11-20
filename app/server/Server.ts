@@ -32,7 +32,6 @@ import {ROUTES} from './controller';
 import HealthCheckRoute from './routes/_health/HealthRoute';
 import ConfigRoute from './routes/config/ConfigRoute';
 import {InternalErrorRoute, NotFoundRoute} from './routes/error/ErrorRoutes';
-// import RedirectRoutes from './routes/RedirectRoutes';
 import Root from './routes/Root';
 
 const STATUS_CODE_MOVED = 301;
@@ -42,9 +41,7 @@ class Server {
   private server?: http.Server;
 
   constructor(private readonly config: ServerConfig) {
-    if (this.config.DEVELOPMENT) {
-      console.log(JSON.stringify(this.config, null, 2));
-    }
+    console.log(JSON.stringify(this.config, null, 2));
     this.app = express();
     this.init();
   }
@@ -101,7 +98,7 @@ class Server {
 
 
   private initCaching() {
-    if (this.config.DEVELOPMENT) {
+    if (this.config.ENVIRONMENT === 'development') {
       this.app.use(helmet.noCache());
     } else {
       this.app.use((req, res, next) => {
@@ -118,11 +115,10 @@ class Server {
 
   private initForceSSL(): void {
     const SSLMiddleware: express.RequestHandler = (req, res, next) => {
-      // Redirect to HTTPS
-      const isDevelopment = this.config.DEVELOPMENT || req.url.match(/_health\/?/);
+      const shouldEnforceHttps = this.config.FEATURE.ENFORCE_HTTPS && !req.url.match(/_health\/?/);
       const isInsecure = !req.secure || req.get('X-Forwarded-Proto') !== 'https';
 
-      if (isInsecure && !isDevelopment) {
+      if (isInsecure && shouldEnforceHttps) {
         return res.redirect(STATUS_CODE_MOVED, `https://${req.headers.host}${req.url}`);
       }
 
@@ -154,7 +150,7 @@ class Server {
         browserSniff: true,
         directives: this.config.CSP,
         disableAndroid: false,
-        loose: !this.config.DEVELOPMENT,
+        loose: this.config.ENVIRONMENT !== 'development',
         reportOnly: false,
         setAllHeaders: false,
       })
@@ -167,12 +163,11 @@ class Server {
   }
 
   private initStaticRoutes() {
-    // this.app.use(RedirectRoutes(this.config));
-    this.app.use('/', express.static(path.join(__dirname, '..', 'app', 'static')));
+    this.app.use('/', express.static(path.join(__dirname, 'static')));
   }
 
   private initTemplateEngine() {
-    const env = nunjucks.configure(path.join(__dirname, '..', 'app', 'templates'), {
+    const env = nunjucks.configure(path.join(__dirname, 'templates'), {
       autoescape: true,
       express: this.app,
     });
@@ -186,7 +181,6 @@ class Server {
       return translationKey;
     }
     this.app.locals.JSON = JSON;
-    this.app.locals.random = Math.random;
     this.app.locals.routes = ROUTES;
   }
 

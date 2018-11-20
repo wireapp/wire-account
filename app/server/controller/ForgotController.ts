@@ -25,7 +25,10 @@ import {TrackingController} from "./TrackingController";
 export class ForgotController {
 
   public static readonly ROUTE_FORGOT = '/forgot';
-  private static readonly TEMPLATE_PATH = 'account/forgot';
+  private static readonly TEMPLATE_FORGOT = 'account/forgot';
+
+  private static readonly HTTP_STATUS_EMAIL_IN_USE = 400;
+  private static readonly HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
   private trackingController: TrackingController;
 
@@ -40,18 +43,20 @@ export class ForgotController {
     ];
   };
 
-  private readonly postPasswordReset = async (email: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {params: {email}});
+  private postPasswordReset = async (email: string) => {
+    return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {email});
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
+    const error: string = undefined;
     const payload = {
+      error,
       html_class: 'account forgot',
-      status: req.query.success ? 'success' : 'error',
+      status: 'init',
       title: _('Change Password'),
     };
-    return res.render(ForgotController.TEMPLATE_PATH, payload);
+    return res.render(ForgotController.TEMPLATE_FORGOT, payload);
   };
 
   private readonly handlePost = async (req: Request, res: Response) => {
@@ -72,14 +77,14 @@ export class ForgotController {
         status = 'success';
       } catch (requestError) {
         this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.status, 1);
-        switch (requestError.response.data.code) {
-          case 400: {
+        switch (requestError.response.status) {
+          case ForgotController.HTTP_STATUS_EMAIL_IN_USE: {
             error = _('This email is not in use.');
             status = 'error';
             break;
           }
-          case 409: {
-            error = _('We already sent you an email. The link is valid for 10 minutes.');
+          case ForgotController.HTTP_STATUS_EMAIL_ALREADY_SENT: {
+            error = _('We already sent you an email. The link is valid for 1 hour.');
             status = 'error';
             break;
           }
@@ -94,9 +99,9 @@ export class ForgotController {
     const payload = {
       error,
       html_class: 'account forgot',
-      status: req.query.success ? 'success' : status,
+      status,
       title: _('Change Password'),
     };
-    return res.render(ForgotController.TEMPLATE_PATH, payload);
+    return res.render(ForgotController.TEMPLATE_FORGOT, payload);
   }
 };

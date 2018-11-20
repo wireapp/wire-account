@@ -25,40 +25,17 @@ import {fileIsReadable, readFile} from './util/FileUtil';
 dotenv.config();
 
 const defaultCSP: HelmetCSP = {
-  connectSrc: [
-    "'self'",
-    'blob:',
-    'data:',
-    'https://wire.com',
-    'https://www.google.com',
-    'https://*.giphy.com',
-    'https://*.unsplash.com',
-    'https://apis.google.com',
-  ],
+  connectSrc: ["'self'"],
   defaultSrc: ["'self'"],
-  fontSrc: ["'self'", 'data:'],
-  frameSrc: [
-    'https://*.soundcloud.com',
-    'https://*.spotify.com',
-    'https://*.vimeo.com',
-    'https://*.youtube-nocookie.com',
-    'https://accounts.google.com',
-  ],
-  imgSrc: [
-    "'self'",
-    'blob:',
-    'data:',
-    'https://*.cloudfront.net',
-    'https://*.giphy.com',
-    'https://1-ps.googleusercontent.com',
-    'https://csi.gstatic.com',
-  ],
+  fontSrc: ["'self'"],
+  frameSrc: [],
+  imgSrc: ["'self'", 'blob:', 'data:'],
   manifestSrc: [],
-  mediaSrc: ["'self'", 'blob:', 'data:', '*'],
-  objectSrc: ["'self'", 'https://*.youtube-nocookie.com', 'https://1-ps.googleusercontent.com'],
+  mediaSrc: ["'self'", 'blob:', 'data:'],
+  objectSrc: ["'self'"],
   prefetchSrc: [],
-  scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", 'https://apis.google.com'],
-  styleSrc: ["'self'", "'unsafe-inline'", 'https://*.googleusercontent.com'],
+  scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
+  styleSrc: ["'self'", "'unsafe-inline'"],
   workerSrc: [],
 };
 
@@ -99,10 +76,10 @@ export interface ServerConfig {
   BACKEND_REST: string;
   CACHE_DURATION_SECONDS: number;
   CSP: HelmetCSP;
-  DEVELOPMENT?: boolean;
   ENVIRONMENT: string;
   FEATURE: {
     ENABLE_DEBUG: boolean;
+    ENFORCE_HTTPS: boolean;
   };
   PIWIK_HOSTNAME: string;
   PIWIK_ID: string;
@@ -138,10 +115,10 @@ const config: ServerConfig = {
   BACKEND_REST: process.env.BACKEND_REST,
   CACHE_DURATION_SECONDS: 300,
   CSP: mergedCSP(),
-  DEVELOPMENT: nodeEnvironment === 'development',
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {
     ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
+    ENFORCE_HTTPS: process.env.FEATURE_ENFORCE_HTTPS == 'false' ? false : true,
   },
   PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
   PIWIK_ID: process.env.PIWIK_ID,
@@ -169,7 +146,7 @@ const config: ServerConfig = {
   VERSION: undefined,
 };
 
-const robotsDir = path.join(__dirname, 'robots');
+const robotsDir = path.join(__dirname, 'static');
 const robotsAllowFile = path.join(robotsDir, 'robots.txt');
 const robotsDisallowFile = path.join(robotsDir, 'robots-disallow.txt');
 const versionFile = path.join(__dirname, 'version');

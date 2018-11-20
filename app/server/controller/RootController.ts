@@ -76,6 +76,6 @@ export class RootController {
       return res.render(RootController.TEMPLATE_OPEN_GRAPH, openGraphPayload);
     }
 
-    return this.config.DEVELOPMENT ? res.render(RootController.TEMPLATE_INDEX, payload) : res.redirect(payload.redirect);
+    return this.config.ENVIRONMENT === 'development' ? res.render(RootController.TEMPLATE_INDEX, payload) : res.redirect(payload.redirect);
   }
 };

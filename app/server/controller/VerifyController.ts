@@ -19,6 +19,7 @@
 
 import {Request, Response, Router} from "express";
 import {ServerConfig} from "../config";
+import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from "./Client";
 import {TrackingController} from "./TrackingController";
 
@@ -48,25 +49,58 @@ export class VerifyController {
 
   private readonly handleEmailGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
-    const payload = {
+    const key = req.query.key;
+    const code = req.query.code;
+    const payload: any = {
       credentials: 'true',
       html_class: 'account verify',
-      status: req.query.success ? 'success' : 'error',
       title: _('Verify Account'),
-      url: `${this.config.BACKEND_REST}/activate?key=${req.query.key}&code=${req.query.code}`,
+      user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
+
+    const userAgent = BrowserUtil.parseUserAgent(req.header('User-Agent'));
+    if (userAgent.is.ios || userAgent.is.android) {
+      payload.redirect = this.config.URL.REDIRECT_VERIFY_BASE;
+    } else if (userAgent.is.desktop && !(userAgent.is.osx || userAgent.is.windows)) {
+      payload.redirect = `${this.config.URL.WEBAPP_BASE}/auth/?immediate_login#login`;
+    }
+
+    if (key && code) {
+      payload.url = `${this.config.BACKEND_REST}/activate?key=${key}&code=${code}`;
+      payload.status = 'success';
+    } else {
+      payload.status = req.query.success === '' ? 'success' : 'error';
+      payload.redirect = '';
+    }
     return res.render(VerifyController.TEMPLATE_VERIFY_EMAIL, payload);
   }
 
   private readonly handleBotGet = async (req: Request, res: Response) => {
     const _ = req.app.locals._;
-    const payload = {
+    const key = req.query.key;
+    const code = req.query.code;
+    const payload: any = {
       credentials: 'false',
       html_class: 'account verify',
-      status: req.query.success ? 'success' : 'error',
       title: _('Verify Bot'),
-      url: `${this.config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`,
+
+      user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
+
+    const userAgent = BrowserUtil.parseUserAgent(req.header('User-Agent'));
+    if (userAgent.is.ios || userAgent.is.android) {
+      payload.redirect = this.config.URL.REDIRECT_VERIFY_BASE;
+    } else if (userAgent.is.desktop && !(userAgent.is.osx || userAgent.is.windows)) {
+      payload.redirect = this.config.URL.WEBAPP_BASE;
+    }
+
+    if (key && code) {
+      payload.url = `${this.config.BACKEND_REST}/provider/activate?key=${req.query.key}&code=${req.query.code}`;
+      payload.status = 'success';
+    } else {
+      payload.status = req.query.success === '' ? 'success' : 'error';
+      payload.redirect = '';
+    }
     return res.render(VerifyController.TEMPLATE_VERIFY_BOT, payload);
   }
 

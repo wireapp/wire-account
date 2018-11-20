@@ -2,12 +2,11 @@
 {% import 'macro/utils.html' as utils %}
 
 {% block content %}
-  <link id="url" data-url="{{url}}" data-status="{{status}}"
-    {% if (user_agent().is.ios or user_agent().is.android) %}
-      data-redirect="{{config.URL.REDIRECT_VERIFY_BASE}}"
-    {% elif user_agent().is.desktop and not (user_agent().is.osx or user_agent().is.windows) %}
-      data-redirect="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login"
-    {% endif %}
+  <link
+    id="url"
+    data-url="{{url}}"
+    data-status="{{status}}"
+    data-redirect="{{redirect}}"
     data-credentials="{{credentials}}"
   >
 
@@ -20,11 +19,11 @@
     <h1>{{_('Account created')}}</h1>
     {% if user_agent().is.mobile %}
       <p>{{_('Install the app to start using Wire.')}}</p>
-      {{utils.download_btn(_('Get Wire'), 'wbtn green', 'verify')}}
+      {{utils.download_btn(_('Get Wire'), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('Get Wire')}}</a>
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download/">{{_('Get Wire')}}</a>
         {% elif  user_agent().is.osx %}
           <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('OPEN macOS APP')}}</a>
         {% endif %}

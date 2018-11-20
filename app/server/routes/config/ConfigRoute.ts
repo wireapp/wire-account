@@ -19,19 +19,22 @@
 import {Router} from 'express';
 import {ServerConfig} from '../../config';
 
-const ConfigRoute = (config: ServerConfig) =>
-  Router().get('/config.js', (req, res) => {
+const ConfigRoute = (config: ServerConfig) => {
+  return Router().get('/config.js', (req, res) => {
+    const clientConfig = {
+      APP_BASE: config.APP_BASE,
+      APP_NAME: config.APP_NAME,
+      BACKEND_REST: config.BACKEND_REST,
+      ENVIRONMENT: config.ENVIRONMENT,
+      URL: config.URL,
+      VERSION: config.VERSION,
+    };
+
     res.type('application/javascript').send(`
-      window.wire = window.wire ? window.wire : {};
-      window.wire.env = {
-        APP_BASE: '${config.APP_BASE}',
-        APP_NAME: '${config.APP_NAME}',
-        ENVIRONMENT: '${config.ENVIRONMENT}',
-        VERSION: '${config.VERSION}',
-        URL: JSON.parse('${JSON.stringify(config.URL || {})}'),
-        FEATURE: JSON.parse('${JSON.stringify(config.FEATURE || {})}'),
-      };
+      window.wire = window.wire || {};
+      window.wire.env = ${JSON.stringify(clientConfig)};
     `);
   });
+};
 
 export default ConfigRoute;
