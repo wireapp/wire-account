@@ -62,7 +62,7 @@ export class ResetController {
       error,
       html_class: 'account forgot',
       key,
-      status,
+      status: req.query.success === '' ? 'success' : status,
       title: _('Change Password'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
@@ -110,6 +110,7 @@ export class ResetController {
       title: _('Password reset'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
+    console.log('payload', payload);
     return res.render(ResetController.TEMPLATE_RESET, payload)
   }
 }

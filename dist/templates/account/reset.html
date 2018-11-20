@@ -6,7 +6,7 @@
     <h1>{{title}}</h1>
     <p>{{_('You can now log in with your new password.')}}</p>
     {% if user_agent().is.mobile %}
-      {{utils.download_btn(_('Get Wire'), 'wbtn green', 'verify')}}
+      {{utils.download_btn(_('Get Wire'), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
       <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}

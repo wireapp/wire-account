@@ -143,6 +143,7 @@ class Server {
       return translationKey;
     }
     this.app.locals.JSON = JSON;
+    this.app.locals.console = console;
     this.app.locals.random = Math.random;
     this.app.locals.routes = ROUTES;
   }
