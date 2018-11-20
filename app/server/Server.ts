@@ -70,7 +70,7 @@ class Server {
       .init({
         backend: {
           jsonIndent: 2,
-          loadPath: path.resolve(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+          loadPath: path.resolve(__dirname, 'locales/{{lng}}/{{ns}}.json'),
         },
         debug: false,
         detection: {

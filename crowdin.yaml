@@ -3,6 +3,6 @@ base_path: .
 
 files:
   -
-    source: '/locales/en/translation.json'
-    translation: '/locales/%two_letters_code%/translation.json'
+    source: '/dist/locales/en/translation.json'
+    translation: '/dist/locales/%two_letters_code%/translation.json'
     update_option: 'update_as_unapproved'

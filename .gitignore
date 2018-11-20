@@ -9,6 +9,7 @@ dist/static/script/**/*
 dist/static/style/**/*
 !dist/static
 !dist/templates
+!dist/locales
 !dist/.ebextensions
 keys
 node_modules

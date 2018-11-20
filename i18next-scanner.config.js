@@ -14,8 +14,8 @@ module.exports = {
       return key;
     },
     resource: {
-      loadPath: 'locales/{{lng}}/{{ns}}.json',
-      savePath: 'locales/{{lng}}/{{ns}}.json',
+      loadPath: 'dist/locales/{{lng}}/{{ns}}.json',
+      savePath: 'dist/locales/{{lng}}/{{ns}}.json',
       jsonIndent: 2,
       lineEnding: '\n'
     },
