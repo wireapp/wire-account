@@ -48,10 +48,11 @@ export class VerifyController {
   };
 
   private readonly handleEmailGet = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     const key = req.query.key;
     const code = req.query.code;
     const payload: any = {
+      _,
       credentials: 'true',
       html_class: 'account verify',
       title: _('Verify Account'),
@@ -76,10 +77,11 @@ export class VerifyController {
   }
 
   private readonly handleBotGet = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     const key = req.query.key;
     const code = req.query.code;
     const payload: any = {
+      _,
       credentials: 'false',
       html_class: 'account verify',
       title: _('Verify Bot'),
@@ -106,8 +108,9 @@ export class VerifyController {
 
   private readonly handlePhoneGet = async (req: Request, res: Response) => {
     this.trackingController.trackEvent(req.originalUrl, 'account.verify-phone', 'success', 200, 1);
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     const payload = {
+      _,
       html_class: 'account phone',
       title: _('Verify Phone'),
       url: `${this.config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,

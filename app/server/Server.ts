@@ -69,29 +69,18 @@ class Server {
       .use(i18nextLoadLocales)
       .init({
         backend: {
-          addPath: '/../locales/{{lng}}/{{ns}}.missing.json',
           jsonIndent: 2,
-          loadPath: '/../locales/{{lng}}/{{ns}}.json',
+          loadPath: path.resolve(__dirname, '../locales/{{lng}}/{{ns}}.json'),
         },
-        detection: {caches: false},
-        preload: ["en", "de"],
+        debug: false,
+        detection: {
+          caches: false,
+          lookupQuerystring: 'hl',
+          order: ['querystring', 'header'],
+        },
+        fallbackLng: 'en',
+        preload: ['en', 'de'],
       });
-    // i18n.configure({
-    //   // api: {
-    //   //   '__': '_',
-    //   //   '__n': '_n'
-    //   // },
-    //   defaultLocale: 'en',
-    //   directory: `${__dirname}/../locales`,
-    //   locales:['en', 'de'],
-    //   logDebugFn: function (msg) {
-    //     console.log('debug', msg);
-    //   },
-    //   queryParameter: 'hl',
-    // });
-
-    // this.app.use(i18n.init);
-    // i18n.setLocale('de');
 
     this.app.use(i18nextMiddleware.handle(i18next));
   }
@@ -176,10 +165,6 @@ class Server {
 
     this.app.set('view engine', 'html');
     this.app.locals.config = this.config;
-    this.app.locals._ = (translationKey: string) => {
-      console.log('Attempting to translate string: ', translationKey);
-      return translationKey;
-    }
     this.app.locals.JSON = JSON;
     this.app.locals.routes = ROUTES;
   }

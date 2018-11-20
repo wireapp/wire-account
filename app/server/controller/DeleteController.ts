@@ -46,7 +46,7 @@ export class DeleteController {
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     let status = 'error';
 
     const key = req.query.key;
@@ -57,6 +57,7 @@ export class DeleteController {
     }
 
     const payload = {
+      _,
       code,
       html_class: 'account delete',
       key,
@@ -67,7 +68,7 @@ export class DeleteController {
   };
 
   private readonly handlePost = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     let status = 'error';
 
     const code = req.fields.code as string;
@@ -85,6 +86,7 @@ export class DeleteController {
     }
 
     const payload = {
+      _,
       code,
       html_class: 'account delete',
       key,

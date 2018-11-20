@@ -48,9 +48,10 @@ export class ForgotController {
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     const error: string = undefined;
     const payload = {
+      _,
       error,
       html_class: 'account forgot',
       status: 'init',
@@ -60,7 +61,7 @@ export class ForgotController {
   };
 
   private readonly handlePost = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     let status;
     let error;
 
@@ -97,6 +98,7 @@ export class ForgotController {
     }
 
     const payload = {
+      _,
       error,
       html_class: 'account forgot',
       status,

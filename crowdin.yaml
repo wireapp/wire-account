@@ -1,10 +1,8 @@
-"project_identifier": "wirecom"
-"base_path": "."
-"preserve_hierarchy": true
-"files": [
-  {
-    "source": "/i18n/account.pot",
-    "translation": "/i18n/%two_letters_code%/account.po",
-    "update_option": "update_as_unapproved"
-  }
-]
+project_identifier: wirecom
+base_path: .
+
+files:
+  -
+    source: '/locales/en/translation.json'
+    translation: '/locales/%two_letters_code%/translation.json'
+    update_option: 'update_as_unapproved'

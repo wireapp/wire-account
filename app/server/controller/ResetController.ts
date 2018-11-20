@@ -47,7 +47,7 @@ export class ResetController {
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     let status = 'error';
     const error: any = undefined;
     const key = req.query.key;
@@ -58,6 +58,7 @@ export class ResetController {
     }
 
     const payload = {
+      _,
       code,
       error,
       html_class: 'account forgot',
@@ -70,7 +71,7 @@ export class ResetController {
   };
 
   private readonly handlePost = async (req: Request, res: Response) => {
-    const _ = req.app.locals._;
+    const _ = (req as any)['t'] as Function;
     let status = 'error';
     let error = '';
 
@@ -102,6 +103,7 @@ export class ResetController {
     }
 
     const payload = {
+      _,
       code,
       error,
       html_class: 'account reset',
@@ -110,7 +112,6 @@ export class ResetController {
       title: _('Password reset'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
-    console.log('payload', payload);
     return res.render(ResetController.TEMPLATE_RESET, payload)
   }
 }

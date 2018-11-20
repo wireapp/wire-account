@@ -29,22 +29,24 @@ const logger = logdown('@wireapp/wire-webapp/routes/error/errorRoutes', {
 });
 
 const InternalErrorRoute = (): express.ErrorRequestHandler => (err, req, res, next) => {
+  const _ = (req as any)['t'] as Function;
   logger.error(`[${formatDate()}] ${err.stack}`);
   const error = {
     code: 500,
     message: 'Internal server error',
     stack: err.stack,
   };
-  return res.render('error', {error});
+  return res.render('error', {error, _});
 };
 
 const NotFoundRoute = () =>
   router.get('*', (req, res) => {
+    const _ = (req as any)['t'] as Function;
     const error = {
       code: 404,
       message: 'Not found',
     };
-    return res.render('error', {error});
+    return res.render('error', {error, _});
   });
 
 export {InternalErrorRoute, NotFoundRoute};
