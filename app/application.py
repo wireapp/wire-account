@@ -61,19 +61,13 @@ def index(url='/'):
   ua_is = util.user_agent()['is']
   if flask.request.url.find(u'get.wire.com') > 0 or flask.request.url.find(u'get.zinfra.io') > 0:
     label = 'desktop'
-    target = '%s/auth/#invite' % config.WEBAPP_URL
+    target = config.WIRE_DOWNLOAD_URL
     if ua_is['android']:
       target = config.DOWNLOAD_ANDROID_URL
       label = 'android'
     elif ua_is['ios']:
       target = config.DOWNLOAD_IOS_URL
       label = 'ios'
-    elif ua_is['safari']:
-      target = config.WIRE_DOWNLOAD_URL
-      label = 'safari'
-    elif ua_is['ie']:
-      target = config.WIRE_DOWNLOAD_URL
-      label = 'ie'
     util.track_event_to_piwik('get.wire.com', 'redirect', label, 1)
 
   if util.user_agent()['is']['crawler']:
@@ -277,12 +271,6 @@ def reset():
     code=code,
     key=key,
   )
-
-
-@application.route('/t/<team_code>')
-@application.route('/t/<team_code>/')
-def team_invite(team_code):
-  return flask.redirect('%s/join/?team-code=%s' % (config.TEAMS_URL, team_code))
 
 
 ###############################################################################

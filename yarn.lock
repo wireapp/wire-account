@@ -519,10 +519,10 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
 concat-with-sourcemaps@^1.0.0:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/concat-with-sourcemaps/-/concat-with-sourcemaps-1.0.4.tgz#f55b3be2aeb47601b10a2d5259ccfb70fd2f1dd6"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/concat-with-sourcemaps/-/concat-with-sourcemaps-1.1.0.tgz#d4ea93f05ae25790951b99e7b3b09e3908a4082e"
   dependencies:
-    source-map "^0.5.1"
+    source-map "^0.6.1"
 
 concurrently@4.0.1:
   version "4.0.1"
@@ -1979,8 +1979,8 @@ lru-queue@0.1:
     es5-ext "~0.10.2"
 
 macaddress@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.9.tgz#3579b8b9acd5b96b4553abf0f394185a86813cb3"
 
 make-error-cause@^1.1.1:
   version "1.2.2"
