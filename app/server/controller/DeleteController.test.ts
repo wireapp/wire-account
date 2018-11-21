@@ -35,15 +35,11 @@ describe('DeleteController', () => {
       const controller = new DeleteController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
       const req: any = {
-        app: {
-          locals: {
-            _: (text: string) => text
-          },
-        },
         fields: {
           code: undefined,
           key: undefined,
         },
+        t: (text: string) => text,
       };
       const res: any = {
         render: renderSpy,
