@@ -6,12 +6,9 @@
     <h1>{{title}}</h1>
     <p>{{_('delete.confirmation')}}</p>
     <p>
-      {{_('delete.thanks')}}
       {% autoescape false %}
-        {% set surveyText %}If you’d like, you can {{utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('delete.surveyLink'))}}{% endset %}
-        {{_(surveyText)}}
+        {{_('delete.surveyText', {link: utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('delete.surveyLink'))})}}
       {% endautoescape %}
-      {{_('delete.duration')}}
     </p>
   {% elif status == 'error' %}
     <h1>{{_('delete.errorTitle')}}</h1>
@@ -32,8 +29,7 @@
 
     <p>
       {% autoescape false %}
-        {% set forgot %}If you did not ask for this, you should {{utils.link(routes.forgot, _('delete.forgotLink'), false)}}{% endset %}
-        {{_(forgot)}}
+        {{_('delete.resetText', {link: utils.link(routes.forgot, _('delete.resetLink'), false)})}}
       {% endautoescape %}
     </p>
   {% endif %}

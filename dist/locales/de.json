@@ -3,20 +3,20 @@
     "title": "Benutzerkonto löschen",
     "confirmation": "Wir haben deine persönlichen Daten entfernt.",
     "button": "Benutzerkonto löschen",
-    "thanks": "Danke für die Nutzung von Wire.",
+    "surveyText": "Thanks for using Wire. If you’d like, you can {{- link}} This will take no longer than a minute.",
     "surveyLink": "share your thoughts about it.",
-    "duration": "Dies dauert nicht länger als eine Minute.",
     "errorTitle": "Ein Fehler ist aufgetreten",
     "errorDescription": "Bitte versuche erneut, dein Benutzerkonto zu löschen.",
     "greeting": "Hi,",
     "description": "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig.",
-    "forgotLink": "reset your Wire password."
+    "resetText": "If you did not ask for this, you should {{- link}}",
+    "resetLink": "reset your Wire password."
   },
   "general": {
     "loading": "Bitte warten…"
   },
   "forgot": {
-    "title": "Passwort Ändern",
+    "title": "Passwort ändern",
     "successTitle": "Überprüfe deinen E-Mail Posteingang.",
     "successDescription": "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist eine Stunde gültig.",
     "emailPlaceholder": "E-Mail",
@@ -44,7 +44,7 @@
     "successBotTitle": "Vielen Dank für die Registrierung",
     "successBotDescription": "Bitte beachte, dass das Service-Provider-Konto nach der Bestätigung der E-Mail-Adresse noch durch uns freigeschaltet werden muss. Dies erfolgt üblicherweise innerhalb von 24 Stunden.",
     "successBotDescriptionEmail": "Über die Freischaltung wirst du per E-Mail informiert.",
-    "errorTitle": "Es ist ein Fehler aufgetreten.",
+    "errorTitle": "Ein Fehler ist aufgetreten.",
     "error404Description": "Bitte versuche erneut, ein Konto zu erstellen.",
     "error500Description": "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal.",
     "successEmailTitle": "Benutzerkonto erstellt",
