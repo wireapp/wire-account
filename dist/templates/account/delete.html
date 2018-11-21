@@ -3,36 +3,36 @@
 
 {% block content %}
   {% if status == 'success' %}
-    <h1>{{_('Account deleted')}}</h1>
-    <p>{{_('All your data on Wire is now erased.')}}</p>
+    <h1>{{title}}</h1>
+    <p>{{_('delete.confirmation')}}</p>
     <p>
-      {{_('Thanks for using Wire.')}}
+      {{_('delete.thanks')}}
       {% autoescape false %}
-        {% set surveyText %}If you’d like, you can {{utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('share your thoughts about it.'))}}{% endset %}
+        {% set surveyText %}If you’d like, you can {{utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('delete.surveyLink'))}}{% endset %}
         {{_(surveyText)}}
       {% endautoescape %}
-      {{_('This will take no longer than a minute.')}}
+      {{_('delete.duration')}}
     </p>
   {% elif status == 'error' %}
-    <h1>{{_('Something went wrong')}}</h1>
-    <p>{{_('Please try again to delete your account.')}}</p>
+    <h1>{{_('delete.errorTitle')}}</h1>
+    <p>{{_('delete.errorDescription')}}</p>
   {% else %}
     <h1>{{title}}</h1>
     <p>
-      {{_('Hi there,')}}<br>
-      {{_('We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes.')}}
+      {{_('delete.greeting')}}<br>
+      {{_('delete.description')}}
     </p>
     <form action="{{routes.deleteAccount}}" method="POST">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
-      <button class="wbtn red" type="submit" data-loading-text="{{_('Please wait…')}}">
-        {{_('Delete Account')}}
+      <button class="wbtn red" type="submit" data-loading-text="{{_('general.loading')}}">
+        {{_('delete.button')}}
       </button>
     </form>
 
     <p>
       {% autoescape false %}
-        {% set forgot %}If you did not ask for this, you should {{utils.link(routes.forgot, _('reset your Wire password.'), false)}}{% endset %}
+        {% set forgot %}If you did not ask for this, you should {{utils.link(routes.forgot, _('delete.forgotLink'), false)}}{% endset %}
         {{_(forgot)}}
       {% endautoescape %}
     </p>

@@ -9,13 +9,9 @@ module.exports = {
     defaultLng: 'en',
     defaultNs: 'translation',
     nsSeparator: false,
-    keySeparator: false,
-    defaultValue: function(lng, ns, key) {
-      return key;
-    },
     resource: {
-      loadPath: 'dist/locales/{{lng}}/{{ns}}.json',
-      savePath: 'dist/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'dist/locales/{{lng}}.json',
+      savePath: 'dist/locales/{{lng}}.json',
       jsonIndent: 2,
       lineEnding: '\n'
     },

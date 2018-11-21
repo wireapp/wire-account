@@ -55,7 +55,7 @@ export class ForgotController {
       error,
       html_class: 'account forgot',
       status: 'init',
-      title: _('Change Password'),
+      title: _('forgot.title'),
     };
     return res.render(ForgotController.TEMPLATE_FORGOT, payload);
   };
@@ -69,7 +69,7 @@ export class ForgotController {
     const emailRegex = /[^@]+@[^@]+\.[^@]+/;
 
     if (!emailRegex.test(email)) {
-      error = _('That does not look like an email.');
+      error = _('forgot.errorInvalidEmail');
       status = 'error';
     } else {
       try {
@@ -80,17 +80,17 @@ export class ForgotController {
         this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.status, 1);
         switch (requestError.response.status) {
           case ForgotController.HTTP_STATUS_EMAIL_IN_USE: {
-            error = _('This email is not in use.');
+            error = _('forgot.errorUnusedEmail');
             status = 'error';
             break;
           }
           case ForgotController.HTTP_STATUS_EMAIL_ALREADY_SENT: {
-            error = _('We already sent you an email. The link is valid for 1 hour.');
+            error = _('forgot.errorAlreadyProcessing');
             status = 'error';
             break;
           }
           default: {
-            error = _('Something went wrong, please try again.');
+            error = _('forgot.errorUnknown');
             status = 'error';
           }
         }
@@ -102,7 +102,7 @@ export class ForgotController {
       error,
       html_class: 'account forgot',
       status,
-      title: _('Change Password'),
+      title: _('forgot.title'),
     };
     return res.render(ForgotController.TEMPLATE_FORGOT, payload);
   }

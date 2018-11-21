@@ -26,7 +26,11 @@ const server = new Server(config);
 server
   .start()
   .then(port => {
-    console.info(`[${formatDate()}] Server is running on port ${port}.`);
+    if (config.ENVIRONMENT === 'development') {
+      console.info(`[${formatDate()}] Server is running on http://127.0.0.1:${port}/`);
+    } else {
+      console.info(`[${formatDate()}] Server is running on port ${port}.`);
+    }
   })
   .catch(error => console.error(`[${formatDate()}] ${error.stack}`));
 

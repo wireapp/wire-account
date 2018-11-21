@@ -70,10 +70,10 @@ export class RootController {
     if (parsedUserAgent.is.crawler) {
       const openGraphPayload = {
         _,
-        description: _('Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.'),
+        description: _('index.description'),
         html_class: 'index',
         redirect: payload.redirect,
-        title: `Wire · ${_('The most secure collaboration platform')}`,
+        title: `Wire · ${_('index.title')}`,
       };
       return res.render(RootController.TEMPLATE_OPEN_GRAPH, openGraphPayload);
     }

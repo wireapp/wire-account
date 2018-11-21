@@ -62,7 +62,7 @@ export class DeleteController {
       html_class: 'account delete',
       key,
       status,
-      title: _('Delete Account'),
+      title: _('delete.title'),
     };
     return res.render(DeleteController.TEMPLATE_DELETE, payload);
   };
@@ -91,7 +91,7 @@ export class DeleteController {
       html_class: 'account delete',
       key,
       status,
-      title: _('Delete Account'),
+      title: _('delete.title'),
     };
     return res.render(DeleteController.TEMPLATE_DELETE, payload)
   }

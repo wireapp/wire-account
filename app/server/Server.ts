@@ -70,7 +70,7 @@ class Server {
       .init({
         backend: {
           jsonIndent: 2,
-          loadPath: path.resolve(__dirname, 'locales/{{lng}}/{{ns}}.json'),
+          loadPath: path.resolve(__dirname, 'locales/{{lng}}.json'),
         },
         debug: false,
         detection: {
@@ -80,6 +80,7 @@ class Server {
         },
         fallbackLng: 'en',
         preload: ['en', 'de'],
+        returnEmptyString: false,
       });
 
     this.app.use(i18nextMiddleware.handle(i18next));

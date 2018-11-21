@@ -11,36 +11,36 @@
   >
 
   <div class="loading">
-    <h1>{{_('Verifying')}}</h1>
-    <p>{{_('Please wait…')}}</p>
+    <h1>{{_('verify.title')}}</h1>
+    <p>{{_('general.loading')}}</p>
   </div>
 
   <div class="200 204 success hide">
-    <h1>{{_('Account created')}}</h1>
+    <h1>{{_('verify.successEmailTitle')}}</h1>
     {% if user_agent().is.mobile %}
-      <p>{{_('Install the app to start using Wire.')}}</p>
-      {{utils.download_btn(_('Get Wire'), user_agent, 'wbtn green', 'verify')}}
+      <p>{{_('verify.successEmailAppDescription')}}</p>
+      {{utils.download_btn(_('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
-      <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
+      <p>{{_('open.description')}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download/">{{_('Get Wire')}}</a>
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download/">{{_('open.downloadButton')}}</a>
         {% elif  user_agent().is.osx %}
-          <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('OPEN macOS APP')}}</a>
+          <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('open.openMac')}}</a>
         {% endif %}
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('Open in Web')}}</a>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('open.openWeb')}}</a>
     {% else %}
-      <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('Open Wire')}}</a>
+      <p>{{_('open.description')}}</p>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('open.openWire')}}</a>
     {% endif %}
   </div>
 
   <div class="404 error hide">
-    <h1>{{_('Something went wrong')}}</h1>
-    <p>{{_('Please try to create your account again.')}}</p>
+    <h1>{{_('verify.errorTitle')}}</h1>
+    <p>{{_('verify.error404Description')}}</p>
   </div>
 
   <div class="500 error hide">
-    <h1>{{_('Something went wrong')}}</h1>
-    <p>{{_('We are investigating the issue, please check back shortly.')}}</p>
+    <h1>{{_('verify.errorTitle')}}</h1>
+    <p>{{_('verify.error500Description')}}</p>
   </div>
 {% endblock %}

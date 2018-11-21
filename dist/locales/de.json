@@ -1,0 +1,68 @@
+{
+  "delete": {
+    "title": "",
+    "confirmation": "",
+    "thanks": "",
+    "surveyLink": "",
+    "duration": "",
+    "errorTitle": "",
+    "errorDescription": "",
+    "greeting": "",
+    "description": "",
+    "button": "",
+    "forgotLink": ""
+  },
+  "forgot": {
+    "title": "",
+    "errorInvalidEmail": "",
+    "errorUnusedEmail": "",
+    "errorAlreadyProcessing": "",
+    "errorUnknown": "",
+    "successTitle": "",
+    "successDescription": "",
+    "emailPlaceholder": "",
+    "button": ""
+  },
+  "reset": {
+    "errorInvalidPassword": "",
+    "errorUnknown": "",
+    "title": "",
+    "successDescription": "",
+    "errorTitle": "",
+    "errorDescription": "",
+    "button": "",
+    "passwordPlaceholder": ""
+  },
+  "index": {
+    "description": "",
+    "title": ""
+  },
+  "verify": {
+    "titleEmail": "",
+    "titleBot": "",
+    "titlePhone": "",
+    "title": "",
+    "successBotTitle": "",
+    "successBotDescription": "",
+    "successBotDescriptionEmail": "",
+    "errorTitle": "",
+    "error404Description": "",
+    "error500Description": "",
+    "successEmailTitle": "",
+    "successEmailAppDescription": "",
+    "successPhoneDescription": ""
+  },
+  "general": {
+    "loading": ""
+  },
+  "open": {
+    "downloadButton": "",
+    "description": "",
+    "openMac": "",
+    "openWeb": "",
+    "openWire": ""
+  },
+  "header": {
+    "support": ""
+  }
+}

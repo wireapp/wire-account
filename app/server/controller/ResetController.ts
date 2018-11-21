@@ -64,7 +64,7 @@ export class ResetController {
       html_class: 'account forgot',
       key,
       status: req.query.success === '' ? 'success' : status,
-      title: _('Change Password'),
+      title: _('forgot.title'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
     return res.render(ResetController.TEMPLATE_RESET, payload);
@@ -80,7 +80,7 @@ export class ResetController {
     const password = req.fields.password as string;
 
     if (!password || password.length < 8) {
-      error = _('Choose a password that is at least 8 characters.')
+      error = _('reset.errorInvalidPassword')
       status = 'fail'
     } else if (key && code){
       try {
@@ -95,7 +95,7 @@ export class ResetController {
             break;
           }
           default: {
-            error = _('Something went wrong, please try again.');
+            error = _('reset.errorUnknown');
             status = 'fail';
           }
         }
@@ -109,7 +109,7 @@ export class ResetController {
       html_class: 'account reset',
       key,
       status,
-      title: _('Password reset'),
+      title: _('reset.title'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
     return res.render(ResetController.TEMPLATE_RESET, payload)

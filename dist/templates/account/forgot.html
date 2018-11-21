@@ -2,15 +2,15 @@
 
 {% block content %}
   {% if status == 'success' %}
-    <h1>{{_('Check your email')}}</h1>
-    <p>{{_('We sent you a link to reset your password. It is valid for 1 hour.')}}</p>
+    <h1>{{_('forgot.successTitle')}}</h1>
+    <p>{{_('forgot.successDescription')}}</p>
   {% else %}
     <h1>{{title}}</h1>
     <form method="POST" action="{{routes.forgot}}" novalidate>
-      <input type="email" name="email" placeholder="{{_('Email')}}" autofocus>
+      <input type="email" name="email" placeholder="{{_('forgot.emailPlaceholder')}}" autofocus>
       <p>{{error}}</p>
-      <button type="submit" class="wbtn" data-loading-text="{{_('Please wait…')}}">
-        {{_('Reset password')}}
+      <button type="submit" class="wbtn" data-loading-text="{{_('general.loading')}}">
+        {{_('forgot.button')}}
       </button>
     </form>
   {% endif %}

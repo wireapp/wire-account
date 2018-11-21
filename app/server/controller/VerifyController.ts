@@ -55,7 +55,7 @@ export class VerifyController {
       _,
       credentials: 'true',
       html_class: 'account verify',
-      title: _('Verify Account'),
+      title: _('verify.titleEmail'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
 
@@ -84,7 +84,7 @@ export class VerifyController {
       _,
       credentials: 'false',
       html_class: 'account verify',
-      title: _('Verify Bot'),
+      title: _('verify.titleBot'),
 
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
@@ -112,7 +112,7 @@ export class VerifyController {
     const payload = {
       _,
       html_class: 'account phone',
-      title: _('Verify Phone'),
+      title: _('verify.titlePhone'),
       url: `${this.config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,
     };
     return res.render(VerifyController.TEMPLATE_VERIFY_PHONE, payload);

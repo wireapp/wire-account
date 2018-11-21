@@ -4,33 +4,33 @@
 {% block content %}
   {% if status == 'success' %}
     <h1>{{title}}</h1>
-    <p>{{_('You can now log in with your new password.')}}</p>
+    <p>{{_('reset.successDescription')}}</p>
     {% if user_agent().is.mobile %}
-      {{utils.download_btn(_('Get Wire'), user_agent, 'wbtn green', 'verify')}}
+      {{utils.download_btn(_('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
-      <p>{{_('To sign in and start using Wire, launch the application.')}}</p>
+      <p>{{_('open.description')}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('Get Wire')}}</a>
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('open.downloadButton')}}</a>
         {% elif  user_agent().is.osx %}
-          <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('OPEN macOS APP')}}</a>
+          <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('open.openMac')}}</a>
         {% endif %}
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('Open in Web')}}</a>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWeb')}}</a>
     {% else %}
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('Open Wire')}}</a>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWire')}}</a>
     {% endif %}
   {% elif status == 'error' %}
-    <h1>{{_('The link is no longer valid')}}</h1>
-    <p>{{_('Please try again.')}}</p>
-    <a class="wbtn green" href="{{routes.resetPassword}}?key={{key}}&code={{code}}">{{_('Reset password')}}</a>
+    <h1>{{_('reset.errorTitle')}}</h1>
+    <p>{{_('reset.errorDescription')}}</p>
+    <a class="wbtn green" href="{{routes.resetPassword}}?key={{key}}&code={{code}}">{{_('reset.button')}}</a>
   {% else %}
     <h1>{{title}}</h1>
     <form method="POST" action="{{routes.resetPassword}}">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
-      <input name="password" type="password" placeholder="{{_('Enter new password')}}" autofocus>
+      <input name="password" type="password" placeholder="{{_('reset.passwordPlaceholder')}}" autofocus>
       <p>{{error}}</p>
-      <button type="submit" class="wbtn btn-block" data-loading-text="{{_('Please wait…')}}">
-        {{_('Reset password')}}
+      <button type="submit" class="wbtn btn-block" data-loading-text="{{_('general.loading')}}">
+        {{_('reset.button'')}}
       </button>
     </form>
   {% endif %}
