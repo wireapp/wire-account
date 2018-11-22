@@ -3,14 +3,14 @@
     "title": "Benutzerkonto löschen",
     "confirmation": "Wir haben deine persönlichen Daten entfernt.",
     "button": "Benutzerkonto löschen",
-    "surveyText": "Thanks for using Wire. If you’d like, you can {{- link}} This will take no longer than a minute.",
-    "surveyLink": "share your thoughts about it.",
+    "surveyText": "Danke für die Nutzung von Wire. Du hilfst uns, indem du {{- link}} Dies dauert nicht länger als eine Minute.",
+    "surveyLink": "uns Verbesserungsvorschläge gibst.",
     "errorTitle": "Ein Fehler ist aufgetreten",
     "errorDescription": "Bitte versuche erneut, dein Benutzerkonto zu löschen.",
     "greeting": "Hi,",
     "description": "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig.",
-    "resetText": "If you did not ask for this, you should {{- link}}",
-    "resetLink": "reset your Wire password."
+    "resetText": "Falls du dies nicht selbst warst, solltest du {{- link}}",
+    "resetLink": "dein Wire-Passwort zurücksetzen."
   },
   "general": {
     "loading": "Bitte warten…"
