@@ -19,11 +19,11 @@
 
 import {ServerConfig} from '../config';
 import {Client} from '../controller/Client';
-import {DeleteController} from '../controller/DeleteController';
+import {DeleteController} from '../controller/DeleteAccountController';
 import {ForgotController} from '../controller/ForgotController';
 import {ResetController} from '../controller/ResetController';
 import {RootController} from '../controller/RootController';
-import {VerifyController} from '../controller/VerifyController';
+import {VerifyController} from '../controller/VerifyAccountController';
 
 const Root = (config: ServerConfig) => {
   const client = new Client();

@@ -43,7 +43,7 @@ export class ForgotController {
     ];
   };
 
-  private postPasswordReset = async (email: string) => {
+  private resetPassword = async (email: string) => {
     return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {email});
   };
 
@@ -73,7 +73,7 @@ export class ForgotController {
       status = 'error';
     } else {
       try {
-        const result = await this.postPasswordReset(email);
+        const result = await this.resetPassword(email);
         this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {

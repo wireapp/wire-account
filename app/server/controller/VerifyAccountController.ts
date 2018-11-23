@@ -23,7 +23,7 @@ import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from "./Client";
 import {TrackingController} from "./TrackingController";
 
-export class VerifyController {
+export class VerifyAccountController {
 
   public static readonly ROUTE_VERIFY_EMAIL = '/verify';
   public static readonly ROUTE_VERIFY_BOT = '/verify/bot';
@@ -41,9 +41,9 @@ export class VerifyController {
 
   public getRoutes = () => {
     return [
-      Router().get(VerifyController.ROUTE_VERIFY_EMAIL, this.handleEmailGet),
-      Router().get(VerifyController.ROUTE_VERIFY_BOT, this.handleBotGet),
-      Router().get(VerifyController.ROUTE_VERIFY_PHONE, this.handlePhoneGet),
+      Router().get(VerifyAccountController.ROUTE_VERIFY_EMAIL, this.handleEmailGet),
+      Router().get(VerifyAccountController.ROUTE_VERIFY_BOT, this.handleBotGet),
+      Router().get(VerifyAccountController.ROUTE_VERIFY_PHONE, this.handlePhoneGet),
     ];
   };
 
@@ -73,7 +73,7 @@ export class VerifyController {
       payload.status = req.query.success === '' ? 'success' : 'error';
       payload.redirect = '';
     }
-    return res.render(VerifyController.TEMPLATE_VERIFY_EMAIL, payload);
+    return res.render(VerifyAccountController.TEMPLATE_VERIFY_EMAIL, payload);
   }
 
   private readonly handleBotGet = async (req: Request, res: Response) => {
@@ -103,7 +103,7 @@ export class VerifyController {
       payload.status = req.query.success === '' ? 'success' : 'error';
       payload.redirect = '';
     }
-    return res.render(VerifyController.TEMPLATE_VERIFY_BOT, payload);
+    return res.render(VerifyAccountController.TEMPLATE_VERIFY_BOT, payload);
   }
 
   private readonly handlePhoneGet = async (req: Request, res: Response) => {
@@ -115,6 +115,6 @@ export class VerifyController {
       title: _('verify.titlePhone'),
       url: `${this.config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,
     };
-    return res.render(VerifyController.TEMPLATE_VERIFY_PHONE, payload);
+    return res.render(VerifyAccountController.TEMPLATE_VERIFY_PHONE, payload);
   }
 };

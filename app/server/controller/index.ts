@@ -17,16 +17,16 @@
  *
  */
 
-import {DeleteController} from "./DeleteController";
+import {DeleteAccountController} from "./DeleteAccountController";
 import {ForgotController} from "./ForgotController";
 import {ResetController} from "./ResetController";
-import {VerifyController} from "./VerifyController";
+import {VerifyAccountController} from "./VerifyAccountController";
 
 export const ROUTES: {} = {
-  deleteAccount: DeleteController.ROUTE_DELETE,
+  deleteAccount: DeleteAccountController.ROUTE_DELETE,
   forgot: ForgotController.ROUTE_FORGOT,
   resetPassword: ResetController.ROUTE_RESET,
-  verifyBot: VerifyController.ROUTE_VERIFY_BOT,
-  verifyEmail: VerifyController.ROUTE_VERIFY_EMAIL,
-  verifyPhone: VerifyController.ROUTE_VERIFY_PHONE,
+  verifyBot: VerifyAccountController.ROUTE_VERIFY_BOT,
+  verifyEmail: VerifyAccountController.ROUTE_VERIFY_EMAIL,
+  verifyPhone: VerifyAccountController.ROUTE_VERIFY_PHONE,
 };

@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {ServerConfig} from "../config";
 import {Client} from "./Client";
-import {DeleteController} from "./DeleteController";
+import {DeleteAccountController} from "./DeleteAccountController";
 import {TrackingController} from "./TrackingController";
 
 describe('DeleteController', () => {
@@ -13,7 +13,7 @@ describe('DeleteController', () => {
     const client: any = {
       post: postDeleteSpy,
     };
-    const controller = new DeleteController(config as ServerConfig, client as Client);
+    const controller = new DeleteAccountController(config as ServerConfig, client as Client);
     const key: string = 'key';
     const code: string = 'code';
 
@@ -32,7 +32,7 @@ describe('DeleteController', () => {
       };
       const config = {};
       const client = {};
-      const controller = new DeleteController(config as ServerConfig, client as Client);
+      const controller = new DeleteAccountController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
       const req: any = {
         fields: {
@@ -48,7 +48,7 @@ describe('DeleteController', () => {
       await controller['handlePost'](req as Request, res as Response);
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
-      expect(renderSpy.calls.mostRecent().args[0]).toBe(DeleteController['TEMPLATE_DELETE']);
+      expect(renderSpy.calls.mostRecent().args[0]).toBe(DeleteAccountController['TEMPLATE_DELETE']);
       expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
     });
   });
