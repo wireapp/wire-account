@@ -17,7 +17,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "curly": 2,
     "dot-notation": 2,
     "es5/no-arrow-functions": 2,
     "es5/no-binary-and-octal-literals": 2,
