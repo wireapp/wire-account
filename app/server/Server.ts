@@ -182,7 +182,7 @@ class Server {
     });
   }
 
-  async stop(): Promise<void> {
+  stop(): void {
     if (this.server) {
       this.server.close();
       this.server = undefined;
