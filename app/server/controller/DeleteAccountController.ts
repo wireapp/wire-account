@@ -17,13 +17,12 @@
  *
  */
 
-import {Request, Response, Router} from "express";
-import {ServerConfig} from "../config";
-import {Client} from "./Client";
-import {TrackingController} from "./TrackingController";
+import {Request, Response, Router} from 'express';
+import {ServerConfig} from '../config';
+import {Client} from './Client';
+import {TrackingController} from './TrackingController';
 
 export class DeleteAccountController {
-
   public static readonly ROUTE_DELETE = '/d';
 
   private static readonly TEMPLATE_DELETE = 'account/delete';
@@ -42,7 +41,7 @@ export class DeleteAccountController {
   };
 
   private readonly postAccountDelete = async (key: string, code: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/delete`, {key, code})
+    return this.client.post(`${this.config.BACKEND_REST}/delete`, {key, code});
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -74,7 +73,7 @@ export class DeleteAccountController {
     const code = req.fields.code as string;
     const key = req.fields.key as string;
 
-    if (key && code){
+    if (key && code) {
       try {
         const result = await this.postAccountDelete(key, code);
         this.trackingController.trackEvent(req.originalUrl, 'account.delete', 'success', result.status, 1);
@@ -93,6 +92,6 @@ export class DeleteAccountController {
       status,
       title: _('delete.title'),
     };
-    return res.render(DeleteAccountController.TEMPLATE_DELETE, payload)
-  }
-};
+    return res.render(DeleteAccountController.TEMPLATE_DELETE, payload);
+  };
+}

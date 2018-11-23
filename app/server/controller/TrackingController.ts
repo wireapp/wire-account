@@ -17,29 +17,29 @@
  *
  */
 
-import {ServerConfig} from "../config";
-import {Client} from "./Client";
-
+import {ServerConfig} from '../config';
+import {Client} from './Client';
 
 export class TrackingController {
-
   constructor(private readonly config: ServerConfig, private readonly client: Client) {}
 
   trackEvent = async (originalUrl: string, category: string, action: string, name: any, value: any) => {
     if (this.config.PIWIK_HOSTNAME && this.config.PIWIK_ID) {
-      const result = await this.client.post(`${this.config.PIWIK_HOSTNAME}/piwik.php`, {data: {
-        apiv: 1,
-        e_a: action,
-        e_c: category,
-        e_n: name,
-        e_v: value,
-        idsite: this.config.PIWIK_ID,
-        rand: Math.random(),
-        rec: 1,
-        url: originalUrl,
-      }})
+      const result = await this.client.post(`${this.config.PIWIK_HOSTNAME}/piwik.php`, {
+        data: {
+          apiv: 1,
+          e_a: action,
+          e_c: category,
+          e_n: name,
+          e_v: value,
+          idsite: this.config.PIWIK_ID,
+          rand: Math.random(),
+          rec: 1,
+          url: originalUrl,
+        },
+      });
       return result.status;
     }
     return 0;
-  }
+  };
 }

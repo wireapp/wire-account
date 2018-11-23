@@ -49,10 +49,7 @@ function parseCommaSeparatedList(list: string = ''): string[] {
 
 function mergedCSP(): HelmetCSP {
   const csp: HelmetCSP = {
-    connectSrc: [
-      ...defaultCSP.connectSrc,
-      ...parseCommaSeparatedList(process.env.CSP_EXTRA_CONNECT_SRC),
-    ],
+    connectSrc: [...defaultCSP.connectSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_CONNECT_SRC)],
     defaultSrc: [...defaultCSP.defaultSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_DEFAULT_SRC)],
     fontSrc: [...defaultCSP.fontSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_FONT_SRC)],
     frameSrc: [...defaultCSP.frameSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_FRAME_SRC)],

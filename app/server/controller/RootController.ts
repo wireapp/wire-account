@@ -17,14 +17,13 @@
  *
  */
 
-import {Request, Response, Router} from "express";
-import {ServerConfig} from "../config";
+import {Request, Response, Router} from 'express';
+import {ServerConfig} from '../config';
 import * as BrowserUtil from '../util/BrowserUtil';
-import {Client} from "./Client";
-import {TrackingController} from "./TrackingController";
+import {Client} from './Client';
+import {TrackingController} from './TrackingController';
 
 export class RootController {
-
   public static readonly ROUTE_INDEX = '/';
 
   private static readonly TEMPLATE_INDEX = 'index';
@@ -37,9 +36,7 @@ export class RootController {
   }
 
   public getRoutes = () => {
-    return [
-      Router().get(RootController.ROUTE_INDEX, this.handleGet),
-    ];
+    return [Router().get(RootController.ROUTE_INDEX, this.handleGet)];
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -58,11 +55,11 @@ export class RootController {
       payload.redirect = `${this.config.URL.WEBSITE_BASE}/download`;
       if (parsedUserAgent.is.android) {
         payload.redirect = this.config.URL.DOWNLOAD_ANDROID_BASE;
-        payload.label = 'android'
+        payload.label = 'android';
       }
       if (parsedUserAgent.is.ios) {
         payload.redirect = this.config.URL.DOWNLOAD_IOS_BASE;
-        payload.label = 'ios'
+        payload.label = 'ios';
       }
       this.trackingController.trackEvent(req.originalUrl, 'get.wire.com', 'redirect', payload.label, 1);
     }
@@ -78,6 +75,8 @@ export class RootController {
       return res.render(RootController.TEMPLATE_OPEN_GRAPH, openGraphPayload);
     }
 
-    return this.config.ENVIRONMENT === 'development' ? res.render(RootController.TEMPLATE_INDEX, payload) : res.redirect(payload.redirect);
-  }
-};
+    return this.config.ENVIRONMENT === 'development'
+      ? res.render(RootController.TEMPLATE_INDEX, payload)
+      : res.redirect(payload.redirect);
+  };
+}

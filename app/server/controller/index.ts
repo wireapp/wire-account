@@ -17,10 +17,10 @@
  *
  */
 
-import {DeleteAccountController} from "./DeleteAccountController";
-import {ForgotController} from "./ForgotController";
-import {ResetController} from "./ResetController";
-import {VerifyAccountController} from "./VerifyAccountController";
+import {DeleteAccountController} from './DeleteAccountController';
+import {ForgotController} from './ForgotController';
+import {ResetController} from './ResetController';
+import {VerifyAccountController} from './VerifyAccountController';
 
 export const ROUTES: {} = {
   deleteAccount: DeleteAccountController.ROUTE_DELETE,

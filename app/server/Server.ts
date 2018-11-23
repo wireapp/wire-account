@@ -86,7 +86,6 @@ class Server {
     this.app.use(i18nextMiddleware.handle(i18next));
   }
 
-
   private initCaching() {
     if (this.config.ENVIRONMENT === 'development') {
       this.app.use(helmet.noCache());
@@ -94,10 +93,7 @@ class Server {
       this.app.use((req, res, next) => {
         const milliSeconds = 1000;
         res.header('Cache-Control', `public, max-age=${this.config.CACHE_DURATION_SECONDS}`);
-        res.header(
-          'Expires',
-          new Date(Date.now() + this.config.CACHE_DURATION_SECONDS * milliSeconds).toUTCString()
-        );
+        res.header('Expires', new Date(Date.now() + this.config.CACHE_DURATION_SECONDS * milliSeconds).toUTCString());
         next();
       });
     }
@@ -124,7 +120,7 @@ class Server {
     this.app.use(
       helmet({
         frameguard: {action: 'deny'},
-      })
+      }),
     );
     this.app.use(helmet.noSniff());
     this.app.use(helmet.xssFilter());
@@ -133,7 +129,7 @@ class Server {
         includeSubdomains: true,
         maxAge: 31536000,
         preload: true,
-      })
+      }),
     );
     this.app.use(
       helmet.contentSecurityPolicy({
@@ -143,12 +139,12 @@ class Server {
         loose: this.config.ENVIRONMENT !== 'development',
         reportOnly: false,
         setAllHeaders: false,
-      })
+      }),
     );
     this.app.use(
       helmet.referrerPolicy({
         policy: 'same-origin',
-      })
+      }),
     );
   }
 

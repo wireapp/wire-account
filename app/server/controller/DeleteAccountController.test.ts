@@ -1,15 +1,15 @@
-import {Request, Response} from "express";
-import {ServerConfig} from "../config";
-import {Client} from "./Client";
-import {DeleteAccountController} from "./DeleteAccountController";
-import {TrackingController} from "./TrackingController";
+import {Request, Response} from 'express';
+import {ServerConfig} from '../config';
+import {Client} from './Client';
+import {DeleteAccountController} from './DeleteAccountController';
+import {TrackingController} from './TrackingController';
 
 describe('DeleteController', () => {
   it('successfully POSTs to /delete', async () => {
     const postDeleteSpy = jasmine.createSpy().and.returnValue(Promise.resolve());
     const config = {
       BACKEND_REST: 'backend',
-    }
+    };
     const client: any = {
       post: postDeleteSpy,
     };

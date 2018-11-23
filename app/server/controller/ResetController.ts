@@ -17,14 +17,13 @@
  *
  */
 
-import {Request, Response, Router} from "express";
-import {ServerConfig} from "../config";
+import {Request, Response, Router} from 'express';
+import {ServerConfig} from '../config';
 import * as BrowserUtil from '../util/BrowserUtil';
-import {Client} from "./Client";
-import {TrackingController} from "./TrackingController";
+import {Client} from './Client';
+import {TrackingController} from './TrackingController';
 
 export class ResetController {
-
   public static readonly ROUTE_RESET = '/reset';
 
   private static readonly TEMPLATE_RESET = 'account/reset';
@@ -43,7 +42,7 @@ export class ResetController {
   };
 
   private readonly postPasswordReset = async (key: string, code: string, password: string) => {
-    return this.client.post(`${this.config.BACKEND_REST}/password-reset/complete`, {password, key, code})
+    return this.client.post(`${this.config.BACKEND_REST}/password-reset/complete`, {password, key, code});
   };
 
   private readonly handleGet = async (req: Request, res: Response) => {
@@ -80,9 +79,9 @@ export class ResetController {
     const password = req.fields.password as string;
 
     if (!password || password.length < 8) {
-      error = _('reset.errorInvalidPassword')
-      status = 'fail'
-    } else if (key && code){
+      error = _('reset.errorInvalidPassword');
+      status = 'fail';
+    } else if (key && code) {
       try {
         const result = await this.postPasswordReset(key, code, password);
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'success', result.status, 1);
@@ -112,6 +111,6 @@ export class ResetController {
       title: _('reset.title'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
     };
-    return res.render(ResetController.TEMPLATE_RESET, payload)
-  }
+    return res.render(ResetController.TEMPLATE_RESET, payload);
+  };
 }

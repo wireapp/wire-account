@@ -34,6 +34,6 @@ const Root = (config: ServerConfig) => {
     ...new DeleteAccountController(config, client).getRoutes(),
     ...new ResetController(config, client).getRoutes(),
   ];
-}
+};
 
 export default Root;

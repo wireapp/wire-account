@@ -17,14 +17,13 @@
  *
  */
 
-import {Request, Response, Router} from "express";
-import {ServerConfig} from "../config";
+import {Request, Response, Router} from 'express';
+import {ServerConfig} from '../config';
 import * as BrowserUtil from '../util/BrowserUtil';
-import {Client} from "./Client";
-import {TrackingController} from "./TrackingController";
+import {Client} from './Client';
+import {TrackingController} from './TrackingController';
 
 export class VerifyAccountController {
-
   public static readonly ROUTE_VERIFY_EMAIL = '/verify';
   public static readonly ROUTE_VERIFY_BOT = '/verify/bot';
   public static readonly ROUTE_VERIFY_PHONE = '/v/:code';
@@ -74,7 +73,7 @@ export class VerifyAccountController {
       payload.redirect = '';
     }
     return res.render(VerifyAccountController.TEMPLATE_VERIFY_EMAIL, payload);
-  }
+  };
 
   private readonly handleBotGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
@@ -104,7 +103,7 @@ export class VerifyAccountController {
       payload.redirect = '';
     }
     return res.render(VerifyAccountController.TEMPLATE_VERIFY_BOT, payload);
-  }
+  };
 
   private readonly handlePhoneGet = async (req: Request, res: Response) => {
     this.trackingController.trackEvent(req.originalUrl, 'account.verify-phone', 'success', 200, 1);
@@ -116,5 +115,5 @@ export class VerifyAccountController {
       url: `${this.config.URL.REDIRECT_PHONE_BASE}/${req.params.code}`,
     };
     return res.render(VerifyAccountController.TEMPLATE_VERIFY_PHONE, payload);
-  }
-};
+  };
+}

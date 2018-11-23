@@ -17,13 +17,12 @@
  *
  */
 
-import {Request, Response, Router} from "express";
-import {ServerConfig} from "../config";
-import {Client} from "./Client";
-import {TrackingController} from "./TrackingController";
+import {Request, Response, Router} from 'express';
+import {ServerConfig} from '../config';
+import {Client} from './Client';
+import {TrackingController} from './TrackingController';
 
 export class ForgotController {
-
   public static readonly ROUTE_FORGOT = '/forgot';
   private static readonly TEMPLATE_FORGOT = 'account/forgot';
 
@@ -65,7 +64,7 @@ export class ForgotController {
     let status;
     let error;
 
-    const email = (req.fields.email as string || '').toLowerCase().trim();
+    const email = ((req.fields.email as string) || '').toLowerCase().trim();
     const emailRegex = /[^@]+@[^@]+\.[^@]+/;
 
     if (!emailRegex.test(email)) {
@@ -105,5 +104,5 @@ export class ForgotController {
       title: _('forgot.title'),
     };
     return res.render(ForgotController.TEMPLATE_FORGOT, payload);
-  }
-};
+  };
+}

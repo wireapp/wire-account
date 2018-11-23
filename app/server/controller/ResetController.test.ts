@@ -18,15 +18,15 @@
  */
 
 import {ServerConfig} from '../config';
-import {Client} from "./Client";
-import {ResetController} from "./ResetController";
+import {Client} from './Client';
+import {ResetController} from './ResetController';
 
 describe('ResetController', () => {
   it('successfully POSTs to /password-reset/complete', async () => {
     const postResetSpy = jasmine.createSpy().and.returnValue(Promise.resolve());
     const config = {
       BACKEND_REST: 'backend',
-    }
+    };
     const client: any = {
       post: postResetSpy,
     };
