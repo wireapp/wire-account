@@ -5,19 +5,17 @@
     "jasmine": true,
     "node": true
   },
-  "extends": ["plugin:jasmine/recommended", "plugin:no-unsanitized/DOM", "plugin:react/recommended", "prettier"],
+  "extends": ["plugin:jasmine/recommended", "plugin:no-unsanitized/DOM", "prettier"],
   "globals": {
-    "wire": true,
-    "z": true
+    "_paq": true,
+    "$": true,
+    "$button": true
   },
-  "plugins": ["jasmine", "jsdoc", "no-unsanitized", "prettier", "react"],
+  "plugins": ["jasmine", "jsdoc", "no-unsanitized", "prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "sourceType": "module"
   },
   "rules": {
     "curly": 2,
@@ -57,8 +55,6 @@
     "prefer-spread": 2,
     "prefer-template": 2,
     "prettier/prettier": 2,
-    "react/prefer-stateless-function": 2,
-    "react/prop-types": 0,
     "sort-keys": [
       2,
       "asc",

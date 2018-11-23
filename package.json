@@ -1,24 +1,4 @@
 {
-  "name": "wire-account",
-  "license": "LicenseRef-LICENSE",
-  "scripts": {
-    "build": "yarn build:server && yarn build:front",
-    "build:front": "gulp build",
-    "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
-    "translate": "yarn translate:extract && yarn translate:upload && yarn translate:download",
-    "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
-    "translate:download": "node bin/translations_download.js",
-    "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
-    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
-    "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
-    "start:prod": "pm2 start \"./index.js\" --name \"Wire Account Management\" && pm2 logs",
-    "test": "yarn build:server && yarn test:server",
-    "test:server": "jasmine --config=jasmine.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wireapp/wire-account.git"
-  },
   "dependencies": {
     "@wireapp/commons": "0.9.1",
     "axios": "0.18.0",
@@ -52,11 +32,19 @@
     "@types/jasmine": "2.8.11",
     "@types/node": "10.12.0",
     "@types/nunjucks": "3.1.0",
+    "babel-eslint": "10.0.1",
     "coffee-script": "1.12.7",
     "concurrently": "4.0.1",
     "cross-env": "5.2.0",
     "del": "3.0.0",
     "fs-extra": "7.0.1",
+    "eslint": "5.9.0",
+    "eslint-config-prettier": "3.3.0",
+    "eslint-plugin-jasmine": "2.10.1",
+    "eslint-plugin-jsdoc": "3.9.1",
+    "eslint-plugin-no-unsanitized": "3.0.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "gulp": "3.9.1",
     "gulp-autoprefixer": "6.0.0",
     "gulp-concat": "2.6.1",
     "gulp-cssnano": "2.1.3",
@@ -73,12 +61,50 @@
     "gulp-zip": "4.2.0",
     "i18next-scanner": "2.6.6",
     "jasmine": "3.3.0",
+    "husky": "1.2.0",
     "less": "3.8.1",
     "nodemon": "1.18.6",
     "tslint": "5.11.0",
     "tslint-eslint-rules": "5.4.0",
     "typescript": "3.1.3",
+    "lint-staged": "8.1.0",
+    "prettier": "1.15.2",
     "uglify-js": "3.4.9"
   },
-  "private": true
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "LicenseRef-LICENSE",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,less,md,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "name": "wire-account",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wireapp/wire-account.git"
+  },
+  "scripts": {
+    "build": "yarn build:server && yarn build:front",
+    "build:front": "gulp build",
+    "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
+    "translate": "yarn translate:extract && yarn translate:upload && yarn translate:download",
+    "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
+    "translate:download": "node bin/translations_download.js",
+    "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
+    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
+    "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
+    "start:prod": "pm2 start \"./index.js\" --name \"Wire Account Management\" && pm2 logs",
+    "test": "yarn build:server && yarn test:server",
+    "test:server": "jasmine --config=jasmine.json"
+  }
 }
