@@ -36,7 +36,7 @@ describe('ForgotController', () => {
     const controller: any = new ForgotController(config as ServerConfig, client as Client);
     const email: string = 'email';
 
-    await controller['postPasswordReset'](email);
+    await controller['resetPassword'](email);
     expect(postForgotSpy.calls.count()).toBe(1);
     expect(postForgotSpy.calls.mostRecent().args.length).toBe(2);
     expect(postForgotSpy.calls.mostRecent().args[0]).toBe(`${config.BACKEND_REST}/password-reset`);
@@ -64,7 +64,7 @@ describe('ForgotController', () => {
         render: renderSpy,
       };
 
-      controller['postPasswordReset'] = (): Promise<AxiosResponse> => Promise.resolve({status: 200}) as Promise<AxiosResponse>;
+      controller['resetPassword'] = (): Promise<AxiosResponse> => Promise.resolve({status: 200}) as Promise<AxiosResponse>;
       await controller['handlePost'](req as Request, res as Response);
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
@@ -127,17 +127,17 @@ describe('ForgotController', () => {
         render: renderSpy,
       };
 
-      controller['postPasswordReset'] = (): Promise<AxiosResponse> => Promise.reject({response: {status: ForgotController['HTTP_STATUS_EMAIL_IN_USE']}}) as Promise<AxiosResponse>;
+      controller['resetPassword'] = (): Promise<AxiosResponse> => Promise.reject({status: ForgotController['HTTP_STATUS_EMAIL_IN_USE']}) as Promise<AxiosResponse>;
       await controller['handlePost'](req as Request, res as Response);
       expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('forgot.errorUnusedEmail');
 
-      controller['postPasswordReset'] = (): Promise<AxiosResponse> => Promise.reject({response: {status: ForgotController['HTTP_STATUS_EMAIL_ALREADY_SENT']}}) as Promise<AxiosResponse>;
+      controller['resetPassword'] = (): Promise<AxiosResponse> => Promise.reject({status: ForgotController['HTTP_STATUS_EMAIL_ALREADY_SENT']}) as Promise<AxiosResponse>;
       await controller['handlePost'](req as Request, res as Response);
       expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('forgot.errorAlreadyProcessing');
 
-      controller['postPasswordReset'] = (): Promise<AxiosResponse> => Promise.reject({response: {status: 9999}}) as Promise<AxiosResponse>;
+      controller['resetPassword'] = (): Promise<AxiosResponse> => Promise.reject({status: 9999}) as Promise<AxiosResponse>;
       await controller['handlePost'](req as Request, res as Response);
       expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('forgot.errorUnknown');

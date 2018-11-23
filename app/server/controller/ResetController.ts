@@ -89,7 +89,7 @@ export class ResetController {
         status = 'success';
       } catch (requestError) {
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', requestError.status, 1);
-        switch (requestError.response.status) {
+        switch (requestError.status) {
           case 400: {
             status = 'error';
             break;

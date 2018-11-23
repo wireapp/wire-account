@@ -78,7 +78,7 @@ export class ForgotController {
         status = 'success';
       } catch (requestError) {
         this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.status, 1);
-        switch (requestError.response.status) {
+        switch (requestError.status) {
           case ForgotController.HTTP_STATUS_EMAIL_IN_USE: {
             error = _('forgot.errorUnusedEmail');
             status = 'error';
