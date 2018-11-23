@@ -17,14 +17,14 @@
  *
  */
 
-$(function() {
-  $('html.verify').each(function() {
-    initVerify();
+$(() => {
+  $('html.verify').each(() => {
+    window.initVerify();
   });
 });
 
-$(function() {
-  $('html.account').each(function() {
-    initForms();
+$(() => {
+  $('html.account').each(() => {
+    window.initForms();
   });
 });

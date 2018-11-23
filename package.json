@@ -9,7 +9,14 @@
     "babel-update": "pybabel update -i app/translations/account.pot -d app/translations --no-wrap",
     "build": "gulp build",
     "crowdin": "yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml upload sources && crowdin-cli --identity=keys/crowdin.yaml download && yarn -s babel && crowdin-cli --identity=keys/crowdin.yaml download",
+    "fix": "yarn fix:other && yarn fix:js",
+    "fix:js": "yarn lint:js --fix",
+    "fix:other": "yarn prettier --write",
+    "lint": "yarn lint:js && yarn lint:other",
+    "lint:js": "eslint --ignore-path .gitignore --ext .js .",
+    "lint:other": "yarn prettier --list-different",
     "postinstall": "pip install --user -r app/requirements.txt",
+    "prettier": "prettier \"**/*.{json,less,md,yml}\"",
     "start": "concurrently \"gulp\" \"python app/application.py\"",
     "test": "exit 0"
   },
@@ -18,13 +25,35 @@
     "url": "https://github.com/wireapp/wire-account.git"
   },
   "dependencies": {
-    "normalize.css": "8.0.0",
-    "jquery": "3.3.1"
+    "jquery": "3.3.1",
+    "normalize.css": "8.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,less,md,yml}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
+    "babel-eslint": "10.0.1",
     "coffee-script": "1.12.7",
     "concurrently": "4.0.1",
     "del": "3.0.0",
+    "eslint": "5.9.0",
+    "eslint-config-prettier": "3.3.0",
+    "eslint-plugin-jasmine": "2.10.1",
+    "eslint-plugin-jsdoc": "3.9.1",
+    "eslint-plugin-no-unsanitized": "3.0.2",
+    "eslint-plugin-prettier": "3.0.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "6.0.0",
     "gulp-concat": "2.6.1",
@@ -40,7 +69,10 @@
     "gulp-uglify": "3.0.1",
     "gulp-util": "3.0.8",
     "gulp-zip": "4.2.0",
+    "husky": "1.2.0",
     "less": "3.8.1",
+    "lint-staged": "8.1.0",
+    "prettier": "1.15.2",
     "uglify-js": "3.4.9"
   },
   "private": true

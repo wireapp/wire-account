@@ -18,10 +18,10 @@
  */
 
 window.initVerify = function() {
-  var url = $('#url').data('url');
+  const url = $('#url').data('url');
 
   if ($('#url').data('status') === 'success') {
-    return verifySuccess(200);
+    return window.verifySuccess(200);
   }
 
   if (url) {
@@ -29,23 +29,23 @@ window.initVerify = function() {
       url: url,
       xhrFields: {withCredentials: eval($('#url').data('credentials'))},
     })
-      .done(function(data, status_text, xhr) {
-        sendEvent('account.verify-email', 'success', xhr.status, 1);
-        verifySuccess(xhr.status);
+      .done((data, status_text, xhr) => {
+        window.sendEvent('account.verify-email', 'success', xhr.status, 1);
+        window.verifySuccess(xhr.status);
       })
-      .fail(function(xhr) {
-        sendEvent('account.verify-email', 'fail', xhr.status, 1);
-        verifyFail(xhr.status);
+      .fail(xhr => {
+        window.sendEvent('account.verify-email', 'fail', xhr.status, 1);
+        window.verifyFail(xhr.status);
       });
   } else {
-    verifyFail(404);
+    window.verifyFail(404);
   }
 };
 
 window.verifyFail = function(status) {
   $('.loading').hide();
   if (status === 404) {
-    $('.' + status).removeClass('hide');
+    $(`.${status}`).removeClass('hide');
   } else {
     $('.500').removeClass('hide');
   }
@@ -53,10 +53,9 @@ window.verifyFail = function(status) {
 
 window.verifySuccess = function(status) {
   $('.loading').hide();
-  $('.' + status).removeClass('hide');
-  var redirect = $('#url').data('redirect');
+  $(`.${status}`).removeClass('hide');
+  const redirect = $('#url').data('redirect');
   if (redirect) {
-    var redirectApp = $('#url').data('redirect');
     window.location.href = redirect;
   }
 };

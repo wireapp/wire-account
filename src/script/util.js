@@ -18,7 +18,7 @@
  */
 
 window.sendEvent = function(category, action, label, value) {
-  if (typeof _paq !== 'undefined' && _paq !== null) {
-    _paq.push(['trackEvent', category, action, label, value]);
+  if (typeof window._paq !== 'undefined' && window._paq !== null) {
+    window._paq.push(['trackEvent', category, action, label, value]);
   }
 };
