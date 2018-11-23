@@ -74,6 +74,6 @@
     "postinstall": "pip install --user -r app/requirements.txt",
     "prettier": "prettier \"**/*.{json,less,md,yml}\"",
     "start": "concurrently \"gulp\" \"python app/application.py\"",
-    "test": "exit 0"
+    "test": "yarn lint"
   }
 }
