@@ -17,6 +17,8 @@
  *
  */
 
+/* eslint-disable */
+
 const {join, resolve} = require('path');
 const {execSync} = require('child_process');
 
