@@ -18,9 +18,29 @@
  */
 
 import * as dotenv from 'dotenv';
+import * as fs from 'fs-extra';
 import {IHelmetContentSecurityPolicyDirectives as HelmetCSP} from 'helmet';
+import * as logdown from 'logdown';
 import * as path from 'path';
-import {fileIsReadable, readFile} from './util/FileUtil';
+
+const logger = logdown('config', {
+  logger: console,
+  markdown: false,
+});
+
+const ROBOTS_DIR = path.join(__dirname, 'static');
+const ROBOTS_ALLOW_FILE = path.join(ROBOTS_DIR, 'robots.txt');
+const ROBOTS_DISALLOW_FILE = path.join(ROBOTS_DIR, 'robots-disallow.txt');
+const VERSION_FILE = path.join(__dirname, 'version');
+
+function readFile(sourcePath: string, fallback?: string): string {
+  try {
+    return fs.readFileSync(sourcePath, {encoding: 'utf8', flag: 'r'});
+  } catch (error) {
+    logger.warn(`Cannot access "${sourcePath}": ${error.message}`);
+    return fallback;
+  }
+}
 
 dotenv.config();
 
@@ -121,9 +141,9 @@ const config: ServerConfig = {
   PIWIK_ID: process.env.PIWIK_ID,
   PORT_HTTP: Number(process.env.PORT) || 21080,
   ROBOTS: {
-    ALLOW: '',
+    ALLOW: readFile(ROBOTS_ALLOW_FILE, 'User-agent: *\r\nDisallow: /'),
     ALLOWED_HOSTS: ['account.wire.com'],
-    DISALLOW: '',
+    DISALLOW: readFile(ROBOTS_DISALLOW_FILE, 'User-agent: *\r\nDisallow: /'),
   },
   URL: {
     ACCOUNT_DELETE_SURVEY: process.env.URL_ACCOUNT_DELETE_SURVEY,
@@ -140,30 +160,7 @@ const config: ServerConfig = {
     WEBAPP_BASE: process.env.URL_WEBAPP_BASE,
     WEBSITE_BASE: process.env.URL_WEBSITE_BASE,
   },
-  VERSION: undefined,
+  VERSION: readFile(VERSION_FILE, '0.0.0'),
 };
-
-const robotsDir = path.join(__dirname, 'static');
-const robotsAllowFile = path.join(robotsDir, 'robots.txt');
-const robotsDisallowFile = path.join(robotsDir, 'robots-disallow.txt');
-const versionFile = path.join(__dirname, 'version');
-
-if (fileIsReadable(robotsAllowFile, true)) {
-  try {
-    config.ROBOTS.ALLOW = readFile(robotsAllowFile, true);
-  } catch (error) {}
-}
-
-if (fileIsReadable(robotsDisallowFile, true)) {
-  try {
-    config.ROBOTS.DISALLOW = readFile(robotsDisallowFile, true);
-  } catch (error) {}
-}
-
-if (fileIsReadable(versionFile, true)) {
-  try {
-    config.VERSION = readFile(versionFile, true);
-  } catch (error) {}
-}
 
 export default config;
