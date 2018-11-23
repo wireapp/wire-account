@@ -74,7 +74,7 @@ export class DeleteController {
     const code = req.fields.code as string;
     const key = req.fields.key as string;
 
-    if (key && code){
+    if (key && code) {
       try {
         const result = await this.postAccountDelete(key, code);
         this.trackingController.trackEvent(req.originalUrl, 'account.delete', 'success', result.status, 1);
