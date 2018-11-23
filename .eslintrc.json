@@ -61,8 +61,13 @@
       }
     ],
     "no-useless-return": 2,
+    "no-var": 0,
     "one-var": [2, "never"],
+    "prefer-arrow-callback": 0,
+    "prefer-const": 0,
     "prefer-promise-reject-errors": 2,
+    "prefer-spread": 0,
+    "prefer-template": 0,
     "prettier/prettier": 2,
     "sort-keys": [
       2,
