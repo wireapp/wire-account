@@ -1,23 +1,23 @@
 module.exports = {
   options: {
     debug: true,
-    func: {
-      list: ['_'],
-      extensions: ['.js', '.html']
-    },
-    lngs: ['en','de'],
     defaultLng: 'en',
     defaultNs: 'translation',
-    nsSeparator: false,
-    resource: {
-      loadPath: 'dist/locales/{{lng}}.json',
-      savePath: 'dist/locales/{{lng}}.json',
-      jsonIndent: 2,
-      lineEnding: '\n'
+    func: {
+      extensions: ['.js', '.html'],
+      list: ['_'],
     },
     interpolation: {
       prefix: '{{',
-      suffix: '}}'
-    }
+      suffix: '}}',
+    },
+    lngs: ['en', 'de'],
+    nsSeparator: false,
+    resource: {
+      jsonIndent: 2,
+      lineEnding: '\n',
+      loadPath: 'dist/locales/{{lng}}.json',
+      savePath: 'dist/locales/{{lng}}.json',
+    },
   },
 };

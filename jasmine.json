@@ -1,11 +1,7 @@
 {
   "spec_dir": "dist",
-  "spec_files": [
-    "**/*.test.js"
-  ],
-  "helpers": [
-    "helpers/**/*.js"
-  ],
+  "spec_files": ["**/*.test.js"],
+  "helpers": ["helpers/**/*.js"],
   "configure": {
     "oneFailurePerSpec": false,
     "random": true
