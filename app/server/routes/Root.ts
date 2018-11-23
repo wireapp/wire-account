@@ -19,19 +19,19 @@
 
 import {ServerConfig} from '../config';
 import {Client} from '../controller/Client';
-import {DeleteController} from '../controller/DeleteAccountController';
+import {DeleteAccountController} from '../controller/DeleteAccountController';
 import {ForgotController} from '../controller/ForgotController';
 import {ResetController} from '../controller/ResetController';
 import {RootController} from '../controller/RootController';
-import {VerifyController} from '../controller/VerifyAccountController';
+import {VerifyAccountController} from '../controller/VerifyAccountController';
 
 const Root = (config: ServerConfig) => {
   const client = new Client();
   return [
     ...new ForgotController(config, client).getRoutes(),
-    ...new VerifyController(config, client).getRoutes(),
+    ...new VerifyAccountController(config, client).getRoutes(),
     ...new RootController(config, client).getRoutes(),
-    ...new DeleteController(config, client).getRoutes(),
+    ...new DeleteAccountController(config, client).getRoutes(),
     ...new ResetController(config, client).getRoutes(),
   ];
 }

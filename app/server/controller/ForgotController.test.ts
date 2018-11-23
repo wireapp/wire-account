@@ -33,7 +33,7 @@ describe('ForgotController', () => {
     const client: any = {
       post: postForgotSpy,
     };
-    const controller = new ForgotController(config as ServerConfig, client as Client);
+    const controller: any = new ForgotController(config as ServerConfig, client as Client);
     const email: string = 'email';
 
     await controller['postPasswordReset'](email);
@@ -51,7 +51,7 @@ describe('ForgotController', () => {
       };
       const config = {};
       const client = {};
-      const controller = new ForgotController(config as ServerConfig, client as Client);
+      const controller: any = new ForgotController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
 
       const req: any = {
@@ -114,7 +114,7 @@ describe('ForgotController', () => {
       };
       const config = {};
       const client = {};
-      const controller = new ForgotController(config as ServerConfig, client as Client);
+      const controller: any = new ForgotController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
 
       const req: any = {
