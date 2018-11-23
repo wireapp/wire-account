@@ -18,7 +18,7 @@
  */
 
 window.initVerify = function() {
-  const url = $('#url').data('url');
+  var url = $('#url').data('url');
 
   if ($('#url').data('status') === 'success') {
     return window.verifySuccess(200);
@@ -29,11 +29,11 @@ window.initVerify = function() {
       url: url,
       xhrFields: {withCredentials: eval($('#url').data('credentials'))},
     })
-      .done((data, status_text, xhr) => {
+      .done(function(data, status_text, xhr) {
         window.sendEvent('account.verify-email', 'success', xhr.status, 1);
         window.verifySuccess(xhr.status);
       })
-      .fail(xhr => {
+      .fail(function(xhr) {
         window.sendEvent('account.verify-email', 'fail', xhr.status, 1);
         window.verifyFail(xhr.status);
       });
@@ -45,7 +45,7 @@ window.initVerify = function() {
 window.verifyFail = function(status) {
   $('.loading').hide();
   if (status === 404) {
-    $(`.${status}`).removeClass('hide');
+    $('.' + status).removeClass('hide');
   } else {
     $('.500').removeClass('hide');
   }
@@ -53,8 +53,8 @@ window.verifyFail = function(status) {
 
 window.verifySuccess = function(status) {
   $('.loading').hide();
-  $(`.${status}`).removeClass('hide');
-  const redirect = $('#url').data('redirect');
+  $('.' + status).removeClass('hide');
+  var redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;
   }

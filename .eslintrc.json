@@ -1,7 +1,6 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
     "jasmine": true,
     "node": true
   },
@@ -11,19 +10,33 @@
     "$": true,
     "$button": true
   },
-  "plugins": ["jasmine", "jsdoc", "no-unsanitized", "prettier"],
+  "plugins": ["es5", "jasmine", "jsdoc", "no-unsanitized", "prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 5,
     "sourceType": "module"
   },
   "rules": {
-    "curly": 2,
     "dot-notation": 2,
-    "jasmine/prefer-toHaveBeenCalledWith": 0,
+    "es5/no-arrow-functions": 2,
+    "es5/no-binary-and-octal-literals": 2,
+    "es5/no-block-scoping": 2,
+    "es5/no-classes": 2,
+    "es5/no-es6-static-methods": 2,
+    "es5/no-exponentiation-operator": 2,
+    "es5/no-for-of": 2,
+    "es5/no-generators": 2,
+    "es5/no-object-super": 2,
+    "es5/no-rest-parameters": 2,
+    "es5/no-shorthand-properties": 2,
+    "es5/no-spread": 2,
+    "es5/no-template-literals": 2,
+    "es5/no-unicode-code-point-escape": 2,
+    "es5/no-unicode-regex": 2,
     "jasmine/no-expect-in-setup-teardown": 0,
     "jasmine/no-spec-dupes": 0,
     "jasmine/no-suite-dupes": 0,
+    "jasmine/prefer-toHaveBeenCalledWith": 0,
     "jsdoc/require-hyphen-before-param-description": 2,
     "no-console": [
       2,
@@ -47,13 +60,13 @@
       }
     ],
     "no-useless-return": 2,
-    "no-var": 2,
+    "no-var": 0,
     "one-var": [2, "never"],
-    "prefer-arrow-callback": 2,
-    "prefer-const": 2,
+    "prefer-arrow-callback": 0,
+    "prefer-const": 0,
     "prefer-promise-reject-errors": 2,
-    "prefer-spread": 2,
-    "prefer-template": 2,
+    "prefer-spread": 0,
+    "prefer-template": 0,
     "prettier/prettier": 2,
     "sort-keys": [
       2,
