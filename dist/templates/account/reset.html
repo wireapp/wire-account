@@ -3,7 +3,7 @@
 
 {% block content %}
   {% if status == 'success' %}
-    <h1>{{title}}</h1>
+    <h1>{{_('reset.title')}}</h1>
     <p>{{_('reset.successDescription')}}</p>
     {% if user_agent().is.mobile %}
       {{utils.download_btn(_('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
