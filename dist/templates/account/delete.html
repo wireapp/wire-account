@@ -3,7 +3,7 @@
 
 {% block content %}
   {% if status == 'success' %}
-    <h1>{{title}}</h1>
+    <h1>{{_('delete.headline')}}</h1>
     <p>{{_('delete.confirmation')}}</p>
     <p>
       {% autoescape false %}
