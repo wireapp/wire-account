@@ -10,7 +10,8 @@
     "greeting": "Hi,",
     "description": "Wir haben eine Anfrage zur Löschung deines Wire-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig.",
     "resetText": "Falls du dies nicht selbst warst, solltest du {{- link}}",
-    "resetLink": "dein Wire-Passwort zurücksetzen."
+    "resetLink": "dein Wire-Passwort zurücksetzen.",
+    "headline": "Benutzerkonto gelöscht"
   },
   "general": {
     "loading": "Bitte warten…"

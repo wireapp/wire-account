@@ -10,7 +10,8 @@
     "greeting": "Hi there,",
     "description": "We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes.",
     "resetText": "If you did not ask for this, you should {{- link}}",
-    "resetLink": "reset your Wire password."
+    "resetLink": "reset your Wire password.",
+    "headline": "Account deleted"
   },
   "general": {
     "loading": "Please wait…"
@@ -27,7 +28,7 @@
     "errorUnknown": "Something went wrong, please try again."
   },
   "reset": {
-    "title": "Reset password",
+    "title": "Password reset",
     "successDescription": "You can now log in with your new password.",
     "errorTitle": "The link is no longer valid",
     "errorDescription": "Please try again.",
