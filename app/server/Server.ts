@@ -28,11 +28,10 @@ import * as i18nextLoadLocales from 'i18next-node-fs-backend';
 import * as nunjucks from 'nunjucks';
 import * as path from 'path';
 import {ServerConfig} from './config';
-import {ROUTES} from './controller';
 import HealthCheckRoute from './routes/_health/HealthRoute';
 import ConfigRoute from './routes/config/ConfigRoute';
 import {InternalErrorRoute, NotFoundRoute} from './routes/error/ErrorRoutes';
-import Root from './routes/Root';
+import Root, {ROUTES} from './routes/Root';
 
 const STATUS_CODE_MOVED = 301;
 
@@ -163,7 +162,7 @@ class Server {
     this.app.set('view engine', 'html');
     this.app.locals.config = this.config;
     this.app.locals.JSON = JSON;
-    this.app.locals.routes = ROUTES;
+    this.app.locals.ROUTES = ROUTES;
   }
 
   start(): Promise<number> {

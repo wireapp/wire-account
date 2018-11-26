@@ -17,15 +17,13 @@
  *
  */
 
-import {Request, Response, Router} from 'express';
+import {Request, Response} from 'express';
 import {ServerConfig} from '../config';
 import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
 export class ResetController {
-  public static readonly ROUTE_RESET = '/reset';
-
   private static readonly TEMPLATE_RESET = 'account/reset';
 
   private trackingController: TrackingController;
@@ -34,18 +32,11 @@ export class ResetController {
     this.trackingController = new TrackingController(config, client);
   }
 
-  public getRoutes = () => {
-    return [
-      Router().get(ResetController.ROUTE_RESET, this.handleGet),
-      Router().post(ResetController.ROUTE_RESET, this.handlePost),
-    ];
-  };
-
   private readonly postPasswordReset = async (key: string, code: string, password: string) => {
     return this.client.post(`${this.config.BACKEND_REST}/password-reset/complete`, {password, key, code});
   };
 
-  private readonly handleGet = async (req: Request, res: Response) => {
+  public readonly handleGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     let status = 'error';
     const error: any = undefined;
@@ -69,7 +60,7 @@ export class ResetController {
     return res.render(ResetController.TEMPLATE_RESET, payload);
   };
 
-  private readonly handlePost = async (req: Request, res: Response) => {
+  public readonly handlePost = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     let status = 'error';
     let error = '';

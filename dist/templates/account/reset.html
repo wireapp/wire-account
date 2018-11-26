@@ -21,10 +21,10 @@
   {% elif status == 'error' %}
     <h1>{{_('reset.errorTitle')}}</h1>
     <p>{{_('reset.errorDescription')}}</p>
-    <a class="wbtn green" href="{{routes.resetPassword}}?key={{key}}&code={{code}}">{{_('reset.button')}}</a>
+    <a class="wbtn green" href="{{ROUTES.ROUTE_RESET}}?key={{key}}&code={{code}}">{{_('reset.button')}}</a>
   {% else %}
     <h1>{{title}}</h1>
-    <form method="POST" action="{{routes.resetPassword}}">
+    <form method="POST" action="{{ROUTES.ROUTE_RESET}}">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
       <input name="password" type="password" placeholder="{{_('reset.passwordPlaceholder')}}" autofocus>

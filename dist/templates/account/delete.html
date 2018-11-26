@@ -19,7 +19,7 @@
       {{_('delete.greeting')}}<br>
       {{_('delete.description')}}
     </p>
-    <form action="{{routes.deleteAccount}}" method="POST">
+    <form action="{{ROUTES.ROUTE_DELETE}}" method="POST">
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
       <button class="wbtn red" type="submit" data-loading-text="{{_('general.loading')}}">
@@ -29,7 +29,7 @@
 
     <p>
       {% autoescape false %}
-        {{_('delete.resetText', {link: utils.link(routes.forgot, _('delete.resetLink'), false)})}}
+        {{_('delete.resetText', {link: utils.link(ROUTES.ROUTE_FORGOT, _('delete.resetLink'), false)})}}
       {% endautoescape %}
     </p>
   {% endif %}

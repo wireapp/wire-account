@@ -17,17 +17,13 @@
  *
  */
 
-import {Request, Response, Router} from 'express';
+import {Request, Response} from 'express';
 import {ServerConfig} from '../config';
 import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
 export class VerifyAccountController {
-  public static readonly ROUTE_VERIFY_EMAIL = '/verify';
-  public static readonly ROUTE_VERIFY_BOT = '/verify/bot';
-  public static readonly ROUTE_VERIFY_PHONE = '/v/:code';
-
   private static readonly TEMPLATE_VERIFY_EMAIL = 'account/verify_email';
   private static readonly TEMPLATE_VERIFY_BOT = 'account/verify_bot';
   private static readonly TEMPLATE_VERIFY_PHONE = 'account/verify_phone';
@@ -38,15 +34,7 @@ export class VerifyAccountController {
     this.trackingController = new TrackingController(config, client);
   }
 
-  public getRoutes = () => {
-    return [
-      Router().get(VerifyAccountController.ROUTE_VERIFY_EMAIL, this.handleEmailGet),
-      Router().get(VerifyAccountController.ROUTE_VERIFY_BOT, this.handleBotGet),
-      Router().get(VerifyAccountController.ROUTE_VERIFY_PHONE, this.handlePhoneGet),
-    ];
-  };
-
-  private readonly handleEmailGet = async (req: Request, res: Response) => {
+  public readonly handleEmailGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     const key = req.query.key;
     const code = req.query.code;
@@ -75,7 +63,7 @@ export class VerifyAccountController {
     return res.render(VerifyAccountController.TEMPLATE_VERIFY_EMAIL, payload);
   };
 
-  private readonly handleBotGet = async (req: Request, res: Response) => {
+  public readonly handleBotGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     const key = req.query.key;
     const code = req.query.code;
@@ -105,7 +93,7 @@ export class VerifyAccountController {
     return res.render(VerifyAccountController.TEMPLATE_VERIFY_BOT, payload);
   };
 
-  private readonly handlePhoneGet = async (req: Request, res: Response) => {
+  public readonly handlePhoneGet = async (req: Request, res: Response) => {
     this.trackingController.trackEvent(req.originalUrl, 'account.verify-phone', 'success', 200, 1);
     const _ = (req as any)['t'] as Function;
     const payload = {

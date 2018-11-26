@@ -6,7 +6,7 @@
     <p>{{_('forgot.successDescription')}}</p>
   {% else %}
     <h1>{{title}}</h1>
-    <form method="POST" action="{{routes.forgot}}" novalidate>
+    <form method="POST" action="{{ROUTES.ROUTE_FORGOT}}" novalidate>
       <input type="email" name="email" placeholder="{{_('forgot.emailPlaceholder')}}" autofocus>
       <p>{{error}}</p>
       <button type="submit" class="wbtn" data-loading-text="{{_('general.loading')}}">

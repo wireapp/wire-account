@@ -17,14 +17,12 @@
  *
  */
 
-import {Request, Response, Router} from 'express';
+import {Request, Response} from 'express';
 import {ServerConfig} from '../config';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
 export class DeleteAccountController {
-  public static readonly ROUTE_DELETE = '/d';
-
   private static readonly TEMPLATE_DELETE = 'account/delete';
 
   private trackingController: TrackingController;
@@ -33,18 +31,11 @@ export class DeleteAccountController {
     this.trackingController = new TrackingController(config, client);
   }
 
-  public getRoutes = () => {
-    return [
-      Router().get(DeleteAccountController.ROUTE_DELETE, this.handleGet),
-      Router().post(DeleteAccountController.ROUTE_DELETE, this.handlePost),
-    ];
-  };
-
   private readonly postAccountDelete = async (key: string, code: string) => {
     return this.client.post(`${this.config.BACKEND_REST}/delete`, {key, code});
   };
 
-  private readonly handleGet = async (req: Request, res: Response) => {
+  public readonly handleGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     let status = 'error';
 
@@ -66,7 +57,7 @@ export class DeleteAccountController {
     return res.render(DeleteAccountController.TEMPLATE_DELETE, payload);
   };
 
-  private readonly handlePost = async (req: Request, res: Response) => {
+  public readonly handlePost = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     let status = 'error';
 
