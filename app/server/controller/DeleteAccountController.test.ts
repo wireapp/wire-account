@@ -45,7 +45,7 @@ describe('DeleteController', () => {
         render: renderSpy,
       };
 
-      await controller['handlePost'](req as Request, res as Response);
+      await controller.handlePost(req as Request, res as Response);
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
       expect(renderSpy.calls.mostRecent().args[0]).toBe(DeleteAccountController['TEMPLATE_DELETE']);

@@ -17,13 +17,12 @@
  *
  */
 
-import {Request, Response, Router} from 'express';
+import {Request, Response} from 'express';
 import {ServerConfig} from '../config';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
 export class ForgotController {
-  public static readonly ROUTE_FORGOT = '/forgot';
   private static readonly TEMPLATE_FORGOT = 'account/forgot';
 
   private static readonly HTTP_STATUS_EMAIL_IN_USE = 400;
@@ -35,18 +34,11 @@ export class ForgotController {
     this.trackingController = new TrackingController(config, client);
   }
 
-  public getRoutes = () => {
-    return [
-      Router().get(ForgotController.ROUTE_FORGOT, this.handleGet),
-      Router().post(ForgotController.ROUTE_FORGOT, this.handlePost),
-    ];
-  };
-
   private resetPassword = async (email: string) => {
     return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {email});
   };
 
-  private readonly handleGet = async (req: Request, res: Response) => {
+  public readonly handleGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     const error: string = undefined;
     const payload = {
@@ -59,7 +51,7 @@ export class ForgotController {
     return res.render(ForgotController.TEMPLATE_FORGOT, payload);
   };
 
-  private readonly handlePost = async (req: Request, res: Response) => {
+  public readonly handlePost = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     let status;
     let error;

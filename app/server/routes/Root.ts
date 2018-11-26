@@ -17,6 +17,7 @@
  *
  */
 
+import {Router} from 'express';
 import {ServerConfig} from '../config';
 import {Client} from '../controller/Client';
 import {DeleteAccountController} from '../controller/DeleteAccountController';
@@ -25,14 +26,34 @@ import {ResetController} from '../controller/ResetController';
 import {RootController} from '../controller/RootController';
 import {VerifyAccountController} from '../controller/VerifyAccountController';
 
+export const ROUTES = {
+  ROUTE_DELETE: '/d',
+  ROUTE_FORGOT: '/forgot',
+  ROUTE_INDEX: '/',
+  ROUTE_RESET: '/reset',
+  ROUTE_VERIFY_BOT: '/verify/bot',
+  ROUTE_VERIFY_EMAIL: '/verify',
+  ROUTE_VERIFY_PHONE: '/v/:code',
+};
+
 const Root = (config: ServerConfig) => {
   const client = new Client();
+  const forgotController = new ForgotController(config, client);
+  const verifyAccountController = new VerifyAccountController(config, client);
+  const rootController = new RootController(config, client);
+  const deleteAccountController = new DeleteAccountController(config, client);
+  const resetController = new ResetController(config, client);
   return [
-    ...new ForgotController(config, client).getRoutes(),
-    ...new VerifyAccountController(config, client).getRoutes(),
-    ...new RootController(config, client).getRoutes(),
-    ...new DeleteAccountController(config, client).getRoutes(),
-    ...new ResetController(config, client).getRoutes(),
+    Router().get(ROUTES.ROUTE_FORGOT, forgotController.handleGet),
+    Router().post(ROUTES.ROUTE_FORGOT, forgotController.handlePost),
+    Router().get(ROUTES.ROUTE_VERIFY_EMAIL, verifyAccountController.handleEmailGet),
+    Router().get(ROUTES.ROUTE_VERIFY_BOT, verifyAccountController.handleBotGet),
+    Router().get(ROUTES.ROUTE_VERIFY_PHONE, verifyAccountController.handlePhoneGet),
+    Router().get(ROUTES.ROUTE_INDEX, rootController.handleGet),
+    Router().get(ROUTES.ROUTE_DELETE, deleteAccountController.handleGet),
+    Router().post(ROUTES.ROUTE_DELETE, deleteAccountController.handlePost),
+    Router().get(ROUTES.ROUTE_RESET, resetController.handleGet),
+    Router().post(ROUTES.ROUTE_RESET, resetController.handlePost),
   ];
 };
 

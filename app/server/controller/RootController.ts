@@ -17,15 +17,13 @@
  *
  */
 
-import {Request, Response, Router} from 'express';
+import {Request, Response} from 'express';
 import {ServerConfig} from '../config';
 import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
 export class RootController {
-  public static readonly ROUTE_INDEX = '/';
-
   private static readonly TEMPLATE_INDEX = 'index';
   private static readonly TEMPLATE_OPEN_GRAPH = 'og';
 
@@ -35,11 +33,7 @@ export class RootController {
     this.trackingController = new TrackingController(config, client);
   }
 
-  public getRoutes = () => {
-    return [Router().get(RootController.ROUTE_INDEX, this.handleGet)];
-  };
-
-  private readonly handleGet = async (req: Request, res: Response) => {
+  public readonly handleGet = async (req: Request, res: Response) => {
     const _ = (req as any)['t'] as Function;
     const userAgent = req.header('User-Agent');
     const parsedUserAgent = BrowserUtil.parseUserAgent(userAgent);
