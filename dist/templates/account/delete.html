@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% import 'macro/utils.html' as utils %}
+
+{% block content %}
+  {% if status == 'success' %}
+    <h1>{{title}}</h1>
+    <p>{{_('delete.confirmation')}}</p>
+    <p>
+      {% autoescape false %}
+        {{_('delete.surveyText', {link: utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('delete.surveyLink'))})}}
+      {% endautoescape %}
+    </p>
+  {% elif status == 'error' %}
+    <h1>{{_('delete.errorTitle')}}</h1>
+    <p>{{_('delete.errorDescription')}}</p>
+  {% else %}
+    <h1>{{title}}</h1>
+    <p>
+      {{_('delete.greeting')}}<br>
+      {{_('delete.description')}}
+    </p>
+    <form action="{{routes.deleteAccount}}" method="POST">
+      <input name="key" type="hidden" value="{{key}}">
+      <input name="code" type="hidden" value="{{code}}">
+      <button class="wbtn red" type="submit" data-loading-text="{{_('general.loading')}}">
+        {{_('delete.button')}}
+      </button>
+    </form>
+
+    <p>
+      {% autoescape false %}
+        {{_('delete.resetText', {link: utils.link(routes.forgot, _('delete.resetLink'), false)})}}
+      {% endautoescape %}
+    </p>
+  {% endif %}
+{% endblock %}

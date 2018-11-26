@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import 'macro/utils.html' as utils %}
+
+{% block content %}
+  {% if status == 'success' %}
+    <h1>{{title}}</h1>
+    <p>{{_('reset.successDescription')}}</p>
+    {% if user_agent().is.mobile %}
+      {{utils.download_btn(_('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
+    {% elif user_agent().is.desktop %}
+      <p>{{_('open.description')}}</p>
+        {% if user_agent().is.linux or user_agent().is.windows %}
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('open.downloadButton')}}</a>
+        {% elif  user_agent().is.osx %}
+          <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('open.openMac')}}</a>
+        {% endif %}
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWeb')}}</a>
+    {% else %}
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWire')}}</a>
+    {% endif %}
+  {% elif status == 'error' %}
+    <h1>{{_('reset.errorTitle')}}</h1>
+    <p>{{_('reset.errorDescription')}}</p>
+    <a class="wbtn green" href="{{routes.resetPassword}}?key={{key}}&code={{code}}">{{_('reset.button')}}</a>
+  {% else %}
+    <h1>{{title}}</h1>
+    <form method="POST" action="{{routes.resetPassword}}">
+      <input name="key" type="hidden" value="{{key}}">
+      <input name="code" type="hidden" value="{{code}}">
+      <input name="password" type="password" placeholder="{{_('reset.passwordPlaceholder')}}" autofocus>
+      <p>{{error}}</p>
+      <button type="submit" class="wbtn btn-block" data-loading-text="{{_('general.loading')}}">
+        {{_('reset.button')}}
+      </button>
+    </form>
+  {% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+  {% if (user_agent().is.ios or user_agent().is.android) and status == 'success' %}
+    <script>
+      $(function() {
+        window.location.href = "{{config.URL.REDIRECT_RESET_BASE}}";
+      });
+    </script>
+  {% endif %}
+{% endblock %}

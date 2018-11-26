@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{_('verify.successPhoneDescription')}}</h1>
+  <p>{{_('open.description')}}</p>
+  <a class="wbtn" href="{{url}}">{{_('open.openWire')}}</a>
+{% endblock %}
+
+
+{% block scripts %}
+  <script>setTimeout(function(){window.location.href = '{{url}}';}, 1000);</script>
+{% endblock %}

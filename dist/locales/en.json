@@ -1,0 +1,68 @@
+{
+  "delete": {
+    "title": "Delete Account",
+    "confirmation": "All your data on Wire is now erased.",
+    "button": "Delete Account",
+    "surveyText": "Thanks for using Wire. If you’d like, you can {{- link}} This will take no longer than a minute.",
+    "surveyLink": "share your thoughts about it.",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "Please try again to delete your account.",
+    "greeting": "Hi there,",
+    "description": "We’ve received a request to delete your Wire account. Click on the button below to proceed. It is valid for 10 minutes.",
+    "resetText": "If you did not ask for this, you should {{- link}}",
+    "resetLink": "reset your Wire password."
+  },
+  "general": {
+    "loading": "Please wait…"
+  },
+  "forgot": {
+    "title": "Change Password",
+    "successTitle": "Check your email",
+    "successDescription": "We sent you a link to reset your password. It is valid for 1 hour.",
+    "emailPlaceholder": "Email",
+    "button": "Reset password",
+    "errorInvalidEmail": "That does not look like an email.",
+    "errorUnusedEmail": "This email is not in use.",
+    "errorAlreadyProcessing": "We already sent you an email. The link is valid for 1 hour.",
+    "errorUnknown": "Something went wrong, please try again."
+  },
+  "reset": {
+    "title": "Reset password",
+    "successDescription": "You can now log in with your new password.",
+    "errorTitle": "The link is no longer valid",
+    "errorDescription": "Please try again.",
+    "button": "Reset password",
+    "passwordPlaceholder": "Enter new password",
+    "errorUnknown": "Something went wrong, please try again.",
+    "errorInvalidPassword": "Choose a password that is at least 8 characters."
+  },
+  "verify": {
+    "titleEmail": "Verify Account",
+    "titleBot": "Verify Bot",
+    "titlePhone": "Verify Phone",
+    "title": "Verifying",
+    "successBotTitle": "Thank you for registering",
+    "successBotDescription": "Please note that upon successful verification of your e-mail, your Wire service provider account is still subject to approval through our staff, which usually happens within 24 hours.",
+    "successBotDescriptionEmail": "You will be informed of the approval via a separate e-mail.",
+    "errorTitle": "Something went wrong.",
+    "error404Description": "Please try to create your account again.",
+    "error500Description": "We are investigating the issue, please check back shortly.",
+    "successEmailTitle": "Account created",
+    "successEmailAppDescription": "Install the app to start using Wire.",
+    "successPhoneDescription": "Phone verification in progress"
+  },
+  "header": {
+    "support": "Support"
+  },
+  "index": {
+    "description": "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.",
+    "title": "The most secure collaboration platform"
+  },
+  "open": {
+    "description": "To sign in and start using Wire, launch the application.",
+    "downloadButton": "Get Wire",
+    "openMac": "OPEN macOS APP",
+    "openWeb": "Open in Web",
+    "openWire": "Open Wire"
+  }
+}
