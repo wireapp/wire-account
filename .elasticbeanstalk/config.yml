@@ -1,11 +1,13 @@
 branch-defaults:
-  express-migration:
-    environment: wire-account-dev
+  staging:
+    environment: wire-account-staging
+  master:
+    environment: wire-account-prod
 deploy:
   artifact: dist/wire-account.zip
 global:
   application_name: Account
   default_platform: Node.js
-  default_region: eu-west-1
+  default_region: eu-central-1
   sc: git
   workspace_type: Application

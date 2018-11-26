@@ -39,18 +39,3 @@ deploy:
     on:
       repo: wireapp/wire-account
       branch: staging
-
-  - provider: elasticbeanstalk
-    skip_cleanup: true
-    zip-file: dist/wire-account.zip
-    access-key-id:
-      secure: M60tL8rkCr4jrx7LNJEosg0MopAXAxRWbdl+pW9dY/+kPwOaMjd4u1/upxC8itSvb0CF7etCWpM3KZyydQzj/v+fpB+9dxuElFV/j/+Uj5/bFuThnZn3Ka4ifzc/ROhWttWzzhu2ipSwuomyJLhsihAKc9ffr1/HnjgF6zNyCVuiZzW3xRDHKv8oYvmCnBTy5ccN09DqJ2OblCzRlHmT0H8Nj0djQEF4codhNslmZp9RMpoysJKZyZm33lEK4hJvh3Vh5/4B4tbtPOols+cjRDgxa6byG1+lSYoGAiH+UCw1wFD9p3BobAmWhya5kcrVktePVqsG8CNAjRw9wmbIe8Ie6USNTUgnB+lzzzg95SZbK/q7+3YE2aE9ljoOFqm+eBqBkZoEkzx7f1SrbSJGXB6MuSbyiE5dcXlJkKIfUvJfYGRW4i2e61X+wk7yeAyBI5o3idK6srdo845jqVhNzmROsWeStOSeZqnHvJi2+A/MPjIMeIZoXX7a0U9p9s0VyR0RgDMbPQHf44ASJZylksosyTM1TbYec/AtIUkJC4XkJB9Gv/c9Gm6BM1ABHxfFQwNzeKcWYbOc2OH7kTrbbFBKpt8HpuDELFpsubEYaUBqR3uVGVeVZqAYx81kXF86b/eGiv2cTiUSh5GdHiaUEHz485PH/xEnnVJubYPMq2E=
-    secret-access-key:
-      secure: TgRZFYlLbphsJ4iDn9nndk8ovD7XKUmUh1eYYCJMTprXUDgozlDXDQiUBhMcsqQhPJDrKPjBUhF/Ie/C58NbBQEdGb3+aL3xW87eCTp6DdiSqd+ANwPWR0uVRW/2g83ZeV4XBHHNHBQNkfzJDRZf/1L+5hB+HIW4kw4qrkcKM3+YVOqAZMooBr7W1g3ac+7eIaH4o0a0TOgCDTmsEYnH3GavoKdHWvs1A3P5E7UY5R79ZHRyvWdu4/xfPWLTEONCL4CReZY3pXOCeBc3vsFxbUSpAS+CUrHUrnfbaoW32AmeBthO2YmOSvx2Hd1tYIuuZPuMpycQRQhrv7jPLr45+tdbLTACYs3QULvaiZsZ4/wTwzkV/kUYdkQduh097iRvgGvLPQotoHtuTVaQMQRmYn3sujpulXp4QaYLZIPPxyWG8fOU23hNpPYLKNF+e5GeCYYetkrQhbBMxUDUKt/dU2yLvg6eUQwB0ouTMOYaesufUArbmhimdSxQvdE/K7CnXafdDK7g+g9AAV2n3KePzWSbZn8IoBsp1ScnONNVsVGP88nwJkQw3iU/A2w6OSn08yex4/bfnn7xYJzGLS/eu+v7o42tjC6aLdCmJXWYYs5vghCuckQMMG7bbxq65lj4oAQ6lw5HEN6JIt+B1SSkw+FYwoXLtxOWkr2/+6DWzac=
-    region: eu-central-1
-    app: Account
-    env: wire-account-dev
-    bucket_name: wire-account-builds
-    on:
-      repo: wireapp/wire-account
-      branch: express-migration
