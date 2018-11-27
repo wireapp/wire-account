@@ -35,7 +35,7 @@ Depending on the branch name it will be automatically deployed to the following 
 
 ### Translations
 
-To update & fetch translations a file 'keys/crowdin.yaml' containing the Crowdin API key is needed. For pulling and pushing translations use:
+A file 'keys/crowdin.yaml' containing the Crowdin API key is needed. To push & pull translations use:
 
 ```bash
 yarn translate
