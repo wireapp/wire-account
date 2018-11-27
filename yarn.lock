@@ -3566,10 +3566,10 @@ i18next-node-fs-backend@2.1.0:
     js-yaml "3.12.0"
     json5 "2.0.0"
 
-i18next-scanner@2.6.6:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/i18next-scanner/-/i18next-scanner-2.6.6.tgz#2a4fa5f26955aafa9d61846608f6f7b1e173b1be"
-  integrity sha512-laZnXKgH3IvGJsSDfndVbPdRBoWq1HtySmlNz6hZhNmB4vgyQVxYUvEu6xi0XB6mxF3fwlgR7kfrKHRhyUqb0Q==
+i18next-scanner@2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/i18next-scanner/-/i18next-scanner-2.7.0.tgz#7316670ba2fd2bcdfd10830ed57c55640873fc06"
+  integrity sha512-XpGedMkFYLGvlz60EOIbbmkvT2cxWP0j51hM0hckBKwvlM+T9H4JYRH7EgFXfLwMtYJx4gnBLHH3bHQakLOzPA==
   dependencies:
     acorn-jsx "^4.1.1"
     acorn-jsx-walk "^1.0.1"
