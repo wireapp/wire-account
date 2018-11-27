@@ -24,11 +24,9 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 1. Run `yarn`
 2. Run `yarn start`
-3. Open [http://localhost:8080/](http://localhost:8080/)
+3. Open [http://localhost:8081/](http://localhost:8081/)
 
 ## Deployment
-
-- Run `yarn deploy`
 
 Depending on the branch name it will be automatically deployed to the following environments:
 
@@ -37,14 +35,8 @@ Depending on the branch name it will be automatically deployed to the following 
 
 ### Translations
 
-#### To add a new languages
+To update & fetch translations a file 'keys/crowdin.yaml' containing the crowdin api key is needed. For pulling and pushing translations use:
 
 ```bash
-yarn babel-init -- ru
-```
-
-#### To extract/update/compile
-
-```bash
-yarn babel
+yarn translate
 ```
