@@ -1,22 +1,13 @@
 branch-defaults:
-  master:
-    environment: wire-account-prod
   staging:
     environment: wire-account-staging
+  master:
+    environment: wire-account-prod
 deploy:
   artifact: dist/wire-account.zip
-environment-defaults:
-  wire-webapp:
-    branch: null
-    repository: null
 global:
   application_name: Account
-  default_ec2_keyname: null
-  default_platform: Python 2.7
-  default_region: eu-west-1
-  instance_profile: null
-  platform_name: null
-  platform_version: null
-  profile: null
+  default_platform: Node.js
+  default_region: eu-central-1
   sc: git
   workspace_type: Application

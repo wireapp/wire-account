@@ -1,8 +1,0 @@
-<svg width="9" height="8" viewBox="655 4 9 8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <path d="M660 10.556L662.875 8H664l-4.5 4-4.5-4h1.125L659 10.556V4h1v6.556z" id="z"/>
-  </defs>
-  <g fill="none" fill-rule="evenodd">
-    <use fill="#51575B" xlink:href="#z"/>
-  </g>
-</svg>

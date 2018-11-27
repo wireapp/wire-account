@@ -1,6 +1,6 @@
 /*
  * Wire
- * Copyright (C) 2016 Wire Swiss GmbH
+ * Copyright (C) 2018 Wire Swiss GmbH
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
  *
  */
 
-window.sendEvent = function(category, action, label, value) {
-  if (typeof window._paq !== 'undefined' && window._paq !== null) {
-    window._paq.push(['trackEvent', category, action, label, value]);
-  }
-};
+import {Router} from 'express';
+
+const HealthRoute = () => Router().get('/_health/?', (req, res) => res.sendStatus(200));
+
+export default HealthRoute;

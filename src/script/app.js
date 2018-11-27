@@ -19,12 +19,12 @@
 
 $(function() {
   $('html.verify').each(function() {
-    initVerify();
+    window.initVerify();
   });
 });
 
 $(function() {
   $('html.account').each(function() {
-    initForms();
+    window.initForms();
   });
 });

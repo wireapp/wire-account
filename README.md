@@ -8,7 +8,7 @@ You can find the published source code at [github.com/wireapp/wire](https://gith
 
 For licensing information, see the attached LICENSE file and the list of third-party licenses at [wire.com/legal/licenses/](https://wire.com/legal/licenses/).
 
-If you compile the open source software that we make available from time to time to develop your own mobile, desktop or web application, and cause that application to connect to our servers for any purposes, we refer to that resulting application as an “Open Source App”.  All Open Source Apps are subject to, and may only be used and/or commercialized in accordance with, the Terms of Use applicable to the Wire Application, which can be found at https://wire.com/legal/#terms.  Additionally, if you choose to build an Open Source App, certain restrictions apply, as follows:
+If you compile the open source software that we make available from time to time to develop your own mobile, desktop or web application, and cause that application to connect to our servers for any purposes, we refer to that resulting application as an “Open Source App”. All Open Source Apps are subject to, and may only be used and/or commercialized in accordance with, the Terms of Use applicable to the Wire Application, which can be found at https://wire.com/legal/#terms. Additionally, if you choose to build an Open Source App, certain restrictions apply, as follows:
 
 a. You agree not to change the way the Open Source App connects and interacts with our servers; b. You agree not to weaken any of the security features of the Open Source App; c. You agree not to use our servers to store data for purposes other than the intended and original functionality of the Open Source App; d. You acknowledge that you are solely responsible for any and all updates to your Open Source App.
 
@@ -18,17 +18,15 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 ## wire-account
 
->  For account verifications and forgotten passwords.
+> For account verifications and forgotten passwords.
 
 ## Build Instructions
 
 1. Run `yarn`
 2. Run `yarn start`
-3. Open [http://localhost:8080/](http://localhost:8080/)
+3. Open [http://localhost:8081/](http://localhost:8081/)
 
 ## Deployment
-
-- Run `yarn deploy`
 
 Depending on the branch name it will be automatically deployed to the following environments:
 
@@ -37,14 +35,8 @@ Depending on the branch name it will be automatically deployed to the following 
 
 ### Translations
 
-#### To add a new languages
+A file 'keys/crowdin.yaml' containing the Crowdin API key is needed. To push & pull translations use:
 
 ```bash
-yarn babel-init -- ru
-```
-
-#### To extract/update/compile
-
-```bash
-yarn babel
+yarn translate
 ```

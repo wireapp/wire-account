@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% import 'macro/utils.html' as utils %}
+
+{% block content %}
+  <link
+    id="url"
+    data-url="{{url}}"
+    data-status="{{status}}"
+    data-redirect="{{redirect}}"
+    data-credentials="{{credentials}}"
+  >
+
+  <div class="loading">
+    <h1>{{_('verify.title')}}</h1>
+    <p>{{_('general.loading')}}</p>
+  </div>
+
+  <div class="200 202 204 success hide">
+    <h1>{{_('verify.successBotTitle')}}</h1>
+    <p>{{_('verify.successBotDescription')}}</p>
+    <p>{{_('verify.successBotDescriptionEmail')}}</p>
+  </div>
+
+  <div class="404 error hide">
+    <h1>{{_('verify.errorTitle')}}</h1>
+    <p>{{_('verify.error404Description')}}</p>
+  </div>
+
+  <div class="500 error hide">
+    <h1>{{_('verify.errorTitle')}}</h1>
+    <p>{{_('verify.error500Description')}}</p>
+  </div>
+{% endblock %}

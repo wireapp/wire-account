@@ -1,0 +1,32 @@
+{% macro ga_event(category, action, value) %}
+  data-ga-category="{{category}}" data-ga-action="{{action}}" data-ga-value="{{value}}"
+{% endmacro %}
+
+{% macro link(href, text, external=true) %}
+  <a href="{{href}}" {% if external %}rel="noopener noreferrer" target="_blank"{% endif %}>{{text}}</a>
+{% endmacro %}
+
+
+{% macro download_btn(name, user_agent, class, category, code) %}
+  <a class="{{class}}"
+      {% if user_agent().is.android %}
+        href="{{config.URL.DOWNLOAD_ANDROID_BASE}}{% if code %}&referrer={{code}}{% endif %}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, "download", "android")}}
+      {% elif user_agent().is.ios %}
+        href="{{config.URL.DOWNLOAD_IOS_BASE}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, "download", "ios")}}
+      {% elif user_agent().is.osx %}
+        href="{{config.URL.DOWNLOAD_OSX_BASE}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, "download", "osx")}}
+      {% elif user_agent().is.windows %}
+        href="{{config.URL.DOWNLOAD_WINDOWS_BASE}}"
+        rel="noopener noreferrer" target="_blank"
+        {{ga_event(category, "download", "windows")}}
+      {% else %}
+        href="{{config.URL.WEBSITE_BASE}}/download"
+      {% endif %}
+    >{{name}}</a>
+{% endmacro %}

@@ -21,7 +21,7 @@ window.initVerify = function() {
   var url = $('#url').data('url');
 
   if ($('#url').data('status') === 'success') {
-    return verifySuccess(200);
+    return window.verifySuccess(200);
   }
 
   if (url) {
@@ -30,15 +30,15 @@ window.initVerify = function() {
       xhrFields: {withCredentials: eval($('#url').data('credentials'))},
     })
       .done(function(data, status_text, xhr) {
-        sendEvent('account.verify-email', 'success', xhr.status, 1);
-        verifySuccess(xhr.status);
+        window.sendEvent('account.verify-email', 'success', xhr.status, 1);
+        window.verifySuccess(xhr.status);
       })
       .fail(function(xhr) {
-        sendEvent('account.verify-email', 'fail', xhr.status, 1);
-        verifyFail(xhr.status);
+        window.sendEvent('account.verify-email', 'fail', xhr.status, 1);
+        window.verifyFail(xhr.status);
       });
   } else {
-    verifyFail(404);
+    window.verifyFail(404);
   }
 };
 
@@ -56,7 +56,6 @@ window.verifySuccess = function(status) {
   $('.' + status).removeClass('hide');
   var redirect = $('#url').data('redirect');
   if (redirect) {
-    var redirectApp = $('#url').data('redirect');
     window.location.href = redirect;
   }
 };

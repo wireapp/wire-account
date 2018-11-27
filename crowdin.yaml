@@ -3,6 +3,6 @@ base_path: .
 
 files:
   -
-    source: '/app/translations/account.pot'
-    translation: '/app/translations/%two_letters_code%/LC_MESSAGES/messages.po'
+    source: '/dist/locales/en.json'
+    translation: '/dist/locales/%two_letters_code%.json'
     update_option: 'update_as_unapproved'

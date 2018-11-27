@@ -1,6 +1,6 @@
 /*
  * Wire
- * Copyright (C) 2016 Wire Swiss GmbH
+ * Copyright (C) 2017 Wire Swiss GmbH
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,9 +16,25 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
+import {Router} from 'express';
+import {ServerConfig} from '../../config';
 
-window.sendEvent = function(category, action, label, value) {
-  if (typeof window._paq !== 'undefined' && window._paq !== null) {
-    window._paq.push(['trackEvent', category, action, label, value]);
-  }
+const ConfigRoute = (config: ServerConfig) => {
+  return Router().get('/config.js', (req, res) => {
+    const clientConfig = {
+      APP_BASE: config.APP_BASE,
+      APP_NAME: config.APP_NAME,
+      BACKEND_REST: config.BACKEND_REST,
+      ENVIRONMENT: config.ENVIRONMENT,
+      URL: config.URL,
+      VERSION: config.VERSION,
+    };
+
+    res.type('application/javascript').send(`
+      window.wire = window.wire || {};
+      window.wire.env = ${JSON.stringify(clientConfig)};
+    `);
+  });
 };
+
+export default ConfigRoute;
