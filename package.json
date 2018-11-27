@@ -79,7 +79,7 @@
       "pre-commit": "lint-staged"
     }
   },
-  "license": "LicenseRef-LICENSE",
+  "license": "GPL-3.0",
   "lint-staged": {
     "*.js": [
       "eslint --fix",
