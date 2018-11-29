@@ -29,6 +29,7 @@ import * as nunjucks from 'nunjucks';
 import * as path from 'path';
 import {ServerConfig} from './config';
 import HealthCheckRoute from './routes/_health/HealthRoute';
+import CommitRoute from './routes/commit/CommitRoute';
 import ConfigRoute from './routes/config/ConfigRoute';
 import {InternalErrorRoute, NotFoundRoute} from './routes/error/ErrorRoutes';
 import Root, {ROUTES} from './routes/Root';
@@ -59,6 +60,7 @@ class Server {
     this.app.use(ConfigRoute(this.config));
     this.app.use(NotFoundRoute());
     this.app.use(InternalErrorRoute());
+    this.app.use(CommitRoute(this.config));
   }
 
   private initInternationalization() {

@@ -28,6 +28,7 @@ const logger = logdown('config', {
   markdown: false,
 });
 
+const COMMIT_FILE = path.join(__dirname, 'commit');
 const ROBOTS_DIR = path.join(__dirname, 'static');
 const ROBOTS_ALLOW_FILE = path.join(ROBOTS_DIR, 'robots.txt');
 const ROBOTS_DISALLOW_FILE = path.join(ROBOTS_DIR, 'robots-disallow.txt');
@@ -92,6 +93,7 @@ export interface ServerConfig {
   APP_NAME: string;
   BACKEND_REST: string;
   CACHE_DURATION_SECONDS: number;
+  COMMIT: string;
   CSP: HelmetCSP;
   ENVIRONMENT: string;
   FEATURE: {
@@ -131,6 +133,7 @@ const config: ServerConfig = {
   APP_NAME: process.env.APP_NAME,
   BACKEND_REST: process.env.BACKEND_REST,
   CACHE_DURATION_SECONDS: 300,
+  COMMIT: readFile(COMMIT_FILE, ''),
   CSP: mergedCSP(),
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {

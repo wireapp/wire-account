@@ -6,8 +6,10 @@ node_js:
 notifications:
   email: false
 
-before_deploy:
-  - npm run build
+after_success:
+  - echo -e "$TRAVIS_COMMIT" > ./dist/commit
+  - if [ "$TRAVIS_BRANCH" == "staging" ]; then yarn build; fi
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then yarn build; fi
 
 deploy:
   - provider: elasticbeanstalk
