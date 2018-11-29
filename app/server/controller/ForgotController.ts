@@ -25,7 +25,7 @@ import {TrackingController} from './TrackingController';
 export class ForgotController {
   private static readonly TEMPLATE_FORGOT = 'account/forgot';
 
-  private static readonly HTTP_STATUS_EMAIL_IN_USE = 400;
+  private static readonly HTTP_STATUS_EMAIL_NOT_IN_USE = 403;
   private static readonly HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
   private trackingController: TrackingController;
@@ -68,9 +68,9 @@ export class ForgotController {
         this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
-        this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.status, 1);
-        switch (requestError.status) {
-          case ForgotController.HTTP_STATUS_EMAIL_IN_USE: {
+        this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.response.status, 1);
+        switch (requestError.response.status) {
+          case ForgotController.HTTP_STATUS_EMAIL_NOT_IN_USE: {
             error = _('forgot.errorUnusedEmail');
             status = 'error';
             break;
