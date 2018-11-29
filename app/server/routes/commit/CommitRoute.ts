@@ -24,7 +24,7 @@ const router = express.Router();
 
 const CommitRoute = (config: ServerConfig) => [
   router.get('/commit/?', (req, res) => {
-    return res.send(config.COMMIT);
+    return res.contentType('text/plain; charset=UTF-8').send(config.COMMIT);
   }),
 ];
 

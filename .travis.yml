@@ -8,8 +8,8 @@ notifications:
 
 after_success:
   - echo -e "$TRAVIS_COMMIT" > ./dist/commit
-  - if [ "$TRAVIS_BRANCH" == "staging" ]; then yarn build; fi
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then yarn build; fi
+  - test "$TRAVIS_BRANCH" == "staging" && yarn build
+  - test "$TRAVIS_BRANCH" == "master" && yarn build
 
 deploy:
   - provider: elasticbeanstalk
