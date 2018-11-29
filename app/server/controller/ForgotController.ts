@@ -25,7 +25,7 @@ import {TrackingController} from './TrackingController';
 export class ForgotController {
   private static readonly TEMPLATE_FORGOT = 'account/forgot';
 
-  private static readonly HTTP_STATUS_EMAIL_NOT_IN_USE = 403;
+  private static readonly HTTP_STATUS_EMAIL_NOT_IN_USE = 400;
   private static readonly HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
   private trackingController: TrackingController;
