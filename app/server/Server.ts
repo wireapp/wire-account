@@ -55,12 +55,12 @@ class Server {
     this.initForceSSL();
     this.initSecurityHeaders();
     this.initStaticRoutes();
+    this.app.use(CommitRoute(this.config));
     this.app.use(Root(this.config));
     this.app.use(HealthCheckRoute());
     this.app.use(ConfigRoute(this.config));
     this.app.use(NotFoundRoute());
     this.app.use(InternalErrorRoute());
-    this.app.use(CommitRoute(this.config));
   }
 
   private initInternationalization() {
