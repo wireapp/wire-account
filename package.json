@@ -35,7 +35,7 @@
     "@types/nunjucks": "3.1.0",
     "babel-eslint": "10.0.1",
     "coffee-script": "1.12.7",
-    "concurrently": "4.0.1",
+    "concurrently": "4.1.0",
     "cross-env": "5.2.0",
     "del": "3.0.0",
     "eslint": "5.9.0",
