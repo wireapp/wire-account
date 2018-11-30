@@ -3579,10 +3579,10 @@ i18next-node-fs-backend@2.1.0:
     js-yaml "3.12.0"
     json5 "2.0.0"
 
-i18next-scanner@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/i18next-scanner/-/i18next-scanner-2.8.0.tgz#c9a4768357e19df1e71c0931b09ce028d0cc334a"
-  integrity sha512-e9KANU8+yKEwV7X2OOy0iho3CQX/9UPznzj07jDErfyRHUKCURPsKo/wGY8zQKimgKLPB/uPZM7bKIAim/g4rw==
+i18next-scanner@2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/i18next-scanner/-/i18next-scanner-2.9.0.tgz#db0d7a1884bf96dd72839b3700b7d116d4bf2cbf"
+  integrity sha512-2zeYw+QJETLlooMGmaEx/LGoRCdYTpOo3DkK7vYSdvlgoFdXFu5VmuHyyUIRQtdrhpL7jHQVFJNy1uSaKvR5tQ==
   dependencies:
     acorn "^6.0.4"
     acorn-jsx "^5.0.1"
@@ -3596,6 +3596,7 @@ i18next-scanner@2.8.0:
     eol "^0.9.1"
     esprima "^4.0.0"
     gulp-sort "^2.0.0"
+    i18next "^11.10.1"
     lodash "^4.0.0"
     parse5 "^5.0.0"
     sortobject "^1.1.1"
@@ -3607,6 +3608,11 @@ i18next@12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-12.1.0.tgz#387bf4b94d05b0160b6a41d001a6b360e384bdb1"
   integrity sha512-AexmwGkKxwKfo5fGeXTWEY4xqzRPigQ1S/0InOUUVziGO54cd4fKyYK8ED1Thx9fd+WA3fRSZ+1iekvFQMbsFw==
+
+i18next@^11.10.1:
+  version "11.10.2"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-11.10.2.tgz#e5f10346f6320ecf15595419926c25255381a56c"
+  integrity sha512-1rowdX8PqrvsdFhYb3v0A/LlIHLQL1HTa4ia29IzhvNAg2fesNV7R1jXibWLmLQdz3FfTB8RuqSqDEjIawXruA==
 
 iconv-lite@0.4.23:
   version "0.4.23"
