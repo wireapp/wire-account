@@ -18,6 +18,7 @@
  */
 
 const autoescape = require('nunjucks-autoescape');
+import {CommonConfig} from '@wireapp/commons';
 import * as express from 'express';
 import * as formidable from 'express-formidable';
 import * as helmet from 'helmet';
@@ -76,11 +77,11 @@ class Server {
         debug: false,
         detection: {
           caches: false,
-          lookupQuerystring: 'hl',
+          lookupQuerystring: CommonConfig.LANGUAGE_QUERY_PARAMETER,
           order: ['querystring', 'header'],
         },
-        fallbackLng: 'en',
-        preload: ['en', 'de'],
+        fallbackLng: CommonConfig.ACCOUNT_PAGES_DEFAULT_LANGUAGE,
+        preload: CommonConfig.ACCOUNT_PAGES_SUPPORTED_LANGUAGES,
         returnEmptyString: false,
       });
 
