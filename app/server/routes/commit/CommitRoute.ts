@@ -20,5 +20,6 @@
 import {Router} from 'express';
 import {ServerConfig} from '../../config';
 
-const CommitRoute = (config: ServerConfig) => Router().get('/commit/?', (req, res) => res.send(config.COMMIT));
+const CommitRoute = (config: ServerConfig) =>
+  Router().get('/commit/?', (req, res) => res.type('text/plain').send(config.COMMIT));
 export default CommitRoute;

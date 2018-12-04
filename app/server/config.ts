@@ -46,17 +46,17 @@ function readFile(sourcePath: string, fallback?: string): string {
 dotenv.config();
 
 const defaultCSP: HelmetCSP = {
-  connectSrc: ["'self'"],
+  connectSrc: [],
   defaultSrc: ["'self'"],
-  fontSrc: ["'self'"],
+  fontSrc: [],
   frameSrc: [],
-  imgSrc: ["'self'", 'blob:', 'data:'],
+  imgSrc: [],
   manifestSrc: [],
-  mediaSrc: ["'self'", 'blob:', 'data:'],
-  objectSrc: ["'self'"],
+  mediaSrc: [],
+  objectSrc: [],
   prefetchSrc: [],
-  scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
-  styleSrc: ["'self'", "'unsafe-inline'"],
+  scriptSrc: [],
+  styleSrc: [],
   workerSrc: [],
 };
 
