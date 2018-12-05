@@ -18,6 +18,7 @@
  */
 
 const autoescape = require('nunjucks-autoescape');
+import {CommonConfig} from '@wireapp/commons';
 import * as express from 'express';
 import * as formidable from 'express-formidable';
 import * as helmet from 'helmet';
@@ -29,6 +30,7 @@ import * as nunjucks from 'nunjucks';
 import * as path from 'path';
 import {ServerConfig} from './config';
 import HealthCheckRoute from './routes/_health/HealthRoute';
+import CommitRoute from './routes/commit/CommitRoute';
 import ConfigRoute from './routes/config/ConfigRoute';
 import {InternalErrorRoute, NotFoundRoute} from './routes/error/ErrorRoutes';
 import Root, {ROUTES} from './routes/Root';
@@ -54,6 +56,7 @@ class Server {
     this.initForceSSL();
     this.initSecurityHeaders();
     this.initStaticRoutes();
+    this.app.use(CommitRoute(this.config));
     this.app.use(Root(this.config));
     this.app.use(HealthCheckRoute());
     this.app.use(ConfigRoute(this.config));
@@ -74,11 +77,11 @@ class Server {
         debug: false,
         detection: {
           caches: false,
-          lookupQuerystring: 'hl',
+          lookupQuerystring: CommonConfig.LANGUAGE_QUERY_PARAMETER,
           order: ['querystring', 'header'],
         },
-        fallbackLng: 'en',
-        preload: ['en', 'de'],
+        fallbackLng: CommonConfig.ACCOUNT_PAGES_DEFAULT_LANGUAGE,
+        preload: CommonConfig.ACCOUNT_PAGES_SUPPORTED_LANGUAGES,
         returnEmptyString: false,
       });
 
