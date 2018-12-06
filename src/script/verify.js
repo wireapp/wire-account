@@ -27,7 +27,7 @@ window.initVerify = function() {
   if (url) {
     $.ajax({
       url: url,
-      xhrFields: {withCredentials: eval($('#url').data('credentials'))},
+      xhrFields: {withCredentials: $('#url').data('credentials') === 'true'},
     })
       .done(function(data, status_text, xhr) {
         window.sendEvent('account.verify-email', 'success', xhr.status, 1);
