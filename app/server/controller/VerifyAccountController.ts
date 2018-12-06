@@ -55,7 +55,6 @@ export class VerifyAccountController {
 
     if (key && code) {
       payload.url = `${this.config.BACKEND_REST}/activate?key=${key}&code=${code}`;
-      payload.status = 'success';
     } else {
       payload.status = req.query.success === '' ? 'success' : 'error';
       payload.redirect = '';
