@@ -6,7 +6,7 @@
     <h1>{{_('reset.title')}}</h1>
     <p>{{_('reset.successDescription')}}</p>
     {% if user_agent().is.mobile %}
-      {{utils.download_btn(_('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
+      {{utils.download_btn(config, _('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
       <p>{{_('open.description')}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}

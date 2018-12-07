@@ -7,7 +7,7 @@
 {% endmacro %}
 
 
-{% macro download_btn(name, user_agent, class, category, code) %}
+{% macro download_btn(config, name, user_agent, class, category, code) %}
   <a class="{{class}}"
       {% if user_agent().is.android %}
         href="{{config.URL.DOWNLOAD_ANDROID_BASE}}{% if code %}&referrer={{code}}{% endif %}"
