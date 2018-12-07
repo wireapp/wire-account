@@ -46,18 +46,18 @@ function readFile(sourcePath: string, fallback?: string): string {
 dotenv.config();
 
 const defaultCSP: HelmetCSP = {
-  connectSrc: [],
+  connectSrc: ["'self'"],
   defaultSrc: ["'self'"],
-  fontSrc: [],
-  frameSrc: [],
-  imgSrc: [],
-  manifestSrc: [],
-  mediaSrc: [],
-  objectSrc: [],
-  prefetchSrc: [],
-  scriptSrc: [],
-  styleSrc: [],
-  workerSrc: [],
+  fontSrc: ["'self'"],
+  frameSrc: ["'self'"],
+  imgSrc: ["'self'"],
+  manifestSrc: ["'self'"],
+  mediaSrc: ["'self'"],
+  objectSrc: ["'self'"],
+  prefetchSrc: ["'self'"],
+  scriptSrc: ["'self'", 'https://wire.innocraft.cloud'],
+  styleSrc: ["'self'"],
+  workerSrc: ["'self'"],
 };
 
 function parseCommaSeparatedList(list: string = ''): string[] {
