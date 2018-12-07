@@ -55,7 +55,7 @@ const defaultCSP: HelmetCSP = {
   mediaSrc: ["'self'"],
   objectSrc: ["'self'"],
   prefetchSrc: ["'self'"],
-  scriptSrc: ["'self'", 'https://wire.innocraft.cloud'],
+  scriptSrc: ["'self'", "'unsafe-inline'", 'https://wire.innocraft.cloud'],
   styleSrc: ["'self'"],
   workerSrc: ["'self'"],
 };
