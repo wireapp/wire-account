@@ -48,7 +48,7 @@
     "errorTitle": "Ein Fehler ist aufgetreten.",
     "error404Description": "Bitte versuche erneut, ein Konto zu erstellen.",
     "error500Description": "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal.",
-    "successEmailTitle": "Benutzerkonto erstellt",
+    "successEmailTitle": "Email verifiziert",
     "successEmailAppDescription": "Installiere die App, um Wire zu benutzen.",
     "successPhoneDescription": "Telefonnummer wird bestätigt"
   },
