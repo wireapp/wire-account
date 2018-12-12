@@ -31,7 +31,7 @@
     "@types/i18next-express-middleware": "0.0.33",
     "@types/i18next-node-fs-backend": "0.0.30",
     "@types/jasmine": "3.3.1",
-    "@types/node": "10.12.11",
+    "@types/node": "10.12.13",
     "@types/nunjucks": "3.1.0",
     "babel-eslint": "10.0.1",
     "coffee-script": "1.12.7",
