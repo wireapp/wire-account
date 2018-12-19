@@ -5237,10 +5237,10 @@ nunjucks-autoescape@1.0.1:
   resolved "https://registry.yarnpkg.com/nunjucks-autoescape/-/nunjucks-autoescape-1.0.1.tgz#fc8f91739b00cd0465acac1fa44dd0fe1a947ef7"
   integrity sha1-/I+Rc5sAzQRlrKwfpE3Q/hqUfvc=
 
-nunjucks@3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.1.4.tgz#d15d7b6c4215d2525f991b948335e16502fa1bfa"
-  integrity sha512-OIbdsl7jAZpw5V6GIa6wJc2AKCC/JSwuVdNKuVpFZ+eB3kYugoGF6OVN/jKNFe52782Uj89n0pT0DiSS1KPbxA==
+nunjucks@3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.1.6.tgz#6e3a3420c77ceae937ae323e9e2995383d6410fb"
+  integrity sha512-aHCt5arZUqHnRNjfDBCq+fI/O3J2sxx+xZdz6mCNvwAgJVCtHM/VAv2++figjGeFyrZ1dVcJ1dCJwMxY8iYoqQ==
   dependencies:
     a-sync-waterfall "^1.0.0"
     asap "^2.0.3"
