@@ -1,4 +1,4 @@
-{
+mdule.exports = {
   "arrowParens": "avoid",
   "bracketSpacing": false,
   "printWidth": 120,
@@ -17,4 +17,4 @@
       }
     }
   ]
-}
+};
