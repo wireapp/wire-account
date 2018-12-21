@@ -183,6 +183,11 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@types/ansi-regex@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/ansi-regex/-/ansi-regex-4.0.0.tgz#cb20bb66da7700ea9b26f16971f03f0e092eddad"
+  integrity sha512-r1W316vjsZXn1/csLC4HcCJs6jIHIzksHJd7xx+Dl+PAb0S2Dh9cR8ZsIMEfGmbBtP7JNWlf2KKahSkDP6rg3g==
+
 "@types/body-parser@*":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
@@ -305,11 +310,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
   integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
-"@types/node@10.12.15":
-  version "10.12.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.15.tgz#20e85651b62fd86656e57c9c9bc771ab1570bc59"
-  integrity sha512-9kROxduaN98QghwwHmxXO2Xz3MaWf+I1sLVAA6KJDF5xix+IyXVhds0MAfdNwtcpSrzhaTsNB0/jnL86fgUhqA==
-
 "@types/nunjucks@3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.0.tgz#fdc2fce6f4d8046f7df88f06f32c9842aabdfa46"
@@ -333,13 +333,18 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@wireapp/commons@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-0.10.4.tgz#8c7bf8d3c773f48b58d9ddf7ed6e79c6eec22419"
-  integrity sha512-i8fgfEF7cMcrTXKqcsDmjdRTRwfUA8EnP3xTpXG+KD+SzQiUh/kDTXLB+RvPwuSUU+tIGMid17QSV3fkeeLIFg==
+"@wireapp/commons@0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-0.11.0.tgz#0dc8dc4118de85cd78bbb7bc0cc0d34d1b014d1c"
+  integrity sha512-nMnc1BUnrLDuNmpKTYlBMUsO0/SC7gx1EMzBH6wNQNkAHzKoW3rZH0eIhBrfRH4vK1Rhsdl75oilvEOx8BIfXg==
   dependencies:
-    "@types/node" "10.12.15"
+    "@types/ansi-regex" "4.0.0"
+    "@types/node" "10.12.18"
     "@types/platform" "1.3.1"
+    ansi-regex "4.0.0"
+    fs-extra "7.0.1"
+    logdown "3.2.7"
+    moment "2.23.0"
     platform "1.3.5"
 
 a-sync-waterfall@^1.0.0:
@@ -530,6 +535,11 @@ ansi-red@^0.1.1:
   integrity sha1-jGOPnRCAgAo1PJwoyKgcpHBdlGw=
   dependencies:
     ansi-wrap "0.1.0"
+
+ansi-regex@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
+  integrity sha512-iB5Dda8t/UqpPI/IjsejXu5jOGDrzn41wJyljwPH65VCIbk6+1BzFIMJGFwTNrYXT1CrD+B4l19U7awiQ8rk7w==
 
 ansi-regex@^2.0.0:
   version "2.1.1"
