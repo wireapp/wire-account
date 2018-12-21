@@ -97,25 +97,27 @@
     "url": "https://github.com/wireapp/wire-account.git"
   },
   "scripts": {
-    "build": "yarn build:server && yarn build:front",
     "build:front": "gulp build",
     "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
-    "translate": "yarn translate:extract && yarn translate:upload && yarn translate:download",
-    "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
-    "translate:download": "node bin/translations_download.js",
-    "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
-    "fix": "yarn fix:other && yarn fix:js",
+    "build": "yarn build:server && yarn build:front",
+    "configure": "node ./bin/configure.js",
     "fix:js": "yarn lint:js --fix",
-    "fix:ts": "yarn lint:ts --fix",
     "fix:other": "yarn prettier --write",
-    "lint": "yarn lint:js && yarn lint:other",
+    "fix:ts": "yarn lint:ts --fix",
+    "fix": "yarn fix:other && yarn fix:js",
     "lint:js": "eslint --ignore-path .gitignore --ignore-path .eslintignore --ext .js .",
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
+    "lint": "yarn lint:js && yarn lint:other",
+    "postinstall": "yarn configure",
     "prettier": "prettier \"**/*.{json,less,md,yml}\"",
-    "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
     "start:prod": "pm2 start \"./index.js\" --name \"Wire Account Management\" && pm2 logs",
+    "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
+    "test:server": "jasmine --config=jasmine.json",
     "test": "yarn build:server && yarn test:server",
-    "test:server": "jasmine --config=jasmine.json"
+    "translate:download": "node bin/translations_download.js",
+    "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
+    "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
+    "translate": "yarn translate:extract && yarn translate:upload && yarn translate:download"
   }
 }

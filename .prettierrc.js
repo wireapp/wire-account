@@ -1,4 +1,4 @@
-mdule.exports = {
+module.exports = {
   "arrowParens": "avoid",
   "bracketSpacing": false,
   "printWidth": 120,
