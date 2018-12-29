@@ -3618,10 +3618,10 @@ husky@1.3.0:
     run-node "^1.0.0"
     slash "^2.0.0"
 
-i18next-express-middleware@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/i18next-express-middleware/-/i18next-express-middleware-1.5.0.tgz#02dd5dbeb3b8e00f7c837ca6724e07257cb9a340"
-  integrity sha512-lWf/BoF8pH3I76Xj3dvoulM/5+wJHsmW/uirT1N2pno/Xyht/5K3utIb9FC3PUTSHZjT8UMwXZWoAj9c10Tbgw==
+i18next-express-middleware@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/i18next-express-middleware/-/i18next-express-middleware-1.6.0.tgz#b33b5833573b391e143d7b24ea51a3ebae0a1d8e"
+  integrity sha512-s4PCDxkPekl01w/FbgiRoun/Xa6uuwLsiLKArQlzRmVQ443u05/STkMgpeZAZ0T9n9ELM6awbZvoNaeE4jUKhA==
   dependencies:
     cookies "0.7.1"
 
