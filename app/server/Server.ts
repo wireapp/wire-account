@@ -152,6 +152,7 @@ class Server {
 
   private initStaticRoutes() {
     this.app.use('/', express.static(path.join(__dirname, 'static')));
+    this.app.use('/favicon.ico', express.static(path.join(__dirname, '/templates/image/favicon.ico')));
   }
 
   private initTemplateEngine() {

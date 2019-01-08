@@ -19,5 +19,4 @@ package-lock.json
 yarn-error.log
 
 # Configuration imported from https://github.com/wireapp/wire-web-config-default/
-templates/svg
-dist/static/favicon.ico
+dist/templates/image

@@ -17,7 +17,7 @@
  *
  */
 
-import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv-extended';
 import * as fs from 'fs-extra';
 import {IHelmetContentSecurityPolicyDirectives as HelmetCSP} from 'helmet';
 import * as logdown from 'logdown';
@@ -43,7 +43,7 @@ function readFile(sourcePath: string, fallback?: string): string {
   }
 }
 
-dotenv.config();
+dotenv.load();
 
 const defaultCSP: HelmetCSP = {
   connectSrc: ["'self'"],
