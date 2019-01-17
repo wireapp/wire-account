@@ -41,7 +41,7 @@ if(process.env.WIRE_CONFIGURATION_EXTERNAL_DIR === undefined) {
     `Loading configuration version "${gitConfigurationVersion}" for project "${pkg.name}" from "${gitConfigurationUrl}" \
      and cleaning config directory "${configDir}"`);
   fs.removeSync(configDir);
-  execSync(`git clone -b ${gitConfigurationVersion} ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
+  execSync(`git clone ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
 } else {
   console.log(`Using external config directory "${configDir}"`);
 }
