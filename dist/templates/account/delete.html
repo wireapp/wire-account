@@ -4,10 +4,10 @@
 {% block content %}
   {% if status == 'success' %}
     <h1>{{_('delete.headline')}}</h1>
-    <p>{{_('delete.confirmation')}}</p>
+    <p>{{_('delete.confirmation', {company: config.COMPANY_NAME})}}</p>
     <p>
       {% autoescape false %}
-        {{_('delete.surveyText', {link: utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('delete.surveyLink'))})}}
+        {{_('delete.surveyText', {company: config.COMPANY_NAME, link: utils.link(config.URL.ACCOUNT_DELETE_SURVEY, _('delete.surveyLink'))})}}
       {% endautoescape %}
     </p>
   {% elif status == 'error' %}
@@ -17,7 +17,7 @@
     <h1>{{title}}</h1>
     <p>
       {{_('delete.greeting')}}<br>
-      {{_('delete.description')}}
+      {{_('delete.description', {company: config.COMPANY_NAME})}}
     </p>
     <form action="{{ROUTES.ROUTE_DELETE}}" method="POST">
       <input name="key" type="hidden" value="{{key}}">
@@ -29,7 +29,7 @@
 
     <p>
       {% autoescape false %}
-        {{_('delete.resetText', {link: utils.link(ROUTES.ROUTE_FORGOT, _('delete.resetLink'), false)})}}
+        {{_('delete.resetText', {link: utils.link(ROUTES.ROUTE_FORGOT, _('delete.resetLink', {company: config.COMPANY_NAME}), false)})}}
       {% endautoescape %}
     </p>
   {% endif %}

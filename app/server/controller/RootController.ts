@@ -64,7 +64,7 @@ export class RootController {
         description: _('index.description'),
         html_class: 'index',
         redirect: payload.redirect,
-        title: `Wire · ${_('index.title')}`,
+        title: `${this.config.COMPANY_NAME} · ${_('index.title')}`,
       };
       return res.render(RootController.TEMPLATE_OPEN_GRAPH, openGraphPayload);
     }
