@@ -17,6 +17,8 @@
  *
  */
 
+/* eslint-disable es5/no-block-scoping */
+
 const del = require('del');
 const fs = require('fs');
 const moment = require('moment');
