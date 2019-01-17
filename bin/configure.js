@@ -27,26 +27,27 @@ const pkg = require('../package');
 
 console.log(`Loading configuration for project "${pkg.name}"`);
 
-const [defaultGitConfigurationUrl, defaultGitConfigurationVersion] = pkg.dependencies['wire-web-config-default'].split(
-  '#'
-);
+const defaultGitConfigurationUrl = 'https://github.com/wireapp/wire-web-config-default';
 const gitConfigurationUrl = process.env.WIRE_CONFIGURATION_REPOSITORY || defaultGitConfigurationUrl;
-const gitConfigurationVersion = process.env.WIRE_CONFIGURATION_REPOSITORY_VERSION || defaultGitConfigurationVersion;
-
-console.log(
-  `Loading configuration version "${gitConfigurationVersion}" for project "${pkg.name}" from "${gitConfigurationUrl}"`
-);
-const configDirName = 'config';
+const configDirName = process.env.WIRE_CONFIGURATION_EXTERNAL_DIR || 'config';
 const configDir = resolve(configDirName);
 const src = resolve(configDir, pkg.name, 'content');
 const root = '.';
 const dest = `../../../dist`;
 const ignoreList = ['.DS_Store'];
 
-
-console.log(`Cleaning config directory "${configDir}"`);
-fs.removeSync(configDir);
-execSync(`git clone --single-branch -b ${gitConfigurationVersion} ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
+if (!process.env.WIRE_CONFIGURATION_EXTERNAL_DIR) {
+  console.log(
+    `Loading configuration version "${gitConfigurationVersion}" for project "${
+      pkg.name
+    }" from "${gitConfigurationUrl}" \
+     and cleaning config directory "${configDir}"`,
+  );
+  fs.removeSync(configDir);
+  execSync(`git clone -b ${gitConfigurationVersion} ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
+} else {
+  console.log(`Using external config directory "${configDir}"`);
+}
 
 // Copy .env file configuration
 console.log('env', resolve(configDir, pkg.name, '.env'), resolve(root, '.env'));
@@ -71,3 +72,6 @@ files.forEach(([dir, file]) => {
   fs.mkdirpSync(resolve(dir));
   fs.copySync(source, destination);
 });
+
+console.log(`Cleaning config directory "${configDir}"`);
+fs.removeSync(configDir);
