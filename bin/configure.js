@@ -33,7 +33,7 @@ const configDirName = process.env.WIRE_CONFIGURATION_EXTERNAL_DIR || 'config';
 const configDir = resolve(configDirName);
 const src = resolve(configDir, pkg.name, 'content');
 const root = '.';
-const dest = `../../../dist/templates`;
+const dest = `../../../dist`;
 const ignoreList = ['.DS_Store'];
 
 if(process.env.WIRE_CONFIGURATION_EXTERNAL_DIR === undefined) {
