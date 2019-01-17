@@ -38,16 +38,10 @@ const timestamp = function() {
   return moment(new Date()).format('YYYY-MM-DD-hh-mm-ss');
 };
 
-//##############################################################################
-// Init
-//##############################################################################
 gulp.task('init', 'Initial Tasks.', $.sequence('clean', 'ext:dev', 'script:dev', 'style:dev'));
 
 gulp.task('default', 'Watch for changes and reload browser automatically.', $.sequence('init', ['watch', 'reload']));
 
-//##############################################################################
-// Style
-//##############################################################################
 gulp.task('style', false, function() {
   return gulp
     .src(config.style)
@@ -74,9 +68,6 @@ gulp.task('style:dev', false, function() {
     .pipe(gulp.dest('dist/static/style'));
 });
 
-//##############################################################################
-// Script
-//##############################################################################
 gulp.task('ext', false, function() {
   return gulp
     .src(config.ext)
@@ -117,9 +108,6 @@ gulp.task('script:dev', false, function() {
     .pipe(gulp.dest('dist/static/script'));
 });
 
-//##############################################################################
-// Watch
-//##############################################################################
 gulp.task('reload', false, function() {
   $.livereload.listen(35729);
   return gulp.watch(['dist/static/**/*.{css,js}', 'dist/templates/**/*.{html}']).on('change', $.livereload.changed);
@@ -131,18 +119,11 @@ gulp.task('watch', false, function() {
   return gulp.watch(config.script, ['script:dev']);
 });
 
-//##############################################################################
-// Clean
-//##############################################################################
-
 gulp.task('clean', false, function() {
   del('dist/static/script/');
   return del('dist/static/style/');
 });
 
-//##############################################################################
-// Deploy
-//##############################################################################
 gulp.task('version', false, function() {
   return fs.writeFileSync('dist/version', timestamp());
 });
