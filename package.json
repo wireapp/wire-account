@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@wireapp/commons": "0.10.4",
+    "@wireapp/commons": "1.0.2",
     "axios": "0.18.0",
     "dotenv": "6.2.0",
     "dotenv-extended": "2.3.0",
@@ -19,7 +19,8 @@
     "normalize.css": "8.0.1",
     "nunjucks": "3.1.6",
     "nunjucks-autoescape": "1.0.1",
-    "pm2": "3.2.4"
+    "pm2": "3.2.4",
+    "wire-web-config-default": "https://github.com/wireapp/wire-web-config-default#v0.6.1"
   },
   "devDependencies": {
     "@types/dotenv": "6.1.0",
@@ -116,9 +117,7 @@
     "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
     "test:server": "jasmine --config=jasmine.json",
     "test": "yarn build:server && yarn test:server",
-    "translate:download": "node bin/translations_download.js",
     "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
-    "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
-    "translate": "yarn translate:extract && yarn translate:upload && yarn translate:download"
+    "translate:upload": "yarn translate:extract && node bin/translations_upload.js"
   }
 }
