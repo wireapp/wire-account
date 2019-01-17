@@ -82,7 +82,7 @@ class Server {
         },
         fallbackLng: {
           de: ['de-DE'],
-          default: ['en-US'], //[CommonConfig.ACCOUNT_PAGES_DEFAULT_LANGUAGE],
+          default: [CommonConfig.ACCOUNT_PAGES_DEFAULT_LANGUAGE],
           fr: ['fr-FR'],
         },
         preload: CommonConfig.ACCOUNT_PAGES_SUPPORTED_LANGUAGES,
