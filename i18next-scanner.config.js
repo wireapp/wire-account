@@ -20,7 +20,7 @@
 module.exports = {
   options: {
     debug: true,
-    defaultLng: 'en',
+    defaultLng: 'en-US',
     defaultNs: 'translation',
     func: {
       extensions: ['.js', '.html'],
@@ -30,13 +30,13 @@ module.exports = {
       prefix: '{{',
       suffix: '}}',
     },
-    lngs: ['en', 'de'],
+    lngs: ['en-US'],
     nsSeparator: false,
     resource: {
       jsonIndent: 2,
       lineEnding: '\n',
-      loadPath: 'dist/locales/{{lng}}.json',
-      savePath: 'dist/locales/{{lng}}.json',
+      loadPath: 'dist/translation/{{lng}}.json',
+      savePath: 'dist/translation/{{lng}}.json',
     },
   },
 };

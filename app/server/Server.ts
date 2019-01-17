@@ -72,7 +72,7 @@ class Server {
       .init({
         backend: {
           jsonIndent: 2,
-          loadPath: path.resolve(__dirname, 'locales/{{lng}}.json'),
+          loadPath: path.resolve(__dirname, 'translation/{{lng}}.json'),
         },
         debug: false,
         detection: {
@@ -80,7 +80,11 @@ class Server {
           lookupQuerystring: CommonConfig.LANGUAGE_QUERY_PARAMETER,
           order: ['querystring', 'header'],
         },
-        fallbackLng: CommonConfig.ACCOUNT_PAGES_DEFAULT_LANGUAGE,
+        fallbackLng: {
+          de: ['de-DE'],
+          default: ['en-US'], //[CommonConfig.ACCOUNT_PAGES_DEFAULT_LANGUAGE],
+          fr: ['fr-FR'],
+        },
         preload: CommonConfig.ACCOUNT_PAGES_SUPPORTED_LANGUAGES,
         returnEmptyString: false,
       });

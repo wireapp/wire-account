@@ -116,9 +116,7 @@
     "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
     "test:server": "jasmine --config=jasmine.json",
     "test": "yarn build:server && yarn test:server",
-    "translate:download": "node bin/translations_download.js",
     "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
-    "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
-    "translate": "yarn translate:extract && yarn translate:upload && yarn translate:download"
+    "translate:upload": "yarn translate:extract && node bin/translations_upload.js"
   }
 }

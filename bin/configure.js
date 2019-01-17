@@ -33,12 +33,12 @@ const configDirName = 'config';
 const configDir = resolve(configDirName);
 const src = resolve(configDir, pkg.name, 'content');
 const root = '.';
-const dest = `../../../dist/templates`;
+const dest = `../../../dist`;
 const ignoreList = ['.DS_Store'];
 
 console.log(`Cleaning config directory "${configDir}"`);
 fs.removeSync(configDir);
-execSync(`git clone ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
+execSync(`git clone --single-branch --branch wire-account-translation ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
 
 // Copy .env file configuration
 console.log('env', resolve(configDir, pkg.name, '.env'), resolve(root, '.env'));

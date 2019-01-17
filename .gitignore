@@ -9,7 +9,6 @@ dist/static/script/**/*
 dist/static/style/**/*
 !dist/static
 !dist/templates
-!dist/locales
 !dist/.ebextensions
 keys
 node_modules
@@ -20,3 +19,4 @@ yarn-error.log
 
 # Configuration imported from https://github.com/wireapp/wire-web-config-default/
 dist/templates/image
+dist/translation
