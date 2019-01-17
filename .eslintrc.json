@@ -20,7 +20,6 @@
     "dot-notation": 2,
     "es5/no-arrow-functions": 2,
     "es5/no-binary-and-octal-literals": 2,
-    "es5/no-block-scoping": 2,
     "es5/no-classes": 2,
     "es5/no-es6-static-methods": 2,
     "es5/no-exponentiation-operator": 2,
