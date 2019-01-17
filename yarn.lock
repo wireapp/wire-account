@@ -183,6 +183,11 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@types/ansi-regex@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/ansi-regex/-/ansi-regex-4.0.0.tgz#cb20bb66da7700ea9b26f16971f03f0e092eddad"
+  integrity sha512-r1W316vjsZXn1/csLC4HcCJs6jIHIzksHJd7xx+Dl+PAb0S2Dh9cR8ZsIMEfGmbBtP7JNWlf2KKahSkDP6rg3g==
+
 "@types/body-parser@*":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
@@ -312,11 +317,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
   integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
-"@types/node@10.12.15":
-  version "10.12.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.15.tgz#20e85651b62fd86656e57c9c9bc771ab1570bc59"
-  integrity sha512-9kROxduaN98QghwwHmxXO2Xz3MaWf+I1sLVAA6KJDF5xix+IyXVhds0MAfdNwtcpSrzhaTsNB0/jnL86fgUhqA==
-
 "@types/nunjucks@3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.0.tgz#fdc2fce6f4d8046f7df88f06f32c9842aabdfa46"
@@ -340,13 +340,18 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@wireapp/commons@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-0.10.4.tgz#8c7bf8d3c773f48b58d9ddf7ed6e79c6eec22419"
-  integrity sha512-i8fgfEF7cMcrTXKqcsDmjdRTRwfUA8EnP3xTpXG+KD+SzQiUh/kDTXLB+RvPwuSUU+tIGMid17QSV3fkeeLIFg==
+"@wireapp/commons@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.0.2.tgz#7d3a7f8b1b012551055c14edc6f04c42b801995c"
+  integrity sha512-lPBFo9MOLnQRIMIdn0trApLCCbEWQXWSIYDMiXiWIS1HRjTsB38o6qU2D105NslKgzZbwJSnPuoWFdu3e4tr5A==
   dependencies:
-    "@types/node" "10.12.15"
+    "@types/ansi-regex" "4.0.0"
+    "@types/node" "10.12.18"
     "@types/platform" "1.3.1"
+    ansi-regex "4.0.0"
+    fs-extra "7.0.1"
+    logdown "3.2.7"
+    moment "2.23.0"
     platform "1.3.5"
 
 a-sync-waterfall@^1.0.0:
@@ -455,6 +460,11 @@ acorn@^6.0.2, acorn@^6.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.0.4.tgz#77377e7353b72ec5104550aa2d2097a2fd40b754"
   integrity sha512-VY4i5EKSKkofY2I+6QLTbTTN/UvEQPCo6eiwzzSaSWfpaDhOmStMCMod6wmuPciNq+XS0faCglFu2lHZpdHUtg==
 
+adm-zip@0.4.13:
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.13.tgz#597e2f8cc3672151e1307d3e95cddbc75672314a"
+  integrity sha512-fERNJX8sOXfel6qCBCMPvZLzENBEhZTzKqg6vrOW5pvoEaQuJhRU4ndTAh6lHOxn1I6jnz2NHra56ZODM751uw==
+
 agent-base@4, agent-base@^4.1.0, agent-base@^4.2.0, agent-base@~4.2.0:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
@@ -537,6 +547,11 @@ ansi-red@^0.1.1:
   integrity sha1-jGOPnRCAgAo1PJwoyKgcpHBdlGw=
   dependencies:
     ansi-wrap "0.1.0"
+
+ansi-regex@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
+  integrity sha512-iB5Dda8t/UqpPI/IjsejXu5jOGDrzn41wJyljwPH65VCIbk6+1BzFIMJGFwTNrYXT1CrD+B4l19U7awiQ8rk7w==
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -7880,6 +7895,12 @@ window-size@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
   integrity sha1-+OGqHuWlPsW/FR/6CXQqatdpeHY=
+
+"wire-web-config-default@https://github.com/wireapp/wire-web-config-default#wire-account-company-var-translations":
+  version "0.6.1"
+  resolved "https://github.com/wireapp/wire-web-config-default#25a62e94ba5c252ddce968e65953be6286ef4a21"
+  dependencies:
+    adm-zip "0.4.13"
 
 wordwrap@0.0.2:
   version "0.0.2"

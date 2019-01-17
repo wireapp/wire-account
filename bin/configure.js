@@ -27,18 +27,26 @@ const pkg = require('../package');
 
 console.log(`Loading configuration for project "${pkg.name}"`);
 
-const defaultGitConfigurationUrl = 'https://github.com/wireapp/wire-web-config-default';
+const [defaultGitConfigurationUrl, defaultGitConfigurationVersion] = pkg.dependencies['wire-web-config-default'].split(
+  '#'
+);
 const gitConfigurationUrl = process.env.WIRE_CONFIGURATION_REPOSITORY || defaultGitConfigurationUrl;
+const gitConfigurationVersion = process.env.WIRE_CONFIGURATION_REPOSITORY_VERSION || defaultGitConfigurationVersion;
+
+console.log(
+  `Loading configuration version "${gitConfigurationVersion}" for project "${pkg.name}" from "${gitConfigurationUrl}"`
+);
 const configDirName = 'config';
 const configDir = resolve(configDirName);
 const src = resolve(configDir, pkg.name, 'content');
 const root = '.';
-const dest = `../../../dist/templates`;
+const dest = `../../../dist`;
 const ignoreList = ['.DS_Store'];
+
 
 console.log(`Cleaning config directory "${configDir}"`);
 fs.removeSync(configDir);
-execSync(`git clone ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
+execSync(`git clone --single-branch -b ${gitConfigurationVersion} ${gitConfigurationUrl} ${configDirName}`, {stdio: [0, 1]});
 
 // Copy .env file configuration
 console.log('env', resolve(configDir, pkg.name, '.env'), resolve(root, '.env'));

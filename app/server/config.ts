@@ -91,6 +91,7 @@ function mergedCSP(): HelmetCSP {
 export interface ServerConfig {
   APP_BASE: string;
   APP_NAME: string;
+  COMPANY_NAME: string;
   BACKEND_REST: string;
   CACHE_DURATION_SECONDS: number;
   COMMIT: string;
@@ -134,6 +135,7 @@ const config: ServerConfig = {
   BACKEND_REST: process.env.BACKEND_REST,
   CACHE_DURATION_SECONDS: 300,
   COMMIT: readFile(COMMIT_FILE, ''),
+  COMPANY_NAME: process.env.COMPANY_NAME,
   CSP: mergedCSP(),
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {
