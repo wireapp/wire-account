@@ -6,17 +6,17 @@
     <h1>{{_('reset.title')}}</h1>
     <p>{{_('reset.successDescription')}}</p>
     {% if user_agent().is.mobile %}
-      {{utils.download_btn(config, _('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
+      {{utils.download_btn(config, _('open.downloadButton', {company: config.COMPANY_NAME}), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
-      <p>{{_('open.description')}}</p>
+      <p>{{_('open.description', {company: config.COMPANY_NAME})}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('open.downloadButton')}}</a>
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('open.downloadButton', {company: config.COMPANY_NAME})}}</a>
         {% elif  user_agent().is.osx %}
           <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('open.openMac')}}</a>
         {% endif %}
       <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWeb')}}</a>
     {% else %}
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWire')}}</a>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWire', {company: config.COMPANY_NAME})}}</a>
     {% endif %}
   {% elif status == 'error' %}
     <h1>{{_('reset.errorTitle')}}</h1>

@@ -2,8 +2,8 @@
 
 {% block content %}
   <h1>{{_('verify.successPhoneDescription')}}</h1>
-  <p>{{_('open.description')}}</p>
-  <a class="wbtn" href="{{url}}">{{_('open.openWire')}}</a>
+  <p>{{_('open.description', {company: config.COMPANY_NAME})}}</p>
+  <a class="wbtn" href="{{url}}">{{_('open.openWire', {company: config.COMPANY_NAME})}}</a>
 {% endblock %}
 
 
