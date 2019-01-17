@@ -83,7 +83,23 @@ gulp.task(
   }),
 );
 
-gulp.task('default', $.sequence('init', ['watch', 'reload']));
+gulp.task('watch', function() {
+  gulp.watch('src/style/**/*.less', gulp.series('style:dev'));
+  gulp.watch(config.ext, gulp.series('ext:dev'));
+  gulp.watch(config.script, gulp.series('script:dev'));
+});
+
+gulp.task('reload', function() {
+  $.livereload.listen(35729);
+  return gulp.watch(['dist/static/**/*.{css,js}', 'dist/templates/**/*.{html}']).on('change', $.livereload.changed);
+});
+
+gulp.task(
+  'default',
+  gulp.series('init', gulp.parallel('watch', 'reload'), function(done) {
+    done();
+  }),
+);
 
 gulp.task('style', function() {
   return gulp
@@ -120,19 +136,9 @@ gulp.task('script', function() {
     .pipe(gulp.dest('dist/static/script'));
 });
 
-gulp.task('reload', function() {
-  $.livereload.listen(35729);
-  return gulp.watch(['dist/static/**/*.{css,js}', 'dist/templates/**/*.{html}']).on('change', $.livereload.changed);
-});
-
-gulp.task('watch', function() {
-  gulp.watch('src/style/**/*.less', ['style:dev']);
-  gulp.watch(config.ext, ['ext:dev']);
-  return gulp.watch(config.script, ['script:dev']);
-});
-
-gulp.task('version', function() {
-  return fs.writeFileSync('dist/version', timestamp());
+gulp.task('version', function(done) {
+  fs.writeFileSync('dist/version', timestamp());
+  done();
 });
 
 gulp.task('zip', function() {
@@ -142,6 +148,6 @@ gulp.task('zip', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', $.sequence('clean', 'ext', 'script', 'style', 'version', 'zip'));
+gulp.task('build', gulp.series('clean', 'ext', 'script', 'style', 'version', 'zip'));
 
-gulp.task('dist', $.sequence('clean', 'build'));
+gulp.task('dist', gulp.series('clean', 'build'));
