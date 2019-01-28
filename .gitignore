@@ -1,15 +1,15 @@
-.DS_Store
-.Icon
 *.mo
 *.pyc
 *.pyo
+.DS_Store
+.Icon
+/.idea
 app/version
 dist/*
 dist/static/script/**/*
 dist/static/style/**/*
 !dist/static
 !dist/templates
-!dist/locales
 !dist/.ebextensions
 keys
 node_modules
@@ -17,3 +17,8 @@ temp
 npm-debug.log
 package-lock.json
 yarn-error.log
+
+# Configuration imported from https://github.com/wireapp/wire-web-config-default/
+/config
+dist/templates/image
+dist/translation

@@ -18,19 +18,19 @@
   <div class="200 204 success hide">
     <h1>{{_('verify.successEmailTitle')}}</h1>
     {% if user_agent().is.mobile %}
-      <p>{{_('verify.successEmailAppDescription')}}</p>
-      {{utils.download_btn(_('open.downloadButton'), user_agent, 'wbtn green', 'verify')}}
+      <p>{{_('verify.successEmailAppDescription', {company: config.COMPANY_NAME})}}</p>
+      {{utils.download_btn(config, _('open.downloadButton', {company: config.COMPANY_NAME}), user_agent, 'wbtn green', 'verify')}}
     {% elif user_agent().is.desktop %}
-      <p>{{_('open.description')}}</p>
+      <p>{{_('open.description', {company: config.COMPANY_NAME})}}</p>
         {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download/">{{_('open.downloadButton')}}</a>
+          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download/">{{_('open.downloadButton', {company: config.COMPANY_NAME})}}</a>
         {% elif  user_agent().is.osx %}
           <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('open.openMac')}}</a>
         {% endif %}
       <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('open.openWeb')}}</a>
     {% else %}
-      <p>{{_('open.description')}}</p>
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('open.openWire')}}</a>
+      <p>{{_('open.description', {company: config.COMPANY_NAME})}}</p>
+      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/?immediate_login#login">{{_('open.openWire', {company: config.COMPANY_NAME})}}</a>
     {% endif %}
   </div>
 

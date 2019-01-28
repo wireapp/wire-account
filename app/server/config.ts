@@ -17,7 +17,7 @@
  *
  */
 
-import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv-extended';
 import * as fs from 'fs-extra';
 import {IHelmetContentSecurityPolicyDirectives as HelmetCSP} from 'helmet';
 import * as logdown from 'logdown';
@@ -43,21 +43,21 @@ function readFile(sourcePath: string, fallback?: string): string {
   }
 }
 
-dotenv.config();
+dotenv.load();
 
 const defaultCSP: HelmetCSP = {
-  connectSrc: [],
+  connectSrc: ["'self'"],
   defaultSrc: ["'self'"],
-  fontSrc: [],
-  frameSrc: [],
-  imgSrc: [],
-  manifestSrc: [],
-  mediaSrc: [],
-  objectSrc: [],
-  prefetchSrc: [],
-  scriptSrc: [],
-  styleSrc: [],
-  workerSrc: [],
+  fontSrc: ["'self'"],
+  frameSrc: ["'self'"],
+  imgSrc: ["'self'"],
+  manifestSrc: ["'self'"],
+  mediaSrc: ["'self'"],
+  objectSrc: ["'self'"],
+  prefetchSrc: ["'self'"],
+  scriptSrc: ["'self'", "'unsafe-inline'", 'https://wire.innocraft.cloud'],
+  styleSrc: ["'self'"],
+  workerSrc: ["'self'"],
 };
 
 function parseCommaSeparatedList(list: string = ''): string[] {
@@ -91,6 +91,7 @@ function mergedCSP(): HelmetCSP {
 export interface ServerConfig {
   APP_BASE: string;
   APP_NAME: string;
+  COMPANY_NAME: string;
   BACKEND_REST: string;
   CACHE_DURATION_SECONDS: number;
   COMMIT: string;
@@ -134,6 +135,7 @@ const config: ServerConfig = {
   BACKEND_REST: process.env.BACKEND_REST,
   CACHE_DURATION_SECONDS: 300,
   COMMIT: readFile(COMMIT_FILE, ''),
+  COMPANY_NAME: process.env.COMPANY_NAME,
   CSP: mergedCSP(),
   ENVIRONMENT: nodeEnvironment,
   FEATURE: {

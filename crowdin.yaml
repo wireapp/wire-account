@@ -1,8 +1,8 @@
-project_identifier: wirecom
+project_identifier: wire-account
 base_path: .
 
 files:
   -
-    source: '/dist/locales/en.json'
-    translation: '/dist/locales/%two_letters_code%.json'
+    source: '/dist/translation/en-US.json'
+    translation: '%locale%.json'
     update_option: 'update_as_unapproved'
