@@ -118,6 +118,7 @@ export interface ServerConfig {
     OPEN_GRAPH_IMAGE: string;
     REDIRECT_PHONE_BASE: string;
     REDIRECT_RESET_BASE: string;
+    REDIRECT_START_SSO_BASE: string;
     REDIRECT_VERIFY_BASE: string;
     SUPPORT_BASE: string;
     TEAMS_BASE: string;
@@ -159,6 +160,7 @@ const config: ServerConfig = {
     OPEN_GRAPH_IMAGE: process.env.URL_OPEN_GRAPH_IMAGE,
     REDIRECT_PHONE_BASE: process.env.URL_REDIRECT_PHONE_BASE,
     REDIRECT_RESET_BASE: process.env.URL_REDIRECT_RESET_BASE,
+    REDIRECT_START_SSO_BASE: process.env.URL_REDIRECT_START_SSO_BASE,
     REDIRECT_VERIFY_BASE: process.env.URL_REDIRECT_VERIFY_BASE,
     SUPPORT_BASE: process.env.URL_SUPPORT_BASE,
     TEAMS_BASE: process.env.URL_TEAMS_BASE,

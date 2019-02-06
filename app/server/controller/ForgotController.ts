@@ -17,8 +17,9 @@
  *
  */
 
-import {Request, Response} from 'express';
+import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
+import {ROUTES} from '../routes/Root';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
@@ -29,6 +30,10 @@ export class ForgotController {
   private static readonly HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
   private trackingController: TrackingController;
+
+  public get ROUTES(): Router[] {
+    return [Router().get(ROUTES.ROUTE_FORGOT, this.handleGet), Router().post(ROUTES.ROUTE_FORGOT, this.handlePost)];
+  }
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);

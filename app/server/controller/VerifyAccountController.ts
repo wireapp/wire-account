@@ -17,8 +17,9 @@
  *
  */
 
-import {Request, Response} from 'express';
+import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
+import {ROUTES} from '../routes/Root';
 import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
@@ -32,6 +33,14 @@ export class VerifyAccountController {
 
   constructor(private readonly config: ServerConfig, client: Client) {
     this.trackingController = new TrackingController(config, client);
+  }
+
+  public get ROUTES(): Router[] {
+    return [
+      Router().get(ROUTES.ROUTE_VERIFY_EMAIL, this.handleEmailGet),
+      Router().get(ROUTES.ROUTE_VERIFY_BOT, this.handleBotGet),
+      Router().get(ROUTES.ROUTE_VERIFY_PHONE, this.handlePhoneGet),
+    ];
   }
 
   public readonly handleEmailGet = async (req: Request, res: Response) => {
