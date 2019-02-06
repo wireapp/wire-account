@@ -17,8 +17,9 @@
  *
  */
 
-import {Request, Response} from 'express';
+import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
+import {ROUTES} from '../routes/Root';
 import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
@@ -30,6 +31,10 @@ export class ResetController {
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);
+  }
+
+  public get ROUTES(): Router[] {
+    return [Router().get(ROUTES.ROUTE_RESET, this.handleGet), Router().post(ROUTES.ROUTE_RESET, this.handlePost)];
   }
 
   private readonly postPasswordReset = async (key: string, code: string, password: string) => {
