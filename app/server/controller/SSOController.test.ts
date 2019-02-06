@@ -1,8 +1,8 @@
-import {Response} from 'express';
+import {Request, Response} from 'express';
 import {ServerConfig} from '../config';
 import {SSOController} from './SSOController';
 
-fdescribe('SSOController', () => {
+describe('SSOController', () => {
   describe('handleGet', () => {
     it('redirects to a custom SSO protocol', done => {
       const config = {
@@ -27,7 +27,7 @@ fdescribe('SSOController', () => {
       };
 
       const controller = new SSOController(config as ServerConfig);
-      controller.handleGet(request as any, response as Response);
+      controller.handleGet(request as Request, response as Response);
     });
   });
 });
