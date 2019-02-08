@@ -18,13 +18,13 @@
  */
 
 const autoescape = require('nunjucks-autoescape');
+const i18nextMiddleware = require('i18next-express-middleware');
+const i18next = require('i18next');
 import {CommonConfig} from '@wireapp/commons';
 import * as express from 'express';
 import * as formidable from 'express-formidable';
 import * as helmet from 'helmet';
 import * as http from 'http';
-import * as i18next from 'i18next';
-import * as i18nextMiddleware from 'i18next-express-middleware';
 import * as i18nextLoadLocales from 'i18next-node-fs-backend';
 import * as nunjucks from 'nunjucks';
 import * as path from 'path';

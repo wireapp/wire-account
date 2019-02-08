@@ -285,14 +285,6 @@
   dependencies:
     "@types/express" "*"
 
-"@types/i18next-express-middleware@0.0.33":
-  version "0.0.33"
-  resolved "https://registry.yarnpkg.com/@types/i18next-express-middleware/-/i18next-express-middleware-0.0.33.tgz#1c5625f123eaae126de3b43626ef9a04bc6ad482"
-  integrity sha512-lXuok/3HcT81FipU00+5W1cRjSpl5y0ImQKV2wxCaRkLfANMBi+T7idOVdhZutsX0OlnR2YxLM1I/NuTvYetoQ==
-  dependencies:
-    "@types/express" "*"
-    "@types/i18next" "*"
-
 "@types/i18next-node-fs-backend@0.0.30":
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/i18next-node-fs-backend/-/i18next-node-fs-backend-0.0.30.tgz#7454f8e923798a2ebf16309befcfdfde32e90a7c"
@@ -300,7 +292,7 @@
   dependencies:
     "@types/i18next" "^2"
 
-"@types/i18next@*", "@types/i18next@12.1.0":
+"@types/i18next@12.1.0":
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/@types/i18next/-/i18next-12.1.0.tgz#7c3fd3dbe03f9531147033773bbd0ca4f474a180"
   integrity sha512-qLyqTkp3ZKHsSoX8CNVYcTyTkxlm0aRCUpaUVetgkSlSpiNCdWryOgaYwgbO04tJIfLgBXPcy0tJ3Nl/RagllA==
@@ -3665,10 +3657,10 @@ husky@1.3.1:
     run-node "^1.0.0"
     slash "^2.0.0"
 
-i18next-express-middleware@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/i18next-express-middleware/-/i18next-express-middleware-1.5.0.tgz#02dd5dbeb3b8e00f7c837ca6724e07257cb9a340"
-  integrity sha512-lWf/BoF8pH3I76Xj3dvoulM/5+wJHsmW/uirT1N2pno/Xyht/5K3utIb9FC3PUTSHZjT8UMwXZWoAj9c10Tbgw==
+i18next-express-middleware@1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/i18next-express-middleware/-/i18next-express-middleware-1.7.1.tgz#00436776113ff2e87d3befa81a9aa8a359af1193"
+  integrity sha512-e8JhShjL2sVkWFrO0ySVsmM9Ge7sQ8iDsNXSmpAD/2Fvg/P4uo7Kqm0R+yWWsRYCr+uu8tWsSDiEbmbjrnsyVg==
   dependencies:
     cookies "0.7.1"
 
@@ -3705,10 +3697,10 @@ i18next-scanner@2.9.1:
     vinyl "^2.2.0"
     vinyl-fs "^3.0.1"
 
-i18next@12.1.0:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-12.1.0.tgz#387bf4b94d05b0160b6a41d001a6b360e384bdb1"
-  integrity sha512-AexmwGkKxwKfo5fGeXTWEY4xqzRPigQ1S/0InOUUVziGO54cd4fKyYK8ED1Thx9fd+WA3fRSZ+1iekvFQMbsFw==
+i18next@14.1.1:
+  version "14.1.1"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-14.1.1.tgz#d569aff68c088151f09fcb0cb6f44b36d62731d3"
+  integrity sha512-HItn9RHLyrDqe6pw6qXMYHGPHNc3y1FZndJfBlD6k4sRS0FAlYLvqCDVIWFc1XultBgsv348TtvL/lleG6JgBg==
 
 i18next@^11.10.1:
   version "11.10.2"
@@ -7886,7 +7878,6 @@ window-size@^0.1.4:
 
 "wire-web-config-default@https://github.com/wireapp/wire-web-config-default#v0.10.0":
   version "0.10.0"
-  uid b6d493154e6065bfbcb808b545d242631d924e09
   resolved "https://github.com/wireapp/wire-web-config-default#b6d493154e6065bfbcb808b545d242631d924e09"
   dependencies:
     adm-zip "0.4.13"
