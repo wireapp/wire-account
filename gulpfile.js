@@ -143,7 +143,7 @@ gulp.task('version', function(done) {
 
 gulp.task('zip', function() {
   return gulp
-    .src(['package.json', 'dist/**/*', '!dist/*.zip'], {dot: true, nodir: true})
+    .src(['package.json', '.env.defaults', 'dist/**/*', '!dist/*.zip'], {dot: true, nodir: true})
     .pipe($.zip('wire-account.zip'))
     .pipe(gulp.dest('dist'));
 });
