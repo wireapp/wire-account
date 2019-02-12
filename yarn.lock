@@ -319,10 +319,10 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
   integrity sha512-A2TAGbTFdBw9azHbpVd+/FkdW2T6msN1uct1O9bH3vTerEHKZhTXJUQXy+hNq1B0RagfU8U+KBdqiZpxjhOUQA==
 
-"@types/node@*", "@types/node@11.9.0":
-  version "11.9.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.0.tgz#35fea17653490dab82e1d5e69731abfdbf13160d"
-  integrity sha512-ry4DOrC+xenhQbzk1iIPzCZGhhPGEFv7ia7Iu6XXSLVluiJIe9FfG7Iu3mObH9mpxEXCWLCMU4JWbCCR9Oy1Zg==
+"@types/node@*", "@types/node@11.9.1":
+  version "11.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.1.tgz#38fd4be2e0f1b1b94e713599afc43f4b2343c61e"
+  integrity sha512-XJHvu7fvycZ7ORTyThXiKCtld+R4Y1GGerYRrVSf/GhaNahRBIf/Nx+7Xh3AvI5nudOVt/L671CxHGkJt1/+hQ==
 
 "@types/node@10.12.19":
   version "10.12.19"
@@ -7890,9 +7890,10 @@ window-size@^0.1.4:
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
   integrity sha1-+OGqHuWlPsW/FR/6CXQqatdpeHY=
 
-"wire-web-config-default-master@https://github.com/wireapp/wire-web-config-wire#v0.11.0":
-  version "0.11.0"
-  resolved "https://github.com/wireapp/wire-web-config-wire#c3b7aef34425d4a471ba70a3c43e2b739eb3249f"
+"wire-web-config-default-master@https://github.com/wireapp/wire-web-config-wire#v0.12.1-0":
+  version "0.12.1-0"
+  uid f6a33d805e58ad0db16f74e223dd39a64c859dd4
+  resolved "https://github.com/wireapp/wire-web-config-wire#f6a33d805e58ad0db16f74e223dd39a64c859dd4"
   dependencies:
     adm-zip "0.4.13"
 
