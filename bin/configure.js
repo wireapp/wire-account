@@ -18,7 +18,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-/* eslint-disable no-console */
+/* eslint-disable */
 
 const fs = require('fs-extra');
 const {execSync} = require('child_process');
@@ -27,7 +27,11 @@ const pkg = require('../package');
 
 console.log(`Loading configuration for project "${pkg.name}"`);
 
-const [defaultGitConfigurationUrl, defaultGitConfigurationVersion] = pkg.dependencies['wire-web-config-default'].split(
+const currentBranch = execSync(`git rev-parse --abbrev-ref HEAD`)
+  .toString()
+  .trim();
+const configurationEntry = `wire-web-config-default-${currentBranch === 'master' ? 'master' : 'staging'}`;
+const [defaultGitConfigurationUrl, defaultGitConfigurationVersion] = pkg.dependencies[configurationEntry].split(
   '#'
 );
 const gitConfigurationUrl = process.env.WIRE_CONFIGURATION_REPOSITORY || defaultGitConfigurationUrl;
@@ -52,9 +56,12 @@ if (!process.env.WIRE_CONFIGURATION_EXTERNAL_DIR) {
   console.log(`Using external config directory "${configDir}"`);
 }
 
-// Copy .env file configuration
-console.log('env', resolve(configDir, pkg.name, '.env'), resolve(root, '.env'));
-fs.copySync(resolve(configDir, pkg.name, '.env'), resolve(root, '.env'));
+// Copy .env.defaults file configuration
+const filename = '.env.defaults';
+const dotEnvSource = resolve(configDir, pkg.name, filename);
+const dotEnvDestination = resolve(root, filename);
+console.log(`Copy file "${dotEnvSource}" -> "${dotEnvDestination}"`);
+fs.copySync(dotEnvSource, dotEnvDestination);
 
 process.chdir(src);
 
