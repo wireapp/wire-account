@@ -17,8 +17,9 @@
  *
  */
 
-import {Request, Response} from 'express';
+import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
+import {ROUTES} from '../routes/Root';
 import * as BrowserUtil from '../util/BrowserUtil';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
@@ -31,6 +32,10 @@ export class RootController {
 
   constructor(private readonly config: ServerConfig, client: Client) {
     this.trackingController = new TrackingController(config, client);
+  }
+
+  public get ROUTES(): Router[] {
+    return [Router().get(ROUTES.ROUTE_INDEX, this.handleGet)];
   }
 
   public readonly handleGet = async (req: Request, res: Response) => {

@@ -17,13 +17,13 @@
  *
  */
 
-import {Router} from 'express';
 import {ServerConfig} from '../config';
 import {Client} from '../controller/Client';
 import {DeleteAccountController} from '../controller/DeleteAccountController';
 import {ForgotController} from '../controller/ForgotController';
 import {ResetController} from '../controller/ResetController';
 import {RootController} from '../controller/RootController';
+import {SSOController} from '../controller/SSOController';
 import {VerifyAccountController} from '../controller/VerifyAccountController';
 
 export const ROUTES = {
@@ -31,6 +31,7 @@ export const ROUTES = {
   ROUTE_FORGOT: '/forgot',
   ROUTE_INDEX: '/',
   ROUTE_RESET: '/reset',
+  ROUTE_SSO_START: '/start-sso/:code',
   ROUTE_VERIFY_BOT: '/verify/bot',
   ROUTE_VERIFY_EMAIL: '/verify',
   ROUTE_VERIFY_PHONE: '/v/:code',
@@ -38,22 +39,14 @@ export const ROUTES = {
 
 const Root = (config: ServerConfig) => {
   const client = new Client();
-  const forgotController = new ForgotController(config, client);
-  const verifyAccountController = new VerifyAccountController(config, client);
-  const rootController = new RootController(config, client);
-  const deleteAccountController = new DeleteAccountController(config, client);
-  const resetController = new ResetController(config, client);
+
   return [
-    Router().get(ROUTES.ROUTE_FORGOT, forgotController.handleGet),
-    Router().post(ROUTES.ROUTE_FORGOT, forgotController.handlePost),
-    Router().get(ROUTES.ROUTE_VERIFY_EMAIL, verifyAccountController.handleEmailGet),
-    Router().get(ROUTES.ROUTE_VERIFY_BOT, verifyAccountController.handleBotGet),
-    Router().get(ROUTES.ROUTE_VERIFY_PHONE, verifyAccountController.handlePhoneGet),
-    Router().get(ROUTES.ROUTE_INDEX, rootController.handleGet),
-    Router().get(ROUTES.ROUTE_DELETE, deleteAccountController.handleGet),
-    Router().post(ROUTES.ROUTE_DELETE, deleteAccountController.handlePost),
-    Router().get(ROUTES.ROUTE_RESET, resetController.handleGet),
-    Router().post(ROUTES.ROUTE_RESET, resetController.handlePost),
+    ...new DeleteAccountController(config, client).ROUTES,
+    ...new ForgotController(config, client).ROUTES,
+    ...new ResetController(config, client).ROUTES,
+    ...new RootController(config, client).ROUTES,
+    ...new SSOController(config).ROUTES,
+    ...new VerifyAccountController(config, client).ROUTES,
   ];
 };
 

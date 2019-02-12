@@ -17,8 +17,9 @@
  *
  */
 
-import {Request, Response} from 'express';
+import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
+import {ROUTES} from '../routes/Root';
 import {Client} from './Client';
 import {TrackingController} from './TrackingController';
 
@@ -29,6 +30,10 @@ export class DeleteAccountController {
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);
+  }
+
+  public get ROUTES(): Router[] {
+    return [Router().get(ROUTES.ROUTE_DELETE, this.handleGet), Router().post(ROUTES.ROUTE_DELETE, this.handlePost)];
   }
 
   private readonly postAccountDelete = async (key: string, code: string) => {

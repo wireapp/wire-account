@@ -29,7 +29,7 @@ describe('DeleteController', () => {
     const config = {
       BACKEND_REST: 'backend',
     };
-    const client: any = {
+    const client: Object = {
       post: postDeleteSpy,
     };
     const controller = new DeleteAccountController(config as ServerConfig, client as Client);
@@ -46,21 +46,21 @@ describe('DeleteController', () => {
   describe('handlePost', () => {
     it('renders the error page if key or code is not provided', async () => {
       const renderSpy = jasmine.createSpy();
-      const trackingController: any = {
+      const trackingController: Object = {
         trackEvent: () => {},
       };
       const config = {};
       const client = {};
       const controller = new DeleteAccountController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
-      const req: any = {
+      const req: Object = {
         fields: {
           code: undefined,
           key: undefined,
         },
         t: (text: string) => text,
       };
-      const res: any = {
+      const res: Object = {
         render: renderSpy,
       };
 
