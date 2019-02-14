@@ -309,10 +309,10 @@
   resolved "https://registry.yarnpkg.com/@types/i18next/-/i18next-2.3.41.tgz#5a3ebdcb4942052ca2ef71c4f6341438c57cb18c"
   integrity sha512-8BLa2+5itmjj3eJI8zbE58Z+I5UEYP7YKHlEn6E4ZJsr8DkpFePtIvt8s0FtBHKPHA1K+HP0LkEgmQRAb9Kbqw==
 
-"@types/jasmine@3.3.8":
-  version "3.3.8"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.8.tgz#fc6abd92f7121431685ec986f0ec8f77b4390a3e"
-  integrity sha512-BaOFpaddRVV8qykJoWHrHtamml880oh0+DIZWbtJgx0pu+KhDF1gER5hSfCIfzyMrbjMuYFnLUfyo1l0JUVU3Q==
+"@types/jasmine@3.3.9":
+  version "3.3.9"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.9.tgz#ee886a9113db567e722a8a0c37f0e6283f2cefa3"
+  integrity sha512-vw3VyFPa9mlba6NZPBZC3q2Zrnkgy5xuCVI43/tTLX6umdYrYvcFtQUKi2zH3PjFZQ9XCxNM/NMrM9uk8TPOzg==
 
 "@types/mime@*":
   version "2.0.0"
@@ -329,10 +329,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.19.tgz#ca1018c26be01f07e66ac7fefbeb6407e4490c61"
   integrity sha512-2NVovndCjJQj6fUUn9jCgpP4WSqr+u1SoUZMZyJkhGeBFsm6dE46l31S7lPUYt9uQ28XI+ibrJA1f5XyH5HNtA==
 
-"@types/nunjucks@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.0.tgz#fdc2fce6f4d8046f7df88f06f32c9842aabdfa46"
-  integrity sha512-xluGXbkIBW0B5uxNy/k7jVgqUTbqTnCLBUX+Dby//PYNDqCvqCPo6GuaNWdCLAM/v/6PNCYIZOXCHi8kr0KCcg==
+"@types/nunjucks@3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.1.tgz#1f910f43c1aa41d99328cf28b6f1b82630ec6763"
+  integrity sha512-8Isd49iSR8TfqrfmcaimQZG9/uwqkZw7uJGSn4Do3JD6QMlNwzDUtXoW1bM9INUaR7Eld2LYcJrKVECF7YOd1w==
 
 "@types/platform@1.3.1":
   version "1.3.1"
@@ -3709,10 +3709,10 @@ i18next-scanner@2.9.1:
     vinyl "^2.2.0"
     vinyl-fs "^3.0.1"
 
-i18next@15.0.3:
-  version "15.0.3"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-15.0.3.tgz#ec2f465abf7ea6843ac738e64e07b920c81c6624"
-  integrity sha512-os+NIaTOGUdZZ+XwnKwnNPbWeYzu+cexGkYoCy+WPuUBt6G+zerNiWSMkTZFibvPBHO4UF7R/uN5F4yegFgqPQ==
+i18next@15.0.4:
+  version "15.0.4"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-15.0.4.tgz#17ee253ff2cc67c5003065fef2f4196b2d6d8b04"
+  integrity sha512-msRzIP/9Vo6wMbbkFRoosVu5X55vARjfhX3H9Z2avRoDAjIBNsXfpfCVF3hbP/2aMQDNEds3NUuDxE4XhcAMnA==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
@@ -7890,10 +7890,10 @@ window-size@^0.1.4:
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
   integrity sha1-+OGqHuWlPsW/FR/6CXQqatdpeHY=
 
-"wire-web-config-default-master@https://github.com/wireapp/wire-web-config-wire#v0.12.1-0":
-  version "0.12.1-0"
-  uid f6a33d805e58ad0db16f74e223dd39a64c859dd4
-  resolved "https://github.com/wireapp/wire-web-config-wire#f6a33d805e58ad0db16f74e223dd39a64c859dd4"
+"wire-web-config-default-master@https://github.com/wireapp/wire-web-config-wire#v0.12.6-0":
+  version "0.12.6-0"
+  uid "2338aae5d521b9de8004febb639a0ea009a8a130"
+  resolved "https://github.com/wireapp/wire-web-config-wire#2338aae5d521b9de8004febb639a0ea009a8a130"
   dependencies:
     adm-zip "0.4.13"
 
