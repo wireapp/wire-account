@@ -7897,9 +7897,10 @@ window-size@^0.1.4:
   dependencies:
     adm-zip "0.4.13"
 
-"wire-web-config-default-staging@https://github.com/wireapp/wire-web-config-default#v0.12.0":
-  version "0.12.0"
-  resolved "https://github.com/wireapp/wire-web-config-default#0e72da658f2f54aa5d200b92afc07633f7a87f8f"
+"wire-web-config-default-staging@https://github.com/wireapp/wire-web-config-default#v0.12.5":
+  version "0.12.5"
+  uid "86359e0dac5a6eaa01989f9fba09d4afef364786"
+  resolved "https://github.com/wireapp/wire-web-config-default#86359e0dac5a6eaa01989f9fba09d4afef364786"
   dependencies:
     adm-zip "0.4.13"
 
