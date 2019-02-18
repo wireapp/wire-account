@@ -11,7 +11,7 @@ const repositoryUrl = pkg.dependencies[configurationEntry];
 
 module.exports = {
   files: {
-    [`${source}/**`]: './dist/',
+    [`${source}/image/**`]: './dist/templates/image/',
     [path.join(pkg.name, '.env.defaults')]: path.join(__dirname, '.env.defaults'),
   },
   repositoryUrl,
