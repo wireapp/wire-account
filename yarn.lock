@@ -319,25 +319,25 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
   integrity sha512-A2TAGbTFdBw9azHbpVd+/FkdW2T6msN1uct1O9bH3vTerEHKZhTXJUQXy+hNq1B0RagfU8U+KBdqiZpxjhOUQA==
 
-"@types/node@*", "@types/node@11.9.3":
+"@types/node@*", "@types/node@11.9.5":
+  version "11.9.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.5.tgz#011eece9d3f839a806b63973e228f85967b79ed3"
+  integrity sha512-vVjM0SVzgaOUpflq4GYBvCpozes8OgIIS5gVXVka+OfK3hvnkC1i93U8WiY2OtNE4XUWyyy/86Kf6e0IHTQw1Q==
+
+"@types/node@11.9.3":
   version "11.9.3"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.3.tgz#14adbb5ab8cd563f549fbae8dbe92e0b7d6e76cc"
   integrity sha512-DMiqG51GwES/c4ScBY0u5bDlH44+oY8AeYHjY1SGCWidD7h08o1dfHue/TGK7REmif2KiJzaUskO+Q0eaeZ2fQ==
-
-"@types/node@10.12.19":
-  version "10.12.19"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.19.tgz#ca1018c26be01f07e66ac7fefbeb6407e4490c61"
-  integrity sha512-2NVovndCjJQj6fUUn9jCgpP4WSqr+u1SoUZMZyJkhGeBFsm6dE46l31S7lPUYt9uQ28XI+ibrJA1f5XyH5HNtA==
 
 "@types/nunjucks@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.1.tgz#1f910f43c1aa41d99328cf28b6f1b82630ec6763"
   integrity sha512-8Isd49iSR8TfqrfmcaimQZG9/uwqkZw7uJGSn4Do3JD6QMlNwzDUtXoW1bM9INUaR7Eld2LYcJrKVECF7YOd1w==
 
-"@types/platform@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@types/platform/-/platform-1.3.1.tgz#5a66616693e39f311b3f2c64c77cf2249e3d8325"
-  integrity sha512-XI6JKLFNBmkADRd2FtUYtEuq5LDKTNXwUIodV3ZfTNkA+g4yo+rXXXdZL3fTE24S92BjpiEVaL3f64Fxm2JOgg==
+"@types/platform@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@types/platform/-/platform-1.3.2.tgz#c0404c4e2a08e04295ab3d1241a856c2a3cab06e"
+  integrity sha512-Tn6OuJDAG7bJbyi4R7HqcxXp1w2lmIxVXqyNhPt1Bm0FO2EWIi3CI87JVzF7ncqK0ZMPuUycS3wTMIk85EeF1Q==
 
 "@types/range-parser@*":
   version "1.2.2"
@@ -352,14 +352,14 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@wireapp/commons@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.0.4.tgz#42cb776179bb421cc5836987525eb17e2f062618"
-  integrity sha512-KMsAId9DrVFf2FEe4JyFTCXBLldsQqzk6c25v4GqdKXwYBW1YkaX9zHjlzWoM1TfrBU/qvI5IphkIpJ6XSfdow==
+"@wireapp/commons@1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.0.9.tgz#0366821c117ba39d9fa64695d5b7c6e4e7abb9ef"
+  integrity sha512-mDpvSCy24KtBFRdZoXkyuno9tWseCDnEbqc7RynXPqitLo1Ip35Wmq/+mQauFnVV9Uho8C8rJVMPPnKC3ayvug==
   dependencies:
     "@types/ansi-regex" "4.0.0"
-    "@types/node" "10.12.19"
-    "@types/platform" "1.3.1"
+    "@types/node" "11.9.5"
+    "@types/platform" "1.3.2"
     ansi-regex "4.0.0"
     fs-extra "7.0.1"
     logdown "3.2.7"
