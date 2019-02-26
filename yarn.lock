@@ -385,10 +385,10 @@
     moment "2.24.0"
     platform "1.3.5"
 
-"@wireapp/copy-config@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-0.3.0.tgz#2596164fd514130f9171f37a038fb40277ddac52"
-  integrity sha512-8nu2F9kzXsESLshTxRX87VCehS/aBv19IpxCjLRDk57iYaQv+sye1IbyCZ4UwACQ4FPmPI3wzM6SYKKtI0r5hg==
+"@wireapp/copy-config@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-0.3.1.tgz#f54ec631931a76a7d31a5cc2cb5ede778dc58115"
+  integrity sha512-eS83Ypt+SS7TtJkLMQmeAv9iB+Uzq4ta7o2WGCQWwmYoE+EvQhFgiRhfZZNzKoVBuU0cVz4b8tjCLuZNG6XPBw==
   dependencies:
     copy "0.3.2"
     cosmiconfig "5.1.0"
