@@ -329,7 +329,12 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
   integrity sha512-A2TAGbTFdBw9azHbpVd+/FkdW2T6msN1uct1O9bH3vTerEHKZhTXJUQXy+hNq1B0RagfU8U+KBdqiZpxjhOUQA==
 
-"@types/node@*", "@types/node@11.9.5":
+"@types/node@*", "@types/node@11.11.0":
+  version "11.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.0.tgz#070e9ce7c90e727aca0e0c14e470f9a93ffe9390"
+  integrity sha512-D5Rt+HXgEywr3RQJcGlZUCTCx1qVbCZpVk3/tOOA6spLNZdGm8BU+zRgdRYDoF1pO3RuXLxADzMrF903JlQXqg==
+
+"@types/node@11.9.5":
   version "11.9.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.5.tgz#011eece9d3f839a806b63973e228f85967b79ed3"
   integrity sha512-vVjM0SVzgaOUpflq4GYBvCpozes8OgIIS5gVXVka+OfK3hvnkC1i93U8WiY2OtNE4XUWyyy/86Kf6e0IHTQw1Q==
@@ -357,13 +362,13 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@wireapp/commons@1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.0.11.tgz#207944e137a3a3bedeff8c795795491fd98324fa"
-  integrity sha512-OzCtuZ3HyHQok2dliuC85aRH81jYzVM+dGAXr586slcx9BBoY1g8gjNr1rxjHmQcdwOFe82iugDswVG3rW7e5g==
+"@wireapp/commons@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.1.0.tgz#251db08cb7e8d1b93e9a574584156ce1e5624914"
+  integrity sha512-0CjN6NT/odUMAtJja7fgorRvjkEHO+6GD+dCJzhEKHSveTjJKlHBsUtzVge3dRAB5X+S/cNLCMsJR5gWgg6MEQ==
   dependencies:
     "@types/ansi-regex" "4.0.0"
-    "@types/node" "11.9.5"
+    "@types/node" "11.11.0"
     "@types/platform" "1.3.2"
     ansi-regex "4.0.0"
     fs-extra "7.0.1"
