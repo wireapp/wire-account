@@ -10,7 +10,7 @@
     "fs-extra": "7.0.1",
     "helmet": "3.16.0",
     "i18next": "15.0.7",
-    "i18next-express-middleware": "1.7.1",
+    "i18next-express-middleware": "1.7.3",
     "i18next-node-fs-backend": "2.1.1",
     "intl": "1.2.5",
     "jquery": "3.3.1",
