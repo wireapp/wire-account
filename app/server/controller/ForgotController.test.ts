@@ -149,6 +149,12 @@ describe('ForgotController', () => {
       await controller.handlePost(req as Request, res as Response);
       expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('forgot.errorUnknown');
+
+      controller['resetPassword'] = (): Promise<AxiosResponse> =>
+        Promise.reject(new Error('error')) as Promise<AxiosResponse>;
+      await controller.handlePost(req as Request, res as Response);
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
+      expect(renderSpy.calls.mostRecent().args[1].error).toEqual('forgot.errorUnknown');
     });
   });
 });
