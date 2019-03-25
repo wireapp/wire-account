@@ -73,8 +73,9 @@ export class ForgotController {
         this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
-        this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', requestError.response.status, 1);
-        switch (requestError.response.status) {
+        const responseStatus = requestError.response && requestError.response.status;
+        this.trackingController.trackEvent(req.originalUrl, 'account.forgot', 'fail', responseStatus, 1);
+        switch (responseStatus) {
           case ForgotController.HTTP_STATUS_EMAIL_NOT_IN_USE: {
             error = _('forgot.errorUnusedEmail');
             status = 'error';
@@ -88,6 +89,7 @@ export class ForgotController {
           default: {
             error = _('forgot.errorUnknown');
             status = 'error';
+            console.error('Internal error', requestError);
           }
         }
       }
