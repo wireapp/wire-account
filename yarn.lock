@@ -336,10 +336,10 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
   integrity sha512-A2TAGbTFdBw9azHbpVd+/FkdW2T6msN1uct1O9bH3vTerEHKZhTXJUQXy+hNq1B0RagfU8U+KBdqiZpxjhOUQA==
 
-"@types/node@*", "@types/node@11.11.3":
-  version "11.11.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
-  integrity sha512-wp6IOGu1lxsfnrD+5mX6qwSwWuqsdkKKxTN4aQc4wByHAKZJf9/D4KXPQ1POUjEbnCP5LMggB0OEFNY9OTsMqg==
+"@types/node@*", "@types/node@11.11.6":
+  version "11.11.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.6.tgz#df929d1bb2eee5afdda598a41930fe50b43eaa6a"
+  integrity sha512-Exw4yUWMBXM3X+8oqzJNRqZSwUAaS4+7NdvHqQuFi/d+synz++xmX3QIf+BFqneW8N31R8Ky+sikfZUXq07ggQ==
 
 "@types/node@11.9.5":
   version "11.9.5"
@@ -369,19 +369,20 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@wireapp/commons@1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.3.3.tgz#6bca189cac27ccdf66d381d18bebd32b422592f5"
-  integrity sha512-9JY6XHDD+ALnKtgqWxUzR8CNOAiLTA0K6lmhukdCNuzxA6yMVNCKUmqn889mPKykf81wAhuM8pbUWZAVkGvumw==
+"@wireapp/commons@1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.4.3.tgz#c8e28ad322607c7f69a19e830ba519984a087e13"
+  integrity sha512-CLaxcHkIo+AI5uSr+ykT3AYCX1iRstZA9ADce3+Q+hOCsdGCHZVmzIbnbLagd3ntyvH16D/n/kx/0MkSVFL1sw==
   dependencies:
     "@types/ansi-regex" "4.0.0"
-    "@types/node" "11.11.3"
+    "@types/node" "11.11.6"
     "@types/platform" "1.3.2"
     ansi-regex "4.1.0"
     fs-extra "7.0.1"
     logdown "3.2.7"
     moment "2.24.0"
     platform "1.3.5"
+    url-search-params-polyfill "5.0.0"
 
 "@wireapp/copy-config@0.5.0":
   version "0.5.0"
@@ -8063,6 +8064,11 @@ url-parse-lax@^1.0.0:
   integrity sha1-evjzA2Rem9eaJy56FKxovAYJ2nM=
   dependencies:
     prepend-http "^1.0.1"
+
+url-search-params-polyfill@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/url-search-params-polyfill/-/url-search-params-polyfill-5.0.0.tgz#09b98337c89dcf6c6a6a0bfeb096f6ba83b7526b"
+  integrity sha512-+SCD22QJp4UnqPOI5UTTR0Ljuh8cHbjEf1lIiZrZ8nHTlTixqwVsVQTSfk5vrmDz7N09/Y+ka5jQr0ff35FnQQ==
 
 use@^3.1.0:
   version "3.1.1"
