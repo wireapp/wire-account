@@ -19,7 +19,7 @@
     "normalize.css": "8.0.1",
     "nunjucks": "3.2.0",
     "nunjucks-autoescape": "1.0.1",
-    "pm2": "3.4.0",
+    "pm2": "3.4.1",
     "wire-web-config-default-master": "https://github.com/wireapp/wire-web-config-wire#v0.16.4",
     "wire-web-config-default-staging": "https://github.com/wireapp/wire-web-config-default#v0.17.0"
   },
