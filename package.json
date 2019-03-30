@@ -24,7 +24,7 @@
     "wire-web-config-default-staging": "https://github.com/wireapp/wire-web-config-default#v0.17.0"
   },
   "devDependencies": {
-    "@types/dotenv": "6.1.0",
+    "@types/dotenv": "6.1.1",
     "@types/express": "4.16.1",
     "@types/express-formidable": "1.0.3",
     "@types/express-useragent": "0.2.21",
