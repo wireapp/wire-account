@@ -341,11 +341,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.0.tgz#b0df8d6ef9b5001b2be3a94d909ce3c29a80f9e1"
   integrity sha512-rx29MMkRdVmzunmiA4lzBYJNnXsW/PhG4kMBy2ATsYaDjGGR75dCFEVVROKpNwlVdcUX3xxlghKQOeDPBJobng==
 
-"@types/node@11.12.0":
-  version "11.12.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.12.0.tgz#ec5594728811dc2797e42396cfcdf786f2052c12"
-  integrity sha512-Lg00egj78gM+4aE0Erw05cuDbvX9sLJbaaPwwRtdCdAMnIudqrQZ0oZX98Ek0yiSK/A2nubHgJfvII/rTT2Dwg==
-
 "@types/nunjucks@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.1.tgz#1f910f43c1aa41d99328cf28b6f1b82630ec6763"
@@ -384,10 +379,10 @@
     platform "1.3.5"
     url-search-params-polyfill "5.1.0"
 
-"@wireapp/copy-config@0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-0.5.2.tgz#4b41af878d13f85fef3f59c2607324419b935820"
-  integrity sha512-HWLBcNuK1Njx070fVlm5/U4Tsnvsqn73TcmOFbztsOeRJ36FJU+SZzBlC3JJF1kjNNaJrjTRL0Md+DDbHs6Nsg==
+"@wireapp/copy-config@0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-0.5.3.tgz#4052f5e58f235c706531158848a05d28cf8b0688"
+  integrity sha512-Lo3hrac8CraC4Sg5sojtGBqUA8c+Mlhk4tqtifxmPQYBeL76E6S2ayLxFQQtokQqBI2AM8Lc84i0S4xjPzGEFQ==
   dependencies:
     axios "0.18.0"
     copy "0.3.2"
