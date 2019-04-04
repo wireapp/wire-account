@@ -341,11 +341,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.0.tgz#b0df8d6ef9b5001b2be3a94d909ce3c29a80f9e1"
   integrity sha512-rx29MMkRdVmzunmiA4lzBYJNnXsW/PhG4kMBy2ATsYaDjGGR75dCFEVVROKpNwlVdcUX3xxlghKQOeDPBJobng==
 
-"@types/node@11.12.0":
-  version "11.12.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.12.0.tgz#ec5594728811dc2797e42396cfcdf786f2052c12"
-  integrity sha512-Lg00egj78gM+4aE0Erw05cuDbvX9sLJbaaPwwRtdCdAMnIudqrQZ0oZX98Ek0yiSK/A2nubHgJfvII/rTT2Dwg==
-
 "@types/nunjucks@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@types/nunjucks/-/nunjucks-3.1.1.tgz#1f910f43c1aa41d99328cf28b6f1b82630ec6763"
@@ -3896,10 +3891,10 @@ i18next-scanner@2.10.1:
     vinyl "^2.2.0"
     vinyl-fs "^3.0.1"
 
-i18next@*, i18next@15.0.8:
-  version "15.0.8"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-15.0.8.tgz#4a52ba8b422832f334fe2fb464e8ad4785899211"
-  integrity sha512-ayzNwJ9NHtqEeAG0nQ6yKFbIpZULpDeesjVnfWQaPwbH7Anee8QwRAYPNWHtFCmDZV9FZaKiEbfo1scH8+KSDg==
+i18next@*, i18next@15.0.9:
+  version "15.0.9"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-15.0.9.tgz#42536407a921bb5a8535a4c090a26f16827a1884"
+  integrity sha512-IdVj7DqErUuMbGuj2dFT431T7zKlmDci63eae6pNA/bMwgBZKT74/KnwHXE0WH7ivo2EV/LNme4pP4Yw6vB79w==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
