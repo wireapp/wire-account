@@ -74,8 +74,8 @@ export class ResetController {
     const key = req.fields.key as string;
     const password = req.fields.password as string;
 
-    if (!password || password.length < 8) {
-      error = _('reset.errorInvalidPassword');
+    if (!password || password.length < this.config.NEW_PASSWORD_MINIMUM_LENGTH) {
+      error = _('reset.errorInvalidPassword', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
       status = 'fail';
     } else if (key && code) {
       try {

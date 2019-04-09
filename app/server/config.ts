@@ -105,6 +105,7 @@ export interface ServerConfig {
     ENABLE_DEBUG: boolean;
     ENFORCE_HTTPS: boolean;
   };
+  NEW_PASSWORD_MINIMUM_LENGTH: number;
   PIWIK_HOSTNAME: string;
   PIWIK_ID: string;
   PORT_HTTP: number;
@@ -147,6 +148,8 @@ const config: ServerConfig = {
     ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
     ENFORCE_HTTPS: process.env.FEATURE_ENFORCE_HTTPS == 'false' ? false : true,
   },
+  NEW_PASSWORD_MINIMUM_LENGTH:
+    (process.env.NEW_PASSWORD_MINIMUM_LENGTH && Number(process.env.NEW_PASSWORD_MINIMUM_LENGTH)) || 8,
   PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
   PIWIK_ID: process.env.PIWIK_ID,
   PORT_HTTP: Number(process.env.PORT) || 21080,
