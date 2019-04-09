@@ -28,7 +28,11 @@
       <input name="key" type="hidden" value="{{key}}">
       <input name="code" type="hidden" value="{{code}}">
       <input name="password" type="password" placeholder="{{_('reset.passwordPlaceholder')}}" autofocus>
-      <p>{{error}}</p>
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% else %}
+      <p>{{ passwordInfo }}</p>
+      {% endif %}
       <button type="submit" class="wbtn btn-block" data-loading-text="{{_('general.loading')}}">
         {{_('reset.button')}}
       </button>

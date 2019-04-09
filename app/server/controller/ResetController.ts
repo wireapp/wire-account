@@ -17,6 +17,7 @@
  *
  */
 
+import {ValidationUtil} from '@wireapp/commons';
 import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
 import {ROUTES} from '../routes/Root';
@@ -58,6 +59,7 @@ export class ResetController {
       error,
       html_class: 'account forgot',
       key,
+      passwordInfo: _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH}),
       status: req.query.success === '' ? 'success' : status,
       title: _('forgot.title'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
@@ -73,9 +75,9 @@ export class ResetController {
     const code = req.fields.code as string;
     const key = req.fields.key as string;
     const password = req.fields.password as string;
-
-    if (!password || password.length < this.config.NEW_PASSWORD_MINIMUM_LENGTH) {
-      error = _('reset.errorInvalidPassword', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
+    const passwordCheck = new RegExp(ValidationUtil.getNewPasswordPattern(this.config.NEW_PASSWORD_MINIMUM_LENGTH));
+    if (!password || password.length < this.config.NEW_PASSWORD_MINIMUM_LENGTH || passwordCheck.test(password)) {
+      error = _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
       status = 'fail';
     } else if (key && code) {
       try {
