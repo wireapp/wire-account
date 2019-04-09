@@ -76,7 +76,7 @@ export class ResetController {
     const key = req.fields.key as string;
     const password = req.fields.password as string;
     const passwordCheck = new RegExp(ValidationUtil.getNewPasswordPattern(this.config.NEW_PASSWORD_MINIMUM_LENGTH));
-    if (!password || password.length < this.config.NEW_PASSWORD_MINIMUM_LENGTH || passwordCheck.test(password)) {
+    if (!password || password.length < this.config.NEW_PASSWORD_MINIMUM_LENGTH || !passwordCheck.test(password)) {
       error = _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
       status = 'fail';
     } else if (key && code) {
