@@ -94,6 +94,11 @@ export class ResetController {
             status = 'error';
             break;
           }
+          case 409: {
+            status = 'fail';
+            error = _('reset.errorPasswordAlreadyUsed');
+            break;
+          }
           default: {
             error = _('reset.errorUnknown');
             status = 'fail';
