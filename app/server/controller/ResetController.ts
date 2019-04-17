@@ -94,7 +94,7 @@ export class ResetController {
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', requestError.status, 1);
         switch (requestError.status) {
           case 400: {
-            /**
+            /*
              * Invalid password reset code
              * {
              *  code: 400,
