@@ -20,8 +20,8 @@
     "nunjucks": "3.2.0",
     "nunjucks-autoescape": "1.0.1",
     "pm2": "3.4.1",
-    "wire-web-config-default-master": "https://github.com/wireapp/wire-web-config-wire#v0.17.2",
-    "wire-web-config-default-staging": "https://github.com/wireapp/wire-web-config-default#v0.17.22"
+    "wire-web-config-default-master": "https://github.com/wireapp/wire-web-config-wire#v0.17.25-0",
+    "wire-web-config-default-staging": "https://github.com/wireapp/wire-web-config-default#v0.17.24"
   },
   "devDependencies": {
     "@types/dotenv": "6.1.1",
