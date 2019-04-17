@@ -90,8 +90,9 @@ export class ResetController {
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
-        const responseData = requestError && requestError.response && requestError.response.data;
-        const responseStatus = responseData && responseData.code;
+        const response = requestError && requestError.response;
+        const responseStatus = response && response.status;
+        const responseData = response && response.data;
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', responseStatus, 1);
         switch (responseStatus) {
           case 400: {
