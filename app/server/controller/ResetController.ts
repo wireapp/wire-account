@@ -90,9 +90,10 @@ export class ResetController {
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
-        console.warn('error', requestError.response.data);
-        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', requestError.status, 1);
-        switch (requestError.status) {
+        const responseData = requestError && requestError.response && requestError.response.data;
+        const responseStatus = responseData && responseData.code;
+        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', responseStatus, 1);
+        switch (responseStatus) {
           case 400: {
             /*
              * Invalid password reset code
@@ -103,15 +104,17 @@ export class ResetController {
              * }
              */
 
-            status = 'error';
+            error = _('reset.errorUnknown');
+            status = 'fail';
             break;
           }
           case 409: {
-            status = 'fail';
             error = _('reset.errorPasswordAlreadyUsed');
+            status = 'fail';
             break;
           }
           default: {
+            console.error('Unknown reset password error', responseData);
             error = _('reset.errorUnknown');
             status = 'fail';
           }
