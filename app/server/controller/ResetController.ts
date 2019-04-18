@@ -83,7 +83,7 @@ export class ResetController {
     const isInvalidPasswordFormat = !passwordCheck.test(password);
     if (isExceedingMaxPasswordLength || isInvalidPasswordFormat) {
       error = _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
-      status = 'fail';
+      status = 'error';
     } else if (key && code) {
       try {
         const result = await this.postPasswordReset(key, code, password);
@@ -93,31 +93,22 @@ export class ResetController {
         const response = requestError && requestError.response;
         const responseStatus = response && response.status;
         const responseData = response && response.data;
-        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', responseStatus, 1);
+        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'error', responseStatus, 1);
         switch (responseStatus) {
           case 400: {
-            /*
-             * Invalid password reset code
-             * {
-             *  code: 400,
-             *  message: 'Invalid password reset code.',
-             *  label: 'invalid-code'
-             * }
-             */
-
-            error = _('reset.errorUnknown');
-            status = 'fail';
+            error = _('reset.errorInvalidLink');
+            status = 'error';
             break;
           }
           case 409: {
             error = _('reset.errorPasswordAlreadyUsed');
-            status = 'fail';
+            status = 'error';
             break;
           }
           default: {
             console.error('Unknown reset password error', responseData);
             error = _('reset.errorUnknown');
-            status = 'fail';
+            status = 'error';
           }
         }
       }
