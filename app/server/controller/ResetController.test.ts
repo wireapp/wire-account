@@ -17,9 +17,11 @@
  *
  */
 
+import {AxiosResponse} from 'axios';
 import {ServerConfig} from '../config';
 import {Client} from './Client';
 import {ResetController} from './ResetController';
+import {TrackingController} from './TrackingController';
 
 describe('ResetController', () => {
   it('successfully POSTs to /password-reset/complete', async () => {
@@ -40,5 +42,123 @@ describe('ResetController', () => {
     expect(postResetSpy.calls.mostRecent().args.length).toBe(2);
     expect(postResetSpy.calls.mostRecent().args[0]).toBe(`${config.BACKEND_REST}/password-reset/complete`);
     expect(postResetSpy.calls.mostRecent().args[1]).toEqual({code, key, password});
+  });
+
+  describe('handlePost', () => {
+    it('renders password already used error message when resetting to previous password', async () => {
+      const renderSpy = jasmine.createSpy();
+      const trackingController: any = {
+        trackEvent: () => {},
+      };
+      const config = {};
+      const client = {};
+      const controller: any = new ResetController(config as ServerConfig, client as Client);
+      controller['trackingController'] = trackingController as TrackingController;
+
+      const req: any = {
+        fields: {
+          code: 'code',
+          key: 'key',
+          password: 'Aa1_Aa1_',
+        },
+        t: (text: string) => text,
+      };
+      const res: any = {
+        render: renderSpy,
+      };
+
+      const errorResponse: any = new Error('Previous password');
+      errorResponse.response = {
+        data: {
+          code: 409,
+          label: 'password-must-differ',
+          message: 'For password reset, new and old password must be different.',
+        },
+        status: 409,
+      };
+      controller['postPasswordReset'] = (): Promise<AxiosResponse> =>
+        Promise.reject(errorResponse) as Promise<AxiosResponse>;
+
+      await controller['handlePost'](req as Request, res as Response);
+      expect(renderSpy.calls.count()).toBe(1);
+      expect(renderSpy.calls.mostRecent().args.length).toBe(2);
+      expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.errorPasswordAlreadyUsed');
+    });
+
+    it('renders invalid password error message', async () => {
+      const trackingController: any = {
+        trackEvent: () => {},
+      };
+      const config = {};
+      const client = {};
+      const controller: any = new ResetController(config as ServerConfig, client as Client);
+      controller['trackingController'] = trackingController as TrackingController;
+
+      // Password missing capital, special char and number
+      let renderSpy = jasmine.createSpy();
+      let res: any = {
+        render: renderSpy,
+      };
+      let req: any = {
+        fields: {
+          code: 'code',
+          key: 'key',
+          password: 'password',
+        },
+        t: (text: string) => text,
+      };
+
+      await controller['handlePost'](req as Request, res as Response);
+      expect(renderSpy.calls.count()).toBe(1);
+      expect(renderSpy.calls.mostRecent().args.length).toBe(2);
+      expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.passwordInfo');
+
+      // Password too short
+      renderSpy = jasmine.createSpy();
+      res = {
+        render: renderSpy,
+      };
+      req = {
+        fields: {
+          code: 'code',
+          key: 'key',
+          password: 'Aa1_',
+        },
+        t: (text: string) => text,
+      };
+
+      await controller['handlePost'](req as Request, res as Response);
+      expect(renderSpy.calls.count()).toBe(1);
+      expect(renderSpy.calls.mostRecent().args.length).toBe(2);
+      expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.passwordInfo');
+
+      // Password too long
+      renderSpy = jasmine.createSpy();
+      res = {
+        render: renderSpy,
+      };
+      req = {
+        fields: {
+          code: 'code',
+          key: 'key',
+          password:
+            'Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_Aa1_',
+        },
+        t: (text: string) => text,
+      };
+
+      await controller['handlePost'](req as Request, res as Response);
+      expect(renderSpy.calls.count()).toBe(1);
+      expect(renderSpy.calls.mostRecent().args.length).toBe(2);
+      expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.passwordInfo');
+    });
   });
 });
