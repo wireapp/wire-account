@@ -17,6 +17,7 @@
  *
  */
 
+import {ValidationUtil} from '@wireapp/commons';
 import {Request, Response, Router} from 'express';
 import {ServerConfig} from '../config';
 import {ROUTES} from '../routes/Root';
@@ -58,6 +59,7 @@ export class ResetController {
       error,
       html_class: 'account forgot',
       key,
+      passwordInfo: _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH}),
       status: req.query.success === '' ? 'success' : status,
       title: _('forgot.title'),
       user_agent: () => BrowserUtil.parseUserAgent(req.header('User-Agent')),
@@ -73,9 +75,14 @@ export class ResetController {
     const code = req.fields.code as string;
     const key = req.fields.key as string;
     const password = req.fields.password as string;
-
-    if (!password || password.length < 8) {
-      error = _('reset.errorInvalidPassword');
+    const passwordCheck = new RegExp(
+      ValidationUtil.getNewPasswordPattern(this.config.NEW_PASSWORD_MINIMUM_LENGTH),
+      'u',
+    );
+    const isExceedingMaxPasswordLength = [...password].length > ValidationUtil.DEFAULT_PASSWORD_MAX_LENGTH;
+    const isInvalidPasswordFormat = !passwordCheck.test(password);
+    if (isExceedingMaxPasswordLength || isInvalidPasswordFormat) {
+      error = _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
       status = 'fail';
     } else if (key && code) {
       try {
@@ -83,13 +90,32 @@ export class ResetController {
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
-        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', requestError.status, 1);
-        switch (requestError.status) {
+        const response = requestError && requestError.response;
+        const responseStatus = response && response.status;
+        const responseData = response && response.data;
+        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', responseStatus, 1);
+        switch (responseStatus) {
           case 400: {
-            status = 'error';
+            /*
+             * Invalid password reset code
+             * {
+             *  code: 400,
+             *  message: 'Invalid password reset code.',
+             *  label: 'invalid-code'
+             * }
+             */
+
+            error = _('reset.errorUnknown');
+            status = 'fail';
+            break;
+          }
+          case 409: {
+            error = _('reset.errorPasswordAlreadyUsed');
+            status = 'fail';
             break;
           }
           default: {
+            console.error('Unknown reset password error', responseData);
             error = _('reset.errorUnknown');
             status = 'fail';
           }

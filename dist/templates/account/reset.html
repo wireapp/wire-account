@@ -1,48 +1,54 @@
-{% extends 'base.html' %}
-{% import 'macro/utils.html' as utils %}
-
-{% block content %}
-  {% if status == 'success' %}
-    <h1>{{_('reset.title')}}</h1>
-    <p>{{_('reset.successDescription')}}</p>
-    {% if user_agent().is.mobile %}
-      {{utils.download_btn(config, _('open.downloadButton', {company: config.COMPANY_NAME}), user_agent, 'wbtn green', 'verify')}}
-    {% elif user_agent().is.desktop %}
-      <p>{{_('open.description', {company: config.COMPANY_NAME})}}</p>
-        {% if user_agent().is.linux or user_agent().is.windows %}
-          <a class="wbtn green" href="{{config.URL.WEBSITE_BASE}}/download">{{_('open.downloadButton', {company: config.COMPANY_NAME})}}</a>
-        {% elif  user_agent().is.osx %}
-          <a class="wbtn green no-capital" href="{{config.URL.DOWNLOAD_OSX_BASE}}">{{_('open.openMac')}}</a>
-        {% endif %}
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWeb')}}</a>
-    {% else %}
-      <a class="wbtn blue" href="{{config.URL.WEBAPP_BASE}}/auth/#login">{{_('open.openWire', {company: config.COMPANY_NAME})}}</a>
-    {% endif %}
-  {% elif status == 'error' %}
-    <h1>{{_('reset.errorTitle')}}</h1>
-    <p>{{_('reset.errorDescription')}}</p>
-    <a class="wbtn green" href="{{ROUTES.ROUTE_RESET}}?key={{key}}&code={{code}}">{{_('reset.button')}}</a>
+{% extends 'base.html' %} {% import 'macro/utils.html' as utils %} {% block content %} {% if status == 'success' %}
+<h1>{{ _('reset.title') }}</h1>
+<p>{{ _('reset.successDescription') }}</p>
+{% if user_agent().is.mobile %}
+{{
+  utils.download_btn(
+    config,
+    _('open.downloadButton', {company: config.COMPANY_NAME}),
+    user_agent,
+    'wbtn green',
+    'verify'
+  )
+}}
+{% elif user_agent().is.desktop %}
+<p>{{ _('open.description', {company: config.COMPANY_NAME}) }}</p>
+{% if user_agent().is.linux or user_agent().is.windows %}
+<a class="wbtn green" href="{{ config.URL.WEBSITE_BASE }}/download">{{
+  _('open.downloadButton', {company: config.COMPANY_NAME})
+}}</a>
+{% elif user_agent().is.osx %}
+<a class="wbtn green no-capital" href="{{ config.URL.DOWNLOAD_OSX_BASE }}">{{ _('open.openMac') }}</a>
+{% endif %}
+<a class="wbtn blue" href="{{ config.URL.WEBAPP_BASE }}/auth/#login">{{ _('open.openWeb') }}</a>
+{% else %}
+<a class="wbtn blue" href="{{ config.URL.WEBAPP_BASE }}/auth/#login">{{
+  _('open.openWire', {company: config.COMPANY_NAME})
+}}</a>
+{% endif %} {% elif status == 'error' %}
+<h1>{{ _('reset.errorTitle') }}</h1>
+<p>{{ _('reset.errorDescription') }}</p>
+<a class="wbtn green" href="{{ ROUTES.ROUTE_RESET }}?key={{ key }}&code={{ code }}">{{ _('reset.button') }}</a>
+{% else %}
+<h1>{{ title }}</h1>
+<form method="POST" action="{{ ROUTES.ROUTE_RESET }}">
+  <input name="key" type="hidden" value="{{ key }}" />
+  <input name="code" type="hidden" value="{{ code }}" />
+  <input name="password" type="password" placeholder="{{ _('reset.passwordPlaceholder') }}" autofocus />
+  {% if error %}
+  <p class="error" data-uie-name="error-message">{{ error }}</p>
   {% else %}
-    <h1>{{title}}</h1>
-    <form method="POST" action="{{ROUTES.ROUTE_RESET}}">
-      <input name="key" type="hidden" value="{{key}}">
-      <input name="code" type="hidden" value="{{code}}">
-      <input name="password" type="password" placeholder="{{_('reset.passwordPlaceholder')}}" autofocus>
-      <p>{{error}}</p>
-      <button type="submit" class="wbtn btn-block" data-loading-text="{{_('general.loading')}}">
-        {{_('reset.button')}}
-      </button>
-    </form>
+  <p data-uie-name="element-password-help">{{ passwordInfo }}</p>
   {% endif %}
-{% endblock %}
-
-
-{% block scripts %}
-  {% if (user_agent().is.ios or user_agent().is.android) and status == 'success' %}
-    <script>
-      $(function() {
-        window.location.href = "{{config.URL.REDIRECT_RESET_BASE}}";
-      });
-    </script>
-  {% endif %}
-{% endblock %}
+  <button type="submit" class="wbtn btn-block" data-loading-text="{{ _('general.loading') }}">
+    {{ _('reset.button') }}
+  </button>
+</form>
+{% endif %} {% endblock %} {% block scripts %} {% if (user_agent().is.ios or user_agent().is.android) and status ==
+'success' %}
+<script>
+  $(function() {
+    window.location.href = '{{config.URL.REDIRECT_RESET_BASE}}';
+  });
+</script>
+{% endif %} {% endblock %}
