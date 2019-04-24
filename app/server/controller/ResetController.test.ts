@@ -83,7 +83,7 @@ describe('ResetController', () => {
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
       expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
-      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.errorPasswordAlreadyUsed');
     });
 
@@ -114,7 +114,7 @@ describe('ResetController', () => {
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
       expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
-      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.passwordInfo');
 
       // Password too short
@@ -135,7 +135,7 @@ describe('ResetController', () => {
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
       expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
-      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.passwordInfo');
 
       // Password too long
@@ -157,7 +157,7 @@ describe('ResetController', () => {
       expect(renderSpy.calls.count()).toBe(1);
       expect(renderSpy.calls.mostRecent().args.length).toBe(2);
       expect(renderSpy.calls.mostRecent().args[0]).toBe(ResetController['TEMPLATE_RESET']);
-      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('fail');
+      expect(renderSpy.calls.mostRecent().args[1].status).toEqual('error');
       expect(renderSpy.calls.mostRecent().args[1].error).toEqual('reset.passwordInfo');
     });
   });
