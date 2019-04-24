@@ -29,7 +29,7 @@ export class ForgotController {
   private static readonly HTTP_STATUS_EMAIL_NOT_IN_USE = 400;
   private static readonly HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
-  private trackingController: TrackingController;
+  private readonly trackingController: TrackingController;
 
   public get ROUTES(): Router[] {
     return [Router().get(ROUTES.ROUTE_FORGOT, this.handleGet), Router().post(ROUTES.ROUTE_FORGOT, this.handlePost)];
@@ -39,7 +39,7 @@ export class ForgotController {
     this.trackingController = new TrackingController(config, client);
   }
 
-  private resetPassword = async (email: string) => {
+  private readonly resetPassword = async (email: string) => {
     return this.client.post(`${this.config.BACKEND_REST}/password-reset`, {email});
   };
 

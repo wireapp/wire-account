@@ -28,7 +28,7 @@ import {TrackingController} from './TrackingController';
 export class ResetController {
   private static readonly TEMPLATE_RESET = 'account/reset';
 
-  private trackingController: TrackingController;
+  private readonly trackingController: TrackingController;
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);
@@ -79,29 +79,36 @@ export class ResetController {
       ValidationUtil.getNewPasswordPattern(this.config.NEW_PASSWORD_MINIMUM_LENGTH),
       'u',
     );
-    if (!passwordCheck.test(password)) {
+    const isExceedingMaxPasswordLength = [...password].length > ValidationUtil.DEFAULT_PASSWORD_MAX_LENGTH;
+    const isInvalidPasswordFormat = !passwordCheck.test(password);
+    if (isExceedingMaxPasswordLength || isInvalidPasswordFormat) {
       error = _('reset.passwordInfo', {minPasswordLength: this.config.NEW_PASSWORD_MINIMUM_LENGTH});
-      status = 'fail';
+      status = 'error';
     } else if (key && code) {
       try {
         const result = await this.postPasswordReset(key, code, password);
         this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'success', result.status, 1);
         status = 'success';
       } catch (requestError) {
-        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'fail', requestError.status, 1);
-        switch (requestError.status) {
+        const response = requestError && requestError.response;
+        const responseStatus = response && response.status;
+        const responseData = response && response.data;
+        this.trackingController.trackEvent(req.originalUrl, 'account.reset', 'error', responseStatus, 1);
+        switch (responseStatus) {
           case 400: {
+            error = _('reset.errorInvalidLink');
             status = 'error';
             break;
           }
           case 409: {
-            status = 'fail';
             error = _('reset.errorPasswordAlreadyUsed');
+            status = 'error';
             break;
           }
           default: {
+            console.error('Unknown reset password error', responseData);
             error = _('reset.errorUnknown');
-            status = 'fail';
+            status = 'error';
           }
         }
       }
