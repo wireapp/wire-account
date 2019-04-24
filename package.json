@@ -95,7 +95,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.{ts}": [
+    "*.ts": [
       "tslint --config tslint.json --project tsconfig.json --fix",
       "git add"
     ]
