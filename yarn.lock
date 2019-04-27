@@ -7905,10 +7905,10 @@ typpy@2.3.10:
   dependencies:
     function.name "^1.0.3"
 
-uglify-js@3.5.6, uglify-js@^3.0.5:
-  version "3.5.6"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.6.tgz#8a5f8a06ee7415ac1fa302f4623bc7344b553da4"
-  integrity sha512-YDKRX8F0Y+Jr7LhoVk0n4G7ltR3Y7qFAj+DtVBthlOgCcIj1hyMigCfousVfn9HKmvJ+qiFlLDwaHx44/e5ZKw==
+uglify-js@3.5.9, uglify-js@^3.0.5:
+  version "3.5.9"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.9.tgz#372fbf95939555b1f460b1777d33a67d4a994ac9"
+  integrity sha512-WpT0RqsDtAWPNJK955DEnb6xjymR8Fn0OlK4TT4pS0ASYsVPqr5ELhgwOwLCP5J5vHeJ4xmMmz3DEgdqC10JeQ==
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
