@@ -1,3 +1,4 @@
+/* eslint-disable es5/no-block-scoping */
 /*
  * Wire
  * Copyright (C) 2016 Wire Swiss GmbH
@@ -18,7 +19,7 @@
  */
 
 window.initVerify = function() {
-  var url = $('#url').data('url');
+  const url = $('#url').data('url');
 
   if ($('#url').data('status') === 'success') {
     return window.verifySuccess(200);
@@ -54,7 +55,7 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  var redirect = $('#url').data('redirect');
+  const redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;
   }

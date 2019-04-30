@@ -36,6 +36,8 @@
     "@types/node": "11.13.7",
     "@types/nunjucks": "3.1.1",
     "@wireapp/copy-config": "0.5.5",
+    "@wireapp/eslint-config": "1.0.0",
+    "@wireapp/tslint-config": "1.0.1",
     "babel-eslint": "10.0.1",
     "concurrently": "4.1.0",
     "cross-env": "5.2.0",
@@ -47,6 +49,7 @@
     "eslint-plugin-jsdoc": "4.8.3",
     "eslint-plugin-no-unsanitized": "3.0.2",
     "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react": "7.12.4",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "6.0.0",
     "gulp-concat": "2.6.1",
@@ -68,10 +71,12 @@
     "lint-staged": "8.1.5",
     "nodemon": "1.18.10",
     "prettier": "1.17.0",
-    "tslint": "5.15.0",
+    "tslint": "5.16.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-eslint-rules": "5.4.0",
     "tslint-plugin-prettier": "2.0.1",
+    "tslint-react": "4.0.0",
+    "tslint-react-hooks": "2.1.0",
     "typescript": "3.4.4",
     "uglify-js": "3.5.9"
   },
@@ -89,6 +94,10 @@
     "*.{json,less,md,yml}": [
       "prettier --write",
       "git add"
+    ],
+    "*.ts": [
+      "tslint --config tslint.json --project tsconfig.json --fix",
+      "git add"
     ]
   },
   "name": "wire-account",
@@ -105,11 +114,11 @@
     "fix:js": "yarn lint:js --fix",
     "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts --fix",
-    "fix": "yarn fix:other && yarn fix:js",
+    "fix": "yarn fix:other && yarn fix:ts && yarn fix:js",
     "lint:js": "eslint --ignore-path .gitignore --ignore-path .eslintignore --ext .js .",
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
-    "lint": "yarn lint:js && yarn lint:other",
+    "lint": "yarn lint:js && yarn lint:ts && yarn lint:other",
     "postinstall": "copy-config",
     "prettier": "prettier \"**/*.{json,less,md,yml}\"",
     "start:prod": "pm2 start \"./index.js\" --name \"Wire Account Management\" && pm2 logs",

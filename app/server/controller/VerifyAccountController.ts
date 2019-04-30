@@ -29,7 +29,7 @@ export class VerifyAccountController {
   private static readonly TEMPLATE_VERIFY_BOT = 'account/verify_bot';
   private static readonly TEMPLATE_VERIFY_PHONE = 'account/verify_phone';
 
-  private trackingController: TrackingController;
+  private readonly trackingController: TrackingController;
 
   constructor(private readonly config: ServerConfig, client: Client) {
     this.trackingController = new TrackingController(config, client);

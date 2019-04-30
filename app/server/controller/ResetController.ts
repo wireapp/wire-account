@@ -28,7 +28,7 @@ import {TrackingController} from './TrackingController';
 export class ResetController {
   private static readonly TEMPLATE_RESET = 'account/reset';
 
-  private trackingController: TrackingController;
+  private readonly trackingController: TrackingController;
 
   constructor(private readonly config: ServerConfig, private readonly client: Client) {
     this.trackingController = new TrackingController(config, client);
