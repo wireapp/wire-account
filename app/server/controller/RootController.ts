@@ -28,7 +28,7 @@ export class RootController {
   private static readonly TEMPLATE_INDEX = 'index';
   private static readonly TEMPLATE_OPEN_GRAPH = 'og';
 
-  private trackingController: TrackingController;
+  private readonly trackingController: TrackingController;
 
   constructor(private readonly config: ServerConfig, client: Client) {
     this.trackingController = new TrackingController(config, client);

@@ -51,7 +51,7 @@ describe('DeleteController', () => {
       };
       const config = {};
       const client = {};
-      const controller = new DeleteAccountController(config as ServerConfig, client as Client);
+      const controller: any = new DeleteAccountController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
       const req: Object = {
         fields: {

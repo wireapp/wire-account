@@ -80,7 +80,7 @@ describe('ForgotController', () => {
       };
       const config = {};
       const client = {};
-      const controller = new ForgotController(config as ServerConfig, client as Client);
+      const controller: any = new ForgotController(config as ServerConfig, client as Client);
       controller['trackingController'] = trackingController as TrackingController;
       const req: any = {
         fields: {
