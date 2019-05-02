@@ -19,7 +19,7 @@
  */
 
 window.initVerify = function() {
-  const url = $('#url').data('url');
+  var url = $('#url').data('url');
 
   if ($('#url').data('status') === 'success') {
     return window.verifySuccess(200);
@@ -55,7 +55,7 @@ window.verifyFail = function(status) {
 window.verifySuccess = function(status) {
   $('.loading').hide();
   $('.' + status).removeClass('hide');
-  const redirect = $('#url').data('redirect');
+  var redirect = $('#url').data('redirect');
   if (redirect) {
     window.location.href = redirect;
   }

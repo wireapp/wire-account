@@ -8505,7 +8505,6 @@ window-size@^0.1.4:
 
 "wire-web-config-default-master@https://github.com/wireapp/wire-web-config-wire#v0.17.27-0":
   version "0.17.27-0"
-  uid "3eaff2a6b96d4386aca9364fc205dd43fd979474"
   resolved "https://github.com/wireapp/wire-web-config-wire#3eaff2a6b96d4386aca9364fc205dd43fd979474"
   dependencies:
     adm-zip "0.4.13"
