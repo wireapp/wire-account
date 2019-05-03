@@ -1,4 +1,5 @@
-const pkg = require('./app-config/package.json');
+const appConfigPkg = require('./app-config/package.json');
+const pkg = require('./package.json');
 const {execSync} = require('child_process');
 const path = require('path');
 
@@ -7,7 +8,7 @@ const currentBranch = execSync(`git rev-parse --abbrev-ref HEAD`)
   .toString()
   .trim();
 const configurationEntry = `wire-web-config-default-${currentBranch === 'master' ? 'master' : 'staging'}`;
-const repositoryUrl = pkg.dependencies[configurationEntry];
+const repositoryUrl = appConfigPkg.dependencies[configurationEntry];
 
 module.exports = {
   files: {
