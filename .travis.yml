@@ -33,7 +33,7 @@ after_success:
       fi
     fi
   - |
-    if [ "$TRAVIS_BRANCH" == "master" ]; then
+    if [ -n "$TRAVIS_TAG" ]; then
       if [ "$COMPANY" == "wire" ]; then
         yarn docker '' production
       elif [ "$COMPANY" == "ey" ]; then
