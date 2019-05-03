@@ -23,23 +23,20 @@ before_install:
 
 after_success:
   - echo -e "$TRAVIS_COMMIT" > ./dist/commit
+  - yarn build
   - |
     if [ "$TRAVIS_BRANCH" == "staging" ]; then
       if [ "$COMPANY" == "wire" ]; then
-        yarn build
         yarn docker '' staging
       elif [ "$COMPANY" == "ey" ]; then
-        yarn build
         yarn docker ey staging
       fi
     fi
   - |
     if [ "$TRAVIS_BRANCH" == "master" ]; then
       if [ "$COMPANY" == "wire" ]; then
-        yarn build
         yarn docker '' production
       elif [ "$COMPANY" == "ey" ]; then
-        yarn build
         yarn docker ey production
       fi
     fi

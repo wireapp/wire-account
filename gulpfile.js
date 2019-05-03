@@ -31,9 +31,9 @@ const config = {
   style: ['src/style/style.less'],
 };
 
-const onError = function() {
-  $.util.beep();
-  return this.emit('end');
+const onError = function(error) {
+  console.error(error);
+  return process.exit(1);
 }.bind(this);
 
 const timestamp = function() {
