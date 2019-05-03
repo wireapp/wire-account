@@ -22,7 +22,8 @@
 /* eslint-disable no-magic-numbers, es5/no-block-scoping, es5/no-template-literals, es5/no-shorthand-properties */
 
 const child = require('child_process');
-const pkg = require('../app-config/package');
+const appConfigPkg = require('../app-config/package.json');
+const pkg = require('../package.json');
 const {execSync} = require('child_process');
 
 const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
@@ -41,10 +42,10 @@ const configurationEntry = `wire-web-config-default${
   suffix ? suffix : currentBranch === 'master' ? '-master' : '-staging'
 }`;
 const dependencies = {
-  ...pkg.dependencies,
-  ...pkg.devDependencies,
-  ...pkg.peerDependencies,
-  ...pkg.optionalDependencies,
+  ...appConfigPkg.dependencies,
+  ...appConfigPkg.devDependencies,
+  ...appConfigPkg.peerDependencies,
+  ...appConfigPkg.optionalDependencies,
 };
 
 const configVersion = dependencies[configurationEntry].split('#')[1];
