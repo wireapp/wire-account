@@ -23,14 +23,13 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 ## Build Instructions
 
 1. Run `yarn`
-2. Run `yarn start`
-3. Open [http://localhost:8081/](http://localhost:8081/)
+1. Run `yarn start`
+1. Open [http://localhost:8081/](http://localhost:8081/)
 
 ## Deployment
 
 Depending on the branch name it will be automatically deployed to the following environments:
 
-- `master` -> `wire-account-prod`
 - `staging` -> `wire-account-staging`
 
 ### Translations
@@ -38,5 +37,11 @@ Depending on the branch name it will be automatically deployed to the following 
 A file 'keys/crowdin.yaml' containing the Crowdin API key is needed. To push & pull translations use:
 
 ```bash
-yarn translate
+yarn translate:upload
 ```
+
+### Release flow
+
+1. Merge staging into master
+1. Create a tag with `npm version <version bump type>`. Possible values for `version bump type` are `patch`, `minor` or `major`.
+1. The tag will be pushed to master and Travis will deploy the new version. Manual deployment can be triggered via `eb deploy`.

@@ -119,12 +119,15 @@
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
     "lint": "yarn lint:js && yarn lint:ts && yarn lint:other",
     "postinstall": "copy-config",
+    "postversion": "git push && git push --tags",
     "prettier": "prettier \"**/*.{json,less,md,yml}\"",
+    "preversion": "yarn test",
     "start:prod": "pm2 start \"./index.js\" --name \"Wire Account Management\" && pm2 logs",
     "start": "yarn build:server && concurrently \"gulp watch\" \"yarn build:server --w\" \"nodemon ./dist/index.js\"",
     "test:server": "jasmine --config=jasmine.json",
     "test": "yarn build:server && yarn test:server",
     "translate:extract": "yarn build && i18next-scanner 'dist/**/*.{js,html}'",
     "translate:upload": "yarn translate:extract && node bin/translations_upload.js"
-  }
+  },
+  "version": "0.1.0"
 }
