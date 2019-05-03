@@ -407,10 +407,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.0.1.tgz#f23cc0d20c43ef9ece425a5be8d33132fc67e6a9"
   integrity sha512-Q4tNKQegWDEqnBBOwIDit6X/91XyJ1nO9NXVf9HfdI+8IBYp7ny/nPzYcsUA2sdvTjMuQZ7uUFgob0s6HIaHjQ==
 
-"@wireapp/tslint-config@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/tslint-config/-/tslint-config-1.0.1.tgz#03e0c53153453203084cd670ba4cfe3ee6d2205b"
-  integrity sha512-wreWDIpPFgnpjBcmAwRFnQRumZuG0f7zPdVcZzXk2Jmd67Yw9uMJ8trx7a1/9s8B9DSVfVVTJ1pXx7FvTVNTxQ==
+"@wireapp/tslint-config@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/tslint-config/-/tslint-config-1.0.2.tgz#89b4c369c2659c83fe15404e99297f86056fef03"
+  integrity sha512-pOCfDE6vclBTuILiX+Qvl6bYS1Y69PBfkfjOJhTm8XIdsZkT+WP+3eG981fOF2Xjf+SLYmnEtxZK8Rs8UgGhBQ==
 
 a-sync-waterfall@^1.0.0:
   version "1.0.1"
