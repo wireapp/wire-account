@@ -1,4 +1,4 @@
-const pkg = require('./package.json');
+const pkg = require('./app-config/package.json');
 const {execSync} = require('child_process');
 const path = require('path');
 

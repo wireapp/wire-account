@@ -22,7 +22,7 @@
 /* eslint-disable no-magic-numbers, es5/no-block-scoping, es5/no-template-literals */
 
 const child = require('child_process');
-const pkg = require('../package');
+const pkg = require('../app-config/package');
 
 const companyParam = process.argv[2];
 const stageParam = process.argv[3];
