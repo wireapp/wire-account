@@ -3,6 +3,7 @@ FROM node:10-alpine
 RUN apk add --no-cache dumb-init git bash
 
 COPY dist/ .
+COPY yarn.lock .
 COPY run.sh .
 ENV NODE_PATH=/deploy/node_modules
 ENV PATH=$PATH:/deploy/node_modules/.bin
