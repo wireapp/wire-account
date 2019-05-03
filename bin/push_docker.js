@@ -19,10 +19,15 @@
  *
  */
 
-/* eslint-disable no-magic-numbers, es5/no-block-scoping, es5/no-template-literals */
+/* eslint-disable no-magic-numbers, es5/no-block-scoping, es5/no-template-literals, es5/no-shorthand-properties */
 
 const child = require('child_process');
 const pkg = require('../app-config/package');
+const {execSync} = require('child_process');
+
+const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
+  .toString()
+  .trim();
 
 const companyParam = process.argv[2];
 const stageParam = process.argv[3];
@@ -32,7 +37,9 @@ const buildCounter = process.env.TRAVIS_BUILD_NUMBER || 'BUILD_NUMBER';
 const commitSha = process.env.TRAVIS_COMMIT || 'COMMIT_ID';
 const commitShaLength = 7;
 const commitShortSha = commitSha.substring(0, commitShaLength - 1);
-const configurationEntry = `wire-web-config-default${suffix}`;
+const configurationEntry = `wire-web-config-default${
+  suffix ? suffix : currentBranch === 'master' ? '-master' : '-staging'
+}`;
 const dependencies = {
   ...pkg.dependencies,
   ...pkg.devDependencies,
