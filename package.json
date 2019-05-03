@@ -19,9 +19,7 @@
     "normalize.css": "8.0.1",
     "nunjucks": "3.2.0",
     "nunjucks-autoescape": "1.0.1",
-    "pm2": "3.5.0",
-    "wire-web-config-default-master": "https://github.com/wireapp/wire-web-config-wire#v0.17.27-0",
-    "wire-web-config-default-staging": "https://github.com/wireapp/wire-web-config-default#v0.17.27"
+    "pm2": "3.5.0"
   },
   "devDependencies": {
     "@types/dotenv": "6.1.1",
@@ -111,6 +109,7 @@
     "build:server": "yarn lint:ts --fix && yarn tsc -P ./tsconfig.json",
     "build": "yarn build:server && yarn build:front",
     "configure": "node ./bin/configure.js",
+    "docker": "node bin/push_docker.js",
     "fix:js": "yarn lint:js --fix",
     "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts --fix",
