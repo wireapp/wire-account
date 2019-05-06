@@ -7,8 +7,9 @@ const source = path.join(pkg.name, 'content');
 const currentBranch = execSync(`git rev-parse --abbrev-ref HEAD`)
   .toString()
   .trim();
-const suffix =
-  process.env.DISTRIBUTION !== 'wire' ? process.env.DISTRIBUTION : currentBranch === 'master' ? 'master' : 'staging';
+const configBranchSelection = currentBranch === 'master' ? 'master' : 'staging';
+const distribution = process.env.DISTRIBUTION !== 'wire' && process.env.DISTRIBUTION;
+const suffix = distribution || configBranchSelection;
 const configurationEntry = `wire-web-config-default-${suffix}`;
 const repositoryUrl = appConfigPkg.dependencies[configurationEntry];
 
