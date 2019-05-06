@@ -11,8 +11,8 @@ env:
     # DOCKER_USERNAME
     - secure: 'pO1pqKwfw0N5K539smGe22f0jHEWygvrmYVjxXEtNtaZRb6icjZ2TfJw/mDClHmeaAjmB2XIaga796AbArdZWdbEdfURZb8jlW2waH7hah82Y4cgkWyzi9+E42MCNPDkKDjCvgyqnQcmuRED0539gKDWqG8vxV1/YhkFbOP/28RDHWnplgubC5jZIsDWccCoLbzLp87BWH0ZY7RGKGukLsYsGzvaX5ZBE1p16g29PQxLtiJks578TufTyNY6Bwc1wXm604TPqXASXzbF/sCZ21oUG52G45GptmFnmCWhLJpmiUDYD92SEB2/TddeQDOiErGc0kAlQ5Io+bbAcYJXZAJeGNLOcPEY4X751vYKA/wVVewnMr0mt7QSJWAyLKxY+wOeJqRZE2aqiENbRU4XsaxlzZDvEno5DuDvmCuBfn98oBYjBt7HOZUMbMuoUHnOyWmkZEN9+bsXEjdSFYcgIaSztMDoO+52qFfX8IsRYyO+Hz0n3QMIX96Vrhkhm/rr8ABxk6EcjhUOftjX1+tTrTBSr3qeQQuC+JUBvGkDV2FG0HN8BTnBGKjenZkQVvd8QMWo7Xp4ObxYFNiwWpGjSGzgzHtCWMCnF/6/3lK0i6We+ypHHIk3fHxkRTG4BjiSz/hmLNlByn2lGg6hTsDsOc2JTYsGD87oIeqwNekNWfs='
   matrix:
-    - COMPANY="ey"
-    - COMPANY="wire"
+    - DISTRIBUTION="$DISTRIBUTION_1"
+    - DISTRIBUTION="wire"
 
 notifications:
   email: false
@@ -26,18 +26,18 @@ after_success:
   - yarn build
   - |
     if [ "$TRAVIS_BRANCH" == "staging" ]; then
-      if [ "$COMPANY" == "wire" ]; then
+      if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' staging
-      elif [ "$COMPANY" == "ey" ]; then
-        yarn docker ey staging
+      else
+        yarn docker "$DISTRIBUTION" staging
       fi
     fi
   - |
     if [ -n "$TRAVIS_TAG" ]; then
-      if [ "$COMPANY" == "wire" ]; then
+      if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' production
-      elif [ "$COMPANY" == "ey" ]; then
-        yarn docker ey production
+      else
+        yarn docker "$DISTRIBUTION" production
       fi
     fi
 
@@ -56,7 +56,7 @@ deploy:
     on:
       repo: wireapp/wire-account
       branch: master
-      condition: $COMPANY = wire
+      condition: $DISTRIBUTION = wire
 
   - provider: elasticbeanstalk
     skip_cleanup: true
@@ -72,4 +72,4 @@ deploy:
     on:
       repo: wireapp/wire-account
       branch: staging
-      condition: $COMPANY = wire
+      condition: $DISTRIBUTION = wire

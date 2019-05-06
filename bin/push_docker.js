@@ -30,9 +30,9 @@ const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
   .toString()
   .trim();
 
-const companyParam = process.argv[2];
+const distributionParam = process.argv[2];
 const stageParam = process.argv[3];
-const suffix = companyParam ? `-${companyParam}` : '';
+const suffix = distributionParam ? `-${distributionParam}` : '';
 const stage = stageParam ? `-${stageParam}` : '';
 const buildCounter = process.env.TRAVIS_BUILD_NUMBER || 'BUILD_NUMBER';
 const commitSha = process.env.TRAVIS_COMMIT || 'COMMIT_ID';
