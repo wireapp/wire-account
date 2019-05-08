@@ -12,10 +12,12 @@ RUN apt-get update \
 COPY dist/ .
 COPY yarn.lock .
 COPY run.sh .
-ENV NODE_PATH=/deploy/node_modules
-ENV PATH=$PATH:/deploy/node_modules/.bin
+COPY package.json .
+COPY .env.defaults .
+ENV NODE_PATH=/node_modules
+ENV PATH=$PATH:/node_modules/.bin
 
-RUN yarn
+RUN yarn --production --ignore-scripts
 
 EXPOSE 8080
 ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/run.sh"]
