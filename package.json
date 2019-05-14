@@ -7,7 +7,7 @@
     "express": "4.16.4",
     "express-formidable": "1.2.0",
     "express-useragent": "1.0.12",
-    "fs-extra": "7.0.1",
+    "fs-extra": "8.0.1",
     "helmet": "3.18.0",
     "i18next": "15.1.0",
     "i18next-express-middleware": "1.8.0",
