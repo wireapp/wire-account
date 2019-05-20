@@ -70,6 +70,7 @@ const DeleteAccount = ({location}: Props) => {
                 <Text center>{t('description', {company: BRAND_NAME})}</Text>
                 <Button
                   type="submit"
+                  data-uie-name="do-delete-account"
                   onClick={() => deleteAccount()}
                   backgroundColor={COLOR.RED}
                   style={{marginTop: 34}}

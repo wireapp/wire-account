@@ -71,6 +71,7 @@ const PasswordForgot = () => {
               placeholder={t('Email')}
               name="email"
               type="email"
+              data-uie-name="enter-email"
               onKeyDown={event => {
                 if (event.key === 'Enter') {
                   initiatePasswordReset();
@@ -80,7 +81,11 @@ const PasswordForgot = () => {
             <Text textTransform="uppercase" center color={COLOR.RED} data-uie-name="error-message">
               {error}
             </Text>
-            <Button onClick={initiatePasswordReset} style={{marginTop: 16}}>
+            <Button
+              onClick={initiatePasswordReset}
+              style={{marginTop: 16}}
+              data-uie-name="do-send-password-reset-email"
+            >
               {t('button')}
             </Button>
           </React.Fragment>
