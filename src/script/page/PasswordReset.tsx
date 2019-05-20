@@ -17,7 +17,7 @@
  *
  */
 import {Runtime} from '@wireapp/commons';
-import {Button, COLOR, ContainerXS, FlexBox, H1, Input, Text} from '@wireapp/react-ui-kit';
+import {Button, COLOR, ContainerXS, FlexBox, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router';
@@ -110,35 +110,33 @@ const PasswordReset = ({location}: Props) => {
           ) : (
             <React.Fragment>
               <H1>{t('title')}</H1>
-              <Input
-                autoFocus
-                onChange={event => setPassword(event.currentTarget.value)}
-                placeholder={t('passwordPlaceholder')}
-                name="password"
-                onKeyDown={event => {
-                  if (event.key === 'Enter') {
-                    completePasswordReset();
-                  }
-                }}
-                data-uie-name="enter-new-password"
-              />
-              {error ? (
-                <Text color={COLOR.RED} center textTransform="uppercase" data-uie-name="error-message">
-                  {error}
-                </Text>
-              ) : (
-                <Text center data-uie-name="element-password-help">
-                  {t('passwordInfo', {minPasswordLength: NEW_PASSWORD_MINIMUM_LENGTH})}
-                </Text>
-              )}
-              <Button
-                onClick={() => completePasswordReset()}
-                style={{marginTop: 34}}
-                type="submit"
-                data-uie-name="do-set-new-password"
-              >
-                {t('button')}
-              </Button>
+              <Form onSubmit={() => completePasswordReset()}>
+                <Input
+                  autoFocus
+                  onChange={event => setPassword(event.currentTarget.value)}
+                  placeholder={t('passwordPlaceholder')}
+                  onKeyDown={event => {
+                    if (event.key === 'Enter') {
+                      completePasswordReset();
+                    }
+                  }}
+                  name="password"
+                  type="password"
+                  data-uie-name="enter-new-password"
+                />
+                {error ? (
+                  <Text color={COLOR.RED} center textTransform="uppercase" data-uie-name="error-message">
+                    {error}
+                  </Text>
+                ) : (
+                  <Text center data-uie-name="element-password-help">
+                    {t('passwordInfo', {minPasswordLength: NEW_PASSWORD_MINIMUM_LENGTH})}
+                  </Text>
+                )}
+                <Button style={{marginTop: 34}} type="submit" data-uie-name="do-set-new-password">
+                  {t('button')}
+                </Button>
+              </Form>
             </React.Fragment>
           )
         ) : (

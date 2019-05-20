@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerXS, H1, Input, Text} from '@wireapp/react-ui-kit';
+import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import Document from 'script/component/Document';
@@ -65,29 +65,27 @@ const PasswordForgot = () => {
         ) : (
           <React.Fragment>
             <H1>{t('title')}</H1>
-            <Input
-              autoFocus
-              onChange={event => setEmail(event.currentTarget.value)}
-              placeholder={t('Email')}
-              name="email"
-              type="email"
-              data-uie-name="enter-email"
-              onKeyDown={event => {
-                if (event.key === 'Enter') {
-                  initiatePasswordReset();
-                }
-              }}
-            />
-            <Text textTransform="uppercase" center color={COLOR.RED} data-uie-name="error-message">
-              {error}
-            </Text>
-            <Button
-              onClick={initiatePasswordReset}
-              style={{marginTop: 16}}
-              data-uie-name="do-send-password-reset-email"
-            >
-              {t('button')}
-            </Button>
+            <Form onSubmit={initiatePasswordReset}>
+              <Input
+                autoFocus
+                onChange={event => setEmail(event.currentTarget.value)}
+                placeholder={t('Email')}
+                name="email"
+                type="email"
+                data-uie-name="enter-email"
+                onKeyDown={event => {
+                  if (event.key === 'Enter') {
+                    initiatePasswordReset();
+                  }
+                }}
+              />
+              <Text textTransform="uppercase" center color={COLOR.RED} data-uie-name="error-message">
+                {error}
+              </Text>
+              <Button type="submit" style={{marginTop: 16}} data-uie-name="do-send-password-reset-email">
+                {t('button')}
+              </Button>
+            </Form>
           </React.Fragment>
         )}
       </ContainerXS>
