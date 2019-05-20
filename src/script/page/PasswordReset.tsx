@@ -134,6 +134,7 @@ const PasswordReset = ({location}: Props) => {
               <Button
                 onClick={() => completePasswordReset()}
                 style={{marginTop: 34}}
+                type="submit"
                 data-uie-name="do-set-new-password"
               >
                 {t('button')}
