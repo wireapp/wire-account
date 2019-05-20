@@ -15,9 +15,9 @@ const repositoryUrl = appConfigPkg.dependencies[configurationEntry];
 
 module.exports = {
   files: {
-    [`${source}/image/**`]: './dist/templates/image/',
-    [`${source}/translation/**`]: './dist/translation/',
-    [path.join(pkg.name, '.env.defaults')]: path.join(__dirname, '.env.defaults'),
+    [`${source}/image/wire.svg`]: './resource/image/logo/logo.svg',
+    [`${source}/translation/**`]: './resource/translation/',
+    [path.join(pkg.name, '.env.defaults')]: path.join(__dirname, 'server', '.env.defaults'),
   },
   repositoryUrl,
 };
