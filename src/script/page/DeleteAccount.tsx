@@ -38,7 +38,8 @@ const DeleteAccount = ({location}: Props) => {
   const {accountAction} = useContext(ActionContext);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const deleteAccount = async () => {
+  const deleteAccount = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     try {
       setError('');
       await accountAction.delete(key, code);
@@ -68,7 +69,7 @@ const DeleteAccount = ({location}: Props) => {
                 <H1>{t('title')}</H1>
                 <Text center>{t('greeting')}</Text>
                 <Text center>{t('description', {company: BRAND_NAME})}</Text>
-                <Form onSubmit={() => deleteAccount()}>
+                <Form onSubmit={deleteAccount}>
                   <Button
                     type="submit"
                     data-uie-name="do-delete-account"

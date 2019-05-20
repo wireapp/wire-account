@@ -32,7 +32,8 @@ const PasswordForgot = () => {
 
   const [t] = useTranslation('forgot');
   const {accountAction} = useContext(ActionContext);
-  const initiatePasswordReset = async () => {
+  const initiatePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     try {
       setError('');
       await accountAction.initiatePasswordReset(email);
@@ -73,11 +74,6 @@ const PasswordForgot = () => {
                 name="email"
                 type="email"
                 data-uie-name="enter-email"
-                onKeyDown={event => {
-                  if (event.key === 'Enter') {
-                    initiatePasswordReset();
-                  }
-                }}
               />
               <Text textTransform="uppercase" center color={COLOR.RED} data-uie-name="error-message">
                 {error}

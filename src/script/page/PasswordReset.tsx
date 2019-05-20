@@ -46,7 +46,8 @@ const PasswordReset = ({location}: Props) => {
   const [success, setSuccess] = useState(false);
   const [password, setPassword] = useState('');
   const {accountAction} = useContext(ActionContext);
-  const completePasswordReset = async () => {
+  const completePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     try {
       setError('');
       await accountAction.completePasswordReset(password, key, code);
@@ -110,16 +111,11 @@ const PasswordReset = ({location}: Props) => {
           ) : (
             <React.Fragment>
               <H1>{t('title')}</H1>
-              <Form onSubmit={() => completePasswordReset()}>
+              <Form onSubmit={completePasswordReset}>
                 <Input
                   autoFocus
                   onChange={event => setPassword(event.currentTarget.value)}
                   placeholder={t('passwordPlaceholder')}
-                  onKeyDown={event => {
-                    if (event.key === 'Enter') {
-                      completePasswordReset();
-                    }
-                  }}
                   name="password"
                   type="password"
                   data-uie-name="enter-new-password"
