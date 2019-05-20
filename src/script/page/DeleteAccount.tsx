@@ -68,7 +68,12 @@ const DeleteAccount = ({location}: Props) => {
                 <H1>{t('title')}</H1>
                 <Text center>{t('greeting')}</Text>
                 <Text center>{t('description', {company: BRAND_NAME})}</Text>
-                <Button onClick={() => deleteAccount()} backgroundColor={COLOR.RED} style={{marginTop: 34}}>
+                <Button
+                  type="submit"
+                  onClick={() => deleteAccount()}
+                  backgroundColor={COLOR.RED}
+                  style={{marginTop: 34}}
+                >
                   {t('button')}
                 </Button>
                 <Text center style={{marginTop: 24}}>

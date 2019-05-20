@@ -69,6 +69,8 @@ const PasswordForgot = () => {
               autoFocus
               onChange={event => setEmail(event.currentTarget.value)}
               placeholder={t('Email')}
+              name="email"
+              type="email"
               onKeyDown={event => {
                 if (event.key === 'Enter') {
                   initiatePasswordReset();
