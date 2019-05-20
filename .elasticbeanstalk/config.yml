@@ -6,7 +6,7 @@ branch-defaults:
   master:
     environment: wire-account-prod
 deploy:
-  artifact: dist/wire-account.zip
+  artifact: wire-account.zip
 global:
   application_name: Account
   default_platform: Node.js
