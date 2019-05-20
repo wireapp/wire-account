@@ -73,6 +73,7 @@ const PasswordForgot = () => {
                 placeholder={t('Email')}
                 name="email"
                 type="email"
+                required
                 data-uie-name="enter-email"
               />
               <Text textTransform="uppercase" center color={COLOR.RED} data-uie-name="error-message">

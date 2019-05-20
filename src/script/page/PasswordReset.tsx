@@ -16,9 +16,9 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Runtime} from '@wireapp/commons';
+import {Runtime, ValidationUtil} from '@wireapp/commons';
 import {Button, COLOR, ContainerXS, FlexBox, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
@@ -27,6 +27,7 @@ import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {BRAND_NAME, NEW_PASSWORD_MINIMUM_LENGTH} from 'script/Environment';
 import {ActionContext} from 'script/module/action/actionContext';
+import ValidationError from 'script/module/action/ValidationError';
 
 interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 
@@ -41,30 +42,54 @@ const PasswordReset = ({location}: Props) => {
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
 
+  const passwordInput = useRef<HTMLInputElement>();
+  const [passwordValid, setPasswordValid] = useState(true);
+  const [password, setPassword] = useState('');
+
   const [t] = useTranslation('reset');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const [password, setPassword] = useState('');
   const {accountAction} = useContext(ActionContext);
   const completePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       setError('');
+      const passwordInputNode = passwordInput.current;
+      if (!passwordInputNode.checkValidity()) {
+        setPasswordValid(passwordInputNode.validity.valid);
+        throw ValidationError.handleValidationState(passwordInputNode.name, passwordInputNode.validity);
+      }
       await accountAction.completePasswordReset(password, key, code);
       setSuccess(true);
     } catch (error) {
-      switch (error.code) {
-        case HTTP_STATUS_INVALID_LINK: {
-          setError(t('errorInvalidLink'));
-          break;
+      if (error instanceof ValidationError) {
+        const PASSWORD_PATTERN_MISMATCH: string = ValidationError.FIELD.PASSWORD['PATTERN_MISMATCH'];
+        const PASSWORD_VALUE_MISSING: string = ValidationError.FIELD.PASSWORD['VALUE_MISSING'];
+        switch (error.label) {
+          case PASSWORD_VALUE_MISSING:
+          case PASSWORD_PATTERN_MISMATCH: {
+            setError(t('passwordInfo', {minPasswordLength: NEW_PASSWORD_MINIMUM_LENGTH}));
+            break;
+          }
+          default: {
+            setError(t('errorUnknown'));
+            console.error('Failed password reset completion', error);
+          }
         }
-        case HTTP_STATUS_PASSWORD_ALREADY_USED: {
-          setError(t('errorPasswordAlreadyUsed'));
-          break;
-        }
-        default: {
-          setError(t('errorUnknown'));
-          console.error('Failed password reset completion', error);
+      } else {
+        switch (error.code) {
+          case HTTP_STATUS_INVALID_LINK: {
+            setError(t('errorInvalidLink'));
+            break;
+          }
+          case HTTP_STATUS_PASSWORD_ALREADY_USED: {
+            setError(t('errorPasswordAlreadyUsed'));
+            break;
+          }
+          default: {
+            setError(t('errorUnknown'));
+            console.error('Failed password reset completion', error);
+          }
         }
       }
     }
@@ -114,14 +139,21 @@ const PasswordReset = ({location}: Props) => {
               <Form onSubmit={completePasswordReset}>
                 <Input
                   autoFocus
-                  onChange={event => setPassword(event.currentTarget.value)}
+                  ref={passwordInput}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setPasswordValid(true);
+                    setPassword(event.currentTarget.value);
+                  }}
+                  markInvalid={!passwordValid}
                   placeholder={t('passwordPlaceholder')}
                   name="password"
                   type="password"
+                  pattern={ValidationUtil.getNewPasswordPattern(NEW_PASSWORD_MINIMUM_LENGTH)}
+                  required
                   data-uie-name="enter-new-password"
                 />
                 {error ? (
-                  <Text color={COLOR.RED} center textTransform="uppercase" data-uie-name="error-message">
+                  <Text color={COLOR.RED} center data-uie-name="error-message">
                     {error}
                   </Text>
                 ) : (
@@ -129,7 +161,7 @@ const PasswordReset = ({location}: Props) => {
                     {t('passwordInfo', {minPasswordLength: NEW_PASSWORD_MINIMUM_LENGTH})}
                   </Text>
                 )}
-                <Button style={{marginTop: 34}} type="submit" data-uie-name="do-set-new-password">
+                <Button type="submit" formNoValidate style={{marginTop: 34}} data-uie-name="do-set-new-password">
                   {t('button')}
                 </Button>
               </Form>
