@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {ContainerXS, H1} from '@wireapp/react-ui-kit';
+import {ContainerXS, H1, Text} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router';
@@ -32,14 +32,16 @@ const VerifyPhoneAccount = ({match}: Props) => {
   const [t] = useTranslation('verify');
   const redirectPhone = `${REDIRECT_PHONE_URL}/${code}`;
   const OpenAppButton = () => (
-    <OpenWebappButton href={redirectPhone}>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
+    <OpenWebappButton href={redirectPhone} style={{margin: '32px 0'}}>
+      {t('open:openWire', {company: BRAND_NAME})}
+    </OpenWebappButton>
   );
   // window.location.assign(redirectPhone);
   return (
     <Document>
       <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
         <H1 center>{t('successPhoneDescription')}</H1>
-        <p>{t('open:description', {company: BRAND_NAME})}</p>
+        <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
         <OpenAppButton />
       </ContainerXS>
     </Document>

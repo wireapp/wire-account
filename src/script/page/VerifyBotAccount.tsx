@@ -39,7 +39,7 @@ const VerifyPhoneAccount = (props: Props) => {
   const key = params.get(QUERY_KEY_KEY);
 
   const [t] = useTranslation('verify');
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
   const [error, setError] = useState('');
   const {accountAction} = useContext(ActionContext);
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
@@ -53,19 +53,19 @@ const VerifyPhoneAccount = (props: Props) => {
       .then(() => setSuccess(true))
       .catch(error => {
         console.error('Failed to verify bot account', error);
-        setError(error.toString());
+        // setError(error.toString());
       });
   }, []);
   const MobileSuccess = () => (
     <React.Fragment>
-      <DirectDownloadButton />
+      <DirectDownloadButton style={{margin: '32px 0'}} />
       {redirectPhone && window.location.assign(redirectPhone)}
     </React.Fragment>
   );
 
   const DesktopSuccess = () => (
     <React.Fragment>
-      <FlexBox>
+      <FlexBox style={{margin: '32px 0'}}>
         {Runtime.isWindows() || Runtime.isMacOS() ? (
           <DirectDownloadButton style={{marginRight: 8}} />
         ) : (
@@ -90,7 +90,7 @@ const VerifyPhoneAccount = (props: Props) => {
             <React.Fragment>
               <H1 center>{t('successBotTitle')}</H1>
               <Text center>{t('successBotDescription', {company: BRAND_NAME})}</Text>
-              <Text center style={{margin: '16px 0'}}>
+              <Text center style={{marginTop: 16}}>
                 {t('successBotDescriptionEmail')}
               </Text>
               {Runtime.isMobileOS() ? (

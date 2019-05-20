@@ -71,8 +71,8 @@ const PasswordReset = ({location}: Props) => {
 
   const DesktopSuccess = () => (
     <React.Fragment>
-      <p>{t('open:description', {company: BRAND_NAME})}</p>
-      <FlexBox>
+      <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
+      <FlexBox style={{margin: '32px 0'}}>
         {Runtime.isWindows() || Runtime.isMacOS() ? (
           <DirectDownloadButton style={{marginRight: 8}} />
         ) : (
@@ -85,8 +85,8 @@ const PasswordReset = ({location}: Props) => {
 
   const UnknownSuccess = () => (
     <React.Fragment>
-      <p>{t('open:description', {company: BRAND_NAME})}</p>
-      <OpenWebappButton>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
+      <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
+      <OpenWebappButton style={{margin: '32px 0'}}>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
     </React.Fragment>
   );
   return (
@@ -95,8 +95,10 @@ const PasswordReset = ({location}: Props) => {
         {key && code ? (
           success ? (
             <React.Fragment>
-              <H1>{t('title')}</H1>
-              <p>{t('successDescription')}</p>
+              <H1 center>{t('title')}</H1>
+              <Text center style={{margin: '16px 0'}}>
+                {t('successDescription')}
+              </Text>
               {Runtime.isMobileOS() ? (
                 <DirectDownloadButton />
               ) : Runtime.isDesktopOS() ? (

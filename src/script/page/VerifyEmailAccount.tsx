@@ -59,16 +59,16 @@ const VerifyEmailAccount = ({location}: Props) => {
 
   const MobileSuccess = () => (
     <React.Fragment>
-      <p>{t('successEmailAppDescription', {company: BRAND_NAME})}</p>
-      <DirectDownloadButton />
+      <Text center>{t('successEmailAppDescription', {company: BRAND_NAME})}</Text>
+      <DirectDownloadButton style={{margin: '32px 0'}} />
       {redirectPhone && window.location.assign(redirectPhone)}
     </React.Fragment>
   );
 
   const DesktopSuccess = () => (
     <React.Fragment>
-      <p>{t('open:description', {company: BRAND_NAME})}</p>
-      <FlexBox>
+      <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
+      <FlexBox style={{margin: '32px 0'}}>
         {Runtime.isWindows() || Runtime.isMacOS() ? (
           <DirectDownloadButton style={{marginRight: 8}} />
         ) : (
@@ -82,8 +82,8 @@ const VerifyEmailAccount = ({location}: Props) => {
 
   const UnknownSuccess = () => (
     <React.Fragment>
-      <p>{t('open:description', {company: BRAND_NAME})}</p>
-      <OpenWebappButton>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
+      <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
+      <OpenWebappButton style={{margin: '32px 0'}}>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
     </React.Fragment>
   );
 

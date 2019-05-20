@@ -28,7 +28,7 @@ const HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 const PasswordForgot = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const [t] = useTranslation('forgot');
   const {accountAction} = useContext(ActionContext);
