@@ -17,7 +17,7 @@
  *
  */
 import {Button, COLOR, ContainerXS, H1, Input, Text} from '@wireapp/react-ui-kit';
-import React, {Fragment, useContext, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import Document from 'script/component/Document';
 import {ActionContext} from 'script/module/action/actionContext';

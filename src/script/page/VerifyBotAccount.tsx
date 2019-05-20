@@ -53,7 +53,7 @@ const VerifyPhoneAccount = (props: Props) => {
       .then(() => setSuccess(true))
       .catch(error => {
         console.error('Failed to verify bot account', error);
-        // setError(error.toString());
+        setError(error.toString());
       });
   }, []);
   const MobileSuccess = () => (
