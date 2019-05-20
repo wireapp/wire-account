@@ -114,11 +114,13 @@ const PasswordReset = ({location}: Props) => {
                 autoFocus
                 onChange={event => setPassword(event.currentTarget.value)}
                 placeholder={t('passwordPlaceholder')}
+                name="password"
                 onKeyDown={event => {
                   if (event.key === 'Enter') {
                     completePasswordReset();
                   }
                 }}
+                data-uie-name="enter-new-password"
               />
               {error ? (
                 <Text color={COLOR.RED} center textTransform="uppercase" data-uie-name="error-message">
@@ -129,7 +131,11 @@ const PasswordReset = ({location}: Props) => {
                   {t('passwordInfo', {minPasswordLength: NEW_PASSWORD_MINIMUM_LENGTH})}
                 </Text>
               )}
-              <Button onClick={() => completePasswordReset()} style={{marginTop: 34}}>
+              <Button
+                onClick={() => completePasswordReset()}
+                style={{marginTop: 34}}
+                data-uie-name="do-set-new-password"
+              >
                 {t('button')}
               </Button>
             </React.Fragment>
