@@ -39,7 +39,7 @@ const VerifyPhoneAccount = (props: Props) => {
   const key = params.get(QUERY_KEY_KEY);
 
   const [t] = useTranslation('verify');
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const {accountAction} = useContext(ActionContext);
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
