@@ -43,7 +43,7 @@ const PasswordReset = ({location}: Props) => {
 
   const [t] = useTranslation('reset');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const [password, setPassword] = useState('');
   const {accountAction} = useContext(ActionContext);
   const completePasswordReset = async () => {
