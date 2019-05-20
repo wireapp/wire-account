@@ -60,7 +60,7 @@ const PasswordForgot = () => {
         {success ? (
           <React.Fragment>
             <H1>{t('successTitle')}</H1>
-            <p>{t('successDescription')}</p>
+            <Text center>{t('successDescription')}</Text>
           </React.Fragment>
         ) : (
           <React.Fragment>
