@@ -12,6 +12,7 @@ temp
 npm-debug.log
 package-lock.json
 yarn-error.log
+wire-account.zip
 
 # Configuration imported from https://github.com/wireapp/wire-web-config-default/
 .env

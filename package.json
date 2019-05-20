@@ -39,6 +39,7 @@
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.6",
     "babel-plugin-remove-jsx-attributes": "0.0.2",
+    "cross-env": "5.2.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.2.0",
     "eslint-plugin-es5": "1.3.1",
@@ -95,6 +96,10 @@
     "url": "https://github.com/wireapp/wire-account.git"
   },
   "scripts": {
+    "build:server": "cd server && yarn build",
+    "bundle:prod": "yarn build:server && cross-env-shell NODE_ENV=production yarn clean && yarn webpack && node bin/version_file.js && node bin/deployment_archive.js",
+    "bundle:staging": "yarn build:server && cross-env-shell BABEL_ENV=development NODE_ENV=production yarn clean && yarn webpack && node bin/version_file.js && node bin/deployment_archive.js",
+    "clean": "exit 0",
     "docker": "node bin/push_docker.js",
     "fix:js": "yarn lint:js --fix",
     "fix:other": "yarn prettier --write",
