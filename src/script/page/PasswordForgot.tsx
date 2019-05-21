@@ -76,7 +76,7 @@ const PasswordForgot = () => {
                 required
                 data-uie-name="enter-email"
               />
-              <Text textTransform="uppercase" center color={COLOR.RED} data-uie-name="error-message">
+              <Text center color={COLOR.RED} data-uie-name="error-message">
                 {error}
               </Text>
               <Button type="submit" style={{marginTop: 16}} data-uie-name="do-send-password-reset-email">
