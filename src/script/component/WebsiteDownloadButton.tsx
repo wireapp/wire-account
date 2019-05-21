@@ -30,7 +30,7 @@ const WebsiteDownloadButton = (props: Props) => {
     <ButtonLink
       backgroundColor={COLOR.GREEN}
       style={{color: COLOR.WHITE}}
-      href={`${WEBSITE_URL}/download`}
+      href={`${WEBSITE_URL}/download/`}
       data-uie-name="go-website-download"
       {...props}
     >
