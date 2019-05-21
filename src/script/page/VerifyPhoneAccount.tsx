@@ -32,7 +32,7 @@ const VerifyPhoneAccount = ({match}: Props) => {
   const [t] = useTranslation('verify');
   const redirectPhone = `${REDIRECT_PHONE_URL}/${code}`;
   const OpenAppButton = () => (
-    <OpenWebappButton href={redirectPhone} style={{margin: '32px 0'}} data-ui-name="go-verify-phone">
+    <OpenWebappButton href={redirectPhone} style={{margin: '32px 0'}} data-uie-name="go-verify-phone">
       {t('open:openWire', {company: BRAND_NAME})}
     </OpenWebappButton>
   );
