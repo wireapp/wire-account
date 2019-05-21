@@ -61,6 +61,7 @@ const VerifyEmailAccount = ({location}: Props) => {
     <React.Fragment>
       <Text center>{t('successEmailAppDescription', {company: BRAND_NAME})}</Text>
       <DirectDownloadButton style={{margin: '32px 0'}} />
+      {/* The link element is for QA to detect wire protocol redirects */}
       <link id="url" data-redirect={redirectPhone} />
       {redirectPhone && window.location.assign(redirectPhone)}
     </React.Fragment>
