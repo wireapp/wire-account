@@ -28,17 +28,16 @@ import DeleteAccount from './page/DeleteAccount';
 import Index from './page/Index';
 import PasswordForgot from './page/PasswordForgot';
 import PasswordReset from './page/PasswordReset';
+import SSORedirect from './page/SSORedirect';
 import VerifyBotAccount from './page/VerifyBotAccount';
 import VerifyEmailAccount from './page/VerifyEmailAccount';
 import VerifyPhoneAccount from './page/VerifyPhoneAccount';
 
 const history = createBrowserHistory();
 
-interface Props {
-  language: string;
-}
+interface Props {}
 
-const Root: React.FC<Props> = ({language = 'en-US'}) => {
+const Root: React.FC<Props> = () => {
   return (
     <StyledApp>
       <Global
@@ -59,6 +58,7 @@ const Root: React.FC<Props> = ({language = 'en-US'}) => {
               <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={VerifyEmailAccount} />
               <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={VerifyBotAccount} />
               <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={VerifyPhoneAccount} />
+              <Route exact path={ROUTE.SSO_START} component={SSORedirect} />
               <Redirect to={ROUTE.HOME} />
             </Switch>
           </Opacity>

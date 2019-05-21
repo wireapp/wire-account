@@ -28,6 +28,7 @@ const ROUTE = {
   HOME: '/',
   PASSWORD_FORGOT: '/forgot',
   PASSWORD_RESET: '/reset',
+  SSO_START: '/start-sso/:code',
   VERIFY_ACCOUNT_BOT: '/verify/bot',
   VERIFY_ACCOUNT_EMAIL: '/verify',
   VERIFY_ACCOUNT_PHONE: '/v/:code',

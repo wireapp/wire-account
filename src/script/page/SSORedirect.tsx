@@ -17,20 +17,16 @@
  *
  */
 import React from 'react';
+import {RouteComponentProps, withRouter} from 'react-router';
 import Document from 'script/component/Document';
 import {REDIRECT_START_SSO_URL} from 'script/Environment';
 
-interface Props extends React.HTMLProps<Document> {}
+interface Props extends React.HTMLProps<Document>, RouteComponentProps<{code: string}> {}
 
-const QUERY_CODE_KEY = 'code';
-
-const SSORedirect = (props: Props) => {
-  const params = new URLSearchParams(location.search);
-  const code = params.get(QUERY_CODE_KEY);
-
-  const redirect = `${REDIRECT_START_SSO_URL}/${code}`;
+const SSORedirect = ({match}: Props) => {
+  const redirect = `${REDIRECT_START_SSO_URL}/${match.params.code}`;
   window.location.assign(redirect);
   return <Document />;
 };
 
-export default SSORedirect;
+export default withRouter(SSORedirect);
