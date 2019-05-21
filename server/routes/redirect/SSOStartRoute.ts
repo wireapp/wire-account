@@ -16,17 +16,14 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import React from 'react';
-import {RouteComponentProps, withRouter} from 'react-router';
-import Document from 'script/component/Document';
-import {REDIRECT_START_SSO_URL} from 'script/Environment';
 
-interface Props extends React.HTMLProps<Document>, RouteComponentProps<{code: string}> {}
+import {Router} from 'express';
+import {ServerConfig} from '../../ServerConfig';
 
-const SSORedirect = ({match}: Props) => {
-  const redirect = `${REDIRECT_START_SSO_URL}/${match.params.code}`;
-  window.location.assign(redirect);
-  return <Document />;
-};
+const SSOStartRoute = (config: ServerConfig) =>
+  Router().get('/start-sso/:code', (req, res) => {
+    const url = `${config.CLIENT.URL.REDIRECT_START_SSO_BASE}/${req.params.code}`;
+    return res.redirect(url);
+  });
 
-export default withRouter(SSORedirect);
+export default SSOStartRoute;

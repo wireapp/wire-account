@@ -30,6 +30,7 @@ import DefaultRoute from './routes/error/DefaultRoute';
 import ErrorRoute from './routes/error/ErrorRoute';
 import GeneratedAppleRoute from './routes/generated/GeneratedAppleRoute';
 import GeneratedPiwikRoute from './routes/generated/GeneratedPiwikRoute';
+import SSOStartRoute from './routes/redirect/SSOStartRoute';
 import {ServerConfig} from './ServerConfig';
 
 hbs.registerHelper('ifAnd', (v1: any, v2: any, options: any) => (v1 && v2 ? options.fn(this) : options.inverse(this)));
@@ -56,6 +57,7 @@ class Server {
     this.initWebpack();
     this.app.use(HealthCheckRoute);
     this.app.use(ConfigRoute(this.config));
+    this.app.use(SSOStartRoute(this.config));
     this.app.use(CommitRoute(this.config));
     this.app.use(GeneratedAppleRoute(this.config));
     this.app.use(GeneratedPiwikRoute(this.config));
