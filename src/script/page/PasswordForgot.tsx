@@ -50,7 +50,7 @@ const PasswordForgot = () => {
         }
         default: {
           setError(t('errorUnknown'));
-          console.error('Failed to initiate password reset', error);
+          console.warn('Failed to initiate password reset', error);
         }
       }
     }

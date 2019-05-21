@@ -52,7 +52,7 @@ const VerifyPhoneAccount = (props: Props) => {
       .verifyBot(key, code)
       .then(() => setSuccess(true))
       .catch(error => {
-        console.error('Failed to verify bot account', error);
+        console.warn('Failed to verify bot account', error);
         setError(error.toString());
       });
   }, []);

@@ -73,7 +73,7 @@ const PasswordReset = ({location}: Props) => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.error('Failed password reset completion', error);
+            console.warn('Failed password reset completion', error);
           }
         }
       } else {
@@ -88,7 +88,7 @@ const PasswordReset = ({location}: Props) => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.error('Failed password reset completion', error);
+            console.warn('Failed password reset completion', error);
           }
         }
       }
