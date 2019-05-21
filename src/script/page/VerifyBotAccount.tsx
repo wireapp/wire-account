@@ -66,7 +66,7 @@ const VerifyPhoneAccount = (props: Props) => {
   const DesktopSuccess = () => (
     <React.Fragment>
       <FlexBox style={{margin: '32px 0'}}>
-        {Runtime.isWindows() || Runtime.isMacOS() ? (
+        {Runtime.isMacOS() ? (
           <DirectDownloadButton style={{marginRight: 8}} />
         ) : (
           <WebsiteDownloadButton style={{marginRight: 8}} />

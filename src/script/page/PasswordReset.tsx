@@ -99,7 +99,7 @@ const PasswordReset = ({location}: Props) => {
     <React.Fragment>
       <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
       <FlexBox style={{margin: '32px 0'}}>
-        {Runtime.isWindows() || Runtime.isMacOS() ? (
+        {Runtime.isMacOS() ? (
           <DirectDownloadButton style={{marginRight: 8}} />
         ) : (
           <WebsiteDownloadButton style={{marginRight: 8}} />

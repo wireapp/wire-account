@@ -18,7 +18,7 @@
  */
 
 import {Runtime} from '@wireapp/commons';
-import {FlexBox, Link, Text, TextLink} from '@wireapp/react-ui-kit';
+import {FlexBox, Text, TextLink} from '@wireapp/react-ui-kit';
 import React from 'react';
 import Document from 'script/component/Document';
 import {DOWNLOAD_ANDROID_URL, DOWNLOAD_IOS_URL, WEBSITE_URL, isEnvironment} from 'script/Environment';
