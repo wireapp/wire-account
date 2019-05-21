@@ -43,6 +43,8 @@ const VerifyPhoneAccount = ({match}: Props) => {
         <H1 center>{t('successPhoneDescription')}</H1>
         <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
         <OpenAppButton />
+        {/* The link element is for QA to detect wire protocol redirects */}
+        <link id="url" data-redirect={redirectPhone} />
       </ContainerXS>
     </Document>
   );
