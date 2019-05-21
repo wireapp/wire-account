@@ -27,7 +27,13 @@ interface Props extends LinkProps {}
 const WebsiteDownloadButton = (props: Props) => {
   const [t] = useTranslation('open');
   return (
-    <ButtonLink backgroundColor={COLOR.GREEN} style={{color: COLOR.WHITE}} href={`${WEBSITE_URL}/download`} {...props}>
+    <ButtonLink
+      backgroundColor={COLOR.GREEN}
+      style={{color: COLOR.WHITE}}
+      href={`${WEBSITE_URL}/download`}
+      data-uie-name="go-website-download"
+      {...props}
+    >
       {t('downloadButton', {company: BRAND_NAME})}
     </ButtonLink>
   );

@@ -48,6 +48,7 @@ const DirectDownloadButton = (props: Props) => {
       backgroundColor={COLOR.GREEN}
       style={{color: COLOR.WHITE}}
       href={SYSTEM_DEPENDENT_LINKS[Runtime.getOSFamily()] || DEFAULT_LINK}
+      data-uie-name="go-direct-download"
       {...props}
     >
       {t('downloadButton', {company: BRAND_NAME})}

@@ -32,11 +32,11 @@ const VerifyPhoneAccount = ({match}: Props) => {
   const [t] = useTranslation('verify');
   const redirectPhone = `${REDIRECT_PHONE_URL}/${code}`;
   const OpenAppButton = () => (
-    <OpenWebappButton href={redirectPhone} style={{margin: '32px 0'}}>
+    <OpenWebappButton href={redirectPhone} style={{margin: '32px 0'}} data-ui-name="go-verify-phone">
       {t('open:openWire', {company: BRAND_NAME})}
     </OpenWebappButton>
   );
-  // window.location.assign(redirectPhone);
+  window.location.assign(redirectPhone);
   return (
     <Document>
       <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>

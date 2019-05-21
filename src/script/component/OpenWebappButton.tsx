@@ -29,6 +29,7 @@ const OpenWebappButton = (props: Props) => {
       backgroundColor={COLOR.BLUE}
       style={{color: COLOR.WHITE}}
       href={`${WEBAPP_URL}/auth/?immediate_login#login`}
+      data-uie-name="go-webapp"
       {...props}
     />
   );
