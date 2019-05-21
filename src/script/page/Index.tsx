@@ -17,9 +17,39 @@
  *
  */
 
+import {Runtime} from '@wireapp/commons';
+import {FlexBox, Link, Text, TextLink} from '@wireapp/react-ui-kit';
 import React from 'react';
 import Document from 'script/component/Document';
+import {DOWNLOAD_ANDROID_URL, DOWNLOAD_IOS_URL, WEBSITE_URL, isEnvironment} from 'script/Environment';
 
-const Index = () => <Document>Index</Document>;
+interface Props extends React.HTMLProps<Document> {}
+
+const Index = (props: Props) => {
+  let redirect = WEBSITE_URL;
+  const isGetWireHost = window.location.hostname === 'get.wire.com' || window.location.hostname === 'get.zinfra.io';
+  if (isGetWireHost) {
+    redirect = `${WEBSITE_URL}/download`;
+    if (Runtime.isAndroid()) {
+      redirect = DOWNLOAD_ANDROID_URL;
+    }
+    if (Runtime.isIOS()) {
+      redirect = DOWNLOAD_IOS_URL;
+    }
+  }
+  if (!isEnvironment('development')) {
+    window.location.assign(redirect);
+  }
+  return (
+    <Document>
+      <FlexBox style={{margin: 'auto'}}>
+        <Text center block>
+          {'This page would have redirected to: '}
+          <TextLink href={redirect}>{redirect}</TextLink>
+        </Text>
+      </FlexBox>
+    </Document>
+  );
+};
 
 export default Index;
