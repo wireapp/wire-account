@@ -76,7 +76,7 @@
     "tslint-react": "4.0.0",
     "tslint-react-hooks": "2.1.0",
     "typescript": "3.4.5",
-    "uglify-js": "3.5.11"
+    "uglify-js": "3.5.14"
   },
   "husky": {
     "hooks": {
