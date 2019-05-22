@@ -22,7 +22,7 @@ import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router';
 import Document from 'script/component/Document';
 import {ACCOUNT_DELETE_SURVEY_URL, BRAND_NAME} from 'script/Environment';
-import {ActionContext} from 'script/module/action/ActionContext';
+import {ActionContext} from 'script/module/action';
 
 interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 

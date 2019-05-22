@@ -26,7 +26,7 @@ import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {BRAND_NAME, NEW_PASSWORD_MINIMUM_LENGTH} from 'script/Environment';
-import {ActionContext} from 'script/module/action/ActionContext';
+import {ActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
 
 interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}

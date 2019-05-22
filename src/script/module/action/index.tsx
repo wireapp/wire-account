@@ -17,11 +17,25 @@
  *
  */
 
+import {APIClient} from '@wireapp/api-client';
+import {MemoryEngine} from '@wireapp/store-engine';
 import React from 'react';
-import {actionRoot} from './index';
+import * as Environment from 'script/Environment';
+import {AccountAction} from './AccountAction';
 
-export const ActionContext = React.createContext(actionRoot);
+const actionRoot: {
+  accountAction: AccountAction;
+} = {
+  accountAction: new AccountAction(
+    new APIClient({
+      store: new MemoryEngine(),
+      urls: {rest: Environment.HOST_HTTP, ws: undefined, name: 'backend'},
+    }),
+  ),
+};
 
-export const ActionProvider = ({children}) => (
-  <ActionContext.Provider value={actionRoot}>{children}</ActionContext.Provider>
-);
+const ActionContext = React.createContext(actionRoot);
+
+const ActionProvider = ({children}) => <ActionContext.Provider value={actionRoot}>{children}</ActionContext.Provider>;
+
+export {actionRoot, ActionContext, ActionProvider};
