@@ -10,7 +10,7 @@
     "$": true,
     "$button": true
   },
-  "plugins": ["es5", "jasmine", "jsdoc", "no-unsanitized", "prettier"],
+  "plugins": ["jasmine", "jsdoc", "no-unsanitized", "prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 5,
