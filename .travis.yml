@@ -25,9 +25,9 @@ before_install:
 
 after_success:
   - echo -e "$TRAVIS_COMMIT" > ./dist/commit
-  - yarn build
   - |
     if [ "$TRAVIS_BRANCH" == "staging" ]; then
+      yarn bundle:staging
       if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' staging
       else
@@ -36,6 +36,7 @@ after_success:
     fi
   - |
     if [ -n "$TRAVIS_TAG" ]; then
+      yarn bundle:prod
       if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' production
       else
@@ -44,6 +45,7 @@ after_success:
     fi
   - |
     if [ "$TRAVIS_BRANCH" == "react" ]; then
+      yarn bundle:prod
       if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' react
       else
