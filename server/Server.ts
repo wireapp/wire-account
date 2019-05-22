@@ -157,7 +157,6 @@ class Server {
     this.app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'img', 'favicon.ico')));
     this.app.get('/robots.txt', (req, res) => res.sendFile(path.join(__dirname, 'robots', 'robots.txt')));
     this.app.use('/script', express.static(path.join(__dirname, 'static', 'script')));
-    this.app.use('/style', express.static(path.join(__dirname, 'static', 'style')));
   }
 
   initTemplateEngine() {
