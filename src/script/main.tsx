@@ -29,9 +29,9 @@ import {initReactI18next} from 'react-i18next';
 import Root from 'script/Root';
 import 'url-search-params-polyfill';
 import {CommonConfig} from '@wireapp/commons';
-import deDE from 'resource/translation/de-DE.json';
-import enUS from 'resource/translation/en-US.json';
-import frFR from 'resource/translation/fr-FR.json';
+const deDE = require('resource/translation/de-DE.json');
+const enUS = require('resource/translation/en-US.json');
+const frFR = require('resource/translation/fr-FR.json');
 
 i18n
   .use(

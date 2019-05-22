@@ -19,13 +19,11 @@
 
 import {Column, Columns, Content, Footer, Line, Link} from '@wireapp/react-ui-kit';
 import React from 'react';
-import {useTranslation} from 'react-i18next';
 import {WEBSITE_URL} from 'script/Environment';
 
 interface Props extends React.HTMLProps<Document> {}
 
 const WireFooter: React.FC<Props> = ({}) => {
-  const [t] = useTranslation('delete');
   return (
     <Footer>
       <Content>

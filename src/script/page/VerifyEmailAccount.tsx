@@ -26,7 +26,7 @@ import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {BRAND_NAME, REDIRECT_VERIFY_URL} from 'script/Environment';
-import {ActionContext} from 'script/module/action/actionContext';
+import {ActionContext} from 'script/module/action/ActionContext';
 
 interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 

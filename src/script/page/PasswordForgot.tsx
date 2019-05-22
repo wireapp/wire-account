@@ -20,7 +20,7 @@ import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import Document from 'script/component/Document';
-import {ActionContext} from 'script/module/action/actionContext';
+import {ActionContext} from 'script/module/action/ActionContext';
 
 const HTTP_STATUS_EMAIL_NOT_IN_USE = 400;
 const HTTP_STATUS_EMAIL_ALREADY_SENT = 409;

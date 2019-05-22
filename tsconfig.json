@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "baseUrl": "./src", // enables absolute path imports
+    "baseUrl": "./src",
     "declaration": false,
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,10 +13,12 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "outDir": "server/dist/static",
-    "rootDirs": ["src", "resource"],
+    "rootDirs": ["src"],
     "sourceMap": true,
     "target": "es6",
-    "resolveJsonModule": true
+    "paths": {
+      "resource/*": ["resource/*"]
+    }
   },
   "exclude": ["node_modules", "server"]
 }
