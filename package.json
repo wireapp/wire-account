@@ -111,6 +111,7 @@
     "prettier": "prettier \"**/*.{json,less,md,yml}\"",
     "preversion": "yarn test",
     "start": "cd server && yarn start",
+    "test": "exit 0",
     "translate:extract": "yarn build && i18next-scanner 'server/dist/**/*.{js,html}'",
     "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
     "webpack": "webpack --config webpack.config.prod.js",
