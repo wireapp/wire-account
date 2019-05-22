@@ -10,6 +10,8 @@ env:
     - secure: 'cYc5PjVUc4sCGvwRKzpuWLK8g7qVzxKpMEYW7xnrwCFdImVlG43qP5QWZnKQ9Rf8zl8OVZTyhhcHv5DyAsOhYa6fbSAcHNcXJ0I00EcCjZ/3+O9VvTy9p0kN+KwQ58x154OKLJcV3HG4bB9urtFEewbEtcCl2/WV2/jtFQddlrvCElGS07SgcsGGgu3V1YcCZk2l/niajgMtcpQ/Xbwy/wjq45l3GlrtjbpSPnZGVcLuxkVS/B2WRLoOhxYUtYfYjDfBB9jhYuIM+dodNw56yVlT2m/JiSbGvKBGiqVcWpZuFl+Z1mcc2wXIQxvX7gplVOCkNOSAekleuXNYqadXqXiCFcQ3MSiyPy2PADwR0+QV625eQtZ2AEEx3HGbA8xS7Wd+1KYzVBJrriNNnm11FG6dyNtFT2tZbow1Dhmz3/YGa6fY0fpKF1Drx+dHetPUw4zzUcRMzWSIsSiEwI263oBk6vB/yi7z4uTEncHdbGLdwUGdzdaHdcCSwCH52zmKmt+q0JhV7SIqGzQLeQ4qUPWD7h/PJ3/feHEExpFRnYpKDPBN1xs3ZNo6AMHd9P2ASG9aXw9T8YjCdvAiX3B8rHpg9oFVrfk5XZxmoAJbkS4aPMGYAFFY3LTvPyZul1wJLIVDdy2Sp/vHpjlNxw73N56y1UWJ5B4EBUAoZllzXjo='
     # DOCKER_USERNAME
     - secure: 'IavV0k2AMz6pqCckWQhChV7jZghuarOm1S5ZVKGbwMVqR6r55v/mNbUgpC/HtfU9iLQbZ8tpm9eJI29rfBU6pS163PmNMT1ZZsX6dYo5pDQZSzHe9bBcf1mONLiPShEktEdEsQ1IAvPGPlDc3L5fNyQ6iivOkmnzJ0yN6ZgkovO7avQPZPxNKHc03WDL9DrgKvdqiy3s56Ya1GFMoaprW6/p7dULB94IpmXslR0ZXMMV49d4g95TVHfv1qhhHCa33eeK0YmfSsN2XYOEtGEES7Zdr9TiIv71lHrY8h1s1LkNq7DRR2J6kv/oyrVrghfkghuhhDEF5BE+gamUegW+3tQEtojRcKAwwsLCF6KWulZ1XNK/SCnXQrUc/gkMuEpS1kkOLAEW0DG8X2yUeF7VV7nT0dDFrOjBwe2SwtYz9U6L/QGBbvUHccwF2GUaDTete7EyjCy5ypmBVwjasmyir+skmTl70ZrZFqf1ZLIc5OuinKz+S2J3FLr6CUjw6sKPURjxky2ga4hXBNHFDGCE824I/ZuUt3SI6qGJUFVoHWuVZ0jKClR1xJlRXKnxV7xC2/fJwPVC7KTEXW5uEmys2ar5fZGM1wl/N2yDyGzB93CCcXfvTI6idJ+E8V2UuL6QEiqNtNSA+Tvllko2lO0LFCULSwMmq8E+Ztk/TAeppyw='
+    # GH_TOKEN
+    - secure: 'a4v1e5fuNq2M3pHabMIis5aKEwcb+X/a28Wy35NLKEvAiWU3lBfQf/z6kedO7Ruk1lpHB4iEyp6jGrVnIlf+6aCnpAwfkLnSQ4QqG4Wwd1q28vNKfN3yDE8QN9+JdHoG2d9TKMNe/fWGR+mhyZYU2ry1Zg7597Hl1Ft9rRDM44reH2XslYxoRTCOvRLaZOXzrn3BEF6jvW2U5q/DymHACCdGFW6U4VJSTlN9cTvCt0uAYuItbvnbZ4HJ2tRVLqKHN3wcOiF9J0uizqIxAXaX5rlPMSnjOoWO63KAEVv8kwsmZMg4v3YDyFjFX14ArzoIqdUKyjB9Kw/kQ+YQyE5Ciq4TdfEonJryeZNBVHs94zDCUMyf96GSJ4Kt+NuLH8lPA4riTV1ygtRgfS85IiD7yTOa0kgdeBswWxXD3iXD3xDdp5cNX2p7mU4m3ABKToh+SjvNfT9lYrIr1WL3yBCLVM6tzoyzFMw2dcZ+U1x2HP2scO8zURjUhSibO/moMyg42V4gWlrLlt5/+2DgEFYWTBd4o5nsZObzwujDUwbZrltnlvST7A/VBh4ka0wrVJkmLfT+aeQdNG0IOJso5b7+KjlH5UH0bdHdCbWeS4pE9sRMPwD3Q8lRcP7M+fDBo8uCFiUjmf1Xsw5n1bhd4YeFnBycJbVcPDzUn8ZV5L3C0Zc='
   matrix:
     - DISTRIBUTION="$DISTRIBUTION_1"
     - DISTRIBUTION="wire"
@@ -19,7 +21,7 @@ notifications:
 
 # http://docs.travis-ci.com/user/build-lifecycle/
 before_install:
-  - echo -e "Host github.com\n\tHostName github.com\n\tUser git\n\tIdentityFile ~/.ssh/id_rsa\n" >> ~/.ssh/config
+  - echo -e "machine github.com\n  login $GH_TOKEN" > ~/.netrc
 
 after_success:
   - echo -e "$TRAVIS_COMMIT" > ./dist/commit
