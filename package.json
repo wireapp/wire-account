@@ -82,8 +82,12 @@
       "prettier --write",
       "git add"
     ],
-    "*.ts": [
+    "src/script/**/*.{ts,tsx}": [
       "tslint --config tslint.json --project tsconfig.json --fix",
+      "git add"
+    ],
+    "server/**/*.{ts,tsx}": [
+      "cd server && tslint --config server/tslint.json",
       "git add"
     ]
   },
