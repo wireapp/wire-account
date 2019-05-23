@@ -47,7 +47,7 @@ class Server {
     this.init();
   }
 
-  init() {
+  init(): void {
     // The order is important here, please don't sort!
     this.initCaching();
     this.initForceSSL();
@@ -65,7 +65,7 @@ class Server {
     this.app.use(ErrorRoute(this.config));
   }
 
-  initWebpack() {
+  initWebpack(): void {
     if (this.config.SERVER.ENVIRONMENT === 'development') {
       const webpackCompiler = require('webpack')(require('../../webpack.config.dev'));
       const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -76,7 +76,7 @@ class Server {
     }
   }
 
-  initCaching() {
+  initCaching(): void {
     if (this.config.SERVER.ENVIRONMENT === 'test' || this.config.SERVER.ENVIRONMENT === 'development') {
       this.app.use(helmet.noCache());
     } else {
@@ -92,7 +92,7 @@ class Server {
     }
   }
 
-  initForceSSL() {
+  initForceSSL(): void {
     const STATUS_CODE_MOVED = 301;
 
     const SSLMiddleware: express.RequestHandler = (req, res, next) => {
@@ -115,7 +115,7 @@ class Server {
     this.app.use(SSLMiddleware);
   }
 
-  initSecurityHeaders() {
+  initSecurityHeaders(): void {
     this.app.disable('x-powered-by');
     this.app.use(
       helmet({
@@ -153,13 +153,13 @@ class Server {
     );
   }
 
-  initStaticRoutes() {
+  initStaticRoutes(): void {
     this.app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'img', 'favicon.ico')));
     this.app.get('/robots.txt', (req, res) => res.sendFile(path.join(__dirname, 'robots', 'robots.txt')));
     this.app.use('/script', express.static(path.join(__dirname, 'static', 'script')));
   }
 
-  initTemplateEngine() {
+  initTemplateEngine(): void {
     this.app.engine('hbs', hbs.express4());
     this.app.set('view engine', 'hbs');
     this.app.set('views', path.resolve(__dirname, 'templates'));
