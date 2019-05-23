@@ -45,7 +45,7 @@ after_success:
       fi
     fi
   - |
-    if [ "$TRAVIS_BRANCH" == "react"]; then
+    if [ "$TRAVIS_BRANCH" == "react" ]; then
       yarn bundle:prod
       if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' react
