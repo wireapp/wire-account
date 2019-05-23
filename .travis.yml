@@ -24,9 +24,10 @@ before_install:
   - echo -e "machine github.com\n  login $GH_TOKEN" > ~/.netrc
 
 after_success:
+  - echo "Branch = $TRAVIS_BRANCH" && echo "PR = $TRAVIS_PULL_REQUEST" && echo "Tag = $TRAVIS_TAG"
   - echo -e "$TRAVIS_COMMIT" > ./dist/commit
   - |
-    if [ "$TRAVIS_BRANCH" == "staging" ]; then
+    if [ "$TRAVIS_BRANCH" == "staging" && "$TRAVIS_PULL_REQUEST" == false]; then
       yarn bundle:staging
       if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' staging
@@ -44,7 +45,7 @@ after_success:
       fi
     fi
   - |
-    if [ "$TRAVIS_BRANCH" == "react" ]; then
+    if [ "$TRAVIS_BRANCH" == "react"  && "$TRAVIS_PULL_REQUEST" == false]; then
       yarn bundle:prod
       if [ "$DISTRIBUTION" == "wire" ]; then
         yarn docker '' react
