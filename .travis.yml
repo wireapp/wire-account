@@ -44,15 +44,6 @@ after_success:
         yarn docker "$DISTRIBUTION" production
       fi
     fi
-  - |
-    if [ "$TRAVIS_BRANCH" == "react" ]; then
-      yarn bundle:prod
-      if [ "$DISTRIBUTION" == "wire" ]; then
-        yarn docker '' react
-      else
-        yarn docker "$DISTRIBUTION" react
-      fi
-    fi
 
 deploy:
   - provider: elasticbeanstalk
@@ -85,20 +76,4 @@ deploy:
     on:
       repo: wireapp/wire-account
       branch: staging
-      condition: $DISTRIBUTION = wire
-
-  - provider: elasticbeanstalk
-    skip_cleanup: true
-    zip-file: wire-account.zip
-    access-key-id:
-      secure: eph/s1GGgpaZj4+izIeADk5FSHkTqjTzSvO507pcdZKTclSG5rw3pp7yBxsRYj/gzyd895SEhjFUFxoYmeKP9pkC/SmcrV4z9gSOqXEGyUQBJPluxVEyfYsxL+bBO+E8X9Xk/rmayy7rGkKHC08KlKpSi4o8AjLqFcvrg0dRppFE2xBJtX25qbx4ghWY5AE9hGhh1yccxsCdZTZ0Bq0E8tyIW8K/Pi++koECBarn74jr5BBCjVOHhTlTfLPx/xqPcgL7Xg9R6w0KnMlSYMymdOsbMoKQcMGzxV37f1KEaL9sfVUSmL9hXmfKU4VHl+wOLi34Lf3ieDFK+AVBabOvlF8JfXrfo00T4wHADpTlyyPE59HHFsmRAK+G+bo+ZzycpWHQIB6d7jL/XRgKmv7gS3VqrDunWvI5pTuVrgBmiME3IWiE/ow2HiBgBzn4dmZSw8/zYjlXbO9HipjwmYFH9mw+h5/tYndaz9juP5gMYD7mkP0fWmfc5cfqLZj0GJSgbhBnP9KmvHL/GubmrMgTd2CAprlrrSlbASTKUw/ywW4f+91/jMeOen4V/ogjt2JNjHi0lru9oQAlQm+LVjob8Hx9tyNacga90dQ53Y/HEr5CoCbqFxogdiEcKNFjDWQ4RV2PPBbYGVQq9B2UFTQuUgHgQ028EH/WwJ7lCszs/T0=
-    secret-access-key:
-      secure: zIX568EVY/ZikO+e/llFPhx8L/gJYa51Y6hfkHbkXLZ0l2ytH6OXmtEsGx7e4vWS/wF7OBXno3dFhmlR7Fmp+Hq0d1mxOinw9BeB3PVbBrm0yKAZB0uq25Kurowymnp7A/JNQshPxn4hPj85SUd+J9v09FMX5Y1AHeB7S6I7/DtdhNixGLXekMlHWFacCdUwTeMUtt//VlJk/LAozgQPOAhmzvkkV5g+TgpGVN/FKKbiE0DOBXbwmiv9MjnFkIgNDgwl1wsXNteRthNCBSCLPVKx9/y5mAqNUFe6hQWfhYYkej42928hproCk6iNz3poRgV0FOzD2xEAC1mreYy3KFhwayAx8JIhpvUU5wTHeu7bLbIoILoqzVaXbdY9NVP92yrBsIDjv7aF0wvLq67gxIpVDWJZ6LcFRFkA6rumAsZD2IdcOI4/YNqqO7O06USJDhTDabYFlUB+KCObLvfxOu1mbXUJAuubY3WNN8d+ptFUWOqcCJt31jTiao/oNmjKL4r1IphJ9eGICrbZCVGCO4/OjuDLhh/F3dfxXQtKFDWdAjsY8osBX9jxeS450kAE+Vp+G/rB++t54cvY+oh0swGrut0F9YAwl+f+Z870ZyKH/hlo7aG6JyUAm9AxuxfrgmIK4uepLNhFlcIUniiYxIY8L5LwMk/OPv+jvLL4aWw=
-    region: eu-central-1
-    app: Account
-    env: wire-account-staging
-    bucket_name: wire-account-builds
-    on:
-      repo: wireapp/wire-account
-      branch: react
       condition: $DISTRIBUTION = wire
