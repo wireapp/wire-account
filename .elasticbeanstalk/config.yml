@@ -1,6 +1,4 @@
 branch-defaults:
-  react:
-    environment: wire-account-staging
   staging:
     environment: wire-account-staging
   master:
