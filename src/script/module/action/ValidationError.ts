@@ -30,20 +30,20 @@ export default class ValidationError extends Error {
     return this.label === label;
   };
 
-  static getAllPropertyNames(obj) {
-    let props = [];
+  static getAllPropertyNames<T>(obj: T): string[] {
+    let props: string[] = [];
     do {
       props = props.concat(Object.getOwnPropertyNames(obj));
     } while ((obj = Object.getPrototypeOf(obj)));
     return props;
   }
 
-  static handleValidationState(fieldName: string, validationState) {
+  static handleValidationState(fieldName: string, validationState: ValidityState) {
     const field = ValidationError.getFieldByName(fieldName);
     const validationStateKeys = ValidationError.getAllPropertyNames(validationState);
     for (const key of validationStateKeys) {
-      if (Object.values(ValidationError.ERROR).includes(key) && validationState[key]) {
-        return new ValidationError(field[ValidationError.getErrorKeyByValue(key)]);
+      if (Object.values(ValidationError.ERROR).includes(key) && (validationState as any)[key]) {
+        return new ValidationError((field as any)[ValidationError.getErrorKeyByValue(key)]);
       }
     }
     return null;
@@ -70,12 +70,12 @@ export default class ValidationError extends Error {
     );
   };
 
-  static FIELD = {
+  static FIELD: {[key: string]: {[key: string]: any}} = {
     EMAIL: {...ValidationError.mapErrorsToField('email'), name: 'email'},
     PASSWORD: {...ValidationError.mapErrorsToField('password'), name: 'password'},
   };
 
-  static getFieldByName = fieldName => {
+  static getFieldByName = (fieldName: string) => {
     return Object.entries(ValidationError.FIELD).find(([key, value]) => value.name === fieldName)[1];
   };
 }

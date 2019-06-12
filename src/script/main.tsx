@@ -17,10 +17,10 @@
  *
  */
 
+const ReactPostprocessor = require('i18next-react-postprocessor');
 /* tslint:disable:ordered-imports */
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import ReactPostprocessor from 'i18next-react-postprocessor';
 import 'intersection-observer';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -67,7 +67,7 @@ i18n
     returnEmptyString: false,
   });
 
-const render = Component => {
+const render = (Component: any) => {
   ReactDOM.render(
     <AppContainer>
       <Component />

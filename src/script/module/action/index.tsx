@@ -19,7 +19,7 @@
 
 import {APIClient} from '@wireapp/api-client';
 import {MemoryEngine} from '@wireapp/store-engine';
-import React from 'react';
+import React, {HTMLProps} from 'react';
 import * as Environment from 'script/Environment';
 import {AccountAction} from './AccountAction';
 
@@ -36,6 +36,8 @@ const actionRoot: {
 
 const ActionContext = React.createContext(actionRoot);
 
-const ActionProvider = ({children}) => <ActionContext.Provider value={actionRoot}>{children}</ActionContext.Provider>;
+const ActionProvider = ({children}: HTMLProps<HTMLDivElement>) => (
+  <ActionContext.Provider value={actionRoot}>{children}</ActionContext.Provider>
+);
 
 export {actionRoot, ActionContext, ActionProvider};

@@ -25,7 +25,7 @@ import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
-import {BRAND_NAME, REDIRECT_VERIFY_URL} from 'script/Environment';
+import {BRAND_NAME, REDIRECT_VERIFY_URL, WEBAPP_URL} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
 interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
@@ -44,9 +44,7 @@ const VerifyEmailAccount = ({location}: Props) => {
   const {accountAction} = useContext(ActionContext);
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
   const redirectDesktop =
-    Runtime.isDesktopOS() &&
-    !(Runtime.isMacOS() || Runtime.isWindows()) &&
-    `${this.config.URL.WEBAPP_BASE}/auth/?immediate_login#login`;
+    Runtime.isDesktopOS() && !(Runtime.isMacOS() || Runtime.isWindows()) && `${WEBAPP_URL}/auth/?immediate_login#login`;
   useEffect(() => {
     accountAction
       .verifyEmail(key, code)

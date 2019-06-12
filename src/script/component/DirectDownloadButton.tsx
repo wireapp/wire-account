@@ -35,14 +35,15 @@ interface Props extends LinkProps {}
 
 const DirectDownloadButton = (props: Props) => {
   const [t] = useTranslation('open');
+  const DEFAULT_LINK = `${WEBSITE_URL}/download`;
   const SYSTEM_DEPENDENT_LINKS = {
     [OperatingSystem.ANDROID]: DOWNLOAD_ANDROID_URL,
     [OperatingSystem.IOS]: DOWNLOAD_IOS_URL,
     [OperatingSystem.MAC]: DOWNLOAD_OSX_URL,
     [OperatingSystem.WINDOWS]: DOWNLOAD_WINDOWS_URL,
+    [OperatingSystem.LINUX]: DEFAULT_LINK,
   };
 
-  const DEFAULT_LINK = `${WEBSITE_URL}/download`;
   return (
     <ButtonLink
       backgroundColor={COLOR.GREEN}
