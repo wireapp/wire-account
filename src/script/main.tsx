@@ -35,7 +35,7 @@ const frFR = require('resource/translation/fr-FR.json');
 
 i18n
   .use(
-    new ReactPostprocessor({
+    new ReactPostprocessor.default({
       keepUnknownVariables: true,
     }),
   )
