@@ -2,7 +2,6 @@ project_identifier: wire-account
 base_path: .
 
 files:
-  -
-    source: '/dist/translation/en-US.json'
+  - source: '/resource/translation/en-US.json'
     translation: '%locale%.json'
     update_option: 'update_as_unapproved'

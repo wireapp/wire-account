@@ -19,7 +19,7 @@
  *
  */
 
-/* eslint-disable no-magic-numbers, es5/no-block-scoping, es5/no-template-literals, es5/no-shorthand-properties */
+/* eslint-disable no-magic-numbers */
 
 const child = require('child_process');
 const appConfigPkg = require('../app-config/package.json');

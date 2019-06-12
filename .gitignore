@@ -5,22 +5,17 @@
 .Icon
 /.idea
 app/version
-dist/*
-dist/static/script/**/*
-dist/static/style/**/*
-!dist/static
-!dist/templates
-!dist/.ebextensions
+server/dist/*
 keys
 node_modules
 temp
 npm-debug.log
 package-lock.json
 yarn-error.log
+wire-account.zip
 
 # Configuration imported from https://github.com/wireapp/wire-web-config-default/
 .env
 .env.defaults
 /config
-dist/templates/image
-dist/translation
+resource
