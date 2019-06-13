@@ -109,7 +109,13 @@ const PasswordForgot = () => {
               <Text center color={COLOR.RED} data-uie-name="error-message">
                 {error}
               </Text>
-              <Button type="submit" formNoValidate style={{marginTop: 16}} data-uie-name="do-send-password-reset-email">
+              <Button
+                type="submit"
+                formNoValidate
+                disabled={!email}
+                style={{marginTop: 16}}
+                data-uie-name="do-send-password-reset-email"
+              >
                 {t('button')}
               </Button>
             </Form>
