@@ -45,7 +45,7 @@ const PasswordForgot = () => {
         setIsEmailValid(emailInputNode.validity.valid);
         throw ValidationError.handleValidationState(emailInputNode.name, emailInputNode.validity);
       }
-      await accountAction.initiatePasswordReset(email);
+      await accountAction.initiatePasswordReset(emailInputNode.value);
       setSuccess(true);
     } catch (error) {
       if (error instanceof ValidationError) {
