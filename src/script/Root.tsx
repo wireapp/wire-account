@@ -18,7 +18,7 @@
  */
 
 import {Global} from '@emotion/core';
-import {COLOR, Opacity, StyledApp, TransitionContainer} from '@wireapp/react-ui-kit';
+import {COLOR, StyledApp} from '@wireapp/react-ui-kit';
 import createBrowserHistory from 'history/createBrowserHistory';
 import React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
@@ -47,20 +47,16 @@ const Root: React.FC<Props> = () => {
         }}
       />
       <Router history={history}>
-        <TransitionContainer>
-          <Opacity>
-            <Switch>
-              <Route exact path={ROUTE.HOME} component={Index} />
-              <Route exact path={ROUTE.DELETE_ACCOUNT} component={DeleteAccount} />
-              <Route exact path={ROUTE.PASSWORD_FORGOT} component={PasswordForgot} />
-              <Route exact path={ROUTE.PASSWORD_RESET} component={PasswordReset} />
-              <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={VerifyEmailAccount} />
-              <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={VerifyBotAccount} />
-              <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={VerifyPhoneAccount} />
-              <Redirect to={ROUTE.HOME} />
-            </Switch>
-          </Opacity>
-        </TransitionContainer>
+        <Switch>
+          <Route exact path={ROUTE.HOME} component={Index} />
+          <Route exact path={ROUTE.DELETE_ACCOUNT} component={DeleteAccount} />
+          <Route exact path={ROUTE.PASSWORD_FORGOT} component={PasswordForgot} />
+          <Route exact path={ROUTE.PASSWORD_RESET} component={PasswordReset} />
+          <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={VerifyEmailAccount} />
+          <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={VerifyBotAccount} />
+          <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={VerifyPhoneAccount} />
+          <Redirect to={ROUTE.HOME} />
+        </Switch>
       </Router>
     </StyledApp>
   );

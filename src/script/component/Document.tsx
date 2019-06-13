@@ -17,7 +17,7 @@
  *
  */
 
-import {ContainerLG, Content} from '@wireapp/react-ui-kit';
+import {ContainerLG, Content, Opacity, TransitionContainer} from '@wireapp/react-ui-kit';
 import React from 'react';
 import Footer from 'script/component/document/Footer';
 import Header from 'script/component/document/Header';
@@ -35,11 +35,15 @@ const Document: React.FC<Props & ConnectedProps & DispatchProps> = ({title = '',
   const pageTitle = BRAND_NAME;
   document.title = title ? `${pageTitle} · ${title}` : pageTitle;
   return (
-    <ContainerLG style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
-      <Header />
-      <Content style={{flexGrow: 1}}>{children}</Content>
-      <Footer />
-    </ContainerLG>
+    <TransitionContainer>
+      <Opacity>
+        <ContainerLG style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+          <Header />
+          <Content style={{flexGrow: 1}}>{children}</Content>
+          <Footer />
+        </ContainerLG>
+      </Opacity>
+    </TransitionContainer>
   );
 };
 
