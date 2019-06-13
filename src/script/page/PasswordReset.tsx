@@ -161,7 +161,13 @@ const PasswordReset = ({location}: Props) => {
                     {t('passwordInfo', {minPasswordLength: NEW_PASSWORD_MINIMUM_LENGTH})}
                   </Text>
                 )}
-                <Button type="submit" formNoValidate style={{marginTop: 34}} data-uie-name="do-set-new-password">
+                <Button
+                  type="submit"
+                  formNoValidate
+                  disabled={!password}
+                  style={{marginTop: 34}}
+                  data-uie-name="do-set-new-password"
+                >
                   {t('button')}
                 </Button>
               </Form>
