@@ -12,7 +12,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-i18next": "10.9.1",
-    "react-router": "5.0.1",
+    "react-router": "5.0.0",
     "react-router-dom": "5.0.0",
     "url-search-params-polyfill": "6.0.0"
   },
