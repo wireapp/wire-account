@@ -17,15 +17,18 @@
  *
  */
 import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import Document from 'script/component/Document';
 import {ActionContext} from 'script/module/action';
+import ValidationError from 'script/module/action/ValidationError';
 
 const HTTP_STATUS_EMAIL_NOT_IN_USE = 400;
 const HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
 const PasswordForgot = () => {
+  const emailInput = useRef<HTMLInputElement>();
+  const [isEmailValid, setIsEmailValid] = useState(true);
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
@@ -36,21 +39,43 @@ const PasswordForgot = () => {
     event.preventDefault();
     try {
       setError('');
+      const emailInputNode = emailInput.current;
+      emailInputNode.value = emailInputNode.value.trim();
+      if (!emailInputNode.checkValidity()) {
+        setIsEmailValid(emailInputNode.validity.valid);
+        throw ValidationError.handleValidationState(emailInputNode.name, emailInputNode.validity);
+      }
       await accountAction.initiatePasswordReset(email);
       setSuccess(true);
     } catch (error) {
-      switch (error.code) {
-        case HTTP_STATUS_EMAIL_NOT_IN_USE: {
-          setError(t('errorUnusedEmail'));
-          break;
+      if (error instanceof ValidationError) {
+        const EMAIL_PATTERN_MISMATCH: string = ValidationError.FIELD.EMAIL['TYPE_MISMATCH'];
+        const EMAIL_VALUE_MISSING: string = ValidationError.FIELD.EMAIL['VALUE_MISSING'];
+        switch (error.label) {
+          case EMAIL_VALUE_MISSING:
+          case EMAIL_PATTERN_MISMATCH: {
+            setError(t('errorInvalidEmail'));
+            break;
+          }
+          default: {
+            setError(t('errorUnknown'));
+            console.warn('Failed email validation', error);
+          }
         }
-        case HTTP_STATUS_EMAIL_ALREADY_SENT: {
-          setError(t('errorAlreadyProcessing'));
-          break;
-        }
-        default: {
-          setError(t('errorUnknown'));
-          console.warn('Failed to initiate password reset', error);
+      } else {
+        switch (error.code) {
+          case HTTP_STATUS_EMAIL_NOT_IN_USE: {
+            setError(t('errorUnusedEmail'));
+            break;
+          }
+          case HTTP_STATUS_EMAIL_ALREADY_SENT: {
+            setError(t('errorAlreadyProcessing'));
+            break;
+          }
+          default: {
+            setError(t('errorUnknown'));
+            console.warn('Failed to initiate password reset', error);
+          }
         }
       }
     }
@@ -68,8 +93,13 @@ const PasswordForgot = () => {
             <H1>{t('title')}</H1>
             <Form onSubmit={initiatePasswordReset}>
               <Input
+                ref={emailInput}
+                markInvalid={!isEmailValid}
                 autoFocus
-                onChange={event => setEmail(event.currentTarget.value)}
+                onChange={event => {
+                  setIsEmailValid(true);
+                  setEmail(event.currentTarget.value);
+                }}
                 placeholder={t('Email')}
                 name="email"
                 type="email"
@@ -79,7 +109,7 @@ const PasswordForgot = () => {
               <Text center color={COLOR.RED} data-uie-name="error-message">
                 {error}
               </Text>
-              <Button type="submit" style={{marginTop: 16}} data-uie-name="do-send-password-reset-email">
+              <Button type="submit" formNoValidate style={{marginTop: 16}} data-uie-name="do-send-password-reset-email">
                 {t('button')}
               </Button>
             </Form>
