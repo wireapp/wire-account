@@ -913,11 +913,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.8.tgz#551466be11b2adc3f3d47156758f610bd9f6b1d8"
   integrity sha512-b8bbUOTwzIY3V5vDTY1fIJ+ePKDUBqt2hC2woVGotdQQhG/2Sh62HOKHrT7ab+VerXAcPyAiTEipPu/FsreUtg==
 
-"@types/node@11.13.7":
-  version "11.13.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.7.tgz#85dbb71c510442d00c0631f99dae957ce44fd104"
-  integrity sha512-suFHr6hcA9mp8vFrZTgrmqW2ZU3mbWsryQtQlY/QvwTISCw7nw/j+bCQPPohqmskhmqa5wLNuMHTTsc+xf1MQg==
-
 "@types/node@~10":
   version "10.14.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.6.tgz#9cbfcb62c50947217f4d88d4d274cc40c22625a9"
@@ -1148,21 +1143,6 @@
     reconnecting-websocket "3.2.2"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
-
-"@wireapp/commons@1.6.7":
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-1.6.7.tgz#a4e6c963d2a1a82c2e731d8ebd08ac52fc603e95"
-  integrity sha512-VSYOTQJ3I5H/FCoYS0kC0q9GvRxxdCGJuYlMNi19Yd684QtT0yAdxj1cDE7aiNMf08lT01wZsnA76Go4mYyMaA==
-  dependencies:
-    "@types/ansi-regex" "4.0.0"
-    "@types/node" "11.13.7"
-    "@types/platform" "1.3.2"
-    ansi-regex "4.1.0"
-    fs-extra "7.0.1"
-    logdown "3.2.8"
-    moment "2.24.0"
-    platform "1.3.5"
-    url-search-params-polyfill "6.0.0"
 
 "@wireapp/commons@1.8.2":
   version "1.8.2"
@@ -3386,15 +3366,6 @@ fs-exists-sync@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/fs-exists-sync/-/fs-exists-sync-0.1.0.tgz#982d6893af918e72d08dec9e8673ff2b5a8d6add"
   integrity sha1-mC1ok6+RjnLQjeyehnP/K1qNat0=
-
-fs-extra@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
-  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
 
 fs-extra@8.0.0:
   version "8.0.0"
