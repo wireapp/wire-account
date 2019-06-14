@@ -1133,17 +1133,17 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@5.4.1":
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-5.4.1.tgz#506be7e956fca7c3cbc7b495d3a9b579024994e3"
-  integrity sha512-oeahfIQfZcozn2Oh85f9suyYupvKVX4J15T4us9/UEu04l6maUw1vkoCjMvVS3atwE6XA6AKxFkOwIQdJiYOyw==
+"@wireapp/api-client@5.4.2":
+  version "5.4.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-5.4.2.tgz#85e54536be10ad7621ace83091bb8a33e3bc9a63"
+  integrity sha512-v3U0QTjVHneOYmxY4r+50YUh4ys7/UPyUCyPsXi8j4lxyS0Oh+CMXeQI6U3+4RBKS3pjCMl5mo27kQm3f2lUcA==
   dependencies:
     "@types/node" "~10"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
     "@wireapp/commons" "1.8.2"
     "@wireapp/priority-queue" "1.0.10"
-    "@wireapp/store-engine" "3.0.9"
+    "@wireapp/store-engine" "3.0.10"
     axios "0.19.0"
     html5-websocket "2.0.4"
     logdown "3.2.8"
@@ -1205,10 +1205,10 @@
     emotion-normalize "10.0.0"
     react-transition-group "4.1.1"
 
-"@wireapp/store-engine@3.0.9":
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.0.9.tgz#fc2286c7ab57d8a239d39c0bc41aa4c576952bb9"
-  integrity sha512-qFUXMKkZ+H6FRgkLIx7AYlBJ4BIgrm6dzbXEd5Fwg6NWlMKP5xzLNqv9ZPM1wLKTbEWpdnjnWnzkFSGpv6U7KA==
+"@wireapp/store-engine@3.0.10":
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.0.10.tgz#70ca064df2a19774f5331f01ceaec32e53766093"
+  integrity sha512-k6eHuVqjWhTowkYmGrO3EviP5Awcec6+MAdA0SVJ69vQA2bceAQPjoyy4AcTkBM94uQM+Jfh626lf5sGsvUDHw==
   dependencies:
     "@types/bro-fs" "0.4.2"
     "@types/filesystem" "0.0.29"
