@@ -1,0 +1,1930 @@
+[
+  {
+    "id": "index.createTeam",
+    "defaultMessage": "Create a team"
+  },
+  {
+    "id": "index.headline",
+    "defaultMessage": "Secure business communication."
+  },
+  {
+    "id": "index.login",
+    "defaultMessage": "Log in"
+  },
+  {
+    "id": "index.or",
+    "defaultMessage": "or"
+  },
+  {
+    "id": "index.preHeader",
+    "defaultMessage": "Teams"
+  },
+  {
+    "id": "admin.notLinked",
+    "defaultMessage": "This account is not associated with a team"
+  },
+  {
+    "id": "service.createService",
+    "defaultMessage": "How to create your own service"
+  },
+  {
+    "id": "service.description",
+    "defaultMessage": "Services are helpers that can improve your workflow. They can be customized and made available only to your team."
+  },
+  {
+    "id": "service.findService",
+    "defaultMessage": "Enter a service code"
+  },
+  {
+    "id": "serviceDetail.addService",
+    "defaultMessage": "Enable service"
+  },
+  {
+    "id": "deletedTeamModal.headline",
+    "defaultMessage": "The team has been deleted."
+  },
+  {
+    "id": "deletedTeamModal.info",
+    "defaultMessage": "The team’s history, group conversations and content have been deleted. Team members can no longer log in to {brandName}."
+  },
+  {
+    "id": "deletedTeamModal.survey",
+    "defaultMessage": "If you’d like to help us make {brandName} better, you can take a survey. It will only take 3 minutes."
+  },
+  {
+    "id": "deletedTeamModal.surveyButton",
+    "defaultMessage": "Take the survey"
+  },
+  {
+    "id": "login.emailOrUsername",
+    "defaultMessage": "Email or username"
+  },
+  {
+    "id": "login.forgotPassword",
+    "defaultMessage": "Forgot your password?"
+  },
+  {
+    "id": "login.headline",
+    "defaultMessage": "Log in."
+  },
+  {
+    "id": "login.logIn",
+    "defaultMessage": "Log In"
+  },
+  {
+    "id": "login.password",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "login.passwordTitle",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "login.preHeader",
+    "defaultMessage": "Teams"
+  },
+  {
+    "id": "teamCreateTeamStep.createTeam",
+    "defaultMessage": "Create Team"
+  },
+  {
+    "id": "teamCreateTeamStep.headline",
+    "defaultMessage": "Name your team."
+  },
+  {
+    "id": "teamCreateTeamStep.info",
+    "defaultMessage": "You can always change it later"
+  },
+  {
+    "id": "teamCreateTeamStep.preHeader",
+    "defaultMessage": "Create a team"
+  },
+  {
+    "id": "teamCreateTeamStep.teamNamePlaceholder",
+    "defaultMessage": "Team name"
+  },
+  {
+    "id": "teamCreateTeamStep.teamNameTitle",
+    "defaultMessage": "1 to 256 characters"
+  },
+  {
+    "id": "teamCreateAccountStep.createTeam",
+    "defaultMessage": "Create Team"
+  },
+  {
+    "id": "teamCreateAccountStep.emailPlaceholder",
+    "defaultMessage": "Email"
+  },
+  {
+    "id": "teamCreateAccountStep.headline",
+    "defaultMessage": "Set up your account."
+  },
+  {
+    "id": "teamCreateAccountStep.password",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "teamCreateAccountStep.passwordHelp",
+    "defaultMessage": "Use at least {minPasswordLength} characters, with one lowercase letter, one capital letter, a number, and a special character."
+  },
+  {
+    "id": "teamCreateAccountStep.passwordTitle",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "teamCreateAccountStep.preHeader",
+    "defaultMessage": "Create a team"
+  },
+  {
+    "id": "teamCreateAccountStep.submit",
+    "defaultMessage": "Create Team"
+  },
+  {
+    "id": "teamCreateAccountStep.termsOfUse",
+    "defaultMessage": "I accept {termsOfUseLink}"
+  },
+  {
+    "id": "teamCreateAccountStep.termsOfUseLink",
+    "defaultMessage": "Terms of Use"
+  },
+  {
+    "id": "teamCreateAccountStep.userNamePlaceholder",
+    "defaultMessage": "Full Name"
+  },
+  {
+    "id": "teamCreateAccountStep.userNameTitle",
+    "defaultMessage": "1 to 64 characters"
+  },
+  {
+    "id": "teamJoin.joinATeam",
+    "defaultMessage": "Join a Team"
+  },
+  {
+    "id": "teamJoin.namePlaceholder",
+    "defaultMessage": "Your Name"
+  },
+  {
+    "id": "teamJoin.nameTitle",
+    "defaultMessage": "1 to 64 characters"
+  },
+  {
+    "id": "teamJoin.passwordHelp",
+    "defaultMessage": "Use at least {minPasswordLength} characters, with one lowercase letter, one capital letter, a number, and a special character."
+  },
+  {
+    "id": "teamJoin.passwordPlaceholder",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "teamJoin.passwordTitle",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "teamJoin.submit",
+    "defaultMessage": "Join Team"
+  },
+  {
+    "id": "teamJoin.termsOfUse",
+    "defaultMessage": "I accept {termsOfUseLink}"
+  },
+  {
+    "id": "teamJoin.termsOfUseLink",
+    "defaultMessage": "Terms of Use"
+  },
+  {
+    "id": "teamJoin.title",
+    "defaultMessage": "Join Team"
+  },
+  {
+    "id": "document.wireTeamSettings",
+    "defaultMessage": "{brandName} · Team Settings"
+  },
+  {
+    "id": "header.createTeam",
+    "defaultMessage": "New Team"
+  },
+  {
+    "id": "header.getApp",
+    "defaultMessage": "Get the app"
+  },
+  {
+    "id": "header.logIn",
+    "defaultMessage": "Log In"
+  },
+  {
+    "id": "header.logOut",
+    "defaultMessage": "Log Out"
+  },
+  {
+    "id": "header.openWire",
+    "defaultMessage": "Open {brandName}"
+  },
+  {
+    "id": "header.support",
+    "defaultMessage": "Support"
+  },
+  {
+    "id": "BackendErrorLabel.ACCESS_DENIED",
+    "defaultMessage": "Please verify your details and try again."
+  },
+  {
+    "id": "BackendErrorLabel.BLACKLISTED_EMAIL",
+    "defaultMessage": "This email address is not allowed."
+  },
+  {
+    "id": "BackendErrorLabel.BLACKLISTED_PHONE",
+    "defaultMessage": "This phone number is not allowed."
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_CODE",
+    "defaultMessage": "This code is invalid."
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_CREDENTIALS",
+    "defaultMessage": "Please verify your details and try again."
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_EMAIL",
+    "defaultMessage": "This email address is invalid."
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_PHONE",
+    "defaultMessage": "This phone number is invalid."
+  },
+  {
+    "id": "BackendErrorLabel.KEY_EXISTS",
+    "defaultMessage": "The email address you provided has already been registered. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://support.wire.com/hc/articles/115004082129\">Learn more</a>"
+  },
+  {
+    "id": "BackendErrorLabel.MISSING_AUTH",
+    "defaultMessage": "Please verify your details and try again."
+  },
+  {
+    "id": "BackendErrorLabel.PENDING_ACTIVATION",
+    "defaultMessage": "The email address you provided has already been invited. Please check your email."
+  },
+  {
+    "id": "BackendErrorLabel.PENDING_LOGIN",
+    "defaultMessage": "BackendErrorLabel.PENDING_LOGIN"
+  },
+  {
+    "id": "BackendErrorLabel.TOO_MANY_LOGINS",
+    "defaultMessage": "Please try again later."
+  },
+  {
+    "id": "BackendErrorLabel.BAD_REQUEST",
+    "defaultMessage": "Invalid input"
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_OPERATION",
+    "defaultMessage": "BackendErrorLabel.INVALID_OPERATION"
+  },
+  {
+    "id": "BackendErrorLabel.NOT_FOUND",
+    "defaultMessage": "Could not find resource"
+  },
+  {
+    "id": "BackendErrorLabel.OPERATION_DENIED",
+    "defaultMessage": "You don’t have permission"
+  },
+  {
+    "id": "BackendErrorLabel.UNAUTHORIZED",
+    "defaultMessage": "Something went wrong. Please reload the page and try again."
+  },
+  {
+    "id": "BackendErrorLabel.HANDLE_EXISTS",
+    "defaultMessage": "This username is already taken."
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_HANDLE",
+    "defaultMessage": "This username is invalid."
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_INVITATION_CODE",
+    "defaultMessage": "Invitation has been revoked or expired"
+  },
+  {
+    "id": "BackendErrorLabel.NO_OTHER_OWNER",
+    "defaultMessage": "The last owner cannot be removed from the team."
+  },
+  {
+    "id": "BackendErrorLabel.NO_TEAM",
+    "defaultMessage": "Could not find team."
+  },
+  {
+    "id": "BackendErrorLabel.NO_TEAM_MEMBER",
+    "defaultMessage": "Could not find team member."
+  },
+  {
+    "id": "BackendErrorLabel.TOO_MANY_MEMBERS",
+    "defaultMessage": "This team has reached its maximum size."
+  },
+  {
+    "id": "BackendErrorLabel.SUSPENDED_ACCOUNT",
+    "defaultMessage": "This account is no longer authorized to log in."
+  },
+  {
+    "id": "BackendErrorLabel.INVITE_EMAIL_EXISTS",
+    "defaultMessage": "This email address is already in use. <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://support.wire.com/hc/articles/115004082129\">Learn more</a>"
+  },
+  {
+    "id": "BackendErrorLabel.INVALID_PERMISSIONS",
+    "defaultMessage": "Insufficient permissions"
+  },
+  {
+    "id": "BackendErrorLabel.SERVICE_NOT_FOUND",
+    "defaultMessage": "Service not found"
+  },
+  {
+    "id": "BackendErrorLabel.INSUFFICIENT_PERMISSIONS",
+    "defaultMessage": "Insufficient permissions"
+  },
+  {
+    "id": "BackendErrorLabel.SERVICE_ALREADY_ADDED",
+    "defaultMessage": "This service is already enabled"
+  },
+  {
+    "id": "BackendError.unexpected",
+    "defaultMessage": "Unexpected error"
+  },
+  {
+    "id": "ValidationError.FIELD.NAME.PATTERN_MISMATCH",
+    "defaultMessage": "Enter a name with at least 2 characters"
+  },
+  {
+    "id": "ValidationError.FIELD.NAME.VALUE_MISSING",
+    "defaultMessage": "Enter a name with at least 2 characters"
+  },
+  {
+    "id": "ValidationError.FIELD.PASSWORD.PATTERN_MISMATCH",
+    "defaultMessage": "Use at least 8 characters, with one lowercase letter, one capital letter, a number, and a special character."
+  },
+  {
+    "id": "ValidationError.FIELD.PASSWORD_LOGIN.PATTERN_MISMATCH",
+    "defaultMessage": "Wrong password. Please try again."
+  },
+  {
+    "id": "ValidationError.FIELD.EMAIL.TYPE_MISMATCH",
+    "defaultMessage": "Please enter a valid email address"
+  },
+  {
+    "id": "ValidationError.FIELD.SERVICE.PATTERN_MISMATCH",
+    "defaultMessage": "Invalid service identifier"
+  },
+  {
+    "id": "inviteList.headline",
+    "defaultMessage": "Pending invitations ({count})"
+  },
+  {
+    "id": "inviteItem.cancel",
+    "defaultMessage": "Cancel"
+  },
+  {
+    "id": "inviteItem.pending",
+    "defaultMessage": "Invitation pending…"
+  },
+  {
+    "id": "inviteItem.resend",
+    "defaultMessage": "Resend"
+  },
+  {
+    "id": "inviteItem.sending",
+    "defaultMessage": "Sending…"
+  },
+  {
+    "id": "inviteDetails.cancel",
+    "defaultMessage": "Cancel Invitation"
+  },
+  {
+    "id": "inviteDetails.resend",
+    "defaultMessage": "Resend Invitation"
+  },
+  {
+    "id": "invitedBy.invitedBy",
+    "defaultMessage": "Invited by {name}, {date}"
+  },
+  {
+    "id": "invitedBy.previousMember",
+    "defaultMessage": "a previous team member"
+  },
+  {
+    "id": "loading.loading",
+    "defaultMessage": "Loading…"
+  },
+  {
+    "id": "memberAdd.invitationSend",
+    "defaultMessage": "Invitation sent to \"{email}\""
+  },
+  {
+    "id": "memberAdd.learnMore",
+    "defaultMessage": "Learn more about roles"
+  },
+  {
+    "id": "memberAdd.placeholder",
+    "defaultMessage": "name@example.com"
+  },
+  {
+    "id": "memberAdd.sendButton",
+    "defaultMessage": "Send invitation"
+  },
+  {
+    "id": "memberAdd.sendInvitation",
+    "defaultMessage": "Send an email invitation"
+  },
+  {
+    "id": "memberAdd.tooManyMembers",
+    "defaultMessage": "This team has reached its maximum size."
+  },
+  {
+    "id": "serviceAdd.inputPlaceholder",
+    "defaultMessage": "b06bd83e-44fa-41eb-bae3-f503e18b1da4:2378f358-6058-4ead-aa86-6d0a25baa9dd"
+  },
+  {
+    "id": "people.headline",
+    "defaultMessage": "Invite people"
+  },
+  {
+    "id": "memberList.filter",
+    "defaultMessage": "Filter:"
+  },
+  {
+    "id": "memberList.headline",
+    "defaultMessage": "People ({count})"
+  },
+  {
+    "id": "memberList.noFilter",
+    "defaultMessage": "None"
+  },
+  {
+    "id": "memberList.you",
+    "defaultMessage": "(You)"
+  },
+  {
+    "id": "serviceItem.details",
+    "defaultMessage": "Details"
+  },
+  {
+    "id": "deleteMember.confirm",
+    "defaultMessage": "Remove From Team"
+  },
+  {
+    "id": "deleteMember.description",
+    "defaultMessage": "{memberName} will automatically be removed from all team conversations and no longer be able to log in to the team."
+  },
+  {
+    "id": "deleteMember.headline",
+    "defaultMessage": "Remove Team Member"
+  },
+  {
+    "id": "deleteMember.longLink",
+    "defaultMessage": "Remove from team"
+  },
+  {
+    "id": "deleteMember.password",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "deleteMember.passwordPlaceholder",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "deleteMember.passwordRequired",
+    "defaultMessage": "Enter your password to remove the team member."
+  },
+  {
+    "id": "deleteMember.passwordTitle",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "deleteTeam.confirm",
+    "defaultMessage": "Delete Team"
+  },
+  {
+    "id": "deleteTeam.description",
+    "defaultMessage": "The team’s history, group conversations and content will be deleted. Team members will no longer be able to log in to {brandName}."
+  },
+  {
+    "id": "deleteTeam.headline",
+    "defaultMessage": "Delete Team"
+  },
+  {
+    "id": "deleteTeam.link",
+    "defaultMessage": "Delete Team"
+  },
+  {
+    "id": "deleteTeam.passwordPlaceholder",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "deleteTeam.passwordRequired",
+    "defaultMessage": "Enter your password to confirm."
+  },
+  {
+    "id": "deleteTeam.passwordTitle",
+    "defaultMessage": "Password"
+  },
+  {
+    "id": "disableService.confirm",
+    "defaultMessage": "Disable service"
+  },
+  {
+    "id": "disableService.description",
+    "defaultMessage": "{name} will be removed from all conversations and no longer available to the team."
+  },
+  {
+    "id": "disableService.headline",
+    "defaultMessage": "Disable {name}"
+  },
+  {
+    "id": "teamTitle.teamNameTitle",
+    "defaultMessage": "2 to 256 characters"
+  },
+  {
+    "id": "teamView.services",
+    "defaultMessage": "Services"
+  },
+  {
+    "id": "teamView.settings",
+    "defaultMessage": "Billing"
+  },
+  {
+    "id": "teamView.team",
+    "defaultMessage": "People"
+  },
+  {
+    "id": "infoHandler.accountEnds",
+    "defaultMessage": "Your team will be suspended."
+  },
+  {
+    "id": "infoHandler.accountEndsIn",
+    "defaultMessage": "Your team will be suspended in {daysLeft} {daysLeft, plural, one {day} other {days}}."
+  },
+  {
+    "id": "infoHandler.accountEndsToday",
+    "defaultMessage": "Your team will be suspended today."
+  },
+  {
+    "id": "infoHandler.accountEndsTomorrow",
+    "defaultMessage": "Your team will be suspended tomorrow."
+  },
+  {
+    "id": "infoHandler.addPaymentMethod",
+    "defaultMessage": "Add a payment method."
+  },
+  {
+    "id": "infoHandler.checkDetails",
+    "defaultMessage": "Check your details."
+  },
+  {
+    "id": "infoNotification.detailsAdded",
+    "defaultMessage": "Payment details added"
+  },
+  {
+    "id": "infoNotificationStrings.detailsUpdated",
+    "defaultMessage": "Payment details updated"
+  },
+  {
+    "id": "infoHandler.paymentProblem",
+    "defaultMessage": "There is a problem with your payment method."
+  },
+  {
+    "id": "infoHandler.planUpdateFailed",
+    "defaultMessage": "There was a problem updating your payment plan."
+  },
+  {
+    "id": "infoHandler.trialEndsIn",
+    "defaultMessage": "Your trial will expire in {daysLeft} {daysLeft, plural, one {day} other {days}}."
+  },
+  {
+    "id": "infoHandler.trialEndsToday",
+    "defaultMessage": "Your trial ends today."
+  },
+  {
+    "id": "infoHandler.trialEndsTomorrow",
+    "defaultMessage": "Your trial ends tomorrow."
+  },
+  {
+    "id": "setting.paymentNotAvailable",
+    "defaultMessage": "Payment service is currently not available. Try again later."
+  },
+  {
+    "id": "setting.sales",
+    "defaultMessage": "For additional savings, ask {salesLink} for a two-year plan."
+  },
+  {
+    "id": "setting.teamId",
+    "defaultMessage": "Your Team ID: {teamId}"
+  },
+  {
+    "id": "paymentPlan.cancel",
+    "defaultMessage": "Cancel"
+  },
+  {
+    "id": "paymentPlan.cantUpgradeGracefulDisclaimer",
+    "defaultMessage": "Check your payment method to upgrade to annual billing."
+  },
+  {
+    "id": "paymentPlan.cantUpgradePaymentInfoDisclaimer",
+    "defaultMessage": "Enter your company information and a payment method to upgrade to annual billing."
+  },
+  {
+    "id": "paymentPlan.couponDescription",
+    "defaultMessage": "Discount"
+  },
+  {
+    "id": "paymentPlan.customPlan",
+    "defaultMessage": "Custom Plan"
+  },
+  {
+    "id": "paymentPlan.customPlanDetails",
+    "defaultMessage": "Please contact {salesLink} for details."
+  },
+  {
+    "id": "paymentPlan.detailsAmount",
+    "defaultMessage": "<strong>{seats}</strong> {seats, plural, one {user} other {users}} @ <strong>{seatPrice}</strong> per user"
+  },
+  {
+    "id": "paymentPlan.detailsCredit",
+    "defaultMessage": "Credit"
+  },
+  {
+    "id": "paymentPlan.detailsTotal",
+    "defaultMessage": "Total"
+  },
+  {
+    "id": "paymentPlan.edit",
+    "defaultMessage": "Edit"
+  },
+  {
+    "id": "paymentPlan.planSummaryAnnual",
+    "defaultMessage": "Next payment due on {paymentDate}."
+  },
+  {
+    "id": "paymentPlan.planSummaryMonthly",
+    "defaultMessage": "Next payment due on {paymentDate}."
+  },
+  {
+    "id": "paymentPlan.priceAnnual",
+    "defaultMessage": "{annualPerSeat} per user per year"
+  },
+  {
+    "id": "paymentPlan.priceMonthly",
+    "defaultMessage": "{monthlyPerSeat} per user per month"
+  },
+  {
+    "id": "paymentPlan.teamId",
+    "defaultMessage": "Team ID:"
+  },
+  {
+    "id": "paymentPlan.teamsAnnual",
+    "defaultMessage": "Annual Billing"
+  },
+  {
+    "id": "paymentPlan.teamsMonthly",
+    "defaultMessage": "Monthly Billing"
+  },
+  {
+    "id": "paymentPlan.upgrade",
+    "defaultMessage": "Upgrade to annual"
+  },
+  {
+    "id": "paymentPlan.upgradeAttention",
+    "defaultMessage": "It is not possible to downgrade from annual billing to a monthly plan"
+  },
+  {
+    "id": "paymentPlan.upgradeConfirm",
+    "defaultMessage": "Upgrade"
+  },
+  {
+    "id": "paymentPlan.upgradeDisclaimer",
+    "defaultMessage": "Switch to annual billing for a discount: Pay {annualPerSeat} per user per year ({annualPerSeatPerMonth} per user per month). It is not possible to downgrade from annual billing to a monthly plan."
+  },
+  {
+    "id": "paymentPlan.upgradeHeadline",
+    "defaultMessage": "Upgrade your plan"
+  },
+  {
+    "id": "paymentPlan.upgradeInfo",
+    "defaultMessage": "You are about to upgrade from monthly to annual billing.<br />You will be billed {annualTotal} ({annualPerSeat} per user per year) on {trialEndDate}."
+  },
+  {
+    "id": "paymentPlan.upgradeInfoImmediately",
+    "defaultMessage": "You are about to upgrade from monthly to annual billing.<br />You will be billed {annualTotal} ({annualPerSeat} per user per year) immediately."
+  },
+  {
+    "id": "paymentPlan.vatDescription",
+    "defaultMessage": "VAT {taxPercent}%"
+  },
+  {
+    "id": "paymentPlan.vatDisclaimer",
+    "defaultMessage": "* VAT applies"
+  },
+  {
+    "id": "paymentPlan.yourPlan",
+    "defaultMessage": "Your payment plan"
+  },
+  {
+    "id": "paymentMethodInfo.addCoupon",
+    "defaultMessage": "Add a voucher"
+  },
+  {
+    "id": "paymentMethodInfo.coupon",
+    "defaultMessage": "Voucher"
+  },
+  {
+    "id": "paymentMethodInfo.creditCard",
+    "defaultMessage": "Credit card"
+  },
+  {
+    "id": "paymentMethodInfo.edit",
+    "defaultMessage": "Edit"
+  },
+  {
+    "id": "paymentMethodInfo.payment",
+    "defaultMessage": "Payment"
+  },
+  {
+    "id": "paymentMethodInfo.removeCoupon",
+    "defaultMessage": "Remove"
+  },
+  {
+    "id": "paymentMethodInfo.validThrough",
+    "defaultMessage": "Valid through"
+  },
+  {
+    "id": "paymentFields.cardHolder",
+    "defaultMessage": "Cardholder"
+  },
+  {
+    "id": "paymentFields.cardNumber",
+    "defaultMessage": "Card number"
+  },
+  {
+    "id": "paymentFields.code",
+    "defaultMessage": "Code"
+  },
+  {
+    "id": "paymentFields.codePlaceholder",
+    "defaultMessage": "CVC Code"
+  },
+  {
+    "id": "paymentFields.expiryDate",
+    "defaultMessage": "Expiry date"
+  },
+  {
+    "id": "paymentFields.expiryDatePlaceholder",
+    "defaultMessage": "Expiry date (MM/YY)"
+  },
+  {
+    "id": "paymentFields.paymentMethod",
+    "defaultMessage": "Payment method"
+  },
+  {
+    "id": "paymentFields.submit",
+    "defaultMessage": "Add payment method"
+  },
+  {
+    "id": "paymentFields.zip",
+    "defaultMessage": "Postcode"
+  },
+  {
+    "id": "paymentCvcHelp.amex",
+    "defaultMessage": "4-digit card verification code printed on the front of the card"
+  },
+  {
+    "id": "paymentCvcHelp.amexCardHeadline",
+    "defaultMessage": "American Express"
+  },
+  {
+    "id": "paymentCvcHelp.link",
+    "defaultMessage": "?"
+  },
+  {
+    "id": "paymentCvcHelp.mostCards",
+    "defaultMessage": "3-digit card verification code printed on the back of the card."
+  },
+  {
+    "id": "paymentCvcHelp.mostCardsHeadline",
+    "defaultMessage": "Most credit cards"
+  },
+  {
+    "id": "billingInfo.addPaymentMethod",
+    "defaultMessage": "Add payment method"
+  },
+  {
+    "id": "billingInfo.address",
+    "defaultMessage": "Billing address"
+  },
+  {
+    "id": "billingInfo.addressPlaceholder",
+    "defaultMessage": "Address"
+  },
+  {
+    "id": "billingInfo.billingInfo",
+    "defaultMessage": "Company information"
+  },
+  {
+    "id": "billingInfo.cancel",
+    "defaultMessage": "Cancel"
+  },
+  {
+    "id": "billingInfo.cityPlaceholder",
+    "defaultMessage": "City"
+  },
+  {
+    "id": "billingInfo.companyName",
+    "defaultMessage": "Company name"
+  },
+  {
+    "id": "billingInfo.currencyTooltip",
+    "defaultMessage": "The billing currency for this team can no longer be changed."
+  },
+  {
+    "id": "billingInfo.edit",
+    "defaultMessage": "Edit"
+  },
+  {
+    "id": "billingInfo.firstnamePlaceholder",
+    "defaultMessage": "First name"
+  },
+  {
+    "id": "billingInfo.lastnamePlaceholder",
+    "defaultMessage": "Last name"
+  },
+  {
+    "id": "billingInfo.statePlaceholder",
+    "defaultMessage": "State / Province"
+  },
+  {
+    "id": "billingInfo.update",
+    "defaultMessage": "Update"
+  },
+  {
+    "id": "billingInfo.zipPlaceholder",
+    "defaultMessage": "Postcode"
+  },
+  {
+    "id": "verify.changeEmail",
+    "defaultMessage": "Change email"
+  },
+  {
+    "id": "verify.documentTitle",
+    "defaultMessage": "Create team"
+  },
+  {
+    "id": "verify.headline",
+    "defaultMessage": "You’ve got mail"
+  },
+  {
+    "id": "verify.preHeader",
+    "defaultMessage": "Verify your account"
+  },
+  {
+    "id": "verify.resendCode",
+    "defaultMessage": "Resend code"
+  },
+  {
+    "id": "verify.sendingCode",
+    "defaultMessage": "Sending..."
+  },
+  {
+    "id": "verify.subhead",
+    "defaultMessage": "Enter the verification code we sent to<br />{email}"
+  },
+  {
+    "id": "footer.copyright",
+    "defaultMessage": "© Wire Swiss GmbH"
+  },
+  {
+    "id": "footer.download",
+    "defaultMessage": "Download"
+  },
+  {
+    "id": "footer.legal",
+    "defaultMessage": "Legal"
+  },
+  {
+    "id": "footer.websiteLabel",
+    "defaultMessage": "wire.com"
+  },
+  {
+    "id": "acceptNewsModal.confirm",
+    "defaultMessage": "Accept"
+  },
+  {
+    "id": "acceptNewsModal.decline",
+    "defaultMessage": "No, thanks"
+  },
+  {
+    "id": "acceptNewsModal.headline",
+    "defaultMessage": "Do you want to receive news and product updates from {brandName} via email?"
+  },
+  {
+    "id": "acceptNewsModal.privacyDescription",
+    "defaultMessage": "Check our <b>Privacy Policy</b>."
+  },
+  {
+    "id": "acceptNewsModal.unsubscribeDescription",
+    "defaultMessage": "You can unsubscribe at any time."
+  },
+  {
+    "id": "Role.OWNER",
+    "defaultMessage": "Owner"
+  },
+  {
+    "id": "Role.ADMIN",
+    "defaultMessage": "Admin"
+  },
+  {
+    "id": "Role.MEMBER",
+    "defaultMessage": "Member"
+  },
+  {
+    "id": "Role.PARTNER",
+    "defaultMessage": "Partner"
+  },
+  {
+    "id": "coupon.labelCoupon",
+    "defaultMessage": "Voucher code"
+  },
+  {
+    "id": "coupon.questionCoupon",
+    "defaultMessage": "Have a voucher?"
+  },
+  {
+    "id": "invoice.credited",
+    "defaultMessage": "Credited"
+  },
+  {
+    "id": "invoice.due",
+    "defaultMessage": "Due"
+  },
+  {
+    "id": "invoice.firstInvoicePage",
+    "defaultMessage": "First"
+  },
+  {
+    "id": "invoice.headline",
+    "defaultMessage": "Invoices"
+  },
+  {
+    "id": "invoice.nextInvoicePage",
+    "defaultMessage": "Next"
+  },
+  {
+    "id": "invoice.paid",
+    "defaultMessage": "Paid"
+  },
+  {
+    "id": "invoice.previousInvoicePage",
+    "defaultMessage": "Previous"
+  },
+  {
+    "id": "invoice.showAll",
+    "defaultMessage": "Show All"
+  },
+  {
+    "id": "invoice.showLess",
+    "defaultMessage": "Show Less"
+  },
+  {
+    "id": "country.ad",
+    "defaultMessage": "Andorra"
+  },
+  {
+    "id": "country.ae",
+    "defaultMessage": "United Arab Emirates"
+  },
+  {
+    "id": "country.af",
+    "defaultMessage": "Afghanistan"
+  },
+  {
+    "id": "country.ag",
+    "defaultMessage": "Antigua and Barbuda"
+  },
+  {
+    "id": "country.ai",
+    "defaultMessage": "Anguilla"
+  },
+  {
+    "id": "country.al",
+    "defaultMessage": "Albania"
+  },
+  {
+    "id": "country.am",
+    "defaultMessage": "Armenia"
+  },
+  {
+    "id": "country.ao",
+    "defaultMessage": "Angola"
+  },
+  {
+    "id": "country.ar",
+    "defaultMessage": "Argentina"
+  },
+  {
+    "id": "country.as",
+    "defaultMessage": "American Samoa"
+  },
+  {
+    "id": "country.at",
+    "defaultMessage": "Austria"
+  },
+  {
+    "id": "country.au",
+    "defaultMessage": "Australia"
+  },
+  {
+    "id": "country.aw",
+    "defaultMessage": "Aruba"
+  },
+  {
+    "id": "country.ax",
+    "defaultMessage": "Åland Islands"
+  },
+  {
+    "id": "country.az",
+    "defaultMessage": "Azerbaijan"
+  },
+  {
+    "id": "country.ba",
+    "defaultMessage": "Bosnia and Herzegovina"
+  },
+  {
+    "id": "country.bb",
+    "defaultMessage": "Barbados"
+  },
+  {
+    "id": "country.bd",
+    "defaultMessage": "Bangladesh"
+  },
+  {
+    "id": "country.be",
+    "defaultMessage": "Belgium"
+  },
+  {
+    "id": "country.bf",
+    "defaultMessage": "Burkina Faso"
+  },
+  {
+    "id": "country.bg",
+    "defaultMessage": "Bulgaria"
+  },
+  {
+    "id": "country.bh",
+    "defaultMessage": "Bahrain"
+  },
+  {
+    "id": "country.bi",
+    "defaultMessage": "Burundi"
+  },
+  {
+    "id": "country.bj",
+    "defaultMessage": "Benin"
+  },
+  {
+    "id": "country.bm",
+    "defaultMessage": "Bermuda"
+  },
+  {
+    "id": "country.bn",
+    "defaultMessage": "Brunei"
+  },
+  {
+    "id": "country.bo",
+    "defaultMessage": "Bolivia"
+  },
+  {
+    "id": "country.bq-bo",
+    "defaultMessage": "Bonaire"
+  },
+  {
+    "id": "country.br",
+    "defaultMessage": "Brazil"
+  },
+  {
+    "id": "country.bs",
+    "defaultMessage": "Bahamas"
+  },
+  {
+    "id": "country.bt",
+    "defaultMessage": "Bhutan"
+  },
+  {
+    "id": "country.bw",
+    "defaultMessage": "Botswana"
+  },
+  {
+    "id": "country.by",
+    "defaultMessage": "Belarus"
+  },
+  {
+    "id": "country.bz",
+    "defaultMessage": "Belize"
+  },
+  {
+    "id": "country.ca",
+    "defaultMessage": "Canada"
+  },
+  {
+    "id": "country.cd",
+    "defaultMessage": "Congo (Democratic Republic)"
+  },
+  {
+    "id": "country.cf",
+    "defaultMessage": "Central African Republic"
+  },
+  {
+    "id": "country.cg",
+    "defaultMessage": "Congo (Republic)"
+  },
+  {
+    "id": "country.ch",
+    "defaultMessage": "Switzerland"
+  },
+  {
+    "id": "country.ci",
+    "defaultMessage": "Ivory Coast"
+  },
+  {
+    "id": "country.ck",
+    "defaultMessage": "Cook Islands"
+  },
+  {
+    "id": "country.cl",
+    "defaultMessage": "Chile"
+  },
+  {
+    "id": "country.cm",
+    "defaultMessage": "Cameroon"
+  },
+  {
+    "id": "country.cn",
+    "defaultMessage": "China"
+  },
+  {
+    "id": "country.co",
+    "defaultMessage": "Colombia"
+  },
+  {
+    "id": "country.cr",
+    "defaultMessage": "Costa Rica"
+  },
+  {
+    "id": "country.cu",
+    "defaultMessage": "Cuba"
+  },
+  {
+    "id": "country.cv",
+    "defaultMessage": "Cape Verde"
+  },
+  {
+    "id": "country.cw",
+    "defaultMessage": "Curaçao"
+  },
+  {
+    "id": "country.cy",
+    "defaultMessage": "Cyprus"
+  },
+  {
+    "id": "country.cz",
+    "defaultMessage": "Czech Republic"
+  },
+  {
+    "id": "country.de",
+    "defaultMessage": "Germany"
+  },
+  {
+    "id": "country.dj",
+    "defaultMessage": "Djibouti"
+  },
+  {
+    "id": "country.dk",
+    "defaultMessage": "Denmark"
+  },
+  {
+    "id": "country.dm",
+    "defaultMessage": "Dominica"
+  },
+  {
+    "id": "country.do",
+    "defaultMessage": "Dominican Republic"
+  },
+  {
+    "id": "country.dz",
+    "defaultMessage": "Algeria"
+  },
+  {
+    "id": "country.ec",
+    "defaultMessage": "Ecuador"
+  },
+  {
+    "id": "country.ee",
+    "defaultMessage": "Estonia"
+  },
+  {
+    "id": "country.eg",
+    "defaultMessage": "Egypt"
+  },
+  {
+    "id": "country.er",
+    "defaultMessage": "Eritrea"
+  },
+  {
+    "id": "country.es",
+    "defaultMessage": "Spain"
+  },
+  {
+    "id": "country.et",
+    "defaultMessage": "Ethiopia"
+  },
+  {
+    "id": "country.fi",
+    "defaultMessage": "Finland"
+  },
+  {
+    "id": "country.fj",
+    "defaultMessage": "Fiji"
+  },
+  {
+    "id": "country.fk",
+    "defaultMessage": "Falkland Islands"
+  },
+  {
+    "id": "country.fm",
+    "defaultMessage": "Micronesia"
+  },
+  {
+    "id": "country.fo",
+    "defaultMessage": "Faroe Islands"
+  },
+  {
+    "id": "country.fr",
+    "defaultMessage": "France"
+  },
+  {
+    "id": "country.ga",
+    "defaultMessage": "Gabon"
+  },
+  {
+    "id": "country.gb",
+    "defaultMessage": "United Kingdom"
+  },
+  {
+    "id": "country.gd",
+    "defaultMessage": "Grenada"
+  },
+  {
+    "id": "country.ge",
+    "defaultMessage": "Georgia"
+  },
+  {
+    "id": "country.gf",
+    "defaultMessage": "French Guiana"
+  },
+  {
+    "id": "country.gg",
+    "defaultMessage": "Guernsey"
+  },
+  {
+    "id": "country.gh",
+    "defaultMessage": "Ghana"
+  },
+  {
+    "id": "country.gi",
+    "defaultMessage": "Gibraltar"
+  },
+  {
+    "id": "country.gl",
+    "defaultMessage": "Greenland"
+  },
+  {
+    "id": "country.gm",
+    "defaultMessage": "Gambia"
+  },
+  {
+    "id": "country.gn",
+    "defaultMessage": "Guinea"
+  },
+  {
+    "id": "country.gp",
+    "defaultMessage": "Guadeloupe"
+  },
+  {
+    "id": "country.gq",
+    "defaultMessage": "Equatorial Guinea"
+  },
+  {
+    "id": "country.gr",
+    "defaultMessage": "Greece"
+  },
+  {
+    "id": "country.gt",
+    "defaultMessage": "Guatemala"
+  },
+  {
+    "id": "country.gu",
+    "defaultMessage": "Guam"
+  },
+  {
+    "id": "country.gw",
+    "defaultMessage": "Guinea-Bissau"
+  },
+  {
+    "id": "country.gy",
+    "defaultMessage": "Guyana"
+  },
+  {
+    "id": "country.hk",
+    "defaultMessage": "Hong Kong"
+  },
+  {
+    "id": "country.hn",
+    "defaultMessage": "Honduras"
+  },
+  {
+    "id": "country.hr",
+    "defaultMessage": "Croatia"
+  },
+  {
+    "id": "country.ht",
+    "defaultMessage": "Haiti"
+  },
+  {
+    "id": "country.hu",
+    "defaultMessage": "Hungary"
+  },
+  {
+    "id": "country.id",
+    "defaultMessage": "Indonesia"
+  },
+  {
+    "id": "country.ie",
+    "defaultMessage": "Ireland"
+  },
+  {
+    "id": "country.il",
+    "defaultMessage": "Israel"
+  },
+  {
+    "id": "country.im",
+    "defaultMessage": "Isle of Man"
+  },
+  {
+    "id": "country.in",
+    "defaultMessage": "India"
+  },
+  {
+    "id": "country.iq",
+    "defaultMessage": "Iraq"
+  },
+  {
+    "id": "country.ir",
+    "defaultMessage": "Iran"
+  },
+  {
+    "id": "country.is",
+    "defaultMessage": "Iceland"
+  },
+  {
+    "id": "country.it",
+    "defaultMessage": "Italy"
+  },
+  {
+    "id": "country.je",
+    "defaultMessage": "Jersey"
+  },
+  {
+    "id": "country.jm",
+    "defaultMessage": "Jamaica"
+  },
+  {
+    "id": "country.jo",
+    "defaultMessage": "Jordan"
+  },
+  {
+    "id": "country.jp",
+    "defaultMessage": "Japan"
+  },
+  {
+    "id": "country.ke",
+    "defaultMessage": "Kenya"
+  },
+  {
+    "id": "country.kg",
+    "defaultMessage": "Kyrgyzstan"
+  },
+  {
+    "id": "country.kh",
+    "defaultMessage": "Cambodia"
+  },
+  {
+    "id": "country.ki",
+    "defaultMessage": "Kiribati"
+  },
+  {
+    "id": "country.km",
+    "defaultMessage": "Comoros"
+  },
+  {
+    "id": "country.kn",
+    "defaultMessage": "Saint Kitts and Nevis"
+  },
+  {
+    "id": "country.kp",
+    "defaultMessage": "North Korea"
+  },
+  {
+    "id": "country.kr",
+    "defaultMessage": "Korea"
+  },
+  {
+    "id": "country.kw",
+    "defaultMessage": "Kuwait"
+  },
+  {
+    "id": "country.ky",
+    "defaultMessage": "Cayman Islands"
+  },
+  {
+    "id": "country.kz",
+    "defaultMessage": "Kazakhstan"
+  },
+  {
+    "id": "country.la",
+    "defaultMessage": "Laos"
+  },
+  {
+    "id": "country.lb",
+    "defaultMessage": "Lebanon"
+  },
+  {
+    "id": "country.lc",
+    "defaultMessage": "Saint Lucia"
+  },
+  {
+    "id": "country.li",
+    "defaultMessage": "Liechtenstein"
+  },
+  {
+    "id": "country.lk",
+    "defaultMessage": "Sri Lanka"
+  },
+  {
+    "id": "country.lr",
+    "defaultMessage": "Liberia"
+  },
+  {
+    "id": "country.ls",
+    "defaultMessage": "Lesotho"
+  },
+  {
+    "id": "country.lt",
+    "defaultMessage": "Lithuania"
+  },
+  {
+    "id": "country.lu",
+    "defaultMessage": "Luxembourg"
+  },
+  {
+    "id": "country.lv",
+    "defaultMessage": "Latvia"
+  },
+  {
+    "id": "country.ly",
+    "defaultMessage": "Libya"
+  },
+  {
+    "id": "country.ma",
+    "defaultMessage": "Morocco"
+  },
+  {
+    "id": "country.mc",
+    "defaultMessage": "Monaco"
+  },
+  {
+    "id": "country.md",
+    "defaultMessage": "Moldova"
+  },
+  {
+    "id": "country.me",
+    "defaultMessage": "Montenegro"
+  },
+  {
+    "id": "country.mf",
+    "defaultMessage": "Saint Martin"
+  },
+  {
+    "id": "country.mg",
+    "defaultMessage": "Madagascar"
+  },
+  {
+    "id": "country.mh",
+    "defaultMessage": "Marshall Islands"
+  },
+  {
+    "id": "country.mk",
+    "defaultMessage": "Macedonia"
+  },
+  {
+    "id": "country.ml",
+    "defaultMessage": "Mali"
+  },
+  {
+    "id": "country.mm",
+    "defaultMessage": "Myanmar (Burma)"
+  },
+  {
+    "id": "country.mn",
+    "defaultMessage": "Mongolia"
+  },
+  {
+    "id": "country.mo",
+    "defaultMessage": "Macao"
+  },
+  {
+    "id": "country.mq",
+    "defaultMessage": "Martinique"
+  },
+  {
+    "id": "country.mr",
+    "defaultMessage": "Mauritania"
+  },
+  {
+    "id": "country.ms",
+    "defaultMessage": "Montserrat"
+  },
+  {
+    "id": "country.mt",
+    "defaultMessage": "Malta"
+  },
+  {
+    "id": "country.mu",
+    "defaultMessage": "Mauritius"
+  },
+  {
+    "id": "country.mv",
+    "defaultMessage": "Maldives"
+  },
+  {
+    "id": "country.mw",
+    "defaultMessage": "Malawi"
+  },
+  {
+    "id": "country.mx",
+    "defaultMessage": "Mexico"
+  },
+  {
+    "id": "country.my",
+    "defaultMessage": "Malaysia"
+  },
+  {
+    "id": "country.mz",
+    "defaultMessage": "Mozambique"
+  },
+  {
+    "id": "country.na",
+    "defaultMessage": "Namibia"
+  },
+  {
+    "id": "country.nc",
+    "defaultMessage": "New Caledonia"
+  },
+  {
+    "id": "country.ne",
+    "defaultMessage": "Niger"
+  },
+  {
+    "id": "country.nf",
+    "defaultMessage": "Norfolk Island"
+  },
+  {
+    "id": "country.ng",
+    "defaultMessage": "Nigeria"
+  },
+  {
+    "id": "country.ni",
+    "defaultMessage": "Nicaragua"
+  },
+  {
+    "id": "country.nl",
+    "defaultMessage": "Netherlands"
+  },
+  {
+    "id": "country.no",
+    "defaultMessage": "Norway"
+  },
+  {
+    "id": "country.np",
+    "defaultMessage": "Nepal"
+  },
+  {
+    "id": "country.nr",
+    "defaultMessage": "Nauru"
+  },
+  {
+    "id": "country.nu",
+    "defaultMessage": "Niue"
+  },
+  {
+    "id": "country.nz",
+    "defaultMessage": "New Zealand"
+  },
+  {
+    "id": "country.om",
+    "defaultMessage": "Oman"
+  },
+  {
+    "id": "country.pa",
+    "defaultMessage": "Panama"
+  },
+  {
+    "id": "country.pe",
+    "defaultMessage": "Peru"
+  },
+  {
+    "id": "country.pf",
+    "defaultMessage": "French Polynesia"
+  },
+  {
+    "id": "country.pg",
+    "defaultMessage": "Papua New Guinea"
+  },
+  {
+    "id": "country.ph",
+    "defaultMessage": "Philippines"
+  },
+  {
+    "id": "country.pk",
+    "defaultMessage": "Pakistan"
+  },
+  {
+    "id": "country.pl",
+    "defaultMessage": "Poland"
+  },
+  {
+    "id": "country.pm",
+    "defaultMessage": "Saint Pierre and Miquelon"
+  },
+  {
+    "id": "country.pr",
+    "defaultMessage": "Puerto Rico"
+  },
+  {
+    "id": "country.ps",
+    "defaultMessage": "Palestinian Territory"
+  },
+  {
+    "id": "country.pt",
+    "defaultMessage": "Portugal"
+  },
+  {
+    "id": "country.pw",
+    "defaultMessage": "Palau"
+  },
+  {
+    "id": "country.py",
+    "defaultMessage": "Paraguay"
+  },
+  {
+    "id": "country.qa",
+    "defaultMessage": "Qatar"
+  },
+  {
+    "id": "country.re",
+    "defaultMessage": "Réunion"
+  },
+  {
+    "id": "country.ro",
+    "defaultMessage": "Romania"
+  },
+  {
+    "id": "country.rs",
+    "defaultMessage": "Serbia"
+  },
+  {
+    "id": "country.ru",
+    "defaultMessage": "Russia"
+  },
+  {
+    "id": "country.rw",
+    "defaultMessage": "Rwanda"
+  },
+  {
+    "id": "country.sa",
+    "defaultMessage": "Saudi Arabia"
+  },
+  {
+    "id": "country.sb",
+    "defaultMessage": "Solomon Islands"
+  },
+  {
+    "id": "country.sc",
+    "defaultMessage": "Seychelles"
+  },
+  {
+    "id": "country.sd",
+    "defaultMessage": "Sudan"
+  },
+  {
+    "id": "country.se",
+    "defaultMessage": "Sweden"
+  },
+  {
+    "id": "country.sg",
+    "defaultMessage": "Singapore"
+  },
+  {
+    "id": "country.sh",
+    "defaultMessage": "St Helena"
+  },
+  {
+    "id": "country.si",
+    "defaultMessage": "Slovenia"
+  },
+  {
+    "id": "country.sj",
+    "defaultMessage": "Svalbard"
+  },
+  {
+    "id": "country.sk",
+    "defaultMessage": "Slovakia"
+  },
+  {
+    "id": "country.sl",
+    "defaultMessage": "Sierra Leone"
+  },
+  {
+    "id": "country.sm",
+    "defaultMessage": "San Marino"
+  },
+  {
+    "id": "country.sn",
+    "defaultMessage": "Senegal"
+  },
+  {
+    "id": "country.so",
+    "defaultMessage": "Somalia"
+  },
+  {
+    "id": "country.sr",
+    "defaultMessage": "Suriname"
+  },
+  {
+    "id": "country.ss",
+    "defaultMessage": "South Sudan"
+  },
+  {
+    "id": "country.st",
+    "defaultMessage": "Sao Tome and Principe"
+  },
+  {
+    "id": "country.sv",
+    "defaultMessage": "El Salvador"
+  },
+  {
+    "id": "country.sx",
+    "defaultMessage": "Sint Maarten"
+  },
+  {
+    "id": "country.sy",
+    "defaultMessage": "Syria"
+  },
+  {
+    "id": "country.sz",
+    "defaultMessage": "Swaziland"
+  },
+  {
+    "id": "country.tc",
+    "defaultMessage": "Turks and Caicos Islands"
+  },
+  {
+    "id": "country.td",
+    "defaultMessage": "Chad"
+  },
+  {
+    "id": "country.tg",
+    "defaultMessage": "Togo"
+  },
+  {
+    "id": "country.th",
+    "defaultMessage": "Thailand"
+  },
+  {
+    "id": "country.tj",
+    "defaultMessage": "Tajikistan"
+  },
+  {
+    "id": "country.tl",
+    "defaultMessage": "Timor-Leste (East Timor)"
+  },
+  {
+    "id": "country.tm",
+    "defaultMessage": "Turkmenistan"
+  },
+  {
+    "id": "country.tn",
+    "defaultMessage": "Tunisia"
+  },
+  {
+    "id": "country.to",
+    "defaultMessage": "Tonga"
+  },
+  {
+    "id": "country.tr",
+    "defaultMessage": "Turkey"
+  },
+  {
+    "id": "country.tt",
+    "defaultMessage": "Trinidad and Tobago"
+  },
+  {
+    "id": "country.tv",
+    "defaultMessage": "Tuvalu"
+  },
+  {
+    "id": "country.tw",
+    "defaultMessage": "Taiwan"
+  },
+  {
+    "id": "country.tz",
+    "defaultMessage": "Tanzania"
+  },
+  {
+    "id": "country.ua",
+    "defaultMessage": "Ukraine"
+  },
+  {
+    "id": "country.ug",
+    "defaultMessage": "Uganda"
+  },
+  {
+    "id": "country.us",
+    "defaultMessage": "United States"
+  },
+  {
+    "id": "country.uy",
+    "defaultMessage": "Uruguay"
+  },
+  {
+    "id": "country.uz",
+    "defaultMessage": "Uzbekistan"
+  },
+  {
+    "id": "country.va",
+    "defaultMessage": "Vatican City"
+  },
+  {
+    "id": "country.vc",
+    "defaultMessage": "Saint Vincent and the Grenadines"
+  },
+  {
+    "id": "country.ve",
+    "defaultMessage": "Venezuela"
+  },
+  {
+    "id": "country.vg",
+    "defaultMessage": "British Virgin Islands"
+  },
+  {
+    "id": "country.vi",
+    "defaultMessage": "Virgin Islands (US)"
+  },
+  {
+    "id": "country.vn",
+    "defaultMessage": "Vietnam"
+  },
+  {
+    "id": "country.vu",
+    "defaultMessage": "Vanuatu"
+  },
+  {
+    "id": "country.wf",
+    "defaultMessage": "Wallis and Futuna"
+  },
+  {
+    "id": "country.ws",
+    "defaultMessage": "Samoa"
+  },
+  {
+    "id": "country.ye",
+    "defaultMessage": "Yemen"
+  },
+  {
+    "id": "country.yt",
+    "defaultMessage": "Mayotte"
+  },
+  {
+    "id": "country.za",
+    "defaultMessage": "South Africa"
+  },
+  {
+    "id": "country.zm",
+    "defaultMessage": "Zambia"
+  },
+  {
+    "id": "country.zw",
+    "defaultMessage": "Zimbabwe"
+  }
+]

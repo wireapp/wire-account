@@ -1,3 +1,4 @@
+const appConfigPkg = require('./app-config/package.json');
 const pkg = require('./package.json');
 const {execSync} = require('child_process');
 const path = require('path');
@@ -6,14 +7,17 @@ const source = path.join(pkg.name, 'content');
 const currentBranch = execSync(`git rev-parse --abbrev-ref HEAD`)
   .toString()
   .trim();
-const configurationEntry = `wire-web-config-default-${currentBranch === 'master' ? 'master' : 'staging'}`;
-const repositoryUrl = pkg.dependencies[configurationEntry];
+const configBranchSelection = currentBranch === 'master' ? 'master' : 'staging';
+const distribution = process.env.DISTRIBUTION !== 'wire' && process.env.DISTRIBUTION;
+const suffix = distribution || configBranchSelection;
+const configurationEntry = `wire-web-config-default-${suffix}`;
+const repositoryUrl = appConfigPkg.dependencies[configurationEntry];
 
 module.exports = {
   files: {
-    [`${source}/image/**`]: './dist/templates/image/',
-    [`${source}/translation/**`]: './dist/translation/',
-    [path.join(pkg.name, '.env.defaults')]: path.join(__dirname, '.env.defaults'),
+    [`${source}/image/wire.svg`]: './resource/image/logo/logo.svg',
+    [`${source}/translation/**`]: './resource/translation/',
+    [path.join(pkg.name, '.env.defaults')]: path.join(__dirname, 'server', '.env.defaults'),
   },
   repositoryUrl,
 };
