@@ -58,8 +58,7 @@ deploy:
     env: wire-account-prod
     bucket_name: wire-account-builds
     on:
-      repo: wireapp/wire-account
-      branch: master
+      tags: true
       condition: $DISTRIBUTION = wire
 
   - provider: elasticbeanstalk
