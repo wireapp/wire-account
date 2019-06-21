@@ -1126,17 +1126,17 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@5.6.1":
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-5.6.1.tgz#a8858605986162425760910e1ee897d1324c1225"
-  integrity sha512-hKJQSRJkp/3RVO2Uh2zQz/7HpVPXoC8o4zt4tKZHBLF177XmzJDttoczIZ40rzI7Pk2Ms4Vty9rlw0lQXfaSmw==
+"@wireapp/api-client@5.6.3":
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-5.6.3.tgz#53acbce7a01a1953826f8b7bc080a5b0c7f85d1c"
+  integrity sha512-9lJmsUtGkSj3mdjVjn3uZJZOj5bwjA8thFEkeiqgURVONjyO1Nbz0bi7k92KKgC/XIT/QuQPwZ2c4IhvN0dV7Q==
   dependencies:
     "@types/node" "~10"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
     "@wireapp/commons" "2.0.0"
-    "@wireapp/priority-queue" "1.0.12"
-    "@wireapp/store-engine" "3.0.13"
+    "@wireapp/priority-queue" "1.0.13"
+    "@wireapp/store-engine" "3.0.14"
     axios "0.19.0"
     html5-websocket "2.0.4"
     logdown "3.2.8"
@@ -1178,10 +1178,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.2.0.tgz#7345f5a8f4763435efef6a46d0ff6c006a0e0064"
   integrity sha512-UNpt4uA1KIW29WP3Nb9GpI/hriy+HVTbkA/KZwHPST2OXCOX9sGAF39tuutiKAZll3WxG1M3XnxXBL/CtBmgVA==
 
-"@wireapp/priority-queue@1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.0.12.tgz#70e9bf1d39544b74c0b123a8250990ab68bf8a9a"
-  integrity sha512-zPdK9Fzsv5NIYSoDdWhEa6iRZvNOdDNjRtXdx35N44QsodegcKZ27y2fFe5xGMc/G4KUO+RlWYTLNkEF9MsP/w==
+"@wireapp/priority-queue@1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.0.13.tgz#ad13e1e94dfa4e9e1d48e802875645c269c62c41"
+  integrity sha512-DDbCOk2YxsfAls1Nz3nq1VT2AyVYFdOxWCY/g7fqG1hzkTUNzWGw7lmlYeU5ZhBD0D4WOdX9HzN8hjqNPzSW6A==
   dependencies:
     "@types/node" "~10"
     pure-uuid "1.5.7"
@@ -1198,10 +1198,10 @@
     emotion-normalize "10.0.0"
     react-transition-group "4.1.1"
 
-"@wireapp/store-engine@3.0.13":
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.0.13.tgz#c6e8fd480079e58e01db4774d19f3318a3636267"
-  integrity sha512-hTvA3PzfWGUZTXCdl+zYr+uBQsMMO2IJ8wEgrT3+KbCRs/a/BWbyRu5xL5Qw2gl0/Kj+DPrqmr0wFglm0QbW/g==
+"@wireapp/store-engine@3.0.14":
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.0.14.tgz#06a76807d60fbece022df198cad26b7ba540d49a"
+  integrity sha512-JLYEWlIIbByUWGEI4t2QPGxO+nFYaPyfjZI/chiZ+HvzMXt1ui+ecCCMuejlt823RX2W5FsqKCRu9lvV9WtT3g==
   dependencies:
     "@types/bro-fs" "0.4.2"
     "@types/filesystem" "0.0.29"
