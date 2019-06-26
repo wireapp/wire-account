@@ -19,7 +19,7 @@
 import {Button, COLOR, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router';
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {ACCOUNT_DELETE_SURVEY_URL, BRAND_NAME} from 'script/Environment';
 import {ActionContext} from 'script/module/action';

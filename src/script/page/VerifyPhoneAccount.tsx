@@ -19,7 +19,7 @@
 import {ContainerXS, H1, Text} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router';
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {BRAND_NAME, REDIRECT_PHONE_URL} from 'script/Environment';
