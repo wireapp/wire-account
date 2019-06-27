@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@wireapp/api-client": "5.8.0",
+    "@wireapp/api-client": "5.9.2",
     "@wireapp/commons": "2.1.0",
     "@wireapp/react-ui-kit": "7.1.1",
     "core-js": "3.1.4",
