@@ -1126,17 +1126,17 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-5.8.0.tgz#98dce87349902bdb730fa893dddea0e747b7fdf3"
-  integrity sha512-DwyMh9YKTFg1W54/59Nv4YBQFnxDp5zEegeLa8TdJDSeUI/26DDcW98zU0O5B1k5lTMlynT+PBjlchIDM+wBNA==
+"@wireapp/api-client@5.9.2":
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-5.9.2.tgz#d82a0da39a00f2911be9ecc917f115ed9d902b09"
+  integrity sha512-dwG631gd+6X7Yd2Vjun+M2mF7/GenB6IqMq8XyIYWvvzK74lSZweoVJGV6m7Bu0IudYR8JoO5V9cXYXokK7cAw==
   dependencies:
     "@types/node" "~10"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
     "@wireapp/commons" "2.1.0"
     "@wireapp/priority-queue" "1.0.14"
-    "@wireapp/store-engine" "3.1.1"
+    "@wireapp/store-engine" "3.3.0"
     axios "0.19.0"
     html5-websocket "2.0.4"
     logdown "3.2.8"
@@ -1198,16 +1198,15 @@
     emotion-normalize "10.0.0"
     react-transition-group "4.1.1"
 
-"@wireapp/store-engine@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.1.1.tgz#3240dcfa9b1d25db02733674a42bc361d6cc3e30"
-  integrity sha512-SgG5rodzN7t/aTGKLGi759fTIb32t7jMMS2GpoE6jhdC7cvM9V/Ip8kxmmbPjiUiW+O8nEbnc5kjKzqKvU8CTw==
+"@wireapp/store-engine@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.3.0.tgz#c174c706d7d0c7fba8cc5e01b81d8257e7ed133f"
+  integrity sha512-rrigzmTIxZ7IMMQrr12nvs2aLm5e6psIKNewAZlzd161n3SQYZ2pbaskJMWH8ddbHt4dd6H8Uvt7INgyexZruQ==
   dependencies:
     "@types/bro-fs" "0.4.2"
     "@types/filesystem" "0.0.29"
     "@types/node" "~10"
     bro-fs "0.5.0"
-    dexie "2.0.4"
 
 "@wireapp/tslint-config@1.2.0":
   version "1.2.0"
@@ -2549,11 +2548,6 @@ detect-libc@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-
-dexie@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/dexie/-/dexie-2.0.4.tgz#6027a5e05879424e8f9979d8c14e7420f27e3a11"
-  integrity sha512-aQ/s1U2wHxwBKRrt2Z/mwFNHMQWhESerFsMYzE+5P5OsIe5o1kgpFMWkzKTtkvkyyEni6mWr/T4HUJuY9xIHLA==
 
 diff@3.5.0, diff@^3.2.0:
   version "3.5.0"
