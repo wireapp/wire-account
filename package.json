@@ -47,7 +47,7 @@
     "eslint-plugin-no-unsanitized": "3.0.2",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.14.2",
-    "fs-extra": "8.0.1",
+    "fs-extra": "8.1.0",
     "husky": "2.6.0",
     "i18next-scanner": "2.10.2",
     "jasmine": "3.4.0",
