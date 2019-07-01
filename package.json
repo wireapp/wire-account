@@ -15,7 +15,7 @@
     "react-i18next": "10.11.2",
     "react-router": "5.0.0",
     "react-router-dom": "5.0.1",
-    "url-search-params-polyfill": "6.0.0"
+    "url-search-params-polyfill": "7.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
