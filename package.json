@@ -12,7 +12,7 @@
     "intersection-observer": "0.7.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-i18next": "10.11.2",
+    "react-i18next": "10.11.3",
     "react-router": "5.0.0",
     "react-router-dom": "5.0.1",
     "url-search-params-polyfill": "7.0.0"
