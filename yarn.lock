@@ -1210,17 +1210,17 @@
     "@types/node" "~10"
     pure-uuid "1.5.7"
 
-"@wireapp/react-ui-kit@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.2.0.tgz#26c0898ef40b0226d2f4b7193f20f100ff36b628"
-  integrity sha512-gHTa7v0RRraYWYiTLg2DKCWW0HfPZdH+f/B3P3Veyu+r0h7b6ie2NDk1YyKqPAL+W4Jj/F0qjAkot5Sg7VgKwg==
+"@wireapp/react-ui-kit@7.2.1":
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.2.1.tgz#8798b30a1aec6a8cbc960748e34d8531af6db090"
+  integrity sha512-+P9Rk1gwVDv//RkOY7AjqYS5gbpKWG5aNddFMZOB/KjL35Fg1hf/hMwbAoIcNRYITddxsrPYpALlJRBytKtCig==
   dependencies:
     "@emotion/core" "10.0.14"
     "@types/color" "3.0.0"
-    bazinga64 "5.5.0"
+    bazinga64 "5.5.1"
     color "3.1.2"
     emotion-normalize "10.0.0"
-    react-transition-group "4.1.1"
+    react-transition-group "4.2.0"
 
 "@wireapp/store-engine@3.3.0":
   version "3.3.0"
@@ -1693,10 +1693,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-bazinga64@5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/bazinga64/-/bazinga64-5.5.0.tgz#3dc21c2cf25d345d15bcf95e488b403ab5b2edcd"
-  integrity sha512-Jhm1rG/FB6a6FO+QM9Ep9gOgrfYPonDhkhKfpD+RbfxY5mgS/CKvKxtHCdEPIoYxWs5c2lOFpBcZanUYIwn7FQ==
+bazinga64@5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/bazinga64/-/bazinga64-5.5.1.tgz#3d6fac3269821ddfd5d2e90dd920553d9b55340f"
+  integrity sha512-iTx1VzjapaAb59gp8U60bBzXxB3ij/SmKra6e2TyzKRhbaOoinLG/gOaXgmHy0tcoNhK+ohngYLWPzAPSFYnQg==
 
 big.js@^3.1.3:
   version "3.2.0"
@@ -6016,10 +6016,10 @@ react-router@5.0.1:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-transition-group@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.1.1.tgz#16efe9ac8c68306f6bef59c7da5a96b4dfd9fb32"
-  integrity sha512-K/N1wqJ2GRP2yj3WBqEUYa0KV5fiaAWpUfU9SpHOHefeKvyrO+VrnMBML21M19QZoVbDZKmuQFHZYoMMi1xuJA==
+react-transition-group@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.2.0.tgz#cb1df235e128276def06617b72a9ab135d01955a"
+  integrity sha512-EKfLKbqdrbrTQFxCOFCJ+wW+d461QhPJTLbARN5WKrNz3jxTnom4cPsq4xaBagQAF/7Qs5+XpG4zrtDRJH0bpA==
   dependencies:
     "@babel/runtime" "^7.4.5"
     dom-helpers "^3.4.0"
