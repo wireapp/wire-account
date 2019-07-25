@@ -3892,10 +3892,10 @@ i18next-browser-languagedetector@3.0.1:
   resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-3.0.1.tgz#a47c43176e8412c91e808afb7c6eb5367649aa8e"
   integrity sha512-WFjPLNPWl62uu07AHY2g+KsC9qz0tyMq+OZEB/H7N58YKL/JLiCz9U709gaR20Mule/Ppn+uyfVx5REJJjn1HA==
 
-i18next-react-postprocessor@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/i18next-react-postprocessor/-/i18next-react-postprocessor-3.0.0.tgz#739d91c404bb4b1ee1c65ae9dd7fd6704a22bff4"
-  integrity sha512-mSKO1Za+3RfiO0T7JtqSkb/j1xl+o3HelEdUd2vri6LIOQctrhy34MJkPqrZg1lKa4j25QbK+IFHoCUwLwJnOg==
+i18next-react-postprocessor@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/i18next-react-postprocessor/-/i18next-react-postprocessor-3.0.1.tgz#a568168a2111d6e5905a703e0640f2fb36effe4b"
+  integrity sha512-Rvh+SWjOaQOlnseZcoERcKU+m/P6LxiJbvi+1CvlkP/J7AeFyWMdwz6KhJDk9+mq870vg5Aq7OQgpk5b6TSv9g==
   dependencies:
     md5 "^2.2.1"
 
