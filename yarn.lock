@@ -1242,10 +1242,10 @@
     "@types/node" "~10"
     pure-uuid "1.5.7"
 
-"@wireapp/react-ui-kit@7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.8.0.tgz#1d877e092eef55453e6a879dcf2e427a15f1c502"
-  integrity sha512-dbD9/xZeXtnyrkNsIgz2O0KAQt+8LvETWzKCtMbc0z67p1lzC3zGE78v65nyCud8MqvcORmYtC7b4wXaRX95/A==
+"@wireapp/react-ui-kit@7.8.2":
+  version "7.8.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.8.2.tgz#66276a46100eeadf45db3dff10b35c7f29c79e2d"
+  integrity sha512-zlzbaZtam+iRvGMO7vYBSDoZxh5aGHaqyR3tTwW/FE2r0nsd9PvDQuh9T+Qg1jWHmuyql+szj4sVQ0IdVVpCfA==
   dependencies:
     "@emotion/core" "10.0.14"
     "@types/color" "3.0.0"
