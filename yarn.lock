@@ -1179,17 +1179,17 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@6.2.2":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-6.2.2.tgz#e2fdef6f6fd6267a6927fc8e9069efaec6c68f81"
-  integrity sha512-cASHbFhVO/OPWp4lxWGx25CNz9TCTrhnqQ5PQuDlyTjvuKI1R5MFRwbZdYO/DGzV4YJcKy3LrwP/HNe4ZKge2Q==
+"@wireapp/api-client@6.2.3":
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-6.2.3.tgz#5331d099e06406974d7f73b170a0559dbeaf3d37"
+  integrity sha512-1jckLENwXphJ2oiZanNZnDImyVD3fTNTmqKp49boJKRPo064xp7DAxUcsRfuqh66Q3G3V2yY7JXzdTuv3iK8YA==
   dependencies:
     "@types/node" "~10"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
-    "@wireapp/commons" "2.2.8"
+    "@wireapp/commons" "2.2.9"
     "@wireapp/priority-queue" "1.2.9"
-    "@wireapp/store-engine" "3.9.3"
+    "@wireapp/store-engine" "3.9.4"
     axios "0.19.0"
     html5-websocket "2.0.4"
     logdown "3.2.8"
@@ -1201,6 +1201,22 @@
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-2.2.8.tgz#da7f6a84a95220f740c4aba0671dfd47e125aac4"
   integrity sha512-PUzwxZZntf7X8W2hTEPYbZUD3DY21/yH/sC4FXVsg1n+hH06s3qi+CI8+p04ZfkfH0WQ7VnVVkEpoUU4FkD75w==
+  dependencies:
+    "@types/ansi-regex" "4.0.0"
+    "@types/fs-extra" "8.0.0"
+    "@types/node" "~10"
+    "@types/platform" "1.3.2"
+    ansi-regex "4.1.0"
+    fs-extra "8.1.0"
+    logdown "3.2.8"
+    moment "2.24.0"
+    platform "1.3.5"
+    url-search-params-polyfill "7.0.0"
+
+"@wireapp/commons@2.2.9":
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-2.2.9.tgz#4fc5906f65acc9a745c94d54c1fb7009ca0e91dd"
+  integrity sha512-0QTY4BnCFbU0YGsQDjI3/65aJ7YC2F6Y+pk1VG4LFTlzDhRyS8PAliPpfV72e8PW3/hopgmoBb1YwfP9vT0sdQ==
   dependencies:
     "@types/ansi-regex" "4.0.0"
     "@types/fs-extra" "8.0.0"
@@ -1252,10 +1268,10 @@
     emotion-theming "10.0.14"
     react-transition-group "4.2.2"
 
-"@wireapp/store-engine@3.9.3":
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.9.3.tgz#5fe05cb9b423322a9d28a4dc56440672b11f57a6"
-  integrity sha512-ouVsp7L+tyb8h5xVWfH5w/2eZ/gQ5iQI9NJRilLfuSVX/FUR4Kcgfj6ZpvjmZH5M8fhQkAldOBqg7e4s6Y7HVA==
+"@wireapp/store-engine@3.9.4":
+  version "3.9.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.9.4.tgz#186198d6812fd33102f1b0dd274f095234115291"
+  integrity sha512-IaV870VA6DaUL7YrDFGrA27l9baD4pWBtb/gKHps0fl0VJirvHk1fPSPTcMMxMR4AZM3cxsBqBsp/8+Zk2ba/A==
   dependencies:
     "@types/node" "~10"
 
