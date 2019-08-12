@@ -3920,10 +3920,10 @@ i18next-scanner@2.10.2:
     vinyl "^2.2.0"
     vinyl-fs "^3.0.1"
 
-i18next@*, i18next@17.0.6:
-  version "17.0.6"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-17.0.6.tgz#01079cc2bcef408139ea8ce24d18ac0d512fbe85"
-  integrity sha512-bdNhzhcM6RG5m82RypVguCrAQNie/ycxW0Q5C6K9UDWD5hqApZfdJFbj4Ikz9jxIR+Ja1eg0yCQLhlCT+opwIg==
+i18next@*, i18next@17.0.11:
+  version "17.0.11"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-17.0.11.tgz#36424dc01f6de391fae87878d24f5ff713565c27"
+  integrity sha512-O+yzoNi0usYcd4oi85EFY4WuwZ8NNsYJLauZ629YSjwgIi2D7eYDSQxy6aAR67V++b//GNuZEk7hx/i3L9Rxag==
   dependencies:
     "@babel/runtime" "^7.3.1"
 
@@ -6004,10 +6004,10 @@ react-hot-loader@4.12.11:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-i18next@10.11.4:
-  version "10.11.4"
-  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-10.11.4.tgz#9277a609ee640fac353087a91935ee9a9eb65f40"
-  integrity sha512-/CWXaf3a5BLNeVnBGxzWOIZLQgSNEc2LWHX4ZaJb7ww0xgY0S5K9HRAMzJIHeHGe7jfpSraprD66VDblWb4ZXA==
+react-i18next@10.12.0:
+  version "10.12.0"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-10.12.0.tgz#1ad06441e8ce57830628c4282235f41b4cdf661f"
+  integrity sha512-SgYTcas9SJ3dEk45fsyffPh+8Edh6NLbBFeot4njesilE02D28PWXlIoj5wZCmmWgtCa17a2rE/OmcXD1Qvk3Q==
   dependencies:
     "@babel/runtime" "^7.3.1"
     html-parse-stringify2 "2.0.1"
