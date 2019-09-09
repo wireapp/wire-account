@@ -2,7 +2,7 @@
   "dependencies": {
     "@wireapp/api-client": "6.2.4",
     "@wireapp/commons": "2.2.9",
-    "@wireapp/react-ui-kit": "7.11.2",
+    "@wireapp/react-ui-kit": "7.19.2",
     "core-js": "3.2.1",
     "dotenv": "8.1.0",
     "dotenv-extended": "2.4.0",
