@@ -26,7 +26,7 @@
     "@emotion/babel-preset-css-prop": "10.0.17",
     "@hot-loader/react-dom": "16.9.0",
     "@types/i18next": "13.0.0",
-    "@types/jasmine": "3.4.1",
+    "@types/jasmine": "3.4.2",
     "@types/node": "12.7.3",
     "@types/react": "16.9.5",
     "@types/react-dom": "16.9.0",
