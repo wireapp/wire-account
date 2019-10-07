@@ -32,7 +32,7 @@
     "@types/react-dom": "16.9.0",
     "@types/react-router-dom": "4.3.5",
     "@types/webpack-env": "1.14.0",
-    "@wireapp/copy-config": "0.8.3",
+    "@wireapp/copy-config": "0.8.4",
     "@wireapp/eslint-config": "1.2.0",
     "@wireapp/tslint-config": "1.4.1",
     "babel-eslint": "10.0.3",
