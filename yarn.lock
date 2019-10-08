@@ -1198,17 +1198,17 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-7.1.0.tgz#c4707e0ef947915245d5f79caf3a77230407bce6"
-  integrity sha512-rvf+6VJAPV8KoRLCuKUZeEaoPHz83L8jzWOUtz3FZEl2JLD1CJHhVnxJN7g8h23ugHr/zorfPwaoKuP4UqrhvA==
+"@wireapp/api-client@7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-7.1.1.tgz#8f5ae9de946c4109ef8d71b67c8c7b5ad1971905"
+  integrity sha512-TcS5Rde5IZmW1Wpl0STfAhm8g6az85ip93kz6aDmTPCotRKm/dg21j109XNgqh71bR8JSJD2ZccoiUR/OS7+PA==
   dependencies:
     "@types/node" "~10"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
-    "@wireapp/commons" "2.2.15"
-    "@wireapp/priority-queue" "1.2.21"
-    "@wireapp/store-engine" "3.9.16"
+    "@wireapp/commons" "2.2.16"
+    "@wireapp/priority-queue" "1.2.22"
+    "@wireapp/store-engine" "3.9.17"
     axios "0.19.0"
     logdown "3.2.8"
     reconnecting-websocket "4.2.0"
@@ -1226,6 +1226,22 @@
     "@types/node" "~10"
     "@types/platform" "1.3.2"
     ansi-regex "4.1.0"
+    fs-extra "8.1.0"
+    logdown "3.2.8"
+    moment "2.24.0"
+    platform "1.3.5"
+    url-search-params-polyfill "7.0.0"
+
+"@wireapp/commons@2.2.16":
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-2.2.16.tgz#7fb0b397c1b07b8c5e72ec514951f68ee7026074"
+  integrity sha512-Ow+85eLJp38Fd4mg/7Zq9m8bhLmkz7FKSFGKyrmXIPSrvBC9a8kV3ms3jmQSRJUVbE/6wZdVwHR3VpVB1f5tSQ==
+  dependencies:
+    "@types/ansi-regex" "4.0.0"
+    "@types/fs-extra" "8.0.0"
+    "@types/node" "~10"
+    "@types/platform" "1.3.2"
+    ansi-regex "5.0.0"
     fs-extra "8.1.0"
     logdown "3.2.8"
     moment "2.24.0"
@@ -1250,10 +1266,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.2.0.tgz#7345f5a8f4763435efef6a46d0ff6c006a0e0064"
   integrity sha512-UNpt4uA1KIW29WP3Nb9GpI/hriy+HVTbkA/KZwHPST2OXCOX9sGAF39tuutiKAZll3WxG1M3XnxXBL/CtBmgVA==
 
-"@wireapp/priority-queue@1.2.21":
-  version "1.2.21"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.2.21.tgz#69948c1fe7e4eaba700fdcba01d29242626212d5"
-  integrity sha512-NqCWweuJJKqoatTLdYFjACR/QngVvqrFCez03ESU4DP+eu96NQirt9i2x6+ds8jubtuF25kx6s5+fIcAd+l/ZA==
+"@wireapp/priority-queue@1.2.22":
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.2.22.tgz#070f18212c45a24ea6dc51a3c0884c5306044f9b"
+  integrity sha512-h5MwyK2s//lJGkKITCWHCmJD5LMST2H2yTf4IebXvLy+njm1A+aH/1/GO0o18SqXhNn7bHIiRGoD1eb0XhTdTg==
   dependencies:
     "@types/node" "~10"
     pure-uuid "1.5.7"
@@ -1271,10 +1287,10 @@
     emotion-theming "10.0.19"
     react-transition-group "4.3.0"
 
-"@wireapp/store-engine@3.9.16":
-  version "3.9.16"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.9.16.tgz#4a891ceb07af1f29507691214645e255e6e1a7f7"
-  integrity sha512-4aLv/oNwplOX5AgIku4h4EXWHkZIXnbi5TboGdC6bm65vYtlFyLEYf0n2ng7lYHaWm1Qr9El3OsWWp3qJXipeA==
+"@wireapp/store-engine@3.9.17":
+  version "3.9.17"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.9.17.tgz#2df46faa0192b01662215732bddedd8b7163667c"
+  integrity sha512-29zHPlOi0NwqRuiQiNTJNf5v1/nDUY3OVg4a/UhsHy240LTz+GKNNtODezYxttuuFkdxvDPtfFkWsKmJFjwp6g==
   dependencies:
     "@types/node" "~10"
 
@@ -1462,6 +1478,11 @@ ansi-regex@4.1.0, ansi-regex@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.0.tgz#8b9f8f08cf1acb843756a839ca8c7e3168c51997"
   integrity sha512-1apePfXM1UOSqw0o9IiFAovVz9M5S1Dg+4TrDwfMewQ6p/rmMueb7tWZjQ1rx4Loy1ArBggoqGpfqqdI4rondg==
+
+ansi-regex@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.0.tgz#388539f55179bf39339c81af30a654d69f87cb75"
+  integrity sha512-bY6fj56OUQ0hU1KjFNDQuJFezqKdrAyFdIevADiqrWHwSlbmBNMHp5ak2f40Pm8JTFyM2mqxkG6ngkHO11f/lg==
 
 ansi-regex@^2.0.0:
   version "2.1.1"
