@@ -51,7 +51,7 @@
     "husky": "3.0.8",
     "i18next-scanner": "2.10.3",
     "jasmine": "3.5.0",
-    "lint-staged": "9.4.0",
+    "lint-staged": "9.4.2",
     "prettier": "1.18.2",
     "react-hot-loader": "4.12.14",
     "svg-inline-loader": "0.8.0",
