@@ -1281,10 +1281,10 @@
     "@types/node" "~10"
     pure-uuid "1.5.7"
 
-"@wireapp/react-ui-kit@7.23.6":
-  version "7.23.6"
-  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.23.6.tgz#6f4a6aee51c191925211841f289787fbcb4686be"
-  integrity sha512-C9WS/RZFfNqOCBueO/Hh8Fl/9WApdMEWVVuhdPqUfooh5v57lreJtEx1N120+DyZb80xeO+dSg0+f41dNtkfGA==
+"@wireapp/react-ui-kit@7.23.8":
+  version "7.23.8"
+  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.23.8.tgz#15e07e07c178c119814cef314b0617b552774139"
+  integrity sha512-AA7dcBkN92AEsXbDU0ofqW334dQm1PzkSt5Ksp3wKPvB1XXl3rM0TTi7M4p8rBPT+f5gyuX2Wjjw55/IG5cFqA==
   dependencies:
     "@emotion/core" "10.0.21"
     "@types/color" "3.0.0"
