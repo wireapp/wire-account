@@ -1207,23 +1207,23 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@7.4.1":
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-7.4.1.tgz#712f59c44a75bd995a50cdfd8b2e5157db401250"
-  integrity sha512-9B5d6Kl1iPwAVrFqlyizpljLux/RjYHEkbX5+0otltcwOhkGdXmnSOG9t3BngoWxftpxZ2K7cGQ3uw03YezGTw==
+"@wireapp/api-client@7.4.2":
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-7.4.2.tgz#3ed3439188ebd329e8999c0e18fddb74c8f4d606"
+  integrity sha512-zS4hZvkb0CCvvWTRBz3S9LXH7oN22OKinfUB5SIoLWDOCACUV4GwUoHKl6YP5F5HfAbLMINbhuPrSlR3WNc4Ow==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
-    "@wireapp/commons" "2.2.20"
-    "@wireapp/priority-queue" "1.3.3"
-    "@wireapp/store-engine" "3.9.20"
+    "@wireapp/commons" "2.2.21"
+    "@wireapp/priority-queue" "1.3.4"
+    "@wireapp/store-engine" "3.9.21"
     axios "0.19.0"
     logdown "3.2.8"
     reconnecting-websocket "4.2.0"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
-    ws "7.1.2"
+    ws "7.2.0"
 
 "@wireapp/commons@2.2.17":
   version "2.2.17"
@@ -1241,10 +1241,10 @@
     platform "1.3.5"
     url-search-params-polyfill "7.0.0"
 
-"@wireapp/commons@2.2.20":
-  version "2.2.20"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-2.2.20.tgz#92f780335fb3f25d0425eafc346ffb418faa34da"
-  integrity sha512-yeM6dXWBmMhIuzLMb3FfOKoP0TvnYBMSqB7N8DZi//eCHgVjR4gRBCz/FFYxYD4/gsQP0pzbh5S5aUVnouEfzg==
+"@wireapp/commons@2.2.21":
+  version "2.2.21"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-2.2.21.tgz#ae79afecc5e0aba06c61653b7bbdabd7f3535fd3"
+  integrity sha512-1uKqmatI/aK+zMYLEyntfUE3AA9kA0yjJepLGptUaJoYxo30Hd2kN9JO8KD2dbjuy5r8YMefBfG5xBXkEv45dw==
   dependencies:
     "@types/ansi-regex" "5.0.0"
     "@types/fs-extra" "8.0.1"
@@ -1275,10 +1275,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.2.0.tgz#7345f5a8f4763435efef6a46d0ff6c006a0e0064"
   integrity sha512-UNpt4uA1KIW29WP3Nb9GpI/hriy+HVTbkA/KZwHPST2OXCOX9sGAF39tuutiKAZll3WxG1M3XnxXBL/CtBmgVA==
 
-"@wireapp/priority-queue@1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.3.tgz#2b05dba5044dbe802396fa3a52729d6fb3a17961"
-  integrity sha512-urdFrWOXTkXuITO0U2hDcG6IeyHrpxLy23bSL6LVVXLMRW6o8Re1MVZiH1PiyABWi5CawnNb5a/wkKc/aOVG1A==
+"@wireapp/priority-queue@1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.4.tgz#3ffb8572db01eecb2d9e9ba3b61f457f17ad7f2b"
+  integrity sha512-9cNetPCKsz0M26uKRwWJYVGF/vSoesJMJWiha+VD/qEUqSVHuNb4Ncq94Vji3EB2knaBtlaOrx56MgYs/LmQMw==
   dependencies:
     "@types/node" "~12"
     logdown "3.2.8"
@@ -1297,10 +1297,10 @@
     emotion-theming "10.0.19"
     react-transition-group "4.3.0"
 
-"@wireapp/store-engine@3.9.20":
-  version "3.9.20"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.9.20.tgz#6d5797eab2cd2faa263cfb9923508614b412ca2a"
-  integrity sha512-qDNOZf5XUNTGvI6/8Y8VpuxGRItG+yaJOJBBgsFtJQZIPCoslpeVDA2H7oZRPV2Y50KlyxX6CVGbw/P804KpQw==
+"@wireapp/store-engine@3.9.21":
+  version "3.9.21"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-3.9.21.tgz#accd7764a944ec8bae37c3517d1aca617db7b78e"
+  integrity sha512-sDLhtIYNuX5mSwnbJBUXUybLcEcdMZs8EcUkW2rGoCHg+/62o2ObedXMbB5anznNQhWlq/TZLrYlHsaMB5TJsA==
   dependencies:
     "@types/node" "~12"
 
@@ -7900,10 +7900,10 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.1.2.tgz#c672d1629de8bb27a9699eb599be47aeeedd8f73"
-  integrity sha512-gftXq3XI81cJCgkUiAVixA0raD9IVmXqsylCrjRygw4+UOOGzPoxnQ6r/CnVL9i+mDncJo94tSkyrtuuQVBmrg==
+ws@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.0.tgz#422eda8c02a4b5dba7744ba66eebbd84bcef0ec7"
+  integrity sha512-+SqNqFbwTm/0DC18KYzIsMTnEWpLwJsiasW/O17la4iDRRIO9uaHbvKiAS3AHgTiuuWerK/brj4O6MYZkei9xg==
   dependencies:
     async-limiter "^1.0.0"
 
