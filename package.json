@@ -23,7 +23,7 @@
     "@babel/preset-env": "7.6.3",
     "@babel/preset-react": "7.6.3",
     "@babel/preset-typescript": "7.6.0",
-    "@emotion/babel-preset-css-prop": "10.0.17",
+    "@emotion/babel-preset-css-prop": "10.0.22",
     "@hot-loader/react-dom": "16.10.2",
     "@types/i18next": "13.0.0",
     "@types/jasmine": "3.4.4",
