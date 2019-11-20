@@ -120,7 +120,7 @@
     "start": "cd server && yarn start",
     "test": "yarn test:types",
     "test:types": "tsc --noEmit",
-    "translate:extract": "yarn build && i18next-scanner 'server/dist/**/*.{js,html}'",
+    "translate:extract": "yarn bundle:staging && i18next-scanner 'server/dist/**/*.{js,html}'",
     "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
     "webpack": "webpack --config webpack.config.prod.js",
     "webpack:dev": "webpack --config webpack.config.dev.js",
