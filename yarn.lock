@@ -1317,39 +1317,23 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-8.0.0.tgz#e36d78c17da0b9d0af98dc3dab66bec9dc73d8f7"
-  integrity sha512-9twFXcuvEwYfS1Hbnwp+zB+4Ny9TMhaP05M6+bW0ZGAMDFwL42bLd8GqagC8HPiPTUpWYc+hlDfUvt5MJjj9Aw==
+"@wireapp/api-client@8.3.3":
+  version "8.3.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-8.3.3.tgz#f0d26221c7840522f6771bbf832da781c03643d3"
+  integrity sha512-ga+dqeCqKqRfTGMsnfaFwXJqgyAJg8J1jzU7NDImyVMt1+e+6Ws9TLhTLEiI2rDFm1/zoyKMYsxZNXU1gPhL/Q==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.1"
     "@types/tough-cookie" "2.3.5"
-    "@wireapp/commons" "2.2.21"
-    "@wireapp/priority-queue" "1.3.4"
-    "@wireapp/store-engine" "4.0.0"
+    "@wireapp/commons" "2.2.23"
+    "@wireapp/priority-queue" "1.3.5"
+    "@wireapp/store-engine" "4.1.0"
     axios "0.19.0"
     logdown "3.2.8"
     reconnecting-websocket "4.2.0"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.0"
-
-"@wireapp/commons@2.2.21":
-  version "2.2.21"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-2.2.21.tgz#ae79afecc5e0aba06c61653b7bbdabd7f3535fd3"
-  integrity sha512-1uKqmatI/aK+zMYLEyntfUE3AA9kA0yjJepLGptUaJoYxo30Hd2kN9JO8KD2dbjuy5r8YMefBfG5xBXkEv45dw==
-  dependencies:
-    "@types/ansi-regex" "5.0.0"
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.2.8"
-    moment "2.24.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.0"
 
 "@wireapp/commons@2.2.23":
   version "2.2.23"
@@ -1385,10 +1369,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.2.0.tgz#7345f5a8f4763435efef6a46d0ff6c006a0e0064"
   integrity sha512-UNpt4uA1KIW29WP3Nb9GpI/hriy+HVTbkA/KZwHPST2OXCOX9sGAF39tuutiKAZll3WxG1M3XnxXBL/CtBmgVA==
 
-"@wireapp/priority-queue@1.3.4":
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.4.tgz#3ffb8572db01eecb2d9e9ba3b61f457f17ad7f2b"
-  integrity sha512-9cNetPCKsz0M26uKRwWJYVGF/vSoesJMJWiha+VD/qEUqSVHuNb4Ncq94Vji3EB2knaBtlaOrx56MgYs/LmQMw==
+"@wireapp/priority-queue@1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.5.tgz#f5c91d0e30bf4bcaa2e96b8f5b3b483078429225"
+  integrity sha512-4WCvJ5UBBBMo0jSt8D/rifwWl8KGKaROwfd+TMNZOOrFg49aCohAFmmRc48lacjYgME9RKqe28a97barLeUimA==
   dependencies:
     "@types/node" "~12"
     logdown "3.2.8"
@@ -1407,10 +1391,10 @@
     emotion-theming "10.0.19"
     react-transition-group "4.3.0"
 
-"@wireapp/store-engine@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-4.0.0.tgz#b4f45887a794fafb34490277b9e96d030cb66dc2"
-  integrity sha512-eta5kC4/6/FI0hti2T0OlFm2qNW2dzZ41Igb+YtO4IGbfsCJuCndpkRYZRczvx+zZQnekQWw5u+3nUzED8+7mQ==
+"@wireapp/store-engine@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/store-engine/-/store-engine-4.1.0.tgz#4decc31f409040d24da6f951f3f4a8f025e78898"
+  integrity sha512-X9AVRhxStUJYxLdo1OnQ1vMHTJDonavNcsaZIl0wgA3EfynWTpNfQOQZ3qF3/L7xaUGv8554o/yuxyFEe/nv6w==
   dependencies:
     "@types/node" "~12"
 
