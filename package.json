@@ -11,7 +11,7 @@
     "i18next-react-postprocessor": "3.0.1",
     "intersection-observer": "0.7.0",
     "react": "16.12.0",
-    "react-dom": "16.11.0",
+    "react-dom": "16.12.0",
     "react-i18next": "11.0.0",
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
