@@ -60,6 +60,7 @@ const DeleteAccount = ({location}: Props) => {
                 <Text center>{t('confirmation', {company: BRAND_NAME})}</Text>
                 <Text center style={{marginTop: 16}}>
                   {t('surveyText', {
+                    br: <br />,
                     company: BRAND_NAME,
                     link: <TextLink href={ACCOUNT_DELETE_SURVEY_URL}>{t('surveyLink')}</TextLink>,
                   })}
