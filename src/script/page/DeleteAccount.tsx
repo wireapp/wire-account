@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
+import {Button, COLOR, ContainerSM, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
@@ -51,7 +51,7 @@ const DeleteAccount = ({location}: Props) => {
   };
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerSM style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
         {key && code && !error ? (
           <React.Fragment>
             {success ? (
@@ -92,7 +92,7 @@ const DeleteAccount = ({location}: Props) => {
             <Text center>{t('errorDescription')}</Text>
           </React.Fragment>
         )}
-      </ContainerXS>
+      </ContainerSM>
     </Document>
   );
 };
