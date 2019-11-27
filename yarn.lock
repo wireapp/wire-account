@@ -1285,10 +1285,10 @@
     logdown "3.2.8"
     pure-uuid "1.5.7"
 
-"@wireapp/react-ui-kit@7.23.25":
-  version "7.23.25"
-  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.23.25.tgz#70c75068c23222eadc5a988ac25fa05be312d92e"
-  integrity sha512-s0J3SujZlXvUqKY8We7vcrXggFqttIp8HXma4llSARUtt0HE8MUifTSKdt6lFnD+VOPg/EuX7xo/qvF6GRV3+A==
+"@wireapp/react-ui-kit@7.23.26":
+  version "7.23.26"
+  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.23.26.tgz#06aacdb4358ed0dc045cb45c2190abba51e5ced9"
+  integrity sha512-IJdh+fGSpMPrNis1E+uVEeVtNvvG1mQrTw7umZMpPtipxz5OoL6zy68z5c7+QwjvoQYJkp3iYBfj7GdYiO1fNA==
   dependencies:
     "@emotion/core" "10.0.22"
     "@types/color" "3.0.0"
