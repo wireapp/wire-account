@@ -18,7 +18,6 @@
  */
 
 import {APIClient} from '@wireapp/api-client';
-import {MemoryEngine} from '@wireapp/store-engine';
 import React, {HTMLProps} from 'react';
 import * as Environment from 'script/Environment';
 import {AccountAction} from './AccountAction';
@@ -28,7 +27,6 @@ const actionRoot: {
 } = {
   accountAction: new AccountAction(
     new APIClient({
-      store: new MemoryEngine(),
       urls: {rest: Environment.HOST_HTTP, ws: undefined, name: 'backend'},
     }),
   ),
