@@ -56,8 +56,8 @@ const DeleteAccount = ({location}: Props) => {
           <React.Fragment>
             {success ? (
               <React.Fragment>
-                <H1 data-uie-name="status-successful-delete-account-headline">{t('headline')}</H1>
-                <Text center data-uie-name="status-delete-account-confirmation">
+                <H1 data-uie-name="successful-delete-account-headline">{t('headline')}</H1>
+                <Text center data-uie-name="delete-account-confirmation">
                   {t('confirmation', {company: BRAND_NAME})}
                 </Text>
                 <Text center style={{marginTop: 16}}>
