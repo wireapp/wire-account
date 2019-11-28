@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerSM, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
+import {Button, COLOR, ContainerSM, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
@@ -69,24 +69,26 @@ const DeleteAccount = ({location}: Props) => {
                 </Text>
               </React.Fragment>
             ) : (
-              <ContainerXXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 <H1>{t('title')}</H1>
-                <Text center>{t('greeting')}</Text>
-                <Text center>{t('description', {company: BRAND_NAME})}</Text>
-                <Form onSubmit={deleteAccount}>
-                  <Button
-                    type="submit"
-                    data-uie-name="do-delete-account"
-                    backgroundColor={COLOR.RED}
-                    style={{marginTop: 34}}
-                  >
-                    {t('button')}
-                  </Button>
-                </Form>
-                <Text center style={{marginTop: 24}}>
-                  {t('resetText', {link: <TextLink>{t('resetLink', {company: BRAND_NAME})}</TextLink>})}
-                </Text>
-              </ContainerXXS>
+                <ContainerXXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                  <Text center>{t('greeting')}</Text>
+                  <Text center>{t('description', {company: BRAND_NAME})}</Text>
+                  <Form onSubmit={deleteAccount}>
+                    <Button
+                      type="submit"
+                      data-uie-name="do-delete-account"
+                      backgroundColor={COLOR.RED}
+                      style={{marginTop: 34}}
+                    >
+                      {t('button')}
+                    </Button>
+                  </Form>
+                  <Text center style={{marginTop: 24}}>
+                    {t('resetText', {link: <TextLink>{t('resetLink', {company: BRAND_NAME})}</TextLink>})}
+                  </Text>
+                </ContainerXXS>
+              </ContainerXS>
             )}
           </React.Fragment>
         ) : (
