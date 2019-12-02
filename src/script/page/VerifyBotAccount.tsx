@@ -20,7 +20,7 @@ import {Runtime} from '@wireapp/commons';
 import {ContainerXS, FlexBox, H1, Loading, Text} from '@wireapp/react-ui-kit';
 import React, {useContext, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router';
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';

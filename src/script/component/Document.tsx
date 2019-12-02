@@ -32,8 +32,7 @@ interface ConnectedProps {}
 interface DispatchProps {}
 
 const Document: React.FC<Props & ConnectedProps & DispatchProps> = ({title = '', children}) => {
-  const pageTitle = BRAND_NAME;
-  document.title = title ? `${pageTitle} · ${title}` : pageTitle;
+  document.title = title ? `${BRAND_NAME} · ${title}` : BRAND_NAME;
   return (
     <TransitionContainer>
       <Opacity>

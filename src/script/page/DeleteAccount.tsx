@@ -16,10 +16,10 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
+import {Button, COLOR, ContainerSM, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
 import React, {useContext, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router';
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {ACCOUNT_DELETE_SURVEY_URL, BRAND_NAME} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
@@ -51,39 +51,44 @@ const DeleteAccount = ({location}: Props) => {
   };
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerSM style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
         {key && code && !error ? (
           <React.Fragment>
             {success ? (
               <React.Fragment>
-                <H1>{t('headline')}</H1>
-                <Text center>{t('confirmation', {company: BRAND_NAME})}</Text>
+                <H1 data-uie-name="successful-delete-account-headline">{t('headline')}</H1>
+                <Text center data-uie-name="delete-account-confirmation">
+                  {t('confirmation', {company: BRAND_NAME})}
+                </Text>
                 <Text center style={{marginTop: 16}}>
                   {t('surveyText', {
+                    br: <br />,
                     company: BRAND_NAME,
                     link: <TextLink href={ACCOUNT_DELETE_SURVEY_URL}>{t('surveyLink')}</TextLink>,
                   })}
                 </Text>
               </React.Fragment>
             ) : (
-              <ContainerXXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 <H1>{t('title')}</H1>
-                <Text center>{t('greeting')}</Text>
-                <Text center>{t('description', {company: BRAND_NAME})}</Text>
-                <Form onSubmit={deleteAccount}>
-                  <Button
-                    type="submit"
-                    data-uie-name="do-delete-account"
-                    backgroundColor={COLOR.RED}
-                    style={{marginTop: 34}}
-                  >
-                    {t('button')}
-                  </Button>
-                </Form>
-                <Text center style={{marginTop: 24}}>
-                  {t('resetText', {link: <TextLink>{t('resetLink', {company: BRAND_NAME})}</TextLink>})}
-                </Text>
-              </ContainerXXS>
+                <ContainerXXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                  <Text center>{t('greeting')}</Text>
+                  <Text center>{t('description', {company: BRAND_NAME})}</Text>
+                  <Form onSubmit={deleteAccount}>
+                    <Button
+                      type="submit"
+                      data-uie-name="do-delete-account"
+                      backgroundColor={COLOR.RED}
+                      style={{marginTop: 34}}
+                    >
+                      {t('button')}
+                    </Button>
+                  </Form>
+                  <Text center style={{marginTop: 24}}>
+                    {t('resetText', {link: <TextLink>{t('resetLink', {company: BRAND_NAME})}</TextLink>})}
+                  </Text>
+                </ContainerXXS>
+              </ContainerXS>
             )}
           </React.Fragment>
         ) : (
@@ -92,7 +97,7 @@ const DeleteAccount = ({location}: Props) => {
             <Text center>{t('errorDescription')}</Text>
           </React.Fragment>
         )}
-      </ContainerXS>
+      </ContainerSM>
     </Document>
   );
 };
