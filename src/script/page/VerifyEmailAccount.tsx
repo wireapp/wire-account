@@ -93,7 +93,7 @@ const VerifyEmailAccount = ({location}: Props) => {
         {key && code && !error ? (
           success ? (
             <React.Fragment>
-              <H1>{t('successEmailTitle')}</H1>
+              <H1 data-uie-name="verify-email-success-headline">{t('successEmailTitle')}</H1>
               {Runtime.isMobileOS() ? (
                 <MobileSuccess />
               ) : Runtime.isDesktopOS() ? (
