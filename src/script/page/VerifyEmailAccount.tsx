@@ -44,7 +44,9 @@ const VerifyEmailAccount = ({location}: Props) => {
   const {accountAction} = useContext(ActionContext);
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
   const redirectDesktop =
-    Runtime.isDesktopOS() && !(Runtime.isMacOS() || Runtime.isWindows()) && `${WEBAPP_URL}/auth/?immediate_login#login`;
+    Runtime.isDesktopOS() &&
+    !(Runtime.isMacOS() || Runtime.isWindows() || Runtime.isLinux()) &&
+    `${WEBAPP_URL}/auth/?immediate_login#login`;
   useEffect(() => {
     accountAction
       .verifyEmail(key, code)
