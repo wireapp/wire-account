@@ -43,8 +43,7 @@ const VerifyPhoneAccount = (props: Props) => {
   const [error, setError] = useState('');
   const {accountAction} = useContext(ActionContext);
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
-  const redirectDesktop =
-    Runtime.isDesktopOS() && !(Runtime.isMacOS() || Runtime.isWindows()) && `${WEBAPP_URL}/auth/?immediate_login#login`;
+  const loginImmediately = !Runtime.isDesktopOS();
   useEffect(() => {
     accountAction
       .verifyBot(key, code)
@@ -71,7 +70,7 @@ const VerifyPhoneAccount = (props: Props) => {
         )}
         <OpenWebappButton style={{marginLeft: 8}}>{t('open:openWeb')}</OpenWebappButton>
       </FlexBox>
-      {redirectDesktop && window.location.assign(redirectDesktop)}
+      {loginImmediately && window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`)}
     </React.Fragment>
   );
 
