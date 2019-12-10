@@ -59,6 +59,7 @@
     "lint:ts": "tslint --config tslint.json --project tsconfig.json",
     "start": "yarn build && cross-env NODE_ENV=development node dist/index.js",
     "start:prod": "pm2 start \"./index.js\" --name \"Account Management\" && pm2 logs",
-    "test": "exit 0"
+    "test": "exit 0",
+    "test:types": "tsc --noEmit"
   }
 }
