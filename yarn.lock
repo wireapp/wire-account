@@ -1034,10 +1034,10 @@
   resolved "https://registry.yarnpkg.com/@types/spark-md5/-/spark-md5-3.0.2.tgz#da2e8a778a20335fc4f40b6471c4b0d86b70da55"
   integrity sha512-82E/lVRaqelV9qmRzzJ1PKTpyrpnT7mwdneKNJB9hUtypZDMggloDfFUCIqRRx3lYRxteCwXSq9c+W71Vf0QnQ==
 
-"@types/tough-cookie@2.3.5":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.5.tgz#9da44ed75571999b65c37b60c9b2b88db54c585d"
-  integrity sha512-SCcK7mvGi3+ZNz833RRjFIxrn4gI1PPR3NtuIS+6vMkvmsGjosqTJwRt5bAEFLRz+wtJMWv8+uOnZf2hi2QXTg==
+"@types/tough-cookie@2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.6.tgz#c880579e087d7a0db13777ff8af689f4ffc7b0d5"
+  integrity sha512-wHNBMnkoEBiRAd3s8KTKwIuO9biFtTf0LehITzBhSco+HQI0xkXZbLOD55SW3Aqw3oUkHstkm5SPv58yaAdFPQ==
 
 "@types/webpack-env@1.14.1":
   version "1.14.1"
@@ -1190,14 +1190,14 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.2.3":
-  version "9.2.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.2.3.tgz#ddcb7e335dc78bfff07fa89a197d01db4921c787"
-  integrity sha512-zbJ7MA7u30LyZ4y008A7BaETbOVb8xMaHL1c7Ys2tMqYShylryLaJ5DOmuTdKMSY+Fp/CN87XI+MsQPPhzCx0w==
+"@wireapp/api-client@9.2.4":
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.2.4.tgz#a383aef43382d39802e24034900caa9d322e23e5"
+  integrity sha512-X//QjLDzrLGGyZIWClu099E09mWqJl95O/VOlBWkomgl+G9EyVLMxSVNxLlu4Tv5ay7poqyL/CEIRV84rYHoWg==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
-    "@types/tough-cookie" "2.3.5"
+    "@types/tough-cookie" "2.3.6"
     "@wireapp/commons" "3.0.3"
     "@wireapp/priority-queue" "1.3.7"
     axios "0.19.0"
