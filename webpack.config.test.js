@@ -23,7 +23,8 @@ const webpack = require('webpack');
 
 const src = 'src/script';
 
-module.exports = Object.assign({}, prodConfig, {
+module.exports = {
+  ...prodConfig,
   devtool: 'inline-source-map',
   entry: Object.assign(prodConfig.entry, {
     test: path.resolve(__dirname, src, 'index.test.ts'),
@@ -43,4 +44,4 @@ module.exports = Object.assign({}, prodConfig, {
       },
     }),
   ],
-});
+};

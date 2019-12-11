@@ -49,7 +49,7 @@ const VerifyEmailAccount = ({location}: Props) => {
       .verifyEmail(key, code)
       .then(() => setSuccess(true))
       .catch(error => {
-        console.warn('Failed to verify email account', error);
+        console.error('Failed to verify email account', error);
         setError(error.toString());
       });
   }, []);
@@ -88,7 +88,7 @@ const VerifyEmailAccount = ({location}: Props) => {
 
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {key && code && !error ? (
           success ? (
             <React.Fragment>

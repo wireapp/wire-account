@@ -49,8 +49,8 @@ const PasswordForgot = () => {
       setSuccess(true);
     } catch (error) {
       if (error instanceof ValidationError) {
-        const EMAIL_PATTERN_MISMATCH: string = ValidationError.FIELD.EMAIL['TYPE_MISMATCH'];
-        const EMAIL_VALUE_MISSING: string = ValidationError.FIELD.EMAIL['VALUE_MISSING'];
+        const EMAIL_PATTERN_MISMATCH: string = ValidationError.FIELD.EMAIL.TYPE_MISMATCH;
+        const EMAIL_VALUE_MISSING: string = ValidationError.FIELD.EMAIL.VALUE_MISSING;
         switch (error.label) {
           case EMAIL_VALUE_MISSING:
           case EMAIL_PATTERN_MISMATCH: {
@@ -59,7 +59,7 @@ const PasswordForgot = () => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.warn('Failed email validation', error);
+            console.error('Failed email validation', error);
           }
         }
       } else {
@@ -74,7 +74,7 @@ const PasswordForgot = () => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.warn('Failed to initiate password reset', error);
+            console.error('Failed to initiate password reset', error);
           }
         }
       }
@@ -82,7 +82,7 @@ const PasswordForgot = () => {
   };
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {success ? (
           <React.Fragment>
             <H1>{t('successTitle')}</H1>

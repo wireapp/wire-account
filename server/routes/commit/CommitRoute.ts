@@ -18,6 +18,7 @@
  */
 
 import {Router} from 'express';
+
 import {ServerConfig} from '../../ServerConfig';
 
 const CommitRoute = (config: ServerConfig) =>

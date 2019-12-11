@@ -63,8 +63,8 @@ const PasswordReset = ({location}: Props) => {
       setSuccess(true);
     } catch (error) {
       if (error instanceof ValidationError) {
-        const PASSWORD_PATTERN_MISMATCH: string = ValidationError.FIELD.PASSWORD['PATTERN_MISMATCH'];
-        const PASSWORD_VALUE_MISSING: string = ValidationError.FIELD.PASSWORD['VALUE_MISSING'];
+        const PASSWORD_PATTERN_MISMATCH: string = ValidationError.FIELD.PASSWORD.PATTERN_MISMATCH;
+        const PASSWORD_VALUE_MISSING: string = ValidationError.FIELD.PASSWORD.VALUE_MISSING;
         switch (error.label) {
           case PASSWORD_VALUE_MISSING:
           case PASSWORD_PATTERN_MISMATCH: {
@@ -73,7 +73,7 @@ const PasswordReset = ({location}: Props) => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.warn('Failed password reset completion', error);
+            console.error('Failed password reset completion', error);
           }
         }
       } else {
@@ -88,7 +88,7 @@ const PasswordReset = ({location}: Props) => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.warn('Failed password reset completion', error);
+            console.error('Failed password reset completion', error);
           }
         }
       }
@@ -117,7 +117,7 @@ const PasswordReset = ({location}: Props) => {
   );
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {key && code ? (
           success ? (
             <React.Fragment>

@@ -18,10 +18,12 @@
  */
 
 const dotenv = require('dotenv-extended');
+import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/dist/commonjs/util/ValidationUtil';
 import * as fs from 'fs-extra';
 import {IHelmetContentSecurityPolicyDirectives as HelmetCSP} from 'helmet';
 import * as logdown from 'logdown';
 import * as path from 'path';
+
 import {ServerConfig} from './ServerConfig';
 
 dotenv.load();
@@ -95,6 +97,8 @@ function mergedCSP(): HelmetCSP {
 
 const nodeEnvironment = process.env.NODE_ENV || 'production';
 
+const DEFAULT_PORT = 21800;
+
 const config: ServerConfig = {
   CLIENT: {
     APP_NAME: process.env.APP_NAME,
@@ -102,10 +106,11 @@ const config: ServerConfig = {
     BRAND_NAME: process.env.COMPANY_NAME,
     ENVIRONMENT: nodeEnvironment,
     FEATURE: {
-      ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true' ? true : false,
+      ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true',
     },
     NEW_PASSWORD_MINIMUM_LENGTH:
-      (process.env.NEW_PASSWORD_MINIMUM_LENGTH && Number(process.env.NEW_PASSWORD_MINIMUM_LENGTH)) || 8,
+      (process.env.NEW_PASSWORD_MINIMUM_LENGTH && Number(process.env.NEW_PASSWORD_MINIMUM_LENGTH)) ||
+      DEFAULT_PASSWORD_MIN_LENGTH,
     URL: {
       ACCOUNT_DELETE_SURVEY: process.env.URL_ACCOUNT_DELETE_SURVEY,
       DOWNLOAD_ANDROID_BASE: process.env.URL_DOWNLOAD_ANDROID_BASE,
@@ -131,9 +136,9 @@ const config: ServerConfig = {
     APP_BASE: process.env.APP_BASE,
     CACHE_DURATION_SECONDS: 300,
     CSP: mergedCSP(),
-    ENFORCE_HTTPS: process.env.ENFORCE_HTTPS == 'false' ? false : true,
+    ENFORCE_HTTPS: process.env.ENFORCE_HTTPS != 'false',
     ENVIRONMENT: nodeEnvironment,
-    PORT_HTTP: Number(process.env.PORT) || 21080,
+    PORT_HTTP: Number(process.env.PORT) || DEFAULT_PORT,
     ROBOTS: {
       ALLOW: readFile(ROBOTS_ALLOW_FILE, 'User-agent: *\r\nDisallow: /'),
       ALLOWED_HOSTS: ['account.wire.com'],

@@ -17,6 +17,8 @@
  *
  */
 
+import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/dist/commonjs/util/ValidationUtil';
+
 declare global {
   interface Window {
     wire: {
@@ -71,7 +73,7 @@ export const APP_NAME = window.wire.env.APP_NAME;
 export const BRAND_NAME = window.wire.env.BRAND_NAME;
 export const FEATURE_ENABLE_DEBUG = window.wire.env.FEATURE.ENABLE_DEBUG;
 export const HOST_HTTP = window.wire.env.BACKEND_REST;
-export const NEW_PASSWORD_MINIMUM_LENGTH = window.wire.env.NEW_PASSWORD_MINIMUM_LENGTH || 8;
+export const NEW_PASSWORD_MINIMUM_LENGTH = window.wire.env.NEW_PASSWORD_MINIMUM_LENGTH || DEFAULT_PASSWORD_MIN_LENGTH;
 export const VERSION = window.wire.env.VERSION;
 
 // URLs

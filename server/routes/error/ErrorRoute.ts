@@ -18,6 +18,7 @@
  */
 
 import {ErrorRequestHandler} from 'express';
+
 import {ServerConfig} from '../../ServerConfig';
 
 const ErrorRoute = (config: ServerConfig): ErrorRequestHandler => (err, req, res, next) => {

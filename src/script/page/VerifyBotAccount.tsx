@@ -49,7 +49,7 @@ const VerifyPhoneAccount = (props: Props) => {
       .verifyBot(key, code)
       .then(() => setSuccess(true))
       .catch(error => {
-        console.warn('Failed to verify bot account', error);
+        console.error('Failed to verify bot account', error);
         setError(error.toString());
       });
   }, []);
@@ -81,7 +81,7 @@ const VerifyPhoneAccount = (props: Props) => {
   );
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {key && code && !error ? (
           success ? (
             <React.Fragment>

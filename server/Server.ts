@@ -40,7 +40,7 @@ class Server {
   private server: http.Server;
 
   constructor(private readonly config: ServerConfig) {
-    console.log(this.config);
+    console.info(this.config);
     this.app = express();
     this.config = {...config};
     this.server = undefined;
@@ -168,11 +168,11 @@ class Server {
   start(): Promise<number> {
     return new Promise((resolve, reject) => {
       if (this.server) {
-        reject('Server is already running.');
+        reject(new Error('Server is already running.'));
       } else if (this.config.SERVER.PORT_HTTP) {
         this.server = this.app.listen(this.config.SERVER.PORT_HTTP, () => resolve(this.config.SERVER.PORT_HTTP));
       } else {
-        reject('Server port not specified.');
+        reject(new Error('Server port not specified.'));
       }
     });
   }

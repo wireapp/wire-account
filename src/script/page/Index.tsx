@@ -21,7 +21,7 @@ import {Runtime} from '@wireapp/commons';
 import {FlexBox, Text, TextLink} from '@wireapp/react-ui-kit';
 import React from 'react';
 import Document from 'script/component/Document';
-import {DOWNLOAD_ANDROID_URL, DOWNLOAD_IOS_URL, WEBSITE_URL, isEnvironment} from 'script/Environment';
+import {DOWNLOAD_ANDROID_URL, DOWNLOAD_IOS_URL, isEnvironment, WEBSITE_URL} from 'script/Environment';
 
 interface Props extends React.HTMLProps<Document> {}
 
