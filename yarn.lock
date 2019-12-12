@@ -1190,16 +1190,16 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.2.5":
-  version "9.2.5"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.2.5.tgz#0dd8a02fc59188eef22d2f6349c83ef18bd8424d"
-  integrity sha512-Ado0EC8MP0AW9tIGXFcpB2cf7vsAq89HzrT1iZAuRipCX5UMnbUuo1rZ1ECbl6T3mAdhn2jRK/HjKoxi4rcMpg==
+"@wireapp/api-client@9.2.7":
+  version "9.2.7"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.2.7.tgz#21c18f092d4ecae67a86712d9e655ec8ce0446d4"
+  integrity sha512-Uq2vt3dcFXMIztSXNFZFt3dJLNZWKhrjgOYUd9BHVy63eqKzvFgU1yloCZ5rlQJxui6CHXWlZz+CtRW3SpPA3g==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
     "@wireapp/commons" "3.0.3"
-    "@wireapp/priority-queue" "1.3.7"
+    "@wireapp/priority-queue" "1.3.8"
     axios "0.19.0"
     logdown "3.2.8"
     reconnecting-websocket "github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
@@ -1241,10 +1241,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.2.0.tgz#7345f5a8f4763435efef6a46d0ff6c006a0e0064"
   integrity sha512-UNpt4uA1KIW29WP3Nb9GpI/hriy+HVTbkA/KZwHPST2OXCOX9sGAF39tuutiKAZll3WxG1M3XnxXBL/CtBmgVA==
 
-"@wireapp/priority-queue@1.3.7":
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.7.tgz#539591dde8b1746d688fb26f872ea99c57fa6ace"
-  integrity sha512-cEmibRVeJjugdEtuesUEo2eUPCxMZQhSPuokQbjCfnigmz8dK2G/rHbGJ3DYHNAL8NT0i8KsWvxodslHw+W+mw==
+"@wireapp/priority-queue@1.3.8":
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.8.tgz#2637ea289708b2605a623a84f2282ecc0558f6af"
+  integrity sha512-Sn/8jlpIB6g/pLA+UenRrGr9tNG/kzZTHOtI5JYV7fkI4rOQhJBfFKXp6AzkviVvmmG7aqcnFKqGVKWUyiSUYg==
   dependencies:
     "@types/node" "~12"
     logdown "3.2.8"
