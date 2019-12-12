@@ -54,7 +54,7 @@
     "prettier": "1.19.1",
     "react-hot-loader": "4.12.18",
     "svg-inline-loader": "0.8.0",
-    "terser-webpack-plugin": "2.2.2",
+    "terser-webpack-plugin": "2.2.3",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-eslint-rules": "5.4.0",
