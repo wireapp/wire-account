@@ -18,18 +18,17 @@
  */
 
 const ReactPostprocessor = require('i18next-react-postprocessor');
-/* tslint:disable:ordered-imports */
-import 'intersection-observer';
-import 'url-search-params-polyfill';
-
-import {CommonConfig} from '@wireapp/commons';
+/* eslint-disable simple-import-sort/sort */
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import 'intersection-observer';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import {initReactI18next} from 'react-i18next';
 import Root from 'script/Root';
+import 'url-search-params-polyfill';
+import {CommonConfig} from '@wireapp/commons';
 const deDE = require('resource/translation/de-DE.json');
 const enUS = require('resource/translation/en-US.json');
 const frFR = require('resource/translation/fr-FR.json');
