@@ -59,7 +59,7 @@ const PasswordForgot = () => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.error('Failed email validation', error);
+            console.warn('Failed email validation', error);
           }
         }
       } else {
@@ -74,7 +74,7 @@ const PasswordForgot = () => {
           }
           default: {
             setError(t('errorUnknown'));
-            console.error('Failed to initiate password reset', error);
+            console.warn('Failed to initiate password reset', error);
           }
         }
       }

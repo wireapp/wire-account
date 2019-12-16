@@ -49,7 +49,7 @@ const VerifyEmailAccount = ({location}: Props) => {
       .verifyEmail(key, code)
       .then(() => setSuccess(true))
       .catch(error => {
-        console.error('Failed to verify email account', error);
+        console.warn('Failed to verify email account', error);
         setError(error.toString());
       });
   }, []);

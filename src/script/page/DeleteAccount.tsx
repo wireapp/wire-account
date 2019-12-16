@@ -45,7 +45,7 @@ const DeleteAccount = ({location}: Props) => {
       await accountAction.delete(key, code);
       setSuccess(true);
     } catch (error) {
-      console.error('Failed to delete account', error);
+      console.warn('Failed to delete account', error);
       setError(error.toString());
     }
   };
