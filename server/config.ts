@@ -48,6 +48,8 @@ function readFile(path: string, fallback?: string): string {
   }
 }
 
+const nodeEnvironment = process.env.NODE_ENV || 'production';
+
 const defaultCSP: HelmetCSP = {
   connectSrc: ["'self'", 'https://*.wire.com', 'https://*.zinfra.io', 'https://wire.innocraft.cloud'],
   defaultSrc: ["'self'"],
@@ -62,6 +64,11 @@ const defaultCSP: HelmetCSP = {
   styleSrc: ["'self'", "'unsafe-inline'"],
   workerSrc: ["'self'"],
 };
+
+if (nodeEnvironment !== 'production') {
+  // unsafe-eval is needed for HMR
+  defaultCSP.scriptSrc.push("'unsafe-eval'");
+}
 
 function parseCommaSeparatedList(list: string = ''): string[] {
   const cleanedList = list.replace(/\s/g, '');
@@ -94,8 +101,6 @@ function mergedCSP(): HelmetCSP {
     .filter(([key, value]) => !!value.length)
     .reduce((accumulator, [key, value]) => ({...accumulator, [key]: value}), {});
 }
-
-const nodeEnvironment = process.env.NODE_ENV || 'production';
 
 const DEFAULT_PORT = 21800;
 
