@@ -51,7 +51,7 @@ const DeleteAccount = ({location}: Props) => {
   };
   return (
     <Document>
-      <ContainerSM style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerSM style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {key && code && !error ? (
           <React.Fragment>
             {success ? (
@@ -69,9 +69,9 @@ const DeleteAccount = ({location}: Props) => {
                 </Text>
               </React.Fragment>
             ) : (
-              <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
                 <H1>{t('title')}</H1>
-                <ContainerXXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <ContainerXXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column'}}>
                   <Text center>{t('greeting')}</Text>
                   <Text center>{t('description', {company: BRAND_NAME})}</Text>
                   <Form onSubmit={deleteAccount}>

@@ -23,17 +23,17 @@ const webpack = require('webpack');
 
 const src = 'src/script';
 
-module.exports = Object.assign({}, prodConfig, {
+module.exports = {
+  ...prodConfig,
   devtool: 'inline-source-map',
-  entry: Object.assign(prodConfig.entry, {
-    test: path.resolve(__dirname, src, 'index.test.ts'),
-  }),
-  externals: Object.assign(prodConfig.externals, {
+  entry: {...prodConfig.entry, test: path.resolve(__dirname, src, 'index.test.ts')},
+  externals: {
+    ...prodConfig.externals,
     cheerio: 'window',
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true,
-  }),
+  },
   mode: 'production',
   plugins: [
     ...commonConfig.plugins,
@@ -43,4 +43,4 @@ module.exports = Object.assign({}, prodConfig, {
       },
     }),
   ],
-});
+};

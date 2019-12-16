@@ -4,11 +4,20 @@
   },
   "plugins": ["jasmine"],
   "extends": ["@wireapp/eslint-config", "plugin:jasmine/recommended"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/typedef": "off",
+        "no-unused-vars": "off"
+      }
+    }
+  ],
+  "parserOptions": {
+    "project": ["./tsconfig.json", "./server/tsconfig.json"]
+  },
   "rules": {
-    "computed-property-spacing": "error",
-    "constructor-super": "error",
-    "jasmine/new-line-before-expect": "off",
-    "jasmine/no-spec-dupes": ["warn", "branch"],
-    "jasmine/no-suite-dupes": ["warn", "branch"]
+    "import/no-default-export": "off"
   }
 }

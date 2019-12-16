@@ -18,7 +18,7 @@
  */
 
 const ReactPostprocessor = require('i18next-react-postprocessor');
-/* tslint:disable:ordered-imports */
+/* eslint-disable simple-import-sort/sort */
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import 'intersection-observer';

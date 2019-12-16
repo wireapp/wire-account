@@ -20,6 +20,7 @@
 import {APIClient} from '@wireapp/api-client';
 import React, {HTMLProps} from 'react';
 import * as Environment from 'script/Environment';
+
 import {AccountAction} from './AccountAction';
 
 const actionRoot: {
@@ -27,7 +28,7 @@ const actionRoot: {
 } = {
   accountAction: new AccountAction(
     new APIClient({
-      urls: {rest: Environment.HOST_HTTP, ws: undefined, name: 'backend'},
+      urls: {name: 'backend', rest: Environment.HOST_HTTP, ws: undefined},
     }),
   ),
 };

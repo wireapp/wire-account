@@ -23,6 +23,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import React from 'react';
 import {Redirect, Route, Router, Switch} from 'react-router-dom';
 import {ROUTE} from 'script/route';
+
 import DeleteAccount from './page/DeleteAccount';
 import Index from './page/Index';
 import PasswordForgot from './page/PasswordForgot';

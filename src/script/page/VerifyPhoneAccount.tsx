@@ -39,7 +39,7 @@ const VerifyPhoneAccount = ({match}: Props) => {
   window.location.assign(redirectPhone);
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         <H1 center>{t('successPhoneDescription')}</H1>
         <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
         <OpenAppButton />

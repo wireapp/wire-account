@@ -35,11 +35,6 @@
     "prettier": "1.17.1",
     "request": "2.88.0",
     "rimraf": "2.6.3",
-    "tslint": "5.16.0",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "tslint-react": "4.0.0",
-    "tslint-react-hooks": "2.1.0",
     "typescript": "3.4.5",
     "webpack-dev-middleware": "3.6.1",
     "webpack-hot-middleware": "2.24.4"
@@ -53,10 +48,6 @@
   "scripts": {
     "build": "yarn clean && tsc -P tsconfig.json && node ./bin/copy_server_assets.js && node ./bin/create_commit_sha_file.js",
     "clean": "rimraf ./dist",
-    "fix": "yarn fix:ts",
-    "fix:ts": "yarn lint:ts --fix",
-    "lint": "yarn lint:ts",
-    "lint:ts": "tslint --config tslint.json --project tsconfig.json",
     "start": "yarn build && cross-env NODE_ENV=development node dist/index.js",
     "start:prod": "pm2 start \"./index.js\" --name \"Account Management\" && pm2 logs",
     "test": "exit 0",

@@ -18,6 +18,7 @@
  */
 
 import {Router} from 'express';
+
 import {ServerConfig} from '../../ServerConfig';
 
 const DefaultRoute = (config: ServerConfig) => Router().get('*', (req, res) => res.render('index', {config}));

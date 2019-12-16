@@ -1,3 +1,4 @@
 bin
 i18next-scanner.config.js
 dist
+server/node_modules

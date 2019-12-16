@@ -81,7 +81,7 @@ const VerifyPhoneAccount = (props: Props) => {
   );
   return (
     <Document>
-      <ContainerXS style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 'auto'}}>
+      <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {key && code && !error ? (
           success ? (
             <React.Fragment>
