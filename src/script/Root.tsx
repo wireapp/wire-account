@@ -18,25 +18,24 @@
  */
 
 import {Global} from '@emotion/core';
-import {COLOR, StyledApp} from '@wireapp/react-ui-kit';
+import {COLOR, FlexBox, Loading, StyledApp} from '@wireapp/react-ui-kit';
 import createBrowserHistory from 'history/createBrowserHistory';
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import {Redirect, Route, Router, Switch} from 'react-router-dom';
 import {ROUTE} from 'script/route';
-
-import DeleteAccount from './page/DeleteAccount';
-import Index from './page/Index';
-import PasswordForgot from './page/PasswordForgot';
-import PasswordReset from './page/PasswordReset';
-import VerifyBotAccount from './page/VerifyBotAccount';
-import VerifyEmailAccount from './page/VerifyEmailAccount';
-import VerifyPhoneAccount from './page/VerifyPhoneAccount';
 
 const history = createBrowserHistory();
 
 interface Props {}
 
 const Root: React.FC<Props> = () => {
+  const LazyIndex = lazy(() => import('./page/Index'));
+  const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
+  const LazyPasswordForgot = lazy(() => import('./page/PasswordForgot'));
+  const LazyPasswordReset = lazy(() => import('./page/PasswordReset'));
+  const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
+  const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
+  const LazyVerifyPhoneAccount = lazy(() => import('./page/VerifyPhoneAccount'));
   return (
     <StyledApp>
       <Global
@@ -46,18 +45,26 @@ const Root: React.FC<Props> = () => {
           },
         }}
       />
-      <Router history={history}>
-        <Switch>
-          <Route exact path={ROUTE.HOME} component={Index} />
-          <Route exact path={ROUTE.DELETE_ACCOUNT} component={DeleteAccount} />
-          <Route exact path={ROUTE.PASSWORD_FORGOT} component={PasswordForgot} />
-          <Route exact path={ROUTE.PASSWORD_RESET} component={PasswordReset} />
-          <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={VerifyEmailAccount} />
-          <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={VerifyBotAccount} />
-          <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={VerifyPhoneAccount} />
-          <Redirect to={ROUTE.HOME} />
-        </Switch>
-      </Router>
+      <Suspense
+        fallback={
+          <FlexBox justify="center" align="center" style={{minHeight: '100vh'}}>
+            <Loading style={{margin: 'auto'}} />
+          </FlexBox>
+        }
+      >
+        <Router history={history}>
+          <Switch>
+            <Route exact path={ROUTE.HOME} component={LazyIndex} />
+            <Route exact path={ROUTE.DELETE_ACCOUNT} component={LazyDeleteAccount} />
+            <Route exact path={ROUTE.PASSWORD_FORGOT} component={LazyPasswordForgot} />
+            <Route exact path={ROUTE.PASSWORD_RESET} component={LazyPasswordReset} />
+            <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={LazyVerifyEmailAccount} />
+            <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={LazyVerifyBotAccount} />
+            <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={LazyVerifyPhoneAccount} />
+            <Redirect to={ROUTE.HOME} />
+          </Switch>
+        </Router>
+      </Suspense>
     </StyledApp>
   );
 };

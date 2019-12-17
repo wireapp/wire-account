@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@wireapp/api-client": "9.3.1",
-    "@wireapp/commons": "3.0.4",
+    "@wireapp/api-client": "9.3.3",
+    "@wireapp/commons": "3.0.5",
     "@wireapp/react-ui-kit": "7.25.1",
     "core-js": "3.5.0",
     "dotenv": "8.2.0",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "7.7.5",
     "@babel/plugin-proposal-class-properties": "7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "7.7.4",
     "@babel/preset-env": "7.7.6",
     "@babel/preset-react": "7.7.4",
     "@babel/preset-typescript": "7.7.4",
@@ -62,6 +63,7 @@
     "terser-webpack-plugin": "2.3.0",
     "typescript": "3.7.3",
     "webpack": "4.41.3",
+    "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "3.3.10",
     "webpack-dev-middleware": "3.7.2",
     "webpack-env": "0.8.0",

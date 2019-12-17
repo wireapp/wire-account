@@ -20,6 +20,7 @@
 const webpack = require('webpack');
 const commonConfig = require('./webpack.config.common');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   ...commonConfig,
@@ -38,6 +39,12 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      defaultSizes: 'gzip',
+      openAnalyzer: false,
+      reportFilename: `${__dirname}/coverage/bundle/report.html`,
     }),
   ],
 };
