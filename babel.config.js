@@ -37,7 +37,7 @@ module.exports = {
       plugins: [['babel-plugin-remove-jsx-attributes', {patterns: [testAttributeRegex]}]],
     },
   },
-  plugins: ['@babel/plugin-proposal-class-properties'],
+  plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import'],
   presets: [
     '@babel/preset-react',
     '@babel/preset-typescript',

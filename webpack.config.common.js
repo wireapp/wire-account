@@ -17,7 +17,6 @@
  *
  */
 
-const webpack = require('webpack');
 const path = require('path');
 
 const dist = path.resolve(__dirname, 'server/dist/static');
@@ -50,23 +49,14 @@ module.exports = {
     ],
   },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          chunks: 'initial',
-          enforce: true,
-          name: 'vendor',
-          test: /node_modules/,
-        },
-      },
-    },
+    runtimeChunk: 'single',
   },
   output: {
     filename: 'script/[name].js',
     path: path.resolve(__dirname, dist),
     publicPath: '/',
   },
-  plugins: [new webpack.IgnorePlugin(/^.\/locale$/, /moment$/)],
+  plugins: [],
   resolve: {
     alias: {
       resource: path.resolve(__dirname, 'resource'),
