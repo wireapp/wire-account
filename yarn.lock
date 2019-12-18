@@ -1243,15 +1243,15 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.3.1":
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.3.1.tgz#9e2f3c0fddb9b1da15b69c7317c99908a76288a3"
-  integrity sha512-7zzRr0ixBoQ2zDozpfq2SDSlWQ6iM5IRAp99YGJe9szVP/EMsh1TREpsgQomcz6QHUr9B2g70NlkWmmRTZZjng==
+"@wireapp/api-client@9.3.3":
+  version "9.3.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.3.3.tgz#372d3981d1e83ea42dc0be3c6fa50f4e9068edb1"
+  integrity sha512-PyfY42xd9pQusVDXa3P7vrbQAr7rZt7lOxquY51y68xOQIHUnFfaCYOm2va1VDTTeaYgD9pp5+60lhSCuLBRfQ==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.0.4"
+    "@wireapp/commons" "3.0.5"
     "@wireapp/priority-queue" "1.3.9"
     axios "0.19.0"
     logdown "3.3.0"
@@ -1259,22 +1259,6 @@
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.0.4.tgz#879095cd7f2be23521bb33313ae267a87bac5714"
-  integrity sha512-qJN4caRTGcWyXVOrsnEccDBlqVssT18ecTCT+wvQVgkhZYSzb+0drDNms/UqZF1LvY03VVSKqWBgCaZiB9xAkA==
-  dependencies:
-    "@types/ansi-regex" "5.0.0"
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    moment "2.24.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.1"
 
 "@wireapp/commons@3.0.5":
   version "3.0.5"
@@ -5364,11 +5348,6 @@ mocha@^5.2.0:
     minimatch "3.0.4"
     mkdirp "0.5.1"
     supports-color "5.4.0"
-
-moment@2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
