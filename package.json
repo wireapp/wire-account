@@ -61,7 +61,7 @@
     "react-hot-loader": "4.12.18",
     "svg-inline-loader": "0.8.0",
     "terser-webpack-plugin": "2.3.1",
-    "typescript": "3.7.3",
+    "typescript": "3.7.4",
     "webpack": "4.41.4",
     "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "3.3.10",
