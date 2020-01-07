@@ -1274,37 +1274,22 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.3.3":
-  version "9.3.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.3.3.tgz#372d3981d1e83ea42dc0be3c6fa50f4e9068edb1"
-  integrity sha512-PyfY42xd9pQusVDXa3P7vrbQAr7rZt7lOxquY51y68xOQIHUnFfaCYOm2va1VDTTeaYgD9pp5+60lhSCuLBRfQ==
+"@wireapp/api-client@9.4.0":
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.4.0.tgz#6b3a5dd969ac5f2f3586f30d155f0952d79ee5a4"
+  integrity sha512-FoMWDGmQmSwEnG/RcHav0Xb4JjFkcm3bP+s8TgVgy6LrMt8Y8pQCIPB/wjyI7tZ0HAqsOCQbjdNAbcWDtC9NPw==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.0.5"
-    "@wireapp/priority-queue" "1.3.9"
+    "@wireapp/commons" "3.0.6"
+    "@wireapp/priority-queue" "1.3.10"
     axios "0.19.0"
     logdown "3.3.0"
-    reconnecting-websocket wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378
+    reconnecting-websocket "github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.0.5.tgz#4a63f83304a38c343e5b25f22d1dababde90bee8"
-  integrity sha512-DGXnPchZt6puTYDb7su3vIj/ODWe1ApPud/K5BAswtJYlsbsOu3Al/xXtmJuvpH/IBQt/+aHISx5L5g2AfNIiQ==
-  dependencies:
-    "@types/ansi-regex" "5.0.0"
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.1"
 
 "@wireapp/commons@3.0.6":
   version "3.0.6"
@@ -1339,14 +1324,14 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.3.0.tgz#61054d638eb2ec6ea29b0d9c0f2a759a29a1907c"
   integrity sha512-MZZOrecOgtT/8L3HbDqXrdutbwKWkZtjA+pGmvLkrZRa1koPz3Aj0LDp7uzgbVMBgAGdVQKW7nGlTskeIqGGEg==
 
-"@wireapp/priority-queue@1.3.9":
-  version "1.3.9"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.9.tgz#96f2905d14369034e655372d70e5c7e99f3ecc28"
-  integrity sha512-dkZYJhXwRiPWR7iMw1M2vKyjDB3u/4Vp5z7QIJiONFme69EdcW3nhODINobB6Zvobz/GWA4yY9TIfNPDb4wkIw==
+"@wireapp/priority-queue@1.3.10":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.10.tgz#1dfe098121d0f924d0a66607b89db9900e58323b"
+  integrity sha512-HaADr4ohybOxhYvSfKJPbnfHSchoaKqcpyYoqH6CcRhAdMnrpnKbFA36P23U6jnfS/PWOTYtzpp2ftHXSasDZw==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.0"
-    pure-uuid "1.5.7"
+    pure-uuid "1.5.8"
 
 "@wireapp/react-ui-kit@7.25.1":
   version "7.25.1"
@@ -6548,10 +6533,10 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-pure-uuid@1.5.7:
-  version "1.5.7"
-  resolved "https://registry.yarnpkg.com/pure-uuid/-/pure-uuid-1.5.7.tgz#c089845d85e3b33a070bf4dc8cce30906880e9bd"
-  integrity sha512-g8kcLZcJi1ePpuNxrnI6a4re2ze89FPnV6dXaDuW4K9+n+SzvolhR2uoZhHJvz1Ilba0U8hvb1clxTLN49EvuQ==
+pure-uuid@1.5.8:
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/pure-uuid/-/pure-uuid-1.5.8.tgz#2a1aa3afb59720bb6dca9865adf3d55671504a31"
+  integrity sha512-8i/U1m4pBBxlVHF5VRzdWQjovwqreqGYQvEf/Z4/KQUEL8Sw3fxlRUd6K9qFiyqmdrMZvyjgKWjFGB81+7YkUg==
 
 qs@6.7.0:
   version "6.7.0"
@@ -6755,8 +6740,9 @@ readdirp@^2.0.0, readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-reconnecting-websocket@wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378:
+"reconnecting-websocket@github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378":
   version "4.2.0"
+  uid "96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
   resolved "https://codeload.github.com/wireapp/reconnecting-websocket/tar.gz/96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
 
 regenerate-unicode-properties@^8.1.0:
