@@ -1274,37 +1274,22 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.4.0":
-  version "9.4.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.4.0.tgz#6b3a5dd969ac5f2f3586f30d155f0952d79ee5a4"
-  integrity sha512-FoMWDGmQmSwEnG/RcHav0Xb4JjFkcm3bP+s8TgVgy6LrMt8Y8pQCIPB/wjyI7tZ0HAqsOCQbjdNAbcWDtC9NPw==
+"@wireapp/api-client@9.10.0":
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.10.0.tgz#9c33e8472ef1257592b412f7c93d3e60c6998117"
+  integrity sha512-QhAVsy3rn8PlcfsLM0GbWNXb/+HqBxGNv1RSacdFBUi/GShhYjt3uqNyW2HsNtC3ndCvxpdfU7LNUyUqq9r2pA==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.0.6"
-    "@wireapp/priority-queue" "1.3.10"
-    axios "0.19.0"
+    "@wireapp/commons" "3.1.0"
+    "@wireapp/priority-queue" "1.4.0"
+    axios "0.19.1"
     logdown "3.3.0"
     reconnecting-websocket "github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.0.6":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.0.6.tgz#81a463b106f8d2a95cc22422334cb8fceea1be67"
-  integrity sha512-jr8e7JobHLWTRG8QRrsEA9Ka75OiZe0J2hORqbAhg3fgm31AE9twPSOZitnaRAgDkDSQqvRMVVfnbM7VxAnROg==
-  dependencies:
-    "@types/ansi-regex" "5.0.0"
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.1"
 
 "@wireapp/commons@3.1.0":
   version "3.1.0"
@@ -1339,10 +1324,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.3.0.tgz#61054d638eb2ec6ea29b0d9c0f2a759a29a1907c"
   integrity sha512-MZZOrecOgtT/8L3HbDqXrdutbwKWkZtjA+pGmvLkrZRa1koPz3Aj0LDp7uzgbVMBgAGdVQKW7nGlTskeIqGGEg==
 
-"@wireapp/priority-queue@1.3.10":
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.3.10.tgz#1dfe098121d0f924d0a66607b89db9900e58323b"
-  integrity sha512-HaADr4ohybOxhYvSfKJPbnfHSchoaKqcpyYoqH6CcRhAdMnrpnKbFA36P23U6jnfS/PWOTYtzpp2ftHXSasDZw==
+"@wireapp/priority-queue@1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.4.0.tgz#a09234917a71a3f13ea9dd8c3d0e35714d78dcec"
+  integrity sha512-Gbsv2yKlEZarEtoGk9x0qOtJNi3rbQqDaIJCJCKBewRF3NvbHhncYM37el0tFsjB8KfYDn3zkTUKyTezmmtXsQ==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.0"
@@ -1761,14 +1746,6 @@ auto-parse@^1.3.0:
   integrity sha512-Uri4uC+K5cSi5hjM4snFrqPrjqUpwxeSW5EMTPvN7Ju3PlDzmXXDr5tjdzxPvvwgT3J7bmMDJ3Rm625nbrc72A==
   dependencies:
     typpy "2.3.11"
-
-axios@0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
-  integrity sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==
-  dependencies:
-    follow-redirects "1.5.10"
-    is-buffer "^2.0.2"
 
 axios@0.19.1:
   version "0.19.1"
@@ -4620,11 +4597,6 @@ is-buffer@^1.1.0, is-buffer@^1.1.3, is-buffer@^1.1.5, is-buffer@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
-
-is-buffer@^2.0.2:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
-  integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
 
 is-callable@^1.1.4:
   version "1.1.4"
