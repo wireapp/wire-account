@@ -1057,13 +1057,6 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@types/ansi-regex@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/ansi-regex/-/ansi-regex-5.0.0.tgz#569a5189a92cc46d63fb2ad91e6b130f33d999c1"
-  integrity sha512-SQafVL3pXFh/5qq/nN6p5858g//zSVzcb8JzCLtoVxm8YNPggMQfEIm7aaTNysxpw1S+lFTaW8kv+aR0/CEhCA==
-  dependencies:
-    ansi-regex "*"
-
 "@types/color-convert@*":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-1.9.0.tgz#bfa8203e41e7c65471e9841d7e306a7cd8b5172d"
@@ -1397,15 +1390,15 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.15.0":
-  version "9.15.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.15.0.tgz#105f311de9fb1f77348ce56125618800c76aac14"
-  integrity sha512-VdgB/MAQmWwrTnrAxiFUK6GeAWYXDEY/Ql2K/1ZOFgW8RREq79fxHb2uAKHr1bmdzA4FPiQZXxGnYHQqcDNdFA==
+"@wireapp/api-client@9.15.1":
+  version "9.15.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.15.1.tgz#ebaf4b1334419bfd25554a44b95555221400319a"
+  integrity sha512-l1ToTxDWT5wAk0oRJsnmW3MGcWJ8CNYpl1hWzaWA/K4i79G9iCWTcv56HoQH56WE3+kJdN+Dv8GUsHsJG39l6A==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.1.0"
+    "@wireapp/commons" "3.2.0"
     "@wireapp/priority-queue" "1.4.0"
     axios "0.19.1"
     logdown "3.3.0"
@@ -1413,21 +1406,6 @@
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.1.0.tgz#39fe88333850ec0fd63c36c6d3313b543b96453a"
-  integrity sha512-54gvdKkXUkeyKlT1+cqu/X9yIZ6ehAdDBNshkRT79XluxhyhP6TEaIInWxBYRuURDhKKzOFvZeerhReHCzHlXg==
-  dependencies:
-    "@types/ansi-regex" "5.0.0"
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.1"
 
 "@wireapp/commons@3.2.0":
   version "3.2.0"
@@ -1663,7 +1641,7 @@ ansi-html@0.0.7:
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
   integrity sha1-gTWEAhliqenm/QOflA0S9WynhZ4=
 
-ansi-regex@*, ansi-regex@5.0.0, ansi-regex@^5.0.0:
+ansi-regex@5.0.0, ansi-regex@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.0.tgz#388539f55179bf39339c81af30a654d69f87cb75"
   integrity sha512-bY6fj56OUQ0hU1KjFNDQuJFezqKdrAyFdIevADiqrWHwSlbmBNMHp5ak2f40Pm8JTFyM2mqxkG6ngkHO11f/lg==
