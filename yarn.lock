@@ -92,18 +92,6 @@
     levenary "^1.1.0"
     semver "^5.5.0"
 
-"@babel/helper-create-class-features-plugin@^7.8.0", "@babel/helper-create-class-features-plugin@^7.8.3":
-  version "7.8.3"
-  resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.8.3.tgz#5b94be88c255f140fd2c10dd151e7f98f4bff397"
-  integrity sha512-qmp4pD7zeTxsv0JNecSBsEmG1ei2MqwJq4YQcK3ZWm/0t07QstWfvuV/vm3Qt5xNMFETn2SZqpMx2MQzbtq+KA==
-  dependencies:
-    "@babel/helper-function-name" "^7.8.3"
-    "@babel/helper-member-expression-to-functions" "^7.8.3"
-    "@babel/helper-optimise-call-expression" "^7.8.3"
-    "@babel/helper-plugin-utils" "^7.8.3"
-    "@babel/helper-replace-supers" "^7.8.3"
-    "@babel/helper-split-export-declaration" "^7.8.3"
-
 "@babel/helper-create-class-features-plugin@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.8.3.tgz#5b94be88c255f140fd2c10dd151e7f98f4bff397"
@@ -1332,10 +1320,10 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.15.1":
-  version "9.15.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.15.1.tgz#ebaf4b1334419bfd25554a44b95555221400319a"
-  integrity sha512-l1ToTxDWT5wAk0oRJsnmW3MGcWJ8CNYpl1hWzaWA/K4i79G9iCWTcv56HoQH56WE3+kJdN+Dv8GUsHsJG39l6A==
+"@wireapp/api-client@9.16.0":
+  version "9.16.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.16.0.tgz#c3c2f313b93e9ae24756e010c3e6d589da2e53d1"
+  integrity sha512-xgM/VYJ4WRrWD3qZBoYEfwhRG/HstvEae0WtibwHEgaFFLO3I+sJTxVwtHSUK3kFVpo6HQuDOda8BCrH2bHLLg==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
