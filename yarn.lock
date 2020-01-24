@@ -1280,15 +1280,15 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.16.3":
-  version "9.16.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.16.3.tgz#37012edde866c1c4b3c898960e55bf1e6acccfa2"
-  integrity sha512-+eaVlYghYzcNc45MxWodj6rTLJtoTF2Ve9Up0ipmvZXrPQZ67YZYjMJQEn6KAHtM3gXgkbaEUfBTe5GylLLkZQ==
+"@wireapp/api-client@9.16.4":
+  version "9.16.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.16.4.tgz#509667bf3f5bca580fdfd9bfd24752e3f12cdf02"
+  integrity sha512-55G2vZy3PUhIDhQ2siRrbWIDBYSvoR5sc+DRwjOQV15q576onFr/bBiWQ4hcQaWErsxmHOuTKywWrJLHJzh93Q==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.2.0"
+    "@wireapp/commons" "3.3.0"
     "@wireapp/priority-queue" "1.4.0"
     axios "0.19.1"
     logdown "3.3.0"
@@ -1296,20 +1296,6 @@
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.2.0.tgz#62477fdc3df00a50efe6b2a0d400872a9a199564"
-  integrity sha512-2Ot3pLSrfleJLQGyvgTmRruNq5wbSep+dvYqTPf3QBKC0nSrCBw21pkz2VjrH9wpbANmhO60U+gnnYiLl5iB5g==
-  dependencies:
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.1"
 
 "@wireapp/commons@3.3.0":
   version "3.3.0"
