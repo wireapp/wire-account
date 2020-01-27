@@ -1280,36 +1280,22 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.16.4":
-  version "9.16.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.16.4.tgz#509667bf3f5bca580fdfd9bfd24752e3f12cdf02"
-  integrity sha512-55G2vZy3PUhIDhQ2siRrbWIDBYSvoR5sc+DRwjOQV15q576onFr/bBiWQ4hcQaWErsxmHOuTKywWrJLHJzh93Q==
+"@wireapp/api-client@9.18.0":
+  version "9.18.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.18.0.tgz#fd74f4ccc613d3b249970771809379b39f784f56"
+  integrity sha512-J95APL9xJ55xRt+ug7rX9A2GqcriCS94Qsslk+eVB+za5ldY/0jNCMvq9Dv2JkMcCxu54R1u88DxRyPrt8LTLw==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.3.0"
-    "@wireapp/priority-queue" "1.4.0"
+    "@wireapp/commons" "3.3.1"
+    "@wireapp/priority-queue" "1.5.0"
     axios "0.19.1"
     logdown "3.3.0"
     reconnecting-websocket "github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.3.0.tgz#25b1d5b468b745d0d5054acde9802077dc99f34e"
-  integrity sha512-IQiRnL7glfeqZHwn+R92s/cx5d+6U8cuX1PRYAyd9FKIj4eNo9KFDUHkOGRsaqeaPfy3qboK67GFEkGJRSKtEQ==
-  dependencies:
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    platform "1.3.5"
-    url-search-params-polyfill "7.0.1"
 
 "@wireapp/commons@3.3.1":
   version "3.3.1"
@@ -1343,10 +1329,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.4.0.tgz#a09234917a71a3f13ea9dd8c3d0e35714d78dcec"
-  integrity sha512-Gbsv2yKlEZarEtoGk9x0qOtJNi3rbQqDaIJCJCKBewRF3NvbHhncYM37el0tFsjB8KfYDn3zkTUKyTezmmtXsQ==
+"@wireapp/priority-queue@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.5.0.tgz#1932d47e2d2e407de2db30cc4b7a9f29b87ebb0d"
+  integrity sha512-SdHcClq9bL1HOOAvOzZ50R+Pv+n6jsKJhuIrLfUhnAzHYQ7kSkyPRASLPbiV3R0SVCBuf9pBUx+LcUfrKQtBOw==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.0"
