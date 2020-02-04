@@ -1302,17 +1302,17 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.18.0":
-  version "9.18.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.18.0.tgz#fd74f4ccc613d3b249970771809379b39f784f56"
-  integrity sha512-J95APL9xJ55xRt+ug7rX9A2GqcriCS94Qsslk+eVB+za5ldY/0jNCMvq9Dv2JkMcCxu54R1u88DxRyPrt8LTLw==
+"@wireapp/api-client@9.19.0":
+  version "9.19.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.19.0.tgz#c1c6de41d986a16dd9deae5d3fea61410752ebbf"
+  integrity sha512-aCIj/E0Jr46Zh7eXCbosubGJB7EJrey5Uc0UWHyMd43/c8E8FjLOqkPHmHLEdbdbglOVn8iW+Vj5WZaBNeZT7Q==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.3.1"
-    "@wireapp/priority-queue" "1.5.0"
-    axios "0.19.1"
+    "@wireapp/commons" "3.3.2"
+    "@wireapp/priority-queue" "1.5.1"
+    axios "0.19.2"
     logdown "3.3.0"
     reconnecting-websocket "github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
     spark-md5 "3.0.0"
@@ -1323,6 +1323,20 @@
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.3.1.tgz#3bf06a0bed6e7d7d6364273f4e9697e5fac48ed1"
   integrity sha512-A/ELku9f2+VTzmjgLpEe5jwkj8Bgj2DRE1mJWFF/Q+rVQqxV77CLEWhfOlCRqn13p5fh3FFDa012kIaD8lMwpw==
+  dependencies:
+    "@types/fs-extra" "8.0.1"
+    "@types/node" "~12"
+    "@types/platform" "1.3.2"
+    ansi-regex "5.0.0"
+    fs-extra "8.1.0"
+    logdown "3.3.0"
+    platform "1.3.5"
+    url-search-params-polyfill "7.0.1"
+
+"@wireapp/commons@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.3.2.tgz#72e32c09cfaa0d2e8e0e4e7200c0659ca20dbe8b"
+  integrity sha512-nrU6/svJTyA97b7GeHFQ68FvsmoBMTK0nAACdWVMqXxTje5dihgyJpNxezPAi233XtxFF3pVxAKQ1aeTUFkuKg==
   dependencies:
     "@types/fs-extra" "8.0.1"
     "@types/node" "~12"
@@ -1351,14 +1365,14 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.5.0.tgz#1932d47e2d2e407de2db30cc4b7a9f29b87ebb0d"
-  integrity sha512-SdHcClq9bL1HOOAvOzZ50R+Pv+n6jsKJhuIrLfUhnAzHYQ7kSkyPRASLPbiV3R0SVCBuf9pBUx+LcUfrKQtBOw==
+"@wireapp/priority-queue@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.5.1.tgz#aadb22e8b6db295d9a96234d02b8d7dd448ff45c"
+  integrity sha512-2L+iL4rbk0TDcvsuuhLtWoLwq5Bv1fdmnmh6BGgS9jpt/SsbF9d+6NlpVaOv8VZMCgEHwEmpwRgmNd+f69SJLA==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.0"
-    pure-uuid "1.5.8"
+    pure-uuid "1.6.0"
 
 "@wireapp/react-ui-kit@7.25.1":
   version "7.25.1"
@@ -1774,6 +1788,13 @@ axios@0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.1.tgz#8a6a04eed23dfe72747e1dd43c604b8f1677b5aa"
   integrity sha512-Yl+7nfreYKaLRvAvjNPkvfjnQHJM1yLBY3zhqAwcJSwR/6ETkanUgylgtIvkvz0xJ+p/vZuNw8X7Hnb7Whsbpw==
+  dependencies:
+    follow-redirects "1.5.10"
+
+axios@0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
 
@@ -6484,10 +6505,10 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-pure-uuid@1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/pure-uuid/-/pure-uuid-1.5.8.tgz#2a1aa3afb59720bb6dca9865adf3d55671504a31"
-  integrity sha512-8i/U1m4pBBxlVHF5VRzdWQjovwqreqGYQvEf/Z4/KQUEL8Sw3fxlRUd6K9qFiyqmdrMZvyjgKWjFGB81+7YkUg==
+pure-uuid@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/pure-uuid/-/pure-uuid-1.6.0.tgz#304da991dbd38d1efd03342d3e104f6666f6e38d"
+  integrity sha512-z+A7GMeyPu4X1NoGKraYiOOFzK0HZpnsHwbJZbt9NGGaqrfs3amyuWgRhHnfMJN4MM0IbAsLvHBqt0p1S84UQQ==
 
 qs@6.7.0:
   version "6.7.0"
