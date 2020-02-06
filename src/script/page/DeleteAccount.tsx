@@ -44,9 +44,9 @@ const DeleteAccount = ({location}: Props) => {
       setError('');
       await accountAction.delete(key, code);
       setSuccess(true);
-    } catch (error) {
-      console.warn('Failed to delete account', error);
-      setError(error.toString());
+    } catch (deleteError) {
+      console.warn('Failed to delete account', deleteError);
+      setError(deleteError.toString());
     }
   };
   return (
@@ -93,8 +93,10 @@ const DeleteAccount = ({location}: Props) => {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <H1>{t('errorTitle')}</H1>
-            <Text center>{t('errorDescription')}</Text>
+            <H1 data-uie-name="error-title">{t('errorTitle')}</H1>
+            <Text center data-uie-name="error-text">
+              {t('errorDescription')}
+            </Text>
           </React.Fragment>
         )}
       </ContainerSM>
