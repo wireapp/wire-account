@@ -64,7 +64,7 @@
     "typescript": "3.7.5",
     "webpack": "4.41.5",
     "webpack-bundle-analyzer": "3.6.0",
-    "webpack-cli": "3.3.10",
+    "webpack-cli": "3.3.11",
     "webpack-dev-middleware": "3.7.2",
     "webpack-env": "0.8.0",
     "webpack-hot-middleware": "2.25.0"
