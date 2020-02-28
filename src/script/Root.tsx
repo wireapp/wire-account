@@ -59,7 +59,7 @@ const Root: React.FC<Props> = () => {
             <Route exact path={ROUTE.DELETE_ACCOUNT} component={LazyDeleteAccount} />
             <Route exact path={ROUTE.PASSWORD_FORGOT} component={LazyPasswordForgot} />
             <Route exact path={ROUTE.PASSWORD_RESET} component={LazyPasswordReset} />
-            <Route exact path={ROUTE.BOT_PASSWORD_RESET} component={LazyBotPasswordReset} />
+            <Route exact path={ROUTE.PASSWORD_RESET_BOT} component={LazyBotPasswordReset} />
             <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={LazyVerifyEmailAccount} />
             <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={LazyVerifyBotAccount} />
             <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={LazyVerifyPhoneAccount} />
