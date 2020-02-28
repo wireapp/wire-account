@@ -24,6 +24,7 @@ const EXTERNAL_ROUTE = {
 };
 
 const ROUTE = {
+  BOT_PASSWORD_RESET: '/reset/bot',
   DELETE_ACCOUNT: '/d',
   HOME: '/',
   PASSWORD_FORGOT: '/forgot',
