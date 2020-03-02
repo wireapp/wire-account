@@ -3160,10 +3160,10 @@ eslint-plugin-jasmine@4.1.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-jasmine/-/eslint-plugin-jasmine-4.1.0.tgz#4f6d41b1a8622348c97559cbcd29badffa74dbfa"
   integrity sha512-Vfuk2Sm1ULR7MqGjVIOOEdQWyoFBfSwvwUeo9MrajVGJB3C24c9Mmj1Cgf8Qwmf3aS2bezPt1sckpKXWpd74Dw==
 
-eslint-plugin-jsdoc@21.0.0:
-  version "21.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-21.0.0.tgz#36bc215c5d22b320312a633dda6dfe81c34393af"
-  integrity sha512-CdLGe2oyw5YAX9rxq9bVz7H2PK+r8PVwdGuvYGMBstpbVD/66yUAgRFQRsJwAsRKLmReo58Lw1jFdNcxdOc4eg==
+eslint-plugin-jsdoc@22.0.0:
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-22.0.0.tgz#371f1dbf4f61ee6e11c23fa1ea3275962f1bceaf"
+  integrity sha512-dLqUtIL6tvOoV+9IDdP3FqOnQ/sxklzs4hxZa91kt0TGI2o1fSqIuc6wa71oWtWKEyvaQj7m6CnzQxcBC9CEsg==
   dependencies:
     comment-parser "^0.7.2"
     debug "^4.1.1"
@@ -6693,8 +6693,9 @@ readdirp@^2.0.0, readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-"reconnecting-websocket@github:wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378":
+reconnecting-websocket@wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378:
   version "4.2.0"
+  uid "96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
   resolved "https://codeload.github.com/wireapp/reconnecting-websocket/tar.gz/96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
 
 regenerate-unicode-properties@^8.1.0:
