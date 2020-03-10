@@ -1029,6 +1029,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/fs-extra@8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.1.0.tgz#1114834b53c3914806cd03b3304b37b3bd221a4d"
+  integrity sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/history@*":
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.3.tgz#856c99cdc1551d22c22b18b5402719affec9839a"
@@ -1328,6 +1335,20 @@
   integrity sha512-tOpJ8xXwK24AWbtDcYx/kBSTiHtZolEJ95VyXJLfN8IZMn/yYv6miArw9Q109lipn7jBZtDtu8upzFYhabWQ6A==
   dependencies:
     "@types/fs-extra" "8.0.1"
+    "@types/node" "~12"
+    "@types/platform" "1.3.2"
+    ansi-regex "5.0.0"
+    fs-extra "8.1.0"
+    logdown "3.3.0"
+    platform "1.3.5"
+    url-search-params-polyfill "8.0.0"
+
+"@wireapp/commons@3.3.6":
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.3.6.tgz#59c41ef01de069866646ca805e7c31146343c6ce"
+  integrity sha512-Tnf90GFkvy0lgCmyXWxdbUAKaHp/YvV7aq43cPqLWD6qQ94BB8PnF4ZdBizLH1EBtS+UHch8H/M+KxemcG7b8A==
+  dependencies:
+    "@types/fs-extra" "8.1.0"
     "@types/node" "~12"
     "@types/platform" "1.3.2"
     ansi-regex "5.0.0"
