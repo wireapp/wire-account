@@ -1022,13 +1022,6 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
-"@types/fs-extra@8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.0.1.tgz#a2378d6e7e8afea1564e44aafa2e207dadf77686"
-  integrity sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  dependencies:
-    "@types/node" "*"
-
 "@types/fs-extra@8.1.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.1.0.tgz#1114834b53c3914806cd03b3304b37b3bd221a4d"
@@ -1312,36 +1305,22 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.20.0":
-  version "9.20.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.20.0.tgz#9a2d97d0ffa63b34bbb6a793ee8369c3a61a4d24"
-  integrity sha512-F011EkrjYyf74+xga8ozB3lVto53pjAEmOFIJjynsmKFIrgKZCnksw9GtulTHKUkB5/KVJQmx/ObWqhUm28XHQ==
+"@wireapp/api-client@9.20.1":
+  version "9.20.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.20.1.tgz#bdbbb889ba7ce54430ef37019a8f95b08c10070e"
+  integrity sha512-7EoZwo8Id/X7Wf0wjNlZWYldeel5YaymcpMDNe280wO0DhSYRe8bBPfO05CrPufpXbqGPX/DobV7EEg/vi+Aug==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.3.5"
-    "@wireapp/priority-queue" "1.5.4"
+    "@wireapp/commons" "3.3.6"
+    "@wireapp/priority-queue" "1.5.5"
     axios "0.19.2"
     logdown "3.3.0"
-    reconnecting-websocket wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378
+    reconnecting-websocket "4.4.0"
     spark-md5 "3.0.0"
     tough-cookie "3.0.1"
     ws "7.2.1"
-
-"@wireapp/commons@3.3.5":
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.3.5.tgz#174c594f432608d8b04180fb4f37379db14cdd5b"
-  integrity sha512-tOpJ8xXwK24AWbtDcYx/kBSTiHtZolEJ95VyXJLfN8IZMn/yYv6miArw9Q109lipn7jBZtDtu8upzFYhabWQ6A==
-  dependencies:
-    "@types/fs-extra" "8.0.1"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.0"
-    platform "1.3.5"
-    url-search-params-polyfill "8.0.0"
 
 "@wireapp/commons@3.3.6":
   version "3.3.6"
@@ -1375,10 +1354,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.5.4.tgz#ce70403e2ced211dd8c8f31a04423f79a1caa3a3"
-  integrity sha512-HpfI1G8BBxbVbqPU7QPpFAADkFbV0Q3ZqTP5zyeNlsRpM/dg/E/JGkBYx8kYNVeRhjjKPFzmPVFDxu8nBrQ7jw==
+"@wireapp/priority-queue@1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.5.5.tgz#dcd5c849844101506614d533dc3a137a0c3e588a"
+  integrity sha512-XpnwV1voNSxrZsqXqIsoziep1T6eKSwS9XH5+6ugnRRyX5arOiF/jHMnIsZIDIXoNJAusPmcdyZmnyEmBnhwJA==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.0"
@@ -6722,10 +6701,10 @@ readdirp@^2.0.0, readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-reconnecting-websocket@wireapp/reconnecting-websocket#96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378:
-  version "4.2.0"
-  uid "96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
-  resolved "https://codeload.github.com/wireapp/reconnecting-websocket/tar.gz/96ac796ae8c7a7d9d857f46ed39dbedd7b9ad378"
+reconnecting-websocket@4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/reconnecting-websocket/-/reconnecting-websocket-4.4.0.tgz#3b0e5b96ef119e78a03135865b8bb0af1b948783"
+  integrity sha512-D2E33ceRPga0NvTDhJmphEgJ7FUYF0v4lr1ki0csq06OdlxKfugGzN0dSkxM/NfqCxYELK4KcaTOUOjTV6Dcng==
 
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
