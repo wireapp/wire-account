@@ -1350,17 +1350,17 @@
     platform "1.3.5"
     url-search-params-polyfill "8.0.0"
 
-"@wireapp/copy-config@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-1.0.5.tgz#51ebcd06849400070396fe44d705560cbfa47e58"
-  integrity sha512-TDPitn76SJS3yIaYs/syQysO5gMSNZEKpoIhxCgL6QSuxRdTKSDhSSP6tZqPulmN+MssqWMIfh8vpNnm2syLFQ==
+"@wireapp/copy-config@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-1.0.6.tgz#c802a7620abb73b3439fcc873298605168f16b10"
+  integrity sha512-LNA+6S0OOCE7+jXlPGL9Nky+Qh6nwWMpAeOZ+0HKj2X2lNePhCz926uggohO7BlxpUaTDJmdTiIU6J2rldhaWw==
   dependencies:
     axios "0.19.2"
     copy "0.3.2"
     cosmiconfig "6.0.0"
     fs-extra "8.1.0"
     jszip "3.2.2"
-    logdown "3.3.0"
+    logdown "3.3.1"
     rimraf "3.0.0"
 
 "@wireapp/eslint-config@1.4.0":
