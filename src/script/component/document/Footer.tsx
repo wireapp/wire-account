@@ -17,20 +17,27 @@
  *
  */
 
-import {Column, Columns, Content, Footer, Line, Link} from '@wireapp/react-ui-kit';
+import {Column, Columns, Content, Footer, Line, Link, Text} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {WEBSITE_URL} from 'script/Environment';
 
 interface Props extends React.HTMLProps<Document> {}
 
 const WireFooter: React.FC<Props> = ({}) => {
+  const copyrightText = '© Wire Swiss GmbH';
   return (
     <Footer>
       <Content>
         <Columns style={{padding: '16px 0'}}>
           <Column style={{textAlign: 'center'}}>
             <Line />
-            <Link href={`${WEBSITE_URL}/impressum/`}>{'© Wire Swiss GmbH'}</Link>
+            {WEBSITE_URL ? (
+              <Link href={`${WEBSITE_URL}/impressum/`}>{copyrightText}</Link>
+            ) : (
+              <Text fontSize={'11px'} bold style={{textTransform: 'uppercase'}}>
+                {copyrightText}
+              </Text>
+            )}
           </Column>
         </Columns>
       </Content>
