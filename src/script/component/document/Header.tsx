@@ -21,7 +21,7 @@ import {HeaderMenu, MenuLink} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Link as RRLink} from 'react-router-dom';
-import {SUPPORT_URL} from 'script/Environment';
+import {SUPPORT_URL, BRAND_NAME} from 'script/Environment';
 import {ROUTE} from 'script/route';
 import SVGProvider from 'script/util/SVGProvider';
 import {pathWithParams} from 'script/util/urlUtil';
@@ -31,7 +31,7 @@ interface Props extends React.HTMLProps<Document> {}
 const Header: React.FC<Props> = ({}) => {
   const [t] = useTranslation('header');
   const headerLogo = (
-    <RRLink to={pathWithParams(ROUTE.HOME)} title="Logo">
+    <RRLink to={pathWithParams(ROUTE.HOME)} title={BRAND_NAME}>
       <span dangerouslySetInnerHTML={{__html: SVGProvider.logo}} />
     </RRLink>
   );
