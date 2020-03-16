@@ -31,7 +31,7 @@ interface Props extends React.HTMLProps<Document> {}
 const Header: React.FC<Props> = ({}) => {
   const [t] = useTranslation('header');
   const headerLogo = (
-    <RRLink to={pathWithParams(ROUTE.HOME)}>
+    <RRLink to={pathWithParams(ROUTE.HOME)} title="Logo">
       <span dangerouslySetInnerHTML={{__html: SVGProvider.logo}} />
     </RRLink>
   );
