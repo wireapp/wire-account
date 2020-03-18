@@ -1298,36 +1298,22 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@9.20.2":
-  version "9.20.2"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.20.2.tgz#54c773440e2cc80f4f80a0ab6f82231f650e2488"
-  integrity sha512-+ngUcx8xt0qN4pDVPCxnAZDWUOBD6KfGYH6O+R2v3bDQI+2CiIxe+Yock+mGFuxUZSoeW2A8HP0xRiz1xWzKDA==
+"@wireapp/api-client@9.20.3":
+  version "9.20.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-9.20.3.tgz#c638b38a203f83c02e8a6e4ef368eeb1e3bbb787"
+  integrity sha512-3/wIS6F4mCoLFwPuq4UcLn9veZUZCncA/mSoL9heYYR0PBEEoDNnVeevVyaZaVvfFoseVjMe+zREyvVKwYxhOA==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "2.3.6"
-    "@wireapp/commons" "3.3.7"
+    "@wireapp/commons" "3.3.8"
     "@wireapp/priority-queue" "1.5.6"
     axios "0.19.2"
     logdown "3.3.1"
     reconnecting-websocket "4.4.0"
-    spark-md5 "3.0.0"
+    spark-md5 "3.0.1"
     tough-cookie "3.0.1"
-    ws "7.2.1"
-
-"@wireapp/commons@3.3.7":
-  version "3.3.7"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.3.7.tgz#de7e7ac0e67696fb9796c297a29d7f3952f9a372"
-  integrity sha512-wnW9n3lNuDgEHFCzdeDg0tesH1IwE288hRhzpft9vozH5hfVIhaBxqaspOoWndY6s4mdBUXttMImKEOA7ia7WA==
-  dependencies:
-    "@types/fs-extra" "8.1.0"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "8.1.0"
-    logdown "3.3.1"
-    platform "1.3.5"
-    url-search-params-polyfill "8.0.0"
+    ws "7.2.3"
 
 "@wireapp/commons@3.3.8":
   version "3.3.8"
@@ -7336,10 +7322,10 @@ source-map@~0.4.1:
   dependencies:
     amdefine ">=0.0.4"
 
-spark-md5@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.0.tgz#3722227c54e2faf24b1dc6d933cc144e6f71bfef"
-  integrity sha1-NyIifFTi+vJLHcbZM8wUTm9xv+8=
+spark-md5@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.1.tgz#83a0e255734f2ab4e5c466e5a2cfc9ba2aa2124d"
+  integrity sha512-0tF3AGSD1ppQeuffsLDIOWlKUd3lS92tFxcsrh5Pe3ZphhnoK+oXIBTzOAThZCiuINZLvpiLH/1VS1/ANEJVig==
 
 spdx-correct@^3.0.0:
   version "3.1.0"
@@ -8463,10 +8449,10 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@7.2.1:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.1.tgz#03ed52423cd744084b2cf42ed197c8b65a936b8e"
-  integrity sha512-sucePNSafamSKoOqoNfBd8V0StlkzJKL2ZAhGQinCfNQ+oacw+Pk7lcdAElecBF2VkLNZRiIb5Oi1Q5lVUVt2A==
+ws@7.2.3:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.3.tgz#a5411e1fb04d5ed0efee76d26d5c46d830c39b46"
+  integrity sha512-HTDl9G9hbkNDk98naoR/cHDws7+EyYMOdL1BmjsZXRUjf7d+MficC4B7HLUPlSiho0vg+CWKrGIt/VJBd1xunQ==
 
 ws@^6.0.0:
   version "6.2.1"
