@@ -57,7 +57,7 @@
     "i18next-scanner": "2.11.0",
     "jasmine": "3.5.0",
     "lint-staged": "10.0.8",
-    "prettier": "2.0.1",
+    "prettier": "2.0.2",
     "react-hot-loader": "4.12.20",
     "svg-inline-loader": "0.8.2",
     "terser-webpack-plugin": "2.3.5",
