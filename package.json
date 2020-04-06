@@ -8,7 +8,7 @@
     "dotenv-extended": "2.8.0",
     "i18next": "19.3.4",
     "i18next-browser-languagedetector": "4.0.2",
-    "i18next-react-postprocessor": "3.0.2",
+    "i18next-react-postprocessor": "3.0.3",
     "intersection-observer": "0.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
