@@ -104,6 +104,13 @@ function mergedCSP(): HelmetCSP {
 
 const DEFAULT_PORT = 21800;
 
+const redirectHostWhitelist = [
+  /^localhost(:\d+)?$/,
+  /^127\.0\.0\.1(:\d+)?$/,
+  /\.wire.com(:(80|443))?$/,
+  /\.zinfra.io(:(80|443))?$/,
+];
+
 const config: ServerConfig = {
   CLIENT: {
     APP_NAME: process.env.APP_NAME,
@@ -144,6 +151,7 @@ const config: ServerConfig = {
     ENFORCE_HTTPS: process.env.ENFORCE_HTTPS != 'false',
     ENVIRONMENT: nodeEnvironment,
     PORT_HTTP: Number(process.env.PORT) || DEFAULT_PORT,
+    REDIRECT_HOST_WHITELIST: redirectHostWhitelist,
     ROBOTS: {
       ALLOW: readFile(ROBOTS_ALLOW_FILE, 'User-agent: *\r\nDisallow: /'),
       ALLOWED_HOSTS: ['account.wire.com'],

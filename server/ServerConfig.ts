@@ -57,6 +57,7 @@ export interface ServerConfig {
     ENFORCE_HTTPS: boolean;
     ENVIRONMENT: string;
     PORT_HTTP: number;
+    REDIRECT_HOST_WHITELIST: RegExp[];
     ROBOTS: {
       ALLOWED_HOSTS: string[];
       ALLOW: string;
