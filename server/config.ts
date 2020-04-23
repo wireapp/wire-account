@@ -65,9 +65,12 @@ const defaultCSP: HelmetCSP = {
   workerSrc: ["'self'"],
 };
 
+const redirectHostWhitelist = [/\.wire.com(:(80|443))?$/, /\.zinfra.io(:(80|443))?$/];
+
 if (nodeEnvironment !== 'production') {
   // unsafe-eval is needed for HMR
   defaultCSP.scriptSrc.push("'unsafe-eval'");
+  redirectHostWhitelist.push(/^localhost(:\d+)?$/, /^127\.0\.0\.1(:\d+)?$/);
 }
 
 function parseCommaSeparatedList(list: string = ''): string[] {
@@ -103,13 +106,6 @@ function mergedCSP(): HelmetCSP {
 }
 
 const DEFAULT_PORT = 21800;
-
-const redirectHostWhitelist = [
-  /^localhost(:\d+)?$/,
-  /^127\.0\.0\.1(:\d+)?$/,
-  /\.wire.com(:(80|443))?$/,
-  /\.zinfra.io(:(80|443))?$/,
-];
 
 const config: ServerConfig = {
   CLIENT: {
