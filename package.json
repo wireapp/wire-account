@@ -77,12 +77,10 @@
   "license": "GPL-3.0",
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "*.{json,less,md,yml}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "name": "wire-account",
