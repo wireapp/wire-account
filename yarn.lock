@@ -1355,10 +1355,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@11.8.2":
-  version "11.8.2"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.8.2.tgz#49d3284aee2943698620b1675d2ec7a74d2b31bd"
-  integrity sha512-yr0S34i6r3jx8P70etsmKPxQQBshIM37BGIWP30MQSSE3EjV1qse4ZuGJ3ofMkqiu4aDjoSvXqsEkbPvYkI6XQ==
+"@wireapp/api-client@11.8.3":
+  version "11.8.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.8.3.tgz#f12ee1d8ae3f1304ccc5570261d0035ee0f20da6"
+  integrity sha512-jiDXXEHLffNpv0O12sYM6B5f7wxQXHYmEkwccvemqE0O37XrxeRqGjZh3vGgDGR0d7CSn9dwno7eFg5M/+AgFw==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
