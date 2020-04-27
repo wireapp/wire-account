@@ -60,7 +60,7 @@
     "prettier": "2.0.5",
     "react-hot-loader": "4.12.20",
     "svg-inline-loader": "0.8.2",
-    "terser-webpack-plugin": "2.3.5",
+    "terser-webpack-plugin": "2.3.6",
     "typescript": "3.8.3",
     "webpack": "4.43.0",
     "webpack-bundle-analyzer": "3.7.0",
