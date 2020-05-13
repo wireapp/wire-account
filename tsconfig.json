@@ -18,7 +18,8 @@
     "sourceMap": true,
     "target": "es6",
     "paths": {
-      "resource/*": ["resource/*"]
+      "resource/*": ["resource/*"],
+      "i18n/*": ["src/i18n/*"]
     }
   },
   "exclude": ["node_modules", "server"]

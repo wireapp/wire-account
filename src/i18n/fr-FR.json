@@ -1,0 +1,70 @@
+{
+  "delete": {
+    "button": "Supprimer le compte",
+    "confirmation": "Toutes vos données sur {{company}} sont maintenant effacées.",
+    "description": "Nous avons reçu une demande de suppression de votre compte {{company}}. Cliquez sur le bouton ci-dessous pour procéder. Il est valable pendant 10 minutes.",
+    "errorDescription": "Merci de réessayer de supprimer votre compte.",
+    "errorTitle": "Une erreur est survenue",
+    "greeting": "Bonjour,",
+    "headline": "Compte supprimé",
+    "resetLink": "réinitialiser votre mot de passe {{company}}.",
+    "resetText": "Si vous n’a pas effectué cette demande, vous devriez <link>",
+    "surveyLink": "partagez vos pensées à ce sujet.",
+    "surveyText": "Nous vous remercions d’utiliser {{company}}. Si vous le souhaitez, vous pouvez <link> Cela ne prendra pas plus d’une minute.",
+    "title": "Supprimer le compte"
+  },
+  "forgot": {
+    "button": "Réinitialiser le mot de passe",
+    "emailPlaceholder": "Email",
+    "errorAlreadyProcessing": "Nous vous avons déjà envoyé un email. Le lien est valable pendant 10 minutes.",
+    "errorInvalidEmail": "Ceci ne ressemble pas à une adresse e-mail.",
+    "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
+    "errorUnusedEmail": "Cette adresse e-mail n'est pas utilisée.",
+    "successDescription": "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe. Il est valable pendant 1 heure.",
+    "successTitle": "Consulter votre messagerie",
+    "title": "Changer de mot de passe"
+  },
+  "general": {
+    "loading": "Veuillez patienter…"
+  },
+  "header": {
+    "support": "Assistance"
+  },
+  "index": {
+    "description": "Conversations pour votre entreprise, visioconférences en un clic et partage de documents – protégés avec un chiffrement de bout-en-bout. Également disponible pour votre utilisation personnelle.",
+    "title": "La plateforme de collaboration la plus sûre"
+  },
+  "open": {
+    "description": "Pour vous connecter et commencer à utiliser {{company}}, lancez l’application.",
+    "downloadButton": "Télécharger {{company}}",
+    "openMac": "Ouvrir l'application macOS",
+    "openWeb": "Ouvrir dans le navigateur",
+    "openWire": "Télécharger {{company}}"
+  },
+  "reset": {
+    "button": "Réinitialiser le mot de passe",
+    "errorInvalidLink": "Le lien est invalide. Veuillez réessayer.",
+    "errorPasswordAlreadyUsed": "Veuillez choisir un nouveau mot de passe.",
+    "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
+    "passwordInfo": "Utilisez au moins {{minPasswordLength}} caractères, avec une lettre minuscule, une lettre majuscule, un numéro et un caractère spécial.",
+    "passwordPlaceholder": "Entrer le nouveau mot de passe",
+    "successDescription": "Vous pouvez désormais vous connecter avec votre nouveau mot de passe.",
+    "title": "Mot de passe réinitialisé"
+  },
+  "toPrimitive": "",
+  "verify": {
+    "error404Description": "Merci de réessayer de créer votre compte.",
+    "error500Description": "Nous vérifions le problème, merci de réessayer plus tard.",
+    "errorTitle": "Une erreur est survenue.",
+    "successBotDescription": "Veuillez noter qu'après la vérification de votre e-mail, votre compte de fournisseur de service {{company}} est toujours soumis à l'approbation de notre équipe, ce qui prend généralement moins de 24 heures.",
+    "successBotDescriptionEmail": "Vous serez informé(e) de l’approbation par un autre e-mail.",
+    "successBotTitle": "Merci de vous être inscrit",
+    "successEmailAppDescription": "Installer l'app pour commencer à utiliser {{company}}.",
+    "successEmailTitle": "Email vérifié",
+    "successPhoneDescription": "Vérification du numéro de téléphone en cours",
+    "title": "Vérification",
+    "titleBot": "Vérifier le Service",
+    "titleEmail": "Vérification du compte",
+    "titlePhone": "Vérifier le Téléphone"
+  }
+}

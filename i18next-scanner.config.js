@@ -35,8 +35,8 @@ module.exports = {
     resource: {
       jsonIndent: 2,
       lineEnding: '\n',
-      loadPath: 'dist/translation/{{lng}}.json',
-      savePath: 'dist/translation/{{lng}}.json',
+      loadPath: 'src/i18n/{{lng}}.json',
+      savePath: 'src/i18n/{{lng}}.json',
     },
   },
 };
