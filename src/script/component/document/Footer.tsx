@@ -19,7 +19,7 @@
 
 import {Column, Columns, Content, Footer, Line, Link, Text} from '@wireapp/react-ui-kit';
 import React from 'react';
-import {IMPRESSUM_URL} from 'script/Environment';
+import {IMPRINT_URL} from 'script/Environment';
 
 interface Props extends React.HTMLProps<Document> {}
 
@@ -31,8 +31,8 @@ const WireFooter: React.FC<Props> = ({}) => {
         <Columns style={{padding: '16px 0'}}>
           <Column style={{textAlign: 'center'}}>
             <Line />
-            {IMPRESSUM_URL ? (
-              <Link href={IMPRESSUM_URL}>{copyrightText}</Link>
+            {IMPRINT_URL ? (
+              <Link href={IMPRINT_URL}>{copyrightText}</Link>
             ) : (
               <Text fontSize={'11px'} bold style={{textTransform: 'uppercase'}}>
                 {copyrightText}

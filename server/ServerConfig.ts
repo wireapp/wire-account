@@ -35,7 +35,7 @@ export interface ServerConfig {
       DOWNLOAD_IOS_BASE: string;
       DOWNLOAD_OSX_BASE: string;
       DOWNLOAD_WINDOWS_BASE: string;
-      IMPRESSUM: string;
+      IMPRINT: string;
       OPEN_GRAPH_IMAGE: string;
       REDIRECT_PHONE_BASE: string;
       REDIRECT_RESET_BASE: string;

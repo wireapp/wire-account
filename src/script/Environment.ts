@@ -38,7 +38,7 @@ declare global {
           DOWNLOAD_IOS_BASE: string;
           DOWNLOAD_OSX_BASE: string;
           DOWNLOAD_WINDOWS_BASE: string;
-          IMPRESSUM: string;
+          IMPRINT: string;
           OPEN_GRAPH_IMAGE: string;
           REDIRECT_PHONE_BASE: string;
           REDIRECT_RESET_BASE: string;
@@ -84,7 +84,7 @@ export const DOWNLOAD_ANDROID_URL = window.wire.env.URL.DOWNLOAD_ANDROID_BASE;
 export const DOWNLOAD_IOS_URL = window.wire.env.URL.DOWNLOAD_IOS_BASE;
 export const DOWNLOAD_OSX_URL = window.wire.env.URL.DOWNLOAD_OSX_BASE;
 export const DOWNLOAD_WINDOWS_URL = window.wire.env.URL.DOWNLOAD_WINDOWS_BASE;
-export const IMPRESSUM_URL = window.wire.env.URL.IMPRESSUM;
+export const IMPRINT_URL = window.wire.env.URL.IMPRINT;
 export const OPEN_GRAPH_IURL = window.wire.env.URL.OPEN_GRAPH_IMAGE;
 export const REDIRECT_PHONE_URL = window.wire.env.URL.REDIRECT_PHONE_BASE;
 export const REDIRECT_RESET_URL = window.wire.env.URL.REDIRECT_RESET_BASE;
