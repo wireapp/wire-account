@@ -60,6 +60,7 @@ module.exports = {
   resolve: {
     alias: {
       resource: path.resolve(__dirname, 'resource'),
+      i18n: path.resolve(__dirname, 'src', 'i18n'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: [path.resolve(src), 'node_modules'],

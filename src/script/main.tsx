@@ -18,7 +18,6 @@
  */
 
 const ReactPostprocessor = require('i18next-react-postprocessor');
-/* eslint-disable simple-import-sort/sort */
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import 'intersection-observer';
@@ -29,9 +28,9 @@ import {initReactI18next} from 'react-i18next';
 import Root from 'script/Root';
 import 'url-search-params-polyfill';
 import {CommonConfig} from '@wireapp/commons';
-const deDE = require('resource/translation/de-DE.json');
-const enUS = require('resource/translation/en-US.json');
-const frFR = require('resource/translation/fr-FR.json');
+const deDE = require('i18n/de-DE.json');
+const enUS = require('i18n/en-US.json');
+const frFR = require('i18n/fr-FR.json');
 
 i18n
   .use(

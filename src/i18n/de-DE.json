@@ -1,0 +1,70 @@
+{
+  "delete": {
+    "button": "Benutzerkonto löschen",
+    "confirmation": "Wir haben deine persönlichen Daten entfernt.",
+    "description": "Wir haben eine Anfrage zur Löschung deines {{company}}-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig.",
+    "errorDescription": "Bitte versuche erneut, dein Benutzerkonto zu löschen.",
+    "errorTitle": "Ein Fehler ist aufgetreten",
+    "greeting": "Hi,",
+    "headline": "Benutzerkonto gelöscht",
+    "resetLink": "dein {{company}}-Passwort zurücksetzen.",
+    "resetText": "Falls du dies nicht selbst warst, solltest du <link>",
+    "surveyLink": "uns Verbesserungsvorschläge gibst.",
+    "surveyText": "Danke für die Nutzung von {{company}}. Du hilfst uns, indem du <link> Dies dauert nicht länger als eine Minute.",
+    "title": "Benutzerkonto löschen"
+  },
+  "forgot": {
+    "button": "Passwort zurücksetzen",
+    "emailPlaceholder": "E-Mail",
+    "errorAlreadyProcessing": "Wir haben dir bereits eine E-Mail geschickt. Der Link ist für eine Stunde gültig.",
+    "errorInvalidEmail": "Dies sieht nicht nach einer E-Mail-Adresse aus.",
+    "errorUnknown": "Es ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "errorUnusedEmail": "Diese E-Mail wird nicht verwendet.",
+    "successDescription": "Wir haben dir einen Link geschickt, mit dem du dein Kennwort ändern kannst. Der Link ist eine Stunde gültig.",
+    "successTitle": "Überprüfe deinen E-Mail Posteingang.",
+    "title": "Passwort ändern"
+  },
+  "general": {
+    "loading": "Bitte warten…"
+  },
+  "header": {
+    "support": "Hilfe"
+  },
+  "index": {
+    "description": "Business-Chats, Telefonkonferenzen und Dateifreigabe - alles durch Ende-zu-Ende-Verschlüsselung geschützt. Auch erhältlich für den persönlichen Gebrauch.",
+    "title": "Die sicherste Art, zusammen zu arbeiten"
+  },
+  "open": {
+    "description": "Starte die App, um dich anzumelden und {{company}} zu benutzen.",
+    "downloadButton": "Hol dir {{company}}",
+    "openMac": "macOS APP HERUNTERLADEN",
+    "openWeb": "Öffne im Browser",
+    "openWire": "Öffne {{company}}"
+  },
+  "reset": {
+    "button": "Passwort zurücksetzen",
+    "errorInvalidLink": "Der Link ist nicht gültig. Bitte erneut versuchen.",
+    "errorPasswordAlreadyUsed": "Bitte ein neues Passwort auswählen.",
+    "errorUnknown": "Es ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "passwordInfo": "Bitte mindestens {{minPasswordLength}} Zeichen verwenden: mit einem Kleinbuchstaben, einem Großbuchstaben, einer Zahl und einem Sonderzeichen.",
+    "passwordPlaceholder": "Neues Passwort eingeben",
+    "successDescription": "Du kannst dich jetzt mit deinem neuen Passwort anmelden.",
+    "title": "Passwort zurücksetzen"
+  },
+  "toPrimitive": "",
+  "verify": {
+    "error404Description": "Bitte versuche erneut, ein Konto zu erstellen.",
+    "error500Description": "Wir untersuchen das Problem, bitte versuche es in Kürze nocheinmal.",
+    "errorTitle": "Ein Fehler ist aufgetreten.",
+    "successBotDescription": "Bitte beachte, dass das Service-Provider-Konto nach der Bestätigung der E-Mail-Adresse noch durch uns freigeschaltet werden muss. Dies erfolgt üblicherweise innerhalb von 24 Stunden.",
+    "successBotDescriptionEmail": "Über die Freischaltung wirst du per E-Mail informiert.",
+    "successBotTitle": "Vielen Dank für die Registrierung",
+    "successEmailAppDescription": "Installiere die App, um {{company}} zu benutzen.",
+    "successEmailTitle": "Email verifiziert",
+    "successPhoneDescription": "Telefonnummer wird bestätigt",
+    "title": "Überprüfe",
+    "titleBot": "Bot bestätigen",
+    "titleEmail": "Konto bestätigen",
+    "titlePhone": "Telefonnummer bestätigen"
+  }
+}
