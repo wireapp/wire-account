@@ -45,6 +45,7 @@
     "button": "Réinitialiser le mot de passe",
     "errorInvalidLink": "Le lien est invalide. Veuillez réessayer.",
     "errorPasswordAlreadyUsed": "Veuillez choisir un nouveau mot de passe.",
+    "errorTitle": "Une erreur est survenue",
     "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
     "passwordInfo": "Utilisez au moins {{minPasswordLength}} caractères, avec une lettre minuscule, une lettre majuscule, un numéro et un caractère spécial.",
     "passwordPlaceholder": "Entrer le nouveau mot de passe",
