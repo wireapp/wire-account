@@ -31,6 +31,10 @@ export class AccountAction {
     return this.apiClient.account.api.postPasswordReset(email);
   };
 
+  initiateBotPasswordReset = (email: string) => {
+    return this.apiClient.account.api.postBotPasswordReset(email);
+  };
+
   completePasswordReset = (password: string, key: string, code: string) => {
     return this.apiClient.account.api.postPasswordResetComplete(password, key, code);
   };
