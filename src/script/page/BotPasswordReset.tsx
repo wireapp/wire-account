@@ -40,7 +40,7 @@ const PasswordReset = ({location}: Props) => {
   const key = params.get(QUERY_KEY_KEY);
 
   const passwordInput = useRef<HTMLInputElement>();
-  const [passwordValid, setPasswordValid] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(false);
   const [password, setPassword] = useState('');
 
   const [t] = useTranslation('reset');
