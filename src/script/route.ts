@@ -27,6 +27,7 @@ const ROUTE = {
   DELETE_ACCOUNT: '/d',
   HOME: '/',
   PASSWORD_FORGOT: '/forgot',
+  PASSWORD_FORGOT_BOT: '/forgot/bot',
   PASSWORD_RESET: '/reset',
   PASSWORD_RESET_BOT: '/reset/bot',
   VERIFY_ACCOUNT_BOT: '/verify/bot',

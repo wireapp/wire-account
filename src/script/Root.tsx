@@ -32,6 +32,7 @@ const Root: React.FC<Props> = () => {
   const LazyIndex = lazy(() => import('./page/Index'));
   const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
   const LazyPasswordForgot = lazy(() => import('./page/PasswordForgot'));
+  const LazyBotPasswordForgot = lazy(() => import('./page/BotPasswordForgot'));
   const LazyPasswordReset = lazy(() => import('./page/PasswordReset'));
   const LazyBotPasswordReset = lazy(() => import('./page/BotPasswordReset'));
   const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
@@ -58,6 +59,7 @@ const Root: React.FC<Props> = () => {
             <Route exact path={ROUTE.HOME} component={LazyIndex} />
             <Route exact path={ROUTE.DELETE_ACCOUNT} component={LazyDeleteAccount} />
             <Route exact path={ROUTE.PASSWORD_FORGOT} component={LazyPasswordForgot} />
+            <Route exact path={ROUTE.PASSWORD_FORGOT_BOT} component={LazyBotPasswordForgot} />
             <Route exact path={ROUTE.PASSWORD_RESET} component={LazyPasswordReset} />
             <Route exact path={ROUTE.PASSWORD_RESET_BOT} component={LazyBotPasswordReset} />
             <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={LazyVerifyEmailAccount} />
