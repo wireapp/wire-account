@@ -45,6 +45,7 @@
     "button": "Reset password",
     "errorInvalidLink": "The link is not valid. Please try again.",
     "errorPasswordAlreadyUsed": "Please choose a new password.",
+    "errorTitle": "Something went wrong",
     "errorUnknown": "Something went wrong, please try again.",
     "passwordInfo": "Use at least {{minPasswordLength}} characters, with one lowercase letter, one capital letter, a number, and a special character.",
     "passwordPlaceholder": "Enter new password",

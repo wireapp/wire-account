@@ -45,6 +45,7 @@
     "button": "Passwort zurücksetzen",
     "errorInvalidLink": "Der Link ist nicht gültig. Bitte erneut versuchen.",
     "errorPasswordAlreadyUsed": "Bitte ein neues Passwort auswählen.",
+    "errorTitle": "Ein Fehler ist aufgetreten",
     "errorUnknown": "Es ist ein Fehler aufgetreten. Bitte versuche es erneut.",
     "passwordInfo": "Bitte mindestens {{minPasswordLength}} Zeichen verwenden: mit einem Kleinbuchstaben, einem Großbuchstaben, einer Zahl und einem Sonderzeichen.",
     "passwordPlaceholder": "Neues Passwort eingeben",

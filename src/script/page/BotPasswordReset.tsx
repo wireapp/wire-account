@@ -16,16 +16,13 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Runtime, ValidationUtil} from '@wireapp/commons';
-import {Button, COLOR, ContainerXS, FlexBox, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
+import {ValidationUtil} from '@wireapp/commons';
+import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
 import React, {useContext, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
-import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
-import {OpenWebappButton} from 'script/component/OpenWebappButton';
-import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
-import {BRAND_NAME, NEW_PASSWORD_MINIMUM_LENGTH} from 'script/Environment';
+import {NEW_PASSWORD_MINIMUM_LENGTH} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
 
@@ -43,12 +40,12 @@ const PasswordReset = ({location}: Props) => {
   const key = params.get(QUERY_KEY_KEY);
 
   const passwordInput = useRef<HTMLInputElement>();
-  const [passwordValid, setPasswordValid] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(false);
   const [password, setPassword] = useState('');
 
   const [t] = useTranslation('reset');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
   const {accountAction} = useContext(ActionContext);
   const completePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -95,26 +92,6 @@ const PasswordReset = ({location}: Props) => {
     }
   };
 
-  const DesktopSuccess = () => (
-    <React.Fragment>
-      <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
-      <FlexBox style={{margin: '32px 0'}}>
-        {Runtime.isMacOS() ? (
-          <DirectDownloadButton style={{marginRight: 8}} />
-        ) : (
-          <WebsiteDownloadButton style={{marginRight: 8}} />
-        )}
-        <OpenWebappButton style={{marginLeft: 8}}>{t('open:openWeb')}</OpenWebappButton>
-      </FlexBox>
-    </React.Fragment>
-  );
-
-  const UnknownSuccess = () => (
-    <React.Fragment>
-      <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
-      <OpenWebappButton style={{margin: '32px 0'}}>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
-    </React.Fragment>
-  );
   return (
     <Document>
       <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
@@ -125,13 +102,6 @@ const PasswordReset = ({location}: Props) => {
               <Text center style={{margin: '16px 0'}}>
                 {t('successDescription')}
               </Text>
-              {Runtime.isMobileOS() ? (
-                <DirectDownloadButton />
-              ) : Runtime.isDesktopOS() ? (
-                <DesktopSuccess />
-              ) : (
-                <UnknownSuccess />
-              )}
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -175,8 +145,8 @@ const PasswordReset = ({location}: Props) => {
           )
         ) : (
           <React.Fragment>
-            <H1>{'Something went wrong'}</H1>
-            <Text center>{'Please try again to reset your password.'}</Text>
+            <H1>{t('errorTitle')}</H1>
+            <Text center>{t('errorUnknown')}</Text>
           </React.Fragment>
         )}
       </ContainerXS>
