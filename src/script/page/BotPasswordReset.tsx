@@ -40,12 +40,12 @@ const PasswordReset = ({location}: Props) => {
   const key = params.get(QUERY_KEY_KEY);
 
   const passwordInput = useRef<HTMLInputElement>();
-  const [passwordValid, setPasswordValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(true);
   const [password, setPassword] = useState('');
 
   const [t] = useTranslation('reset');
   const [error, setError] = useState('');
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
   const {accountAction} = useContext(ActionContext);
   const completePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
