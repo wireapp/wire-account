@@ -60,6 +60,7 @@ deploy:
     bucket_name: wire-account-builds
     on:
       tags: true
+      branch: master
       condition: $DISTRIBUTION = wire
 
   - provider: elasticbeanstalk
