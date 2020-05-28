@@ -59,8 +59,9 @@ deploy:
     env: wire-account-prod
     bucket_name: wire-account-builds
     on:
-      tags: true
+      branch: master
       condition: $DISTRIBUTION = wire
+      tags: true
 
   - provider: elasticbeanstalk
     skip_cleanup: true
@@ -74,6 +75,7 @@ deploy:
     env: wire-account-staging
     bucket_name: wire-account-builds
     on:
-      repo: wireapp/wire-account
       branch: staging
       condition: $DISTRIBUTION = wire
+      repo: wireapp/wire-account
+      tags: false
