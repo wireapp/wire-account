@@ -117,5 +117,5 @@
     "webpack:dev": "webpack --config webpack.config.dev.js",
     "webpack:test": "webpack --config webpack.config.test.js"
   },
-  "version": "2.0.2"
+  "version": "2.1.0"
 }
