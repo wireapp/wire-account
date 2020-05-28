@@ -54,12 +54,14 @@
     "eslint-plugin-simple-import-sort": "5.0.3",
     "eslint-plugin-sort-keys-fix": "1.1.1",
     "fs-extra": "9.0.0",
+    "generate-changelog": "1.8.0",
     "husky": "4.2.5",
     "i18next-scanner": "2.11.0",
     "jasmine": "3.5.0",
     "lint-staged": "10.2.6",
     "prettier": "2.0.5",
     "react-hot-loader": "4.12.21",
+    "simple-git": "2.5.0",
     "sort-json": "2.0.0",
     "svg-inline-loader": "0.8.2",
     "terser-webpack-plugin": "3.0.2",
@@ -104,7 +106,7 @@
     "lint:other": "yarn prettier --list-different",
     "lint": "yarn lint:code && yarn lint:other",
     "postinstall": "copy-config && cd server && yarn",
-    "postversion": "git push && git push --tags",
+    "postversion": "yarn changelog && git add CHANGELOG.md && git commit --amend --no-edit && git push && git push --tags",
     "prettier": "prettier \"**/*.{json,less,md,yml}\"",
     "preversion": "yarn test",
     "start": "cd server && yarn start",
@@ -115,7 +117,8 @@
     "translate:upload": "yarn translate:extract && node bin/translations_upload.js",
     "webpack": "webpack --config webpack.config.prod.js",
     "webpack:dev": "webpack --config webpack.config.dev.js",
-    "webpack:test": "webpack --config webpack.config.test.js"
+    "webpack:test": "webpack --config webpack.config.test.js",
+    "changelog": "node ./bin/changelog.js"
   },
   "version": "2.1.0"
 }
