@@ -1421,16 +1421,16 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@11.20.4":
-  version "11.20.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.20.4.tgz#8e90411ae28a78df2761441641f163c3fe8c03e3"
-  integrity sha512-OSdXvBDJmSIapzNbMWch8gq+IR+UiGNZyHPuUeoW8sCK4mYnWk6xZOw9576PcOJncXNSecfXc3/TaUZEQ9ScWg==
+"@wireapp/api-client@11.20.5":
+  version "11.20.5"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.20.5.tgz#642d9aeee170407cfb9de71a32855b6e0f981550"
+  integrity sha512-Ytnoc6eZKs7bs5IjuBkbzTkf3XNrjJwEoo1hVnlOZMhrOC0FsUUZ/XBucefP2m8xoUtbNqXoCzXI0nyz31IbRw==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
     "@wireapp/commons" "3.5.4"
-    "@wireapp/priority-queue" "1.6.3"
+    "@wireapp/priority-queue" "1.6.4"
     axios "0.19.2"
     logdown "3.3.1"
     reconnecting-websocket "4.4.0"
@@ -1470,14 +1470,14 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.3.tgz#f36571aa723f37ba47550def704fb71cc3637a74"
-  integrity sha512-X3pqkBOFnaq7cIUpskD7q5DOCpfftXiiuIBg/z02YzIpYweOBTRz/fP2ubaxTOI0mUIVSsppuhPfLB5AiohNFA==
+"@wireapp/priority-queue@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.4.tgz#ed26a58f6d7aaa4d26432af4822ba9f1bf05a352"
+  integrity sha512-Uc7GTeXur8gEbBotBkrzGRI3KYlwY+cpW1KfrYMUH/zCIhxPcZdt5sWRf6BU6Xfi3u7zQPw+mekuYqcqtHGdHw==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.1"
-    pure-uuid "1.6.0"
+    uuidjs "4.2.5"
 
 "@wireapp/react-ui-kit@7.25.1":
   version "7.25.1"
@@ -6512,11 +6512,6 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-pure-uuid@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/pure-uuid/-/pure-uuid-1.6.0.tgz#304da991dbd38d1efd03342d3e104f6666f6e38d"
-  integrity sha512-z+A7GMeyPu4X1NoGKraYiOOFzK0HZpnsHwbJZbt9NGGaqrfs3amyuWgRhHnfMJN4MM0IbAsLvHBqt0p1S84UQQ==
-
 qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
@@ -8207,6 +8202,11 @@ uuid@^3.3.2:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
+
+uuidjs@4.2.5:
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.2.5.tgz#a80439ece05dfe6ed875a5d62de0820046055713"
+  integrity sha512-0utbJ3L/C/AUv8cRAfFnUC7XhvRvaQaGNPbrroBeXF26BWfYT6aD8/n5UQ4ic3bpkJfVd2W15yQS+YCwvQxtXA==
 
 v8-compile-cache@^2.0.3, v8-compile-cache@^2.1.1:
   version "2.1.1"
