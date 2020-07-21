@@ -61,7 +61,7 @@
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "react-hot-loader": "4.12.21",
-    "simple-git": "2.13.2",
+    "simple-git": "2.14.0",
     "sort-json": "2.0.0",
     "svg-inline-loader": "0.8.2",
     "terser-webpack-plugin": "3.0.7",
