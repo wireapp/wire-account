@@ -29,20 +29,21 @@ const root = resolve(__dirname, '..');
 const destinationPath = resolve(root, 'src', 'i18n');
 const zipPath = resolve(root, 'wire-account.zip');
 
-const getProjectKey = () => {
+// https://crowdin.com/project/wire-account/settings#api
+const getProjectAPIKey = () => {
   const crowdinYaml = join(root, 'keys', 'crowdin.yaml');
   const crowdinYamlContent = fs.readFileSync(crowdinYaml, 'utf8');
   const keyRegex = /api_key: ([0-9a-f]+)/;
   return crowdinYamlContent.match(keyRegex)[1];
 };
 
-const projectKey = getProjectKey();
+const projectAPIKey = getProjectAPIKey();
 
 const CROWDIN_API = 'https://api.crowdin.com/api/project/wire-account';
 
 const CROWDIN_URL = {
-  DOWNLOAD: `${CROWDIN_API}/download/all.zip?key=${projectKey}`,
-  EXPORT: `${CROWDIN_API}/export?key=${projectKey}&json`,
+  DOWNLOAD: `${CROWDIN_API}/download/all.zip?key=${projectAPIKey}`,
+  EXPORT: `${CROWDIN_API}/export?key=${projectAPIKey}&json`,
 };
 
 function fetchUpdates() {

@@ -34,11 +34,13 @@ Depending on the branch name it will be automatically deployed to the following 
 
 ### Translations
 
-A file 'keys/crowdin.yaml' containing the Crowdin API key is needed. To push & pull translations use:
-
-```bash
-yarn translate:upload
-```
+1. Verify you have a "keys/crowdin.yaml" in place with "api_key" and "api_token" in it
+1. Add string variable and text to "i18n/en-US.json"
+1. Run `yarn translate:upload`
+1. Verify your string shows up on [Crowdin project: wire-account](https://crowdin.com/translate/wire-account/all/en-en)
+1. Add translation on Crowdin
+1. Approve translation on Crowdin
+1. Run `yarn translate:download`
 
 ### Release flow
 
