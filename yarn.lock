@@ -1434,15 +1434,15 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@11.21.6":
-  version "11.21.6"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.21.6.tgz#7b4afa75afd043c26b61dc0763fe5a8a850e868a"
-  integrity sha512-PeBBWu1l8+TAnT43p6JoUEhT0WL4njumUuWKZoElv2OVxUvq+O6iPPqRPUie730eAH1TpggHGToD2r/jf5Ud4g==
+"@wireapp/api-client@11.21.8":
+  version "11.21.8"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.21.8.tgz#ab5d528e9d500757311ea18b3a70a033dd257c99"
+  integrity sha512-teYTDkCMtEtZBNIocRr2D1ZVL0sWBQFa2LDC8vdoAC7QSVfZimmj/3MWVgHV54ySMnKDiPkiOKRgzHpSMPdAEg==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "3.7.0"
+    "@wireapp/commons" "3.7.1"
     "@wireapp/priority-queue" "1.6.6"
     axios "0.19.2"
     logdown "3.3.1"
@@ -1463,6 +1463,20 @@
     fs-extra "9.0.1"
     logdown "3.3.1"
     platform "1.3.5"
+    url-search-params-polyfill "8.1.0"
+
+"@wireapp/commons@3.7.1":
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.7.1.tgz#1158ffda706a8d30b0f3420ce608816c58c63d1b"
+  integrity sha512-l1apgc0fuS9iVQ4V7am1io43W2+kGkVT2du7bpu/5XypMsGviccwGX0u+3QJSK6WXvyxDTFg4gqI2290jU5R9w==
+  dependencies:
+    "@types/fs-extra" "8.1.0"
+    "@types/node" "~12"
+    "@types/platform" "1.3.2"
+    ansi-regex "5.0.0"
+    fs-extra "9.0.1"
+    logdown "3.3.1"
+    platform "1.3.6"
     url-search-params-polyfill "8.1.0"
 
 "@wireapp/copy-config@1.1.0":
@@ -6468,6 +6482,11 @@ platform@1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/platform/-/platform-1.3.5.tgz#fb6958c696e07e2918d2eeda0f0bc9448d733444"
   integrity sha512-TuvHS8AOIZNAlE77WUDiR4rySV/VMptyMfcfeoMgs4P8apaZM3JrnbzBiixKUv+XR6i+BXrQh8WAnjaSPFO65Q==
+
+platform@1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/platform/-/platform-1.3.6.tgz#48b4ce983164b209c2d45a107adb31f473a6e7a7"
+  integrity sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==
 
 please-upgrade-node@^3.2.0:
   version "3.2.0"
