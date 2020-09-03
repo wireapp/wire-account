@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        DISTRIBUTION: ["wire", "$DISTRIBUTION_1"]
+        DISTRIBUTION: ["${{DISTRIBUTION_0}}", "${{DISTRIBUTION_1}}"]
 
     steps:
       - name: Checkout
