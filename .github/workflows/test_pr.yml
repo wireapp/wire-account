@@ -1,0 +1,21 @@
+name: Test Pull Request
+on:
+  push:
+    branches: [ staging ]
+  pull_request:
+    branches: [ staging ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: c-hive/gha-yarn-cache@v1
+        
+      - name: Install JS dependencies
+        run: yarn install
+        
+      - name: Test
+        run: yarn test
