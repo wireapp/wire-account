@@ -17,20 +17,19 @@ jobs:
     env:
       GH_TOKEN: ${{secrets.GH_TOKEN}}
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
-      COMMIT_SHA: ${GITHUB_SHA}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set TAG environment variable
+      - name: Set BRANCH_NAME environment variable
         run: echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
 
       - name: Set TAG environment variable
         run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
 
       - name: Print env vars
-        run: echo -e "GITHUB_SHA = $GITHUB_SHA , COMMIT_SHA = $COMMIT_SHA , TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
+        run: echo -e "GITHUB_SHA = $GITHUB_SHA , TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
 
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
@@ -47,8 +46,9 @@ jobs:
       - name: Create commit file
         run: |
           mkdir -p ./dist
-          echo -e "$COMMIT_SHA" > "./dist/commit"
+          echo -e "$GITHUB_SHA" > "./dist/commit"
           echo $PWD
+          ls -lah
 
       - name: Build & push Docker image
         run: |
