@@ -3,8 +3,6 @@ name: Build & Deploy
 on:
   push:
     branches: [staging]
-  pull_request:
-    branches: [staging]
 
 jobs:
   build_deploy:
@@ -16,6 +14,8 @@ jobs:
 
     env:
       GH_TOKEN: ${{secrets.GH_TOKEN}}
+      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
 
     steps:
