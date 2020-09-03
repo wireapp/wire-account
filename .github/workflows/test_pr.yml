@@ -18,6 +18,11 @@ jobs:
         
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
+
+      - name: Authenticate git clone
+        run: echo -e "machine github.com\n  login ${{GH_TOKEN}}" > ~/.netrc
+        env:
+          GH_TOKEN: ${{secrets.GH_TOKEN}}
         
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
