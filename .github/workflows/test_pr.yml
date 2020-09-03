@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        DISTRIBUTION: ["${{DISTRIBUTION_0}}", "${{DISTRIBUTION_1}}"]
+        DISTRIBUTION: ["DISTRIBUTION_0", "DISTRIBUTION_1"]
 
     steps:
       - name: Checkout
@@ -22,7 +22,7 @@ jobs:
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
         env:
-          DISTRIBUTION: ${{matrix.DISTRIBUTION}}
+          DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
         
       - name: Test
         run: yarn test
