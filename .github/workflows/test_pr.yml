@@ -10,15 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        DISTRIBUTION: ["wire", "other"]
+        DISTRIBUTION: ["wire", "$DISTRIBUTION_0"]
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: c-hive/gha-yarn-cache@v1
+      - name: Checkout
+        uses: actions/checkout@v2
         
-      - name: Distribution
-        run: echo "Testing pull request for distribution ${{matrix.DISTRIBUTION}}"
+      - name: Yarn cache
+        uses: c-hive/gha-yarn-cache@v1
         
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
