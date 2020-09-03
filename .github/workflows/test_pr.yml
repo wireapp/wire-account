@@ -18,9 +18,6 @@ jobs:
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
       
     steps:
-      - name: Environment
-        run: echo "${{ toJson(github) }}"
-        
       - name: Checkout
         uses: actions/checkout@v2
         
