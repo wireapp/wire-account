@@ -8,14 +8,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        DISTRIBUTION: ["wire", "other"]
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: c-hive/gha-yarn-cache@v1
         
+      - name: Distribution
+        run: echo "Testing pull request for distribution ${matrix.DISTRIBUTION}"
+        
       - name: Install JS dependencies
         run: yarn install
+        env:
+          DISTRIBUTION: matrix.DISTRIBUTION
         
       - name: Test
         run: yarn test
