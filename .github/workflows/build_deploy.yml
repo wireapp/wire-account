@@ -18,17 +18,16 @@ jobs:
       GH_TOKEN: ${{secrets.GH_TOKEN}}
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
       COMMIT_SHA: ${GITHUB_SHA}
-      BRANCH_NAME: ${GITHUB_REF##*/}
 
     steps:
-      - name: Print GITHUB_REF
-        run: echo "$GITHUB_REF"
-
-      - name: Print BRANCH_NAME
-        run: echo "$BRANCH_NAME"
+      - name: Set TAG environment variable
+        run: echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
         
       - name: Set TAG environment variable
         run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
+
+      - name: Print env vars
+        run: echo "TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
         
       - name: Checkout
         uses: actions/checkout@v2
