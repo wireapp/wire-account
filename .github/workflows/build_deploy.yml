@@ -29,7 +29,7 @@ jobs:
         run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
 
       - name: Print env vars
-        run: echo -e "GITHUB_SHA = $GITHUB_SHA , TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
+        run: echo -e "GITHUB_SHA = ${GITHUB_SHA}, TAG = ${TAG}, BRANCH_NAME = ${BRANCH_NAME}, GITHUB_REF = ${GITHUB_REF}"
 
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
