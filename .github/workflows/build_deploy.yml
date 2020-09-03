@@ -48,7 +48,7 @@ jobs:
           mkdir -p ./dist
           echo -e "$GITHUB_SHA" > "./dist/commit"
           echo $PWD
-          ls -lah
+          ls -lah ../
 
       - name: Build & push Docker image
         run: |
