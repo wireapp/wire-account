@@ -18,12 +18,12 @@ jobs:
       - uses: c-hive/gha-yarn-cache@v1
         
       - name: Distribution
-        run: echo "Testing pull request for distribution ${matrix.DISTRIBUTION}"
+        run: echo "Testing pull request for distribution ${{matrix.DISTRIBUTION}}"
         
       - name: Install JS dependencies
-        run: yarn install
+        run: yarn --frozen-lockfile
         env:
-          DISTRIBUTION: matrix.DISTRIBUTION
+          DISTRIBUTION: ${{matrix.DISTRIBUTION}}
         
       - name: Test
         run: yarn test
