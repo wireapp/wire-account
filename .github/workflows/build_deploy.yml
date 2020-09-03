@@ -59,7 +59,7 @@ jobs:
             else
               yarn docker "$DISTRIBUTION" staging
             fi
-          else if [ "$BRANCH_NAME" == "master" && -n "$TAG" ]; then
+          elif [ "$BRANCH_NAME" == "master" ] && [ -n "$TAG" ]; then
             yarn bundle:prod
             if [ "$DISTRIBUTION" == "wire" ]; then
               yarn docker '' production
