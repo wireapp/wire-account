@@ -20,6 +20,9 @@ jobs:
       COMMIT_SHA: ${GITHUB_SHA}
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Set TAG environment variable
         run: echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
         
@@ -28,9 +31,6 @@ jobs:
 
       - name: Print env vars
         run: echo -e "COMMIT_SHA = $COMMIT_SHA , TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
-        
-      - name: Checkout
-        uses: actions/checkout@v2
 
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
