@@ -2,19 +2,19 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [ staging ]
+    branches: [staging]
   pull_request:
-    branches: [ staging ]
+    branches: [staging]
 
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
-        DISTRIBUTION: ["DISTRIBUTION_0", "DISTRIBUTION_1"]
+        DISTRIBUTION: ['DISTRIBUTION_0', 'DISTRIBUTION_1']
 
-    env: 
+    env:
       GH_TOKEN: ${{secrets.GH_TOKEN}}
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
       COMMIT_SHA: ${GITHUB_SHA}
@@ -25,12 +25,12 @@ jobs:
 
       - name: Set TAG environment variable
         run: echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
-        
+
       - name: Set TAG environment variable
         run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
 
       - name: Print env vars
-        run: echo -e "COMMIT_SHA = $COMMIT_SHA , TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
+        run: echo -e "GITHUB_SHA = $GITHUB_SHA , COMMIT_SHA = $COMMIT_SHA , TAG = $TAG , BRANCH_NAME = $BRANCH_NAME , GITHUB_REF = $GITHUB_REF"
 
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
@@ -43,10 +43,13 @@ jobs:
 
       - name: Test
         run: yarn test
-  
+
       - name: Create commit file
-        run: echo -e "$COMMIT_SHA" > "./dist/commit"
-        
+        run: |
+          mkdir -p ./dist
+          echo -e "$COMMIT_SHA" > "./dist/commit"
+          echo $PWD
+
       - name: Build & push Docker image
         run: |
           if [ "$BRANCH_NAME" == "staging" ]; then
@@ -64,6 +67,3 @@ jobs:
               yarn docker "$DISTRIBUTION" production
             fi
           fi
-
-        
-        
