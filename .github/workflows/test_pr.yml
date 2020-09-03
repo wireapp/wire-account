@@ -8,9 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         DISTRIBUTION: ["DISTRIBUTION_0", "DISTRIBUTION_1"]
+        
+    env:
+      DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
+      GH_TOKEN: ${{secrets.GH_TOKEN}}
 
     steps:
       - name: Checkout
@@ -21,13 +26,9 @@ jobs:
 
       - name: Authenticate git clone
         run: echo -e "machine github.com\n  login ${{GH_TOKEN}}" > ~/.netrc
-        env:
-          GH_TOKEN: ${{secrets.GH_TOKEN}}
         
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
-        env:
-          DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
         
       - name: Test
         run: yarn test
