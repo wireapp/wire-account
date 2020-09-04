@@ -29,7 +29,7 @@ jobs:
         run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
 
       - name: Set COMMIT_MESSAGE environment variable
-        run: echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{github.event.after}})
+        run: echo ::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})
 
       - name: Print env vars
         run: echo -e "COMMIT_MESSAGE = ${COMMIT_MESSAGE}, GITHUB_SHA = ${GITHUB_SHA}, TAG = ${TAG}, BRANCH_NAME = ${BRANCH_NAME}, GITHUB_REF = ${GITHUB_REF}"
@@ -70,7 +70,7 @@ jobs:
           fi
 
       - name: Deploy staging to Elastic Beanstalk
-        if: ${{ github.env.BRANCH_NAME == 'staging' && github.env.DISTRIBUTION == 'wire' }}
+        if: ${{ env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire' }}
         uses: einaregilsson/beanstalk-deploy@v11
         with:
           aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
