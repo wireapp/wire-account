@@ -69,7 +69,7 @@ jobs:
           environment_name: wire-account-staging
           region: eu-central-1
           deployment_package: wire-account.zip
-          version_label: ${{env.GITHUB_SHA}}
+          version_label: ${{github.sha}}
           version_description: ${{env.COMMIT_MESSAGE}}
 
       - name: Push Docker image
