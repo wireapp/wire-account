@@ -1,6 +1,6 @@
 {
   "delete": {
-    "button": "Benutzerkonto löschen",
+    "button": "Benutzerkonto löschen TEST",
     "confirmation": "Wir haben deine persönlichen Daten entfernt.",
     "description": "Wir haben eine Anfrage zur Löschung deines {{company}}-Benutzerkontos erhalten. Klicke zum Fortfahren unten auf den Button. Die Anfrage ist für 10 Minuten gültig.",
     "errorDescription": "Bitte versuche erneut, dein Benutzerkonto zu löschen.",
