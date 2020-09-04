@@ -18,7 +18,7 @@
     "url-search-params-polyfill": "8.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.11.5",
+    "@babel/core": "7.11.6",
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@babel/preset-env": "7.11.5",
@@ -58,7 +58,7 @@
     "husky": "4.2.5",
     "i18next-scanner": "2.11.0",
     "jasmine": "3.6.1",
-    "lint-staged": "10.2.13",
+    "lint-staged": "10.3.0",
     "prettier": "2.1.1",
     "react-hot-loader": "4.12.21",
     "simple-git": "2.20.1",
