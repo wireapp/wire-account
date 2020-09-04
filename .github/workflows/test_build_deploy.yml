@@ -1,11 +1,13 @@
-name: Build & Deploy
+name: Test, Build & Deploy
 
 on:
   push:
     branches: [staging]
+  pull_request:
+    branches: [staging]
 
 jobs:
-  build_deploy:
+  test_build_deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,10 +26,18 @@ jobs:
         run: |
           echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
           echo "::set-env name=TAG::$(git tag --points-at HEAD)"
-          echo ::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})
+          echo "::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})"
 
-      - name: Print env vars
-        run: echo -e "COMMIT_MESSAGE = ${COMMIT_MESSAGE}, GITHUB_SHA = ${GITHUB_SHA}, TAG = ${TAG}, BRANCH_NAME = ${BRANCH_NAME}, GITHUB_REF = ${GITHUB_REF}"
+      - name: Print environment variables
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo -e "BRANCH_NAME = ${BRANCH_NAME}"
+          echo -e "TAG = ${TAG}"
+          echo -e "COMMIT_MESSAGE = ${COMMIT_MESSAGE}"
+          echo -e "GITHUB_SHA = ${GITHUB_SHA}"
+          echo -e "GITHUB_REF = ${GITHUB_REF}"
+          echo -e "GITHUB_CONTEXT = ${GITHUB_CONTEXT}"
 
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
@@ -46,13 +56,13 @@ jobs:
           mkdir -p ./dist
           echo -e "$GITHUB_SHA" > "./dist/commit"
 
-      - name: Build
-        run: |
-          if [ "$BRANCH_NAME" == "staging" ]; then
-            yarn bundle:staging
-          elif [ "$BRANCH_NAME" == "master" ] && [ -n "$TAG" ]; then
-            yarn bundle:prod
-          fi
+      - name: Build staging
+        if: ${{ env.BRANCH_NAME == 'staging' }}
+        run: yarn bundle:staging
+
+      - name: Build production
+        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' }}
+        run: yarn bundle:prod
 
       - name: Deploy staging build to Elastic Beanstalk
         if: ${{ env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire' }}
@@ -82,21 +92,26 @@ jobs:
           version_label: ${{env.TAG}}
           version_description: ${{env.COMMIT_MESSAGE}}
 
-      - name: Push Docker image
+      - name: Push staging Docker image
+        if: ${{ env.BRANCH_NAME == 'staging' }}
         env:
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         run: |
-          if [ "$BRANCH_NAME" == "staging" ]; then
-            if [ "$DISTRIBUTION" == "wire" ]; then
-              yarn docker '' staging
-            else
-              yarn docker "$DISTRIBUTION" staging
-            fi
-          elif [ "$BRANCH_NAME" == "master" ] && [ -n "$TAG" ]; then
-            if [ "$DISTRIBUTION" == "wire" ]; then
-              yarn docker '' production
-            else
-              yarn docker "$DISTRIBUTION" production
-            fi
+          if [ "$DISTRIBUTION" == "wire" ]; then
+            yarn docker '' staging
+          else
+            yarn docker "$DISTRIBUTION" staging
+          fi
+
+      - name: Push production Docker image
+        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' }}
+        env:
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        run: |
+          if [ "$DISTRIBUTION" == "wire" ]; then
+            yarn docker '' production
+          else
+            yarn docker "$DISTRIBUTION" production
           fi
