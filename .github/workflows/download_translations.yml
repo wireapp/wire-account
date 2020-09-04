@@ -2,9 +2,9 @@ name: Download translations
 
 on:
   push:
-    branches: [ staging ]
+    branches: [staging]
   schedule:
-  - cron: "*/1 * * * *"
+    - cron: '*/1 * * * *'
 
 jobs:
   download_translations:
@@ -15,6 +15,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download translations
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CROWDIN_PROJECT_ID: 342361
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.WEB_CROWDIN_TOKEN }}
         uses: crowdin/github-action@1.0.9
         with:
           upload_sources: false
@@ -30,4 +34,3 @@ jobs:
           config: './crowdin.yaml'
           dryrun_action: true
           token: ${{secrets.WEB_CROWDIN_TOKEN}}
-
