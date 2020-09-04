@@ -30,5 +30,4 @@ jobs:
           localization_branch_name: 'translations'
           create_pull_request: true
           pull_request_title: 'chore: Update translations'
-          dryrun_action: true
           token: ${{ secrets.WEB_CROWDIN_TOKEN }}
