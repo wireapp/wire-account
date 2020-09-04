@@ -14,22 +14,17 @@ jobs:
 
     env:
       GH_TOKEN: ${{secrets.GH_TOKEN}}
-      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set BRANCH_NAME environment variable
-        run: echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
-
-      - name: Set TAG environment variable
-        run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
-
-      - name: Set COMMIT_MESSAGE environment variable
-        run: echo ::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})
+      - name: Set BRANCH_NAME, TAG & COMMIT_MESSAGE environment variables
+        run: |
+          echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
+          echo "::set-env name=TAG::$(git tag --points-at HEAD)"
+          echo ::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})
 
       - name: Print env vars
         run: echo -e "COMMIT_MESSAGE = ${COMMIT_MESSAGE}, GITHUB_SHA = ${GITHUB_SHA}, TAG = ${TAG}, BRANCH_NAME = ${BRANCH_NAME}, GITHUB_REF = ${GITHUB_REF}"
@@ -59,7 +54,7 @@ jobs:
             yarn bundle:prod
           fi
 
-      - name: Deploy staging to Elastic Beanstalk
+      - name: Deploy staging build to Elastic Beanstalk
         if: ${{ env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire' }}
         uses: einaregilsson/beanstalk-deploy@v11
         with:
@@ -73,7 +68,24 @@ jobs:
           version_label: ${{github.sha}}
           version_description: ${{env.COMMIT_MESSAGE}}
 
+      - name: Deploy production build to Elastic Beanstalk
+        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' && env.DISTRIBUTION == 'wire' }}
+        uses: einaregilsson/beanstalk-deploy@v11
+        with:
+          aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          application_name: Account
+          environment_name: wire-account-prod
+          region: eu-central-1
+          deployment_package: wire-account.zip
+          wait_for_environment_recovery: 90
+          version_label: ${{env.TAG}}
+          version_description: ${{env.COMMIT_MESSAGE}}
+
       - name: Push Docker image
+        env:
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         run: |
           if [ "$BRANCH_NAME" == "staging" ]; then
             if [ "$DISTRIBUTION" == "wire" ]; then
