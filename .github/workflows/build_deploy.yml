@@ -51,22 +51,12 @@ jobs:
           mkdir -p ./dist
           echo -e "$GITHUB_SHA" > "./dist/commit"
 
-      - name: Build & push Docker image
+      - name: Build
         run: |
           if [ "$BRANCH_NAME" == "staging" ]; then
             yarn bundle:staging
-            if [ "$DISTRIBUTION" == "wire" ]; then
-              yarn docker '' staging
-            else
-              yarn docker "$DISTRIBUTION" staging
-            fi
           elif [ "$BRANCH_NAME" == "master" ] && [ -n "$TAG" ]; then
             yarn bundle:prod
-            if [ "$DISTRIBUTION" == "wire" ]; then
-              yarn docker '' production
-            else
-              yarn docker "$DISTRIBUTION" production
-            fi
           fi
 
       - name: Deploy staging to Elastic Beanstalk
@@ -79,5 +69,21 @@ jobs:
           environment_name: wire-account-staging
           region: eu-central-1
           deployment_package: wire-account.zip
-          version_label: ${GITHUB_SHA}
-          version_description: ${COMMIT_MESSAGE}
+          version_label: ${{env.GITHUB_SHA}}
+          version_description: ${{env.COMMIT_MESSAGE}}
+
+      - name: Push Docker image
+        run: |
+          if [ "$BRANCH_NAME" == "staging" ]; then
+            if [ "$DISTRIBUTION" == "wire" ]; then
+              yarn docker '' staging
+            else
+              yarn docker "$DISTRIBUTION" staging
+            fi
+          elif [ "$BRANCH_NAME" == "master" ] && [ -n "$TAG" ]; then
+            if [ "$DISTRIBUTION" == "wire" ]; then
+              yarn docker '' production
+            else
+              yarn docker "$DISTRIBUTION" production
+            fi
+          fi
