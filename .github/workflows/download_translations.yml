@@ -33,4 +33,3 @@ jobs:
           pull_request_title: 'chore: Update translations'
           config: './crowdin.yaml'
           dryrun_action: true
-          token: ${{secrets.WEB_CROWDIN_TOKEN}}
