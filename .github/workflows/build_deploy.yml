@@ -1,0 +1,67 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        DISTRIBUTION: ['DISTRIBUTION_0', 'DISTRIBUTION_1']
+
+    env:
+      GH_TOKEN: ${{secrets.GH_TOKEN}}
+      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+      DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set BRANCH_NAME environment variable
+        run: echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
+
+      - name: Set TAG environment variable
+        run: echo "::set-env name=TAG::$(git tag --points-at HEAD)"
+
+      - name: Print env vars
+        run: echo -e "GITHUB_SHA = ${GITHUB_SHA}, TAG = ${TAG}, BRANCH_NAME = ${BRANCH_NAME}, GITHUB_REF = ${GITHUB_REF}"
+
+      - name: Yarn cache
+        uses: c-hive/gha-yarn-cache@v1
+
+      - name: Authenticate git clone
+        run: echo -e "machine github.com\n  login ${GH_TOKEN}" > ~/.netrc
+
+      - name: Install JS dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Test
+        run: yarn test
+
+      - name: Create commit file
+        run: |
+          mkdir -p ./dist
+          echo -e "$GITHUB_SHA" > "./dist/commit"
+
+      - name: Build & push Docker image
+        run: |
+          if [ "$BRANCH_NAME" == "staging" ]; then
+            yarn bundle:staging
+            if [ "$DISTRIBUTION" == "wire" ]; then
+              yarn docker '' staging
+            else
+              yarn docker "$DISTRIBUTION" staging
+            fi
+          elif [ "$BRANCH_NAME" == "master" ] && [ -n "$TAG" ]; then
+            yarn bundle:prod
+            if [ "$DISTRIBUTION" == "wire" ]; then
+              yarn docker '' production
+            else
+              yarn docker "$DISTRIBUTION" production
+            fi
+          fi
