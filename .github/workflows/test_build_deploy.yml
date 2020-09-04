@@ -76,7 +76,7 @@ jobs:
           deployment_package: wire-account.zip
           wait_for_environment_recovery: 90
           version_label: ${{github.sha}}
-          # version_description: ${{env.COMMIT_MESSAGE}}
+          version_description: ${{ format('"{0}"', env.COMMIT_MESSAGE) }}
 
       - name: Deploy production build to Elastic Beanstalk
         if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' && env.DISTRIBUTION == 'wire' }}
@@ -90,7 +90,7 @@ jobs:
           deployment_package: wire-account.zip
           wait_for_environment_recovery: 90
           version_label: ${{env.TAG}}
-          version_description: ${{env.COMMIT_MESSAGE}}
+          version_description: ${{ format('"{0}"', env.COMMIT_MESSAGE) }}
 
       - name: Push staging Docker image
         if: ${{ env.BRANCH_NAME == 'staging' }}
