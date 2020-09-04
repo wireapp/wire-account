@@ -31,6 +31,5 @@ jobs:
           create_pull_request: true
           pull_request_title: 'chore: Update translations'
           token: ${{ secrets.WEB_CROWDIN_TOKEN }}
-          source: './src/i18n/en-US.json'
-          translation: '%locale%.json'
+          source: '/src/i18n/en-US.json'
           base_path: '.'
