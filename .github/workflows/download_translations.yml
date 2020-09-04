@@ -19,7 +19,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           CROWDIN_PROJECT_ID: 342361
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.WEB_CROWDIN_TOKEN }}
         with:
           upload_sources: false
           upload_translations: false
