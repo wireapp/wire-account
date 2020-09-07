@@ -53,13 +53,16 @@ jobs:
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
 
-      - name: Test & Report coverage
-        if: ${{ github.event_name == 'pull_request' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: mattallty/jest-github-action@v1
+      - name: Test
+        run: yarn test
+
+      - name: Monitor coverage
+        uses: slavcodev/coverage-monitor-action@1.1.0
         with:
-          test-command: 'yarn test'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          clover_file: 'coverage/clover.xml'
+          threshold_alert: 10
+          threshold_warning: 50
 
       - name: Create commit file
         run: |
