@@ -10,7 +10,7 @@
     "resetLink": "dein {{company}}-Passwort zurücksetzen.",
     "resetText": "Falls du dies nicht selbst warst, solltest du <link>",
     "surveyLink": "uns Verbesserungsvorschläge gibst.",
-    "surveyText": "Danke für die Nutzung von {{company}}. Du hilfst uns, indem du <link> Dies dauert nicht länger als eine Minute.",
+    "surveyText": "Danke für die Nutzung von {{company}}. <br>Du hilfst uns, indem du <link> <br>Dies dauert nicht länger als eine Minute.",
     "title": "Benutzerkonto löschen"
   },
   "forgot": {
