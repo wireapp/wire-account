@@ -53,8 +53,13 @@ jobs:
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
 
-      - name: Test
-        run: yarn test
+      - name: Test & Report coverage
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: mattallty/jest-github-action@v1
+        with:
+          test-command: 'yarn test'
 
       - name: Create commit file
         run: |
