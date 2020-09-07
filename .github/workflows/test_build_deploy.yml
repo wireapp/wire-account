@@ -79,7 +79,8 @@ jobs:
           environment_name: wire-account-staging
           region: eu-central-1
           deployment_package: wire-account.zip
-          wait_for_environment_recovery: 120
+          wait_for_deployment: false
+          wait_for_environment_recovery: 150
           version_label: ${{github.sha}}
           version_description: ${{ format('{0}', env.COMMIT_MESSAGE) }}
 
@@ -93,7 +94,8 @@ jobs:
           environment_name: wire-account-prod
           region: eu-central-1
           deployment_package: wire-account.zip
-          wait_for_environment_recovery: 120
+          wait_for_deployment: false
+          wait_for_environment_recovery: 150
           version_label: ${{env.TAG}}
           version_description: ${{ format('{0}', env.COMMIT_MESSAGE) }}
 
