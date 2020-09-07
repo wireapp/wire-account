@@ -90,7 +90,7 @@ jobs:
           wait_for_deployment: false
           wait_for_environment_recovery: 150
           version_label: ${{github.sha}}
-          version_description: ${{ format('{0}', env.COMMIT_MESSAGE) }}
+          # version_description: ${{ format('{0}', env.COMMIT_MESSAGE) }}
 
       - name: Deploy production build to Elastic Beanstalk
         if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' && env.DISTRIBUTION == 'wire' }}
@@ -105,7 +105,7 @@ jobs:
           wait_for_deployment: false
           wait_for_environment_recovery: 150
           version_label: ${{env.TAG}}
-          version_description: ${{ format('{0}', env.COMMIT_MESSAGE) }}
+          # version_description: ${{ format('{0}', env.COMMIT_MESSAGE) }}
 
       - name: Push staging Docker image
         if: ${{ env.BRANCH_NAME == 'staging' }}
