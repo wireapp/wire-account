@@ -120,3 +120,16 @@ jobs:
           else
             yarn docker "$DISTRIBUTION" production
           fi
+
+      - name: Create GitHub release draft
+        id: create_release
+        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' && env.DISTRIBUTION == 'wire' }}
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG }}
+          release_name: ${{ env.TAG }}
+          body_path: ./CHANGELOG.md
+          draft: true
+          prerelease: false
