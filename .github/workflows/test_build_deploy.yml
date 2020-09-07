@@ -56,6 +56,14 @@ jobs:
       - name: Test
         run: yarn test
 
+      - name: Monitor coverage
+        uses: slavcodev/coverage-monitor-action@1.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          clover_file: 'coverage/clover.xml'
+          threshold_alert: 10
+          threshold_warning: 50
+
       - name: Create commit file
         run: |
           mkdir -p ./dist
