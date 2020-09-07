@@ -2,8 +2,8 @@
   "env": {
     "jasmine": true
   },
-  "plugins": ["jasmine"],
-  "extends": ["@wireapp/eslint-config", "plugin:jasmine/recommended"],
+  "plugins": ["jest"],
+  "extends": ["@wireapp/eslint-config", "plugin:jest/recommended"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
@@ -18,6 +18,8 @@
     "project": ["./tsconfig.json", "./server/tsconfig.json"]
   },
   "rules": {
-    "import/no-default-export": "off"
+    "import/no-default-export": "off",
+    "jest/no-jasmine-globals": "warn",
+    "jest/no-try-expect": "off"
   }
 }
