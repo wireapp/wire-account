@@ -126,5 +126,5 @@
     "webpack:test": "webpack --config webpack.config.test.js",
     "changelog": "node ./bin/changelog.js"
   },
-  "version": "2.1.2"
+  "version": "2.1.3"
 }
