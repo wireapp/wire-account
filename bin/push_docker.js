@@ -38,7 +38,7 @@ const commitSha = process.env.GITHUB_SHA || 'COMMIT_ID';
 const commitShaLength = 7;
 const commitShortSha = commitSha.substring(0, commitShaLength - 1);
 const configurationEntry = `wire-web-config-default${
-  suffix ? suffix : currentBranch === 'master' ? '-master' : '-staging'
+  suffix ? suffix : currentBranch === 'main' ? '-main' : '-staging'
 }`;
 const dependencies = {
   ...appConfigPkg.dependencies,
