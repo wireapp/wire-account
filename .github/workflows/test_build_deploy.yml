@@ -3,8 +3,6 @@ name: Test, Build & Deploy
 on:
   push:
     branches: [staging, master]
-    tags:
-      - v*
   pull_request:
     branches: [staging]
 
@@ -32,7 +30,7 @@ jobs:
       - name: Set BRANCH_NAME, TAG & COMMIT_MESSAGE environment variables
         run: |
           echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
-          echo "::set-env name=TAG::$(git tag --points-at HEAD)"
+          echo "::set-env name=TAG::$(git tag --points-at ${{github.sha}})"
           echo "::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})"
 
       - name: Print environment variables
