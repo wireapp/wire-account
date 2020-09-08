@@ -44,6 +44,6 @@ Depending on the branch name it will be automatically deployed to the following 
 
 ### Release flow
 
-1. Merge staging into master
+1. Merge `staging` branch into `main` branch
 1. Create a tag with `npm version <version bump type>`. Possible values for `version bump type` are `patch`, `minor` or `major`.
-1. The tag will be pushed to master and Travis will deploy the new version. Manual deployment can be triggered via `eb deploy`.
+1. The tag will be pushed to `main` and the CI will deploy the new version. Manual deployment can be triggered via `eb deploy`.
