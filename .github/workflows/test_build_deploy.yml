@@ -3,6 +3,8 @@ name: Test, Build & Deploy
 on:
   push:
     branches: [staging, master]
+  tags:
+    - v*
   pull_request:
     branches: [staging]
 
@@ -75,11 +77,11 @@ jobs:
         run: yarn bundle:staging
 
       - name: Build production
-        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' }}
+        if: env.TAG != ''
         run: yarn bundle:prod
 
       - name: Deploy staging build to Elastic Beanstalk
-        if: ${{ env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire' }}
+        if: env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire'
         uses: einaregilsson/beanstalk-deploy@v11
         with:
           aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
@@ -94,7 +96,7 @@ jobs:
           version_description: ${{github.sha}}
 
       - name: Deploy production build to Elastic Beanstalk
-        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' && env.DISTRIBUTION == 'wire' }}
+        if: env.TAG != '' && env.DISTRIBUTION == 'wire'
         uses: einaregilsson/beanstalk-deploy@v11
         with:
           aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
@@ -109,7 +111,7 @@ jobs:
           version_description: ${{github.sha}}
 
       - name: Push staging Docker image
-        if: ${{ env.BRANCH_NAME == 'staging' }}
+        if: env.BRANCH_NAME == 'staging'
         env:
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -121,7 +123,7 @@ jobs:
           fi
 
       - name: Push production Docker image
-        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' }}
+        if: env.TAG != ''
         env:
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -134,7 +136,7 @@ jobs:
 
       - name: Create GitHub release draft
         id: create_release
-        if: ${{ env.BRANCH_NAME == 'master' && env.TAG != '' && env.DISTRIBUTION == 'wire' }}
+        if: env.TAG != '' && env.DISTRIBUTION == 'wire'
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
