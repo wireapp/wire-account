@@ -17,7 +17,6 @@ jobs:
         DISTRIBUTION: ['DISTRIBUTION_0', 'DISTRIBUTION_1']
 
     env:
-      GH_TOKEN: ${{secrets.GH_TOKEN}}
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
 
     steps:
@@ -50,6 +49,8 @@ jobs:
         uses: c-hive/gha-yarn-cache@v1
 
       - name: Authenticate git clone
+        env:
+          GH_TOKEN: ${{secrets.OTTO_THE_BOT_GH_TOKEN}}
         run: echo -e "machine github.com\n  login ${GH_TOKEN}" > ~/.netrc
 
       - name: Install JS dependencies
@@ -62,7 +63,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: slavcodev/coverage-monitor-action@1.1.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }}
           clover_file: 'coverage/clover.xml'
           threshold_alert: 10
           threshold_warning: 50
@@ -84,8 +85,8 @@ jobs:
         if: env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire'
         uses: einaregilsson/beanstalk-deploy@v11
         with:
-          aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
+          aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
           application_name: Account
           environment_name: wire-account-staging
           region: eu-central-1
@@ -99,8 +100,8 @@ jobs:
         if: env.TAG != '' && env.DISTRIBUTION == 'wire'
         uses: einaregilsson/beanstalk-deploy@v11
         with:
-          aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
+          aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
           application_name: Account
           environment_name: wire-account-prod
           region: eu-central-1
@@ -113,8 +114,8 @@ jobs:
       - name: Push staging Docker image
         if: env.BRANCH_NAME == 'staging'
         env:
-          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.WEBTEAM_QUAY_PASSWORD}}
+          DOCKER_USERNAME: ${{secrets.WEBTEAM_QUAY_USERNAME}}
         run: |
           if [ "$DISTRIBUTION" == "wire" ]; then
             yarn docker '' staging
@@ -125,8 +126,8 @@ jobs:
       - name: Push production Docker image
         if: env.TAG != ''
         env:
-          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.WEBTEAM_QUAY_PASSWORD}}
+          DOCKER_USERNAME: ${{secrets.WEBTEAM_QUAY_USERNAME}}
         run: |
           if [ "$DISTRIBUTION" == "wire" ]; then
             yarn docker '' production
@@ -139,7 +140,7 @@ jobs:
         if: env.TAG != '' && env.DISTRIBUTION == 'wire'
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           tag_name: ${{ env.TAG }}
           release_name: ${{ env.TAG }}
