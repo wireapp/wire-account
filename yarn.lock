@@ -1896,17 +1896,17 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@11.26.1":
-  version "11.26.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.26.1.tgz#691247a58c8a8c296533aee0adb91423847bead9"
-  integrity sha512-k1jjuux9QEntAMRut4YVn6inzXkWV9/dctvsFWTLUrOOgHZ4f4bmugcP/B7DrHoyBKgs0a9CuIaSrUjwogN2xw==
+"@wireapp/api-client@11.26.2":
+  version "11.26.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.26.2.tgz#763b9acb5a11b34f16d7c464e411f4b254333aec"
+  integrity sha512-MgmOs6ujJus07tarExZwCzpSl1hNjKMUMpjXfFJ/vVWtc8VUMLn2p7RKdDKBqp3gUhyPVsQhofF6k8fFunrJ5g==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "3.8.0"
-    "@wireapp/priority-queue" "1.6.7"
-    axios "0.19.2"
+    "@wireapp/commons" "3.8.1"
+    "@wireapp/priority-queue" "1.6.8"
+    axios "0.20.0"
     logdown "3.3.1"
     reconnecting-websocket "4.4.0"
     spark-md5 "3.0.1"
@@ -1917,6 +1917,20 @@
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.0.tgz#05d48fe2802134fca20d28dc62b71132397780a7"
   integrity sha512-nHqpcW4OfbLMf2Y1wrX+xdDi417a7ixkMPjmVKvlXN52nAi41m9klG/m30xPWjqd2ySCPvM8t3Leuv0sLZZlCA==
+  dependencies:
+    "@types/fs-extra" "8.1.0"
+    "@types/node" "~12"
+    "@types/platform" "1.3.2"
+    ansi-regex "5.0.0"
+    fs-extra "9.0.1"
+    logdown "3.3.1"
+    platform "1.3.6"
+    url-search-params-polyfill "8.1.0"
+
+"@wireapp/commons@3.8.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.1.tgz#0d214896d2b6b8abe38bca548342324405a84592"
+  integrity sha512-6uxd07LOTsEk0M7cbc2CvaMbC8jpBhybn8yGJvCRnfZci2h2naHhowBnMekCz9JuvdFTU6t0LzzhlfAleuCh/Q==
   dependencies:
     "@types/fs-extra" "8.1.0"
     "@types/node" "~12"
@@ -1945,14 +1959,14 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.7":
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.7.tgz#f50f2aa60dc8e4d4745c956153ef6f9a6aaf881b"
-  integrity sha512-aXWfAKCK4YiUv5e2yIHgjwopy+8nENlW1iFYtUB7ttSPhRynhgHYDtYgEY0I8NoNFxvkD22a/eSBaMvLS9Zwcg==
+"@wireapp/priority-queue@1.6.8":
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.8.tgz#4665ca7e388d6f31f0a4698ce540ded1fc0cb6cc"
+  integrity sha512-wuT2UkrX65b51+6TTnBNlkk7XmYYjPYazcTQ3nmPDUrMfXs9vNdNkobjHvBWQglQxUtuXQt933h/0LCae7S+cg==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.1"
-    uuidjs "4.2.5"
+    uuidjs "4.2.6"
 
 "@wireapp/react-ui-kit@7.37.2":
   version "7.37.2"
@@ -2492,13 +2506,6 @@ aws4@^1.8.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.1.tgz#e1e82e4f3e999e2cfd61b161280d16a111f86428"
   integrity sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
-
-axios@0.19.2:
-  version "0.19.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
-  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
-  dependencies:
-    follow-redirects "1.5.10"
 
 axios@0.20.0:
   version "0.20.0"
@@ -3671,7 +3678,7 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0, debug@=3.1.0:
+debug@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
@@ -4982,13 +4989,6 @@ flush-write-stream@^1.0.0, flush-write-stream@^1.0.2:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-follow-redirects@1.5.10:
-  version "1.5.10"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
-  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
-  dependencies:
-    debug "=3.1.0"
 
 follow-redirects@^1.10.0:
   version "1.13.0"
@@ -10546,10 +10546,10 @@ uuid@^8.3.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.0.tgz#ab738085ca22dc9a8c92725e459b1d507df5d6ea"
   integrity sha512-fX6Z5o4m6XsXBdli9g7DtWgAx+osMsRRZFKma1mIUsLCz6vRvv+pz5VNbyu9UEDzpMWulZfvpgb/cmDXVulYFQ==
 
-uuidjs@4.2.5:
-  version "4.2.5"
-  resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.2.5.tgz#a80439ece05dfe6ed875a5d62de0820046055713"
-  integrity sha512-0utbJ3L/C/AUv8cRAfFnUC7XhvRvaQaGNPbrroBeXF26BWfYT6aD8/n5UQ4ic3bpkJfVd2W15yQS+YCwvQxtXA==
+uuidjs@4.2.6:
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.2.6.tgz#6dccb3e45ccb351daf0be3f107c37911e369c810"
+  integrity sha512-MN+qOwkX8k2V4p+qDDUzHc1gvBu1tCCB2p3cjOdMoeGfTUywATUBcQkqqaFR7Snd72FAY7HfBzkoAv7HxoCxuA==
 
 v8-compile-cache@^2.0.3, v8-compile-cache@^2.1.1:
   version "2.1.1"
