@@ -23,7 +23,7 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.5.0
         with:
-          access_token: ${{ github.token }}
+          access_token: ${{github.token}}
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
 
       - name: Print environment variables
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_CONTEXT: ${{toJson(github)}}
         run: |
           echo -e "BRANCH_NAME = ${BRANCH_NAME}"
           echo -e "TAG = ${TAG}"
@@ -57,13 +57,14 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Test
+        if: env.DISTRIBUTION == 'wire'
         run: yarn test
 
       - name: Monitor coverage
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && env.DISTRIBUTION == 'wire'
         uses: slavcodev/coverage-monitor-action@1.1.0
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{github.token}}
           clover_file: 'coverage/clover.xml'
           threshold_alert: 10
           threshold_warning: 50
@@ -74,7 +75,7 @@ jobs:
           echo -e "$GITHUB_SHA" > "./dist/commit"
 
       - name: Build staging
-        if: ${{ env.BRANCH_NAME == 'staging' }}
+        if: ${{env.BRANCH_NAME == 'staging'}}
         run: yarn bundle:staging
 
       - name: Build production
@@ -93,7 +94,7 @@ jobs:
           deployment_package: wire-account.zip
           wait_for_deployment: false
           wait_for_environment_recovery: 150
-          version_label: ${{ github.run_id }}
+          version_label: ${{github.run_id}}
           version_description: ${{github.sha}}
 
       - name: Deploy production build to Elastic Beanstalk
@@ -108,7 +109,7 @@ jobs:
           deployment_package: wire-account.zip
           wait_for_deployment: false
           wait_for_environment_recovery: 150
-          version_label: ${{ env.TAG }}-${{ github.run_id }}
+          version_label: ${{env.TAG}}-${{github.run_id}}
           version_description: ${{github.sha}}
 
       - name: Push staging Docker image
@@ -140,10 +141,10 @@ jobs:
         if: env.TAG != '' && env.DISTRIBUTION == 'wire'
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{github.token}}
         with:
-          tag_name: ${{ env.TAG }}
-          release_name: ${{ env.TAG }}
+          tag_name: ${{env.TAG}}
+          release_name: ${{env.TAG}}
           body_path: ./CHANGELOG.md
           draft: true
           prerelease: false
