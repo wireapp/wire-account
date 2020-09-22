@@ -1896,36 +1896,22 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@11.26.2":
-  version "11.26.2"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.26.2.tgz#763b9acb5a11b34f16d7c464e411f4b254333aec"
-  integrity sha512-MgmOs6ujJus07tarExZwCzpSl1hNjKMUMpjXfFJ/vVWtc8VUMLn2p7RKdDKBqp3gUhyPVsQhofF6k8fFunrJ5g==
+"@wireapp/api-client@11.26.4":
+  version "11.26.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.26.4.tgz#d9f960433b2c90554ae5e5faf691557c075db5fb"
+  integrity sha512-AgRButaaRAACl3AkMc1q2gWlndqSyODIQFlfRsrkREg82vBGdGOBAPAOkD83YgkMF5xZtRjBMqwA/gqeiA9pyA==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "3.8.1"
-    "@wireapp/priority-queue" "1.6.8"
+    "@wireapp/commons" "3.8.2"
+    "@wireapp/priority-queue" "1.6.9"
     axios "0.20.0"
     logdown "3.3.1"
     reconnecting-websocket "4.4.0"
     spark-md5 "3.0.1"
     tough-cookie "4.0.0"
     ws "7.3.1"
-
-"@wireapp/commons@3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.1.tgz#0d214896d2b6b8abe38bca548342324405a84592"
-  integrity sha512-6uxd07LOTsEk0M7cbc2CvaMbC8jpBhybn8yGJvCRnfZci2h2naHhowBnMekCz9JuvdFTU6t0LzzhlfAleuCh/Q==
-  dependencies:
-    "@types/fs-extra" "8.1.0"
-    "@types/node" "~12"
-    "@types/platform" "1.3.2"
-    ansi-regex "5.0.0"
-    fs-extra "9.0.1"
-    logdown "3.3.1"
-    platform "1.3.6"
-    url-search-params-polyfill "8.1.0"
 
 "@wireapp/commons@3.8.2":
   version "3.8.2"
@@ -1959,10 +1945,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.8":
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.8.tgz#4665ca7e388d6f31f0a4698ce540ded1fc0cb6cc"
-  integrity sha512-wuT2UkrX65b51+6TTnBNlkk7XmYYjPYazcTQ3nmPDUrMfXs9vNdNkobjHvBWQglQxUtuXQt933h/0LCae7S+cg==
+"@wireapp/priority-queue@1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.9.tgz#f4fe063b186ef32756b8b24dfc9a5df71af6ee29"
+  integrity sha512-QZlbQijhvxekClZ3u8GbvtOPjFZhM1TdFb7LZIkEngCxRaQSZPxT9qzgSdhYgl/B7gjR5znGSdYWBq4M0Q7xJg==
   dependencies:
     "@types/node" "~12"
     logdown "3.3.1"
