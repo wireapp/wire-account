@@ -2,11 +2,11 @@ name: Test, Build & Deploy
 
 on:
   push:
-    branches: [staging]
+    branches: [staging, main]
     tags:
       - v*
   pull_request:
-    branches: [staging]
+    branches: [staging, main]
 
 jobs:
   test_build_deploy:
@@ -18,32 +18,39 @@ jobs:
 
     env:
       DISTRIBUTION: ${{secrets[matrix.DISTRIBUTION]}}
+      TEST_COVERAGE_FAIL_THRESHOLD: 10
+      TEST_COVERAGE_WARNING_THRESHOLD: 50
+      DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS: 150
+      AWS_APPLICATION_NAME: Account
+      AWS_BUILD_ZIP_PATH: 'wire-account.zip'
 
     steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.5.0
-        with:
-          access_token: ${{github.token}}
-
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set BRANCH_NAME, TAG & COMMIT_MESSAGE environment variables
+      - name: Set & print environment variables
+        env:
+          GITHUB_CONTEXT: ${{toJson(github)}}
         run: |
           echo "::set-env name=BRANCH_NAME::$(git branch --show-current)"
           echo "::set-env name=TAG::$(git tag --points-at ${{github.sha}})"
           echo "::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})"
-
-      - name: Print environment variables
-        env:
-          GITHUB_CONTEXT: ${{toJson(github)}}
-        run: |
+          echo "::set-env name=TITLE::$(echo '${{github.event.pull_request.title || github.event.head_commit.message}}' | head -n 1)"
+          echo "::set-env name=PR_LAST_COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{github.event.after}})"
           echo -e "BRANCH_NAME = ${BRANCH_NAME}"
           echo -e "TAG = ${TAG}"
-          echo -e "COMMIT_MESSAGE = ${COMMIT_MESSAGE}"
-          echo -e "GITHUB_SHA = ${GITHUB_SHA}"
-          echo -e "GITHUB_REF = ${GITHUB_REF}"
+          echo -e "TITLE = ${TITLE}"
+          echo -e "PR_LAST_COMMIT_MESSAGE = ${PR_LAST_COMMIT_MESSAGE}"
           echo -e "GITHUB_CONTEXT = ${GITHUB_CONTEXT}"
+
+      - name: Skip CI
+        if: contains(env.TITLE || env.PR_LAST_COMMIT_MESSAGE, '[skip ci]') || contains(env.TITLE || env.PR_LAST_COMMIT_MESSAGE, '[ci skip]')
+        uses: andymckay/cancel-action@0.2
+
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.5.0
+        with:
+          access_token: ${{github.token}}
 
       - name: Yarn cache
         uses: c-hive/gha-yarn-cache@v1
@@ -66,8 +73,8 @@ jobs:
         with:
           github_token: ${{github.token}}
           clover_file: 'coverage/clover.xml'
-          threshold_alert: 10
-          threshold_warning: 50
+          threshold_alert: ${{env.TEST_COVERAGE_FAIL_THRESHOLD}}
+          threshold_warning: ${{env.TEST_COVERAGE_WARNING_THRESHOLD}}
 
       - name: Create commit file
         run: |
@@ -88,12 +95,12 @@ jobs:
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
-          application_name: Account
+          application_name: ${{env.AWS_APPLICATION_NAME}}
           environment_name: wire-account-staging
           region: eu-central-1
-          deployment_package: wire-account.zip
+          deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
           wait_for_deployment: false
-          wait_for_environment_recovery: 150
+          wait_for_environment_recovery: ${{env.DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS}}
           version_label: ${{github.run_id}}
           version_description: ${{github.sha}}
 
@@ -103,12 +110,12 @@ jobs:
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
-          application_name: Account
+          application_name: ${{env.AWS_APPLICATION_NAME}}
           environment_name: wire-account-prod
           region: eu-central-1
-          deployment_package: wire-account.zip
+          deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
           wait_for_deployment: false
-          wait_for_environment_recovery: 150
+          wait_for_environment_recovery: ${{env.DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS}}
           version_label: ${{env.TAG}}-${{github.run_id}}
           version_description: ${{github.sha}}
 
