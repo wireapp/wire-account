@@ -1587,6 +1587,11 @@
   resolved "https://registry.yarnpkg.com/@types/platform/-/platform-1.3.2.tgz#c0404c4e2a08e04295ab3d1241a856c2a3cab06e"
   integrity sha512-Tn6OuJDAG7bJbyi4R7HqcxXp1w2lmIxVXqyNhPt1Bm0FO2EWIi3CI87JVzF7ncqK0ZMPuUycS3wTMIk85EeF1Q==
 
+"@types/platform@1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@types/platform/-/platform-1.3.3.tgz#a3d23941770d320e2c4312516a442ab35210d019"
+  integrity sha512-1fuOulBHWIxAPLBtLms+UtbeRDt6rL7gP5R+Yugfzdg+poCLxXqXTE8i+FpYeiytGRLUEtnFkjsY/j+usbQBqw==
+
 "@types/prettier@^2.0.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.1.0.tgz#5f96562c1075ee715a5b138f0b7f591c1f40f6b8"
@@ -1896,15 +1901,15 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wireapp/api-client@11.26.5":
-  version "11.26.5"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.26.5.tgz#eae01b9de101911bbc22926e0629a3302a4aa35d"
-  integrity sha512-F/vWD6JzpmxmOt6FrTwqcA8bNqCkpKY2muT+PBcpjjT5/FdCJD/TmI8yHMj28atktxFrVjhed9dcGjYhqzdwug==
+"@wireapp/api-client@11.26.6":
+  version "11.26.6"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.26.6.tgz#36718cc3ae21dfa09d2f4b96163291b0f6fbee19"
+  integrity sha512-8PNcT+Z3eboB8Y7Ulzei5hf5bpfD0E732B0GGeZ7oeed1N/75E9I5QYF4LM+PwRKcGVMDoBknOXA84hQl0wn9w==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "3.8.2"
+    "@wireapp/commons" "3.8.3"
     "@wireapp/priority-queue" "1.6.9"
     axios "0.20.0"
     logdown "3.3.1"
@@ -1921,6 +1926,20 @@
     "@types/fs-extra" "8.1.0"
     "@types/node" "~12"
     "@types/platform" "1.3.2"
+    ansi-regex "5.0.0"
+    fs-extra "9.0.1"
+    logdown "3.3.1"
+    platform "1.3.6"
+    url-search-params-polyfill "8.1.0"
+
+"@wireapp/commons@3.8.3":
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.3.tgz#cac0f98a13dbccd16fb576f9cf64b797b326aba7"
+  integrity sha512-w/pjYDo1vj7/Z5pMajM/6n7I4SHJN6zMDRxMCZp0jcMZlqTNqqOkjnmkAHbKAkKgI4AZeZDLPj/9w2MqmbShxg==
+  dependencies:
+    "@types/fs-extra" "8.1.0"
+    "@types/node" "~12"
+    "@types/platform" "1.3.3"
     ansi-regex "5.0.0"
     fs-extra "9.0.1"
     logdown "3.3.1"
