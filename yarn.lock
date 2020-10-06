@@ -1927,6 +1927,20 @@
     platform "1.3.6"
     url-search-params-polyfill "8.1.0"
 
+"@wireapp/commons@3.8.4":
+  version "3.8.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.4.tgz#ed8c5259f86e10d57edc7363863be0e51dbee572"
+  integrity sha512-c8NeGSE+Pq4yPoYHJHYcdQNY0SUdw8JQnb86y2MIKTSms9rP4qddhhTLbryFz6Ol0ksC1m1pKggZ44zEyTq4XQ==
+  dependencies:
+    "@types/fs-extra" "8.1.0"
+    "@types/node" "~12"
+    "@types/platform" "1.3.3"
+    ansi-regex "5.0.0"
+    fs-extra "9.0.1"
+    logdown "3.3.1"
+    platform "1.3.6"
+    url-search-params-polyfill "8.1.0"
+
 "@wireapp/copy-config@1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-1.1.2.tgz#5b66cb25fbc22744dff72a72d1af56a96de4a2ac"
