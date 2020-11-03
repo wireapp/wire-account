@@ -18,7 +18,7 @@
  */
 
 const dotenv = require('dotenv-extended');
-import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/dist/commonjs/util/ValidationUtil';
+import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/src/main/util/ValidationUtil';
 import * as fs from 'fs-extra';
 import {IHelmetContentSecurityPolicyDirectives as HelmetCSP} from 'helmet';
 import * as logdown from 'logdown';

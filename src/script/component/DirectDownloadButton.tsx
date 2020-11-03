@@ -18,7 +18,7 @@
  */
 
 import {Runtime} from '@wireapp/commons';
-import {OperatingSystem} from '@wireapp/commons/dist/commonjs/util/Runtime';
+import {OperatingSystem} from '@wireapp/commons/src/main/util/Runtime';
 import {ButtonLink, COLOR, LinkProps} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
