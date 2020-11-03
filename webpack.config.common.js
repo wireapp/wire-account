@@ -43,7 +43,10 @@ module.exports = {
         ],
       },
       {
-        loader: 'svg-inline-loader?removeSVGTagAttrs=false',
+        loader: 'svg-inline-loader',
+        options: {
+          removeSVGTagAttrs: true,
+        },
         test: /\.svg$/,
       },
     ],
@@ -63,6 +66,11 @@ module.exports = {
       resource: path.resolve(__dirname, 'resource'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    fallback: {
+      crypto: false,
+      os: require.resolve('os-browserify'),
+      path: require.resolve('path-browserify'),
+    },
     modules: [path.resolve(src), 'node_modules'],
   },
 };

@@ -27,11 +27,7 @@ module.exports = {
   mode: 'production',
   optimization: {
     ...commonConfig.optimization,
-    minimizer: [
-      new TerserJSPlugin({
-        sourceMap: true,
-      }),
-    ],
+    minimizer: [new TerserJSPlugin({})],
   },
   plugins: [
     ...commonConfig.plugins,
