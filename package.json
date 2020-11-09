@@ -3,7 +3,7 @@
     "@wireapp/api-client": "11.30.7",
     "@wireapp/commons": "3.8.11",
     "@wireapp/react-ui-kit": "7.37.14",
-    "core-js": "3.6.5",
+    "core-js": "3.7.0",
     "dotenv": "8.2.0",
     "dotenv-extended": "2.9.0",
     "i18next": "19.8.3",
