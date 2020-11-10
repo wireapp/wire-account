@@ -67,7 +67,6 @@ module.exports = {
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     fallback: {
-      crypto: false,
       os: require.resolve('os-browserify'),
       path: require.resolve('path-browserify'),
     },
