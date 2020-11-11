@@ -10019,10 +10019,10 @@ webpack-core@~0.6.9:
     source-list-map "~0.1.7"
     source-map "~0.4.1"
 
-webpack-dev-middleware@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-4.0.1.tgz#e0201fe48a976cac24b548a398b1022e2ab73ff7"
-  integrity sha512-wg6IPwK8D/dwIiy1ZJpQAiDo+ZRgBsE+sne1fLLhyoQH4EY9jU7QQ67lwj4xhf/sJc0QBgatXXinVJ/dVwaZGg==
+webpack-dev-middleware@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-4.0.2.tgz#1436ae6cacee78475bd6bc1fbf063dfbfd6e577d"
+  integrity sha512-xyAICqIugWtT1RRH5aMMmZlPhDhEqPTDL0TWhmMZsuZ+cFlAvRxv4thCbuxdk9MW+OYK4c9BkfmgdQ1/7imkJA==
   dependencies:
     mem "^8.0.0"
     memfs "^3.2.0"
