@@ -35,8 +35,9 @@ jobs:
           echo "COMMIT_MESSAGE=$(git log --format=%B -n 1 ${{github.event.after}} | head -n 1)" >> $GITHUB_ENV
 
       - name: Set TITLE
-        run: |
-          echo "TITLE=${{github.event.pull_request.title || env.COMMIT_MESSAGE}}" >> $GITHUB_ENV
+        env:
+          PR_TITLE: ${{github.event.pull_request.title || env.COMMIT_MESSAGE}}
+        run: echo "TITLE=$PR_TITLE" >> $GITHUB_ENV
 
       - name: Print environment variables
         env:
