@@ -1948,17 +1948,17 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.1.0.tgz#13ad38f89b6e53d1133bac0006a128217a6ebf92"
   integrity sha512-7RfnMXCpJ/NThrhq4gYQYILB18xWyoQcBey81oIyVbmgbc6m5ZHHyFK+DyH7pLHJf0p14MxL4mTsoPAgBSTpIg==
 
-"@wireapp/api-client@11.34.1":
-  version "11.34.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.34.1.tgz#ef2d8656ed8ccf5aee755bd2edf5233745c22161"
-  integrity sha512-pBZzXR1HfJ228egEjDvlBMUc/qgVvkhoAzi6eoy9oXZLXktwLUoHauGNYmtgnmWtTwLacKhldfkgzBj+NAMuEA==
+"@wireapp/api-client@11.34.3":
+  version "11.34.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-11.34.3.tgz#fef05de0515886d341d17b50cdafc4c2787e951a"
+  integrity sha512-dhq6dD6fcT/eG+rT21Cl0ojg87aZQzgLazA6h9xbCAIxOedEl05LBrmsYPbXqxM5PJjidq8UsSVvK/KSdYYbUg==
   dependencies:
     "@types/node" "~12"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
     "@wireapp/commons" "3.8.12"
     "@wireapp/priority-queue" "1.6.13"
-    axios "0.20.0"
+    axios "0.21.0"
     http-status-codes "2.1.4"
     logdown "3.3.1"
     reconnecting-websocket "4.4.0"
@@ -2498,6 +2498,13 @@ axios@0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
   integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
+axios@0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.0.tgz#26df088803a2350dff2c27f96fef99fe49442aca"
+  integrity sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
   dependencies:
     follow-redirects "^1.10.0"
 
