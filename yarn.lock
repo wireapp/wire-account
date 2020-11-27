@@ -2007,10 +2007,10 @@
     logdown "3.3.1"
     uuidjs "4.2.6"
 
-"@wireapp/react-ui-kit@7.42.3":
-  version "7.42.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.42.3.tgz#42a4e79f02156288a1550f8fec1204ee805a9969"
-  integrity sha512-udXLcEzLrYUgFG5L22d1bf0VUR/nqh7w/SF4M/yeNwNJqNHSUpH2zI/HhOnUW7s75Ke6crS7EzFnGK+pVda2AA==
+"@wireapp/react-ui-kit@7.43.0":
+  version "7.43.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.43.0.tgz#05747b365c9d551a6ca709d3670d03403b551dcc"
+  integrity sha512-lrvziZXJaCcJGUWJFsTWCzD4ot7AsarrtitCFscDomfT2ZX9lGQWeZx0W4j4SJhd/1bGZf1zbBr+Yd30a0O10w==
   dependencies:
     "@emotion/core" "10.0.35"
     "@types/color" "3.0.1"
