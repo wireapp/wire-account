@@ -19,10 +19,10 @@
     "errorAlreadyProcessing": "Nous vous avons déjà envoyé un e-mail. Le lien est valable pendant 10 minutes.",
     "errorInvalidEmail": "Cela ne ressemble pas à une adresse e-mail.",
     "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
-    "errorUnusedEmail": "Cette adresse e-mail n'est pas utilisée.",
+    "errorUnusedEmail": "Cette e-mail n’est pas en cours d’utilisation.",
     "successDescription": "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe. Il est valable pendant 1 heure.",
-    "successTitle": "Consulter votre messagerie",
-    "title": "Changer de mot de passe"
+    "successTitle": "Consultez vos e-mails",
+    "title": "Modifier le mot de passe"
   },
   "general": {
     "loading": "Veuillez patienter…"
@@ -49,7 +49,7 @@
     "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
     "passwordInfo": "Utilisez au moins {{minPasswordLength}} caractères, avec une lettre minuscule, une lettre majuscule, un numéro et un caractère spécial.",
     "passwordPlaceholder": "Entrer le nouveau mot de passe",
-    "successDescription": "Vous pouvez désormais vous connecter avec votre nouveau mot de passe.",
+    "successDescription": "Vous pouvez à présent vous connecter avec votre nouveau mot de passe.",
     "title": "Mot de passe réinitialisé"
   },
   "toPrimitive": "",
