@@ -79,7 +79,6 @@
     "webpack-bundle-analyzer": "4.2.0",
     "webpack-cli": "4.2.0",
     "webpack-dev-middleware": "4.0.2",
-    "webpack-env": "0.8.0",
     "webpack-hot-middleware": "2.25.0"
   },
   "husky": {
