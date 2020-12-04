@@ -1025,10 +1025,10 @@
     platform "1.3.6"
     url-search-params-polyfill "8.1.0"
 
-"@wireapp/tslint-config@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/tslint-config/-/tslint-config-1.1.0.tgz#904890cba5d9f05d997030f2dc2f1273c13f7668"
-  integrity sha512-hwqo0amX0GtXW5wL5Lu9LFcy1CiQgCQygZEKkTKUEBYlJyBZ/LTJTxZHdEoMd+lhbcX9pzbDLvQd/ugZb0oxJw==
+"@wireapp/tslint-config@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/tslint-config/-/tslint-config-1.4.1.tgz#2089af720f65279d696293cbc3ca13063529139a"
+  integrity sha512-hPoEUTlnjJ38r/NDHMhfCgWQAue4Q3Zf8iWQeLKn/aOxUVQTEY1/oALplooKwoX/ei5KulBQveEu/foBQ2TYsw==
 
 abbrev@1:
   version "1.1.1"
