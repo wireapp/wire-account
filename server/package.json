@@ -31,7 +31,7 @@
     "cross-env": "7.0.3",
     "generate-changelog": "1.7.1",
     "jasmine": "3.6.3",
-    "jszip": "3.2.0",
+    "jszip": "3.5.0",
     "nodemon": "1.19.0",
     "opn": "6.0.0",
     "prettier": "2.2.1",
