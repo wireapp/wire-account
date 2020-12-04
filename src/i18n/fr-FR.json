@@ -2,7 +2,7 @@
   "delete": {
     "button": "Supprimer le compte",
     "confirmation": "Toutes vos données sur {{company}} sont maintenant effacées.",
-    "description": "Nous avons reçu une demande de suppression de votre compte {{company}}. Cliquez sur le bouton ci-dessous pour procéder. Il est valable pendant 10 minutes.",
+    "description": "Nous avons reçu une demande de suppression de votre compte {{company}}. Cliquez sur le bouton ci-dessous pour procéder à la suppression. Il est valable pendant 10 minutes.",
     "errorDescription": "Merci de réessayer de supprimer votre compte.",
     "errorTitle": "Une erreur est survenue",
     "greeting": "Bonjour,",
@@ -10,7 +10,7 @@
     "resetLink": "réinitialiser votre mot de passe {{company}}.",
     "resetText": "Si vous n’a pas effectué cette demande, vous devriez <link>",
     "surveyLink": "partagez vos pensées à ce sujet.",
-    "surveyText": "Nous vous remercions d’utiliser {{company}}. Si vous le souhaitez, vous pouvez <link> Cela ne prendra pas plus d’une minute.",
+    "surveyText": "Nous vous remercions d’utiliser {{company}}. <br>Si vous le souhaitez, vous pouvez <link> <br>Cela ne prendra pas plus d’une minute.",
     "title": "Supprimer le compte"
   },
   "forgot": {
@@ -19,7 +19,7 @@
     "errorAlreadyProcessing": "Nous vous avons déjà envoyé un e-mail. Le lien est valable pendant 10 minutes.",
     "errorInvalidEmail": "Cela ne ressemble pas à une adresse e-mail.",
     "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
-    "errorUnusedEmail": "Cette e-mail n’est pas en cours d’utilisation.",
+    "errorUnusedEmail": "Cette adresse e-mail n’est pas en cours d’utilisation.",
     "successDescription": "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe. Il est valable pendant 1 heure.",
     "successTitle": "Consultez vos e-mails",
     "title": "Modifier le mot de passe"
@@ -31,7 +31,7 @@
     "support": "Assistance"
   },
   "index": {
-    "description": "Conversations pour votre entreprise, visioconférences en un clic et partage de documents – protégés avec un chiffrement de bout-en-bout. Également disponible pour votre utilisation personnelle.",
+    "description": "Conversations professionnelles, visioconférences en un clic et documents partagés – protégés avec le chiffrement de bout-en-bout. Également disponible pour votre utilisation personnelle.",
     "title": "La plateforme de collaboration la plus sûre"
   },
   "open": {
@@ -39,11 +39,11 @@
     "downloadButton": "Télécharger {{company}}",
     "openMac": "Ouvrir l'application macOS",
     "openWeb": "Ouvrir dans le navigateur",
-    "openWire": "Télécharger {{company}}"
+    "openWire": "Ouvrir {{company}}"
   },
   "reset": {
     "button": "Réinitialiser le mot de passe",
-    "errorInvalidLink": "Le lien est invalide. Veuillez réessayer.",
+    "errorInvalidLink": "Le lien n'est pas valide. Veuillez réessayer.",
     "errorPasswordAlreadyUsed": "Veuillez choisir un nouveau mot de passe.",
     "errorTitle": "Une erreur est survenue",
     "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
@@ -57,10 +57,10 @@
     "error404Description": "Merci de réessayer de créer votre compte.",
     "error500Description": "Nous vérifions le problème, merci de réessayer plus tard.",
     "errorTitle": "Une erreur est survenue.",
-    "successBotDescription": "Veuillez noter qu'après la vérification de votre e-mail, votre compte de fournisseur de service {{company}} est toujours soumis à l'approbation de notre équipe, ce qui prend généralement moins de 24 heures.",
+    "successBotDescription": "Veuillez noter qu'après la vérification de votre e-mail, votre compte de fournisseur de service {{company}} est encore soumis à l'approbation de notre équipe, ce qui prend généralement moins de 24 heures.",
     "successBotDescriptionEmail": "Vous serez informé(e) de l’approbation par un autre e-mail.",
     "successBotTitle": "Merci de vous être inscrit",
-    "successEmailAppDescription": "Installer l'appli pour commencer à utiliser {{company}}.",
+    "successEmailAppDescription": "Installer l'application pour commencer à utiliser {{company}}.",
     "successEmailTitle": "E-mail vérifié",
     "successPhoneDescription": "Vérification du numéro de téléphone en cours",
     "title": "Vérification",
