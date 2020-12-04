@@ -28,7 +28,7 @@
     "@types/request": "2.48.5",
     "@types/uuid": "3.4.4",
     "@wireapp/tslint-config": "1.4.1",
-    "cross-env": "5.2.0",
+    "cross-env": "7.0.3",
     "generate-changelog": "1.7.1",
     "jasmine": "3.3.1",
     "jszip": "3.2.0",
