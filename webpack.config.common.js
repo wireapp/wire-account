@@ -45,7 +45,7 @@ module.exports = {
       {
         loader: 'svg-inline-loader',
         options: {
-          removeSVGTagAttrs: true,
+          removeSVGTagAttrs: false,
         },
         test: /\.svg$/,
       },
