@@ -20,11 +20,13 @@
 const dotenv = require('dotenv-extended');
 import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/src/main/util/ValidationUtil';
 import * as fs from 'fs-extra';
-import {IHelmetContentSecurityPolicyDirectives as HelmetCSP} from 'helmet';
+import {ContentSecurityPolicyOptions} from 'helmet/dist/middlewares/content-security-policy';
 import * as logdown from 'logdown';
 import * as path from 'path';
 
 import {ServerConfig} from './ServerConfig';
+
+type ContentSecurityPolicyDirectives = ContentSecurityPolicyOptions['directives'];
 
 dotenv.load();
 
@@ -50,7 +52,7 @@ function readFile(path: string, fallback?: string): string {
 
 const nodeEnvironment = process.env.NODE_ENV || 'production';
 
-const defaultCSP: HelmetCSP = {
+const defaultCSP: ContentSecurityPolicyDirectives = {
   connectSrc: ["'self'", 'https://*.wire.com', 'https://*.zinfra.io', 'https://wire.innocraft.cloud'],
   defaultSrc: ["'self'"],
   fontSrc: ["'self'"],
@@ -67,7 +69,7 @@ const defaultCSP: HelmetCSP = {
 
 if (nodeEnvironment !== 'production') {
   // unsafe-eval is needed for HMR
-  defaultCSP.scriptSrc.push("'unsafe-eval'");
+  (defaultCSP.scriptSrc as string[]).push("'unsafe-eval'");
 }
 
 function parseCommaSeparatedList(list: string = ''): string[] {
@@ -78,8 +80,8 @@ function parseCommaSeparatedList(list: string = ''): string[] {
   return cleanedList.split(',');
 }
 
-function mergedCSP(): HelmetCSP {
-  const csp: HelmetCSP = {
+function mergedCSP(): ContentSecurityPolicyDirectives {
+  const csp: ContentSecurityPolicyDirectives = {
     connectSrc: [
       ...defaultCSP.connectSrc,
       process.env.BACKEND_REST,
@@ -98,7 +100,7 @@ function mergedCSP(): HelmetCSP {
     workerSrc: [...defaultCSP.workerSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_WORKER_SRC)],
   };
   return Object.entries(csp)
-    .filter(([key, value]) => !!value.length)
+    .filter(([key, value]) => !!Array.from(value).length)
     .reduce((accumulator, [key, value]) => ({...accumulator, [key]: value}), {});
 }
 

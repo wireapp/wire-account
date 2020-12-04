@@ -20,6 +20,7 @@
 const hbs = require('express-hbs');
 import * as express from 'express';
 import * as helmet from 'helmet';
+import * as nocache from 'nocache';
 import * as http from 'http';
 import * as path from 'path';
 
@@ -83,7 +84,7 @@ class Server {
 
   initCaching(): void {
     if (this.config.SERVER.ENVIRONMENT === 'test' || this.config.SERVER.ENVIRONMENT === 'development') {
-      this.app.use(helmet.noCache());
+      this.app.use(nocache());
     } else {
       this.app.use((req, res, next) => {
         res.header('Cache-Control', `public, max-age=${this.config.SERVER.CACHE_DURATION_SECONDS}`);
@@ -135,15 +136,10 @@ class Server {
       }),
     );
     this.app.use(helmet.noSniff());
-    this.app.use(helmet.xssFilter());
     this.app.use(
       helmet.contentSecurityPolicy({
-        browserSniff: true,
         directives: this.config.SERVER.CSP,
-        disableAndroid: false,
-        loose: this.config.SERVER.ENVIRONMENT !== 'development',
         reportOnly: false,
-        setAllHeaders: false,
       }),
     );
     this.app.use(
