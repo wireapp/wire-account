@@ -29,7 +29,7 @@
     "@types/uuid": "8.3.0",
     "@wireapp/tslint-config": "1.4.1",
     "cross-env": "7.0.3",
-    "generate-changelog": "1.7.1",
+    "generate-changelog": "1.8.0",
     "jasmine": "3.6.3",
     "jszip": "3.5.0",
     "nodemon": "1.19.0",
