@@ -7,10 +7,11 @@
     "express-hbs": "2.3.4",
     "fs-extra": "9.0.1",
     "handlebars": "4.7.6",
-    "helmet": "3.18.0",
+    "helmet": "4.2.0",
     "helmet-csp": "3.2.0",
     "logdown": "3.3.1",
     "moment": "2.29.1",
+    "nocache": "2.1.0",
     "pm2": "4.5.0",
     "uuid": "8.3.1"
   },

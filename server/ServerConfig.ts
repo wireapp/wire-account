@@ -17,7 +17,7 @@
  *
  */
 
-import {IHelmetContentSecurityPolicyDirectives} from 'helmet';
+import {ContentSecurityPolicyOptions} from 'helmet/dist/middlewares/content-security-policy';
 
 export interface ServerConfig {
   CLIENT: {
@@ -54,7 +54,7 @@ export interface ServerConfig {
   SERVER: {
     APP_BASE: string;
     CACHE_DURATION_SECONDS: number;
-    CSP: IHelmetContentSecurityPolicyDirectives;
+    CSP: ContentSecurityPolicyOptions['directives'];
     ENFORCE_HTTPS: boolean;
     ENVIRONMENT: string;
     PORT_HTTP: number;
