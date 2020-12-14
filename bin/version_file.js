@@ -20,17 +20,10 @@
  */
 
 const fs = require('fs-extra');
+const path = require('path');
+const pkg = require('../package.json');
 
 const distFolder = 'server/dist';
 const distFile = 'version';
 
-const timestamp = () => {
-  const now = new Date();
-  const twodigits = 10;
-
-  return [now.getFullYear(), now.getMonth() + 1, now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds()]
-    .map(num => (num < twodigits ? `0${num}` : num))
-    .join('-');
-};
-
-fs.outputFileSync(`${distFolder}/${distFile}`, timestamp());
+fs.outputFileSync(path.resolve(distFolder, distFile), pkg.version);
