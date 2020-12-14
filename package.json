@@ -10,7 +10,7 @@
     "i18next": "19.8.4",
     "i18next-browser-languagedetector": "6.0.1",
     "i18next-react-postprocessor": "3.0.4",
-    "intersection-observer": "0.11.0",
+    "intersection-observer": "0.12.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-i18next": "11.8.4",
