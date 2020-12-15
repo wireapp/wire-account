@@ -86,7 +86,7 @@ class Server {
     if (this.config.SERVER.ENVIRONMENT === 'test' || this.config.SERVER.ENVIRONMENT === 'development') {
       this.app.use(nocache());
     } else {
-      this.app.use((req, res, next) => {
+      this.app.use((_req, res, next) => {
         res.header('Cache-Control', `public, max-age=${this.config.SERVER.CACHE_DURATION_SECONDS}`);
         const milliSeconds = 1000;
         res.header(
@@ -136,6 +136,10 @@ class Server {
       }),
     );
     this.app.use(helmet.noSniff());
+    this.app.use((_req, res, next) => {
+      res.setHeader('X-XSS-Protection', '1; mode=block');
+      next();
+    });
     this.app.use(
       helmet.contentSecurityPolicy({
         directives: this.config.SERVER.CSP,
@@ -155,8 +159,8 @@ class Server {
   }
 
   initStaticRoutes(): void {
-    this.app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'img', 'favicon.ico')));
-    this.app.get('/robots.txt', (req, res) => res.sendFile(path.join(__dirname, 'robots', 'robots.txt')));
+    this.app.get('/favicon.ico', (_req, res) => res.sendFile(path.join(__dirname, 'img', 'favicon.ico')));
+    this.app.get('/robots.txt', (_req, res) => res.sendFile(path.join(__dirname, 'robots', 'robots.txt')));
     this.app.use('/script', express.static(path.join(__dirname, 'static', 'script')));
   }
 
