@@ -128,6 +128,7 @@ class Server {
         frameguard: {action: 'deny'},
       }),
     );
+    this.app.use(helmet.noSniff());
     this.app.use(
       helmet.hsts({
         includeSubDomains: true,
@@ -135,11 +136,6 @@ class Server {
         preload: true,
       }),
     );
-    this.app.use(helmet.noSniff());
-    this.app.use((_req, res, next) => {
-      res.setHeader('X-XSS-Protection', '1; mode=block');
-      next();
-    });
     this.app.use(
       helmet.contentSecurityPolicy({
         directives: this.config.SERVER.CSP,
@@ -156,6 +152,13 @@ class Server {
         maxAge: 0,
       }),
     );
+    // With helmet v4 the X-XSS-Protection header is set to `0` by default.
+    // After discussing this with @franziskuskiefer we want to keep this enabled for old browsers.
+    // https://github.com/helmetjs/helmet/issues/230
+    this.app.use((_req, res, next) => {
+      res.setHeader('X-XSS-Protection', '1; mode=block');
+      next();
+    });
   }
 
   initStaticRoutes(): void {
