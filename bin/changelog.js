@@ -20,12 +20,17 @@
 const fs = require('fs');
 const Changelog = require('generate-changelog');
 const path = require('path');
+const prependFile = require('prepend-file');
 const pkg = require('../package.json');
 const simpleGit = require('simple-git')();
 
 const options = {'--list': null};
 simpleGit.tags(options, async (error, tags) => {
-  const outputPath = path.join(__dirname, '../CHANGELOG.md');
+  /** This contains just the changelog of the last release.
+   * It is used for automatic GitHub release tags.
+   */
+  const latestChangelogPath = path.join(__dirname, '../CHANGELOG_LATEST.md');
+  const changelogPath = path.join(__dirname, '../CHANGELOG.md');
 
   const latestTags = tags.all.reverse();
   const previousReleaseTag = latestTags[0];
@@ -36,8 +41,10 @@ simpleGit.tags(options, async (error, tags) => {
       tag: `${previousReleaseTag}...main`,
     });
     console.info(`Changelog size: ${changelog.length}`);
-    fs.writeFileSync(outputPath, changelog, 'utf8');
-    console.info(`Wrote file to: ${outputPath}`);
+    fs.writeFileSync(latestChangelogPath, changelog, 'utf8');
+
+    await prependFile(changelogPath, changelog);
+    console.info(`Wrote file to: ${changelogPath} and ${latestChangelogPath}`);
   } else {
     console.error('Unable to find previous release tag');
   }
