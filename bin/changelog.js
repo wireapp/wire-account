@@ -28,14 +28,17 @@ simpleGit.tags(options, async (error, tags) => {
   const outputPath = path.join(__dirname, '../CHANGELOG.md');
 
   const latestTags = tags.all.reverse();
-  const lastTag = latestTags[0];
-  const secondLastTag = latestTags[1];
-  const changelog = await Changelog.generate({
-    exclude: ['chore', 'build', 'docs', 'refactor', 'style', 'test'],
-    repoUrl: pkg.repository.url.replace('.git', ''),
-    tag: `${secondLastTag}...${lastTag}`,
-  });
-  console.info(`Changelog size: ${changelog.length}`);
-  fs.writeFileSync(outputPath, changelog, 'utf8');
-  console.info(`Wrote file to: ${outputPath}`);
+  const previousReleaseTag = latestTags[0];
+  if (previousReleaseTag) {
+    const changelog = await Changelog.generate({
+      exclude: ['chore', 'build', 'docs', 'refactor', 'style', 'test'],
+      repoUrl: pkg.repository.url.replace('.git', ''),
+      tag: `${previousReleaseTag}...main`,
+    });
+    console.info(`Changelog size: ${changelog.length}`);
+    fs.writeFileSync(outputPath, changelog, 'utf8');
+    console.info(`Wrote file to: ${outputPath}`);
+  } else {
+    console.error('Unable to find previous release tag');
+  }
 });
