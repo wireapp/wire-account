@@ -1910,20 +1910,6 @@
     tough-cookie "4.0.0"
     ws "7.4.1"
 
-"@wireapp/commons@3.8.14":
-  version "3.8.14"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.14.tgz#76c1856044b8c938aff7ee4de8e6cbc8254df6da"
-  integrity sha512-R61YfKrUcgFoJs/1g8ukNSIP+bAQAU7s0LVoL4XXdB5n+BcRlTWKogavAJ9ISgmFKwomTBsXLnlmsL6+DmGfTw==
-  dependencies:
-    "@types/fs-extra" "8.1.0"
-    "@types/node" "~12"
-    "@types/platform" "1.3.3"
-    ansi-regex "5.0.0"
-    fs-extra "9.0.1"
-    logdown "3.3.1"
-    platform "1.3.6"
-    url-search-params-polyfill "8.1.0"
-
 "@wireapp/commons@3.8.15":
   version "3.8.15"
   resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-3.8.15.tgz#8377ef71812fe26402bd11b3dbd5283384df9020"
