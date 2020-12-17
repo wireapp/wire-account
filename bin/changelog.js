@@ -26,7 +26,8 @@ const simpleGit = require('simple-git')();
 
 const options = {'--list': null};
 simpleGit.tags(options, async (error, tags) => {
-  /** This contains just the changelog of the last release.
+  /**
+    * This contains just the changelog of the last release.
    * It is used for automatic GitHub release tags.
    */
   const latestChangelogPath = path.join(__dirname, '../CHANGELOG_LATEST.md');
