@@ -27,7 +27,7 @@
     "@babel/preset-typescript": "7.12.7",
     "@emotion/babel-preset-css-prop": "11.0.0",
     "@hot-loader/react-dom": "16.14.0",
-    "@testing-library/react": "11.2.2",
+    "@testing-library/react": "11.2.3",
     "@types/color": "3.0.1",
     "@types/enzyme": "3.10.6",
     "@types/jest": "26.0.20",
