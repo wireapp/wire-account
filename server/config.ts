@@ -20,13 +20,10 @@
 const dotenv = require('dotenv-extended');
 import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/src/main/util/ValidationUtil';
 import * as fs from 'fs-extra';
-import {ContentSecurityPolicyOptions} from 'helmet/dist/middlewares/content-security-policy';
 import * as logdown from 'logdown';
 import * as path from 'path';
 
 import {ServerConfig} from './ServerConfig';
-
-type ContentSecurityPolicyDirectives = ContentSecurityPolicyOptions['directives'];
 
 dotenv.load();
 
@@ -52,7 +49,7 @@ function readFile(path: string, fallback?: string): string {
 
 const nodeEnvironment = process.env.NODE_ENV || 'production';
 
-const defaultCSP: ContentSecurityPolicyDirectives = {
+const defaultCSP = {
   connectSrc: ["'self'", 'https://*.wire.com', 'https://*.zinfra.io', 'https://wire.innocraft.cloud'],
   defaultSrc: ["'self'"],
   fontSrc: ["'self'"],
@@ -80,8 +77,8 @@ function parseCommaSeparatedList(list: string = ''): string[] {
   return cleanedList.split(',');
 }
 
-function mergedCSP(): ContentSecurityPolicyDirectives {
-  const csp: ContentSecurityPolicyDirectives = {
+function mergedCSP(): Record<string, Iterable<string>> {
+  const csp = {
     connectSrc: [
       ...defaultCSP.connectSrc,
       process.env.BACKEND_REST,
