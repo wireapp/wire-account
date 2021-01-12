@@ -7,7 +7,7 @@
     "express-hbs": "2.3.4",
     "fs-extra": "9.0.1",
     "handlebars": "4.7.6",
-    "helmet": "4.2.0",
+    "helmet": "4.3.1",
     "helmet-csp": "3.3.1",
     "logdown": "3.3.1",
     "moment": "2.29.1",
