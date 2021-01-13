@@ -1938,16 +1938,16 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.2.1.tgz#7513d7a769e3f97958de799b5b49874425ae3396"
   integrity sha512-Zj1z6AyS+vqV6Hfi7ngCjFGdHV5EwZNIHo6QfFTNe9PyW+zBU1zJ9BiOW1pmUEq950RC4+Dym6flyA/61/vhyw==
 
-"@wireapp/api-client@12.0.0":
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.0.0.tgz#e01c73585460562acab83f290094bc07393a425a"
-  integrity sha512-kGmBPAYPLerKKJmQqfziTrF+AUQCfEPKaqflQIeaCgkiX7Pfk5/F5ue1Tn1xhRT3RmPLzmB9r9QM9RI2lt6hGA==
+"@wireapp/api-client@12.0.2":
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.0.2.tgz#9b58b2ba9673db2fbb6c93fd900cb2f8830e88f9"
+  integrity sha512-IvziwlHptfeR/Yg8uCdwZUM4e8YGC18/WVesmYui8YtM5QBa8Vxu45G+QWFAgIVI+/sg+E3zai9eA5+tMdvR0Q==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
     "@wireapp/commons" "4.0.0"
-    "@wireapp/priority-queue" "1.6.17"
+    "@wireapp/priority-queue" "1.6.19"
     "@wireapp/protocol-messaging" "1.27.1"
     axios "0.21.1"
     http-status-codes "2.1.4"
@@ -1989,14 +1989,12 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.17":
-  version "1.6.17"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.17.tgz#5678ee373a228d0c59899157ac1211ea2cef73d5"
-  integrity sha512-rROvDH/UviRHhNg6R06xkhapqyejxQ4k/nFNTwhniOGHuuoY0EfevXrsGTFW0pWWUDYjyzQY/8ev/yXR4TMgYw==
+"@wireapp/priority-queue@1.6.19":
+  version "1.6.19"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.19.tgz#af3583b63b414d88a069dd366e222ac9777ce82f"
+  integrity sha512-ncnmRQQRhy3n9zSEm2kTu/3CiWPbSAENsrLK9+CSpQeGfoZoCNTBRRPw6jrhpjc3ZPNIErqQaGbMAkfp1Brfhg==
   dependencies:
     "@types/node" "~14"
-    logdown "3.3.1"
-    uuidjs "4.2.6"
 
 "@wireapp/protocol-messaging@1.27.1":
   version "1.27.1"
@@ -8373,11 +8371,6 @@ uuid@^8.3.0:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
-
-uuidjs@4.2.6:
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.2.6.tgz#6dccb3e45ccb351daf0be3f107c37911e369c810"
-  integrity sha512-MN+qOwkX8k2V4p+qDDUzHc1gvBu1tCCB2p3cjOdMoeGfTUywATUBcQkqqaFR7Snd72FAY7HfBzkoAv7HxoCxuA==
 
 v8-compile-cache@^2.0.3, v8-compile-cache@^2.2.0:
   version "2.2.0"
