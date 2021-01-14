@@ -8548,10 +8548,10 @@ webpack-cli@4.3.1:
     v8-compile-cache "^2.2.0"
     webpack-merge "^4.2.2"
 
-webpack-dev-middleware@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-4.0.3.tgz#71a846f825cf44999edd3a58a07d8cafae0c2283"
-  integrity sha512-mjZrPmR6b55A6nHZY6ylh+ncwK7PXbx7KJ4uU02ThXPFlpDj/PN8YlCl12uhe4OZU94lx1rjy9a4UH99IZbWQA==
+webpack-dev-middleware@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-4.0.4.tgz#ebe1e4ad2cca8d33389f89b25d2b7ef7d621bc3f"
+  integrity sha512-6dKe7cufta6TXUwcQqFJNDoGtS3ZdlfQstPJM22V5aNT8qTVd2bWwfEC62vOQOh19eazLDczU+82FgxLHYCmlQ==
   dependencies:
     colorette "^1.2.1"
     mem "^8.0.0"
