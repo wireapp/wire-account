@@ -5,7 +5,7 @@
     "dotenv-extended": "2.9.0",
     "express": "4.17.1",
     "express-hbs": "2.3.4",
-    "fs-extra": "9.0.1",
+    "fs-extra": "9.1.0",
     "handlebars": "4.7.6",
     "helmet": "4.3.1",
     "helmet-csp": "3.3.1",
