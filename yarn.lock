@@ -1939,17 +1939,17 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.2.2.tgz#1f8eee44f96524756268f5e3f43e9d943f864d41"
   integrity sha512-03GkWxcgFfm8+WIwcsqJb9agrSDNDDoxaNnexPnCCexP5SCE4IgFd9lNpSy+K2nFqVMpgTFw6SwbmVAVTndVew==
 
-"@wireapp/api-client@12.1.3":
-  version "12.1.3"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.1.3.tgz#cf3c18afbe0b8675ea2f61485c7a57b10fa3f95c"
-  integrity sha512-SmrETZC+BwmlGpni6jhabW1JzHvdQroWX8V00UaEfL5tl8VirUs/Qo7QKE0EamOv889A0FxNVv9KxQVRmMVUyg==
+"@wireapp/api-client@12.1.4":
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.1.4.tgz#cc601356d8faf8e82441cee80888ebc885698d26"
+  integrity sha512-PzWFEPPxEUOXAM01MSM1Mj359mq1Xa2P9qY3tx47uax4lE/OiKWaKQjHLt6UW2fsJlVhLgNUQb+IOOGhkRN9vQ==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "4.0.1"
-    "@wireapp/priority-queue" "1.6.19"
-    "@wireapp/protocol-messaging" "1.27.1"
+    "@wireapp/commons" "4.0.2"
+    "@wireapp/priority-queue" "1.6.20"
+    "@wireapp/protocol-messaging" "1.28.0"
     axios "0.21.1"
     http-status-codes "2.1.4"
     logdown "3.3.1"
@@ -1957,20 +1957,6 @@
     spark-md5 "3.0.1"
     tough-cookie "4.0.0"
     ws "7.4.2"
-
-"@wireapp/commons@4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-4.0.1.tgz#d8912d562706312411cfd1cc3045bddbbb82aa21"
-  integrity sha512-ipKH8fRWTrThhubJgIPnj6QWd31vFhTFd9TnqEhZWwYmlhZZXySVPqk++SE8/xTFFwVDzBk6zDym5lokpfU6PA==
-  dependencies:
-    "@types/fs-extra" "9.0.6"
-    "@types/node" "~14"
-    "@types/platform" "1.3.3"
-    ansi-regex "5.0.0"
-    fs-extra "9.0.1"
-    logdown "3.3.1"
-    platform "1.3.6"
-    url-search-params-polyfill "8.1.0"
 
 "@wireapp/commons@4.0.2":
   version "4.0.2"
@@ -2004,17 +1990,17 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.19":
-  version "1.6.19"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.19.tgz#af3583b63b414d88a069dd366e222ac9777ce82f"
-  integrity sha512-ncnmRQQRhy3n9zSEm2kTu/3CiWPbSAENsrLK9+CSpQeGfoZoCNTBRRPw6jrhpjc3ZPNIErqQaGbMAkfp1Brfhg==
+"@wireapp/priority-queue@1.6.20":
+  version "1.6.20"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.20.tgz#f869a44366a561ac152348881d4a68da82dd7ccb"
+  integrity sha512-loxMBpjdJ7rflUX5bTym/JHJ7By0gMqoPnIbktmV/I4Rly5pKuSsKyDCXILfi1o5WAMyZgVbMF7rHBL5k0PlIA==
   dependencies:
     "@types/node" "~14"
 
-"@wireapp/protocol-messaging@1.27.1":
-  version "1.27.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/protocol-messaging/-/protocol-messaging-1.27.1.tgz#f2173a22c0088d5b5df75617a4ab85e4201916dc"
-  integrity sha512-/EYBIpZHONNV90tajVuuo3i+RzDKG2oVBeI9aOIVneWgHJyWvb50pjLc/nnJ9N5vCoPtyZS1fy/JLuN7miDbwA==
+"@wireapp/protocol-messaging@1.28.0":
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/protocol-messaging/-/protocol-messaging-1.28.0.tgz#24c1d78ddc1d29d72d3e5a288af7d9467274354f"
+  integrity sha512-IFo7NLrMWdOtjtce2hbI0oofCzDiXfLxufUZ+mChFH5tCVnPlhk/9jYhyojrpJug57NMEWvPEc0YuaVrP//iVg==
   dependencies:
     protobufjs "6.10.2"
 
