@@ -1908,16 +1908,16 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.3.0.tgz#2730c770f5f1f132767c63dcaaa4ec28f8c56a6c"
   integrity sha512-k2p2VrONcYVX1wRRrf0f3X2VGltLWcv+JzXRBDmvCxGlCeESx4OXw91TsWeKOkp784uNoVQo313vxJFHXPPwfw==
 
-"@wireapp/api-client@12.1.5":
-  version "12.1.5"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.1.5.tgz#822f414aba4236114264e17fea174f101cb3e149"
-  integrity sha512-KC26fj6ZMRJy+ms+nigvnu8LngNGCKQtulMqveUg3gypJUaOkjaaQvtDBBEuqCm/0Ky8YbeUldDIPDCat0YK+w==
+"@wireapp/api-client@12.2.1":
+  version "12.2.1"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.2.1.tgz#35ecdc2c52838382749fe1fa7c2e3e346f605802"
+  integrity sha512-6Fjnq3S3CRwonID0vBSuUnsK7B6PkbAQVHZSlUn3icoXNpf0DcpOAHBAGQXQr9npIOZ3cyJh//jEbZmE/Xyn7A==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "4.0.2"
-    "@wireapp/priority-queue" "1.6.21"
+    "@wireapp/commons" "4.0.3"
+    "@wireapp/priority-queue" "1.6.22"
     "@wireapp/protocol-messaging" "1.28.0"
     axios "0.21.1"
     http-status-codes "2.1.4"
@@ -1931,6 +1931,20 @@
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-4.0.2.tgz#0d5a54189e7273035ea26627d37eee7e546b03c7"
   integrity sha512-cWCXMCRILWZdyQR8VJbWoS2JiAKjfu5ZBLGCKCJbNgmxyxvzTVT5mJ9/Apw4j/R14kUiqB6ttLNLlgkiW43rUw==
+  dependencies:
+    "@types/fs-extra" "9.0.6"
+    "@types/node" "~14"
+    "@types/platform" "1.3.3"
+    ansi-regex "5.0.0"
+    fs-extra "9.1.0"
+    logdown "3.3.1"
+    platform "1.3.6"
+    url-search-params-polyfill "8.1.0"
+
+"@wireapp/commons@4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-4.0.3.tgz#96edbc7e4ff69b7796587302b134b2c2249c8afa"
+  integrity sha512-g/H0xA8cjEENHQJ7sneeOBCR1+MOqO9+vGYlsZlQBy30FRBglNtIwAatLmF2d/mQvrTINlquPTBOhWGQRBYGYw==
   dependencies:
     "@types/fs-extra" "9.0.6"
     "@types/node" "~14"
@@ -1959,10 +1973,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.21":
-  version "1.6.21"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.21.tgz#777ef4236dca9a9142e594335ca903ca21d7ffd5"
-  integrity sha512-oRTh8r8ZNrz1joxSvUETZhKgp/OEYi8hkqJsSSmo1IuXemvrG1Ju96d7yomCEUiS9Icm6OznpK1QTwUef5A6PA==
+"@wireapp/priority-queue@1.6.22":
+  version "1.6.22"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.22.tgz#6a158a1d2f5cf9673ec71690ada6350a15975c0e"
+  integrity sha512-DZksgXhNAVBqfOKBq23fDUWB9wa9Wi26SHIAqOuZu7WV9SczI97dwb56KE+/dKKeQex8EIzXzRwwb/s6/VE+Vg==
   dependencies:
     "@types/node" "~14"
 
