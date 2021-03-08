@@ -70,7 +70,7 @@
     "path-browserify": "1.0.1",
     "prettier": "2.2.1",
     "react-hot-loader": "4.13.0",
-    "simple-git": "2.36.0",
+    "simple-git": "2.36.1",
     "sort-json": "2.0.0",
     "svg-inline-loader": "0.8.2",
     "terser-webpack-plugin": "5.1.1",
