@@ -1037,10 +1037,10 @@
     "@emotion/weak-memoize" "^0.2.5"
     stylis "^4.0.3"
 
-"@emotion/core@10.0.35":
-  version "10.0.35"
-  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.35.tgz#513fcf2e22cd4dfe9d3894ed138c9d7a859af9b3"
-  integrity sha512-sH++vJCdk025fBlRZSAhkRlSUoqSqgCzYf5fMOmqqi3bM6how+sQpg3hkgJonj8GxXM4WbD7dRO+4tegDB9fUw==
+"@emotion/core@10.1.1":
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.1.1.tgz#c956c1365f2f2481960064bcb8c4732e5fb612c3"
+  integrity sha512-ZMLG6qpXR8x031NXD8HJqugy/AZSkAuMxxqB46pmAR7ze47MhNJ56cdoX243QPZdGctrdfo+s08yZTiwaUcRKA==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@emotion/cache" "^10.0.27"
@@ -2024,14 +2024,14 @@
   dependencies:
     protobufjs "6.10.2"
 
-"@wireapp/react-ui-kit@7.46.1":
-  version "7.46.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.46.1.tgz#11dd86ef8938c8c55f1db11cab9ab0bbf4f0d953"
-  integrity sha512-QSFEZvjyNvZ/PclnqPp35KiUpCfw3QYI9HdAns4rOM9nDpwyTSjv40EVwOtdfbRdlEbv+5qVKJys6D2zBSm16Q==
+"@wireapp/react-ui-kit@7.46.2":
+  version "7.46.2"
+  resolved "https://registry.yarnpkg.com/@wireapp/react-ui-kit/-/react-ui-kit-7.46.2.tgz#c48c6d0ae36ef63a1b2a2788d0202cae86755c88"
+  integrity sha512-r2G4dL/AyDgWbIvtAOqIXEeQA8zNC8+OLZayX7l0ph3SUgcxF/ckzo013ftSOUEt5710OV5VTYS9JGRkyzW9ZQ==
   dependencies:
-    "@emotion/core" "10.0.35"
+    "@emotion/core" "10.1.1"
     "@types/color" "3.0.1"
-    bazinga64 "5.7.28"
+    bazinga64 "5.7.29"
     color "3.1.3"
     emotion-normalize "10.1.0"
     emotion-theming "10.0.27"
@@ -2575,10 +2575,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-bazinga64@5.7.28:
-  version "5.7.28"
-  resolved "https://registry.yarnpkg.com/bazinga64/-/bazinga64-5.7.28.tgz#4add8d22199ffeabac16a18414826b56a0c7d17a"
-  integrity sha512-Ngzimzhkf8+paOLvKUbsRuVrQPkmKp2fWkDxU3UOtMmvqR0E4t2er72d7yTb5nbIrEh8XU2D2II0ECeyfrWSAg==
+bazinga64@5.7.29:
+  version "5.7.29"
+  resolved "https://registry.yarnpkg.com/bazinga64/-/bazinga64-5.7.29.tgz#8f3b496b8eea0fe1ba3bb7a476565bb78418dd7a"
+  integrity sha512-qPnR+3FDmst1xz0xaLs8bLvFLuPdgAYXVrWJ1h0ToxQVix5HSwghWos5PONGtmgNNYmwcTQ+eeHZVFB/ZMKz2A==
 
 bcrypt-pbkdf@^1.0.0:
   version "1.0.2"
