@@ -1572,6 +1572,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/fs-extra@9.0.8":
+  version "9.0.8"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-9.0.8.tgz#32c3c07ddf8caa5020f84b5f65a48470519f78ba"
+  integrity sha512-bnlTVTwq03Na7DpWxFJ1dvnORob+Otb8xHyUqUWhqvz/Ksg8+JXPlR52oeMSZ37YEOa5PyccbgUNutiQdi13TA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.4.tgz#4ff9f641a7c6d1a3508ff88bc3141b152772e753"
@@ -1959,16 +1966,16 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.3.0.tgz#2730c770f5f1f132767c63dcaaa4ec28f8c56a6c"
   integrity sha512-k2p2VrONcYVX1wRRrf0f3X2VGltLWcv+JzXRBDmvCxGlCeESx4OXw91TsWeKOkp784uNoVQo313vxJFHXPPwfw==
 
-"@wireapp/api-client@12.4.1":
-  version "12.4.1"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.4.1.tgz#6a5df4549769872762f2db533ed1c45da8d5a35d"
-  integrity sha512-9lzx/cHDpL/3OfSzZwEPj47ydgpVC6qVUGsYPGRci+6e3F9+reuFglcbfbGTBUmiSJbSL8pyF3Am69k+ga9Gyw==
+"@wireapp/api-client@12.4.3":
+  version "12.4.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.4.3.tgz#19990a09490e1f36761dd441be190b89f4c1a2df"
+  integrity sha512-lrSrtWQLchqvfV//WOdKLAZ3GrTLLGUUOWx5nn3NRl1A3oAcDPEbKts+Apl9+1T0VQIlmIRssl48qEouEtJEMw==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "4.1.2"
-    "@wireapp/priority-queue" "1.6.24"
+    "@wireapp/commons" "4.1.3"
+    "@wireapp/priority-queue" "1.6.25"
     "@wireapp/protocol-messaging" "1.29.0"
     axios "0.21.1"
     http-status-codes "2.1.4"
@@ -1976,7 +1983,7 @@
     reconnecting-websocket "4.4.0"
     spark-md5 "3.0.1"
     tough-cookie "4.0.0"
-    ws "7.4.3"
+    ws "7.4.4"
 
 "@wireapp/commons@4.1.2":
   version "4.1.2"
@@ -1984,6 +1991,20 @@
   integrity sha512-chrODoYElcetb/6SdoFRxC6zD2qeBzO+yEt36RYX/7oGaP/Q0NY5JV49gdciLEBch4D1o7utZhvrE05bhUtnKg==
   dependencies:
     "@types/fs-extra" "9.0.6"
+    "@types/node" "~14"
+    "@types/platform" "1.3.3"
+    ansi-regex "5.0.0"
+    fs-extra "9.1.0"
+    logdown "3.3.1"
+    platform "1.3.6"
+    url-search-params-polyfill "8.1.0"
+
+"@wireapp/commons@4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-4.1.3.tgz#e8653d548e153b0f1b6c4cdf3b2bd0753f04f31e"
+  integrity sha512-r6gPiHBsJZxiWmnqp07rB1lYB+qUsodgqfwt9Ca28Rxwu6lDIF+CsTuPaivXTSf5ry7rU6SOByCYMT75+DHv/Q==
+  dependencies:
+    "@types/fs-extra" "9.0.8"
     "@types/node" "~14"
     "@types/platform" "1.3.3"
     ansi-regex "5.0.0"
@@ -2010,10 +2031,10 @@
   resolved "https://registry.yarnpkg.com/@wireapp/eslint-config/-/eslint-config-1.4.0.tgz#2ba4c88ed7fd3ae52bb378cf862d408d692ab3f0"
   integrity sha512-dF4H3wcssqd4aiEPJxL5u2xzMyLwmbOeGJh7OtnBak80CTgOsS1f3hORokUuJ4axCzA+XVqjiPDLc8d51AEu7g==
 
-"@wireapp/priority-queue@1.6.24":
-  version "1.6.24"
-  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.24.tgz#3edeefadb6762fbbb998879171cae05cee65fd61"
-  integrity sha512-eosQmbz2RiJQXd3qmM0K3MciI2UZv7rt41+Dg0em0UVuqT5r30RQzNG8X/O1W7tbrladdVBwcUJIacWYr7wjdg==
+"@wireapp/priority-queue@1.6.25":
+  version "1.6.25"
+  resolved "https://registry.yarnpkg.com/@wireapp/priority-queue/-/priority-queue-1.6.25.tgz#d76701ca7e2d1b1831e2c5fb08c0b4af271cc6d6"
+  integrity sha512-fvOY8/cEpkdtyBzYhyOppetl1h8kZXZvgRNlQ6r28H9/ZvWkHqcvFHJD9MDT299BUXv3weMTbZqN6lnHaKnNQw==
   dependencies:
     "@types/node" "~14"
 
@@ -8811,10 +8832,10 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@7.4.3, ws@^7.2.3, ws@^7.3.1:
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.3.tgz#1f9643de34a543b8edb124bdcbc457ae55a6e5cd"
-  integrity sha512-hr6vCR76GsossIRsr8OLR9acVVm1jyfEWvhbNjtgPOrfvAlKzvyeg/P6r8RuDjRyrcQoPQT7K0DGEPc7Ae6jzA==
+ws@7.4.4, ws@^7.2.3, ws@^7.3.1:
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.4.tgz#383bc9742cb202292c9077ceab6f6047b17f2d59"
+  integrity sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
