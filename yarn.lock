@@ -4760,10 +4760,10 @@ i18next-browser-languagedetector@6.0.1:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-i18next-react-postprocessor@3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/i18next-react-postprocessor/-/i18next-react-postprocessor-3.0.5.tgz#11fa9e3f1bba82b52d47f402dd0b3366011a9260"
-  integrity sha512-vZ2WquBiEGf114/o8AOdIzhD7zj35KalwiiZmLduPy9LfS+6GT4zFWGROS0FfNjxYlSobsYE/S5fkXNHG+IwwA==
+i18next-react-postprocessor@3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/i18next-react-postprocessor/-/i18next-react-postprocessor-3.0.6.tgz#015694a23d17cbd3806c9112d5d394bd4252bfdc"
+  integrity sha512-q13lEqOa1kcxbtlB3d1riv8fV5yUVMqaWVIm9/hpAO8UiHsKyqcyNIHdMZ5wevRx5Sufn+dtSgz4W4P8RHWGgg==
   dependencies:
     md5-es "^1.8.2"
 
