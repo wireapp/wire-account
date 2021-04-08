@@ -7,7 +7,7 @@
     "core-js": "3.10.1",
     "dotenv": "8.2.0",
     "dotenv-extended": "2.9.0",
-    "i18next": "20.2.0",
+    "i18next": "20.2.1",
     "i18next-browser-languagedetector": "6.0.1",
     "i18next-react-postprocessor": "3.0.6",
     "intersection-observer": "0.12.0",
