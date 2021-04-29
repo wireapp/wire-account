@@ -1992,10 +1992,10 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.3.1.tgz#911d1b3ff4a843304b9c3bacf67bb34672418441"
   integrity sha512-0qXvpeYO6vaNoRBI52/UsbcaBydJCggoBBnIo/ovQQdn6fug0BgwsjorV1hVS7fMqGVTZGcVxv8334gjmbj5hw==
 
-"@wireapp/api-client@12.11.0":
-  version "12.11.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.11.0.tgz#68fbf6e063763f1e134d69d5e4691f48a1b44ec6"
-  integrity sha512-8kUlNovpVmL0rDh37/FIUjj/o4SrDtz+8f1P7yxkRF/tjgH3OtTMAcbppAkKRDgwQW+gJA5o35wLlshOYcn1UA==
+"@wireapp/api-client@12.12.0":
+  version "12.12.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.12.0.tgz#768988cd076920c70436a7acf79c82fd27a84667"
+  integrity sha512-zo1Ybu9J4eeQWsoC/mDSELV8nHo3vgIO2YMVi1qkc6XitRSZxCf3YH3b5zsjSiwWZ1/mMHUSRaaZpBPsD8S88w==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
