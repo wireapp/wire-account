@@ -28,7 +28,9 @@ const actionRoot: {
 } = {
   accountAction: new AccountAction(
     new APIClient({
+      platform: 'account-pages',
       urls: {name: 'backend', rest: Environment.HOST_HTTP, ws: undefined},
+      version: Environment.VERSION,
     }),
   ),
 };
