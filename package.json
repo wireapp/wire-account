@@ -5,7 +5,7 @@
     "@wireapp/commons": "4.2.2",
     "@wireapp/react-ui-kit": "7.51.1",
     "core-js": "3.11.3",
-    "dotenv": "8.2.0",
+    "dotenv": "9.0.0",
     "dotenv-extended": "2.9.0",
     "i18next": "20.2.2",
     "i18next-browser-languagedetector": "6.0.1",
