@@ -2047,10 +2047,10 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.4.0.tgz#f84fd07bcacefe56ce762925798871092f0f228e"
   integrity sha512-xgT/HqJ+uLWGX+Mzufusl3cgjAcnqYYskaB7o0vRcwOEfuu6hMzSILQpnIzFMGsTaeaX4Nnekl+6fadLbl1/Vg==
 
-"@wireapp/api-client@12.13.4":
-  version "12.13.4"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.13.4.tgz#209bb9978a1b1a2a2b24f63d9eb73541bbcd84e9"
-  integrity sha512-SBZYmwxT3pQGQfXWpgL48Y2+QSxWSqBjJJASEV4AbJz5dnrJUZvoTrySSqRNPN+CE4dg/c7c08ev/xJzfMOSqA==
+"@wireapp/api-client@12.14.0":
+  version "12.14.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.14.0.tgz#5bf38083d5f098f4b52af4f34afe549274aa53d6"
+  integrity sha512-3eHMOpSMb37fdbVUSsDnzppoPkwOeYmq/VVH7NGL75P3+mUx2VBbeLhLAJPWPuTtUNGqV/7qyAy563hYncPLaQ==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
@@ -2059,6 +2059,7 @@
     "@wireapp/priority-queue" "1.6.31"
     "@wireapp/protocol-messaging" "1.29.0"
     axios "0.21.1"
+    axios-retry "3.1.9"
     http-status-codes "2.1.4"
     logdown "3.3.1"
     reconnecting-websocket "4.4.0"
@@ -2483,6 +2484,13 @@ aws4@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+
+axios-retry@3.1.9:
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.1.9.tgz#6c30fc9aeb4519aebaec758b90ef56fa03fe72e8"
+  integrity sha512-NFCoNIHq8lYkJa6ku4m+V1837TP6lCa7n79Iuf8/AqATAHYB0ISaAS1eyIenDOfHOLtym34W65Sjke2xjg2fsA==
+  dependencies:
+    is-retry-allowed "^1.1.0"
 
 axios@0.21.1:
   version "0.21.1"
@@ -5268,6 +5276,11 @@ is-relative@^1.0.0:
   integrity sha512-Kw/ReK0iqwKeu0MITLFuj0jbPAmEiOsIwyIXvvbfa6QfmN9pkD1M+8pdk7Rl/dTKbH34/XBFMbgD4iMJhLQbGA==
   dependencies:
     is-unc-path "^1.0.0"
+
+is-retry-allowed@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz#d778488bd0a4666a3be8a1482b9f2baafedea8b4"
+  integrity sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==
 
 is-stream@^1.1.0:
   version "1.1.0"
