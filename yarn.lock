@@ -2056,15 +2056,15 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.4.0.tgz#f84fd07bcacefe56ce762925798871092f0f228e"
   integrity sha512-xgT/HqJ+uLWGX+Mzufusl3cgjAcnqYYskaB7o0vRcwOEfuu6hMzSILQpnIzFMGsTaeaX4Nnekl+6fadLbl1/Vg==
 
-"@wireapp/api-client@12.18.2":
-  version "12.18.2"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.18.2.tgz#f309d6833a5ba1130fcdcd4b99b0d67536002be1"
-  integrity sha512-QakeIXvnw7thzBlumory+1WtJm2pYtg8IAAjKI/+MlXQ+nvHfDjzBl7qrFpK/8hoHSy3Nciz2vcfIwvpkGo+JQ==
+"@wireapp/api-client@12.18.4":
+  version "12.18.4"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-12.18.4.tgz#db8db37f74739ee78b56395c62db76868b9ade96"
+  integrity sha512-WeTrD5JpR+Pt6BFERGFosNrchEA2fI8TCBdkVkHHoyTd/1xIbVwiL0bTB2PEpWpGwzrdOVo/hiqVogUk5M+OEQ==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.0"
-    "@wireapp/commons" "4.2.5"
+    "@wireapp/commons" "4.2.6"
     "@wireapp/priority-queue" "1.6.33"
     "@wireapp/protocol-messaging" "1.34.0"
     axios "0.21.1"
@@ -2080,6 +2080,20 @@
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-4.2.5.tgz#1f3a32fa9a5be165f5a776fb7ec2cba872bc4076"
   integrity sha512-WvtHNhLdYkNaDz5mrQogXY89NHeZGxpNYKwQS+k1m5XIcHj+cgEibTdIAmoSMoZXD7SfWvFzMe+k8ycczmZctg==
+  dependencies:
+    "@types/fs-extra" "9.0.11"
+    "@types/node" "~14"
+    "@types/platform" "1.3.3"
+    ansi-regex "5.0.0"
+    fs-extra "10.0.0"
+    logdown "3.3.1"
+    platform "1.3.6"
+    url-search-params-polyfill "8.1.1"
+
+"@wireapp/commons@4.2.6":
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/@wireapp/commons/-/commons-4.2.6.tgz#1bed0dd9f1cd7c05b143ea31204849f8fb44d714"
+  integrity sha512-UnBRyFcpYUu+Hcna1ljj/A49SUZiz/ZgFYnwWx0M00kM57bIafT98t+eXQkZFHFeylamJoz2CrqbNh/jYoLEDg==
   dependencies:
     "@types/fs-extra" "9.0.11"
     "@types/node" "~14"
