@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@wireapp/commons": "4.2.5",
-    "dotenv": "9.0.2",
+    "dotenv": "10.0.0",
     "dotenv-extended": "2.9.0",
     "express": "4.17.1",
     "express-hbs": "2.4.0",
