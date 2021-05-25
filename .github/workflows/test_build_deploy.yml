@@ -27,11 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Use latest Node.js v12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
       - name: Set environment variables
         env:
           # DISTRIBUTIONS are saved in the format `distribution-{name}`
