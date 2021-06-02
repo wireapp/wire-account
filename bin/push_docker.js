@@ -19,8 +19,6 @@
  *
  */
 
-/* eslint-disable no-magic-numbers */
-
 const child = require('child_process');
 const appConfigPkg = require('../app-config/package.json');
 const pkg = require('../package.json');
@@ -30,36 +28,41 @@ const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
   .toString()
   .trim();
 
-const distributionParam = process.argv[2];
-const stageParam = process.argv[3];
-const suffix = distributionParam ? `-${distributionParam}` : '';
-const stage = stageParam ? `-${stageParam}` : '';
+const distributionParam = process.argv[2] || '';
+const stageParam = process.argv[3] || '';
 const commitSha = process.env.GITHUB_SHA || 'COMMIT_ID';
 const commitShaLength = 7;
 const commitShortSha = commitSha.substring(0, commitShaLength - 1);
-const configurationEntry = `wire-web-config-default${
-  suffix ? suffix : currentBranch === 'main' ? '-main' : '-staging'
+const configurationEntry = `wire-web-config-default-${
+  distributionParam ? distributionParam : currentBranch === 'main' ? 'main' : 'staging'
 }`;
-const dependencies = {
-  ...appConfigPkg.dependencies,
-  ...appConfigPkg.devDependencies,
-  ...appConfigPkg.peerDependencies,
-  ...appConfigPkg.optionalDependencies,
-};
 
-const configVersion = dependencies[configurationEntry].split('#')[1];
+const configVersion = appConfigPkg.dependencies[configurationEntry].split('#')[1];
 const dockerRegistryDomain = 'quay.io';
-const dockerImageTag = `${dockerRegistryDomain}/wire/account${suffix}:${
-  pkg.version
-}-${commitShortSha}-${configVersion}${stage}`;
+const repository = `${dockerRegistryDomain}/wire/account${distributionParam ? `-${distributionParam}` : ''}`;
 
-child.execSync(
+const tags = [];
+if (stageParam) {
+  tags.push(`${repository}:${stageParam}`);
+}
+if (currentBranch === 'staging' || currentBranch === 'main') {
+  tags.push(`${repository}:${pkg.version}-${configVersion}-${commitShortSha}`);
+}
+
+const dockerCommands = [
   `echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin ${dockerRegistryDomain}`,
-  {stdio: 'inherit'},
-);
-child.execSync(
-  `docker build . -t ${dockerImageTag} &&
-  docker push ${dockerImageTag} &&
-  docker logout ${dockerRegistryDomain}`,
-  {stdio: 'inherit'},
-);
+  `docker build . --tag ${commitShortSha}`,
+];
+
+tags.forEach(containerImageTagValue => {
+  dockerCommands.push(
+    `docker tag ${commitShortSha} ${containerImageTagValue}`,
+    `docker push ${containerImageTagValue}`,
+  );
+});
+
+dockerCommands.push(`docker logout ${dockerRegistryDomain}`);
+
+dockerCommands.forEach(command => {
+  child.execSync(command, {stdio: 'inherit'});
+});
