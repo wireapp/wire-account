@@ -38,6 +38,7 @@ const Root: React.FC<Props> = () => {
   const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
   const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
   const LazyVerifyPhoneAccount = lazy(() => import('./page/VerifyPhoneAccount'));
+  const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
   return (
     <StyledApp>
       <Global
@@ -65,6 +66,7 @@ const Root: React.FC<Props> = () => {
             <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={LazyVerifyEmailAccount} />
             <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={LazyVerifyBotAccount} />
             <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={LazyVerifyPhoneAccount} />
+            <Route exact path={ROUTE.CONVERSATION_JOIN} component={LazyConversationJoin} />
             <Redirect to={ROUTE.HOME} />
           </Switch>
         </Router>

@@ -24,6 +24,7 @@ const EXTERNAL_ROUTE = {
 };
 
 const ROUTE = {
+  CONVERSATION_JOIN: '/conversation-join',
   DELETE_ACCOUNT: '/d',
   HOME: '/',
   PASSWORD_FORGOT: '/forgot',

@@ -90,6 +90,7 @@ export const REDIRECT_PHONE_URL = window.wire.env.URL.REDIRECT_PHONE_BASE;
 export const REDIRECT_RESET_URL = window.wire.env.URL.REDIRECT_RESET_BASE;
 export const REDIRECT_START_SSO_URL = window.wire.env.URL.REDIRECT_START_SSO_BASE;
 export const REDIRECT_VERIFY_URL = window.wire.env.URL.REDIRECT_VERIFY_BASE;
+export const REDIRECT_CONVERSATION_JOIN_URL = 'wire://conversation-join';
 export const SUPPORT_URL = window.wire.env.URL.SUPPORT_BASE;
 export const TEAMS_URL = window.wire.env.URL.TEAMS_BASE;
 export const WEBSITE_URL = window.wire.env.URL.WEBSITE_BASE;
