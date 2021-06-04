@@ -61,6 +61,8 @@ class Server {
     this.initSecurityHeaders();
     this.initStaticRoutes();
     this.initWebpack();
+    this.initProxy();
+    this.open();
     this.app.use(HealthCheckRoute);
     this.app.use(ConfigRoute(this.config));
     this.app.use(SSOStartRoute(this.config));
@@ -79,6 +81,28 @@ class Server {
 
       this.app.use(webpackDevMiddleware(webpackCompiler));
       this.app.use(webpackHotMiddleware(webpackCompiler));
+    }
+  }
+
+  initProxy() {
+    if (this.config.SERVER.ENVIRONMENT === 'development') {
+      const {createProxyMiddleware} = require('http-proxy-middleware');
+      this.app.use(
+        '/api',
+        createProxyMiddleware({
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': '',
+          },
+          target: 'https://staging-nginz-https.zinfra.io',
+        }),
+      );
+    }
+  }
+
+  open() {
+    if (this.config.SERVER.ENVIRONMENT === 'development') {
+      require('opn')(this.config.SERVER.APP_BASE);
     }
   }
 
