@@ -35,6 +35,7 @@ export interface ServerConfig {
       DOWNLOAD_WINDOWS_BASE: string;
       IMPRINT: string;
       OPEN_GRAPH_IMAGE: string;
+      REDIRECT_CONVERSATION_JOIN_BASE: string;
       REDIRECT_PHONE_BASE: string;
       REDIRECT_RESET_BASE: string;
       REDIRECT_START_SSO_BASE: string;
