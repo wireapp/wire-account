@@ -9,7 +9,7 @@
     "dotenv-extended": "2.9.0",
     "i18next": "20.3.1",
     "i18next-browser-languagedetector": "6.0.1",
-    "i18next-react-postprocessor": "3.0.6",
+    "i18next-react-postprocessor": "3.0.7",
     "intersection-observer": "0.12.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
