@@ -50,4 +50,8 @@ export class AccountAction {
   verifyBot = (key: string, code: string) => {
     return this.apiClient.account.api.getVerifyBot(key, code);
   };
+
+  validateConversationJoin = (key: string, code: string) => {
+    return this.apiClient.conversation.api.postConversationCodeCheck({code, key});
+  };
 }
