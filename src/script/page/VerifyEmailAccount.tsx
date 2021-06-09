@@ -55,17 +55,17 @@ const VerifyEmailAccount = ({location}: Props) => {
   }, []);
 
   const MobileSuccess = () => (
-    <React.Fragment>
+    <>
       <Text center>{t('successEmailAppDescription', {company: BRAND_NAME})}</Text>
       <DirectDownloadButton style={{margin: '32px 0'}} />
       {/* The link element is for QA to detect wire protocol redirects */}
       <link id="url" data-redirect={redirectPhone} />
       {redirectPhone && window.location.assign(redirectPhone)}
-    </React.Fragment>
+    </>
   );
 
   const DesktopSuccess = () => (
-    <React.Fragment>
+    <>
       <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
       <FlexBox style={{margin: '32px 0'}}>
         {Runtime.isMacOS() ? (
@@ -76,14 +76,14 @@ const VerifyEmailAccount = ({location}: Props) => {
         <OpenWebappButton style={{marginLeft: 8}}>{t('open:openWeb')}</OpenWebappButton>
       </FlexBox>
       {loginImmediately && window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`)}
-    </React.Fragment>
+    </>
   );
 
   const UnknownSuccess = () => (
-    <React.Fragment>
+    <>
       <Text center>{t('open:description', {company: BRAND_NAME})}</Text>
       <OpenWebappButton style={{margin: '32px 0'}}>{t('open:openWire', {company: BRAND_NAME})}</OpenWebappButton>
-    </React.Fragment>
+    </>
   );
 
   return (
@@ -91,7 +91,7 @@ const VerifyEmailAccount = ({location}: Props) => {
       <ContainerXS style={{alignItems: 'center', display: 'flex', flexDirection: 'column', margin: 'auto'}}>
         {key && code && !error ? (
           success ? (
-            <React.Fragment>
+            <>
               <H1 data-uie-name="verify-email-success-headline">{t('successEmailTitle')}</H1>
               {Runtime.isMobileOS() ? (
                 <MobileSuccess />
@@ -100,15 +100,15 @@ const VerifyEmailAccount = ({location}: Props) => {
               ) : (
                 <UnknownSuccess />
               )}
-            </React.Fragment>
+            </>
           ) : (
             <Loading />
           )
         ) : (
-          <React.Fragment>
+          <>
             <H1>{'Something went wrong'}</H1>
             <Text center>{'Please try to create your account again.'}</Text>
-          </React.Fragment>
+          </>
         )}
       </ContainerXS>
     </Document>
