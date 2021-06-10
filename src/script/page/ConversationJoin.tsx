@@ -22,16 +22,18 @@ import {ButtonLink, COLOR, Column, Columns, ContainerXS, H1, Loading, Small, Tex
 import React, {useContext, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
+import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {WEBAPP_URL, REDIRECT_CONVERSATION_JOIN_URL} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
-interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
+export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 
-const ConversationJoin = ({location}: Props) => {
+export const ConversationJoin = ({location}: ConversationJoinProps) => {
   const [t] = useTranslation('conversationJoin');
   const {accountAction} = useContext(ActionContext);
 
@@ -78,19 +80,24 @@ const ConversationJoin = ({location}: Props) => {
             </Text>
             <Columns css={{marginTop: 40}}>
               {Runtime.isMobileOS() ? (
-                <Column>
-                  <ButtonLink
-                    block
-                    href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
-                      code,
-                      key,
-                    })}
-                    style={{color: COLOR.WHITE, justifyContent: 'center'}}
-                    data-uie-name="do-conversation-join-mobile"
-                  >
-                    {Runtime.isIOS() ? 'Join with iOS app' : 'Join with Android app'}
-                  </ButtonLink>
-                </Column>
+                <>
+                  <Column>
+                    <ButtonLink
+                      block
+                      href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
+                        code,
+                        key,
+                      })}
+                      style={{color: COLOR.WHITE, justifyContent: 'center'}}
+                      data-uie-name="do-conversation-join-mobile"
+                    >
+                      {Runtime.isIOS() ? 'Join with iOS app' : 'Join with Android app'}
+                    </ButtonLink>
+                  </Column>
+                  <Column>
+                    <DirectDownloadButton style={{justifyContent: 'center'}} />
+                  </Column>
+                </>
               ) : (
                 <>
                   <Column>
@@ -118,6 +125,13 @@ const ConversationJoin = ({location}: Props) => {
                     >
                       {'Join with Wire Webapp'}
                     </ButtonLink>
+                  </Column>
+                  <Column>
+                    {Runtime.isMacOS() ? (
+                      <DirectDownloadButton style={{justifyContent: 'center'}} />
+                    ) : (
+                      <WebsiteDownloadButton style={{justifyContent: 'center'}} />
+                    )}
                   </Column>
                 </>
               )}
