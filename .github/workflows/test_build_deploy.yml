@@ -186,7 +186,6 @@ jobs:
           draft: false
           prerelease: false
 
-
   update_helm_chart:
     name: Update Helm chart
     runs-on: ubuntu-latest
