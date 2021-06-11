@@ -33,7 +33,7 @@ class BotPasswordForgotPage extends TestPage<{}> {
 
   getEmailInput = () => this.get('input[data-uie-name="enter-email"]');
   getResetPasswordButton = () => this.get('button[data-uie-name="do-send-password-reset-email"]');
-  getError = () => this.get('Text[data-uie-name="error-message"]');
+  getError = () => this.get('span[data-uie-name="error-message"]');
 
   enterEmail = (email: string) => this.changeValue(this.getEmailInput(), email);
 
