@@ -23,6 +23,10 @@ import * as Environment from 'script/Environment';
 
 import {AccountAction} from './AccountAction';
 
+interface ActionProviderProps extends HTMLProps<HTMLElement> {
+  contextData?: typeof actionRoot;
+}
+
 const actionRoot: {
   accountAction: AccountAction;
 } = {
@@ -37,8 +41,8 @@ const actionRoot: {
 
 const ActionContext = React.createContext(actionRoot);
 
-const ActionProvider = ({children}: HTMLProps<HTMLDivElement>) => (
-  <ActionContext.Provider value={actionRoot}>{children}</ActionContext.Provider>
+const ActionProvider = ({children, contextData}: ActionProviderProps) => (
+  <ActionContext.Provider value={contextData || actionRoot}>{children}</ActionContext.Provider>
 );
 
 export {actionRoot, ActionContext, ActionProvider};
