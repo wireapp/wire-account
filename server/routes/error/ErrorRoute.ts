@@ -21,13 +21,15 @@ import {ErrorRequestHandler} from 'express';
 
 import {ServerConfig} from '../../ServerConfig';
 
-const ErrorRoute = (config: ServerConfig): ErrorRequestHandler => (err, req, res, next) => {
-  console.error(err.stack);
-  const error = {
-    code: 500,
-    message: 'Internal server error',
+const ErrorRoute =
+  (config: ServerConfig): ErrorRequestHandler =>
+  (err, req, res, next) => {
+    console.error(err.stack);
+    const error = {
+      code: 500,
+      message: 'Internal server error',
+    };
+    res.status(error.code).render('index', {error});
   };
-  res.status(error.code).render('index', {error});
-};
 
 export default ErrorRoute;
