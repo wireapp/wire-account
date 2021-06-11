@@ -44,7 +44,6 @@ i18n
   .init({
     debug: false,
     detection: {
-      caches: false,
       lookupQuerystring: CommonConfig.LANGUAGE_QUERY_PARAMETER,
       order: ['querystring', 'header'],
     },
