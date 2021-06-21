@@ -193,6 +193,7 @@ jobs:
     needs: test_build_deploy
 
     steps:
+      # INFO: https://github.com/wireapp/wire-webapp/blob/062ae4e1c23fa0b33dafae9cc0acf9a94fa8ad1a/.github/workflows/test_build_deploy.yml#L351-L356
       - name: Obtaining release information artifact
         id: release-info-artifact
         uses: actions/download-artifact@v2
