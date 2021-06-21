@@ -89,16 +89,9 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
           </>
         ) : (
           <>
-            <H2 style={{fontWeight: 500, marginBottom: '10px', marginTop: '0'}}>
-              {t('title', {brandName: BRAND_NAME})}
-            </H2>
-            <Text block css={{margin: '16px 0'}}>
-              {t('description', {brandName: BRAND_NAME})}
-            </Text>
-            <Text block css={{margin: '16px 0'}}>
-              {t('downloadCTA', {brandName: BRAND_NAME})}
-            </Text>
-            <FlexBox column={isMobile}>
+            <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
+            <Text block>{t('description')}</Text>
+            <FlexBox column={isMobile} css={{marginTop: 24}}>
               <ButtonLink
                 href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
                   code,
@@ -131,7 +124,7 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
 
             {!Runtime.isMobileOS() && (
               <>
-                <H3>{t('wirelessHeadline', {brandName: BRAND_NAME})}</H3>
+                <H3 css={{marginBottom: 8, marginTop: 48}}>{t('wirelessHeadline', {brandName: BRAND_NAME})}</H3>
                 <TextLink
                   block
                   href={pathWithParams(`${WEBAPP_URL}/join`, {

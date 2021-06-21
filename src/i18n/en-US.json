@@ -70,8 +70,7 @@
   },
   "conversationJoin": {
     "loading": "Verifying link…",
-    "description": "In conversations, you can collaborate with other users via {{brandName}} - whether they are from your team or externals.",
-    "downloadCTA": "Download the {{brandName}} app for free and start collaborating!",
+    "description": "Encrypted group messaging and conference calls.",
     "wirelessHeadline": "Don't have a {{brandName}} account?",
     "wirelessLink": "Join the conversation as a temporary Guest",
     "wirelessNote": "(access expires after 24 hours)",
