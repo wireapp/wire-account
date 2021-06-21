@@ -74,73 +74,75 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
 
   return (
     <Document>
-      <ContainerSM css={{margin: 'auto 0'}}>
-        {isLoading ? (
-          <>
-            <Loading css={{margin: 'auto'}} />
-            <Small muted center css={{margin: '16px 0'}}>
-              {t('loading')}
-            </Small>
-          </>
-        ) : error ? (
-          <>
-            <H1>{t('errorConversationNotFoundHeadline')}</H1>
-            <Text center>{t('errorConversationNotFoundDescription')}</Text>
-          </>
-        ) : (
-          <>
-            <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
-            <Text block>{t('description')}</Text>
-            <FlexBox column={isMobile} css={{marginTop: 24}}>
-              <ButtonLink
-                href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
-                  code,
-                  key,
-                })}
-                style={{marginRight: 16}}
-                data-uie-name="do-conversation-join-app"
-              >
-                {t('joinWithApp')}
-              </ButtonLink>
-
-              {!Runtime.isMobileOS() && (
+      {isLoading ? (
+        <FlexBox column align="center" css={{margin: 'auto'}}>
+          <Loading css={{margin: 'auto'}} />
+          <Small muted center css={{margin: '16px 0'}}>
+            {t('loading')}
+          </Small>
+        </FlexBox>
+      ) : (
+        <ContainerSM css={{margin: 'auto 0'}}>
+          {error ? (
+            <>
+              <H1>{t('errorConversationNotFoundHeadline')}</H1>
+              <Text center>{t('errorConversationNotFoundDescription')}</Text>
+            </>
+          ) : (
+            <>
+              <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
+              <Text block>{t('description')}</Text>
+              <FlexBox column={isMobile} css={{marginTop: 24}}>
                 <ButtonLink
-                  href={pathWithParams(`${WEBAPP_URL}/join`, {
+                  href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
                     code,
                     key,
                   })}
                   style={{marginRight: 16}}
-                  data-uie-name="do-conversation-join-webapp"
+                  data-uie-name="do-conversation-join-app"
                 >
-                  {t('joinWithBrowser')}
+                  {t('joinWithApp')}
                 </ButtonLink>
-              )}
-              {Runtime.isMobileOS() || Runtime.isMacOS() ? (
-                <DirectDownloadButton style={{justifyContent: 'center'}}>{t('downloadApp')}</DirectDownloadButton>
-              ) : (
-                <WebsiteDownloadButton style={{justifyContent: 'center'}} />
-              )}
-            </FlexBox>
 
-            {!Runtime.isMobileOS() && (
-              <>
-                <H3 css={{marginBottom: 8, marginTop: 48}}>{t('wirelessHeadline', {brandName: BRAND_NAME})}</H3>
-                <TextLink
-                  block
-                  href={pathWithParams(`${WEBAPP_URL}/join`, {
-                    code,
-                    key,
-                  })}
-                  data-uie-name="do-conversation-join-webapp"
-                >
-                  {t('wirelessLink')}
-                </TextLink>
-                <Text muted>{t('wirelessNote')}</Text>
-              </>
-            )}
-          </>
-        )}
-      </ContainerSM>
+                {!Runtime.isMobileOS() && (
+                  <ButtonLink
+                    href={pathWithParams(`${WEBAPP_URL}/join`, {
+                      code,
+                      key,
+                    })}
+                    style={{marginRight: 16}}
+                    data-uie-name="do-conversation-join-webapp"
+                  >
+                    {t('joinWithBrowser')}
+                  </ButtonLink>
+                )}
+                {Runtime.isMobileOS() || Runtime.isMacOS() ? (
+                  <DirectDownloadButton style={{justifyContent: 'center'}}>{t('downloadApp')}</DirectDownloadButton>
+                ) : (
+                  <WebsiteDownloadButton style={{justifyContent: 'center'}} />
+                )}
+              </FlexBox>
+
+              {!Runtime.isMobileOS() && (
+                <>
+                  <H3 css={{marginBottom: 8, marginTop: 48}}>{t('wirelessHeadline', {brandName: BRAND_NAME})}</H3>
+                  <TextLink
+                    block
+                    href={pathWithParams(`${WEBAPP_URL}/join`, {
+                      code,
+                      key,
+                    })}
+                    data-uie-name="do-conversation-join-webapp"
+                  >
+                    {t('wirelessLink')}
+                  </TextLink>
+                  <Text muted>{t('wirelessNote')}</Text>
+                </>
+              )}
+            </>
+          )}
+        </ContainerSM>
+      )}
     </Document>
   );
 };
