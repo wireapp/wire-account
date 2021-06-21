@@ -45,8 +45,7 @@ class ConversationJoinPage extends TestPage<ConversationJoinProps> {
     );
   }
 
-  getOpenDesktop = () => this.get('a[data-uie-name="do-conversation-join-desktop"]');
-  getOpenMobile = () => this.get('a[data-uie-name="do-conversation-join-mobile"]');
+  getOpenApp = () => this.get('a[data-uie-name="do-conversation-join-app"]');
   getOpenWebapp = () => this.get('a[data-uie-name="do-conversation-join-webapp"]');
   getDirectDownload = () => this.get('a[data-uie-name="go-direct-download"]');
   getWebsiteDownload = () => this.get('a[data-uie-name="go-website-download"]');
@@ -74,11 +73,11 @@ describe('ConversationJoin', () => {
     await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalledWith(key, code));
 
     conversationJoinPage.update();
-    expect(conversationJoinPage.getOpenDesktop().exists()).toBe(true);
+    expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
   });
 
   describe('on mobile', () => {
-    it('shows open mobile button & direct download', async () => {
+    it('shows open app & direct download', async () => {
       spyOn(Runtime, 'isMobileOS').and.returnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
@@ -98,15 +97,15 @@ describe('ConversationJoin', () => {
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
 
       conversationJoinPage.update();
-      expect(conversationJoinPage.getOpenDesktop().exists()).toBe(false);
+      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
       expect(conversationJoinPage.getOpenWebapp().exists()).toBe(false);
-      expect(conversationJoinPage.getOpenMobile().exists()).toBe(true);
+      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
       expect(conversationJoinPage.getDirectDownload().exists()).toBe(true);
     });
   });
 
   describe('on desktop', () => {
-    it('shows open desktop, webapp & direct download on MacOS', async () => {
+    it('shows open app, webapp & direct download on MacOS', async () => {
       spyOn(Runtime, 'isMobileOS').and.returnValue(false);
       spyOn(Runtime, 'isMacOS').and.returnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
@@ -127,14 +126,13 @@ describe('ConversationJoin', () => {
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
 
       conversationJoinPage.update();
-      expect(conversationJoinPage.getOpenDesktop().exists()).toBe(true);
+      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
       expect(conversationJoinPage.getOpenWebapp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenMobile().exists()).toBe(false);
       expect(conversationJoinPage.getDirectDownload().exists()).toBe(true);
       expect(conversationJoinPage.getWebsiteDownload().exists()).toBe(false);
     });
 
-    it('shows open desktop, webapp & website download on non-MacOS', async () => {
+    it('shows open app, webapp & website download on non-MacOS', async () => {
       spyOn(Runtime, 'isMobileOS').and.returnValue(false);
       spyOn(Runtime, 'isMacOS').and.returnValue(false);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
@@ -155,9 +153,8 @@ describe('ConversationJoin', () => {
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
 
       conversationJoinPage.update();
-      expect(conversationJoinPage.getOpenDesktop().exists()).toBe(true);
+      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
       expect(conversationJoinPage.getOpenWebapp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenMobile().exists()).toBe(false);
       expect(conversationJoinPage.getDirectDownload().exists()).toBe(false);
       expect(conversationJoinPage.getWebsiteDownload().exists()).toBe(true);
     });
