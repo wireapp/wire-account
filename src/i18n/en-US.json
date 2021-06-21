@@ -70,9 +70,16 @@
   },
   "conversationJoin": {
     "loading": "Verifying link…",
-    "description": "Join a public conversation",
-    "errorDescription": "Please ask the owner of the conversation.",
-    "errorTitle": "Something went wrong",
-    "title": "Join conversation"
+    "description": "In conversations, you can collaborate with other users via {{brandName}} - whether they are from your team or externals.",
+    "downloadCTA": "Download the {{brandName}} app for free and start collaborating!",
+    "wirelessHeadline": "Don't have a {{brandName}} account?",
+    "wirelessLink": "Join the conversation as a temporary Guest",
+    "wirelessNote": "(access expires after 24 hours)",
+    "errorConversationNotFoundDescription": "The link to this group conversation expired or the conversation was set to private.",
+    "errorConversationNotFoundHeadline": "Conversation not found",
+    "title": "You have been invited to join a {{brandName}} conversation.",
+    "downloadApp": "Download the app",
+    "joinWithApp": "Join in the app",
+    "joinWithBrowser": "Join in the browser"
   }
 }

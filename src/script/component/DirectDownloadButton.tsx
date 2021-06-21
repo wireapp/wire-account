@@ -31,9 +31,11 @@ import {
   WEBSITE_URL,
 } from 'script/Environment';
 
-interface Props extends LinkProps {}
+interface Props extends LinkProps {
+  backgroundColor?: string;
+}
 
-const DirectDownloadButton = (props: Props) => {
+const DirectDownloadButton = ({children, ...props}: Props) => {
   const [t] = useTranslation('open');
   const DEFAULT_LINK = `${WEBSITE_URL}/download`;
   const SYSTEM_DEPENDENT_LINKS = {
@@ -52,7 +54,7 @@ const DirectDownloadButton = (props: Props) => {
       data-uie-name="go-direct-download"
       {...props}
     >
-      {t('downloadButton', {company: BRAND_NAME})}
+      {children || t('downloadButton', {company: BRAND_NAME})}
     </ButtonLink>
   );
 };
