@@ -70,15 +70,15 @@
   },
   "conversationJoin": {
     "loading": "Verifying link…",
-    "description": "Encrypted group messaging and conference calls.",
+    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
     "wirelessHeadline": "Don't have a {{brandName}} account?",
     "wirelessLink": "Join the conversation as a temporary Guest",
     "wirelessNote": "(access expires after 24 hours)",
     "errorConversationNotFoundDescription": "The link to this group conversation expired or the conversation was set to private.",
     "errorConversationNotFoundHeadline": "Conversation not found",
-    "title": "You have been invited to join a {{brandName}} conversation.",
-    "downloadApp": "Download the app",
-    "joinWithApp": "Join in the app",
+    "title": "You have been invited to join a conversation in {{brandName}}",
+    "downloadApp": "Download the App",
+    "joinWithApp": "Join in the App",
     "joinWithBrowser": "Join in the browser"
   }
 }
