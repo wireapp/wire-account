@@ -67,5 +67,18 @@
     "titleBot": "Bot bestätigen",
     "titleEmail": "Konto bestätigen",
     "titlePhone": "Telefonnummer bestätigen"
+  },
+  "conversationJoin": {
+    "loading": "Überprüfe Link …",
+    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
+    "wirelessHeadline": "Sie haben noch kein {{brandName}}-Konto?",
+    "wirelessLink": "Am Gespräch als vorübergehender Gast teilnehmen",
+    "wirelessNote": "(Zugriff läuft nach 24 Stunden ab)",
+    "errorConversationNotFoundDescription": "Der Link zu dieser Gruppendiskussion ist abgelaufen oder die Unterhaltung wurde auf privat gesetzt.",
+    "errorConversationNotFoundHeadline": "Gespräch nicht gefunden",
+    "title": "You have been invited to join a conversation in {{brandName}}",
+    "downloadApp": "Download the App",
+    "joinWithApp": "Join in the App",
+    "joinWithBrowser": "Im Browser beitreten"
   }
 }
