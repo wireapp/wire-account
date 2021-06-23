@@ -22,21 +22,14 @@
 const child = require('child_process');
 const appConfigPkg = require('../app-config/package.json');
 const pkg = require('../package.json');
-const {execSync} = require('child_process');
-
-const currentBranch = execSync('git rev-parse --abbrev-ref HEAD')
-  .toString()
-  .trim();
 
 const distributionParam = process.argv[2] || '';
 const stageParam = process.argv[3] || '';
 const commitSha = process.env.GITHUB_SHA || 'COMMIT_ID';
-const commitShaLength = 7;
-const commitShortSha = commitSha.substring(0, commitShaLength - 1);
+const commitId = commitSha.substring(0, 7);
 const configurationEntry = `wire-web-config-default-${
-  distributionParam ? distributionParam : currentBranch === 'main' ? 'main' : 'staging'
+  distributionParam ? distributionParam : stageParam === 'production' ? 'main' : 'staging'
 }`;
-
 const configVersion = appConfigPkg.dependencies[configurationEntry].split('#')[1];
 const dockerRegistryDomain = 'quay.io';
 const repository = `${dockerRegistryDomain}/wire/account${distributionParam ? `-${distributionParam}` : ''}`;
@@ -45,18 +38,18 @@ const tags = [];
 if (stageParam) {
   tags.push(`${repository}:${stageParam}`);
 }
-if (currentBranch === 'staging' || currentBranch === 'main') {
-  tags.push(`${repository}:${pkg.version}-${configVersion}-${commitShortSha}`);
+if (stageParam === 'production') {
+  tags.push(`${repository}:${pkg.version}-${configVersion}-${commitId}`);
 }
 
 const dockerCommands = [
   `echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin ${dockerRegistryDomain}`,
-  `docker build . --tag ${commitShortSha}`,
+  `docker build . --tag ${commitId}`,
 ];
 
 tags.forEach(containerImageTagValue => {
   dockerCommands.push(
-    `docker tag ${commitShortSha} ${containerImageTagValue}`,
+    `docker tag ${commitId} ${containerImageTagValue}`,
     `docker push ${containerImageTagValue}`,
   );
 });
