@@ -72,7 +72,7 @@
     "loading": "Vérification du lien…",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
     "wirelessHeadline": "Vous n'avez pas de compte {{brandName}} ?",
-    "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire",
+    "wirelessLink": "Join the conversation as a temporary guest",
     "wirelessNote": "(l'accès expire après 24 heures)",
     "errorConversationNotFoundDescription": "Le lien vers cette conversation de groupe a expiré ou la conversation a été définie comme privée.",
     "errorConversationNotFoundHeadline": "Conversation introuvable",
