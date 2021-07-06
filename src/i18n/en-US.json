@@ -77,8 +77,8 @@
     "errorConversationNotFoundDescription": "The link to this group conversation expired or the conversation was set to private.",
     "errorConversationNotFoundHeadline": "Conversation not found",
     "title": "You have been invited to join a conversation in {{brandName}}",
-    "downloadApp": "Download the App",
-    "joinWithApp": "Join in the App",
+    "downloadApp": "Download the app",
+    "joinWithApp": "Join in the app",
     "joinWithBrowser": "Join in the browser"
   }
 }
