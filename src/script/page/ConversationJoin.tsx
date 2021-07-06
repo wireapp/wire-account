@@ -85,8 +85,10 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
         <ContainerSM css={{margin: 'auto 0'}}>
           {error ? (
             <>
-              <H1>{t('errorConversationNotFoundHeadline')}</H1>
-              <Text center>{t('errorConversationNotFoundDescription')}</Text>
+              <H1 data-uie-name="element-conversation-join-error-headline">{t('errorConversationNotFoundHeadline')}</H1>
+              <Text center data-uie-name="element-conversation-join-error-description">
+                {t('errorConversationNotFoundDescription')}
+              </Text>
             </>
           ) : (
             <>
