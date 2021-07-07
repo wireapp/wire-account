@@ -62,7 +62,7 @@
     "eslint-plugin-sort-keys-fix": "1.1.1",
     "fs-extra": "10.0.0",
     "generate-changelog": "1.8.0",
-    "husky": "7.0.0",
+    "husky": "7.0.1",
     "i18next-scanner": "3.0.0",
     "jest": "26.6.3",
     "lint-staged": "11.0.0",
