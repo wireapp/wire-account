@@ -74,7 +74,7 @@
     "wirelessHeadline": "Don't want to create a {{brandName}} account?",
     "wirelessLink": "Join the conversation as a temporary guest",
     "wirelessNote": "(access expires after 24 hours)",
-    "errorConversationNotFoundDescription": "The link to this group conversation expired or the conversation was set to private.",
+    "errorConversationNotFoundDescription": "The link to this group conversation has expired or is no longer valid.",
     "errorConversationNotFoundHeadline": "Conversation not found",
     "title": "You have been invited to join a conversation in {{brandName}}",
     "downloadApp": "Download the app",
