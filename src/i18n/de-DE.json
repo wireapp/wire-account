@@ -69,16 +69,16 @@
     "titlePhone": "Telefonnummer bestätigen"
   },
   "conversationJoin": {
-    "loading": "Überprüfe Link …",
-    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
-    "wirelessHeadline": "Sie haben noch kein {{brandName}}-Konto?",
+    "loading": "Der Link wird überprüft…",
+    "description": "Audio- und Videokonferenzen, Textnachrichten, Teilen von Dateien und Bildschirmfreigabe – alles Ende-zu-Ende verschlüsselt.",
+    "wirelessHeadline": "Sie möchten kein {{brandName}}-Benutzerkonto erstellen?",
     "wirelessLink": "Nehmen Sie als temporärer Gast an der Unterhaltung teil",
     "wirelessNote": "(Zugang verfällt nach 24 Stunden)",
     "errorConversationNotFoundDescription": "Der Link zu dieser Gruppendiskussion ist abgelaufen oder die Unterhaltung wurde auf privat gesetzt.",
-    "errorConversationNotFoundHeadline": "Gespräch nicht gefunden",
+    "errorConversationNotFoundHeadline": "Unterhaltung nicht gefunden",
     "title": "Sie wurden zu einer Unterhaltung in {{brandName}} eingeladen",
-    "downloadApp": "Download the App",
-    "joinWithApp": "Join in the App",
+    "downloadApp": "Laden Sie die App herunter",
+    "joinWithApp": "Nehmen Sie über die App teil",
     "joinWithBrowser": "Im Browser beitreten"
   }
 }
