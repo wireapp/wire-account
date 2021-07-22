@@ -1,51 +1,30 @@
 version: 2
 updates:
 - package-ecosystem: npm
-  directory: "/"
+  directory: '/'
   schedule:
-    interval: daily
-    time: "01:00"
+      interval: weekly
+      day: sunday
+      time: '16:00'
+      timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
   ignore:
   - dependency-name: husky
     versions:
-    - "> 6.0.0, < 7"
-  - dependency-name: husky
-    versions:
-    - "> 7.0.0"
-  - dependency-name: "@wireapp/api-client"
-    versions:
-    - 12.10.0
-    - 12.18.10
-    - 12.20.0
-    - 12.21.1
-    - 12.21.2
-    - 12.22.2
-    - 12.23.0
-    - 12.24.0
-  - dependency-name: husky
-    versions:
-    - 6.0.0
-    - 7.0.0
-  - dependency-name: i18next-browser-languagedetector
-    versions:
-    - 6.1.0
-  - dependency-name: prettier
-    versions:
-    - 2.3.0
-  - dependency-name: "@wireapp/react-ui-kit"
-    versions:
-    - 7.52.1
+    - '>= 5.a'
 - package-ecosystem: npm
-  directory: "/app-config"
+  directory: '/app-config'
   schedule:
-    interval: daily
-    time: "01:00"
+      interval: weekly
+      day: sunday
+      time: '16:00'
+      timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
 - package-ecosystem: npm
-  directory: "/server"
+  directory: '/server'
   schedule:
-    interval: weekly
-    day: sunday
-    time: "01:00"
+      interval: weekly
+      day: sunday
+      time: '16:00'
+      timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
