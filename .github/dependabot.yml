@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: weekly
       day: sunday
-      time: '16:00'
+      time: '01:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     labels:
@@ -19,7 +19,7 @@ updates:
     schedule:
       interval: weekly
       day: sunday
-      time: '16:00'
+      time: '01:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     labels:
@@ -29,7 +29,7 @@ updates:
     schedule:
       interval: weekly
       day: sunday
-      time: '16:00'
+      time: '01:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     labels:
