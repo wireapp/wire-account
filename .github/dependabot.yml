@@ -15,7 +15,7 @@ updates:
         versions:
           - '>= 5.a'
   - package-ecosystem: npm
-    directory: '/app-config'
+    directory: '/server'
     schedule:
       interval: weekly
       day: sunday
@@ -25,10 +25,9 @@ updates:
     labels:
       - 'type: chore 🧹'
   - package-ecosystem: npm
-    directory: '/server'
+    directory: '/app-config'
     schedule:
-      interval: weekly
-      day: sunday
+      interval: daily
       time: '01:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
