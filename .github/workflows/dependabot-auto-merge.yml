@@ -14,17 +14,17 @@ jobs:
         id: metadata
         uses: dependabot/fetch-metadata@v1.1.0
         with:
-          github-token: '${{secrets.OTTO_THE_BOT_GH_TOKEN}}'
+          github-token: '${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}'
 
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.OTTO_THE_BOT_GH_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}
 
       - name: Enable auto-merge for Dependabot PRs
         if: ${{steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.OTTO_THE_BOT_GH_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}
