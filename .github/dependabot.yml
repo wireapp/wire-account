@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: weekly
       day: sunday
-      time: '01:00'
+      time: '02:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     labels:
@@ -19,7 +19,7 @@ updates:
     schedule:
       interval: weekly
       day: sunday
-      time: '01:00'
+      time: '02:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     labels:
@@ -28,7 +28,7 @@ updates:
     directory: '/app-config'
     schedule:
       interval: daily
-      time: '01:00'
+      time: '02:00'
       timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     labels:
