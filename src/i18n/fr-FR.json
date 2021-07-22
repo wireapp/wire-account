@@ -74,7 +74,7 @@
     "wirelessHeadline": "Vous ne voulez pas créer un compte {{brandName}} ?",
     "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire",
     "wirelessNote": "(l'accès expire après 24 heures)",
-    "errorConversationNotFoundDescription": "Le lien vers cette conversation de groupe a expiré ou la conversation a été définie comme privée.",
+    "errorConversationNotFoundDescription": "Le lien vers cette conversation de groupe a expiré ou n'est plus valide.",
     "errorConversationNotFoundHeadline": "Conversation introuvable",
     "title": "Vous avez été invité·e à rejoindre une conversation dans {{brandName}}",
     "downloadApp": "Télécharger l'appli",
