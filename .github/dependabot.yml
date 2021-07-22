@@ -8,6 +8,8 @@ updates:
       time: '16:00'
       timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
+  labels:
+      - "type: chore \U0001F9F9"
   ignore:
   - dependency-name: husky
     versions:
@@ -20,6 +22,8 @@ updates:
       time: '16:00'
       timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
+  labels:
+      - "type: chore \U0001F9F9"
 - package-ecosystem: npm
   directory: '/server'
   schedule:
@@ -28,3 +32,5 @@ updates:
       time: '16:00'
       timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
+  labels:
+      - "type: chore \U0001F9F9"
