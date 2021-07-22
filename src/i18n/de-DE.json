@@ -74,7 +74,7 @@
     "wirelessHeadline": "Sie möchten kein {{brandName}}-Benutzerkonto erstellen?",
     "wirelessLink": "Nehmen Sie als temporärer Gast an der Unterhaltung teil",
     "wirelessNote": "(Zugang verfällt nach 24 Stunden)",
-    "errorConversationNotFoundDescription": "Der Link zu dieser Gruppendiskussion ist abgelaufen oder die Unterhaltung wurde auf privat gesetzt.",
+    "errorConversationNotFoundDescription": "Der Link zu dieser Gruppenunterhaltung ist abgelaufen oder nicht mehr gültig.",
     "errorConversationNotFoundHeadline": "Unterhaltung nicht gefunden",
     "title": "Sie wurden zu einer Unterhaltung in {{brandName}} eingeladen",
     "downloadApp": "Laden Sie die App herunter",
