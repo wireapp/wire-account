@@ -3,10 +3,10 @@ updates:
 - package-ecosystem: npm
   directory: '/'
   schedule:
-      interval: weekly
-      day: sunday
-      time: '16:00'
-      timezone: 'Europe/Berlin'
+    interval: weekly
+    day: sunday
+    time: '16:00'
+    timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
   labels:
     - 'type: chore \U0001F9F9'
@@ -17,20 +17,20 @@ updates:
 - package-ecosystem: npm
   directory: '/app-config'
   schedule:
-      interval: weekly
-      day: sunday
-      time: '16:00'
-      timezone: 'Europe/Berlin'
+    interval: weekly
+    day: sunday
+    time: '16:00'
+    timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
   labels:
     - 'type: chore \U0001F9F9'
 - package-ecosystem: npm
   directory: '/server'
   schedule:
-      interval: weekly
-      day: sunday
-      time: '16:00'
-      timezone: 'Europe/Berlin'
+    interval: weekly
+    day: sunday
+    time: '16:00'
+    timezone: 'Europe/Berlin'
   open-pull-requests-limit: 99
   labels:
     - 'type: chore \U0001F9F9'
