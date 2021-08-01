@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@emotion/react": "11.4.0",
-    "@wireapp/api-client": "12.33.4",
+    "@wireapp/api-client": "12.35.0",
     "@wireapp/commons": "4.2.10",
     "@wireapp/react-ui-kit": "7.52.7",
     "core-js": "3.15.2",
