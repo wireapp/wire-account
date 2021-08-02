@@ -73,11 +73,11 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Test
-        if: env.DISTRIBUTION == 'wire'
+        if: matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         run: yarn test
 
       - name: Monitor coverage
-        if: github.event_name == 'pull_request' && env.DISTRIBUTION == 'wire'
+        if: github.event_name == 'pull_request' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         uses: slavcodev/coverage-monitor-action@1.1.0
         with:
           github_token: ${{github.token}}
@@ -99,7 +99,7 @@ jobs:
         run: yarn bundle:prod
 
       - name: Assembling release information
-        if: env.TAG != '' && env.DISTRIBUTION == 'wire'
+        if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         # NOTE: always using 'main' config, since release version is only consumed at
         #       'production' stage for now
         # NOTE: 'containerImageTag' value must follow bin/push_docker.js:L49
@@ -113,14 +113,14 @@ jobs:
           echo "{\"imageTag\": \"${containerImageTag}\", \"releaseName\": \"${RELEASE_NAME}\"}" > ./release-info.json
 
       - name: Storing release information
-        if: env.TAG != '' && env.DISTRIBUTION == 'wire'
+        if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         uses: actions/upload-artifact@v2
         with:
           name: release-info.json
           path: ./release-info.json
 
       - name: Deploy staging build to Elastic Beanstalk
-        if: env.BRANCH_NAME == 'staging' && env.DISTRIBUTION == 'wire'
+        if: env.BRANCH_NAME == 'staging' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         uses: einaregilsson/beanstalk-deploy@v11
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
@@ -135,7 +135,7 @@ jobs:
           version_description: ${{github.sha}}
 
       - name: Deploy production build to Elastic Beanstalk
-        if: env.TAG != '' && env.DISTRIBUTION == 'wire'
+        if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         uses: einaregilsson/beanstalk-deploy@v11
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
@@ -175,7 +175,7 @@ jobs:
 
       - name: Create GitHub release
         id: create_release
-        if: env.TAG != '' && env.DISTRIBUTION == 'wire'
+        if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{github.token}}
