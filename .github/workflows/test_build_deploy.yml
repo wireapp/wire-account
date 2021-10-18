@@ -223,6 +223,8 @@ jobs:
         run: |
           sed --in-place --expression="s/  tag: .*/  tag: \"${{ fromJSON(steps.release-info-file.outputs.releaseInfo).imageTag }}\"/" ./charts/account-pages/values.yaml
           git add ./charts/account-pages/values.yaml
+          echo "Upgrade account-pages version to ${{ fromJSON(steps.release-info-file.outputs.releaseInfo).imageTag }}" > ./changelog.d/0-release-notes/account-pages-upgrade
+          git add ./changelog.d/0-release-notes/account-pages-upgrade
           echo "::set-output name=releaseUrl::${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/${{ fromJSON(steps.release-info-file.outputs.releaseInfo).releaseName }}"
 
       - name: Creating Pull Request
