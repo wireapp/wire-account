@@ -30,7 +30,7 @@
     "@testing-library/react": "12.1.2",
     "@types/cheerio": "0.22.30",
     "@types/color": "3.0.2",
-    "@types/enzyme": "3.10.9",
+    "@types/enzyme": "3.10.10",
     "@types/jest": "26.0.24",
     "@types/node": "16.11.0",
     "@types/react": "17.0.30",
