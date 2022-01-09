@@ -28,7 +28,7 @@
     "@types/helmet": "4.0.0",
     "@types/moment": "2.13.0",
     "@types/request": "2.48.8",
-    "@types/uuid": "8.3.3",
+    "@types/uuid": "8.3.4",
     "@wireapp/tslint-config": "1.4.1",
     "cross-env": "7.0.3",
     "generate-changelog": "1.8.0",
