@@ -88,6 +88,7 @@ export const DOWNLOAD_WINDOWS_URL = window.wire.env.URL.DOWNLOAD_WINDOWS_BASE;
 export const IMPRINT_URL = window.wire.env.URL.IMPRINT;
 export const OPEN_GRAPH_IURL = window.wire.env.URL.OPEN_GRAPH_IMAGE;
 export const REDIRECT_CONVERSATION_JOIN_URL = 'wire://conversation-join/';
+export const REDIRECT_USER_PROFILE_URL = 'wire://user/';
 export const REDIRECT_PHONE_URL = window.wire.env.URL.REDIRECT_PHONE_BASE;
 export const REDIRECT_RESET_URL = window.wire.env.URL.REDIRECT_RESET_BASE;
 export const REDIRECT_START_SSO_URL = window.wire.env.URL.REDIRECT_START_SSO_BASE;

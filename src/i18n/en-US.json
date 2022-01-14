@@ -80,5 +80,12 @@
     "downloadApp": "Download the app",
     "joinWithApp": "Join in the app",
     "joinWithBrowser": "Join in the browser"
+  },
+  "userProfile": {
+    "title": "You have been invited to view a user profile in {{brandName}}",
+    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
+    "downloadApp": "Download {{brandName}}",
+    "openWithApp": "Open in app",
+    "openWithBrowser": "Open in browser"
   }
 }

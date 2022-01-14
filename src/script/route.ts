@@ -31,6 +31,7 @@ const ROUTE = {
   PASSWORD_FORGOT_BOT: '/forgot/bot',
   PASSWORD_RESET: '/reset',
   PASSWORD_RESET_BOT: '/reset/bot',
+  USER_PROFILE: '/user-profile',
   VERIFY_ACCOUNT_BOT: '/verify/bot',
   VERIFY_ACCOUNT_EMAIL: '/verify',
   VERIFY_ACCOUNT_PHONE: '/v/:code',
