@@ -80,5 +80,12 @@
     "downloadApp": "Laden Sie die App herunter",
     "joinWithApp": "Nehmen Sie über die App teil",
     "joinWithBrowser": "Im Browser beitreten"
+  },
+  "userProfile": {
+    "title": "You have been invited to view a user profile in {{brandName}}",
+    "description": "Audio- und Videokonferenzen, Textnachrichten, Teilen von Dateien und Bildschirmfreigabe – alles Ende-zu-Ende verschlüsselt.",
+    "downloadApp": "Download {{brandName}}",
+    "openWithApp": "Open in app",
+    "openWithBrowser": "Open in browser"
   }
 }
