@@ -2015,17 +2015,17 @@
   resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.6.0.tgz#2c275aa05c895eccebbfc34cfb223c6e8bd591a2"
   integrity sha512-ZkVeqEmRpBV2GHvjjUZqEai2PpUbuq8Bqd//vEYsp63J8WyexI8ppCqVS3Zs0QADf6aWuPdU+0XsPI647PVlQA==
 
-"@wireapp/api-client@16.4.0":
-  version "16.4.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-16.4.0.tgz#58efd17a30ec0a2d115ae807d36d71350721c2f2"
-  integrity sha512-Mb1bPmz6/n9H18qJvBLt/Trd67zPvzEVajzVgZjdQekyY6AtxRnemKhHMv7ftLMkgY6mZ4ArzH39aDsqttZirQ==
+"@wireapp/api-client@16.6.0":
+  version "16.6.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/api-client/-/api-client-16.6.0.tgz#6b2a398b4e91a9b4d63e4c8e47bd637b0eceda70"
+  integrity sha512-qO3qNqebCNi0sRVsAP4zdwelBOWUkC24ifk3WOHfR/5rlz2023ZCddjLDaZA4N/YrsYU7yHPfDVpIMzHxxwGtQ==
   dependencies:
     "@types/node" "~14"
     "@types/spark-md5" "3.0.2"
     "@types/tough-cookie" "4.0.1"
     "@wireapp/commons" "4.2.13"
     "@wireapp/priority-queue" "1.6.37"
-    "@wireapp/protocol-messaging" "1.36.0"
+    "@wireapp/protocol-messaging" "1.37.0"
     axios "0.21.4"
     axios-retry "3.1.9"
     http-status-codes "2.1.4"
@@ -2074,10 +2074,10 @@
   dependencies:
     "@types/node" "~14"
 
-"@wireapp/protocol-messaging@1.36.0":
-  version "1.36.0"
-  resolved "https://registry.yarnpkg.com/@wireapp/protocol-messaging/-/protocol-messaging-1.36.0.tgz#3d4bd0bca3df9d4193ac9851d02129a274408dfb"
-  integrity sha512-g/znuDIHWerJh9vS86bkWmBRDgMqLfKq3nPGgvpDm+0tRMyhRKW4y6wB5j4DLlEY2nLyl6WsH+uP/BLV55vObQ==
+"@wireapp/protocol-messaging@1.37.0":
+  version "1.37.0"
+  resolved "https://registry.yarnpkg.com/@wireapp/protocol-messaging/-/protocol-messaging-1.37.0.tgz#f803e14fb4db11a371b074d5c21bfbac6c4c57bc"
+  integrity sha512-+O7RVClJ6u4AWTzy5LUvqGX0rgSdWrf4Go3yrq7i4yzgOhB7uY6LrvvSMyC9/OgxopW0ST5dQ2HBxTLlJghEiQ==
   dependencies:
     protobufjs "6.10.2"
 
