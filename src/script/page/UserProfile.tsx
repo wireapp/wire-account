@@ -17,7 +17,6 @@
  *
  */
 import {Runtime} from '@wireapp/commons';
-import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {ButtonLink, ContainerSM, FlexBox, H2, QUERY, QueryKeys, Text, useMatchMedia} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
@@ -54,7 +53,7 @@ export const UserProfile = ({location}: UserProfileProps) => {
             )}
 
             <ButtonLink
-              href={pathWithParams(`${REDIRECT_USER_PROFILE_URL}${userId}`)}
+              href={`${REDIRECT_USER_PROFILE_URL}${userId}`}
               style={{marginRight: 16}}
               data-uie-name="open-user-profile-app"
             >
@@ -62,10 +61,7 @@ export const UserProfile = ({location}: UserProfileProps) => {
             </ButtonLink>
 
             {!Runtime.isMobileOS() && (
-              <ButtonLink
-                href={pathWithParams(`${WEBAPP_URL}/#/user/${userId}`)}
-                data-uie-name="open-user-profile-webapp"
-              >
+              <ButtonLink href={`${WEBAPP_URL}/#/user/${userId}`} data-uie-name="open-user-profile-webapp">
                 {t('openWithBrowser')}
               </ButtonLink>
             )}
