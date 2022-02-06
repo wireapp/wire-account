@@ -28,7 +28,7 @@
     "@emotion/babel-preset-css-prop": "11.2.0",
     "@hot-loader/react-dom": "16.14.0",
     "@testing-library/react": "12.1.2",
-    "@types/cheerio": "0.22.30",
+    "@types/cheerio": "0.22.31",
     "@types/color": "3.0.2",
     "@types/enzyme": "3.10.11",
     "@types/jest": "27.4.0",
