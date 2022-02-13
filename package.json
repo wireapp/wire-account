@@ -71,7 +71,7 @@
     "prettier": "2.5.1",
     "react-hot-loader": "4.13.0",
     "simple-git": "2.48.0",
-    "sort-json": "2.0.0",
+    "sort-json": "2.0.1",
     "svg-inline-loader": "0.8.2",
     "terser-webpack-plugin": "5.3.1",
     "ts-jest": "26.5.6",
