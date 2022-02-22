@@ -24,34 +24,34 @@ export class AccountAction {
   }
 
   delete = (key: string, code: string) => {
-    return this.apiClient.account.api.postDeleteAccount(key, code);
+    return this.apiClient.api.account.postDeleteAccount(key, code);
   };
 
   initiatePasswordReset = (email: string) => {
-    return this.apiClient.account.api.postPasswordReset(email);
+    return this.apiClient.api.account.postPasswordReset(email);
   };
 
   initiateBotPasswordReset = (email: string) => {
-    return this.apiClient.account.api.postBotPasswordReset(email);
+    return this.apiClient.api.account.postBotPasswordReset(email);
   };
 
   completePasswordReset = (password: string, key: string, code: string) => {
-    return this.apiClient.account.api.postPasswordResetComplete(password, key, code);
+    return this.apiClient.api.account.postPasswordResetComplete(password, key, code);
   };
 
   completeBotPasswordReset = (password: string, key: string, code: string) => {
-    return this.apiClient.account.api.postBotPasswordResetComplete(password, key, code);
+    return this.apiClient.api.account.postBotPasswordResetComplete(password, key, code);
   };
 
   verifyEmail = (key: string, code: string) => {
-    return this.apiClient.account.api.getVerifyEmail(key, code);
+    return this.apiClient.api.account.getVerifyEmail(key, code);
   };
 
   verifyBot = (key: string, code: string) => {
-    return this.apiClient.account.api.getVerifyBot(key, code);
+    return this.apiClient.api.account.getVerifyBot(key, code);
   };
 
   validateConversationJoin = (key: string, code: string) => {
-    return this.apiClient.conversation.api.postConversationCodeCheck({code, key});
+    return this.apiClient.api.conversation.postConversationCodeCheck({code, key});
   };
 }
