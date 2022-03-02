@@ -41,6 +41,7 @@ import Document from 'script/component/Document';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {WEBAPP_URL, REDIRECT_CONVERSATION_JOIN_URL, BRAND_NAME} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
+import {IS_SELF_HOSTED} from 'script/Environment';
 
 export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 

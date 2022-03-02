@@ -26,6 +26,7 @@ declare global {
         APP_BASE: string;
         APP_NAME: string;
         BACKEND_REST: string;
+        IS_SELF_HOSTED: boolean;
         BACKEND_WS: string;
         BRAND_NAME: string;
         ENVIRONMENT: string;
@@ -75,6 +76,7 @@ export const APP_NAME = window.wire.env.APP_NAME;
 export const BRAND_NAME = window.wire.env.BRAND_NAME;
 export const FEATURE_ENABLE_DEBUG = window.wire.env.FEATURE.ENABLE_DEBUG;
 export const HOST_HTTP = window.wire.env.BACKEND_REST;
+export const IS_SELF_HOSTED = window.wire.env.IS_SELF_HOSTED;
 export const NEW_PASSWORD_MINIMUM_LENGTH = window.wire.env.NEW_PASSWORD_MINIMUM_LENGTH || DEFAULT_PASSWORD_MIN_LENGTH;
 export const VERSION = window.wire.env.VERSION;
 
