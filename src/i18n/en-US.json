@@ -72,18 +72,20 @@
     "loading": "Verifying link…",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
     "wirelessHeadline": "Don't want to create a {{brandName}} account?",
-    "wirelessDomainHeadline": "Don't have a Wire account on this backend?",
     "wirelessLink": "Join the conversation as a temporary guest",
-    "wirelessLinkDomain": "Join the conversation as a temporary guest on \"{{domain}}\"",
     "wirelessNote": "(access expires after 24 hours)",
     "errorConversationNotFoundDescription": "The link to this group conversation has expired or is no longer valid.",
     "errorConversationNotFoundHeadline": "Conversation not found",
     "title": "You have been invited to join a conversation in {{brandName}}",
-    "titleDomain": "You have been invited to join a Wire conversation on the backend \"{{domain}}\"",
     "downloadApp": "Download the app",
     "joinWithApp": "Join in the app",
-    "joinWithBrowser": "Join in the browser",
-    "joinWithBrowserOnDomain": "Join with a Wire account from this backend"
+    "joinWithBrowser": "Join in the browser"
+  },
+  "conversationJoinSelfHosted": {
+    "title": "You have been invited to join a Wire conversation on the backend \"{{domain}}\"",
+    "wirelessHeadline": "Don't have a Wire account on this backend?",
+    "wirelessLink": "Join the conversation as a temporary guest on this backend",
+    "joinWithBrowser": "Join with a Wire account from this backend"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",
