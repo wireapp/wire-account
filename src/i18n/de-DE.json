@@ -78,8 +78,8 @@
     "errorConversationNotFoundHeadline": "Unterhaltung nicht gefunden",
     "title": "Sie wurden zu einer Unterhaltung in {{brandName}} eingeladen",
     "downloadApp": "Laden Sie die App herunter",
-    "joinWithApp": "Nehmen Sie über die App teil",
-    "joinWithBrowser": "Im Browser beitreten"
+    "openWithApp": "Nehmen Sie über die App teil",
+    "openWithBrowser": "Im Browser beitreten"
   },
   "userProfile": {
     "title": "Sie wurden eingeladen, ein Benutzerprofil in {{brandName}} anzusehen.",

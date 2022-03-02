@@ -26,12 +26,12 @@ import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {WEBAPP_URL, IS_SELF_HOSTED} from 'script/Environment';
 
 interface OpenWireProps {
-  path: string;
+  paths: {webapp: string; app: string};
   translate: (key: string, substitutions?: any) => string;
   uieName: string;
 }
 
-export const OpenWireButton: React.FC<OpenWireProps> = ({path, translate, uieName}) => {
+export const OpenWireButton: React.FC<OpenWireProps> = ({paths, translate, uieName}) => {
   const canJoinInApp = !IS_SELF_HOSTED; // Only public wire cloud can join with native app
   const canJoinInBrowser = !Runtime.isMobileOS();
   const showDownload = !IS_SELF_HOSTED;
@@ -41,21 +41,21 @@ export const OpenWireButton: React.FC<OpenWireProps> = ({path, translate, uieNam
     <>
       {canJoinInApp && (
         <ButtonLink
-          href={pathWithParams(`wire:///#${path}`)}
+          href={pathWithParams(`wire://${paths.app}`)}
           style={{marginRight: 16}}
           data-uie-name={`${uieName}-app`}
         >
-          {translate('joinWithApp')}
+          {translate('openWithApp')}
         </ButtonLink>
       )}
 
       {canJoinInBrowser && (
         <ButtonLink
-          href={pathWithParams(`${WEBAPP_URL}${path}`)}
+          href={pathWithParams(`${WEBAPP_URL}${paths.webapp}`)}
           style={{marginRight: 16}}
           data-uie-name={`${uieName}-webapp`}
         >
-          {translate('joinWithBrowser')}
+          {translate('openWithBrowser')}
         </ButtonLink>
       )}
       {showDownload &&

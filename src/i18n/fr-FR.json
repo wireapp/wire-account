@@ -72,18 +72,20 @@
     "loading": "Vérification du lien…",
     "description": "Conférences audio et vidéo, messagerie textuelle, partage de fichiers et partage d'écran, tous chiffrés de bout en bout.",
     "wirelessHeadline": "Vous ne voulez pas créer un compte {{brandName}} ?",
-    "wirelessDomainHeadline": "Vous n'avez pas de compte sur ce domaine ?",
     "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire",
-    "wirelessLinkDomain": "Rejoindre la conversation en tant qu'invité temporaire sur \"{{domain}}\"",
     "wirelessNote": "(l'accès expire après 24 heures)",
     "errorConversationNotFoundDescription": "Le lien vers cette conversation de groupe a expiré ou n'est plus valide.",
     "errorConversationNotFoundHeadline": "Conversation introuvable",
     "title": "Vous avez été invité·e à rejoindre une conversation dans {{brandName}}",
-    "titleDomain": "Vous avez été invité·e à rejoindre une conversation Wire sur le domaine \"{{domain}}\"",
     "downloadApp": "Télécharger l'appli",
-    "joinWithApp": "Rejoindre sur l'appli",
-    "joinWithBrowser": "Rejoindre dans le navigateur",
-    "joinWithBrowserOnDomain": "Rejoindre avec un compte Wire sur ce domaine"
+    "openWithApp": "Rejoindre sur l'appli",
+    "openWithBrowser": "Rejoindre dans le navigateur"
+  },
+  "conversationJoinSelfHosted": {
+    "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire sur ce serveur",
+    "title": "Vous avez été invité·e à rejoindre une conversation Wire sur le domaine \"{{domain}}\"",
+    "wirelessHeadline": "Vous n'avez pas de compte sur ce serveur ?",
+    "openWithBrowser": "Rejoindre avec un compte Wire sur ce serveur"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",
