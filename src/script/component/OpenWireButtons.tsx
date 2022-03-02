@@ -23,7 +23,7 @@ import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {ButtonLink} from '@wireapp/react-ui-kit';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
-import {WEBAPP_URL, IS_SELF_HOSTED} from 'script/Environment';
+import {WEBAPP_URL, IS_SELF_HOSTED, WIRE_APP_SCHEME} from 'script/Environment';
 
 interface OpenWireProps {
   paths: {webapp: string; app: string};
@@ -41,7 +41,7 @@ export const OpenWireButton: React.FC<OpenWireProps> = ({paths, translate, uieNa
     <>
       {canJoinInApp && (
         <ButtonLink
-          href={pathWithParams(`wire://${paths.app}`)}
+          href={pathWithParams(`${WIRE_APP_SCHEME}${paths.app}`)}
           style={{marginRight: 16}}
           data-uie-name={`${uieName}-app`}
         >
