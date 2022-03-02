@@ -47,8 +47,9 @@ export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteC
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
+const QUERY_DOMAIN_KEY = 'domain';
 
-export const ConversationJoin = ({location}: ConversationJoinProps) => {
+export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) => {
   const [t] = useTranslation('conversationJoin');
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
   const {accountAction} = useContext(ActionContext);
@@ -59,6 +60,49 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
   const params = new URLSearchParams(location.search);
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
+  const domain = params.get(QUERY_DOMAIN_KEY);
+
+  const renderButtons = () => {
+    const canJoinInApp = !IS_SELF_HOSTED; // Only public wire cloud can join with native app
+    const canJoinInBrowser = !Runtime.isMobileOS();
+    const showDownload = !IS_SELF_HOSTED;
+    const hasDirectDownload = Runtime.isMobileOS() || Runtime.isMacOS();
+    return (
+      <>
+        {canJoinInApp && (
+          <ButtonLink
+            href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
+              code,
+              key,
+            })}
+            style={{marginRight: 16}}
+            data-uie-name="do-conversation-join-app"
+          >
+            {t('joinWithApp')}
+          </ButtonLink>
+        )}
+
+        {canJoinInBrowser && (
+          <ButtonLink
+            href={pathWithParams(`${WEBAPP_URL}/join`, {
+              code,
+              key,
+            })}
+            style={{marginRight: 16}}
+            data-uie-name="do-conversation-join-webapp"
+          >
+            {IS_SELF_HOSTED ? t('joinWithBrowserOnDomain') : t('joinWithBrowser')}
+          </ButtonLink>
+        )}
+        {showDownload &&
+          (hasDirectDownload ? (
+            <DirectDownloadButton style={{justifyContent: 'center'}}>{t('downloadApp')}</DirectDownloadButton>
+          ) : (
+            <WebsiteDownloadButton style={{justifyContent: 'center'}} />
+          ))}
+      </>
+    );
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -93,42 +137,19 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
             </>
           ) : (
             <>
-              <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
+              <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>
+                {!IS_SELF_HOSTED ? t('title', {brandName: BRAND_NAME}) : t('titleDomain', {domain})}
+              </H2>
               <Text block>{t('description')}</Text>
               <FlexBox column={isMobile} css={{marginTop: 24}}>
-                <ButtonLink
-                  href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
-                    code,
-                    key,
-                  })}
-                  style={{marginRight: 16}}
-                  data-uie-name="do-conversation-join-app"
-                >
-                  {t('joinWithApp')}
-                </ButtonLink>
-
-                {!Runtime.isMobileOS() && (
-                  <ButtonLink
-                    href={pathWithParams(`${WEBAPP_URL}/join`, {
-                      code,
-                      key,
-                    })}
-                    style={{marginRight: 16}}
-                    data-uie-name="do-conversation-join-webapp"
-                  >
-                    {t('joinWithBrowser')}
-                  </ButtonLink>
-                )}
-                {Runtime.isMobileOS() || Runtime.isMacOS() ? (
-                  <DirectDownloadButton style={{justifyContent: 'center'}}>{t('downloadApp')}</DirectDownloadButton>
-                ) : (
-                  <WebsiteDownloadButton style={{justifyContent: 'center'}} />
-                )}
+                {renderButtons()}
               </FlexBox>
 
               {!Runtime.isMobileOS() && (
                 <>
-                  <H3 css={{marginBottom: 8, marginTop: 48}}>{t('wirelessHeadline', {brandName: BRAND_NAME})}</H3>
+                  <H3 css={{marginBottom: 8, marginTop: 48}}>
+                    {!IS_SELF_HOSTED ? t('wirelessHeadline', {brandName: BRAND_NAME}) : t('wirelessDomainHeadline')}
+                  </H3>
                   <TextLink
                     block
                     href={pathWithParams(`${WEBAPP_URL}/join`, {
@@ -137,7 +158,7 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
                     })}
                     data-uie-name="do-conversation-join-webapp"
                   >
-                    {t('wirelessLink')}
+                    {!IS_SELF_HOSTED ? t('wirelessLink') : t('wirelessLinkDomain', {domain})}
                   </TextLink>
                   <Text muted>{t('wirelessNote')}</Text>
                 </>
