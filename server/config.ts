@@ -112,6 +112,7 @@ const config: ServerConfig = {
     FEATURE: {
       ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true',
     },
+    IS_SELF_HOSTED: process.env.IS_SELF_HOSTED === 'true',
     NEW_PASSWORD_MINIMUM_LENGTH:
       (process.env.NEW_PASSWORD_MINIMUM_LENGTH && Number(process.env.NEW_PASSWORD_MINIMUM_LENGTH)) ||
       DEFAULT_PASSWORD_MIN_LENGTH,

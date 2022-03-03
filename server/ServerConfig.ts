@@ -27,6 +27,8 @@ export interface ServerConfig {
       ENABLE_DEBUG: boolean;
     };
     NEW_PASSWORD_MINIMUM_LENGTH: number;
+    /** true if the server is not a wire public cloud instance */
+    IS_SELF_HOSTED: boolean;
     URL: {
       ACCOUNT_DELETE_SURVEY: string;
       DOWNLOAD_ANDROID_BASE: string;

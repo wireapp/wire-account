@@ -78,8 +78,14 @@
     "errorConversationNotFoundHeadline": "Conversation not found",
     "title": "You have been invited to join a conversation in {{brandName}}",
     "downloadApp": "Download the app",
-    "joinWithApp": "Join in the app",
-    "joinWithBrowser": "Join in the browser"
+    "openWithApp": "Join in the app",
+    "openWithBrowser": "Join in the browser"
+  },
+  "conversationJoinSelfHosted": {
+    "title": "You have been invited to join a Wire conversation on the backend \"{{domain}}\"",
+    "wirelessHeadline": "Don't have a Wire account on this backend?",
+    "wirelessLink": "Join the conversation as a temporary guest on this backend",
+    "openWithBrowser": "Join with a Wire account from this backend"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",

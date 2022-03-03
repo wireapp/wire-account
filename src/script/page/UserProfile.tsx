@@ -16,15 +16,13 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Runtime} from '@wireapp/commons';
-import {ButtonLink, ContainerSM, FlexBox, H2, QUERY, QueryKeys, Text, useMatchMedia} from '@wireapp/react-ui-kit';
+import {ContainerSM, FlexBox, H2, QUERY, QueryKeys, Text, useMatchMedia} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
-import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
-import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
-import {WEBAPP_URL, BRAND_NAME, REDIRECT_USER_PROFILE_URL} from 'script/Environment';
+import {OpenWireButtons} from 'script/component/OpenWireButtons';
+import {BRAND_NAME} from 'script/Environment';
 
 export interface UserProfileProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 
@@ -44,27 +42,11 @@ export const UserProfile = ({location}: UserProfileProps) => {
           <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
           <Text block>{t('description')}</Text>
           <FlexBox column={isMobile} css={{marginTop: 24}}>
-            {Runtime.isMobileOS() || Runtime.isMacOS() ? (
-              <DirectDownloadButton style={{justifyContent: 'center', marginRight: 16}}>
-                {t('downloadApp', {brandName: BRAND_NAME})}
-              </DirectDownloadButton>
-            ) : (
-              <WebsiteDownloadButton style={{justifyContent: 'center', marginRight: 16}} />
-            )}
-
-            <ButtonLink
-              href={`${REDIRECT_USER_PROFILE_URL}${userId}`}
-              style={{marginRight: 16}}
-              data-uie-name="open-user-profile-app"
-            >
-              {t('openWithApp')}
-            </ButtonLink>
-
-            {!Runtime.isMobileOS() && (
-              <ButtonLink href={`${WEBAPP_URL}/#/user/${userId}`} data-uie-name="open-user-profile-webapp">
-                {t('openWithBrowser')}
-              </ButtonLink>
-            )}
+            <OpenWireButtons
+              translate={t}
+              uieName="open-user-profile"
+              paths={{app: `user/${userId}`, webapp: `/#/user/${userId}`}}
+            />
           </FlexBox>
         </>
       </ContainerSM>

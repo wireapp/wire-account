@@ -19,7 +19,6 @@
 import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {
-  ButtonLink,
   ContainerSM,
   FlexBox,
   H1,
@@ -36,19 +35,21 @@ import {
 import React, {useContext, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
-import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
-import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
-import {WEBAPP_URL, REDIRECT_CONVERSATION_JOIN_URL, BRAND_NAME} from 'script/Environment';
+import {OpenWireButtons} from 'script/component/OpenWireButtons';
+import {WEBAPP_URL, BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
 export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
+const QUERY_DOMAIN_KEY = 'domain';
 
-export const ConversationJoin = ({location}: ConversationJoinProps) => {
-  const [t] = useTranslation('conversationJoin');
+export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) => {
+  const translationNamespaces =
+    false && IS_SELF_HOSTED ? ['conversationJoinSelfHosted', 'conversationJoin'] : undefined;
+  const [t] = useTranslation(['conversationJoin', 'conversationJoinSelfHosted']);
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
   const {accountAction} = useContext(ActionContext);
 
@@ -58,6 +59,7 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
   const params = new URLSearchParams(location.search);
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
+  const domain = params.get(QUERY_DOMAIN_KEY);
 
   useEffect(() => {
     setIsLoading(true);
@@ -92,42 +94,23 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
             </>
           ) : (
             <>
-              <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
-              <Text block>{t('description')}</Text>
+              <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>
+                {t('title', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
+              </H2>
+              <Text block>{t('description', {ns: translationNamespaces})}</Text>
               <FlexBox column={isMobile} css={{marginTop: 24}}>
-                <ButtonLink
-                  href={pathWithParams(REDIRECT_CONVERSATION_JOIN_URL, {
-                    code,
-                    key,
-                  })}
-                  style={{marginRight: 16}}
-                  data-uie-name="do-conversation-join-app"
-                >
-                  {t('joinWithApp')}
-                </ButtonLink>
-
-                {!Runtime.isMobileOS() && (
-                  <ButtonLink
-                    href={pathWithParams(`${WEBAPP_URL}/join`, {
-                      code,
-                      key,
-                    })}
-                    style={{marginRight: 16}}
-                    data-uie-name="do-conversation-join-webapp"
-                  >
-                    {t('joinWithBrowser')}
-                  </ButtonLink>
-                )}
-                {Runtime.isMobileOS() || Runtime.isMacOS() ? (
-                  <DirectDownloadButton style={{justifyContent: 'center'}}>{t('downloadApp')}</DirectDownloadButton>
-                ) : (
-                  <WebsiteDownloadButton style={{justifyContent: 'center'}} />
-                )}
+                <OpenWireButtons
+                  translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
+                  uieName="do-conversation-join"
+                  paths={{app: 'conversation-join/', webapp: '/join'}}
+                />
               </FlexBox>
 
               {!Runtime.isMobileOS() && (
                 <>
-                  <H3 css={{marginBottom: 8, marginTop: 48}}>{t('wirelessHeadline', {brandName: BRAND_NAME})}</H3>
+                  <H3 css={{marginBottom: 8, marginTop: 48}}>
+                    {t('wirelessHeadline', {brandName: BRAND_NAME, ns: translationNamespaces})}
+                  </H3>
                   <TextLink
                     block
                     href={pathWithParams(`${WEBAPP_URL}/join`, {
@@ -136,7 +119,7 @@ export const ConversationJoin = ({location}: ConversationJoinProps) => {
                     })}
                     data-uie-name="do-conversation-join-webapp"
                   >
-                    {t('wirelessLink')}
+                    {t('wirelessLink', {ns: translationNamespaces})}
                   </TextLink>
                   <Text muted>{t('wirelessNote')}</Text>
                 </>

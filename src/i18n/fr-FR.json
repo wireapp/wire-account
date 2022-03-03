@@ -78,8 +78,14 @@
     "errorConversationNotFoundHeadline": "Conversation introuvable",
     "title": "Vous avez été invité·e à rejoindre une conversation dans {{brandName}}",
     "downloadApp": "Télécharger l'appli",
-    "joinWithApp": "Rejoindre sur l'appli",
-    "joinWithBrowser": "Rejoindre dans le navigateur"
+    "openWithApp": "Rejoindre sur l'appli",
+    "openWithBrowser": "Rejoindre dans le navigateur"
+  },
+  "conversationJoinSelfHosted": {
+    "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire sur ce serveur",
+    "title": "Vous avez été invité·e à rejoindre une conversation Wire sur le domaine \"{{domain}}\"",
+    "wirelessHeadline": "Vous n'avez pas de compte sur ce serveur ?",
+    "openWithBrowser": "Rejoindre avec un compte Wire sur ce serveur"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",
