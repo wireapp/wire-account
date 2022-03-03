@@ -36,7 +36,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
-import {OpenWireButton} from 'script/component/OpenWireButtons';
+import {OpenWireButtons} from 'script/component/OpenWireButtons';
 import {WEBAPP_URL, BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
@@ -99,7 +99,7 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               </H2>
               <Text block>{t('description', {ns: translationNamespaces})}</Text>
               <FlexBox column={isMobile} css={{marginTop: 24}}>
-                <OpenWireButton
+                <OpenWireButtons
                   translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
                   uieName="do-conversation-join"
                   paths={{app: 'conversation-join/', webapp: '/join'}}

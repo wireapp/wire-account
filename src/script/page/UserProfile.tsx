@@ -21,7 +21,7 @@ import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
-import {OpenWireButton} from 'script/component/OpenWireButtons';
+import {OpenWireButtons} from 'script/component/OpenWireButtons';
 import {BRAND_NAME} from 'script/Environment';
 
 export interface UserProfileProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
@@ -42,7 +42,7 @@ export const UserProfile = ({location}: UserProfileProps) => {
           <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
           <Text block>{t('description')}</Text>
           <FlexBox column={isMobile} css={{marginTop: 24}}>
-            <OpenWireButton
+            <OpenWireButtons
               translate={t}
               uieName="open-user-profile"
               paths={{app: `user/${userId}`, webapp: `/#/user/${userId}`}}
