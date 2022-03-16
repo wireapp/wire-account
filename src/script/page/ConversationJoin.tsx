@@ -36,7 +36,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
-import {OpenWireButtons} from 'script/component/OpenWireButtons';
+import {OpenWireButtons, hasDisplayedButtons} from 'script/component/OpenWireButtons';
 import {WEBAPP_URL, BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
@@ -47,8 +47,7 @@ const QUERY_KEY_KEY = 'key';
 const QUERY_DOMAIN_KEY = 'domain';
 
 export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) => {
-  const translationNamespaces =
-    false && IS_SELF_HOSTED ? ['conversationJoinSelfHosted', 'conversationJoin'] : undefined;
+  const translationNamespaces = IS_SELF_HOSTED ? ['conversationJoinSelfHosted', 'conversationJoin'] : undefined;
   const [t] = useTranslation(['conversationJoin', 'conversationJoinSelfHosted']);
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
   const {accountAction} = useContext(ActionContext);
@@ -97,15 +96,20 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>
                 {t('title', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
               </H2>
-              <Text block>{t('description', {ns: translationNamespaces})}</Text>
-              <FlexBox column={isMobile} css={{marginTop: 24}}>
-                <OpenWireButtons
-                  translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
-                  uieName="do-conversation-join"
-                  paths={{app: 'conversation-join/', webapp: '/join'}}
-                />
-              </FlexBox>
-
+              {hasDisplayedButtons() ? (
+                <>
+                  <Text block>{t('description', {ns: translationNamespaces})}</Text>
+                  <FlexBox column={isMobile} css={{marginTop: 24}}>
+                    <OpenWireButtons
+                      translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
+                      uieName="do-conversation-join"
+                      paths={{app: 'conversation-join/', webapp: '/join'}}
+                    />
+                  </FlexBox>
+                </>
+              ) : (
+                <Text color="#696C6E">{t('cannotJoinOnMobile')}</Text>
+              )}
               {!Runtime.isMobileOS() && (
                 <>
                   <H3 css={{marginBottom: 8, marginTop: 48}}>

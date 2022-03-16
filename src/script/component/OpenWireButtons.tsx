@@ -31,6 +31,10 @@ interface OpenWireProps {
   uieName: string;
 }
 
+export function hasDisplayedButtons() {
+  return !IS_SELF_HOSTED || !Runtime.isMobileOS();
+}
+
 export const OpenWireButtons: React.FC<OpenWireProps> = ({paths, translate, uieName}) => {
   const canJoinInApp = !IS_SELF_HOSTED; // Only public wire cloud can join with native app
   const canJoinInBrowser = !Runtime.isMobileOS();
