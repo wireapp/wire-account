@@ -79,7 +79,8 @@
     "title": "You have been invited to join a conversation in {{brandName}}",
     "downloadApp": "Download the app",
     "openWithApp": "Join in the app",
-    "openWithBrowser": "Join in the browser"
+    "openWithBrowser": "Join in the browser",
+    "cannotJoinOnMobile": "At the moment, you can't join this conversation on your mobile device. Please open this link on your desktop instead."
   },
   "conversationJoinSelfHosted": {
     "title": "You have been invited to join a Wire conversation on the backend \"{{domain}}\"",
