@@ -77,22 +77,22 @@
     "errorConversationNotFoundDescription": "The link to this group conversation has expired or is no longer valid.",
     "errorConversationNotFoundHeadline": "Conversation not found",
     "title": "You have been invited to join a conversation in {{brandName}}",
-    "downloadApp": "Download the app",
-    "openWithApp": "Join in the app",
-    "openWithBrowser": "Join in the browser",
+    "downloadApp": "Download Wire",
+    "openWithApp": "Join in App",
+    "openWithBrowser": "Join in Browser",
     "cannotJoinOnMobile": "At the moment, you can't join this conversation on your mobile device. Please open this link on your desktop instead."
   },
   "conversationJoinSelfHosted": {
-    "title": "You have been invited to join a Wire conversation on the backend \"{{domain}}\"",
-    "wirelessHeadline": "Don't have a Wire account on this backend?",
-    "wirelessLink": "Join the conversation as a temporary guest on this backend",
-    "openWithBrowser": "Join with a Wire account from this backend"
+    "title": "You have been invited to join a Wire conversation on the domain \"{{domain}}\"",
+    "wirelessHeadline": "Don't have a Wire account on this domain?",
+    "wirelessLink": "Join the conversation as a temporary guest on this domain",
+    "openWithBrowser": "Join with a Wire account from this domain"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
     "downloadApp": "Download {{brandName}}",
-    "openWithApp": "Open in app",
-    "openWithBrowser": "Open in browser"
+    "openWithApp": "Open in App",
+    "openWithBrowser": "Open in Browser"
   }
 }
