@@ -103,7 +103,10 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
                     <OpenWireButtons
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
                       uieName="do-conversation-join"
-                      paths={{app: 'conversation-join/', webapp: '/join'}}
+                      paths={{
+                        app: pathWithParams('conversation-join/', {code, key}),
+                        webapp: pathWithParams('/join', {code, key}),
+                      }}
                     />
                   </FlexBox>
                 </>
