@@ -19,7 +19,6 @@
 
 import React from 'react';
 import {Runtime} from '@wireapp/commons';
-import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {ButtonLink} from '@wireapp/react-ui-kit';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
@@ -44,21 +43,13 @@ export const OpenWireButtons: React.FC<OpenWireProps> = ({paths, translate, uieN
   return (
     <>
       {canJoinInApp && (
-        <ButtonLink
-          href={pathWithParams(`${WIRE_APP_SCHEME}${paths.app}`)}
-          style={{marginRight: 16}}
-          data-uie-name={`${uieName}-app`}
-        >
+        <ButtonLink href={`${WIRE_APP_SCHEME}${paths.app}`} style={{marginRight: 16}} data-uie-name={`${uieName}-app`}>
           {translate('openWithApp')}
         </ButtonLink>
       )}
 
       {canJoinInBrowser && (
-        <ButtonLink
-          href={pathWithParams(`${WEBAPP_URL}${paths.webapp}`)}
-          style={{marginRight: 16}}
-          data-uie-name={`${uieName}-webapp`}
-        >
+        <ButtonLink href={`${WEBAPP_URL}${paths.webapp}`} style={{marginRight: 16}} data-uie-name={`${uieName}-webapp`}>
           {translate('openWithBrowser')}
         </ButtonLink>
       )}
