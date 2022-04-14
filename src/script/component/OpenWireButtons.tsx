@@ -23,6 +23,7 @@ import {ButtonLink} from '@wireapp/react-ui-kit';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {WEBAPP_URL, IS_SELF_HOSTED, WIRE_APP_SCHEME} from 'script/Environment';
+import {BRAND_NAME} from 'script/Environment';
 
 interface OpenWireProps {
   paths: {webapp: string; app: string};
@@ -55,7 +56,9 @@ export const OpenWireButtons: React.FC<OpenWireProps> = ({paths, translate, uieN
       )}
       {showDownload &&
         (hasDirectDownload ? (
-          <DirectDownloadButton style={{justifyContent: 'center'}}>{translate('downloadApp')}</DirectDownloadButton>
+          <DirectDownloadButton style={{justifyContent: 'center'}}>
+            {translate('downloadApp', {brandName: BRAND_NAME})}
+          </DirectDownloadButton>
         ) : (
           <WebsiteDownloadButton style={{justifyContent: 'center'}} />
         ))}
