@@ -78,7 +78,7 @@ jobs:
 
       - name: Monitor coverage
         if: github.event_name == 'pull_request' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
-        uses: slavcodev/coverage-monitor-action@1.1.0
+        uses: slavcodev/coverage-monitor-action@1.6.0
         with:
           github_token: ${{github.token}}
           clover_file: 'coverage/clover.xml'
