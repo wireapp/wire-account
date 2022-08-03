@@ -20,7 +20,7 @@
 import {Global} from '@emotion/core';
 import {COLOR, FlexBox, Loading, StyledApp} from '@wireapp/react-ui-kit';
 import createBrowserHistory from 'history/createBrowserHistory';
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useEffect} from 'react';
 import {Redirect, Route, Router, Switch} from 'react-router-dom';
 import {ROUTE} from 'script/route';
 
@@ -40,6 +40,18 @@ const Root: React.FC<Props> = () => {
   const LazyVerifyPhoneAccount = lazy(() => import('./page/VerifyPhoneAccount'));
   const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
   const LazyUserProfile = lazy(() => import('./page/UserProfile'));
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const hlParam = queryParams.get('hl');
+
+    if (!hlParam || hlParam !== 'en') {
+      queryParams.set('hl', window.navigator.language);
+      window.history.pushState(null, '', `?${queryParams.toString()}`);
+      window.location.reload();
+    }
+  }, []);
+
   return (
     <StyledApp>
       <Global
