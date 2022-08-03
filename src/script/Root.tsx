@@ -45,8 +45,9 @@ const Root: React.FC<Props> = () => {
     const queryParams = new URLSearchParams(window.location.search);
     const hlParam = queryParams.get('hl');
 
-    if (!hlParam || hlParam !== 'en') {
-      queryParams.set('hl', window.navigator.language);
+    if (!hlParam) {
+      const userLocale = navigator.languages?.length ? navigator.languages[0] : navigator.language;
+      queryParams.set('hl', userLocale);
       window.history.pushState(null, '', `?${queryParams.toString()}`);
       window.location.reload();
     }
