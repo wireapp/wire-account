@@ -28,6 +28,8 @@ const history = createBrowserHistory();
 
 interface Props {}
 
+const LANG_QUERY_KEY = 'hl';
+
 const Root: React.FC<Props> = () => {
   const LazyIndex = lazy(() => import('./page/Index'));
   const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
@@ -43,11 +45,11 @@ const Root: React.FC<Props> = () => {
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
-    const hlParam = queryParams.get('hl');
+    const hlParam = queryParams.get(LANG_QUERY_KEY);
 
-    if (!hlParam) {
-      const userLocale = navigator.languages?.length ? navigator.languages[0] : navigator.language;
-      queryParams.set('hl', userLocale);
+    const userLocale = navigator.languages?.length ? navigator.languages[0] : navigator.language;
+    if (!hlParam && !userLocale.includes('en')) {
+      queryParams.set(LANG_QUERY_KEY, userLocale);
       window.history.pushState(null, '', `?${queryParams.toString()}`);
       window.location.reload();
     }
