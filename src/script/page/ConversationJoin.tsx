@@ -99,7 +99,7 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               {hasDisplayedButtons() ? (
                 <>
                   <Text block>{t('description', {ns: translationNamespaces})}</Text>
-                  <FlexBox column={isMobile} css={{marginTop: 24}}>
+                  <FlexBox flexWrap="wrap" column={isMobile} css={{marginTop: 24}}>
                     <OpenWireButtons
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
                       uieName="do-conversation-join"
