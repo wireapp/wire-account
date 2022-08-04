@@ -46,8 +46,8 @@ const Root: React.FC<Props> = () => {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const hlParam = queryParams.get(LANG_QUERY_KEY);
-
     const userLocale = navigator.languages?.length ? navigator.languages[0] : navigator.language;
+
     if (!hlParam && !userLocale.includes('en')) {
       queryParams.set(LANG_QUERY_KEY, userLocale);
       window.history.pushState(null, '', `?${queryParams.toString()}`);
