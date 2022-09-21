@@ -30,6 +30,7 @@ export enum QUERY_KEY {
   LOGOUT_REASON = 'reason',
   PWA_AWARE = 'pwa_aware',
   TRACKING = 'tracking',
+  LANG = 'hl',
 }
 
 const FORWARDED_QUERY_KEYS = [QUERY_KEY.LOCALE, QUERY_KEY.TRACKING];

@@ -19,7 +19,9 @@
 import {APIClient} from '@wireapp/api-client';
 
 export class AccountAction {
-  constructor(private readonly apiClient: APIClient) {
+  private readonly apiClient: APIClient;
+
+  constructor(apiClient: APIClient) {
     this.apiClient = apiClient;
   }
 
