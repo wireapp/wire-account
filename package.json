@@ -128,5 +128,5 @@
     "webpack:dev": "webpack --config webpack.config.dev.js",
     "changelog": "node ./bin/changelog.js"
   },
-  "version": "2.4.2"
+  "version": "2.5.0"
 }
