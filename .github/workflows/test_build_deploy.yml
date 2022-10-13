@@ -249,7 +249,7 @@ jobs:
           echo "PR: ${{ steps.create-pr.outputs.pull-request-url }}"
 
       - name: Delete release artifact
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v2
         with:
           failOnError: false
           name: |
