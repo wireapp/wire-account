@@ -100,7 +100,7 @@ const PasswordForgot = () => {
                   setIsEmailValid(true);
                   setEmail(event.currentTarget.value);
                 }}
-                placeholder={t('forgot.emailPlaceholder')}
+                placeholder={t('emailPlaceholder')}
                 name="email"
                 type="email"
                 required
