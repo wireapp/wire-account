@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        DISTRIBUTION: ['DISTRIBUTION_0', 'DISTRIBUTION_1']
+        DISTRIBUTION: ['DISTRIBUTION_0']
 
     env:
       TEST_COVERAGE_FAIL_THRESHOLD: 10
