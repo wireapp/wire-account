@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.18.5",
-    "@babel/plugin-proposal-class-properties": "7.17.12",
+    "@babel/plugin-proposal-class-properties": "7.18.6",
     "@babel/preset-env": "7.18.2",
     "@babel/preset-react": "7.18.6",
     "@types/dotenv": "8.2.0",
@@ -33,7 +33,7 @@
     "cross-env": "7.0.3",
     "generate-changelog": "1.8.0",
     "jasmine": "4.4.0",
-    "jszip": "3.10.0",
+    "jszip": "3.10.1",
     "nodemon": "2.0.18",
     "opn": "6.0.0",
     "prettier": "2.7.1",
@@ -41,7 +41,7 @@
     "rimraf": "3.0.2",
     "typescript": "4.7.4",
     "webpack-dev-middleware": "5.3.3",
-    "webpack-hot-middleware": "2.25.1"
+    "webpack-hot-middleware": "2.25.2"
   },
   "name": "wire-web-server",
   "private": true,
