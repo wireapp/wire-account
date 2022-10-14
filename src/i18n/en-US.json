@@ -69,7 +69,7 @@
     "titlePhone": "Verify Phone"
   },
   "conversationJoin": {
-    "loading": "Verifying link…",
+    "loading": "Verifying link...",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
     "wirelessHeadline": "Don't want to create a {{brandName}} account?",
     "wirelessLink": "Join the conversation as a temporary guest",
