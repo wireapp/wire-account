@@ -2268,15 +2268,15 @@
     logdown "3.3.1"
     platform "1.3.6"
 
-"@wireapp/copy-config@1.2.9":
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-1.2.9.tgz#253dac301cd16f744a5684bbd91a8f091a336b0e"
-  integrity sha512-F8gYIT9pUJlx/Pi2/iaDyE52XiPbTU2vqxqne7k9ITAZwrngYEvtwTu4Z/Q2Og7Jy1xBOFK/u4IUzYtNtNb9YA==
+"@wireapp/copy-config@1.3.6":
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/@wireapp/copy-config/-/copy-config-1.3.6.tgz#8a69e17adb3850e12bd179ac9b116865c13db6e8"
+  integrity sha512-ZKO/R4vWI8CsimCWS4PA0PRgkMs1r7MQ+PKMPWX6OgfWnggEewV+yYUGizKqTLzsTavgcOMfsvJMuHYNLxDBvg==
   dependencies:
     axios "0.21.4"
     copy "0.3.2"
     cosmiconfig "7.0.0"
-    fs-extra "10.0.0"
+    fs-extra "10.1.0"
     jszip "3.7.0"
     logdown "3.3.1"
     rimraf "3.0.2"
