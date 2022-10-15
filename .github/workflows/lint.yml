@@ -17,10 +17,10 @@ jobs:
           access_token: ${{github.token}}
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Yarn cache
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@v2
 
       - name: Install JS dependencies
         run: yarn --frozen-lockfile
