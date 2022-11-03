@@ -3,7 +3,7 @@
     "@emotion/react": "11.10.4",
     "@wireapp/api-client": "17.0.0",
     "@wireapp/commons": "4.4.10",
-    "@wireapp/react-ui-kit": "7.55.2",
+    "@wireapp/react-ui-kit": "9.0.2",
     "core-js": "3.26.0",
     "dotenv": "16.0.3",
     "dotenv-extended": "2.9.0",
