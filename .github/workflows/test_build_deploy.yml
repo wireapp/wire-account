@@ -62,7 +62,7 @@ jobs:
           access_token: ${{github.token}}
 
       - name: Yarn cache
-        uses: c-hive/gha-yarn-cache@v2
+        uses: c-hive/gha-yarn-cache@v2.1.0
 
       - name: Authenticate git clone
         env:
@@ -70,7 +70,7 @@ jobs:
         run: echo -e "machine github.com\n  login ${GH_TOKEN}" > ~/.netrc
 
       - name: Install JS dependencies
-        run: yarn --frozen-lockfile
+        run: yarn --immutable
 
       - name: Test
         if: matrix.DISTRIBUTION == 'DISTRIBUTION_0'
