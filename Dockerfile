@@ -10,6 +10,7 @@ ENV PATH=$PATH:/node_modules/.bin
 
 RUN yarn --production --ignore-scripts
 
+ENV NODEPORT 8080
 EXPOSE 8080
 
 ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/run.sh"]
