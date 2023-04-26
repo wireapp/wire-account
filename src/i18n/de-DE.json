@@ -69,7 +69,7 @@
     "titlePhone": "Telefonnummer bestätigen"
   },
   "conversationJoin": {
-    "loading": "Der Link wird überprüft…",
+    "loading": "Verifying link...",
     "description": "Audio- und Videokonferenzen, Textnachrichten, Teilen von Dateien und Bildschirmfreigabe – alles Ende-zu-Ende verschlüsselt.",
     "wirelessHeadline": "Sie möchten kein {{brandName}}-Benutzerkonto erstellen?",
     "wirelessLink": "Nehmen Sie als temporärer Gast an der Unterhaltung teil",
