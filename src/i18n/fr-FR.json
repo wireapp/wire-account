@@ -69,7 +69,7 @@
     "titlePhone": "Vérifier le Téléphone"
   },
   "conversationJoin": {
-    "loading": "Vérification du lien…",
+    "loading": "Vérification du lien...",
     "description": "Conférences audio et vidéo, messagerie textuelle, partage de fichiers et partage d'écran, tous chiffrés de bout en bout.",
     "wirelessHeadline": "Vous ne voulez pas créer un compte {{brandName}} ?",
     "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire",
