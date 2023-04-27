@@ -32,6 +32,7 @@ process.chdir(srcFolder);
 
 fs.copySync('../package.json', './package.json');
 fs.copySync('../.env.defaults', './.env.defaults');
+fs.copySync('../../Procfile', './Procfile');
 
 const walkSync = (dir, fileList = []) =>
   fs.readdirSync(dir).reduce((fileListAccumulator, file) => {
