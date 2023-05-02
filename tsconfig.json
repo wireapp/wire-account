@@ -20,7 +20,8 @@
     "paths": {
       "resource/*": ["resource/*"],
       "i18n/*": ["src/i18n/*"]
-    }
+    },
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "server"]
 }
