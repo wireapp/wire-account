@@ -3652,10 +3652,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"helmet@npm:*, helmet@npm:4.6.0":
+"helmet@npm:*":
   version: 4.6.0
   resolution: "helmet@npm:4.6.0"
   checksum: 139ad678d1cab207b043c206f50f6744eff2ef1f463e4626d36718b45b337485c77d10260ef9d89d292fa678da5153d86b08172b3b365cc8e680241015ed3a49
+  languageName: node
+  linkType: hard
+
+"helmet@npm:6.1.5":
+  version: 6.1.5
+  resolution: "helmet@npm:6.1.5"
+  checksum: 58cc8f8715e2c486f3c7a58f89fcda3c9e83ab427bfe16d8486d8be53a681afc291f9900b9e60e5d42c63c25ece3da864a33cdd621a12f5a67cbc9046cff393d
   languageName: node
   linkType: hard
 
@@ -6182,7 +6189,7 @@ __metadata:
     fs-extra: 10.1.0
     generate-changelog: 1.8.0
     handlebars: 4.7.7
-    helmet: 4.6.0
+    helmet: 6.1.5
     helmet-csp: 3.4.0
     http-proxy-middleware: 2.0.6
     jasmine: 4.5.0
