@@ -40,7 +40,7 @@
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "@wireapp/copy-config": "2.0.13",
-    "@wireapp/eslint-config": "1.4.0",
+    "@wireapp/eslint-config": "2.1.2",
     "adm-zip": "0.5.10",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.5",
