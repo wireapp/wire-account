@@ -3289,22 +3289,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/eslint-config@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@wireapp/eslint-config@npm:1.4.0"
+"@wireapp/eslint-config@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@wireapp/eslint-config@npm:2.2.0"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">=2"
-    "@typescript-eslint/parser": ">=2"
-    eslint: ">=6"
-    eslint-config-prettier: ">=6"
-    eslint-plugin-jsdoc: ">=18"
-    eslint-plugin-no-unsanitized: ">=3"
-    eslint-plugin-prettier: ">=3"
-    eslint-plugin-react: ">=7"
-    eslint-plugin-react-hooks: ">=2"
-    eslint-plugin-sort-keys-fix: ">=1"
-    prettier: ">=1.19"
-  checksum: 92d0a03c7818e0e5201460edcf9140af2fb54c455086b19ab598ac18eeaa24643600ad8736bf55a11a1cdcd839ad94eb724266b3938a66233080ec839006c8a7
+    "@types/eslint": ^8
+    "@types/prettier": ^2
+    "@typescript-eslint/eslint-plugin": ^5
+    "@typescript-eslint/parser": ^5
+    eslint: ^8
+    eslint-config-prettier: ^8
+    eslint-import-resolver-alias: ^1
+    eslint-import-resolver-typescript: ^3
+    eslint-plugin-better-styled-components: ^1
+    eslint-plugin-header: ^3
+    eslint-plugin-import: ^2
+    eslint-plugin-jest: ^27
+    eslint-plugin-jest-dom: ^4
+    eslint-plugin-jsdoc: ^39
+    eslint-plugin-jsx-a11y: ^6
+    eslint-plugin-no-unsanitized: ^4
+    eslint-plugin-prettier: ^4
+    eslint-plugin-react: ^7
+    eslint-plugin-react-hooks: ^4
+    eslint-plugin-simple-import-sort: ^8
+    eslint-plugin-testing-library: ^5
+    eslint-plugin-unused-imports: ^2
+    prettier: ^2
+    typescript: ^4
+  checksum: 3e4fa868296ff411b2cfba4a1095bc0c6ccde89e842f816caa5b0b59704513e814fab615e5a8d06e002ef30a58dae07c618a2a6984f660f9f15826d139acb10b
   languageName: node
   linkType: hard
 
@@ -13416,7 +13429,7 @@ __metadata:
     "@wireapp/api-client": 17.0.0
     "@wireapp/commons": 4.4.10
     "@wireapp/copy-config": 2.1.0
-    "@wireapp/eslint-config": 1.4.0
+    "@wireapp/eslint-config": 2.2.0
     "@wireapp/react-ui-kit": 7.55.2
     adm-zip: 0.5.10
     babel-eslint: 10.1.0
