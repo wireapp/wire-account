@@ -12,7 +12,7 @@
     "http-proxy-middleware": "2.0.6",
     "logdown": "3.3.1",
     "moment": "2.29.4",
-    "nocache": "3.0.4",
+    "nocache": "4.0.0",
     "pm2": "5.2.2",
     "uuid": "9.0.0"
   },
