@@ -13196,6 +13196,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"url-search-params-polyfill@npm:8.2.2":
+  version: 8.2.2
+  resolution: "url-search-params-polyfill@npm:8.2.2"
+  checksum: 8dd7cea43ca3d26cd10926b2cb9d83d3661b04b0af329fda753df52ccb3bcf12183acb833e0093bb63412f14a7d734fdacc7041609c7395563ecbea2dcb8b008
+  languageName: node
+  linkType: hard
+
 "use@npm:^3.1.0":
   version: 3.1.1
   resolution: "use@npm:3.1.1"
@@ -13700,7 +13707,7 @@ __metadata:
     terser-webpack-plugin: 5.3.9
     ts-jest: 26.5.6
     typescript: 4.9.5
-    url-search-params-polyfill: 8.1.1
+    url-search-params-polyfill: 8.2.2
     webpack: 5.84.1
     webpack-bundle-analyzer: 4.9.0
     webpack-cli: 4.10.0
