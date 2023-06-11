@@ -32,7 +32,7 @@
     "@wireapp/tslint-config": "1.4.1",
     "cross-env": "7.0.3",
     "generate-changelog": "1.8.0",
-    "jasmine": "4.5.0",
+    "jasmine": "5.0.1",
     "jszip": "3.10.1",
     "nodemon": "2.0.22",
     "opn": "6.0.0",
