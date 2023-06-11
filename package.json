@@ -37,7 +37,7 @@
     "@types/react-dom": "17.0.14",
     "@types/react-router-dom": "5.3.3",
     "@types/webpack-env": "1.18.1",
-    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "@typescript-eslint/eslint-plugin": "5.59.9",
     "@typescript-eslint/parser": "2.34.0",
     "@wireapp/copy-config": "2.1.0",
     "@wireapp/eslint-config": "1.4.0",
