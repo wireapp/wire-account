@@ -126,7 +126,7 @@ jobs:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
           application_name: ${{env.AWS_APPLICATION_NAME}}
-          environment_name: wire-account-staging
+          environment_name: wire-account-staging-al2
           region: eu-central-1
           deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
           wait_for_deployment: false
@@ -141,7 +141,7 @@ jobs:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
           application_name: ${{env.AWS_APPLICATION_NAME}}
-          environment_name: wire-account-prod
+          environment_name: wire-account-prod-al2
           region: eu-central-1
           deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
           wait_for_deployment: false
