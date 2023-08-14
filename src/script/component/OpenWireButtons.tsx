@@ -36,15 +36,18 @@ export function hasDisplayedButtons() {
 }
 
 export const OpenWireButtons: React.FC<OpenWireProps> = ({paths, translate, uieName}) => {
+  const canJoinInApp = !IS_SELF_HOSTED; // Only public wire cloud can join with native app
   const canJoinInBrowser = !Runtime.isMobileOS();
   const showDownload = !IS_SELF_HOSTED;
   const hasDirectDownload = Runtime.isMobileOS() || Runtime.isMacOS();
 
   return (
     <>
-      <ButtonLink href={`${WIRE_APP_SCHEME}${paths.app}`} style={{marginRight: 16}} data-uie-name={`${uieName}-app`}>
-        {translate('openWithApp')}
-      </ButtonLink>
+      {canJoinInApp && (
+        <ButtonLink href={`${WIRE_APP_SCHEME}${paths.app}`} style={{marginRight: 16}} data-uie-name={`${uieName}-app`}>
+          {translate('openWithApp')}
+        </ButtonLink>
+      )}
 
       {canJoinInBrowser && (
         <ButtonLink href={`${WEBAPP_URL}${paths.webapp}`} style={{marginRight: 16}} data-uie-name={`${uieName}-webapp`}>
