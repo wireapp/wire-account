@@ -37,7 +37,7 @@ export function hasDisplayedButtons() {
 
 export const OpenWireButtons: React.FC<OpenWireProps> = ({paths, translate, uieName}) => {
   const canJoinInBrowser = !Runtime.isMobileOS();
-  const showDownload = true || !IS_SELF_HOSTED;
+  const showDownload = !IS_SELF_HOSTED;
   const hasDirectDownload = Runtime.isMobileOS() || Runtime.isMacOS();
 
   return (
