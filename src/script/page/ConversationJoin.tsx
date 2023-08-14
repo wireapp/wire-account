@@ -122,7 +122,7 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
                   </Paragraph>
                   <ButtonLink
                     backgroundColor="white"
-                    css={{color: 'black'}}
+                    style={{color: 'black'}}
                     href={pathWithParams(`${WEBAPP_URL}/join`, {code, key})}
                     data-uie-name="do-conversation-join-webapp"
                   >
