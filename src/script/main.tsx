@@ -22,8 +22,7 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import 'intersection-observer';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
+import {render} from 'react-dom';
 import {initReactI18next} from 'react-i18next';
 import Root from 'script/Root';
 import 'url-search-params-polyfill';
@@ -65,23 +64,4 @@ i18n
     returnEmptyString: false,
   });
 
-const render = (Component: any) => {
-  ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    document.getElementById('main'),
-  );
-};
-
-runApp();
-
-function runApp() {
-  render(Root);
-  if (module.hot) {
-    module.hot.accept('./Root', () => {
-      const NextApp = require('./Root').default;
-      render(NextApp);
-    });
-  }
-}
+render(<Root />, document.getElementById('main'));
