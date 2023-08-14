@@ -17,12 +17,11 @@
  *
  */
 
-import {ButtonLink, COLOR, LinkProps} from '@wireapp/react-ui-kit';
-import React from 'react';
+import {ButtonLink, ButtonProps, COLOR} from '@wireapp/react-ui-kit';
 import {useTranslation} from 'react-i18next';
 import {BRAND_NAME, WEBSITE_URL} from 'script/Environment';
 
-interface Props extends LinkProps {}
+interface Props extends ButtonProps<any> {}
 
 const WebsiteDownloadButton = (props: Props) => {
   const [t] = useTranslation('open');

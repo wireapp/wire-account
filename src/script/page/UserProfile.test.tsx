@@ -19,7 +19,6 @@
 
 import '../util/test/mock/matchMediaMock';
 
-import React from 'react';
 import * as History from 'history';
 import {UserProfileProps, UserProfile} from './UserProfile';
 import TestPage from '../util/test/TestPage';

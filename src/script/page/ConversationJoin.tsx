@@ -19,17 +19,18 @@
 import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {
+  ButtonLink,
+  ButtonVariant,
   ContainerSM,
   FlexBox,
   H1,
   H2,
-  H3,
   Loading,
+  Paragraph,
   QUERY,
   QueryKeys,
   Small,
   Text,
-  TextLink,
   useMatchMedia,
 } from '@wireapp/react-ui-kit';
 import React, {useContext, useEffect, useState} from 'react';
@@ -115,19 +116,20 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               )}
               {!Runtime.isMobileOS() && (
                 <>
-                  <H3 css={{marginBottom: 8, marginTop: 48}}>
-                    {t('wirelessHeadline', {brandName: BRAND_NAME, ns: translationNamespaces})}
-                  </H3>
-                  <TextLink
-                    block
-                    href={pathWithParams(`${WEBAPP_URL}/join`, {
-                      code,
-                      key,
-                    })}
+                  <Paragraph muted css={{marginTop: '8px'}}>
+                    {t('wirelessHeadline', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
+                    <br />
+                    {IS_SELF_HOSTED && t('wirelessHaveAccount', {ns: translationNamespaces})}
+                  </Paragraph>
+                  <ButtonLink
+                    style={{color: 'black'}}
+                    variant={ButtonVariant.SECONDARY}
+                    href={pathWithParams(`${WEBAPP_URL}/join`, {code, key})}
                     data-uie-name="do-conversation-join-webapp"
                   >
                     {t('wirelessLink', {ns: translationNamespaces})}
-                  </TextLink>
+                  </ButtonLink>
+                  <br />
                   <Text muted>{t('wirelessNote')}</Text>
                 </>
               )}
