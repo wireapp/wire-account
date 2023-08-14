@@ -53,34 +53,26 @@ const VerifyPhoneAccount = (props: Props) => {
         setError(error.toString());
       });
   }, []);
-  const MobileSuccess = () => {
-    if (redirectPhone) {
-      window.location.assign(redirectPhone);
-    }
-    return (
-      <React.Fragment>
-        <DirectDownloadButton style={{margin: '32px 0'}} />
-      </React.Fragment>
-    );
-  };
+  const MobileSuccess = () => (
+    <React.Fragment>
+      <DirectDownloadButton style={{margin: '32px 0'}} />
+      {redirectPhone && window.location.assign(redirectPhone)}
+    </React.Fragment>
+  );
 
-  const DesktopSuccess = () => {
-    if (loginImmediately) {
-      window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`);
-    }
-    return (
-      <React.Fragment>
-        <FlexBox style={{margin: '32px 0'}}>
-          {Runtime.isMacOS() ? (
-            <DirectDownloadButton style={{marginRight: 8}} />
-          ) : (
-            <WebsiteDownloadButton style={{marginRight: 8}} />
-          )}
-          <OpenWebappButton style={{marginLeft: 8}}>{t('open:openWeb')}</OpenWebappButton>
-        </FlexBox>
-      </React.Fragment>
-    );
-  };
+  const DesktopSuccess = () => (
+    <React.Fragment>
+      <FlexBox style={{margin: '32px 0'}}>
+        {Runtime.isMacOS() ? (
+          <DirectDownloadButton style={{marginRight: 8}} />
+        ) : (
+          <WebsiteDownloadButton style={{marginRight: 8}} />
+        )}
+        <OpenWebappButton style={{marginLeft: 8}}>{t('open:openWeb')}</OpenWebappButton>
+      </FlexBox>
+      {loginImmediately && window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`)}
+    </React.Fragment>
+  );
 
   const UnknownSuccess = () => (
     <React.Fragment>
