@@ -22,7 +22,6 @@ const mockConfig = {
 };
 jest.mock('script/Environment', () => mockConfig);
 
-import React from 'react';
 import {OpenWireButtons} from './OpenWireButtons';
 import {Runtime} from '@wireapp/commons';
 import {render} from '@testing-library/react';

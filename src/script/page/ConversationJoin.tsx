@@ -20,6 +20,7 @@ import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {
   ButtonLink,
+  ButtonVariant,
   ContainerSM,
   FlexBox,
   H1,
@@ -121,8 +122,8 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
                     {IS_SELF_HOSTED && t('wirelessHaveAccount', {ns: translationNamespaces})}
                   </Paragraph>
                   <ButtonLink
-                    backgroundColor="white"
                     style={{color: 'black'}}
+                    variant={ButtonVariant.SECONDARY}
                     href={pathWithParams(`${WEBAPP_URL}/join`, {code, key})}
                     data-uie-name="do-conversation-join-webapp"
                   >

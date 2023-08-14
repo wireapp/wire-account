@@ -19,8 +19,7 @@
 
 import {Runtime} from '@wireapp/commons';
 import {OperatingSystem} from '@wireapp/commons/src/main/util/Runtime';
-import {ButtonLink, COLOR, LinkProps} from '@wireapp/react-ui-kit';
-import React from 'react';
+import {ButtonLink, ButtonProps, COLOR} from '@wireapp/react-ui-kit';
 import {useTranslation} from 'react-i18next';
 import {
   BRAND_NAME,
@@ -31,7 +30,7 @@ import {
   WEBSITE_URL,
 } from 'script/Environment';
 
-interface Props extends LinkProps {
+interface Props extends ButtonProps<any> {
   backgroundColor?: string;
 }
 
@@ -49,7 +48,6 @@ const DirectDownloadButton = ({children, ...props}: Props) => {
   return (
     <ButtonLink
       backgroundColor={COLOR.GREEN}
-      style={{color: COLOR.WHITE}}
       href={SYSTEM_DEPENDENT_LINKS[Runtime.getOSFamily()] || DEFAULT_LINK}
       data-uie-name="go-direct-download"
       {...props}
