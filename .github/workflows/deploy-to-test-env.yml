@@ -19,7 +19,7 @@ jobs:
     env:
       DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS: 150
       AWS_APPLICATION_NAME: Account
-      AWS_BUILD_ZIP_PATH: server/dist/s3/ebs.zip
+      AWS_BUILD_ZIP_PATH: wire-account.zip
     steps:
       - name: Print environment variables
         run: |
@@ -37,7 +37,7 @@ jobs:
       - name: Install JS dependencies
         run: yarn --immutable
       - name: Build
-        run: yarn build:prod
+        run: yarn bundle:prod
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:
