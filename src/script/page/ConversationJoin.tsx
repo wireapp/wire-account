@@ -16,17 +16,13 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
 import {
-  ButtonLink,
-  ButtonVariant,
   ContainerSM,
   FlexBox,
   H1,
   H2,
   Loading,
-  Paragraph,
   QUERY,
   QueryKeys,
   Small,
@@ -38,7 +34,7 @@ import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {OpenWireButtons, hasDisplayedButtons} from 'script/component/OpenWireButtons';
-import {WEBAPP_URL, BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
+import {BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
 export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
@@ -113,25 +109,6 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
                 </>
               ) : (
                 <Text color="#696C6E">{t('cannotJoinOnMobile')}</Text>
-              )}
-              {!Runtime.isMobileOS() && (
-                <>
-                  <Paragraph muted css={{marginTop: '8px'}}>
-                    {t('wirelessHeadline', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
-                    <br />
-                    {IS_SELF_HOSTED && t('wirelessHaveAccount', {ns: translationNamespaces})}
-                  </Paragraph>
-                  <ButtonLink
-                    style={{color: 'black'}}
-                    variant={ButtonVariant.SECONDARY}
-                    href={pathWithParams(`${WEBAPP_URL}/join`, {code, key})}
-                    data-uie-name="do-conversation-join-webapp"
-                  >
-                    {t('wirelessLink', {ns: translationNamespaces})}
-                  </ButtonLink>
-                  <br />
-                  <Text muted>{t('wirelessNote')}</Text>
-                </>
               )}
             </>
           )}
