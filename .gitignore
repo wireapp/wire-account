@@ -20,3 +20,21 @@ wire-account.zip
 .env.defaults
 /config
 resource
+
+# yarn 2 - not using zero-installs
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# yarn 2 - not using zero-installs
+server/.pnp.*
+server/.yarn/*
+server/!.yarn/patches
+server/!.yarn/plugins
+server/!.yarn/releases
+server/!.yarn/sdks
+server/!.yarn/versions

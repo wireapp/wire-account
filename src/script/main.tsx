@@ -21,7 +21,6 @@ const ReactPostprocessor = require('i18next-react-postprocessor');
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import 'intersection-observer';
-import React from 'react';
 import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import {initReactI18next} from 'react-i18next';

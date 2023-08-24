@@ -22,7 +22,6 @@ const mockConfig = {
 };
 jest.mock('script/Environment', () => mockConfig);
 
-import React from 'react';
 import {OpenWireButtons} from './OpenWireButtons';
 import {Runtime} from '@wireapp/commons';
 import {render} from '@testing-library/react';
@@ -35,7 +34,7 @@ describe('OpenWireButtons', () => {
     uieName: 'open',
   };
   describe('on mobile', () => {
-    it('shows open app & direct download', async () => {
+    it('shows open app & direct download', () => {
       spyOn(Runtime, 'isMobileOS').and.returnValue(true);
 
       const res = render(withTheme(<OpenWireButtons {...defaultParams} />));

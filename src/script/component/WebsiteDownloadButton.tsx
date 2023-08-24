@@ -18,7 +18,6 @@
  */
 
 import {ButtonLink, ButtonProps, COLOR} from '@wireapp/react-ui-kit';
-import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {BRAND_NAME, WEBSITE_URL} from 'script/Environment';
 

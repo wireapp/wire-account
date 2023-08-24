@@ -70,7 +70,7 @@
     "titlePhone": "Verify Phone"
   },
   "conversationJoin": {
-    "loading": "Verifying link…",
+    "loading": "Verifying link...",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
     "wirelessHeadline": "Don't want to create a {{brandName}} account?",
     "wirelessLink": "Join the conversation as a temporary guest",
@@ -84,10 +84,10 @@
     "cannotJoinOnMobile": "At the moment, you can't join this conversation on your mobile device. Please open this link on your desktop instead."
   },
   "conversationJoinSelfHosted": {
-    "title": "You have been invited to join a Wire conversation on the domain \"{{domain}}\"",
-    "wirelessHeadline": "Don't have a Wire account on this domain?",
-    "wirelessLink": "Join the conversation as a temporary guest on this domain",
-    "openWithBrowser": "Join with a Wire account from this domain"
+    "title": "You have been invited to join a Wire conversation",
+    "wirelessHeadline": "The conversation is hosted on {{domain}}.",
+    "wirelessHaveAccount": "Don't have a Wire account on this domain?",
+    "wirelessLink": "Join as Temporary Guest"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",

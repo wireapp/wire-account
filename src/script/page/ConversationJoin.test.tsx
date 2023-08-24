@@ -19,7 +19,6 @@
 
 import '../util/test/mock/matchMediaMock';
 
-import React from 'react';
 import * as History from 'history';
 import {ConversationJoinProps, ConversationJoin} from './ConversationJoin';
 import TestPage from '../util/test/TestPage';

@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        DISTRIBUTION: ['DISTRIBUTION_0', 'DISTRIBUTION_1']
+        DISTRIBUTION: ['DISTRIBUTION_0']
 
     env:
       TEST_COVERAGE_FAIL_THRESHOLD: 10
@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set environment variables
         env:
@@ -54,15 +54,15 @@ jobs:
 
       - name: Skip CI
         if: contains(env.TITLE || env.COMMIT_MESSAGE, '[skip ci]') || contains(env.TITLE || env.COMMIT_MESSAGE, '[ci skip]')
-        uses: andymckay/cancel-action@0.2
+        uses: andymckay/cancel-action@0.3
 
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.10.0
+        uses: styfle/cancel-workflow-action@0.11.0
         with:
           access_token: ${{github.token}}
 
       - name: Yarn cache
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@v2.1.0
 
       - name: Authenticate git clone
         env:
@@ -70,7 +70,7 @@ jobs:
         run: echo -e "machine github.com\n  login ${GH_TOKEN}" > ~/.netrc
 
       - name: Install JS dependencies
-        run: yarn --frozen-lockfile
+        run: yarn --immutable
 
       - name: Test
         if: matrix.DISTRIBUTION == 'DISTRIBUTION_0'
@@ -114,19 +114,19 @@ jobs:
 
       - name: Storing release information
         if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: release-info.json
           path: ./release-info.json
 
       - name: Deploy staging build to Elastic Beanstalk
         if: env.BRANCH_NAME == 'staging' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
-        uses: einaregilsson/beanstalk-deploy@v11
+        uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
           application_name: ${{env.AWS_APPLICATION_NAME}}
-          environment_name: wire-account-staging
+          environment_name: wire-account-staging-al2
           region: eu-central-1
           deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
           wait_for_deployment: false
@@ -136,12 +136,12 @@ jobs:
 
       - name: Deploy production build to Elastic Beanstalk
         if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
-        uses: einaregilsson/beanstalk-deploy@v11
+        uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
           application_name: ${{env.AWS_APPLICATION_NAME}}
-          environment_name: wire-account-prod
+          environment_name: wire-account-prod-al2
           region: eu-central-1
           deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
           wait_for_deployment: false
@@ -196,7 +196,7 @@ jobs:
       # INFO: https://github.com/wireapp/wire-webapp/blob/062ae4e1c23fa0b33dafae9cc0acf9a94fa8ad1a/.github/workflows/test_build_deploy.yml#L351-L356
       - name: Obtaining release information artifact
         id: release-info-artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         continue-on-error: true
         with:
           name: release-info.json
@@ -210,7 +210,7 @@ jobs:
           echo "::set-output name=releaseInfo::$(cat ${ARTIFACT_LOCAL_PATH})"
 
       - name: Checking out 'wire-server'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         if: ${{ steps.release-info-file.outputs.exists == 'true' }}
         with:
           repository: 'wireapp/wire-server'
@@ -230,7 +230,7 @@ jobs:
       - name: Creating Pull Request
         id: create-pr
         if: ${{ steps.release-info-file.outputs.exists == 'true' }}
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           draft: false
           token: ${{ secrets.ZEBOT_GH_TOKEN }}
@@ -249,7 +249,7 @@ jobs:
           echo "PR: ${{ steps.create-pr.outputs.pull-request-url }}"
 
       - name: Delete release artifact
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v2
         with:
           failOnError: false
           name: |

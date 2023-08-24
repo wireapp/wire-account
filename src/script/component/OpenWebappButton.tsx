@@ -18,7 +18,6 @@
  */
 
 import {ButtonLink, ButtonProps, COLOR} from '@wireapp/react-ui-kit';
-import React from 'react';
 import {WEBAPP_URL} from 'script/Environment';
 
 interface Props extends ButtonProps<HTMLAnchorElement> {}
