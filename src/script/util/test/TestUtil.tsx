@@ -21,7 +21,7 @@ import {mount} from 'enzyme';
 import React from 'react';
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import {StyledApp} from '@wireapp/react-ui-kit';
+import {StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
 import {createMemoryHistory, History} from 'history';
 import {Router} from 'react-router';
 const enUS = require('i18n/en-US.json');
@@ -30,7 +30,9 @@ export const withRouter = (component: React.ReactElement, history: History) => (
   <Router history={history}>{component}</Router>
 );
 
-export const withTheme = (component: React.ReactElement): React.ReactElement => <StyledApp>{component}</StyledApp>;
+export const withTheme = (component: React.ReactElement): React.ReactElement => (
+  <StyledApp themeId={THEME_ID.DEFAULT}>{component}</StyledApp>
+);
 
 export const withTranslations = (component: React.ReactElement): React.ReactElement => {
   i18n.use(initReactI18next).init({

@@ -22,7 +22,8 @@
     "errorUnusedEmail": "This email is not in use.",
     "successDescription": "We sent you a link to reset your password. It is valid for 1 hour.",
     "successTitle": "Check your email",
-    "title": "Change Password"
+    "title": "Change Password",
+    "login": "Login"
   },
   "general": {
     "loading": "Please wait…"

@@ -26,6 +26,7 @@ import React from 'react';
 import {OpenWireButtons} from './OpenWireButtons';
 import {Runtime} from '@wireapp/commons';
 import {render} from '@testing-library/react';
+import {withTheme} from 'script/util/test/TestUtil';
 
 describe('OpenWireButtons', () => {
   const defaultParams = {
@@ -37,7 +38,7 @@ describe('OpenWireButtons', () => {
     it('shows open app & direct download', async () => {
       spyOn(Runtime, 'isMobileOS').and.returnValue(true);
 
-      const res = render(<OpenWireButtons {...defaultParams} />);
+      const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       res.getByText('openWithApp');
       expect(res.queryByText('openWithBrowser')).toBe(null);
       res.getByText('downloadApp');
@@ -51,7 +52,7 @@ describe('OpenWireButtons', () => {
     });
 
     it('shows open app, webapp & direct download on MacOS', async () => {
-      const res = render(<OpenWireButtons {...defaultParams} />);
+      const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       res.getByText('openWithApp');
       res.getByText('openWithBrowser');
       res.getByText('downloadApp');
@@ -59,7 +60,7 @@ describe('OpenWireButtons', () => {
 
     it('only show join in webapp when in a self hosted env', async () => {
       mockConfig.IS_SELF_HOSTED = true;
-      const res = render(<OpenWireButtons {...defaultParams} />);
+      const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       expect(res.queryByText('openWithApp')).toBe(null);
       res.getByText('openWithBrowser');
       expect(res.queryByText('downloadApp')).toBe(null);

@@ -19,7 +19,7 @@
 
 import {Runtime} from '@wireapp/commons';
 import {OperatingSystem} from '@wireapp/commons/src/main/util/Runtime';
-import {ButtonLink, COLOR, LinkProps} from '@wireapp/react-ui-kit';
+import {ButtonLink, ButtonProps, COLOR} from '@wireapp/react-ui-kit';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {
@@ -31,7 +31,7 @@ import {
   WEBSITE_URL,
 } from 'script/Environment';
 
-interface Props extends LinkProps {
+interface Props extends ButtonProps<HTMLAnchorElement> {
   backgroundColor?: string;
 }
 
