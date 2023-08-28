@@ -30,9 +30,7 @@ import {
   WEBSITE_URL,
 } from 'script/Environment';
 
-interface Props extends ButtonProps<any> {
-  backgroundColor?: string;
-}
+interface Props extends ButtonProps<HTMLAnchorElement> {}
 
 const DirectDownloadButton = ({children, ...props}: Props) => {
   const [t] = useTranslation('open');

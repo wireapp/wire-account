@@ -16,9 +16,10 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
+import {Button, ButtonLink, ContainerXS, ErrorMessage, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
 import React, {useContext, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
+import {WEBAPP_URL} from 'script/Environment';
 import Document from 'script/component/Document';
 import {ActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
@@ -87,6 +88,9 @@ const PasswordForgot = () => {
           <React.Fragment>
             <H1>{t('successTitle')}</H1>
             <Text center>{t('successDescription')}</Text>
+            <ButtonLink href={`${WEBAPP_URL}/auth`} css={{marginTop: 40}} data-uie-name="do-go-back-to-login">
+              {t('login')}
+            </ButtonLink>
           </React.Fragment>
         ) : (
           <React.Fragment>
@@ -101,14 +105,13 @@ const PasswordForgot = () => {
                   setEmail(event.currentTarget.value);
                 }}
                 placeholder={t('emailPlaceholder')}
+                label={t('emailPlaceholder')}
                 name="email"
                 type="email"
                 required
                 data-uie-name="enter-email"
+                error={<ErrorMessage>{error}</ErrorMessage>}
               />
-              <Text center color={COLOR.RED} data-uie-name="error-message">
-                {error}
-              </Text>
               <Button
                 type="submit"
                 formNoValidate

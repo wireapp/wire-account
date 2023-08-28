@@ -25,7 +25,7 @@ jest.mock('script/Environment', () => mockConfig);
 import {OpenWireButtons} from './OpenWireButtons';
 import {Runtime} from '@wireapp/commons';
 import {render} from '@testing-library/react';
-import {withTheme} from '../util/test/TestUtil';
+import {withTheme} from 'script/util/test/TestUtil';
 
 describe('OpenWireButtons', () => {
   const defaultParams = {

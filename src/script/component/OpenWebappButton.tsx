@@ -17,10 +17,10 @@
  *
  */
 
-import {ButtonLink, COLOR, ButtonProps} from '@wireapp/react-ui-kit';
+import {ButtonLink, ButtonProps, COLOR} from '@wireapp/react-ui-kit';
 import {WEBAPP_URL} from 'script/Environment';
 
-interface Props extends ButtonProps<any> {}
+interface Props extends ButtonProps<HTMLAnchorElement> {}
 
 const OpenWebappButton = (props: Props) => {
   return (

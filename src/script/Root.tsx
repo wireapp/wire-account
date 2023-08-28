@@ -17,8 +17,7 @@
  *
  */
 
-import {Global} from '@emotion/react';
-import {COLOR, FlexBox, Loading, StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
+import {FlexBox, Loading, StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
 import createBrowserHistory from 'history/createBrowserHistory';
 import React, {lazy, Suspense, useEffect} from 'react';
 import {Redirect, Route, Router, Switch} from 'react-router-dom';
@@ -56,13 +55,6 @@ const Root: React.FC<Props> = () => {
 
   return (
     <StyledApp themeId={THEME_ID.DEFAULT}>
-      <Global
-        styles={{
-          'a:link,a:visited,a:active': {
-            color: COLOR.WHITE,
-          },
-        }}
-      />
       <Suspense
         fallback={
           <FlexBox justify="center" align="center" style={{minHeight: '100vh'}}>
