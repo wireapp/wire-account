@@ -88,7 +88,7 @@ const PasswordForgot = () => {
           <React.Fragment>
             <H1>{t('successTitle')}</H1>
             <Text center>{t('successDescription')}</Text>
-            <ButtonLink href={`${WEBAPP_URL}/auth`} style={{marginTop: 40}} data-uie-name="do-go-back-to-login">
+            <ButtonLink href={`${WEBAPP_URL}/auth`} css={{marginTop: 40}} data-uie-name="do-go-back-to-login">
               {t('login')}
             </ButtonLink>
           </React.Fragment>

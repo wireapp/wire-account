@@ -37,11 +37,11 @@ export const UserProfile = ({location}: UserProfileProps) => {
 
   return (
     <Document>
-      <ContainerSM style={{margin: 'auto 0'}}>
+      <ContainerSM css={{margin: 'auto 0'}}>
         <>
           <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
           <Text block>{t('description')}</Text>
-          <FlexBox column={isMobile} style={{marginTop: 24}}>
+          <FlexBox column={isMobile} css={{marginTop: 24}}>
             <OpenWireButtons
               translate={t}
               uieName="open-user-profile"

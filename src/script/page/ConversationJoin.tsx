@@ -73,14 +73,14 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
   return (
     <Document>
       {isLoading ? (
-        <FlexBox column align="center" style={{margin: 'auto'}}>
-          <Loading style={{margin: 'auto'}} />
-          <Small muted center style={{margin: '16px 0'}}>
+        <FlexBox column align="center" css={{margin: 'auto'}}>
+          <Loading css={{margin: 'auto'}} />
+          <Small muted center css={{margin: '16px 0'}}>
             {t('loading')}
           </Small>
         </FlexBox>
       ) : (
-        <ContainerSM style={{margin: 'auto 0'}}>
+        <ContainerSM css={{margin: 'auto 0'}}>
           {error ? (
             <>
               <H1 data-uie-name="element-conversation-join-error-headline">{t('errorConversationNotFoundHeadline')}</H1>
@@ -96,7 +96,7 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               {hasDisplayedButtons() ? (
                 <>
                   <Text block>{t('description', {ns: translationNamespaces})}</Text>
-                  <FlexBox flexWrap="wrap" column={isMobile} style={{marginTop: 24}}>
+                  <FlexBox flexWrap="wrap" column={isMobile} css={{marginTop: 24}}>
                     <OpenWireButtons
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
                       uieName="do-conversation-join"
