@@ -97,6 +97,7 @@ const PasswordForgot = () => {
             <H1>{t('title')}</H1>
             <Form onSubmit={initiatePasswordReset}>
               <Input
+                required
                 ref={emailInput}
                 markInvalid={!isEmailValid}
                 autoFocus
@@ -108,9 +109,8 @@ const PasswordForgot = () => {
                 label={t('emailPlaceholder')}
                 name="email"
                 type="email"
-                required
                 data-uie-name="enter-email"
-                error={<ErrorMessage>{error}</ErrorMessage>}
+                error={error && <ErrorMessage>{error}</ErrorMessage>}
               />
               <Button
                 type="submit"
