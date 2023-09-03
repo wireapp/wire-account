@@ -2061,10 +2061,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/uuid@npm:8.3.4":
-  version: 8.3.4
-  resolution: "@types/uuid@npm:8.3.4"
-  checksum: 6f11f3ff70f30210edaa8071422d405e9c1d4e53abbe50fdce365150d3c698fe7bbff65c1e71ae080cbfb8fded860dbb5e174da96fdbbdfcaa3fb3daa474d20f
+"@types/uuid@npm:9.0.3":
+  version: 9.0.3
+  resolution: "@types/uuid@npm:9.0.3"
+  checksum: 3dde198defd71c067dd14b3050a8fe6d1ead5fe94ec318472e2c30a399d13f18941fe66cffabdcac7267177c9de2f975fdee6f0cc87cde610a2578e1ce4cc3af
   languageName: node
   linkType: hard
 
@@ -6334,7 +6334,7 @@ __metadata:
     "@types/helmet": 4.0.0
     "@types/moment": 2.13.0
     "@types/request": 2.48.8
-    "@types/uuid": 8.3.4
+    "@types/uuid": 9.0.3
     "@wireapp/commons": 4.4.10
     "@wireapp/tslint-config": 1.4.1
     cross-env: 7.0.3
