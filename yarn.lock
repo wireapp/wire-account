@@ -3429,11 +3429,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/copy-config@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@wireapp/copy-config@npm:2.1.1"
+"@wireapp/copy-config@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@wireapp/copy-config@npm:2.1.2"
   dependencies:
-    axios: 1.4.0
+    axios: 1.5.0
     copy: 0.3.2
     cosmiconfig: 8.2.0
     fs-extra: 11.1.0
@@ -3441,7 +3441,7 @@ __metadata:
     logdown: 3.3.1
   bin:
     copy-config: lib/cli.js
-  checksum: 2af760dafb3597deb071c0332e0f1d5938ad00b6a599c23ac053f5cc8cceb94797c3e6f947242436b9129413c1a37d6fff00bd527e44cb77d9ebe19f4c82d847
+  checksum: 39e5cfcbce1219c6e54410cae49db83b6b4945b82a137df9fd1a3c0b4660789522490b9d679ba541db6257872892fa6b499dc1eb882b4cd650a4b59a7d99ccb7
   languageName: node
   linkType: hard
 
@@ -4111,14 +4111,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.4.0":
-  version: 1.4.0
-  resolution: "axios@npm:1.4.0"
+"axios@npm:1.5.0":
+  version: 1.5.0
+  resolution: "axios@npm:1.5.0"
   dependencies:
     follow-redirects: ^1.15.0
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: 7fb6a4313bae7f45e89d62c70a800913c303df653f19eafec88e56cea2e3821066b8409bc68be1930ecca80e861c52aa787659df0ffec6ad4d451c7816b9386b
+  checksum: e7405a5dbbea97760d0e6cd58fecba311b0401ddb4a8efbc4108f5537da9b3f278bde566deb777935a960beec4fa18e7b8353881f2f465e4f2c0e949fead35be
   languageName: node
   linkType: hard
 
@@ -13752,7 +13752,7 @@ __metadata:
     "@typescript-eslint/parser": 2.34.0
     "@wireapp/api-client": 17.0.0
     "@wireapp/commons": 4.4.10
-    "@wireapp/copy-config": 2.1.1
+    "@wireapp/copy-config": 2.1.2
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.8.1
     adm-zip: 0.5.10
