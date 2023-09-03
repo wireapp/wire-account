@@ -2910,10 +2910,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.3":
-  version: 18.16.3
-  resolution: "@types/node@npm:18.16.3"
-  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
+"@types/node@npm:20.5.9":
+  version: 20.5.9
+  resolution: "@types/node@npm:20.5.9"
+  checksum: 717490e94131722144878b4ca1a963ede1673bb8f2ef78c2f5b50b918df6dc9b35e7f8283e5c2a7a9f137730f7c08dc6228e53d4494a94c9ee16881e6ce6caed
   languageName: node
   linkType: hard
 
@@ -13743,7 +13743,7 @@ __metadata:
     "@types/color": 3.0.3
     "@types/enzyme": 3.10.12
     "@types/jest": 27.5.0
-    "@types/node": 18.16.3
+    "@types/node": 20.5.9
     "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
     "@types/react-router-dom": 5.3.3
