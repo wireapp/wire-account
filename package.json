@@ -29,7 +29,7 @@
     "@hot-loader/react-dom": "16.14.0",
     "@testing-library/react": "12.1.4",
     "@types/cheerio": "0.22.31",
-    "@types/color": "3.0.3",
+    "@types/color": "3.0.4",
     "@types/enzyme": "3.10.12",
     "@types/jest": "27.5.0",
     "@types/node": "18.16.3",

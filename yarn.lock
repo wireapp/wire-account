@@ -2764,6 +2764,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/color@npm:3.0.4":
+  version: 3.0.4
+  resolution: "@types/color@npm:3.0.4"
+  dependencies:
+    "@types/color-convert": "*"
+  checksum: 46935626ddeb8ae8877488b1f8f2f71b17a529c113673301a1dd7a64d917cb7a748545ac34ed30c188d66a2cd09c33abc24c87bd5b3a80d520cf1f35aaa2e476
+  languageName: node
+  linkType: hard
+
 "@types/enzyme@npm:3.10.12":
   version: 3.10.12
   resolution: "@types/enzyme@npm:3.10.12"
@@ -13740,7 +13749,7 @@ __metadata:
     "@hot-loader/react-dom": 16.14.0
     "@testing-library/react": 12.1.4
     "@types/cheerio": 0.22.31
-    "@types/color": 3.0.3
+    "@types/color": 3.0.4
     "@types/enzyme": 3.10.12
     "@types/jest": 27.5.0
     "@types/node": 18.16.3
