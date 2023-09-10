@@ -2730,12 +2730,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cheerio@npm:*, @types/cheerio@npm:0.22.31":
+"@types/cheerio@npm:*":
   version: 0.22.31
   resolution: "@types/cheerio@npm:0.22.31"
   dependencies:
     "@types/node": "*"
   checksum: 8d73d22fdd384c290514dad6f9f4a436f5a90bc836bbe9b46fe4f557041a03484f0547291d0347185a806149f465355fc225dc87477b8cf5af5be307bb75e6a4
+  languageName: node
+  linkType: hard
+
+"@types/cheerio@npm:0.22.32":
+  version: 0.22.32
+  resolution: "@types/cheerio@npm:0.22.32"
+  dependencies:
+    "@types/node": "*"
+  checksum: 5a4885e03889c19638f0086d53e653d36a9eb097d0a08ec69dddf65ef685cd7118989c4fb28d5b28746502efc54bc57a3f751ee2a9aab3cfd32991bf5b51df10
   languageName: node
   linkType: hard
 
@@ -13739,7 +13748,7 @@ __metadata:
     "@emotion/react": 11.11.1
     "@hot-loader/react-dom": 16.14.0
     "@testing-library/react": 12.1.4
-    "@types/cheerio": 0.22.31
+    "@types/cheerio": 0.22.32
     "@types/color": 3.0.3
     "@types/enzyme": 3.10.12
     "@types/jest": 27.5.0
