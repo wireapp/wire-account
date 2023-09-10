@@ -2448,7 +2448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bluebird@npm:^3.0.6, bluebird@npm:^3.5.3":
+"bluebird@npm:^3.0.6":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 869417503c722e7dc54ca46715f70e15f4d9c602a423a02c825570862d12935be59ed9c7ba34a9b31f186c017c23cac6b54e35446f8353059c101da73eac22ef
@@ -3256,11 +3256,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express-hbs@npm:2.4.0":
-  version: 2.4.0
-  resolution: "express-hbs@npm:2.4.0"
+"express-hbs@npm:2.4.2":
+  version: 2.4.2
+  resolution: "express-hbs@npm:2.4.2"
   dependencies:
-    bluebird: ^3.5.3
     handlebars: ^4.7.7
     js-beautify: ^1.13.11
     lodash: ^4.17.21
@@ -3268,7 +3267,7 @@ __metadata:
   dependenciesMeta:
     js-beautify:
       optional: true
-  checksum: 16381879b1346cdab80006761fc3aea128eb40c0f3a27371b65d2b0755a30ce96e32bf3927ac824ee3d871b57d37d81d1737669e9cf2b9f5db874ee945c20c18
+  checksum: 09d4044906a080f7d4bf92410b31bdbc6cc193cae48ca94508660ebaa3c19fecd2a33e87c97617d4cde862f7f585e51afe61a733bc1244783b8cf619123294a9
   languageName: node
   linkType: hard
 
@@ -6341,7 +6340,7 @@ __metadata:
     dotenv: 16.3.1
     dotenv-extended: 2.9.0
     express: 4.18.2
-    express-hbs: 2.4.0
+    express-hbs: 2.4.2
     fs-extra: 10.1.0
     generate-changelog: 1.8.0
     handlebars: 4.7.7
