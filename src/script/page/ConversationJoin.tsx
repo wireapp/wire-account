@@ -23,6 +23,7 @@ import {
   H1,
   H2,
   Loading,
+  Paragraph,
   QUERY,
   QueryKeys,
   Small,
@@ -96,6 +97,12 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               {hasDisplayedButtons() ? (
                 <>
                   <Text block>{t('description', {ns: translationNamespaces})}</Text>
+                  <Paragraph muted css={{marginTop: '8px'}}>
+                    {t('conversationLocation', {domain, ns: translationNamespaces})}
+                  </Paragraph>
+                  <Paragraph muted css={{marginTop: '8px'}}>
+                    {t('wirelessHeadline', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
+                  </Paragraph>
                   <FlexBox flexWrap="wrap" column={isMobile} css={{marginTop: 24}}>
                     <OpenWireButtons
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
