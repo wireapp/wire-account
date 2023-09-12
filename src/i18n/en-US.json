@@ -83,7 +83,7 @@
     "cannotJoinOnMobile": "At the moment, you can't join this conversation on your mobile device. Please open this link on your desktop instead."
   },
   "conversationJoinSelfHosted": {
-    "title": "You have been invited to join conversation in Wire"
+    "title": "You have been invited to join a conversation in Wire"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",
