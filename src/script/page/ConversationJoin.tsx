@@ -97,9 +97,11 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               {hasDisplayedButtons() ? (
                 <>
                   <Text block>{t('description', {ns: translationNamespaces})}</Text>
-                  <Paragraph muted css={{marginTop: '8px'}}>
-                    {t('conversationLocation', {domain, ns: translationNamespaces})}
-                  </Paragraph>
+                  {IS_SELF_HOSTED && (
+                    <Paragraph muted css={{marginTop: '8px'}}>
+                      {t('conversationLocation', {domain, ns: translationNamespaces})}
+                    </Paragraph>
+                  )}
                   <Paragraph muted css={{marginTop: '8px'}}>
                     {t('wirelessHeadline', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
                   </Paragraph>
