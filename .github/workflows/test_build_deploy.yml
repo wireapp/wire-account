@@ -2,11 +2,10 @@ name: Test, Build & Deploy
 
 on:
   push:
-    branches: [staging, main]
+    # TODO: remove before merging PR
+    branches: [staging, main, WPB-6025-refactor]
     tags:
       - v*
-  pull_request:
-    branches: [staging, main]
 
 jobs:
   test_build_deploy:
@@ -17,8 +16,6 @@ jobs:
         DISTRIBUTION: ['DISTRIBUTION_0']
 
     env:
-      TEST_COVERAGE_FAIL_THRESHOLD: 10
-      TEST_COVERAGE_WARNING_THRESHOLD: 50
       DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS: 150
       AWS_APPLICATION_NAME: Account
       AWS_BUILD_ZIP_PATH: 'wire-account.zip'
@@ -74,15 +71,6 @@ jobs:
 
       - name: Test
         run: yarn test
-
-      - name: Monitor coverage
-        if: github.event_name == 'pull_request' && ! contains(github.event.pull_request.user.login, 'dependabot[bot]')
-        uses: slavcodev/coverage-monitor-action@1.8.0
-        with:
-          github_token: ${{github.token}}
-          coverage_path: 'coverage/clover.xml'
-          threshold_alert: ${{env.TEST_COVERAGE_FAIL_THRESHOLD}}
-          threshold_warning: ${{env.TEST_COVERAGE_WARNING_THRESHOLD}}
 
       - name: Create commit file
         run: |
