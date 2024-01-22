@@ -81,7 +81,7 @@ jobs:
         uses: slavcodev/coverage-monitor-action@1.8.0
         with:
           github_token: ${{github.token}}
-          clover_file: 'coverage/clover.xml'
+          coverage_path: 'coverage/clover.xml'
           threshold_alert: ${{env.TEST_COVERAGE_FAIL_THRESHOLD}}
           threshold_warning: ${{env.TEST_COVERAGE_WARNING_THRESHOLD}}
 
