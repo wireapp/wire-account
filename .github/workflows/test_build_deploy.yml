@@ -163,6 +163,40 @@ jobs:
           echo "image_tag=$(cat ./tag.txt)" >> $GITHUB_OUTPUT
           echo "Pushed also unique docker tag $image_tag"
 
+      - uses: azure/setup-helm@v3
+        with:
+          version: '3.12.2'
+        id: install
+
+      - name: Publish Helm chart
+        shell: bash
+        id: publish_helm_chart
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_SECRET_ACCESS_KEY }}
+        run: |
+          set -eo pipefail
+
+          image_tag="${{steps.push_docker_image.outputs.image_tag}}"
+
+          helm plugin install https://github.com/hypnoglow/helm-s3.git --version 0.15.1
+
+          helm repo add charts-webapp s3://public.wire.com/charts-webapp
+
+          if [ "$TAG" != "" ]; then
+            chart_version="$(./bin/chart-next-version.sh release)"
+          else
+            chart_version="$(./bin/chart-next-version.sh prerelease)"
+          fi
+          echo "chart_version=$chart_version" >> $GITHUB_OUTPUT
+
+          chart_patched="$(yq -Mr ".version = \"$chart_version\" | .appVersion = \"$image_tag\"" ./charts/account-pages/Chart.yaml)"
+          echo "$chart_patched" > ./charts/account-pages/Chart.yaml
+
+          helm package ./charts/account-pages
+
+          helm s3 push account-pages-*.tgz charts-webapp
+
       - name: Create GitHub release
         id: create_release
         if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
