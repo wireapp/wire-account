@@ -73,7 +73,6 @@ jobs:
         run: yarn --immutable
 
       - name: Test
-        if: matrix.DISTRIBUTION == 'DISTRIBUTION_0'
         run: yarn test
 
       - name: Monitor coverage
