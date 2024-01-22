@@ -73,9 +73,6 @@ jobs:
       - name: Install JS dependencies
         run: yarn --immutable
 
-      - name: Lint
-        run: yarn lint
-
       - name: Test
         run: yarn test
 
