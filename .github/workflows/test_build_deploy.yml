@@ -3,7 +3,7 @@ name: Test, Build & Deploy
 on:
   push:
     # TODO: remove before merging PR
-    branches: [staging, main, WPB-6025-refactor]
+    branches: [staging, main, WPB-6025]
     tags:
       - v*
 
