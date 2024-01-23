@@ -2,8 +2,7 @@ name: Test, Build & Deploy
 
 on:
   push:
-    # TODO: remove before merging PR
-    branches: [staging, main, WPB-6025]
+    branches: [staging, main]
     tags:
       - v*
 
@@ -72,10 +71,6 @@ jobs:
           fi
 
           if [ "$version_tag" == "staging" ]; then
-            wire_builds_target_branches='["dev"]'
-          fi
-
-          if [ "$version_tag" == "WPB-6025" ]; then
             wire_builds_target_branches='["dev"]'
           fi
 
