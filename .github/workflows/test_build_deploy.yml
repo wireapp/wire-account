@@ -74,7 +74,7 @@ jobs:
             wire_builds_target_branches='["dev"]'
           fi
 
-          if [ "$version_tag" == "WPB-6025-refactor" ]; then
+          if [ "$version_tag" == "WPB-6025" ]; then
             wire_builds_target_branches='["dev"]'
           fi
 
