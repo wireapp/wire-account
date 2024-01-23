@@ -252,7 +252,7 @@ jobs:
             git reset --hard @{upstream}
 
             build_json=$(cat ./build.json | \
-              ./bin/set-chart-fields webapp \
+              ./bin/set-chart-fields account-pages \
               "version=$chart_version" \
               "repo=https://s3-eu-west-1.amazonaws.com/public.wire.com/charts-webapp" \
               "meta.appVersion=$image_tag" \
