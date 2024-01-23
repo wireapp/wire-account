@@ -20,8 +20,8 @@
     "target": "es6",
     "paths": {
       "resource/*": ["resource/*"],
-      "i18n/*": ["src/i18n/*"]
-    }
+      "i18n/*": ["src/i18n/*"],
+    },
   },
-  "exclude": ["node_modules", "server"]
+  "exclude": ["node_modules", "server"],
 }

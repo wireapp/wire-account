@@ -8,7 +8,6 @@ on:
   pull_request:
     branches: [staging, main]
 
-
 jobs:
   test_build_deploy:
     runs-on: ubuntu-latest
