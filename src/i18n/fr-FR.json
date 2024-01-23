@@ -22,7 +22,8 @@
     "errorUnusedEmail": "Cette adresse e-mail n’est pas en cours d’utilisation.",
     "successDescription": "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe. Il est valable pendant 1 heure.",
     "successTitle": "Consultez vos e-mails",
-    "title": "Modifier le mot de passe"
+    "title": "Modifier le mot de passe",
+    "login": "Log in"
   },
   "general": {
     "loading": "Veuillez patienter…"
@@ -71,9 +72,8 @@
   "conversationJoin": {
     "loading": "Vérification du lien...",
     "description": "Conférences audio et vidéo, messagerie textuelle, partage de fichiers et partage d'écran, tous chiffrés de bout en bout.",
-    "wirelessHeadline": "Vous ne voulez pas créer un compte {{brandName}} ?",
-    "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire",
-    "wirelessNote": "(l'accès expire après 24 heures)",
+    "conversationLocation": "The conversation takes place on {{domain}}",
+    "wirelessHeadline": "Don't have a {{brandName}} account? You can join as temporary guest in the browser.",
     "errorConversationNotFoundDescription": "Le lien vers cette conversation de groupe a expiré ou n'est plus valide.",
     "errorConversationNotFoundHeadline": "Conversation introuvable",
     "title": "Vous avez été invité·e à rejoindre une conversation dans {{brandName}}",
@@ -83,10 +83,7 @@
     "cannotJoinOnMobile": "Pour le moment, vous ne pouvez pas rejoindre cette conversation sur votre appareil mobile. Veuillez ouvrir ce lien sur votre bureau."
   },
   "conversationJoinSelfHosted": {
-    "title": "Vous avez été invité·e à rejoindre une conversation Wire sur le domaine « {{domain}} »",
-    "wirelessHeadline": "Vous n'avez pas de compte Wire sur ce domaine ?",
-    "wirelessLink": "Rejoignez la conversation en tant qu'invité·e temporaire sur ce domaine",
-    "openWithBrowser": "Rejoindre avec un compte Wire de ce domaine"
+    "title": "You have been invited to join a conversation in Wire"
   },
   "userProfile": {
     "title": "Vous avez été invité·e à consulter un profil d'utilisateur dans {{brandName}} ",

@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set environment variables
         env:
@@ -76,7 +76,6 @@ jobs:
 
           echo "wire_builds_target_branches: $wire_builds_target_branches"
           echo "wire_builds_target_branches=$wire_builds_target_branches" >> $GITHUB_OUTPUT
-
 
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.0

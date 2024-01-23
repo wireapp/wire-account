@@ -77,7 +77,7 @@ describe('ConversationJoin', () => {
 
   describe('on mobile', () => {
     it('shows open app & direct download', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
       const conversationJoinPage = new ConversationJoinPage(
@@ -105,8 +105,8 @@ describe('ConversationJoin', () => {
 
   describe('on desktop', () => {
     it('shows open app, webapp & direct download on MacOS', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').and.returnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
       const conversationJoinPage = new ConversationJoinPage(
@@ -132,8 +132,8 @@ describe('ConversationJoin', () => {
     });
 
     it('shows open app, webapp & website download on non-MacOS', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(false);
+      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').and.returnValue(false);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
       const conversationJoinPage = new ConversationJoinPage(

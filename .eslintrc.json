@@ -22,5 +22,10 @@
     "import/no-default-export": "off",
     "jest/no-jasmine-globals": "warn",
     "jest/no-try-expect": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

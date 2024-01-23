@@ -35,7 +35,7 @@ describe('OpenWireButtons', () => {
   };
   describe('on mobile', () => {
     it('shows open app & direct download', () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(true);
 
       const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       res.getByText('openWithApp');
@@ -46,8 +46,8 @@ describe('OpenWireButtons', () => {
 
   describe('on desktop', () => {
     beforeEach(() => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').and.returnValue(true);
     });
 
     it('shows open app, webapp & direct download on MacOS', async () => {
