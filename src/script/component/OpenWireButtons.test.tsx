@@ -35,7 +35,7 @@ describe('OpenWireButtons', () => {
   };
   describe('on mobile', () => {
     it('shows open app & direct download', () => {
-      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
 
       const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       res.getByText('openWithApp');
@@ -46,15 +46,15 @@ describe('OpenWireButtons', () => {
 
   describe('on desktop', () => {
     beforeEach(() => {
-      jest.spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      jest.spyOn(Runtime, 'isMacOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
     });
 
     it('shows open app, webapp & direct download on MacOS', async () => {
       const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
-      res.getByText('openWithApp');
-      res.getByText('openWithBrowser');
-      res.getByText('downloadApp');
+      expect(res.getByText('openWithApp')).toBeTruthy();
+      expect(res.getByText('openWithBrowser')).toBeTruthy();
+      expect(res.getByText('downloadApp')).toBeTruthy();
     });
 
     it('only show join in webapp when in a self hosted env', async () => {
