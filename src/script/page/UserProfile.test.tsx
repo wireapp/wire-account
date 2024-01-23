@@ -51,7 +51,7 @@ class UserProfilePage extends TestPage<UserProfileProps> {
 describe('UserProfile', () => {
   describe('on mobile', () => {
     it('shows open app & direct download', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
 
       const conversationJoinPage = new UserProfilePage(
         {
@@ -71,8 +71,8 @@ describe('UserProfile', () => {
 
   describe('on desktop', () => {
     it('shows open app, webapp & direct download on MacOS', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
 
       const conversationJoinPage = new UserProfilePage(
         {
@@ -90,8 +90,8 @@ describe('UserProfile', () => {
     });
 
     it('shows open app, webapp & website download on non-MacOS', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(false);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').mockReturnValue(false);
 
       const conversationJoinPage = new UserProfilePage(
         {

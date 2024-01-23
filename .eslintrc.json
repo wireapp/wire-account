@@ -2,6 +2,7 @@
   "env": {
     "jasmine": true
   },
+  "parser": "@typescript-eslint/parser",
   "plugins": ["jest"],
   "extends": ["@wireapp/eslint-config", "plugin:jest/recommended"],
   "overrides": [
@@ -19,8 +20,19 @@
     "project": ["./tsconfig.json", "./server/tsconfig.json"]
   },
   "rules": {
+    "id-length": [
+      "error",
+      {
+        "exceptions": ["t"]
+      }
+    ],
     "import/no-default-export": "off",
     "jest/no-jasmine-globals": "warn",
     "jest/no-try-expect": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
