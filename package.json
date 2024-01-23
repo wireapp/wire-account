@@ -68,7 +68,7 @@
     "lint-staged": "13.2.2",
     "os-browserify": "0.3.0",
     "path-browserify": "1.0.1",
-    "prettier": "2.8.8",
+    "prettier": "3.2.4",
     "react-hot-loader": "4.13.1",
     "simple-git": "3.19.0",
     "sort-json": "2.0.1",
