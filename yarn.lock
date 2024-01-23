@@ -2842,6 +2842,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/color@npm:3.0.4":
+  version: 3.0.4
+  resolution: "@types/color@npm:3.0.4"
+  dependencies:
+    "@types/color-convert": "*"
+  checksum: 46935626ddeb8ae8877488b1f8f2f71b17a529c113673301a1dd7a64d917cb7a748545ac34ed30c188d66a2cd09c33abc24c87bd5b3a80d520cf1f35aaa2e476
+  languageName: node
+  linkType: hard
+
 "@types/enzyme@npm:3.10.12":
   version: 3.10.12
   resolution: "@types/enzyme@npm:3.10.12"
@@ -2988,10 +2997,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.16.3":
-  version: 18.16.3
-  resolution: "@types/node@npm:18.16.3"
-  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
+"@types/node@npm:20.11.5":
+  version: 20.11.5
+  resolution: "@types/node@npm:20.11.5"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: a542727de1334ae20a3ca034b0ecf4b464a57ca01efc4f9cf43bd9ab93896125ab3c2de060ecd8f6ae23b86c6bf3463f681b643e69c032c6a662d376c98a6092
   languageName: node
   linkType: hard
 
@@ -3560,11 +3571,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/react-ui-kit@npm:9.8.1":
-  version: 9.8.1
-  resolution: "@wireapp/react-ui-kit@npm:9.8.1"
+"@wireapp/react-ui-kit@npm:9.9.5":
+  version: 9.9.5
+  resolution: "@wireapp/react-ui-kit@npm:9.9.5"
   dependencies:
-    "@types/color": 3.0.3
+    "@types/color": 3.0.4
     color: 4.2.3
     emotion-normalize: 11.0.1
     react-select: 5.7.4
@@ -3577,7 +3588,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 7b3e14768b599076a12a30bf24c150a0c966a2c58d20c9c33f54e374f78b61093fa8dcb9152f13fc49ec25e2cb4fe1c458ee60a224c0197be485215cae50a56d
+  checksum: 0bfbe5ec70172b43123a45e797660a3d8e067d77532ac87ab75dddaf01f796657e870ec6924730a5cc34df44e5818e6c31bcfc82a3d75ac9ec18eb28f75f6602
   languageName: node
   linkType: hard
 
@@ -13219,6 +13230,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
 "unicode-canonical-property-names-ecmascript@npm:^2.0.0":
   version: 2.0.0
   resolution: "unicode-canonical-property-names-ecmascript@npm:2.0.0"
@@ -13870,7 +13888,7 @@ __metadata:
     "@types/color": 3.0.3
     "@types/enzyme": 3.10.12
     "@types/jest": 27.5.0
-    "@types/node": 18.16.3
+    "@types/node": 20.11.5
     "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
     "@types/react-router-dom": 5.3.3
@@ -13881,7 +13899,7 @@ __metadata:
     "@wireapp/commons": 4.4.10
     "@wireapp/copy-config": 2.1.1
     "@wireapp/eslint-config": 1.4.0
-    "@wireapp/react-ui-kit": 9.8.1
+    "@wireapp/react-ui-kit": 9.9.5
     adm-zip: 0.5.10
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
