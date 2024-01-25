@@ -158,7 +158,8 @@ jobs:
             stage="production"
           fi
           yarn docker "$dist" "$stage" ${GITHUB_SHA} ./tag.txt
-          echo "image_tag=$(cat ./tag.txt)" >> $GITHUB_OUTPUT
+          image_tag=$(cat ./tag.txt)
+          echo "image_tag=$image_tag" >> $GITHUB_OUTPUT
           echo "Pushed also unique docker tag $image_tag"
 
       - uses: azure/setup-helm@v4
