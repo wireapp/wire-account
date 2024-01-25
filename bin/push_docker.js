@@ -38,7 +38,7 @@ const pkg = require('../package.json');
 /** Either empty (for our own cloud releases) or a suffix (i.e. "ey") for custom deployments */
 const distributionParam = process.argv[2];
 /** Either "staging" (for internal releases / staging bumps) or "production" (for cloud releases) */
-const stageParam = process.argv[3];
+const stageParam = process.argv[3].replace('/', '-');
 /** Commit ID of https://github.com/wireapp/wire-team-settings (i.e. "fb2f4f47f1e3eab3cd8df62c5cea6441cfb6f279") */
 const commitSha = process.argv[4];
 
