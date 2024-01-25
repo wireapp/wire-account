@@ -20,4 +20,3 @@ jobs:
           pr_branch: 'staging'
         env:
           GITHUB_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
-
