@@ -6,7 +6,7 @@ on:
     tags:
       - v*
   pull_request:
-    branches: [staging, main]
+    branches: [staging, main, release/*]
 
 jobs:
   test_build_deploy:

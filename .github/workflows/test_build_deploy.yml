@@ -2,7 +2,7 @@ name: Test, Build & Deploy
 
 on:
   push:
-    branches: [staging, main]
+    branches: [staging, main, release/*]
     tags:
       - v*
 
@@ -72,6 +72,10 @@ jobs:
 
           if [ "$version_tag" == "staging" ]; then
             wire_builds_target_branches='["dev"]'
+          fi
+
+          if [ "$version_tag" == "release/q1-2024" ]; then
+            wire_builds_target_branches='["q1-2024"]'
           fi
 
           echo "wire_builds_target_branches: $wire_builds_target_branches"
