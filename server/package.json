@@ -43,6 +43,9 @@
     "webpack-dev-middleware": "6.1.1",
     "webpack-hot-middleware": "2.25.3"
   },
+  "engines": {
+    "node": ">= 18.16.0"
+  },
   "name": "wire-web-server",
   "private": true,
   "repository": {
