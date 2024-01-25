@@ -107,10 +107,10 @@ jobs:
 
       - name: Build
         run: |
-          if [ "$TAG" != "" ]; then
-            yarn bundle:prod
+          if [ "$TAG" != "staging" ]; then
+          yarn bundle:staging
           else
-            yarn bundle:staging
+          yarn bundle:prod
           fi
 
       - name: Deploy staging build to Elastic Beanstalk
