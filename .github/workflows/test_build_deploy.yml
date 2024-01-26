@@ -82,7 +82,7 @@ jobs:
           echo "wire_builds_target_branches=$wire_builds_target_branches" >> $GITHUB_OUTPUT
 
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.0
+        uses: styfle/cancel-workflow-action@0.12.1
         with:
           access_token: ${{github.token}}
 
