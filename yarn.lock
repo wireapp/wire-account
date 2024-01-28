@@ -3822,19 +3822,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/copy-config@npm:2.1.7":
-  version: 2.1.7
-  resolution: "@wireapp/copy-config@npm:2.1.7"
+"@wireapp/copy-config@npm:2.1.14":
+  version: 2.1.14
+  resolution: "@wireapp/copy-config@npm:2.1.14"
   dependencies:
-    axios: 1.5.0
+    axios: 1.6.5
     copy: 0.3.2
-    cosmiconfig: 8.3.5
+    cosmiconfig: 8.3.6
     fs-extra: 11.1.0
     jszip: 3.10.1
     logdown: 3.3.1
   bin:
     copy-config: lib/cli.js
-  checksum: 96723dc3a27130c89606defabc64b4c2b19e01dd9dd618cac2ae23c1d0a88f712c4995c784e7ef9d6b2716821a3aa83ea606214cd12b4b1ba5037d32b8b6337c
+  checksum: 0c0f472167ba40313f53a2a0966f62840bf404c495d26ff0ee578ea78ce2dc684138ae72288100ae0057a8dc9291f2fcf6c47d4986da332191cd87569ee6abdd
   languageName: node
   linkType: hard
 
@@ -4515,14 +4515,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.5.0":
-  version: 1.5.0
-  resolution: "axios@npm:1.5.0"
+"axios@npm:1.6.5":
+  version: 1.6.5
+  resolution: "axios@npm:1.6.5"
   dependencies:
-    follow-redirects: ^1.15.0
+    follow-redirects: ^1.15.4
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: e7405a5dbbea97760d0e6cd58fecba311b0401ddb4a8efbc4108f5537da9b3f278bde566deb777935a960beec4fa18e7b8353881f2f465e4f2c0e949fead35be
+  checksum: e28d67b2d9134cb4608c44d8068b0678cfdccc652742e619006f27264a30c7aba13b2cd19c6f1f52ae195b5232734925928fb192d5c85feea7edd2f273df206d
   languageName: node
   linkType: hard
 
@@ -5437,9 +5437,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:8.3.5":
-  version: 8.3.5
-  resolution: "cosmiconfig@npm:8.3.5"
+"cosmiconfig@npm:8.3.6":
+  version: 8.3.6
+  resolution: "cosmiconfig@npm:8.3.6"
   dependencies:
     import-fresh: ^3.3.0
     js-yaml: ^4.1.0
@@ -5450,7 +5450,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: c6e44bb3cabf268b70049e7bd4ee8ecf00068854e53cbc32f9104794927ef406817f9e64e1c4949bd10776b604c01f7b50674336fcd2d5b9efc4cf8277fdf025
+  checksum: dc339ebea427898c9e03bf01b56ba7afbac07fc7d2a2d5a15d6e9c14de98275a9565da949375aee1809591c152c0a3877bb86dbeaf74d5bd5aaa79955ad9e7a0
   languageName: node
   linkType: hard
 
@@ -7103,7 +7103,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.15.0":
+"follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.15.4":
   version: 1.15.5
   resolution: "follow-redirects@npm:1.15.5"
   peerDependenciesMeta:
@@ -14097,7 +14097,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.19.1
     "@wireapp/api-client": 17.0.0
     "@wireapp/commons": 4.4.10
-    "@wireapp/copy-config": 2.1.7
+    "@wireapp/copy-config": 2.1.14
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.9.5
     adm-zip: 0.5.10
