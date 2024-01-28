@@ -2900,21 +2900,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/color@npm:3.0.3":
-  version: 3.0.3
-  resolution: "@types/color@npm:3.0.3"
-  dependencies:
-    "@types/color-convert": "*"
-  checksum: 4a54a6eca687b1f19d393c6c44e292009e913fa2377b5b815d1cd04470131087d7a799718d9e66a970f43e6ba16e7056a5b40b49d2d0d1d0f1530aff23864528
-  languageName: node
-  linkType: hard
-
 "@types/color@npm:3.0.4":
   version: 3.0.4
   resolution: "@types/color@npm:3.0.4"
   dependencies:
     "@types/color-convert": "*"
   checksum: 46935626ddeb8ae8877488b1f8f2f71b17a529c113673301a1dd7a64d917cb7a748545ac34ed30c188d66a2cd09c33abc24c87bd5b3a80d520cf1f35aaa2e476
+  languageName: node
+  linkType: hard
+
+"@types/color@npm:3.0.6":
+  version: 3.0.6
+  resolution: "@types/color@npm:3.0.6"
+  dependencies:
+    "@types/color-convert": "*"
+  checksum: 0f16dcf4e202896d5425019c44a1f99713fca998052ab2fd836cdd38048398a0caf5b79a2efe560e41fca4b9401e8d8f6f02ed541cfea30cca3a8cb1b50b80f7
   languageName: node
   linkType: hard
 
@@ -14028,7 +14028,7 @@ __metadata:
     "@hot-loader/react-dom": 16.14.0
     "@testing-library/react": 12.1.4
     "@types/cheerio": 0.22.31
-    "@types/color": 3.0.3
+    "@types/color": 3.0.6
     "@types/enzyme": 3.10.12
     "@types/jest": 27.5.0
     "@types/node": 20.11.5
