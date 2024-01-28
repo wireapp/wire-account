@@ -34,7 +34,7 @@
     "generate-changelog": "1.8.0",
     "jasmine": "4.5.0",
     "jszip": "3.10.1",
-    "nodemon": "2.0.22",
+    "nodemon": "3.0.3",
     "opn": "6.0.0",
     "prettier": "2.8.8",
     "request": "2.88.2",
