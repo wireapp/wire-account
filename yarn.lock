@@ -3013,15 +3013,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/color@npm:3.0.4":
-  version: 3.0.4
-  resolution: "@types/color@npm:3.0.4"
-  dependencies:
-    "@types/color-convert": "*"
-  checksum: 46935626ddeb8ae8877488b1f8f2f71b17a529c113673301a1dd7a64d917cb7a748545ac34ed30c188d66a2cd09c33abc24c87bd5b3a80d520cf1f35aaa2e476
-  languageName: node
-  linkType: hard
-
 "@types/color@npm:3.0.6":
   version: 3.0.6
   resolution: "@types/color@npm:3.0.6"
@@ -3875,14 +3866,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/react-ui-kit@npm:9.9.5":
-  version: 9.9.5
-  resolution: "@wireapp/react-ui-kit@npm:9.9.5"
+"@wireapp/react-ui-kit@npm:9.12.8":
+  version: 9.12.8
+  resolution: "@wireapp/react-ui-kit@npm:9.12.8"
   dependencies:
-    "@types/color": 3.0.4
+    "@types/color": 3.0.6
     color: 4.2.3
     emotion-normalize: 11.0.1
-    react-select: 5.7.4
+    react-select: 5.7.5
     react-transition-group: 4.4.5
   peerDependencies:
     "@emotion/react": 11.10.4
@@ -3892,7 +3883,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 0bfbe5ec70172b43123a45e797660a3d8e067d77532ac87ab75dddaf01f796657e870ec6924730a5cc34df44e5818e6c31bcfc82a3d75ac9ec18eb28f75f6602
+  checksum: eaab4ee5abbc36b1b5a50511b7b7824c9f7f717b2b852a35fac148ecb505f1f2a3ad910ecfd3b54c16de04b0fd7284ef60442a957e78da7a25f20a466c6b7fa5
   languageName: node
   linkType: hard
 
@@ -11403,9 +11394,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-select@npm:5.7.4":
-  version: 5.7.4
-  resolution: "react-select@npm:5.7.4"
+"react-select@npm:5.7.5":
+  version: 5.7.5
+  resolution: "react-select@npm:5.7.5"
   dependencies:
     "@babel/runtime": ^7.12.0
     "@emotion/cache": ^11.4.0
@@ -11419,7 +11410,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: ca72941ad1d2c578ec04c09ed3deb7e373f987e589f403fadedc6fcc3e29935b5425ec4d2628f0fe58c21319bcaf153c0d0172432e09fc6423da869d848de757
+  checksum: 88f2d94c4a6778df525a9fb5d7acac1bf34821f6efcfdc5927ec608f5f933cf3f47e1c4e4fd3b92d7b2ba1d91e44595d45ac4e2fd7528ba420086008ac5a81cf
   languageName: node
   linkType: hard
 
@@ -14099,7 +14090,7 @@ __metadata:
     "@wireapp/commons": 4.4.10
     "@wireapp/copy-config": 2.1.14
     "@wireapp/eslint-config": 1.4.0
-    "@wireapp/react-ui-kit": 9.9.5
+    "@wireapp/react-ui-kit": 9.12.8
     adm-zip: 0.5.10
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
