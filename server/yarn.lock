@@ -2063,15 +2063,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/request@npm:2.48.8":
-  version: 2.48.8
-  resolution: "@types/request@npm:2.48.8"
+"@types/request@npm:2.48.12":
+  version: 2.48.12
+  resolution: "@types/request@npm:2.48.12"
   dependencies:
     "@types/caseless": "*"
     "@types/node": "*"
     "@types/tough-cookie": "*"
     form-data: ^2.5.0
-  checksum: 0b7754941e08205dce51635d894ec524df276d2b83ca13b9aab723f9281acecf1108841e9554494cb1cb60f6d6ddbb47ebea97392bcf2bf607f035b3a9b4af45
+  checksum: 20dfad0a46b4249bf42f09c51fbd4d02ec6738c5152194b5c7c69bab80b00eae9cc71df4489ffa929d0968d453ef7d0823d1f98871efed563a4fdb57bf0a4c58
   languageName: node
   linkType: hard
 
@@ -6469,7 +6469,7 @@ __metadata:
     "@types/fs-extra": 9.0.13
     "@types/helmet": 4.0.0
     "@types/moment": 2.13.0
-    "@types/request": 2.48.8
+    "@types/request": 2.48.12
     "@types/uuid": 9.0.8
     "@wireapp/commons": 4.4.10
     "@wireapp/tslint-config": 1.4.1
