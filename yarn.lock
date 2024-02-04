@@ -3894,19 +3894,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/copy-config@npm:2.1.14":
-  version: 2.1.14
-  resolution: "@wireapp/copy-config@npm:2.1.14"
+"@wireapp/copy-config@npm:2.1.16":
+  version: 2.1.16
+  resolution: "@wireapp/copy-config@npm:2.1.16"
   dependencies:
-    axios: 1.6.5
+    axios: 1.6.7
     copy: 0.3.2
-    cosmiconfig: 8.3.6
+    cosmiconfig: 9.0.0
     fs-extra: 11.1.0
     jszip: 3.10.1
     logdown: 3.3.1
   bin:
     copy-config: lib/cli.js
-  checksum: 0c0f472167ba40313f53a2a0966f62840bf404c495d26ff0ee578ea78ce2dc684138ae72288100ae0057a8dc9291f2fcf6c47d4986da332191cd87569ee6abdd
+  checksum: 6bfa9c6f1abc65ee30db9dfbb5263e823007e394fa010eeca3778e19ab879ef7cc2c5ec9d1760542cd7b8a64fb9aec0bae6d897bac32b4a3e9874f572757be80
   languageName: node
   linkType: hard
 
@@ -4684,14 +4684,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.6.5":
-  version: 1.6.5
-  resolution: "axios@npm:1.6.5"
+"axios@npm:1.6.7":
+  version: 1.6.7
+  resolution: "axios@npm:1.6.7"
   dependencies:
     follow-redirects: ^1.15.4
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: e28d67b2d9134cb4608c44d8068b0678cfdccc652742e619006f27264a30c7aba13b2cd19c6f1f52ae195b5232734925928fb192d5c85feea7edd2f273df206d
+  checksum: 87d4d429927d09942771f3b3a6c13580c183e31d7be0ee12f09be6d5655304996bb033d85e54be81606f4e89684df43be7bf52d14becb73a12727bf33298a082
   languageName: node
   linkType: hard
 
@@ -5638,20 +5638,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:8.3.6":
-  version: 8.3.6
-  resolution: "cosmiconfig@npm:8.3.6"
+"cosmiconfig@npm:9.0.0":
+  version: 9.0.0
+  resolution: "cosmiconfig@npm:9.0.0"
   dependencies:
+    env-paths: ^2.2.1
     import-fresh: ^3.3.0
     js-yaml: ^4.1.0
     parse-json: ^5.2.0
-    path-type: ^4.0.0
   peerDependencies:
     typescript: ">=4.9.5"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: dc339ebea427898c9e03bf01b56ba7afbac07fc7d2a2d5a15d6e9c14de98275a9565da949375aee1809591c152c0a3877bb86dbeaf74d5bd5aaa79955ad9e7a0
+  checksum: a30c424b53d442ea0bdd24cb1b3d0d8687c8dda4a17ab6afcdc439f8964438801619cdb66e8e79f63b9caa3e6586b60d8bab9ce203e72df6c5e80179b971fe8f
   languageName: node
   linkType: hard
 
@@ -6253,7 +6253,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"env-paths@npm:^2.2.0":
+"env-paths@npm:^2.2.0, env-paths@npm:^2.2.1":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
   checksum: 65b5df55a8bab92229ab2b40dad3b387fad24613263d103a97f91c9fe43ceb21965cd3392b1ccb5d77088021e525c4e0481adb309625d0cb94ade1d1fb8dc17e
@@ -14797,7 +14797,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.19.1
     "@wireapp/api-client": 17.0.0
     "@wireapp/commons": 4.4.10
-    "@wireapp/copy-config": 2.1.14
+    "@wireapp/copy-config": 2.1.16
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.12.8
     adm-zip: 0.5.10
