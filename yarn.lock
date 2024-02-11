@@ -2341,14 +2341,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@es-joy/jsdoccomment@npm:~0.41.0":
-  version: 0.41.0
-  resolution: "@es-joy/jsdoccomment@npm:0.41.0"
+"@es-joy/jsdoccomment@npm:~0.42.0":
+  version: 0.42.0
+  resolution: "@es-joy/jsdoccomment@npm:0.42.0"
   dependencies:
     comment-parser: 1.4.1
     esquery: ^1.5.0
     jsdoc-type-pratt-parser: ~4.0.0
-  checksum: cfe0714027ff8fa82dad8c84f75af3f6df9d6797d60c289b8d3c259c5375c134bd5ca630beba0daed3adceef01a74f19e05052018f6b66ad6a4f483adf599c39
+  checksum: ea0b56ca8d7470cac4694669807e4b4bbf25389c220af483ea14455c31d4a9e0f6ef0b08f45b92eb8c401bb3d6f662b4b14da51f222b85d78b2b757372072652
   languageName: node
   linkType: hard
 
@@ -6720,22 +6720,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:48.0.4":
-  version: 48.0.4
-  resolution: "eslint-plugin-jsdoc@npm:48.0.4"
+"eslint-plugin-jsdoc@npm:48.0.6":
+  version: 48.0.6
+  resolution: "eslint-plugin-jsdoc@npm:48.0.6"
   dependencies:
-    "@es-joy/jsdoccomment": ~0.41.0
+    "@es-joy/jsdoccomment": ~0.42.0
     are-docs-informative: ^0.0.2
     comment-parser: 1.4.1
     debug: ^4.3.4
     escape-string-regexp: ^4.0.0
     esquery: ^1.5.0
     is-builtin-module: ^3.2.1
-    semver: ^7.5.4
+    semver: ^7.6.0
     spdx-expression-parse: ^4.0.0
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: 9a1e8d74278338276c6a5a1b8fe252cfa7339f5fbe674f3c28dcc8270f190caa58fff3b87c4749bd5f3eb5ac6cc4d7cd6d1459f9827cfca93701b67e098c8626
+  checksum: 79a63ee27522ec04f1453a98b70a27ee5cfbd6451e0cd94a3f1702b30ee6b5d6ef9d05beb5a6e17a3cfe4428426957749ff0af0745626a31fe0fbfb520bd1691
   languageName: node
   linkType: hard
 
@@ -12720,6 +12720,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:^7.6.0":
+  version: 7.6.0
+  resolution: "semver@npm:7.6.0"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 7427f05b70786c696640edc29fdd4bc33b2acf3bbe1740b955029044f80575fc664e1a512e4113c3af21e767154a94b4aa214bf6cd6e42a1f6dba5914e0b208c
+  languageName: node
+  linkType: hard
+
 "serialize-javascript@npm:^6.0.1":
   version: 6.0.1
   resolution: "serialize-javascript@npm:6.0.1"
@@ -14784,7 +14795,7 @@ __metadata:
     eslint-plugin-babel: 5.3.1
     eslint-plugin-import: 2.29.1
     eslint-plugin-jest: 27.6.3
-    eslint-plugin-jsdoc: 48.0.4
+    eslint-plugin-jsdoc: 48.0.6
     eslint-plugin-no-unsanitized: 4.0.2
     eslint-plugin-prettier: 5.0
     eslint-plugin-react: 7.33.2
