@@ -3937,9 +3937,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/react-ui-kit@npm:9.15.1":
-  version: 9.15.1
-  resolution: "@wireapp/react-ui-kit@npm:9.15.1"
+"@wireapp/react-ui-kit@npm:9.15.3":
+  version: 9.15.3
+  resolution: "@wireapp/react-ui-kit@npm:9.15.3"
   dependencies:
     "@types/color": 3.0.6
     color: 4.2.3
@@ -3947,14 +3947,14 @@ __metadata:
     react-select: 5.7.5
     react-transition-group: 4.4.5
   peerDependencies:
-    "@emotion/react": 11.10.4
-    "@types/react": ^18.0.9
-    react: ^18.1.0
-    react-dom: ^18.1.0
+    "@emotion/react": ^11
+    "@types/react": ^18
+    react: ^18
+    react-dom: ^18
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 3b29a23a83c7e056b87bd492177005584475735c1542ab9b9dc7a005e9053fabf7f73e06d17603f3d4ea3b7103427877060a2ddb18560921e5963326bfc6e5e4
+  checksum: a39658ee797f9d61af24c457a2d68918c1d08c5565c2f630de20906000253a5333905c0ae4010159b7421ac4585b9ca9036a4151360a6da5d48a99633562aca2
   languageName: node
   linkType: hard
 
@@ -14791,7 +14791,7 @@ __metadata:
     "@wireapp/commons": 4.4.10
     "@wireapp/copy-config": 2.1.16
     "@wireapp/eslint-config": 1.4.0
-    "@wireapp/react-ui-kit": 9.15.1
+    "@wireapp/react-ui-kit": 9.15.3
     adm-zip: 0.5.10
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
