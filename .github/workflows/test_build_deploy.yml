@@ -161,7 +161,7 @@ jobs:
           echo "image_tag=$(cat ./tag.txt)" >> $GITHUB_OUTPUT
           echo "Pushed also unique docker tag $image_tag"
 
-      - uses: azure/setup-helm@v3
+      - uses: azure/setup-helm@v4
         with:
           version: '3.12.2'
         id: install
