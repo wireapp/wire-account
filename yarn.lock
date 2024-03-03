@@ -3284,12 +3284,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.11.20":
-  version: 20.11.20
-  resolution: "@types/node@npm:20.11.20"
+"@types/node@npm:20.11.24":
+  version: 20.11.24
+  resolution: "@types/node@npm:20.11.24"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 79d339622fed1c0e64297c8b9f558815a91edb9fea3acb69c1201b919d450e12915cf98b1a96b2d2c121bf86f30b62b6de3708f8894c5319f8dfb3a991e3ccdd
+  checksum: b11a650e09e254f4725c94f226752b69949a9ac4a5e004e98f109437ac50b02df3ab4d12b2086722fedf2cb62e68b9e723abd3f358a7d7d90d741a0d3bee90c2
   languageName: node
   linkType: hard
 
@@ -14780,7 +14780,7 @@ __metadata:
     "@types/color": 3.0.6
     "@types/enzyme": 3.10.12
     "@types/jest": 27.5.0
-    "@types/node": 20.11.20
+    "@types/node": 20.11.24
     "@types/react": 17.0.43
     "@types/react-dom": 17.0.14
     "@types/react-router-dom": 5.3.3
