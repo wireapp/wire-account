@@ -16,7 +16,7 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
+import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 import {
   ContainerSM,
   FlexBox,
