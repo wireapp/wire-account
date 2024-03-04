@@ -23,9 +23,9 @@ import * as History from 'history';
 import {ConversationJoinProps, ConversationJoin} from './ConversationJoin';
 import TestPage from '../util/test/TestPage';
 import {ActionProvider, actionRoot} from '../module/action/';
-import {RecursivePartial} from '@wireapp/commons/src/main/util/TypeUtil';
+import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {act} from 'react-dom/test-utils';
-import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
+import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 import {Runtime} from '@wireapp/commons';
 
 jest.mock('script/util/SVGProvider', () => {
