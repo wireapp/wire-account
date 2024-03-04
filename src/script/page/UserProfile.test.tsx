@@ -23,7 +23,7 @@ import * as History from 'history';
 import {UserProfileProps, UserProfile} from './UserProfile';
 import TestPage from '../util/test/TestPage';
 import {ActionProvider, actionRoot} from '../module/action';
-import {RecursivePartial} from '@wireapp/commons/src/main/util/TypeUtil';
+import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {Runtime} from '@wireapp/commons';
 
 jest.mock('script/util/SVGProvider', () => {
