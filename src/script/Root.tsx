@@ -18,7 +18,7 @@
  */
 
 import {FlexBox, Loading, StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
-import createBrowserHistory from 'history/createBrowserHistory';
+import {createBrowserHistory} from 'history';
 import React, {lazy, Suspense, useEffect} from 'react';
 import {Redirect, Route, Router, Switch} from 'react-router-dom';
 import {ROUTE} from 'script/route';
