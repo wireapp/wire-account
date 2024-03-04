@@ -58,6 +58,8 @@ export interface ServerConfig {
     CSP: Record<string, Iterable<string>>;
     ENFORCE_HTTPS: boolean;
     ENVIRONMENT: string;
+    SSL_CERTIFICATE_KEY_PATH?: string;
+    SSL_CERTIFICATE_PATH?: string;
     PORT_HTTP: number;
     ROBOTS: {
       ALLOWED_HOSTS: string[];
