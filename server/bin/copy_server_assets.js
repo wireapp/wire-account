@@ -25,7 +25,7 @@ const path = require('path');
 const srcFolder = '../';
 const distFolder = '../dist/';
 
-const assetFolders = ['.ebextensions/', 'img/', 'robots/', 'templates/'];
+const assetFolders = ['.ebextensions/', 'img/', 'robots/', 'templates/', 'certificate'];
 
 assetFolders.forEach(assetFolder => {
   fs.copySync(path.resolve(__dirname, srcFolder, assetFolder), path.resolve(__dirname, distFolder, assetFolder));
