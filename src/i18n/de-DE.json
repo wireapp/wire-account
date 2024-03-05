@@ -22,7 +22,8 @@
     "errorUnusedEmail": "Diese E-Mail wird nicht verwendet.",
     "successDescription": "Wir haben Ihnen einen Link zum Zurücksetzen des Passworts geschickt. Er ist 1 Stunde gültig.",
     "successTitle": "Überprüfen Sie Ihren Posteingang.",
-    "title": "Passwort ändern"
+    "title": "Passwort ändern",
+    "login": "Anmelden"
   },
   "general": {
     "loading": "Bitte warten…"
@@ -69,11 +70,10 @@
     "titlePhone": "Telefonnummer bestätigen"
   },
   "conversationJoin": {
-    "loading": "Verifying link...",
+    "loading": "Link wird überprüft…",
     "description": "Audio- und Videokonferenzen, Textnachrichten, Teilen von Dateien und Bildschirmfreigabe – alles Ende-zu-Ende verschlüsselt.",
-    "wirelessHeadline": "Sie möchten kein {{brandName}}-Benutzerkonto erstellen?",
-    "wirelessLink": "Nehmen Sie als temporärer Gast an der Unterhaltung teil",
-    "wirelessNote": "(Zugang verfällt nach 24 Stunden)",
+    "conversationLocation": "Die Unterhaltung findet auf {{domain}} statt",
+    "wirelessHeadline": "Sie haben kein {{brandName}}-Benutzerkonto? Dann können Sie sich als temporärer Gast im Browser anmelden.",
     "errorConversationNotFoundDescription": "Der Link zu dieser Gruppenunterhaltung ist abgelaufen oder nicht mehr gültig.",
     "errorConversationNotFoundHeadline": "Unterhaltung nicht gefunden",
     "title": "Sie wurden zu einer Unterhaltung in {{brandName}} eingeladen",
@@ -83,10 +83,7 @@
     "cannotJoinOnMobile": "Im Moment können Sie auf Ihrem Mobilgerät nicht an dieser Unterhaltung teilnehmen. Bitte öffnen Sie diesen Link stattdessen auf Ihrem Desktop."
   },
   "conversationJoinSelfHosted": {
-    "title": "Sie wurden zu einer Unterhaltung in Wire auf der Domain \"{{Domain}}\" eingeladen",
-    "wirelessHeadline": "Sie haben kein Wire-Benutzerkonto auf dieser Domain?",
-    "wirelessLink": "Nehmen Sie als temporärer Gast auf dieser Domain an der Unterhaltung teil",
-    "openWithBrowser": "Nehmen Sie mit einem Wire-Benutzerkonto von dieser Domain teil"
+    "title": "Sie wurden zu einer Unterhaltung in Wire eingeladen"
   },
   "userProfile": {
     "title": "Sie wurden eingeladen, ein Benutzerprofil in {{brandName}} anzusehen.",

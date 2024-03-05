@@ -24,14 +24,15 @@ const {join} = require('path');
 const JSZip = require('jszip');
 const zip = new JSZip();
 
-const srcFolder = 'server/dist';
+const destFolder = 'server/dist';
 const distZipFile = process.argv[2] || 'wire-account.zip';
 const ignoreList = ['.DS_Store'];
 
-process.chdir(srcFolder);
+process.chdir(destFolder);
 
 fs.copySync('../package.json', './package.json');
 fs.copySync('../.env.defaults', './.env.defaults');
+fs.copySync('../Procfile', './Procfile');
 
 const walkSync = (dir, fileList = []) =>
   fs.readdirSync(dir).reduce((fileListAccumulator, file) => {

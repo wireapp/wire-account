@@ -39,7 +39,7 @@ const getProjectAPIKey = () => {
 
 const projectAPIKey = getProjectAPIKey();
 
-const CROWDIN_API = 'https://api.crowdin.com/api/project/wire-account';
+const CROWDIN_API = 'https://api.crowdin.com/api/v2/projects/342361';
 
 const CROWDIN_URL = {
   DOWNLOAD: `${CROWDIN_API}/download/all.zip?key=${projectAPIKey}`,
@@ -53,7 +53,7 @@ function fetchUpdates() {
     https.get(CROWDIN_URL.EXPORT, response => {
       if (response.statusCode < 200 || response.statusCode > 299) {
         // eslint-disable-next-line prefer-promise-reject-errors
-        reject(`Failed to export, status code: ${response.statusCode}`);
+        reject(`Failed to export, status code: ${response.statusCode} ${response.statusMessage}`);
       }
       response.on('data', resolve);
       response.on('error', reject);
@@ -68,7 +68,7 @@ function download() {
     https.get(CROWDIN_URL.DOWNLOAD, response => {
       if (response.statusCode < 200 || response.statusCode > 299) {
         // eslint-disable-next-line prefer-promise-reject-errors
-        reject(`Failed to download, status code: ${response.statusCode}`);
+        reject(`Failed to download, status code: ${response.statusCode} ${response.statusMessage}`);
       }
 
       response.on('error', reject);

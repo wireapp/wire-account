@@ -19,25 +19,25 @@ jobs:
     env:
       DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS: 150
       AWS_APPLICATION_NAME: Account
-      AWS_BUILD_ZIP_PATH: server/dist/s3/ebs.zip
+      AWS_BUILD_ZIP_PATH: wire-account.zip
     steps:
       - name: Print environment variables
         run: |
           echo -e "branch = ${{github.ref_name}}"
           echo -e "env = ${{inputs.env}}"
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 18.x
           cache: 'yarn'
       - name: Install JS dependencies
         run: yarn --immutable
       - name: Build
-        run: yarn build:prod
+        run: yarn bundle:prod
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:

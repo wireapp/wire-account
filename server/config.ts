@@ -18,7 +18,7 @@
  */
 
 const dotenv = require('dotenv-extended');
-import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/src/main/util/ValidationUtil';
+import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/lib/util/ValidationUtil';
 import * as fs from 'fs-extra';
 import * as logdown from 'logdown';
 import * as path from 'path';
@@ -149,6 +149,9 @@ const config: ServerConfig = {
       ALLOWED_HOSTS: ['account.wire.com'],
       DISALLOW: readFile(ROBOTS_DISALLOW_FILE, 'User-agent: *\r\nDisallow: /'),
     },
+    SSL_CERTIFICATE_KEY_PATH:
+      process.env.SSL_CERTIFICATE_KEY_PATH || path.join(__dirname, 'certificate/development-key.pem'),
+    SSL_CERTIFICATE_PATH: process.env.SSL_CERTIFICATE_PATH || path.join(__dirname, 'certificate/development-cert.pem'),
   },
 };
 
