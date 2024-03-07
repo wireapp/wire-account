@@ -5,6 +5,7 @@ on:
     branches: [staging, main, release/*]
     tags:
       - v*
+      - '*q1-2024*'
 
 jobs:
   test_build_deploy:
@@ -20,7 +21,7 @@ jobs:
       AWS_BUILD_ZIP_PATH: 'wire-account.zip'
 
     outputs:
-      wire_builds_target_branches: ${{ steps.output_target_branches.outputs.wire_builds_target_branches }}
+      wire_builds_target_branches: ${{ steps.output_target_branches.outputs.targets }}
       chart_version: ${{ steps.publish_helm_chart.outputs.chart_version }}
       image_tag: ${{ steps.push_docker_image.outputs.image_tag }}
 
@@ -57,29 +58,30 @@ jobs:
         if: contains(env.TITLE || env.COMMIT_MESSAGE, '[skip ci]') || contains(env.TITLE || env.COMMIT_MESSAGE, '[ci skip]')
         uses: andymckay/cancel-action@0.4
 
+      # generates a mapping between branches/tag to wire-build branches
       - name: Define target branches in wireapp/wire-builds to bump
+        uses: kanga333/variable-mapper@master
         id: output_target_branches
-        shell: bash
-        run: |
-          # NOTE: make sure that wire_builds_target_branches is valid JSON
-          wire_builds_target_branches='[]'
-
-          version_tag="${TAG:-$BRANCH_NAME}"
-
-          if [[ "$version_tag" == *"production"* ]]; then
-            echo "FUTUREWORK: bump some production branch on wire-builds once it exists"
-          fi
-
-          if [ "$version_tag" == "staging" ]; then
-            wire_builds_target_branches='["dev"]'
-          fi
-
-          if [ "$version_tag" == "release/q1-2024" ]; then
-            wire_builds_target_branches='["q1-2024"]'
-          fi
-
-          echo "wire_builds_target_branches: $wire_builds_target_branches"
-          echo "wire_builds_target_branches=$wire_builds_target_branches" >> $GITHUB_OUTPUT
+        with:
+          key: '${{github.ref}}'
+          # TODO add production and staging once wire-builds has those branches
+          #
+          # "production": {
+          #  "targets": "[\"TDB\"]"
+          # },
+          # "staging": {
+          #   "targets": "[\"TBD\"]"
+          # },
+          map: |
+            {
+              "dev": {
+                "targets": "[\"dev\"]"
+              },
+              "q1-2024": {
+                "targets": "[\"q1-2024\"]"
+              }
+            }
+          export_to: log,output
 
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
