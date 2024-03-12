@@ -38,7 +38,7 @@
     "prettier": "2.8.8",
     "rimraf": "5.0.5",
     "typescript": "5.4.2",
-    "webpack-dev-middleware": "6.1.1",
+    "webpack-dev-middleware": "7.0.0",
     "webpack-hot-middleware": "2.26.1"
   },
   "engines": {
