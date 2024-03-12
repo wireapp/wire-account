@@ -112,7 +112,7 @@ jobs:
 
       - name: Deploy staging build to Elastic Beanstalk
         if: env.BRANCH_NAME == 'staging' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
-        uses: einaregilsson/beanstalk-deploy@v20
+        uses: einaregilsson/beanstalk-deploy@v22
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
@@ -127,7 +127,7 @@ jobs:
 
       - name: Deploy production build to Elastic Beanstalk
         if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
-        uses: einaregilsson/beanstalk-deploy@v20
+        uses: einaregilsson/beanstalk-deploy@v22
         with:
           aws_access_key: ${{secrets.WEBTEAM_AWS_ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY}}
