@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: 'Checkout Git repository with history for all branches and tags'
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -33,7 +33,7 @@ jobs:
           npx generate-changelog@1.8.0 -t ${{env.PREVIOUS_TAG}}...${{env.CURRENT_TAG}}
 
       - name: 'Attach changelog to tag'
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{github.token}}
         with:

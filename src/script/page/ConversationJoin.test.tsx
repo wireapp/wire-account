@@ -19,14 +19,13 @@
 
 import '../util/test/mock/matchMediaMock';
 
-import React from 'react';
 import * as History from 'history';
 import {ConversationJoinProps, ConversationJoin} from './ConversationJoin';
 import TestPage from '../util/test/TestPage';
 import {ActionProvider, actionRoot} from '../module/action/';
-import {RecursivePartial} from '@wireapp/commons/src/main/util/TypeUtil';
+import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {act} from 'react-dom/test-utils';
-import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
+import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 import {Runtime} from '@wireapp/commons';
 
 jest.mock('script/util/SVGProvider', () => {
@@ -78,7 +77,7 @@ describe('ConversationJoin', () => {
 
   describe('on mobile', () => {
     it('shows open app & direct download', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
       const conversationJoinPage = new ConversationJoinPage(
@@ -106,8 +105,8 @@ describe('ConversationJoin', () => {
 
   describe('on desktop', () => {
     it('shows open app, webapp & direct download on MacOS', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
       const conversationJoinPage = new ConversationJoinPage(
@@ -133,8 +132,8 @@ describe('ConversationJoin', () => {
     });
 
     it('shows open app, webapp & website download on non-MacOS', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(false);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').mockReturnValue(false);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
       const conversationJoinPage = new ConversationJoinPage(

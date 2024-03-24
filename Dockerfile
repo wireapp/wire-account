@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:18-alpine
 
 # For some extra dependencies...
 RUN apk add --no-cache dumb-init git bash
@@ -10,6 +10,7 @@ ENV PATH=$PATH:/node_modules/.bin
 
 RUN yarn --production --ignore-scripts
 
+ENV NODEPORT 8080
 EXPOSE 8080
 
 ENTRYPOINT ["dumb-init", "--", "/bin/bash", "/run.sh"]

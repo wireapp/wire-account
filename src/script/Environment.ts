@@ -17,7 +17,7 @@
  *
  */
 
-import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/src/main/util/ValidationUtil';
+import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/lib/util/ValidationUtil';
 
 declare global {
   interface Window {

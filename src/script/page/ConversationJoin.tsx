@@ -16,20 +16,18 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Runtime} from '@wireapp/commons';
-import {pathWithParams} from '@wireapp/commons/src/main/util/UrlUtil';
+import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 import {
   ContainerSM,
   FlexBox,
   H1,
   H2,
-  H3,
   Loading,
+  Paragraph,
   QUERY,
   QueryKeys,
   Small,
   Text,
-  TextLink,
   useMatchMedia,
 } from '@wireapp/react-ui-kit';
 import React, {useContext, useEffect, useState} from 'react';
@@ -37,7 +35,7 @@ import {useTranslation} from 'react-i18next';
 import {RouteComponentProps, withRouter} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {OpenWireButtons, hasDisplayedButtons} from 'script/component/OpenWireButtons';
-import {WEBAPP_URL, BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
+import {BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
 export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
@@ -99,6 +97,14 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
               {hasDisplayedButtons() ? (
                 <>
                   <Text block>{t('description', {ns: translationNamespaces})}</Text>
+                  {IS_SELF_HOSTED && (
+                    <Paragraph muted css={{marginTop: '8px'}}>
+                      {t('conversationLocation', {domain, ns: translationNamespaces})}
+                    </Paragraph>
+                  )}
+                  <Paragraph muted css={{marginTop: '8px'}}>
+                    {t('wirelessHeadline', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
+                  </Paragraph>
                   <FlexBox flexWrap="wrap" column={isMobile} css={{marginTop: 24}}>
                     <OpenWireButtons
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
@@ -112,24 +118,6 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
                 </>
               ) : (
                 <Text color="#696C6E">{t('cannotJoinOnMobile')}</Text>
-              )}
-              {!Runtime.isMobileOS() && (
-                <>
-                  <H3 css={{marginBottom: 8, marginTop: 48}}>
-                    {t('wirelessHeadline', {brandName: BRAND_NAME, ns: translationNamespaces})}
-                  </H3>
-                  <TextLink
-                    block
-                    href={pathWithParams(`${WEBAPP_URL}/join`, {
-                      code,
-                      key,
-                    })}
-                    data-uie-name="do-conversation-join-webapp"
-                  >
-                    {t('wirelessLink', {ns: translationNamespaces})}
-                  </TextLink>
-                  <Text muted>{t('wirelessNote')}</Text>
-                </>
               )}
             </>
           )}

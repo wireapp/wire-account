@@ -25,6 +25,9 @@ module.exports = {
     },
   },
   moduleDirectories: ['node_modules', 'src'],
+  moduleNameMapper: {
+    '^axios$': require.resolve('axios'),
+  },
   preset: 'ts-jest',
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   testEnvironment: 'jsdom',

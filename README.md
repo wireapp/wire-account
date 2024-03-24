@@ -26,6 +26,12 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 1. Run `yarn start`
 1. Open [http://localhost:8081/](http://localhost:8081/)
 
+If you would like your browser to trust the certificate from "local.zinfra.io":
+
+1. Download [mkcert](https://github.com/FiloSottile/mkcert/releases/latest)
+2. Set the `CAROOT` environment variable to `<TM App Dir>/server/certificate`
+3. Run `mkcert -install`
+
 ## Deployment
 
 Depending on the branch name it will be automatically deployed to the following environments:
