@@ -3745,11 +3745,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/copy-config@npm:2.1.16":
-  version: 2.1.16
-  resolution: "@wireapp/copy-config@npm:2.1.16"
+"@wireapp/copy-config@npm:2.1.17":
+  version: 2.1.17
+  resolution: "@wireapp/copy-config@npm:2.1.17"
   dependencies:
-    axios: 1.6.7
+    axios: 1.6.8
     copy: 0.3.2
     cosmiconfig: 9.0.0
     fs-extra: 11.1.0
@@ -3757,7 +3757,7 @@ __metadata:
     logdown: 3.3.1
   bin:
     copy-config: lib/cli.js
-  checksum: 6bfa9c6f1abc65ee30db9dfbb5263e823007e394fa010eeca3778e19ab879ef7cc2c5ec9d1760542cd7b8a64fb9aec0bae6d897bac32b4a3e9874f572757be80
+  checksum: aef3a68f420f2e52e5cf20e698e5b1750155a8dd589a1f81f59ab652f6b65288d425f64ee5909bdc38de7aae9b80a2e243dd8a6855f2f4b02a8c93045bc90496
   languageName: node
   linkType: hard
 
@@ -15239,7 +15239,7 @@ __metadata:
     "@typescript-eslint/parser": ^7.2.0
     "@wireapp/api-client": 26.11.3
     "@wireapp/commons": 5.2.7
-    "@wireapp/copy-config": 2.1.16
+    "@wireapp/copy-config": 2.1.17
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.16.4
     adm-zip: 0.5.12
