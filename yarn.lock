@@ -14922,9 +14922,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-dev-middleware@npm:7.1.0":
-  version: 7.1.0
-  resolution: "webpack-dev-middleware@npm:7.1.0"
+"webpack-dev-middleware@npm:7.1.1":
+  version: 7.1.1
+  resolution: "webpack-dev-middleware@npm:7.1.1"
   dependencies:
     colorette: ^2.0.10
     memfs: ^4.6.0
@@ -14937,7 +14937,7 @@ __metadata:
   peerDependenciesMeta:
     webpack:
       optional: true
-  checksum: 820eb23c3eef917e8616735f7c4b9f970785a71ff276216dbc5ffef05ce9c6750029cd5b913f3afbc66e2b0c23533197c773967565a2d75af36cff0934bb4e1b
+  checksum: 54b748ba354649bb5d80862f8828a05e75c0037a64ef3228722ebff1a6a9d5498467edc1a9fe210ed0ff8f37b2d32d2271273d8b6576f8249371881f14a309ad
   languageName: node
   linkType: hard
 
@@ -15251,7 +15251,7 @@ __metadata:
     webpack: 5.90.3
     webpack-bundle-analyzer: 4.10.1
     webpack-cli: 5.1.4
-    webpack-dev-middleware: 7.1.0
+    webpack-dev-middleware: 7.1.1
     webpack-hot-middleware: 2.26.1
   languageName: unknown
   linkType: soft
