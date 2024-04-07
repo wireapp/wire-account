@@ -3712,15 +3712,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:26.11.3":
-  version: 26.11.3
-  resolution: "@wireapp/api-client@npm:26.11.3"
+"@wireapp/api-client@npm:26.12.0":
+  version: 26.12.0
+  resolution: "@wireapp/api-client@npm:26.12.0"
   dependencies:
     "@wireapp/commons": ^5.2.7
     "@wireapp/priority-queue": ^2.1.5
     "@wireapp/protocol-messaging": 1.46.0
     axios: 1.6.8
-    axios-retry: 4.0.0
+    axios-retry: 4.1.0
     http-status-codes: 2.3.0
     logdown: 3.3.1
     pako: 2.1.0
@@ -3729,7 +3729,7 @@ __metadata:
     tough-cookie: 4.1.3
     ws: 8.16.0
     zod: 3.22.4
-  checksum: 52c65c0e50bfb963acc50802c90bc429559f244c6e90e8a689e25bbe9d76fdc831e96eed9730bc4ef0c57cdbc286c7d7cef9f7b6d2bd5a5dba20df0229990b85
+  checksum: 887b0f801f69be40bff4b667ce69a3949786760dc06cbbfb5511547dc913e40c5d3f1b6c84f03c640a8a9d31828f09f94cd0db8500106818a6b1abf1c0380538
   languageName: node
   linkType: hard
 
@@ -4575,25 +4575,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios-retry@npm:4.0.0":
-  version: 4.0.0
-  resolution: "axios-retry@npm:4.0.0"
+"axios-retry@npm:4.1.0":
+  version: 4.1.0
+  resolution: "axios-retry@npm:4.1.0"
   dependencies:
     is-retry-allowed: ^2.2.0
   peerDependencies:
     axios: 0.x || 1.x
-  checksum: 132b63132e8087242b8888fdebf3786cfd687e1021970319336a63533b4b584ab23a39d5b5a05e84b96055a640129a25e60b6a6cdb422c4cf10517398238000f
-  languageName: node
-  linkType: hard
-
-"axios@npm:1.6.7":
-  version: 1.6.7
-  resolution: "axios@npm:1.6.7"
-  dependencies:
-    follow-redirects: ^1.15.4
-    form-data: ^4.0.0
-    proxy-from-env: ^1.1.0
-  checksum: 87d4d429927d09942771f3b3a6c13580c183e31d7be0ee12f09be6d5655304996bb033d85e54be81606f4e89684df43be7bf52d14becb73a12727bf33298a082
+  checksum: e1e07f710d12e3367bc1e934b49f3056bc6a1d8c4b1c5cc69afb89841c5ee360fe36565894d53c043c7ea43bc7ac353b87573c8d6d721b12ac4d567be38cc117
   languageName: node
   linkType: hard
 
@@ -7494,7 +7483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.15.4, follow-redirects@npm:^1.15.6":
+"follow-redirects@npm:^1.15.6":
   version: 1.15.6
   resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
@@ -15237,7 +15226,7 @@ __metadata:
     "@types/webpack-env": 1.18.4
     "@typescript-eslint/eslint-plugin": 7.2.0
     "@typescript-eslint/parser": ^7.2.0
-    "@wireapp/api-client": 26.11.3
+    "@wireapp/api-client": 26.12.0
     "@wireapp/commons": 5.2.7
     "@wireapp/copy-config": 2.1.17
     "@wireapp/eslint-config": 1.4.0
