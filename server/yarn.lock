@@ -6332,9 +6332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-dev-middleware@npm:7.1.1":
-  version: 7.1.1
-  resolution: "webpack-dev-middleware@npm:7.1.1"
+"webpack-dev-middleware@npm:7.2.1":
+  version: 7.2.1
+  resolution: "webpack-dev-middleware@npm:7.2.1"
   dependencies:
     colorette: ^2.0.10
     memfs: ^4.6.0
@@ -6347,7 +6347,7 @@ __metadata:
   peerDependenciesMeta:
     webpack:
       optional: true
-  checksum: 54b748ba354649bb5d80862f8828a05e75c0037a64ef3228722ebff1a6a9d5498467edc1a9fe210ed0ff8f37b2d32d2271273d8b6576f8249371881f14a309ad
+  checksum: bb8c75f7ceabc13ee2c3bc9648190e05a0a8c6d40b940ef72b09ea858a63d16bcb434b49995f1025125a1c3a1c8d40274beb5d26ef2fb1458b19e7f6fe3a91fe
   languageName: node
   linkType: hard
 
@@ -6422,7 +6422,7 @@ __metadata:
     rimraf: 5.0.5
     typescript: 5.4.5
     uuid: 9.0.1
-    webpack-dev-middleware: 7.1.1
+    webpack-dev-middleware: 7.2.1
     webpack-hot-middleware: 2.26.1
   languageName: unknown
   linkType: soft
