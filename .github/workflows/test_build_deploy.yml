@@ -74,6 +74,9 @@ jobs:
           # },
           map: |
             {
+              "production": {
+               "targets": "[\"main\"]"
+              },
               "dev": {
                 "targets": "[\"dev\"]"
               },
@@ -191,7 +194,7 @@ jobs:
 
           helm package ./charts/account-pages
 
-          helm s3 push account-pages-*.tgz charts-webapp
+          helm s3 push --relative account-pages-*.tgz charts-webapp
 
       - name: Create GitHub release
         id: create_release
@@ -237,6 +240,7 @@ jobs:
           image_tag="${{needs.test_build_deploy.outputs.image_tag}}"
 
           for retry in $(seq 3); do
+            set +e
             (
             set -e
 
@@ -262,7 +266,15 @@ jobs:
             git commit -m "Bump account-pages to $chart_version"
             git push origin "${{ matrix.target_branch }}"
 
-            ) && break
+            )
+            if [ $? -eq 0 ]; then
+              echo "pushing to wire-builds succeeded"
+              break
+            else
+              echo "pushing to wire-builds FAILED (in retry $retry)"
+            fi
+            set -e
+
           done
           if (( $? != 0 )); then
               echo "Retrying didn't help. Failing the step."
