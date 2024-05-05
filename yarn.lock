@@ -3067,6 +3067,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/router@npm:1.16.0":
+  version: 1.16.0
+  resolution: "@remix-run/router@npm:1.16.0"
+  checksum: c8afdf90b19a5a9dfb14425d57de029cadf4bbb51d668885b10df5ea2f82279d7552a9939274b519de0da40550f48e5a6c07e5d4049dbd3838fcaa29819bd641
+  languageName: node
+  linkType: hard
+
 "@sinonjs/commons@npm:^1.7.0":
   version: 1.8.6
   resolution: "@sinonjs/commons@npm:1.8.6"
@@ -12460,6 +12467,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-router@npm:6.23.0":
+  version: 6.23.0
+  resolution: "react-router@npm:6.23.0"
+  dependencies:
+    "@remix-run/router": 1.16.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 224838bc099637c586eaaf62b9607f6b72577ad760bf2d7a51c316e56eb8697d875e88878ec8e12fe949ef9b866655c74d82f913c6acb501bc8868f25e2b0897
+  languageName: node
+  linkType: hard
+
 "react-select@npm:5.7.5":
   version: 5.7.5
   resolution: "react-select@npm:5.7.5"
@@ -15465,7 +15483,7 @@ __metadata:
     react-dom: 16.14.0
     react-hot-loader: 4.13.1
     react-i18next: 11.18.6
-    react-router: 5.2.0
+    react-router: 6.23.0
     react-router-dom: 5.2.0
     simple-git: 3.24.0
     sort-json: 2.0.1
