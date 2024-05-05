@@ -3914,9 +3914,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:26.12.0":
-  version: 26.12.0
-  resolution: "@wireapp/api-client@npm:26.12.0"
+"@wireapp/api-client@npm:27.0.2":
+  version: 27.0.2
+  resolution: "@wireapp/api-client@npm:27.0.2"
   dependencies:
     "@wireapp/commons": ^5.2.7
     "@wireapp/priority-queue": ^2.1.5
@@ -3929,9 +3929,9 @@ __metadata:
     reconnecting-websocket: 4.4.0
     spark-md5: 3.0.2
     tough-cookie: 4.1.3
-    ws: 8.16.0
-    zod: 3.22.4
-  checksum: 887b0f801f69be40bff4b667ce69a3949786760dc06cbbfb5511547dc913e40c5d3f1b6c84f03c640a8a9d31828f09f94cd0db8500106818a6b1abf1c0380538
+    ws: 8.17.0
+    zod: 3.23.4
+  checksum: a86d6200ab8cec065f5725d7d9d72a876d77e16ad2eec15e085e5a061e8c26180205b99762364611e62b58a223ef2c80c71e1eec16cb7d69979a232964bd9916
   languageName: node
   linkType: hard
 
@@ -15421,7 +15421,7 @@ __metadata:
     "@types/webpack-env": 1.18.4
     "@typescript-eslint/eslint-plugin": 7.8.0
     "@typescript-eslint/parser": ^7.8.0
-    "@wireapp/api-client": 26.12.0
+    "@wireapp/api-client": 27.0.2
     "@wireapp/commons": 5.2.7
     "@wireapp/copy-config": 2.2.0
     "@wireapp/eslint-config": 1.4.0
@@ -15530,9 +15530,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.16.0":
-  version: 8.16.0
-  resolution: "ws@npm:8.16.0"
+"ws@npm:8.17.0":
+  version: 8.17.0
+  resolution: "ws@npm:8.17.0"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -15541,7 +15541,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: feb3eecd2bae82fa8a8beef800290ce437d8b8063bdc69712725f21aef77c49cb2ff45c6e5e7fce622248f9c7abaee506bae0a9064067ffd6935460c7357321b
+  checksum: 147ef9eab0251364e1d2c55338ad0efb15e6913923ccbfdf20f7a8a6cb8f88432bcd7f4d8f66977135bfad35575644f9983201c1a361019594a4e53977bf6d4e
   languageName: node
   linkType: hard
 
@@ -15681,9 +15681,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.22.4":
-  version: 3.22.4
-  resolution: "zod@npm:3.22.4"
-  checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
+"zod@npm:3.23.4":
+  version: 3.23.4
+  resolution: "zod@npm:3.23.4"
+  checksum: 58f6e298c51d9ae01a1b1a1692ac7f00774b466d9a287a1ff8d61ff1fbe0ae9b0f050ae1cf1a8f71e4c6ccd0333a3cc340f339360fab5f5046cc954d10525a54
   languageName: node
   linkType: hard
