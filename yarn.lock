@@ -2403,14 +2403,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@es-joy/jsdoccomment@npm:~0.42.0":
-  version: 0.42.0
-  resolution: "@es-joy/jsdoccomment@npm:0.42.0"
+"@es-joy/jsdoccomment@npm:~0.43.0":
+  version: 0.43.0
+  resolution: "@es-joy/jsdoccomment@npm:0.43.0"
   dependencies:
+    "@types/eslint": ^8.56.5
+    "@types/estree": ^1.0.5
+    "@typescript-eslint/types": ^7.2.0
     comment-parser: 1.4.1
     esquery: ^1.5.0
     jsdoc-type-pratt-parser: ~4.0.0
-  checksum: ea0b56ca8d7470cac4694669807e4b4bbf25389c220af483ea14455c31d4a9e0f6ef0b08f45b92eb8c401bb3d6f662b4b14da51f222b85d78b2b757372072652
+  checksum: d8c84faafa85f90a3828cd5affb85a1c7f143afa6c9ad4f9b7314bb7ca50a0a989656d3acce2611634fa5218554f32109b717e264675efc252c1617f74477a25
   languageName: node
   linkType: hard
 
@@ -3259,6 +3262,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint@npm:^8.56.5":
+  version: 8.56.10
+  resolution: "@types/eslint@npm:8.56.10"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: fb7137dd263ce1130b42d14452bdd0266ef81f52cb55ba1a5e9750e65da1f0596dc598c88bffc7e415458b6cb611a876dcc132bcf40ea48701c6d05b40c57be5
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:*":
   version: 0.0.51
   resolution: "@types/estree@npm:0.0.51"
@@ -3608,7 +3621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:7.9.0":
+"@typescript-eslint/types@npm:7.9.0, @typescript-eslint/types@npm:^7.2.0":
   version: 7.9.0
   resolution: "@typescript-eslint/types@npm:7.9.0"
   checksum: 84c7e28b55a079dcd358aa6c20092819a20c20b167de4b04d86399e2ea1a0e28df92ee518c3b9236b7cd2cd72da81fc93e4bece48346e4a382723f4c857623ac
@@ -7005,22 +7018,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:48.2.3":
-  version: 48.2.3
-  resolution: "eslint-plugin-jsdoc@npm:48.2.3"
+"eslint-plugin-jsdoc@npm:48.2.5":
+  version: 48.2.5
+  resolution: "eslint-plugin-jsdoc@npm:48.2.5"
   dependencies:
-    "@es-joy/jsdoccomment": ~0.42.0
+    "@es-joy/jsdoccomment": ~0.43.0
     are-docs-informative: ^0.0.2
     comment-parser: 1.4.1
     debug: ^4.3.4
     escape-string-regexp: ^4.0.0
     esquery: ^1.5.0
     is-builtin-module: ^3.2.1
-    semver: ^7.6.0
+    semver: ^7.6.1
     spdx-expression-parse: ^4.0.0
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: 07307b43af441f51282b39953737674db3b4749c261d08af9dc25e9ab780f14d7608ff117313bedb4ae3dd8a53ff1c16ece6e22ef299901e7ce1fbef5bb8a734
+  checksum: 8c274a471406ce9c3cd7911b20248c32700c04a3b423223bca2053f850fc43214e4a8d0f1a24b7cc0f9a777f4d4734d869c58b43fd7e0c7060f673f58459ae97
   languageName: node
   linkType: hard
 
@@ -13272,6 +13285,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:^7.6.1":
+  version: 7.6.2
+  resolution: "semver@npm:7.6.2"
+  bin:
+    semver: bin/semver.js
+  checksum: 40f6a95101e8d854357a644da1b8dd9d93ce786d5c6a77227bc69dbb17bea83d0d1d1d7c4cd5920a6df909f48e8bd8a5909869535007f90278289f2451d0292d
+  languageName: node
+  linkType: hard
+
 "serialize-javascript@npm:^6.0.1":
   version: 6.0.1
   resolution: "serialize-javascript@npm:6.0.1"
@@ -15422,7 +15444,7 @@ __metadata:
     eslint-plugin-babel: 5.3.1
     eslint-plugin-import: 2.29.1
     eslint-plugin-jest: 27.9.0
-    eslint-plugin-jsdoc: 48.2.3
+    eslint-plugin-jsdoc: 48.2.5
     eslint-plugin-no-unsanitized: 4.0.2
     eslint-plugin-prettier: 5.1
     eslint-plugin-react: 7.34.1
