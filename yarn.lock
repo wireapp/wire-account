@@ -8650,12 +8650,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:7.2.1":
-  version: 7.2.1
-  resolution: "i18next-browser-languagedetector@npm:7.2.1"
+"i18next-browser-languagedetector@npm:8.0.0":
+  version: 8.0.0
+  resolution: "i18next-browser-languagedetector@npm:8.0.0"
   dependencies:
     "@babel/runtime": ^7.23.2
-  checksum: 159958be2d8f19444e9378512c36c2bf13a8ab85eddac2fc0000198a03dbc28c73a6f44594ab040b242bdc82dfeabb7c1ab805884b5438ee0a48a8e2b52ca062
+  checksum: 44ae6b161fba6a84c3f877ea8e427b33164bd65a457a87887958ab438c64dc06158f7f62bcc9d6c9e1cf106167b4534444e8e74b4d09fcc6db0f12b62a2713a1
   languageName: node
   linkType: hard
 
@@ -15433,7 +15433,7 @@ __metadata:
     generate-changelog: 1.8.0
     husky: 4.3.8
     i18next: 21.8.10
-    i18next-browser-languagedetector: 7.2.1
+    i18next-browser-languagedetector: 8.0.0
     i18next-react-postprocessor: 3.1.0
     i18next-scanner: 4.2.0
     intersection-observer: 0.12.2
