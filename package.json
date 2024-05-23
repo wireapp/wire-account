@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "@wireapp/api-client": "27.0.3",
-    "@wireapp/commons": "5.2.7",
-    "@wireapp/react-ui-kit": "9.17.4",
+    "@wireapp/api-client": "27.0.4",
+    "@wireapp/commons": "5.2.8",
+    "@wireapp/react-ui-kit": "9.17.5",
     "core-js": "3.37.1",
     "dotenv": "16.4.5",
     "dotenv-extended": "2.9.0",
@@ -39,7 +39,7 @@
     "@types/webpack-env": "1.18.5",
     "@typescript-eslint/eslint-plugin": "7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
-    "@wireapp/copy-config": "2.2.0",
+    "@wireapp/copy-config": "2.2.1",
     "@wireapp/eslint-config": "1.4.0",
     "adm-zip": "0.5.12",
     "babel-eslint": "10.1.0",
