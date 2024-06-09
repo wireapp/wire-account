@@ -3799,15 +3799,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.0.4":
-  version: 27.0.4
-  resolution: "@wireapp/api-client@npm:27.0.4"
+"@wireapp/api-client@npm:27.0.5":
+  version: 27.0.5
+  resolution: "@wireapp/api-client@npm:27.0.5"
   dependencies:
     "@wireapp/commons": ^5.2.8
     "@wireapp/priority-queue": ^2.1.6
     "@wireapp/protocol-messaging": 1.48.0
-    axios: 1.6.8
-    axios-retry: 4.2.0
+    axios: 1.7.2
+    axios-retry: 4.3.0
     http-status-codes: 2.3.0
     logdown: 3.3.1
     pako: 2.1.0
@@ -3816,7 +3816,7 @@ __metadata:
     tough-cookie: 4.1.4
     ws: 8.17.0
     zod: 3.23.8
-  checksum: 02ebf66e5b3c9b3ac2f1e1184d443e674e0b0c1b2d14b7467f4989f212ccf7ba157c2385ba72ae9029db4654c94d6072447d8731effbb046429e79525190966d
+  checksum: 7eebfce0d535fe81a37748fec4ca9cd1e67c223d854a0ee795aab4a89103453e7cc4f8287fe766e7e26aaa54188ae3e259a9f54c40371bf2d6111fd4a162d82f
   languageName: node
   linkType: hard
 
@@ -4669,14 +4669,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios-retry@npm:4.2.0":
-  version: 4.2.0
-  resolution: "axios-retry@npm:4.2.0"
+"axios-retry@npm:4.3.0":
+  version: 4.3.0
+  resolution: "axios-retry@npm:4.3.0"
   dependencies:
     is-retry-allowed: ^2.2.0
   peerDependencies:
     axios: 0.x || 1.x
-  checksum: f92fcddf1a8a1ea7f3c8436a5d4b315fe07f2ff3f73ea9bbdb41e0869d6dc7e87c38c153e8647a8aa72264796590a1249bc274fa9423fd5b2060c91588efe2ad
+  checksum: 7007b71c257bde2a3e63f41e9a5ef6a2a1bd2277b7cb1ee74bf5f2fa1c6f9cd99af75d739538977e5b0bec94cb27c4883c2e5fd5b919de75bb8ba571f42b5e77
   languageName: node
   linkType: hard
 
@@ -4688,6 +4688,17 @@ __metadata:
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
   checksum: bf007fa4b207d102459300698620b3b0873503c6d47bf5a8f6e43c0c64c90035a4f698b55027ca1958f61ab43723df2781c38a99711848d232cad7accbcdfcdd
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.7.2":
+  version: 1.7.2
+  resolution: "axios@npm:1.7.2"
+  dependencies:
+    follow-redirects: ^1.15.6
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: e457e2b0ab748504621f6fa6609074ac08c824bf0881592209dfa15098ece7e88495300e02cd22ba50b3468fd712fe687e629dcb03d6a3f6a51989727405aedf
   languageName: node
   linkType: hard
 
@@ -15622,7 +15633,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 7.11.0
     "@typescript-eslint/parser": ^7.11.0
-    "@wireapp/api-client": 27.0.4
+    "@wireapp/api-client": 27.0.5
     "@wireapp/commons": 5.2.8
     "@wireapp/copy-config": 2.2.1
     "@wireapp/eslint-config": 1.4.0
