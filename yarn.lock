@@ -4045,15 +4045,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.0.5":
-  version: 27.0.5
-  resolution: "@wireapp/api-client@npm:27.0.5"
+"@wireapp/api-client@npm:27.0.7":
+  version: 27.0.7
+  resolution: "@wireapp/api-client@npm:27.0.7"
   dependencies:
     "@wireapp/commons": ^5.2.8
     "@wireapp/priority-queue": ^2.1.6
     "@wireapp/protocol-messaging": 1.48.0
     axios: 1.7.2
-    axios-retry: 4.3.0
+    axios-retry: 4.4.0
     http-status-codes: 2.3.0
     logdown: 3.3.1
     pako: 2.1.0
@@ -4062,7 +4062,7 @@ __metadata:
     tough-cookie: 4.1.4
     ws: 8.17.0
     zod: 3.23.8
-  checksum: 7eebfce0d535fe81a37748fec4ca9cd1e67c223d854a0ee795aab4a89103453e7cc4f8287fe766e7e26aaa54188ae3e259a9f54c40371bf2d6111fd4a162d82f
+  checksum: a1f737399c54f652addf12e38bab8852be0bcbd5bfab90f94daeb0a6abb30e31074ff646a358b7d60463d7bf038b15bee1fa6bb5cf602142a0d89a45a94cfe07
   languageName: node
   linkType: hard
 
@@ -4915,14 +4915,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios-retry@npm:4.3.0":
-  version: 4.3.0
-  resolution: "axios-retry@npm:4.3.0"
+"axios-retry@npm:4.4.0":
+  version: 4.4.0
+  resolution: "axios-retry@npm:4.4.0"
   dependencies:
     is-retry-allowed: ^2.2.0
   peerDependencies:
     axios: 0.x || 1.x
-  checksum: 7007b71c257bde2a3e63f41e9a5ef6a2a1bd2277b7cb1ee74bf5f2fa1c6f9cd99af75d739538977e5b0bec94cb27c4883c2e5fd5b919de75bb8ba571f42b5e77
+  checksum: 19b005bbd3e956080b27ee54fad658dbf7663fa6e884110a638b9f53db50a34c4870648143c8d9397354fedd0ede920693caa1e7c6a762d9477b4cbb48ca22f2
   languageName: node
   linkType: hard
 
@@ -15868,7 +15868,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 7.12.0
     "@typescript-eslint/parser": ^7.11.0
-    "@wireapp/api-client": 27.0.5
+    "@wireapp/api-client": 27.0.7
     "@wireapp/commons": 5.2.8
     "@wireapp/copy-config": 2.2.2
     "@wireapp/eslint-config": 1.4.0
