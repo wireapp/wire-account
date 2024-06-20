@@ -48,6 +48,10 @@ const VerifyPhoneAccount = () => {
     window.location.assign(redirectPhone);
   }
 
+  if (loginImmediately) {
+    window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`);
+  }
+
   useEffect(() => {
     accountAction
       .verifyBot(key, code)
@@ -63,10 +67,6 @@ const VerifyPhoneAccount = () => {
       <DirectDownloadButton style={{margin: '32px 0'}} />
     </React.Fragment>
   );
-
-  if (loginImmediately) {
-    window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`);
-  }
 
   const DesktopSuccess = () => (
     <React.Fragment>
