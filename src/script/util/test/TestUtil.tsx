@@ -27,7 +27,7 @@ const enUS = require('i18n/en-US.json');
 
 const withRouter = (component: React.ReactElement) => <BrowserRouter>{component}</BrowserRouter>;
 
-const withTheme = (component: React.ReactElement): React.ReactElement => (
+export const withTheme = (component: React.ReactElement): React.ReactElement => (
   <StyledApp themeId={THEME_ID.DEFAULT}>{component}</StyledApp>
 );
 
