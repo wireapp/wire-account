@@ -45,11 +45,12 @@ describe('BotPasswordForgot', () => {
     const invalidEmail = 'aaa';
     const botPasswordForgot = new BotPasswordForgotPage();
 
-    expect(botPasswordForgot.getEmailInput()).toBeDefined();
+    const emailInput = botPasswordForgot.getEmailInput();
+    expect(emailInput).toBeDefined();
     botPasswordForgot.enterEmail(invalidEmail);
     botPasswordForgot.submitResetEmail();
 
     expect(botPasswordForgot.getError()).toBeDefined();
-    expect(botPasswordForgot.getError()).toContain('That does not look like an email.');
+    expect(botPasswordForgot.getError()?.textContent).toEqual('That does not look like an email.');
   });
 });
