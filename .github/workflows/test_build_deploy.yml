@@ -173,10 +173,9 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_SECRET_ACCESS_KEY }}
+          DOCKER_IMAGE_TAG: ${{steps.push_docker_image.outputs.image_tag}}
         run: |
           set -eo pipefail
-
-          image_tag="${{steps.push_docker_image.outputs.image_tag}}"
 
           helm plugin install https://github.com/hypnoglow/helm-s3.git --version 0.15.1
 
@@ -189,7 +188,7 @@ jobs:
           fi
           echo "chart_version=$chart_version" >> $GITHUB_OUTPUT
 
-          chart_patched="$(yq -Mr ".version = \"$chart_version\" | .appVersion = \"$image_tag\"" ./charts/account-pages/Chart.yaml)"
+          chart_patched="$(yq -Mr ".version = \"$chart_version\" | .appVersion = \"${DOCKER_IMAGE_TAG}\"" ./charts/account-pages/Chart.yaml)"
           echo "$chart_patched" > ./charts/account-pages/Chart.yaml
 
           helm package ./charts/account-pages
@@ -229,6 +228,8 @@ jobs:
 
       - name: Create new build in wire-build
         shell: bash
+        env:
+          DOCKER_IMAGE_TAG: ${{needs.test_build_deploy.outputs.image_tag}}
         run: |
           set -eo pipefail
 
@@ -237,7 +238,6 @@ jobs:
           git config --global user.email "zebot@users.noreply.github.com"
           git config --global user.name "Zebot"
 
-          image_tag="${{needs.test_build_deploy.outputs.image_tag}}"
 
           for retry in $(seq 3); do
             set +e
@@ -256,7 +256,7 @@ jobs:
               ./bin/set-chart-fields account-pages \
               "version=$chart_version" \
               "repo=https://s3-eu-west-1.amazonaws.com/public.wire.com/charts-webapp" \
-              "meta.appVersion=$image_tag" \
+              "meta.appVersion=${DOCKER_IMAGE_TAG}" \
               "meta.commitURL=${{github.event.head_commit.url}}" \
               "meta.commit=${{github.event.head_commit.id}}" \
             | ./bin/bump-prerelease )
