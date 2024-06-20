@@ -29,7 +29,6 @@ module.exports = {
     '^axios$': require.resolve('axios'),
   },
   preset: 'ts-jest',
-  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   testEnvironment: 'jsdom',
   testEnvironmentOptions: {},
   testPathIgnorePatterns: ['<rootDir>/webpack.config.test.js'],

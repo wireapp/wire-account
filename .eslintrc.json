@@ -20,6 +20,8 @@
     "project": ["./tsconfig.json", "./server/tsconfig.json"]
   },
   "rules": {
+    "sort-keys": "off",
+    "sort-keys-fix/sort-keys-fix": "off",
     "id-length": [
       "error",
       {

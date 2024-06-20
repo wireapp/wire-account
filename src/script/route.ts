@@ -35,6 +35,6 @@ const ROUTE = {
   VERIFY_ACCOUNT_BOT: '/verify/bot',
   VERIFY_ACCOUNT_EMAIL: '/verify',
   VERIFY_ACCOUNT_PHONE: '/v/:code',
-};
+} as const;
 
 export {ROUTE, EXTERNAL_ROUTE};

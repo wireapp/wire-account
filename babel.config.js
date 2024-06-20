@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import'],
   presets: [
-    '@babel/preset-react',
+    ['@babel/preset-react', {runtime: 'automatic'}],
     '@babel/preset-typescript',
     [
       '@babel/preset-env',
@@ -60,6 +60,5 @@ module.exports = {
         useBuiltIns: 'usage',
       },
     ],
-    '@emotion/babel-preset-css-prop',
   ],
 };

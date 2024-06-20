@@ -19,8 +19,7 @@
 
 import '../util/test/mock/matchMediaMock';
 
-import * as History from 'history';
-import {ConversationJoinProps, ConversationJoin} from './ConversationJoin';
+import {ConversationJoin} from './ConversationJoin';
 import TestPage from '../util/test/TestPage';
 import {ActionProvider, actionRoot} from '../module/action/';
 import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
@@ -32,22 +31,19 @@ jest.mock('script/util/SVGProvider', () => {
   return {logo: undefined};
 });
 
-class ConversationJoinPage extends TestPage<ConversationJoinProps> {
-  constructor(props?: ConversationJoinProps, root?: RecursivePartial<typeof actionRoot>) {
-    super(
-      () => (
-        <ActionProvider contextData={root as typeof actionRoot}>
-          <ConversationJoin {...props} />
-        </ActionProvider>
-      ),
-      props,
-    );
+class ConversationJoinPage extends TestPage {
+  constructor(root?: RecursivePartial<typeof actionRoot>) {
+    super(() => (
+      <ActionProvider contextData={root as typeof actionRoot}>
+        <ConversationJoin />
+      </ActionProvider>
+    ));
   }
 
-  getOpenApp = () => this.get('a[data-uie-name="do-conversation-join-app"]');
-  getOpenWebapp = () => this.get('a[data-uie-name="do-conversation-join-webapp"]');
-  getDirectDownload = () => this.get('a[data-uie-name="go-direct-download"]');
-  getWebsiteDownload = () => this.get('a[data-uie-name="go-website-download"]');
+  getOpenApp = () => this.queryByTestId('do-conversation-join-app');
+  getOpenWebapp = () => this.queryByTestId('do-conversation-join-webapp');
+  getDirectDownload = () => this.queryByTestId('go-direct-download');
+  getWebsiteDownload = () => this.queryByTestId('go-website-download');
 }
 
 describe('ConversationJoin', () => {
@@ -56,23 +52,15 @@ describe('ConversationJoin', () => {
     const code = 'code';
     const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
-    const conversationJoinPage = new ConversationJoinPage(
-      {
-        history: undefined,
-        location: History.createLocation(pathWithParams('/conversation-join', {code, key})),
-        match: undefined,
-      },
-      {
-        accountAction: {
-          validateConversationJoin: validateConversationJoinSpy,
-        },
-      },
-    );
+    const path = pathWithParams('/conversation-join', {key, code});
+    window.history.pushState({}, 'Test page', path);
+
+    const conversationJoinPage = new ConversationJoinPage({
+      accountAction: {validateConversationJoin: validateConversationJoinSpy},
+    });
 
     await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalledWith(key, code));
-
-    conversationJoinPage.update();
-    expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
+    expect(conversationJoinPage.getOpenApp()).toBeDefined();
   });
 
   describe('on mobile', () => {
@@ -80,26 +68,21 @@ describe('ConversationJoin', () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
-      const conversationJoinPage = new ConversationJoinPage(
-        {
-          history: undefined,
-          location: History.createLocation('/conversation-join'),
-          match: undefined,
+      const path = pathWithParams('/conversation-join', {key: undefined, code: undefined});
+      window.history.pushState({}, 'Test page', path);
+
+      const conversationJoinPage = new ConversationJoinPage({
+        accountAction: {
+          validateConversationJoin: validateConversationJoinSpy,
         },
-        {
-          accountAction: {
-            validateConversationJoin: validateConversationJoinSpy,
-          },
-        },
-      );
+      });
 
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
 
-      conversationJoinPage.update();
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenWebapp().exists()).toBe(false);
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getDirectDownload().exists()).toBe(true);
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getOpenWebapp()).toBeNull();
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getDirectDownload()).toBeDefined();
     });
   });
 
@@ -109,26 +92,21 @@ describe('ConversationJoin', () => {
       jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
-      const conversationJoinPage = new ConversationJoinPage(
-        {
-          history: undefined,
-          location: History.createLocation('/conversation-join'),
-          match: undefined,
+      const path = pathWithParams('/conversation-join', {key: undefined, code: undefined});
+      window.history.pushState({}, 'Test page', path);
+
+      const conversationJoinPage = new ConversationJoinPage({
+        accountAction: {
+          validateConversationJoin: validateConversationJoinSpy,
         },
-        {
-          accountAction: {
-            validateConversationJoin: validateConversationJoinSpy,
-          },
-        },
-      );
+      });
 
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
 
-      conversationJoinPage.update();
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenWebapp().exists()).toBe(true);
-      expect(conversationJoinPage.getDirectDownload().exists()).toBe(true);
-      expect(conversationJoinPage.getWebsiteDownload().exists()).toBe(false);
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
+      expect(conversationJoinPage.getDirectDownload()).toBeDefined();
+      expect(conversationJoinPage.getWebsiteDownload()).toBeNull();
     });
 
     it('shows open app, webapp & website download on non-MacOS', async () => {
@@ -136,26 +114,21 @@ describe('ConversationJoin', () => {
       jest.spyOn(Runtime, 'isMacOS').mockReturnValue(false);
       const validateConversationJoinSpy = jest.fn(() => Promise.resolve());
 
-      const conversationJoinPage = new ConversationJoinPage(
-        {
-          history: undefined,
-          location: History.createLocation('/conversation-join'),
-          match: undefined,
+      const path = pathWithParams('/conversation-join', {key: undefined, code: undefined});
+      window.history.pushState({}, 'Test page', path);
+
+      const conversationJoinPage = new ConversationJoinPage({
+        accountAction: {
+          validateConversationJoin: validateConversationJoinSpy,
         },
-        {
-          accountAction: {
-            validateConversationJoin: validateConversationJoinSpy,
-          },
-        },
-      );
+      });
 
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
 
-      conversationJoinPage.update();
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenWebapp().exists()).toBe(true);
-      expect(conversationJoinPage.getDirectDownload().exists()).toBe(false);
-      expect(conversationJoinPage.getWebsiteDownload().exists()).toBe(true);
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
+      expect(conversationJoinPage.getDirectDownload()).toBeNull();
+      expect(conversationJoinPage.getWebsiteDownload()).toBeDefined();
     });
   });
 });

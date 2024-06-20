@@ -30,21 +30,20 @@ import {
   Text,
   useMatchMedia,
 } from '@wireapp/react-ui-kit';
-import React, {useContext, useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {OpenWireButtons, hasDisplayedButtons} from 'script/component/OpenWireButtons';
 import {BRAND_NAME, IS_SELF_HOSTED} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 
-export interface ConversationJoinProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
-
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 const QUERY_DOMAIN_KEY = 'domain';
 
-export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) => {
+export const ConversationJoin = () => {
+  const location = useLocation();
   const translationNamespaces = IS_SELF_HOSTED ? ['conversationJoinSelfHosted', 'conversationJoin'] : undefined;
   const [t] = useTranslation(['conversationJoin', 'conversationJoinSelfHosted']);
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
@@ -59,6 +58,12 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
   const domain = params.get(QUERY_DOMAIN_KEY);
 
   useEffect(() => {
+    if (!key || !code) {
+      console.warn('Missing key or code');
+      setError('Missing key or code');
+      return;
+    }
+
     setIsLoading(true);
     accountAction
       .validateConversationJoin(key, code)
@@ -127,4 +132,4 @@ export const ConversationJoin: React.FC<ConversationJoinProps> = ({location}) =>
   );
 };
 
-export default withRouter(ConversationJoin);
+export default ConversationJoin;
