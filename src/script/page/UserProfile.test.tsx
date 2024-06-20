@@ -19,27 +19,24 @@
 
 import '../util/test/mock/matchMediaMock';
 
-import * as History from 'history';
 import {UserProfile} from './UserProfile';
 import TestPage from '../util/test/TestPage';
 import {ActionProvider, actionRoot} from '../module/action';
 import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {Runtime} from '@wireapp/commons';
+import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 
 jest.mock('script/util/SVGProvider', () => {
   return {logo: undefined};
 });
 
 class UserProfilePage extends TestPage {
-  constructor(props?: any, root?: RecursivePartial<typeof actionRoot>) {
-    super(
-      () => (
-        <ActionProvider contextData={root as typeof actionRoot}>
-          <UserProfile {...props} />
-        </ActionProvider>
-      ),
-      props,
-    );
+  constructor(root?: RecursivePartial<typeof actionRoot>) {
+    super(() => (
+      <ActionProvider contextData={root as typeof actionRoot}>
+        <UserProfile />
+      </ActionProvider>
+    ));
   }
 
   getOpenApp = () => this.queryByTestId('open-user-profile-app');
@@ -53,14 +50,10 @@ describe('UserProfile', () => {
     it('shows open app & direct download', async () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
 
-      const conversationJoinPage = new UserProfilePage(
-        {
-          history: undefined,
-          location: History.createLocation('/user-profile'),
-          match: undefined,
-        },
-        {},
-      );
+      const path = pathWithParams('/user-profile');
+      window.history.pushState({}, 'Test page', path);
+
+      const conversationJoinPage = new UserProfilePage({});
 
       expect(conversationJoinPage.getOpenApp()).toBeDefined();
       expect(conversationJoinPage.getOpenWebapp()).toBeNull();
@@ -74,14 +67,10 @@ describe('UserProfile', () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
       jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
 
-      const conversationJoinPage = new UserProfilePage(
-        {
-          history: undefined,
-          location: History.createLocation('/user-profile'),
-          match: undefined,
-        },
-        {},
-      );
+      const path = pathWithParams('/user-profile');
+      window.history.pushState({}, 'Test page', path);
+
+      const conversationJoinPage = new UserProfilePage({});
 
       expect(conversationJoinPage.getOpenApp()).toBeDefined();
       expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
@@ -93,14 +82,10 @@ describe('UserProfile', () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
       jest.spyOn(Runtime, 'isMacOS').mockReturnValue(false);
 
-      const conversationJoinPage = new UserProfilePage(
-        {
-          history: undefined,
-          location: History.createLocation('/user-profile'),
-          match: undefined,
-        },
-        {},
-      );
+      const path = pathWithParams('/user-profile');
+      window.history.pushState({}, 'Test page', path);
+
+      const conversationJoinPage = new UserProfilePage({});
 
       expect(conversationJoinPage.getOpenApp()).toBeDefined();
       expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
