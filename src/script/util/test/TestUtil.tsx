@@ -25,13 +25,13 @@ import {StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
 import {BrowserRouter} from 'react-router-dom';
 const enUS = require('i18n/en-US.json');
 
-export const withRouter = (component: React.ReactElement) => <BrowserRouter>{component}</BrowserRouter>;
+const withRouter = (component: React.ReactElement) => <BrowserRouter>{component}</BrowserRouter>;
 
-export const withTheme = (component: React.ReactElement): React.ReactElement => (
+const withTheme = (component: React.ReactElement): React.ReactElement => (
   <StyledApp themeId={THEME_ID.DEFAULT}>{component}</StyledApp>
 );
 
-export const withTranslations = (component: React.ReactElement): React.ReactElement => {
+const withTranslations = (component: React.ReactElement): React.ReactElement => {
   i18n.use(initReactI18next).init({
     fallbackLng: 'en-US',
     lng: 'en-US',
