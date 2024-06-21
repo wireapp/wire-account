@@ -25,7 +25,7 @@ const src = 'src/';
 
 module.exports = Object.assign(commonConfig, {
   entry: Object.assign(commonConfig.entry, {
-    script: ['webpack-hot-middleware/client', path.resolve(__dirname, src, 'script', 'main.tsx')],
+    script: ['webpack-hot-middleware/client?reload=true', path.resolve(__dirname, src, 'script', 'main.tsx')],
   }),
   mode: 'development',
   plugins: [...commonConfig.plugins, new webpack.HotModuleReplacementPlugin()],
