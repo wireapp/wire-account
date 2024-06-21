@@ -17,17 +17,14 @@
  *
  */
 import {ContainerXS, H1, Text} from '@wireapp/react-ui-kit';
-import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {BRAND_NAME, REDIRECT_PHONE_URL} from 'script/Environment';
 
-interface Props extends React.HTMLProps<Document>, RouteComponentProps<{code: string}> {}
-
-const VerifyPhoneAccount = ({match}: Props) => {
-  const code = match.params.code;
+const VerifyPhoneAccount = () => {
+  const {code} = useParams();
 
   const [t] = useTranslation('verify');
   const redirectPhone = `${REDIRECT_PHONE_URL}/${code}`;
@@ -50,4 +47,4 @@ const VerifyPhoneAccount = ({match}: Props) => {
   );
 };
 
-export default withRouter(VerifyPhoneAccount);
+export default VerifyPhoneAccount;

@@ -17,18 +17,16 @@
  *
  */
 import {ContainerSM, FlexBox, H2, QUERY, QueryKeys, Text, useMatchMedia} from '@wireapp/react-ui-kit';
-import React from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {OpenWireButtons} from 'script/component/OpenWireButtons';
 import {BRAND_NAME} from 'script/Environment';
 
-export interface UserProfileProps extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
-
 const USER_ID_KEY = 'id';
 
-export const UserProfile = ({location}: UserProfileProps) => {
+export const UserProfile = () => {
+  const location = useLocation();
   const [t] = useTranslation('userProfile');
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
 
@@ -54,4 +52,4 @@ export const UserProfile = ({location}: UserProfileProps) => {
   );
 };
 
-export default withRouter(UserProfile);
+export default UserProfile;

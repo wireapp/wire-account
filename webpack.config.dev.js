@@ -30,8 +30,6 @@ module.exports = Object.assign(commonConfig, {
   mode: 'development',
   plugins: [...commonConfig.plugins, new webpack.HotModuleReplacementPlugin()],
   resolve: Object.assign(commonConfig.resolve, {
-    alias: Object.assign(commonConfig.resolve.alias, {
-      'react-dom': '@hot-loader/react-dom',
-    }),
+    alias: Object.assign(commonConfig.resolve.alias, {}),
   }),
 });

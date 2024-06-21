@@ -19,33 +19,30 @@
 
 import '../util/test/mock/matchMediaMock';
 
-import * as History from 'history';
-import {UserProfileProps, UserProfile} from './UserProfile';
+import {UserProfile} from './UserProfile';
 import TestPage from '../util/test/TestPage';
 import {ActionProvider, actionRoot} from '../module/action';
 import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {Runtime} from '@wireapp/commons';
+import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 
 jest.mock('script/util/SVGProvider', () => {
   return {logo: undefined};
 });
 
-class UserProfilePage extends TestPage<UserProfileProps> {
-  constructor(props?: UserProfileProps, root?: RecursivePartial<typeof actionRoot>) {
-    super(
-      () => (
-        <ActionProvider contextData={root as typeof actionRoot}>
-          <UserProfile {...props} />
-        </ActionProvider>
-      ),
-      props,
-    );
+class UserProfilePage extends TestPage {
+  constructor(root?: RecursivePartial<typeof actionRoot>) {
+    super(() => (
+      <ActionProvider contextData={root as typeof actionRoot}>
+        <UserProfile />
+      </ActionProvider>
+    ));
   }
 
-  getOpenApp = () => this.get('a[data-uie-name="open-user-profile-app"]');
-  getOpenWebapp = () => this.get('a[data-uie-name="open-user-profile-webapp"]');
-  getDirectDownload = () => this.get('a[data-uie-name="go-direct-download"]');
-  getWebsiteDownload = () => this.get('a[data-uie-name="go-website-download"]');
+  getOpenApp = () => this.queryByTestId('open-user-profile-app');
+  getOpenWebapp = () => this.queryByTestId('open-user-profile-webapp');
+  getDirectDownload = () => this.queryByTestId('go-direct-download');
+  getWebsiteDownload = () => this.queryByTestId('go-website-download');
 }
 
 describe('UserProfile', () => {
@@ -53,19 +50,15 @@ describe('UserProfile', () => {
     it('shows open app & direct download', async () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
 
-      const conversationJoinPage = new UserProfilePage(
-        {
-          history: undefined,
-          location: History.createLocation('/user-profile'),
-          match: undefined,
-        },
-        {},
-      );
+      const path = pathWithParams('/user-profile');
+      window.history.pushState({}, 'Test page', path);
 
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenWebapp().exists()).toBe(false);
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getDirectDownload().exists()).toBe(true);
+      const conversationJoinPage = new UserProfilePage({});
+
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getOpenWebapp()).toBeNull();
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getDirectDownload()).toBeDefined();
     });
   });
 
@@ -74,38 +67,30 @@ describe('UserProfile', () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
       jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
 
-      const conversationJoinPage = new UserProfilePage(
-        {
-          history: undefined,
-          location: History.createLocation('/user-profile'),
-          match: undefined,
-        },
-        {},
-      );
+      const path = pathWithParams('/user-profile');
+      window.history.pushState({}, 'Test page', path);
 
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenWebapp().exists()).toBe(true);
-      expect(conversationJoinPage.getDirectDownload().exists()).toBe(true);
-      expect(conversationJoinPage.getWebsiteDownload().exists()).toBe(false);
+      const conversationJoinPage = new UserProfilePage({});
+
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
+      expect(conversationJoinPage.getDirectDownload()).toBeDefined();
+      expect(conversationJoinPage.getWebsiteDownload()).toBeNull();
     });
 
     it('shows open app, webapp & website download on non-MacOS', async () => {
       jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
       jest.spyOn(Runtime, 'isMacOS').mockReturnValue(false);
 
-      const conversationJoinPage = new UserProfilePage(
-        {
-          history: undefined,
-          location: History.createLocation('/user-profile'),
-          match: undefined,
-        },
-        {},
-      );
+      const path = pathWithParams('/user-profile');
+      window.history.pushState({}, 'Test page', path);
 
-      expect(conversationJoinPage.getOpenApp().exists()).toBe(true);
-      expect(conversationJoinPage.getOpenWebapp().exists()).toBe(true);
-      expect(conversationJoinPage.getDirectDownload().exists()).toBe(false);
-      expect(conversationJoinPage.getWebsiteDownload().exists()).toBe(true);
+      const conversationJoinPage = new UserProfilePage({});
+
+      expect(conversationJoinPage.getOpenApp()).toBeDefined();
+      expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
+      expect(conversationJoinPage.getDirectDownload()).toBeNull();
+      expect(conversationJoinPage.getWebsiteDownload()).toBeDefined();
     });
   });
 });

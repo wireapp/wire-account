@@ -20,13 +20,11 @@ import {ValidationUtil} from '@wireapp/commons';
 import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
 import React, {useContext, useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {NEW_PASSWORD_MINIMUM_LENGTH} from 'script/Environment';
 import {ActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
-
-interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
 
 const HTTP_STATUS_INVALID_LINK = 400;
 const HTTP_STATUS_PASSWORD_ALREADY_USED = 409;
@@ -34,7 +32,8 @@ const HTTP_STATUS_PASSWORD_ALREADY_USED = 409;
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 
-const PasswordReset = ({location}: Props) => {
+const PasswordReset = () => {
+  const location = useLocation();
   const params = new URLSearchParams(location.search);
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
@@ -154,4 +153,4 @@ const PasswordReset = ({location}: Props) => {
   );
 };
 
-export default withRouter(PasswordReset);
+export default PasswordReset;
