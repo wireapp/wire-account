@@ -65,10 +65,6 @@ const PasswordForgot = () => {
         }
       } else {
         switch (error.code) {
-          case HTTP_STATUS_EMAIL_NOT_IN_USE: {
-            setError(t('errorUnusedEmail'));
-            break;
-          }
           case HTTP_STATUS_EMAIL_ALREADY_SENT: {
             setError(t('errorAlreadyProcessing'));
             break;
@@ -95,7 +91,8 @@ const PasswordForgot = () => {
         ) : (
           <React.Fragment>
             <H1>{t('title')}</H1>
-            <Form onSubmit={initiatePasswordReset}>
+            <Text center>{t('description')}</Text>
+            <Form css={{marginTop: 40}} onSubmit={initiatePasswordReset}>
               <Input
                 required
                 ref={emailInput}

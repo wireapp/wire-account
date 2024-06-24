@@ -19,10 +19,10 @@
     "errorAlreadyProcessing": "We already sent you an email. The link is valid for 1 hour.",
     "errorInvalidEmail": "That does not look like an email.",
     "errorUnknown": "Something went wrong, please try again.",
-    "errorUnusedEmail": "This email is not in use.",
     "successDescription": "We sent you a link to reset your password. It is valid for 1 hour.",
     "successTitle": "Check your email",
-    "title": "Change Password",
+    "title": "Reset password",
+    "description": "We will send you a link to reset your password via email.",
     "login": "Log in"
   },
   "general": {
