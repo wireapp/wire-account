@@ -24,7 +24,6 @@ import Document from 'script/component/Document';
 import {ActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
 
-const HTTP_STATUS_EMAIL_NOT_IN_USE = 400;
 const HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
 const PasswordForgot = () => {
