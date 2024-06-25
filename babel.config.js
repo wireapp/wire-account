@@ -39,8 +39,8 @@ module.exports = {
   },
   plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import'],
   presets: [
-    ['@babel/preset-react', {runtime: 'automatic'}],
     '@emotion/babel-preset-css-prop',
+    ['@babel/preset-react', {importSource: '@emotion/react', runtime: 'automatic'}],
     '@babel/preset-typescript',
     [
       '@babel/preset-env',
