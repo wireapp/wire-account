@@ -3901,9 +3901,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/react-ui-kit@npm:9.18.0":
-  version: 9.18.0
-  resolution: "@wireapp/react-ui-kit@npm:9.18.0"
+"@wireapp/react-ui-kit@npm:9.18.1":
+  version: 9.18.1
+  resolution: "@wireapp/react-ui-kit@npm:9.18.1"
   dependencies:
     "@types/color": 3.0.6
     color: 4.2.3
@@ -3918,7 +3918,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 8eca267cc0e2a562d0d19ac3b910a206b796d4302748223fd2cc663f8da8b4fccdb4bbd92ab1c8a73595f84e898e07fdf96a1631e502870941fc8198412eb647
+  checksum: ea23b56572038846ff3612c22434eb0751341d0dd97bcc2ee717c5a73dd56900b4ae9dd43b5c8dc8113646f582300b383717f8900c465796d73782cd0d18d23c
   languageName: node
   linkType: hard
 
@@ -13707,7 +13707,7 @@ __metadata:
     "@wireapp/commons": 5.2.8
     "@wireapp/copy-config": 2.2.2
     "@wireapp/eslint-config": 1.4.0
-    "@wireapp/react-ui-kit": 9.18.0
+    "@wireapp/react-ui-kit": 9.18.1
     adm-zip: 0.5.14
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
