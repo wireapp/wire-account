@@ -49,7 +49,7 @@
     "eslint-plugin-jsdoc": "48.7.0",
     "eslint-plugin-no-unsanitized": "4.0.2",
     "eslint-plugin-prettier": "5.1",
-    "eslint-plugin-react": "7.34.3",
+    "eslint-plugin-react": "7.34.4",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-simple-import-sort": "8.0.0",
     "eslint-plugin-sort-keys-fix": "1.1.2",
