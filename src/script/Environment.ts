@@ -42,7 +42,6 @@ declare global {
           IMPRINT: string;
           OPEN_GRAPH_IMAGE: string;
           REDIRECT_CONVERSATION_JOIN_BASE: string;
-          REDIRECT_PHONE_BASE: string;
           REDIRECT_RESET_BASE: string;
           REDIRECT_START_SSO_BASE: string;
           REDIRECT_VERIFY_BASE: string;
@@ -90,7 +89,6 @@ export const DOWNLOAD_WINDOWS_URL = window.wire.env.URL.DOWNLOAD_WINDOWS_BASE;
 export const IMPRINT_URL = window.wire.env.URL.IMPRINT;
 export const OPEN_GRAPH_IURL = window.wire.env.URL.OPEN_GRAPH_IMAGE;
 export const WIRE_APP_SCHEME = 'wire://';
-export const REDIRECT_PHONE_URL = window.wire.env.URL.REDIRECT_PHONE_BASE;
 export const REDIRECT_RESET_URL = window.wire.env.URL.REDIRECT_RESET_BASE;
 export const REDIRECT_START_SSO_URL = window.wire.env.URL.REDIRECT_START_SSO_BASE;
 export const REDIRECT_VERIFY_URL = window.wire.env.URL.REDIRECT_VERIFY_BASE;
