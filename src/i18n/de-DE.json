@@ -19,10 +19,10 @@
     "errorAlreadyProcessing": "Wir haben Ihnen bereits eine E-Mail geschickt. Der Link ist für eine Stunde gültig.",
     "errorInvalidEmail": "Dies sieht nicht nach einer E-Mail-Adresse aus.",
     "errorUnknown": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-    "errorUnusedEmail": "Diese E-Mail wird nicht verwendet.",
     "successDescription": "Wir haben Ihnen einen Link zum Zurücksetzen des Passworts geschickt. Er ist 1 Stunde gültig.",
     "successTitle": "Überprüfen Sie Ihren Posteingang.",
-    "title": "Passwort ändern",
+    "title": "Reset password",
+    "description": "We will send you a link to reset your password via email.",
     "login": "Anmelden"
   },
   "general": {
@@ -63,11 +63,9 @@
     "successBotTitle": "Vielen Dank für die Registrierung",
     "successEmailAppDescription": "Installieren Sie die App, um {{company}} zu benutzen.",
     "successEmailTitle": "E-Mail-Adresse bestätigt",
-    "successPhoneDescription": "Telefonnummer wird bestätigt",
     "title": "Überprüfung",
     "titleBot": "Bot bestätigen",
-    "titleEmail": "Konto bestätigen",
-    "titlePhone": "Telefonnummer bestätigen"
+    "titleEmail": "Konto bestätigen"
   },
   "conversationJoin": {
     "loading": "Link wird überprüft…",
