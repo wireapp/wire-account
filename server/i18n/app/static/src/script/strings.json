@@ -160,10 +160,6 @@
     "defaultMessage": "This email address is not allowed."
   },
   {
-    "id": "BackendErrorLabel.BLACKLISTED_PHONE",
-    "defaultMessage": "This phone number is not allowed."
-  },
-  {
     "id": "BackendErrorLabel.INVALID_CODE",
     "defaultMessage": "This code is invalid."
   },
@@ -174,10 +170,6 @@
   {
     "id": "BackendErrorLabel.INVALID_EMAIL",
     "defaultMessage": "This email address is invalid."
-  },
-  {
-    "id": "BackendErrorLabel.INVALID_PHONE",
-    "defaultMessage": "This phone number is invalid."
   },
   {
     "id": "BackendErrorLabel.KEY_EXISTS",

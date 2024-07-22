@@ -63,11 +63,9 @@
     "successBotTitle": "Thank you for registering",
     "successEmailAppDescription": "Install the app to start using {{company}}.",
     "successEmailTitle": "Email verified",
-    "successPhoneDescription": "Phone verification in progress",
     "title": "Verifying",
     "titleBot": "Verify Bot",
-    "titleEmail": "Verify Account",
-    "titlePhone": "Verify Phone"
+    "titleEmail": "Verify Account"
   },
   "conversationJoin": {
     "loading": "Verifying link...",

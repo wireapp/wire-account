@@ -33,7 +33,6 @@ const LazyPasswordReset = lazy(() => import('./page/PasswordReset'));
 const LazyBotPasswordReset = lazy(() => import('./page/BotPasswordReset'));
 const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
 const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
-const LazyVerifyPhoneAccount = lazy(() => import('./page/VerifyPhoneAccount'));
 const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
 const LazyUserProfile = lazy(() => import('./page/UserProfile'));
 
@@ -69,7 +68,6 @@ const Root: React.FC<Props> = () => {
             <Route path={ROUTE.PASSWORD_RESET_BOT} element={<LazyBotPasswordReset />} />
             <Route path={ROUTE.VERIFY_ACCOUNT_EMAIL} element={<LazyVerifyEmailAccount />} />
             <Route path={ROUTE.VERIFY_ACCOUNT_BOT} element={<LazyVerifyBotAccount />} />
-            <Route path={ROUTE.VERIFY_ACCOUNT_PHONE} element={<LazyVerifyPhoneAccount />} />
             <Route path={ROUTE.CONVERSATION_JOIN} element={<LazyConversationJoin />} />
             <Route path={ROUTE.USER_PROFILE} element={<LazyUserProfile />} />
             <Route path="*" element={<Navigate to={ROUTE.HOME} replace={true} />} />
