@@ -37,7 +37,7 @@
     "opn": "6.0.0",
     "prettier": "2.8.8",
     "rimraf": "5.0.8",
-    "typescript": "5.5.3",
+    "typescript": "5.5.4",
     "webpack-dev-middleware": "7.3.0",
     "webpack-hot-middleware": "2.26.1"
   },
