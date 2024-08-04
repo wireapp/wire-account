@@ -4225,15 +4225,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.3.0":
-  version: 27.3.0
-  resolution: "@wireapp/api-client@npm:27.3.0"
+"@wireapp/api-client@npm:27.3.1":
+  version: 27.3.1
+  resolution: "@wireapp/api-client@npm:27.3.1"
   dependencies:
     "@wireapp/commons": ^5.2.10
-    "@wireapp/priority-queue": ^2.1.7
+    "@wireapp/priority-queue": ^2.1.8
     "@wireapp/protocol-messaging": 1.49.0
     axios: 1.7.2
-    axios-retry: 4.4.1
+    axios-retry: 4.4.2
     http-status-codes: 2.3.0
     logdown: 3.3.1
     pako: 2.1.0
@@ -4242,7 +4242,7 @@ __metadata:
     tough-cookie: 4.1.4
     ws: 8.18.0
     zod: 3.23.8
-  checksum: 6faee740f5cec59ce4118a93cca4de323dfd832a1515c1946cb7498d8297540b626f504905e33ec0355a4664a934b003ae99b0d24af0dbb23044df8fa13c76c3
+  checksum: af13d579514d23235655cb7769d76136471a67b0b05751076362e57833f636da48279ea7a1b4290d7ac7834cf6ee34b70d7ccaf0aaf399609cd2f5c345752ff3
   languageName: node
   linkType: hard
 
@@ -4294,10 +4294,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/priority-queue@npm:^2.1.7":
-  version: 2.1.7
-  resolution: "@wireapp/priority-queue@npm:2.1.7"
-  checksum: a48635aee43bc2e769bffeaebfc850eadec71d5c3170ba3c5391606c8e3b496702cf774abf6722b73323026d87f0c0ba486861a66ed4f5978820b199bc27655d
+"@wireapp/priority-queue@npm:^2.1.8":
+  version: 2.1.8
+  resolution: "@wireapp/priority-queue@npm:2.1.8"
+  checksum: ee8770d4bb85fd2e12c47cff0a3cc5d42a80758c659981bbb54b59d003a7ab5e3cbb9fec7874ffe8b11482266d9a91b8e6f2c662c405594f74b49b7df78cdc3e
   languageName: node
   linkType: hard
 
@@ -4989,14 +4989,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios-retry@npm:4.4.1":
-  version: 4.4.1
-  resolution: "axios-retry@npm:4.4.1"
+"axios-retry@npm:4.4.2":
+  version: 4.4.2
+  resolution: "axios-retry@npm:4.4.2"
   dependencies:
     is-retry-allowed: ^2.2.0
   peerDependencies:
     axios: 0.x || 1.x
-  checksum: adfe14197dd004cb11a96df86d69b94757b52d5590a2e488ce6398700a92b284831ac920e3c89e0dc5efdce409760882ea5ff20e9c20dc1e1a366815d3bf6187
+  checksum: 4f0fe7a5a02bda342852584d681ac6b7041debdf3b79989499bb3ed9ff0d527ea5e0f7619077772152537896b4db6b8842f135f8cd2adc062db805f893bdbcb7
   languageName: node
   linkType: hard
 
@@ -14254,7 +14254,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 7.17.0
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.3.0
+    "@wireapp/api-client": 27.3.1
     "@wireapp/commons": 5.2.10
     "@wireapp/copy-config": 2.2.3
     "@wireapp/eslint-config": 1.4.0
