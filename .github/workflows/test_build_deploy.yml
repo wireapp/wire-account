@@ -82,6 +82,9 @@ jobs:
               },
               "q1-2024": {
                 "targets": "[\"q1-2024\"]"
+              },
+              ".*": {
+                "targets": "[]"
               }
             }
           export_to: log,output
