@@ -4359,14 +4359,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.4.1":
-  version: 27.4.1
-  resolution: "@wireapp/api-client@npm:27.4.1"
+"@wireapp/api-client@npm:27.5.0":
+  version: 27.5.0
+  resolution: "@wireapp/api-client@npm:27.5.0"
   dependencies:
     "@wireapp/commons": ^5.2.10
     "@wireapp/priority-queue": ^2.1.8
     "@wireapp/protocol-messaging": 1.49.0
-    axios: 1.7.4
+    axios: 1.7.5
     axios-retry: 4.5.0
     http-status-codes: 2.3.0
     logdown: 3.3.1
@@ -4376,7 +4376,7 @@ __metadata:
     tough-cookie: 4.1.4
     ws: 8.18.0
     zod: 3.23.8
-  checksum: 47392cdebbb0ec8cf2b9d093b7e830d92dcfae875b56ec39accd83925a65c93a83a45e8222de2e4e95e819a02a265cccbe9e817ff1ce695ec10df86210652f69
+  checksum: a9b6519cf9a1764389d6817151f0558e253c921511decdd498cda8f5a13f7bc1253e2239b447614294137eef30cc8176b20bddaee3855950a6af0b444f89af5d
   languageName: node
   linkType: hard
 
@@ -5151,6 +5151,17 @@ __metadata:
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
   checksum: 0c17039a9acfe6a566fca8431ba5c1b455c83d30ea6157fec68a6722878fcd30f3bd32d172f6bee0c51fe75ca98e6414ddcd968a87b5606b573731629440bfaf
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.7.5":
+  version: 1.7.5
+  resolution: "axios@npm:1.7.5"
+  dependencies:
+    follow-redirects: ^1.15.6
+    form-data: ^4.0.0
+    proxy-from-env: ^1.1.0
+  checksum: 2859fe01437cf133eee35571abc1d4b5224bb13e530e66cb3581ca226e170541dd5eef9f46abb41592cee0a2f54930c9e4978354e0cf1064748fc20d9a05e9d5
   languageName: node
   linkType: hard
 
@@ -14479,7 +14490,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 8.3.0
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.4.1
+    "@wireapp/api-client": 27.5.0
     "@wireapp/commons": 5.2.10
     "@wireapp/copy-config": 2.2.5
     "@wireapp/eslint-config": 1.4.0
