@@ -6,7 +6,7 @@
     "core-js": "3.38.1",
     "dotenv": "16.4.5",
     "dotenv-extended": "2.9.0",
-    "i18next": "23.14.0",
+    "i18next": "23.15.1",
     "i18next-browser-languagedetector": "8.0.0",
     "i18next-react-postprocessor": "3.1.0",
     "jest-environment-jsdom": "29.7.0",
