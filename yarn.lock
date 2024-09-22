@@ -4366,14 +4366,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.5.0":
-  version: 27.5.0
-  resolution: "@wireapp/api-client@npm:27.5.0"
+"@wireapp/api-client@npm:27.6.0":
+  version: 27.6.0
+  resolution: "@wireapp/api-client@npm:27.6.0"
   dependencies:
     "@wireapp/commons": ^5.2.10
     "@wireapp/priority-queue": ^2.1.8
-    "@wireapp/protocol-messaging": 1.49.0
-    axios: 1.7.5
+    "@wireapp/protocol-messaging": 1.50.0
+    axios: 1.7.7
     axios-retry: 4.5.0
     http-status-codes: 2.3.0
     logdown: 3.3.1
@@ -4383,7 +4383,7 @@ __metadata:
     tough-cookie: 4.1.4
     ws: 8.18.0
     zod: 3.23.8
-  checksum: a9b6519cf9a1764389d6817151f0558e253c921511decdd498cda8f5a13f7bc1253e2239b447614294137eef30cc8176b20bddaee3855950a6af0b444f89af5d
+  checksum: 5b44a63bd1f282aa2427e130cc19d3c818604a26fe9670c90830bcbcf259548e03815c49724eb8ef9ce6487b4f84f64f35e4d8f3dae726b56188fbb362b648a4
   languageName: node
   linkType: hard
 
@@ -4442,15 +4442,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/protocol-messaging@npm:1.49.0":
-  version: 1.49.0
-  resolution: "@wireapp/protocol-messaging@npm:1.49.0"
+"@wireapp/protocol-messaging@npm:1.50.0":
+  version: 1.50.0
+  resolution: "@wireapp/protocol-messaging@npm:1.50.0"
   dependencies:
     long: 5.2.0
     protobufjs: 7.2.5
     protobufjs-cli: 1.1.2
     typescript: 4.8.4
-  checksum: 9a96a068e265884d8f2e193ddb822c7a08899fa5a6e49e1a2ac433c2b892725d9d3db18aff98e1fefad26d18dc39547bdcc576e0c01f1392659066615d13dae4
+  checksum: f800aa6271e96fe47fbfdfaf97f949b56569f2ddd9238a1ef8e4402ca0024a1418d1620268aaecc746e62581d0cb12daeed20e535654755f3d81504fb594e92a
   languageName: node
   linkType: hard
 
@@ -5135,17 +5135,6 @@ __metadata:
   peerDependencies:
     axios: 0.x || 1.x
   checksum: ec831e566ed3a55d3c3c927c1d42c52f2c2f1a8ea99ff8521d3675c6313f8c77f704c7186299fda08b7dc0f771a2c5471e72d279789d5aade65ec3755ab3a1ff
-  languageName: node
-  linkType: hard
-
-"axios@npm:1.7.5":
-  version: 1.7.5
-  resolution: "axios@npm:1.7.5"
-  dependencies:
-    follow-redirects: ^1.15.6
-    form-data: ^4.0.0
-    proxy-from-env: ^1.1.0
-  checksum: 2859fe01437cf133eee35571abc1d4b5224bb13e530e66cb3581ca226e170541dd5eef9f46abb41592cee0a2f54930c9e4978354e0cf1064748fc20d9a05e9d5
   languageName: node
   linkType: hard
 
@@ -14425,7 +14414,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 8.6.0
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.5.0
+    "@wireapp/api-client": 27.6.0
     "@wireapp/commons": 5.2.10
     "@wireapp/copy-config": 2.2.7
     "@wireapp/eslint-config": 1.4.0
