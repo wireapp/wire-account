@@ -21,8 +21,7 @@
     "errorUnknown": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
     "successDescription": "Wir haben Ihnen einen Link zum Zurücksetzen des Passworts geschickt. Er ist 1 Stunde gültig.",
     "successTitle": "Überprüfen Sie Ihren Posteingang.",
-    "title": "Reset password",
-    "description": "We will send you a link to reset your password via email.",
+    "title": "Passwort ändern",
     "login": "Anmelden"
   },
   "general": {
