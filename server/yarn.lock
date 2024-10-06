@@ -4749,15 +4749,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jasmine@npm:5.3.0":
-  version: 5.3.0
-  resolution: "jasmine@npm:5.3.0"
+"jasmine@npm:5.3.1":
+  version: 5.3.1
+  resolution: "jasmine@npm:5.3.1"
   dependencies:
     glob: ^10.2.2
     jasmine-core: ~5.3.0
   bin:
     jasmine: bin/jasmine.js
-  checksum: 19eb261668a0961ffbdb5bc44d97ef403c84f790581c39731bdaf2efedd0c8a047588a6e8eeab689092f1f40ff97ca2f9d836a34eb8852aea26dc8d89c465b68
+  checksum: 9a867ade1fce3b975a6232b576131f699a70aa0ddc8a0904449982317346becabcae40aa8fed80b4a955f871f065a09e2891ee12e704a6548417232940e2e57a
   languageName: node
   linkType: hard
 
@@ -6953,7 +6953,7 @@ __metadata:
     helmet: 4.6.0
     helmet-csp: 3.4.0
     http-proxy-middleware: 3.0.2
-    jasmine: 5.3.0
+    jasmine: 5.3.1
     jszip: 3.10.1
     logdown: 3.3.1
     moment: 2.30.1
