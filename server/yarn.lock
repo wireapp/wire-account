@@ -4003,9 +4003,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"http-proxy-middleware@npm:3.0.2":
-  version: 3.0.2
-  resolution: "http-proxy-middleware@npm:3.0.2"
+"http-proxy-middleware@npm:3.0.3":
+  version: 3.0.3
+  resolution: "http-proxy-middleware@npm:3.0.3"
   dependencies:
     "@types/http-proxy": ^1.17.15
     debug: ^4.3.6
@@ -4013,7 +4013,7 @@ __metadata:
     is-glob: ^4.0.3
     is-plain-object: ^5.0.0
     micromatch: ^4.0.8
-  checksum: 3540e1b796ac612914205e14ca096db89b722e022b86c89c763510c657397c2c6375abd958b6c8917b0b3e3eadc96e1de1b4f7dae55fe20897962e70bee4068a
+  checksum: 7486cd36f8123aaeb9e5412ecdf1bbfb69a9c7a5cd51cdb202653fe7201fc6073849f981d814b429527e42bb825d57af09ba7b8ba9d95e194dbd7dd83bf51643
   languageName: node
   linkType: hard
 
@@ -6516,7 +6516,7 @@ __metadata:
     handlebars: 4.7.7
     helmet: 4.6.0
     helmet-csp: 3.4.0
-    http-proxy-middleware: 3.0.2
+    http-proxy-middleware: 3.0.3
     jasmine: 5.4.0
     jszip: 3.10.1
     logdown: 3.3.1
