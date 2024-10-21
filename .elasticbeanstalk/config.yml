@@ -1,8 +1,8 @@
 branch-defaults:
   staging:
-    environment: wire-account-staging-al2
+    environment: wire-account-staging
   main:
-    environment: wire-account-prod-al2
+    environment: wire-account-prod
 deploy:
   artifact: wire-account.zip
 global:
