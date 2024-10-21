@@ -2045,20 +2045,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/tslint-config@npm:1.4.1":
-  version: 1.4.1
-  resolution: "@wireapp/tslint-config@npm:1.4.1"
-  peerDependencies:
-    prettier: ">=1"
-    tslint: ">=5"
-    tslint-config-prettier: ">=1"
-    tslint-plugin-prettier: ">=2"
-    tslint-react: ">=4"
-    tslint-react-hooks: ">=2"
-  checksum: b01e1636dc72df3e3e99e630fb1040d4ed66f197e78dd69518b750442c107e40ae686e5516f9afde5ce8571ff9314e160b1df09b5a264ba08e38f8ed5a693917
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:1, abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -6344,7 +6330,6 @@ __metadata:
     "@types/moment": 2.13.0
     "@types/uuid": 9.0.8
     "@wireapp/commons": 5.2.13
-    "@wireapp/tslint-config": 1.4.1
     cross-env: 7.0.3
     dotenv: 16.4.5
     dotenv-extended: 2.9.0
