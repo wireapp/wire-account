@@ -21,23 +21,27 @@ import '../util/test/mock/matchMediaMock';
 
 import {ConversationJoin} from './ConversationJoin';
 import TestPage from '../util/test/TestPage';
-import {ActionProvider, actionRoot} from '../module/action/';
+import {ActionProvider, useActionContext} from '../module/action/';
 import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {act} from 'react-dom/test-utils';
 import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 import {Runtime} from '@wireapp/commons';
+import {AccountAction} from 'script/module/action/AccountAction';
 
 jest.mock('script/util/SVGProvider', () => {
   return {logo: undefined};
 });
 
 class ConversationJoinPage extends TestPage {
-  constructor(root?: RecursivePartial<typeof actionRoot>) {
-    super(() => (
-      <ActionProvider contextData={root as typeof actionRoot}>
-        <ConversationJoin />
-      </ActionProvider>
-    ));
+  constructor(root?: RecursivePartial<AccountAction>) {
+    super(() => {
+      const actionContext = useActionContext();
+      return (
+        <ActionProvider contextData={{...actionContext, accountAction: root as AccountAction}}>
+          <ConversationJoin />
+        </ActionProvider>
+      );
+    });
   }
 
   getOpenApp = () => this.queryByTestId('do-conversation-join-app');
@@ -55,9 +59,7 @@ describe('ConversationJoin', () => {
     const path = pathWithParams('/conversation-join', {key, code});
     window.history.pushState({}, 'Test page', path);
 
-    const conversationJoinPage = new ConversationJoinPage({
-      accountAction: {validateConversationJoin: validateConversationJoinSpy},
-    });
+    const conversationJoinPage = new ConversationJoinPage({validateConversationJoin: validateConversationJoinSpy});
 
     await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalledWith(key, code));
     expect(conversationJoinPage.getOpenApp()).toBeDefined();
@@ -72,9 +74,7 @@ describe('ConversationJoin', () => {
       window.history.pushState({}, 'Test page', path);
 
       const conversationJoinPage = new ConversationJoinPage({
-        accountAction: {
-          validateConversationJoin: validateConversationJoinSpy,
-        },
+        validateConversationJoin: validateConversationJoinSpy,
       });
 
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
@@ -96,9 +96,7 @@ describe('ConversationJoin', () => {
       window.history.pushState({}, 'Test page', path);
 
       const conversationJoinPage = new ConversationJoinPage({
-        accountAction: {
-          validateConversationJoin: validateConversationJoinSpy,
-        },
+        validateConversationJoin: validateConversationJoinSpy,
       });
 
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());
@@ -118,9 +116,7 @@ describe('ConversationJoin', () => {
       window.history.pushState({}, 'Test page', path);
 
       const conversationJoinPage = new ConversationJoinPage({
-        accountAction: {
-          validateConversationJoin: validateConversationJoinSpy,
-        },
+        validateConversationJoin: validateConversationJoinSpy,
       });
 
       await act(async () => expect(validateConversationJoinSpy).toHaveBeenCalled());

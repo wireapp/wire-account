@@ -18,14 +18,14 @@
  */
 
 import {CSSObject} from '@emotion/react';
-import {COLOR_V2, media, QueryKeys} from '@wireapp/react-ui-kit';
+import {COLOR_V2, QUERY, QueryKeys} from '@wireapp/react-ui-kit';
 
 export const headerCss: CSSObject = {
   color: COLOR_V2.GRAY_90,
   fontSize: '3rem',
   display: 'block',
   textAlign: 'center',
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '2rem',
     marginTop: '1.5rem',
   },
@@ -39,7 +39,7 @@ export const loginSubHeaderCss: CSSObject = {
   display: 'block',
   textAlign: 'center',
 
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     lineHeight: '1.75rem',
     margin: '1rem 0 5rem 0',
     fontSize: '1rem',
@@ -51,7 +51,7 @@ export const loginContainerCss: CSSObject = {
   textAlign: 'center',
   padding: '1.5rem',
   margin: '4rem auto',
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     marginTop: '1.5rem',
     margin: '2rem auto',
   },
@@ -62,7 +62,7 @@ export const termsContainerCss: CSSObject = {
   textAlign: 'left',
   padding: '1.5rem 4rem',
   maxWidth: '55rem',
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     marginTop: '1.5rem',
     margin: '0 auto',
     padding: '1.5rem 0',
@@ -72,8 +72,8 @@ export const termsContainerCss: CSSObject = {
 export const termsSubHeaderCss: CSSObject = {
   ...loginSubHeaderCss,
   margin: '1.8rem 0',
-  [media[QueryKeys.TABLET_DOWN]]: {
-    ...loginSubHeaderCss[media[QueryKeys.TABLET_DOWN]],
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
+    ...(loginSubHeaderCss[QUERY[QueryKeys.TABLET_DOWN]] as CSSObject),
     margin: '1rem 2rem',
     fontSize: '1.25rem',
   },
@@ -83,7 +83,7 @@ export const termsContentHeaderCss: CSSObject = {
   fontSize: '1.25rem',
   marginBottom: '1rem',
   display: 'block',
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
 };
@@ -93,7 +93,7 @@ export const termsListCss: CSSObject = {
   flexDirection: 'column',
   gap: '1rem',
   paddingLeft: '2rem',
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     paddingLeft: '1.5rem',
   },
 };
@@ -102,7 +102,7 @@ export const termsListItemCss: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
   color: COLOR_V2.GRAY_70,
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
 };
@@ -117,7 +117,7 @@ export const termsContentGrayBoxContent: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
   color: COLOR_V2.GRAY_90,
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
 };
@@ -136,7 +136,7 @@ export const termsContentBlueBoxContent: CSSObject = {
   lineHeight: '1.75rem',
   color: COLOR_V2.GRAY_80,
   textTransform: 'none',
-  [media[QueryKeys.TABLET_DOWN]]: {
+  [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
 };

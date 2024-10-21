@@ -21,8 +21,7 @@ import '../util/test/mock/matchMediaMock';
 
 import {UserProfile} from './UserProfile';
 import TestPage from '../util/test/TestPage';
-import {ActionProvider, actionRoot} from '../module/action';
-import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
+import {ActionProvider} from '../module/action';
 import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 
@@ -31,9 +30,9 @@ jest.mock('script/util/SVGProvider', () => {
 });
 
 class UserProfilePage extends TestPage {
-  constructor(root?: RecursivePartial<typeof actionRoot>) {
+  constructor() {
     super(() => (
-      <ActionProvider contextData={root as typeof actionRoot}>
+      <ActionProvider>
         <UserProfile />
       </ActionProvider>
     ));
@@ -53,7 +52,7 @@ describe('UserProfile', () => {
       const path = pathWithParams('/user-profile');
       window.history.pushState({}, 'Test page', path);
 
-      const conversationJoinPage = new UserProfilePage({});
+      const conversationJoinPage = new UserProfilePage();
 
       expect(conversationJoinPage.getOpenApp()).toBeDefined();
       expect(conversationJoinPage.getOpenWebapp()).toBeNull();
@@ -70,7 +69,7 @@ describe('UserProfile', () => {
       const path = pathWithParams('/user-profile');
       window.history.pushState({}, 'Test page', path);
 
-      const conversationJoinPage = new UserProfilePage({});
+      const conversationJoinPage = new UserProfilePage();
 
       expect(conversationJoinPage.getOpenApp()).toBeDefined();
       expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
@@ -85,7 +84,7 @@ describe('UserProfile', () => {
       const path = pathWithParams('/user-profile');
       window.history.pushState({}, 'Test page', path);
 
-      const conversationJoinPage = new UserProfilePage({});
+      const conversationJoinPage = new UserProfilePage();
 
       expect(conversationJoinPage.getOpenApp()).toBeDefined();
       expect(conversationJoinPage.getOpenWebapp()).toBeDefined();
