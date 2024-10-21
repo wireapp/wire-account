@@ -49,6 +49,8 @@ declare global {
           TEAMS_BASE: string;
           WEBAPP_BASE: string;
           WEBSITE_BASE: string;
+          URL_TERMS_OF_USE_TEAMS: string;
+          URL_SUPPORT_BACKUP_HISTORY: string;
         };
         VERSION: string;
         FEATURE: {
@@ -95,3 +97,5 @@ export const REDIRECT_VERIFY_URL = window.wire.env.URL.REDIRECT_VERIFY_BASE;
 export const SUPPORT_URL = window.wire.env.URL.SUPPORT_BASE;
 export const TEAMS_URL = window.wire.env.URL.TEAMS_BASE;
 export const WEBSITE_URL = window.wire.env.URL.WEBSITE_BASE;
+export const URL_SUPPORT_BACKUP_HISTORY = window.wire.env.URL.URL_SUPPORT_BACKUP_HISTORY;
+export const URL_TERMS_OF_USE_TEAMS = window.wire.env.URL.URL_TERMS_OF_USE_TEAMS;

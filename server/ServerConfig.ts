@@ -45,6 +45,8 @@ export interface ServerConfig {
       TEAMS_BASE: string;
       WEBAPP_BASE: string;
       WEBSITE_BASE: string;
+      URL_TERMS_OF_USE_TEAMS: string;
+      URL_SUPPORT_BACKUP_HISTORY: string;
     };
     VERSION: string;
   };

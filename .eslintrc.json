@@ -30,7 +30,9 @@
     ],
     "import/no-default-export": "off",
     "jest/no-jasmine-globals": "warn",
-    "jest/no-try-expect": "off"
+    "jest/no-try-expect": "off",
+    "no-magic-numbers": "off",
+    "react/no-unknown-property": ["error", {"ignore": ["css"]}]
   },
   "settings": {
     "react": {

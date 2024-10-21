@@ -17,12 +17,12 @@
  *
  */
 import {Button, COLOR, ContainerSM, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useLocation} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {ACCOUNT_DELETE_SURVEY_URL, BRAND_NAME} from 'script/Environment';
-import {ActionContext} from 'script/module/action';
+import {useActionContext} from 'script/module/action';
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
@@ -34,7 +34,7 @@ const DeleteAccount = () => {
   const key = params.get(QUERY_KEY_KEY);
 
   const [t] = useTranslation('delete');
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const deleteAccount = async (event: React.FormEvent<HTMLFormElement>) => {

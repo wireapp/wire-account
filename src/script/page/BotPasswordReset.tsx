@@ -18,12 +18,12 @@
  */
 import {ValidationUtil} from '@wireapp/commons';
 import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useLocation} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {NEW_PASSWORD_MINIMUM_LENGTH} from 'script/Environment';
-import {ActionContext} from 'script/module/action';
+import {useActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
 
 const HTTP_STATUS_INVALID_LINK = 400;
@@ -45,7 +45,7 @@ const PasswordReset = () => {
   const [t] = useTranslation('reset');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const completePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {

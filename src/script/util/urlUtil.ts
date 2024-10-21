@@ -31,6 +31,7 @@ export enum QUERY_KEY {
   PWA_AWARE = 'pwa_aware',
   TRACKING = 'tracking',
   LANG = 'hl',
+  TEAM_CODE = 'team_code',
 }
 
 const FORWARDED_QUERY_KEYS = [QUERY_KEY.LOCALE, QUERY_KEY.TRACKING];
@@ -63,4 +64,11 @@ function hasURLParameter(parameterName: QUERY_KEY) {
     .includes(parameterName);
 }
 
-export {FORWARDED_QUERY_KEYS, pathWithParams, getURLParameter, hasURLParameter};
+function secureOpen(url: string) {
+  const newWindow = window.open();
+  newWindow.opener = null;
+  newWindow.location.assign(url);
+  return newWindow;
+}
+
+export {FORWARDED_QUERY_KEYS, pathWithParams, getURLParameter, hasURLParameter, secureOpen};

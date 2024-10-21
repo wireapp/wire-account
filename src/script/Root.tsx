@@ -18,12 +18,15 @@
  */
 
 import {FlexBox, Loading, StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
-import React, {lazy, Suspense, useEffect} from 'react';
+import {lazy, Suspense, useEffect} from 'react';
 import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom';
 import {ROUTE} from 'script/route';
 import {QUERY_KEY} from './util/urlUtil';
-
-interface Props {}
+import {PrivateRoot} from './PrivateRoot';
+import {TermsAcknowledgement} from './page/migration/TermsAcknowledgement';
+import {ConfirmInvitation} from './page/migration/ConfirmInvitation';
+import {Welcome} from './page/migration/Welcome';
+import {AcceptInvitation} from './page/migration/AcceptInvitation';
 
 const LazyIndex = lazy(() => import('./page/Index'));
 const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
@@ -36,7 +39,7 @@ const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
 const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
 const LazyUserProfile = lazy(() => import('./page/UserProfile'));
 
-const Root: React.FC<Props> = () => {
+const Root = () => {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const hlParam = queryParams.get(QUERY_KEY.LANG);
@@ -70,6 +73,12 @@ const Root: React.FC<Props> = () => {
             <Route path={ROUTE.VERIFY_ACCOUNT_BOT} element={<LazyVerifyBotAccount />} />
             <Route path={ROUTE.CONVERSATION_JOIN} element={<LazyConversationJoin />} />
             <Route path={ROUTE.USER_PROFILE} element={<LazyUserProfile />} />
+            <Route path={ROUTE.ACCEPT_INVITATION} element={<AcceptInvitation />} />
+            <Route element={<PrivateRoot />}>
+              <Route path={`${ROUTE.TERMS_ACKNOWLEDGEMENT}/*`} element={<TermsAcknowledgement />} />
+              <Route path={`${ROUTE.CONFIRM_INVITATION}/*`} element={<ConfirmInvitation />} />
+              <Route path={`${ROUTE.WELCOME}/*`} element={<Welcome />} />
+            </Route>
             <Route path="*" element={<Navigate to={ROUTE.HOME} replace={true} />} />
           </Routes>
         </BrowserRouter>

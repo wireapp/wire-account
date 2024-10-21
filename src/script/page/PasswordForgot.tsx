@@ -17,11 +17,11 @@
  *
  */
 import {Button, ButtonLink, ContainerXS, ErrorMessage, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {WEBAPP_URL} from 'script/Environment';
 import Document from 'script/component/Document';
-import {ActionContext} from 'script/module/action';
+import {useActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
 
 const HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
@@ -34,7 +34,7 @@ const PasswordForgot = () => {
   const [success, setSuccess] = useState(false);
 
   const [t] = useTranslation('forgot');
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const initiatePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
