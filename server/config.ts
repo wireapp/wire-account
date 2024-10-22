@@ -130,6 +130,8 @@ const config: ServerConfig = {
       TEAMS_BASE: process.env.URL_TEAMS_BASE,
       WEBAPP_BASE: process.env.URL_WEBAPP_BASE,
       WEBSITE_BASE: process.env.URL_WEBSITE_BASE,
+      URL_TERMS_OF_USE_TEAMS: process.env.URL_TERMS_OF_USE_TEAMS,
+      URL_SUPPORT_BACKUP_HISTORY: process.env.URL_SUPPORT_BACKUP_HISTORY,
     },
     VERSION: readFile(VERSION_FILE, '0.0.0'),
   },

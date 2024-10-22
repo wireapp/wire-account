@@ -21,6 +21,10 @@ import * as Environment from 'script/Environment';
 
 const EXTERNAL_ROUTE = {
   ACCOUNT_DELETE_SURVEY_URL: Environment.ACCOUNT_DELETE_SURVEY_URL,
+  APP_WIRE: Environment.WEBAPP_URL,
+  TEAM_SETTINGS: Environment.TEAMS_URL,
+  TERMS_OF_USE_TEAMS: Environment.URL_TERMS_OF_USE_TEAMS,
+  SUPPORT_BACKUP_HISTORY: Environment.URL_SUPPORT_BACKUP_HISTORY,
 };
 
 const ROUTE = {
@@ -34,6 +38,10 @@ const ROUTE = {
   USER_PROFILE: '/user-profile',
   VERIFY_ACCOUNT_BOT: '/verify/bot',
   VERIFY_ACCOUNT_EMAIL: '/verify',
+  ACCEPT_INVITATION: '/accept-invitation',
+  TERMS_ACKNOWLEDGEMENT: '/migration/terms-acknowledgement',
+  CONFIRM_INVITATION: '/migration/confirm-invitation',
+  WELCOME: '/migration/welcome',
 };
 
 export {ROUTE, EXTERNAL_ROUTE};

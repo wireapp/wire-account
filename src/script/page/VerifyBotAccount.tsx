@@ -18,14 +18,14 @@
  */
 import {Runtime} from '@wireapp/commons';
 import {ContainerXS, FlexBox, H1, Loading, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {BRAND_NAME, REDIRECT_VERIFY_URL, WEBAPP_URL} from 'script/Environment';
-import {ActionContext} from 'script/module/action';
+import {useActionContext} from 'script/module/action';
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
@@ -38,7 +38,7 @@ const VerifyBotAccount = () => {
   const [t] = useTranslation('verify');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
   const loginImmediately = !Runtime.isDesktopOS();
 

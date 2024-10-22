@@ -18,29 +18,39 @@
  */
 
 import {APIClient} from '@wireapp/api-client';
-import React, {HTMLProps} from 'react';
+import React, {HTMLProps, useContext} from 'react';
 import * as Environment from 'script/Environment';
 
 import {AccountAction} from './AccountAction';
+import {SelfAction} from './SelfAction';
+import {TeamAction} from './TeamAction';
 
 interface ActionProviderProps extends HTMLProps<HTMLElement> {
-  contextData?: typeof actionRoot;
+  contextData?: ReturnType<typeof getActionRoot>;
 }
 
-const actionRoot: {
+const getActionRoot = (): {
   accountAction: AccountAction;
-} = {
-  accountAction: new AccountAction(
-    new APIClient({
-      urls: {name: 'backend', rest: Environment.HOST_HTTP, ws: undefined},
-    }),
-  ),
+  selfAction: SelfAction;
+  teamAction: TeamAction;
+} => {
+  const apiClient = new APIClient({
+    urls: {name: 'backend', rest: Environment.HOST_HTTP, ws: undefined},
+  });
+
+  return {
+    accountAction: new AccountAction(apiClient),
+    selfAction: new SelfAction(apiClient),
+    teamAction: new TeamAction(apiClient),
+  };
 };
 
-const ActionContext = React.createContext(actionRoot);
+const ActionContext = React.createContext(getActionRoot());
 
 const ActionProvider = ({children, contextData}: ActionProviderProps) => (
-  <ActionContext.Provider value={contextData || actionRoot}>{children}</ActionContext.Provider>
+  <ActionContext.Provider value={contextData || getActionRoot()}>{children}</ActionContext.Provider>
 );
 
-export {actionRoot, ActionContext, ActionProvider};
+const useActionContext = () => useContext(ActionContext);
+
+export {getActionRoot, ActionContext, ActionProvider, useActionContext};
