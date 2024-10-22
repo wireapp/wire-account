@@ -31,9 +31,9 @@ class BotPasswordForgotPage extends TestPage<{}> {
     super(BotPasswordForgot, props);
   }
 
-  getEmailInput = () => this.get('input[data-uie-name="enter-email"]');
-  getResetPasswordButton = () => this.get('button[data-uie-name="do-send-password-reset-email"]');
-  getError = () => this.get('span[data-uie-name="error-message"]');
+  getEmailInput = () => this.queryByTestId('enter-email');
+  getResetPasswordButton = () => this.queryByTestId('do-send-password-reset-email');
+  getError = () => this.queryByTestId('error-message');
 
   enterEmail = (email: string) => this.changeValue(this.getEmailInput(), email);
 
@@ -45,11 +45,12 @@ describe('BotPasswordForgot', () => {
     const invalidEmail = 'aaa';
     const botPasswordForgot = new BotPasswordForgotPage();
 
-    expect(botPasswordForgot.getEmailInput().exists()).toBe(true);
+    const emailInput = botPasswordForgot.getEmailInput();
+    expect(emailInput).toBeDefined();
     botPasswordForgot.enterEmail(invalidEmail);
     botPasswordForgot.submitResetEmail();
 
-    expect(botPasswordForgot.getError().exists()).toBe(true);
-    expect(botPasswordForgot.getError().text()).toEqual('That does not look like an email.');
+    expect(botPasswordForgot.getError()).toBeDefined();
+    expect(botPasswordForgot.getError()?.textContent).toEqual('That does not look like an email.');
   });
 });

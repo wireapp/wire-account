@@ -8,11 +8,11 @@ permissions:
 jobs:
   activate-auto-merge:
     runs-on: ubuntu-latest
-    if: ${{github.actor == 'dependabot[bot]'}}
+    if: ${{github.actor == 'dependabot[bot]' || github.actor == 'otto-the-bot'}}
     steps:
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v1.3.2
+        uses: dependabot/fetch-metadata@v2.2.0
         with:
           github-token: '${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}'
 
@@ -23,7 +23,6 @@ jobs:
           GITHUB_TOKEN: '${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}'
 
       - name: Enable auto-merge for Dependabot PRs
-        if: ${{steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}

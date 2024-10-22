@@ -17,6 +17,7 @@
  *
  */
 import {APIClient} from '@wireapp/api-client';
+import {LoginData} from '@wireapp/api-client/lib/auth';
 
 export class AccountAction {
   private readonly apiClient: APIClient;
@@ -55,5 +56,13 @@ export class AccountAction {
 
   validateConversationJoin = (key: string, code: string) => {
     return this.apiClient.api.conversation.postConversationCodeCheck({code, key});
+  };
+
+  login = (login: LoginData) => {
+    return this.apiClient.login(login);
+  };
+
+  init = () => {
+    return this.apiClient.init();
   };
 }

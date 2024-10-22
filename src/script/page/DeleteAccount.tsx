@@ -17,25 +17,24 @@
  *
  */
 import {Button, COLOR, ContainerSM, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import Document from 'script/component/Document';
 import {ACCOUNT_DELETE_SURVEY_URL, BRAND_NAME} from 'script/Environment';
-import {ActionContext} from 'script/module/action';
-
-interface Props extends React.HTMLProps<Document>, RouteComponentProps<{}> {}
+import {useActionContext} from 'script/module/action';
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 
-const DeleteAccount = ({location}: Props) => {
+const DeleteAccount = () => {
+  const location = useLocation();
   const params = new URLSearchParams(location.search);
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
 
   const [t] = useTranslation('delete');
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const deleteAccount = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -104,4 +103,4 @@ const DeleteAccount = ({location}: Props) => {
   );
 };
 
-export default withRouter(DeleteAccount);
+export default DeleteAccount;

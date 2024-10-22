@@ -15,14 +15,14 @@
   },
   "forgot": {
     "button": "Passwort zurücksetzen",
-    "emailPlaceholder": "E-Mail",
+    "emailPlaceholder": "E-Mail-Adresse",
     "errorAlreadyProcessing": "Wir haben Ihnen bereits eine E-Mail geschickt. Der Link ist für eine Stunde gültig.",
     "errorInvalidEmail": "Dies sieht nicht nach einer E-Mail-Adresse aus.",
     "errorUnknown": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
-    "errorUnusedEmail": "Diese E-Mail wird nicht verwendet.",
     "successDescription": "Wir haben Ihnen einen Link zum Zurücksetzen des Passworts geschickt. Er ist 1 Stunde gültig.",
     "successTitle": "Überprüfen Sie Ihren Posteingang.",
-    "title": "Passwort ändern"
+    "title": "Passwort ändern",
+    "login": "Anmelden"
   },
   "general": {
     "loading": "Bitte warten…"
@@ -62,30 +62,31 @@
     "successBotTitle": "Vielen Dank für die Registrierung",
     "successEmailAppDescription": "Installieren Sie die App, um {{company}} zu benutzen.",
     "successEmailTitle": "E-Mail-Adresse bestätigt",
-    "successPhoneDescription": "Telefonnummer wird bestätigt",
     "title": "Überprüfung",
     "titleBot": "Bot bestätigen",
-    "titleEmail": "Konto bestätigen",
-    "titlePhone": "Telefonnummer bestätigen"
+    "titleEmail": "Konto bestätigen"
   },
   "conversationJoin": {
-    "loading": "Der Link wird überprüft…",
+    "loading": "Link wird überprüft…",
     "description": "Audio- und Videokonferenzen, Textnachrichten, Teilen von Dateien und Bildschirmfreigabe – alles Ende-zu-Ende verschlüsselt.",
-    "wirelessHeadline": "Sie möchten kein {{brandName}}-Benutzerkonto erstellen?",
-    "wirelessLink": "Nehmen Sie als temporärer Gast an der Unterhaltung teil",
-    "wirelessNote": "(Zugang verfällt nach 24 Stunden)",
+    "conversationLocation": "Die Unterhaltung findet auf {{domain}} statt",
+    "wirelessHeadline": "Sie haben kein {{brandName}}-Benutzerkonto? Dann können Sie sich als temporärer Gast im Browser anmelden.",
     "errorConversationNotFoundDescription": "Der Link zu dieser Gruppenunterhaltung ist abgelaufen oder nicht mehr gültig.",
     "errorConversationNotFoundHeadline": "Unterhaltung nicht gefunden",
     "title": "Sie wurden zu einer Unterhaltung in {{brandName}} eingeladen",
-    "downloadApp": "Laden Sie die App herunter",
-    "openWithApp": "Nehmen Sie über die App teil",
-    "openWithBrowser": "Im Browser beitreten"
+    "downloadApp": "Wire herunterladen",
+    "openWithApp": "In App teilnehmen",
+    "openWithBrowser": "Im Browser teilnehmen",
+    "cannotJoinOnMobile": "Im Moment können Sie auf Ihrem Mobilgerät nicht an dieser Unterhaltung teilnehmen. Bitte öffnen Sie diesen Link stattdessen auf Ihrem Desktop."
+  },
+  "conversationJoinSelfHosted": {
+    "title": "Sie wurden zu einer Unterhaltung in Wire eingeladen"
   },
   "userProfile": {
     "title": "Sie wurden eingeladen, ein Benutzerprofil in {{brandName}} anzusehen.",
     "description": "Audio- und Videokonferenzen, Textnachrichten, Dateiaustausch und Bildschirmfreigabe – alles Ende-zu-Ende verschlüsselt.",
     "downloadApp": "{{brandName}} herunterladen",
-    "openWithApp": "In der App öffnen",
+    "openWithApp": "In App öffnen",
     "openWithBrowser": "Im Browser öffnen"
   }
 }

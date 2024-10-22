@@ -18,44 +18,35 @@
  */
 
 import React from 'react';
-import {ReactWrapper} from 'enzyme';
-import {act} from '@testing-library/react';
+import {act, fireEvent} from '@testing-library/react';
 import {mountComponent} from './TestUtil';
-import {History} from 'history';
-import {createMemoryHistory} from 'history';
 
-export default class TestPage<T> {
-  private readonly driver: ReactWrapper;
-  private readonly props: T;
+export default class TestPage<T = undefined> {
+  private readonly driver: ReturnType<typeof mountComponent>;
+  private readonly props?: T;
 
-  constructor(
-    Component: React.FC<T> | React.ComponentClass<T>,
-    props?: T,
-    history: History<any> = createMemoryHistory(),
-  ) {
+  constructor(Component: React.FC<T> | React.ComponentClass<T>, props?: T) {
     this.props = props;
-    this.driver = mountComponent(<Component {...this.props} />, history);
+    this.driver = mountComponent(<Component {...this.props} />);
   }
 
   getProps = () => this.props;
 
-  get = (selector: string) => this.driver.find(selector);
+  queryByTestId = (selector: string) => this.driver.queryByTestId(selector);
 
   private readonly do = (action: Function) => {
     act(() => {
       action();
     });
-    this.update();
   };
-  click = (element: ReactWrapper) => this.do(() => element.simulate('click'));
-  changeValue = (element: ReactWrapper, value: string) => this.do(() => element.simulate('change', {target: {value}}));
-  changeFiles = (element: ReactWrapper, files: File[]) => this.do(() => element.simulate('change', {target: {files}}));
-  submit = (element: ReactWrapper) => this.do(() => element.simulate('submit'));
-  mouseEnter = (element: ReactWrapper) => this.do(() => element.simulate('mouseenter'));
-  keyCodeUp = (element: ReactWrapper, keyCode: number) => this.do(() => element.simulate('keyup', {keyCode}));
-  keyCodeDown = (element: ReactWrapper, keyCode: number) => this.do(() => element.simulate('keydown', {keyCode}));
+  click = (element: HTMLElement) => this.do(() => fireEvent.click(element));
+  changeValue = (element: HTMLElement, value: string) => this.do(() => fireEvent.change(element, {target: {value}}));
+  changeFiles = (element: HTMLElement, files: File[]) => this.do(() => fireEvent.change(element, {target: {files}}));
+  submit = (element: HTMLElement) => this.do(() => fireEvent.submit(element));
+  mouseEnter = (element: HTMLElement) => this.do(() => fireEvent.mouseEnter(element));
+  keyCodeUp = (element: HTMLElement, keyCode: number) => this.do(() => fireEvent.keyUp(element, {keyCode}));
+  keyCodeDown = (element: HTMLElement, keyCode: number) => this.do(() => fireEvent.keyDown(element, {keyCode}));
 
-  update = () => this.driver.update();
   // eslint-disable-next-line no-console
-  debug = (element?: ReactWrapper) => console.log((element ? element : this.driver).debug());
+  debug = (element?: HTMLElement) => console.log(element ? element : this.driver);
 }

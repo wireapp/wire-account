@@ -25,13 +25,11 @@ const src = 'src/';
 
 module.exports = Object.assign(commonConfig, {
   entry: Object.assign(commonConfig.entry, {
-    script: ['webpack-hot-middleware/client', path.resolve(__dirname, src, 'script', 'main.tsx')],
+    script: ['webpack-hot-middleware/client?reload=true', path.resolve(__dirname, src, 'script', 'main.tsx')],
   }),
   mode: 'development',
   plugins: [...commonConfig.plugins, new webpack.HotModuleReplacementPlugin()],
   resolve: Object.assign(commonConfig.resolve, {
-    alias: Object.assign(commonConfig.resolve.alias, {
-      'react-dom': '@hot-loader/react-dom',
-    }),
+    alias: Object.assign(commonConfig.resolve.alias, {}),
   }),
 });

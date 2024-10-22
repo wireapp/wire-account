@@ -1,0 +1,93 @@
+{
+  "delete": {
+    "button": "Delete Account",
+    "confirmation": "All your data on {{company}} is now erased.",
+    "description": "We’ve received a request to delete your {{company}} account. Click on the button below to proceed. It is valid for 10 minutes.",
+    "errorDescription": "Please try again to delete your account.",
+    "errorTitle": "Something went wrong",
+    "greeting": "Hi there,",
+    "headline": "Account deleted",
+    "resetLink": "reset your {{company}} password.",
+    "resetText": "If you did not ask for this, you should <link>",
+    "surveyLink": "share your thoughts about it.",
+    "surveyText": "Thanks for using {{company}}. <br>If you’d like, you can <link> <br>This will take no longer than a minute.",
+    "title": "Delete Account"
+  },
+  "forgot": {
+    "button": "Reset password",
+    "emailPlaceholder": "Email",
+    "errorAlreadyProcessing": "We already sent you an email. The link is valid for 1 hour.",
+    "errorInvalidEmail": "That does not look like an email.",
+    "errorUnknown": "Something went wrong, please try again.",
+    "successDescription": "We sent you a link to reset your password. It is valid for 1 hour.",
+    "successTitle": "Check your email",
+    "title": "Reset password",
+    "description": "We will send you a link to reset your password via email.",
+    "login": "Log in"
+  },
+  "general": {
+    "loading": "Please wait…"
+  },
+  "header": {
+    "support": "Support"
+  },
+  "index": {
+    "description": "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.",
+    "title": "The most secure collaboration platform"
+  },
+  "open": {
+    "description": "To sign in and start using {{company}}, launch the application.",
+    "downloadButton": "Get {{company}}",
+    "openMac": "OPEN macOS APP",
+    "openWeb": "Open in Web",
+    "openWire": "Open {{company}}"
+  },
+  "reset": {
+    "button": "Reset password",
+    "errorInvalidLink": "The link is not valid. Please try again.",
+    "errorPasswordAlreadyUsed": "Please choose a new password.",
+    "errorTitle": "Something went wrong",
+    "errorUnknown": "Something went wrong, please try again.",
+    "passwordInfo": "Use at least {{minPasswordLength}} characters, with one lowercase letter, one capital letter, a number, and a special character.",
+    "passwordPlaceholder": "Enter new password",
+    "successDescription": "You can now log in with your new password.",
+    "title": "Password reset"
+  },
+  "toPrimitive": "",
+  "verify": {
+    "error404Description": "Please try to create your account again.",
+    "error500Description": "We are investigating the issue, please check back shortly.",
+    "errorTitle": "Something went wrong.",
+    "successBotDescription": "Please note that upon successful verification of your e-mail, your {{company}} service provider account is still subject to approval through our staff, which usually happens within 24 hours.",
+    "successBotDescriptionEmail": "You will be informed of the approval via a separate e-mail.",
+    "successBotTitle": "Thank you for registering",
+    "successEmailAppDescription": "Install the app to start using {{company}}.",
+    "successEmailTitle": "Email verified",
+    "title": "Verifying",
+    "titleBot": "Verify Bot",
+    "titleEmail": "Verify Account"
+  },
+  "conversationJoin": {
+    "loading": "Verifying link...",
+    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
+    "conversationLocation": "The conversation takes place on {{domain}}",
+    "wirelessHeadline": "Don't have a {{brandName}} account? You can join as temporary guest in the browser.",
+    "errorConversationNotFoundDescription": "The link to this group conversation has expired or is no longer valid.",
+    "errorConversationNotFoundHeadline": "Conversation not found",
+    "title": "You have been invited to join a conversation in {{brandName}}",
+    "downloadApp": "Download Wire",
+    "openWithApp": "Join in App",
+    "openWithBrowser": "Join in Browser",
+    "cannotJoinOnMobile": "At the moment, you can't join this conversation on your mobile device. Please open this link on your desktop instead."
+  },
+  "conversationJoinSelfHosted": {
+    "title": "You have been invited to join a conversation in Wire"
+  },
+  "userProfile": {
+    "title": "You have been invited to view a user profile in {{brandName}}",
+    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
+    "downloadApp": "Download {{brandName}}",
+    "openWithApp": "Open in App",
+    "openWithBrowser": "Open in Browser"
+  }
+}

@@ -22,6 +22,8 @@ import * as express from 'express';
 import * as helmet from 'helmet';
 import * as nocache from 'nocache';
 import * as http from 'http';
+import * as fs from 'fs';
+import * as https from 'https';
 import * as path from 'path';
 
 import HealthCheckRoute from './routes/_health/HealthCheckRoute';
@@ -202,7 +204,17 @@ class Server {
       if (this.server) {
         reject(new Error('Server is already running.'));
       } else if (this.config.SERVER.PORT_HTTP) {
-        this.server = this.app.listen(this.config.SERVER.PORT_HTTP, () => resolve(this.config.SERVER.PORT_HTTP));
+        if (this.config.SERVER.ENVIRONMENT === 'development') {
+          const options = {
+            cert: fs.readFileSync(this.config.SERVER.SSL_CERTIFICATE_PATH),
+            key: fs.readFileSync(this.config.SERVER.SSL_CERTIFICATE_KEY_PATH),
+          };
+          this.server = https
+            .createServer(options, this.app)
+            .listen(this.config.SERVER.PORT_HTTP, () => resolve(this.config.SERVER.PORT_HTTP));
+        } else {
+          this.server = this.app.listen(this.config.SERVER.PORT_HTTP, () => resolve(this.config.SERVER.PORT_HTTP));
+        }
       } else {
         reject(new Error('Server port not specified.'));
       }

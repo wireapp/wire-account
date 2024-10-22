@@ -16,14 +16,14 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerXS, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useRef, useState} from 'react';
+import {Button, ButtonLink, ContainerXS, ErrorMessage, Form, H1, Input, Text} from '@wireapp/react-ui-kit';
+import React, {useRef, useState} from 'react';
 import {useTranslation} from 'react-i18next';
+import {WEBAPP_URL} from 'script/Environment';
 import Document from 'script/component/Document';
-import {ActionContext} from 'script/module/action';
+import {useActionContext} from 'script/module/action';
 import ValidationError from 'script/module/action/ValidationError';
 
-const HTTP_STATUS_EMAIL_NOT_IN_USE = 400;
 const HTTP_STATUS_EMAIL_ALREADY_SENT = 409;
 
 const PasswordForgot = () => {
@@ -34,7 +34,7 @@ const PasswordForgot = () => {
   const [success, setSuccess] = useState(false);
 
   const [t] = useTranslation('forgot');
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const initiatePasswordReset = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
@@ -64,10 +64,6 @@ const PasswordForgot = () => {
         }
       } else {
         switch (error.code) {
-          case HTTP_STATUS_EMAIL_NOT_IN_USE: {
-            setError(t('errorUnusedEmail'));
-            break;
-          }
           case HTTP_STATUS_EMAIL_ALREADY_SENT: {
             setError(t('errorAlreadyProcessing'));
             break;
@@ -87,12 +83,17 @@ const PasswordForgot = () => {
           <React.Fragment>
             <H1>{t('successTitle')}</H1>
             <Text center>{t('successDescription')}</Text>
+            <ButtonLink href={`${WEBAPP_URL}/auth`} css={{marginTop: 40}} data-uie-name="do-go-back-to-login">
+              {t('login')}
+            </ButtonLink>
           </React.Fragment>
         ) : (
           <React.Fragment>
             <H1>{t('title')}</H1>
-            <Form onSubmit={initiatePasswordReset}>
+            <Text center>{t('description')}</Text>
+            <Form css={{marginTop: 40}} onSubmit={initiatePasswordReset}>
               <Input
+                required
                 ref={emailInput}
                 markInvalid={!isEmailValid}
                 autoFocus
@@ -100,15 +101,13 @@ const PasswordForgot = () => {
                   setIsEmailValid(true);
                   setEmail(event.currentTarget.value);
                 }}
-                placeholder={t('Email')}
+                placeholder={t('emailPlaceholder')}
+                label={t('emailPlaceholder')}
                 name="email"
                 type="email"
-                required
                 data-uie-name="enter-email"
+                error={error && <ErrorMessage>{error}</ErrorMessage>}
               />
-              <Text center color={COLOR.RED} data-uie-name="error-message">
-                {error}
-              </Text>
               <Button
                 type="submit"
                 formNoValidate

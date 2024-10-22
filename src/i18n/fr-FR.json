@@ -19,10 +19,11 @@
     "errorAlreadyProcessing": "Nous vous avons déjà envoyé un e-mail. Le lien est valable pendant 10 minutes.",
     "errorInvalidEmail": "Cela ne ressemble pas à une adresse e-mail.",
     "errorUnknown": "Une erreur est survenue, veuillez réessayer.",
-    "errorUnusedEmail": "Cette adresse e-mail n’est pas en cours d’utilisation.",
     "successDescription": "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe. Il est valable pendant 1 heure.",
     "successTitle": "Consultez vos e-mails",
-    "title": "Modifier le mot de passe"
+    "title": "Reset password",
+    "description": "We will send you a link to reset your password via email.",
+    "login": "Log in"
   },
   "general": {
     "loading": "Veuillez patienter…"
@@ -62,36 +63,31 @@
     "successBotTitle": "Merci de vous être inscrit",
     "successEmailAppDescription": "Installer l'application pour commencer à utiliser {{company}}.",
     "successEmailTitle": "E-mail vérifié",
-    "successPhoneDescription": "Vérification du numéro de téléphone en cours",
     "title": "Vérification",
     "titleBot": "Vérifier le Service",
-    "titleEmail": "Vérification du compte",
-    "titlePhone": "Vérifier le Téléphone"
+    "titleEmail": "Vérification du compte"
   },
   "conversationJoin": {
-    "loading": "Vérification du lien…",
+    "loading": "Vérification du lien...",
     "description": "Conférences audio et vidéo, messagerie textuelle, partage de fichiers et partage d'écran, tous chiffrés de bout en bout.",
-    "wirelessHeadline": "Vous ne voulez pas créer un compte {{brandName}} ?",
-    "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire",
-    "wirelessNote": "(l'accès expire après 24 heures)",
+    "conversationLocation": "The conversation takes place on {{domain}}",
+    "wirelessHeadline": "Don't have a {{brandName}} account? You can join as temporary guest in the browser.",
     "errorConversationNotFoundDescription": "Le lien vers cette conversation de groupe a expiré ou n'est plus valide.",
     "errorConversationNotFoundHeadline": "Conversation introuvable",
     "title": "Vous avez été invité·e à rejoindre une conversation dans {{brandName}}",
-    "downloadApp": "Télécharger l'appli",
-    "openWithApp": "Rejoindre sur l'appli",
-    "openWithBrowser": "Rejoindre dans le navigateur"
+    "downloadApp": "Télécharger Wire",
+    "openWithApp": "Rejoindre dans l'appli",
+    "openWithBrowser": "Rejoindre dans le navigateur",
+    "cannotJoinOnMobile": "Pour le moment, vous ne pouvez pas rejoindre cette conversation sur votre appareil mobile. Veuillez ouvrir ce lien sur votre bureau."
   },
   "conversationJoinSelfHosted": {
-    "wirelessLink": "Rejoindre la conversation en tant qu'invité temporaire sur ce serveur",
-    "title": "Vous avez été invité·e à rejoindre une conversation Wire sur le domaine \"{{domain}}\"",
-    "wirelessHeadline": "Vous n'avez pas de compte sur ce serveur ?",
-    "openWithBrowser": "Rejoindre avec un compte Wire sur ce serveur"
+    "title": "You have been invited to join a conversation in Wire"
   },
   "userProfile": {
-    "title": "You have been invited to view a user profile in {{brandName}}",
-    "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
-    "downloadApp": "Download {{brandName}}",
-    "openWithApp": "Open in app",
-    "openWithBrowser": "Open in browser"
+    "title": "Vous avez été invité·e à consulter un profil d'utilisateur dans {{brandName}} ",
+    "description": "Conférences audio et vidéo, messagerie texte, partage de fichiers et partage d'écran, le tout chiffré de bout en bout. ",
+    "downloadApp": "Télécharger {{brandName}}",
+    "openWithApp": "Ouvrir dans l'appli",
+    "openWithBrowser": "Ouvrir dans le navigateur"
   }
 }
