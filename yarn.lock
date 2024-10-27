@@ -8401,12 +8401,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:23.16.1":
-  version: 23.16.1
-  resolution: "i18next@npm:23.16.1"
+"i18next@npm:23.16.4":
+  version: 23.16.4
+  resolution: "i18next@npm:23.16.4"
   dependencies:
     "@babel/runtime": ^7.23.2
-  checksum: 4596ebf6f2c37ea07f330f2a5dfa1e7263e8a93e3316e21a418489d57f98a6b1577615e874e4b07e07c95375e588315c0d1f86ce5c7f0a9686a9fa739370ee08
+  checksum: a753a23faf87b5028c9b136645b3d6287dd13c6e5ffadcc652edce8c321da2403f57c513aa7168f7ba664e85853aa83acbd291839d622addd701fc85bc991438
   languageName: node
   linkType: hard
 
@@ -14204,7 +14204,7 @@ __metadata:
     fs-extra: 11.2.0
     generate-changelog: 1.8.0
     husky: 4.3.8
-    i18next: 23.16.1
+    i18next: 23.16.4
     i18next-browser-languagedetector: 8.0.0
     i18next-react-postprocessor: 3.1.0
     i18next-scanner: 4.6.0
