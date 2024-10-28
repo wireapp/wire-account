@@ -124,14 +124,14 @@
     "termsPageAccountManagerText": "As you will be part of a team, the admin can remove you from the team. In that case, you will immediately lose access to your account, contacts, history, and username.",
     "termsPageRecommendationsHeader": "We recommend to",
     "termsPageRecommendationItem1": "Verify the admin’s identity before accepting, and if you’re unsure, close this window.",
-    "termsPageRecommendationItem2": "Back up your contacts",
+    "termsPageRecommendationItem2": "Back up your history",
     "termsPageMigrationTerms": "I agree to the migration terms and understand that this change is irreversible.",
-    "termsPageTermsOfUse": "I accept the",
-    "termsPageTermsOfUseLink": "Terms of Use (Business).",
+    "termsPageTermsOfUse": "I accept",
+    "termsPageTermsOfUseLink": "Wire's Terms of Use (Business).",
     "invitationPageHeader": "Join your team",
     "invitationPageSubHeader": "Log in with your personal account's email or username and password.",
     "invitationPagLoginLabel": "Email or username",
     "emailOrUsernamePlaceholder": "Enter email or username",
-    "forgotPassword": "forgot password?"
+    "forgotPassword": "Forgot password?"
   }
 }
