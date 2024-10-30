@@ -31,7 +31,7 @@ export enum QUERY_KEY {
   PWA_AWARE = 'pwa_aware',
   TRACKING = 'tracking',
   LANG = 'hl',
-  TEAM_CODE = 'team_code',
+  TEAM_CODE = 'team-code',
 }
 
 const FORWARDED_QUERY_KEYS = [QUERY_KEY.LOCALE, QUERY_KEY.TRACKING];
