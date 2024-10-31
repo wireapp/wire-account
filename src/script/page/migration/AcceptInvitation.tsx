@@ -91,7 +91,7 @@ export const AcceptInvitation = () => {
       await accountAction.login(login);
       navigate(ROUTE.TERMS_ACKNOWLEDGEMENT);
     } catch (error) {
-      setError(t('errorLogin'));
+      setError(t('wrongCredentialsError'));
       console.warn('Unable to login', error);
     }
   };

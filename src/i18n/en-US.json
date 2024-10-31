@@ -91,7 +91,6 @@
     "openWithBrowser": "Open in Browser"
   },
   "migration": {
-    "errorLogin": "Unable to login with these credentials.",
     "wrongCredentialsError": "Please enter valid credentials.",
     "passwordLabel": "Password (personal account)",
     "passwordPlaceholder": "Password",
