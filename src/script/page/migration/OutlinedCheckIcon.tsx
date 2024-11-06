@@ -1,6 +1,6 @@
 /*
  * Wire
- * Copyright (C) 2019 Wire Swiss GmbH
+ * Copyright (C) 2024 Wire Swiss GmbH
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,21 +17,15 @@
  *
  */
 
-import {ButtonLink, COLOR, LinkProps} from '@wireapp/react-ui-kit';
-import React from 'react';
-import {WEBAPP_URL} from 'script/Environment';
-
-interface Props extends LinkProps {}
-
-const OpenMacOSAppButton = (props: Props) => {
+export const OutlinedCheckIcon = () => {
   return (
-    <ButtonLink
-      backgroundColor={COLOR.BLUE}
-      style={{color: COLOR.WHITE}}
-      href={`${WEBAPP_URL}/auth/?immediate_login#login`}
-      {...props}
-    />
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8ZM7.34126 11.2704L12.469 6.14265L11.0548 4.72844L6.63421 9.14905L4.9452 7.45978L3.53088 8.87389L5.92699 11.2704L6.6341 11.9776L7.34126 11.2704Z"
+        fill="black"
+      />
+    </svg>
   );
 };
-
-export {OpenMacOSAppButton};

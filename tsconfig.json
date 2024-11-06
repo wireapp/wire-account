@@ -5,7 +5,8 @@
     "declaration": false,
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "lib": ["dom", "es2017"],
     "module": "esnext",
     "moduleResolution": "node",
@@ -19,8 +20,9 @@
     "target": "es6",
     "paths": {
       "resource/*": ["resource/*"],
-      "i18n/*": ["src/i18n/*"]
-    }
+      "i18n/*": ["src/i18n/*"],
+    },
+    "skipLibCheck": true,
   },
-  "exclude": ["node_modules", "server"]
+  "exclude": ["node_modules", "server"],
 }

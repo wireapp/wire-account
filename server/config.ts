@@ -18,7 +18,7 @@
  */
 
 const dotenv = require('dotenv-extended');
-import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/src/main/util/ValidationUtil';
+import {DEFAULT_PASSWORD_MIN_LENGTH} from '@wireapp/commons/lib/util/ValidationUtil';
 import * as fs from 'fs-extra';
 import * as logdown from 'logdown';
 import * as path from 'path';
@@ -58,7 +58,6 @@ const defaultCSP = {
   manifestSrc: ["'self'"],
   mediaSrc: ["'self'"],
   objectSrc: ["'self'"],
-  prefetchSrc: ["'self'"],
   scriptSrc: ["'self'", 'https://wire.innocraft.cloud'],
   styleSrc: ["'self'", "'unsafe-inline'"],
   workerSrc: ["'self'"],
@@ -91,7 +90,6 @@ function mergedCSP(): Record<string, Iterable<string>> {
     manifestSrc: [...defaultCSP.manifestSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_MANIFEST_SRC)],
     mediaSrc: [...defaultCSP.mediaSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_MEDIA_SRC)],
     objectSrc: [...defaultCSP.objectSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_OBJECT_SRC)],
-    prefetchSrc: [...defaultCSP.prefetchSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_PREFETCH_SRC)],
     scriptSrc: [...defaultCSP.scriptSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_SCRIPT_SRC)],
     styleSrc: [...defaultCSP.styleSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_STYLE_SRC)],
     workerSrc: [...defaultCSP.workerSrc, ...parseCommaSeparatedList(process.env.CSP_EXTRA_WORKER_SRC)],
@@ -125,7 +123,6 @@ const config: ServerConfig = {
       IMPRINT: process.env.URL_IMPRINT,
       OPEN_GRAPH_IMAGE: process.env.URL_OPEN_GRAPH_IMAGE,
       REDIRECT_CONVERSATION_JOIN_BASE: process.env.URL_REDIRECT_CONVERSATION_JOIN_BASE,
-      REDIRECT_PHONE_BASE: process.env.URL_REDIRECT_PHONE_BASE,
       REDIRECT_RESET_BASE: process.env.URL_REDIRECT_RESET_BASE,
       REDIRECT_START_SSO_BASE: process.env.URL_REDIRECT_START_SSO_BASE,
       REDIRECT_VERIFY_BASE: process.env.URL_REDIRECT_VERIFY_BASE,
@@ -133,6 +130,8 @@ const config: ServerConfig = {
       TEAMS_BASE: process.env.URL_TEAMS_BASE,
       WEBAPP_BASE: process.env.URL_WEBAPP_BASE,
       WEBSITE_BASE: process.env.URL_WEBSITE_BASE,
+      URL_TERMS_OF_USE_TEAMS: process.env.URL_TERMS_OF_USE_TEAMS,
+      URL_SUPPORT_BACKUP_HISTORY: process.env.URL_SUPPORT_BACKUP_HISTORY,
     },
     VERSION: readFile(VERSION_FILE, '0.0.0'),
   },
@@ -151,6 +150,9 @@ const config: ServerConfig = {
       ALLOWED_HOSTS: ['account.wire.com'],
       DISALLOW: readFile(ROBOTS_DISALLOW_FILE, 'User-agent: *\r\nDisallow: /'),
     },
+    SSL_CERTIFICATE_KEY_PATH:
+      process.env.SSL_CERTIFICATE_KEY_PATH || path.join(__dirname, 'certificate/development-key.pem'),
+    SSL_CERTIFICATE_PATH: process.env.SSL_CERTIFICATE_PATH || path.join(__dirname, 'certificate/development-cert.pem'),
   },
 };
 

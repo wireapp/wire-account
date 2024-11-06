@@ -22,10 +22,10 @@ const mockConfig = {
 };
 jest.mock('script/Environment', () => mockConfig);
 
-import React from 'react';
 import {OpenWireButtons} from './OpenWireButtons';
 import {Runtime} from '@wireapp/commons';
 import {render} from '@testing-library/react';
+import {withTheme} from 'script/util/test/TestUtil';
 
 describe('OpenWireButtons', () => {
   const defaultParams = {
@@ -34,10 +34,10 @@ describe('OpenWireButtons', () => {
     uieName: 'open',
   };
   describe('on mobile', () => {
-    it('shows open app & direct download', async () => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(true);
+    it('shows open app & direct download', () => {
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(true);
 
-      const res = render(<OpenWireButtons {...defaultParams} />);
+      const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       res.getByText('openWithApp');
       expect(res.queryByText('openWithBrowser')).toBe(null);
       res.getByText('downloadApp');
@@ -46,20 +46,20 @@ describe('OpenWireButtons', () => {
 
   describe('on desktop', () => {
     beforeEach(() => {
-      spyOn(Runtime, 'isMobileOS').and.returnValue(false);
-      spyOn(Runtime, 'isMacOS').and.returnValue(true);
+      jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
+      jest.spyOn(Runtime, 'isMacOS').mockReturnValue(true);
     });
 
     it('shows open app, webapp & direct download on MacOS', async () => {
-      const res = render(<OpenWireButtons {...defaultParams} />);
-      res.getByText('openWithApp');
-      res.getByText('openWithBrowser');
-      res.getByText('downloadApp');
+      const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
+      expect(res.getByText('openWithApp')).toBeTruthy();
+      expect(res.getByText('openWithBrowser')).toBeTruthy();
+      expect(res.getByText('downloadApp')).toBeTruthy();
     });
 
     it('only show join in webapp when in a self hosted env', async () => {
       mockConfig.IS_SELF_HOSTED = true;
-      const res = render(<OpenWireButtons {...defaultParams} />);
+      const res = render(withTheme(<OpenWireButtons {...defaultParams} />));
       expect(res.queryByText('openWithApp')).toBe(null);
       res.getByText('openWithBrowser');
       expect(res.queryByText('downloadApp')).toBe(null);

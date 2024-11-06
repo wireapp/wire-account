@@ -17,31 +17,29 @@
  *
  */
 
-import {Global} from '@emotion/core';
-import {COLOR, FlexBox, Loading, StyledApp} from '@wireapp/react-ui-kit';
-import createBrowserHistory from 'history/createBrowserHistory';
-import React, {lazy, Suspense, useEffect} from 'react';
-import {Redirect, Route, Router, Switch} from 'react-router-dom';
+import {FlexBox, Loading, StyledApp, THEME_ID} from '@wireapp/react-ui-kit';
+import {lazy, Suspense, useEffect} from 'react';
+import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom';
 import {ROUTE} from 'script/route';
 import {QUERY_KEY} from './util/urlUtil';
+import {PrivateRoot} from './PrivateRoot';
+import {TermsAcknowledgement} from './page/migration/TermsAcknowledgement';
+import {ConfirmInvitation} from './page/migration/ConfirmInvitation';
+import {Welcome} from './page/migration/Welcome';
+import {AcceptInvitation} from './page/migration/AcceptInvitation';
 
-const history = createBrowserHistory();
+const LazyIndex = lazy(() => import('./page/Index'));
+const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
+const LazyPasswordForgot = lazy(() => import('./page/PasswordForgot'));
+const LazyBotPasswordForgot = lazy(() => import('./page/BotPasswordForgot'));
+const LazyPasswordReset = lazy(() => import('./page/PasswordReset'));
+const LazyBotPasswordReset = lazy(() => import('./page/BotPasswordReset'));
+const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
+const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
+const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
+const LazyUserProfile = lazy(() => import('./page/UserProfile'));
 
-interface Props {}
-
-const Root: React.FC<Props> = () => {
-  const LazyIndex = lazy(() => import('./page/Index'));
-  const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
-  const LazyPasswordForgot = lazy(() => import('./page/PasswordForgot'));
-  const LazyBotPasswordForgot = lazy(() => import('./page/BotPasswordForgot'));
-  const LazyPasswordReset = lazy(() => import('./page/PasswordReset'));
-  const LazyBotPasswordReset = lazy(() => import('./page/BotPasswordReset'));
-  const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
-  const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
-  const LazyVerifyPhoneAccount = lazy(() => import('./page/VerifyPhoneAccount'));
-  const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
-  const LazyUserProfile = lazy(() => import('./page/UserProfile'));
-
+const Root = () => {
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const hlParam = queryParams.get(QUERY_KEY.LANG);
@@ -55,14 +53,7 @@ const Root: React.FC<Props> = () => {
   }, []);
 
   return (
-    <StyledApp>
-      <Global
-        styles={{
-          'a:link,a:visited,a:active': {
-            color: COLOR.WHITE,
-          },
-        }}
-      />
+    <StyledApp themeId={THEME_ID.DEFAULT}>
       <Suspense
         fallback={
           <FlexBox justify="center" align="center" style={{minHeight: '100vh'}}>
@@ -70,22 +61,27 @@ const Root: React.FC<Props> = () => {
           </FlexBox>
         }
       >
-        <Router history={history}>
-          <Switch>
-            <Route exact path={ROUTE.HOME} component={LazyIndex} />
-            <Route exact path={ROUTE.DELETE_ACCOUNT} component={LazyDeleteAccount} />
-            <Route exact path={ROUTE.PASSWORD_FORGOT} component={LazyPasswordForgot} />
-            <Route exact path={ROUTE.PASSWORD_FORGOT_BOT} component={LazyBotPasswordForgot} />
-            <Route exact path={ROUTE.PASSWORD_RESET} component={LazyPasswordReset} />
-            <Route exact path={ROUTE.PASSWORD_RESET_BOT} component={LazyBotPasswordReset} />
-            <Route exact path={ROUTE.VERIFY_ACCOUNT_EMAIL} component={LazyVerifyEmailAccount} />
-            <Route exact path={ROUTE.VERIFY_ACCOUNT_BOT} component={LazyVerifyBotAccount} />
-            <Route exact path={ROUTE.VERIFY_ACCOUNT_PHONE} component={LazyVerifyPhoneAccount} />
-            <Route exact path={ROUTE.CONVERSATION_JOIN} component={LazyConversationJoin} />
-            <Route exact path={ROUTE.USER_PROFILE} component={LazyUserProfile} />
-            <Redirect to={ROUTE.HOME} />
-          </Switch>
-        </Router>
+        <BrowserRouter>
+          <Routes>
+            <Route index path={ROUTE.HOME} element={<LazyIndex />} />
+            <Route path={ROUTE.DELETE_ACCOUNT} element={<LazyDeleteAccount />} />
+            <Route path={ROUTE.PASSWORD_FORGOT} element={<LazyPasswordForgot />} />
+            <Route path={ROUTE.PASSWORD_FORGOT_BOT} element={<LazyBotPasswordForgot />} />
+            <Route path={ROUTE.PASSWORD_RESET} element={<LazyPasswordReset />} />
+            <Route path={ROUTE.PASSWORD_RESET_BOT} element={<LazyBotPasswordReset />} />
+            <Route path={ROUTE.VERIFY_ACCOUNT_EMAIL} element={<LazyVerifyEmailAccount />} />
+            <Route path={ROUTE.VERIFY_ACCOUNT_BOT} element={<LazyVerifyBotAccount />} />
+            <Route path={ROUTE.CONVERSATION_JOIN} element={<LazyConversationJoin />} />
+            <Route path={ROUTE.USER_PROFILE} element={<LazyUserProfile />} />
+            <Route path={ROUTE.ACCEPT_INVITATION} element={<AcceptInvitation />} />
+            <Route element={<PrivateRoot />}>
+              <Route path={`${ROUTE.TERMS_ACKNOWLEDGEMENT}/*`} element={<TermsAcknowledgement />} />
+              <Route path={`${ROUTE.CONFIRM_INVITATION}/*`} element={<ConfirmInvitation />} />
+              <Route path={`${ROUTE.WELCOME}/*`} element={<Welcome />} />
+            </Route>
+            <Route path="*" element={<Navigate to={ROUTE.HOME} replace={true} />} />
+          </Routes>
+        </BrowserRouter>
       </Suspense>
     </StyledApp>
   );

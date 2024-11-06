@@ -18,22 +18,19 @@
  */
 import {Runtime} from '@wireapp/commons';
 import {ContainerXS, FlexBox, H1, Loading, Text} from '@wireapp/react-ui-kit';
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
 import {DirectDownloadButton} from 'script/component/DirectDownloadButton';
 import Document from 'script/component/Document';
 import {OpenWebappButton} from 'script/component/OpenWebappButton';
 import {WebsiteDownloadButton} from 'script/component/WebsiteDownloadButton';
 import {BRAND_NAME, REDIRECT_VERIFY_URL, WEBAPP_URL} from 'script/Environment';
-import {ActionContext} from 'script/module/action';
-
-interface Props extends React.HTMLProps<Document>, RouteComponentProps<{code: string}> {}
+import {useActionContext} from 'script/module/action';
 
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 
-const VerifyPhoneAccount = (props: Props) => {
+const VerifyBotAccount = () => {
   const params = new URLSearchParams(location.search);
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
@@ -41,9 +38,18 @@ const VerifyPhoneAccount = (props: Props) => {
   const [t] = useTranslation('verify');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const {accountAction} = useContext(ActionContext);
+  const {accountAction} = useActionContext();
   const redirectPhone = (Runtime.isAndroid() || Runtime.isIOS()) && REDIRECT_VERIFY_URL;
   const loginImmediately = !Runtime.isDesktopOS();
+
+  if (redirectPhone) {
+    window.location.assign(redirectPhone);
+  }
+
+  if (loginImmediately) {
+    window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`);
+  }
+
   useEffect(() => {
     accountAction
       .verifyBot(key, code)
@@ -53,10 +59,10 @@ const VerifyPhoneAccount = (props: Props) => {
         setError(error.toString());
       });
   }, []);
+
   const MobileSuccess = () => (
     <React.Fragment>
       <DirectDownloadButton style={{margin: '32px 0'}} />
-      {redirectPhone && window.location.assign(redirectPhone)}
     </React.Fragment>
   );
 
@@ -70,7 +76,6 @@ const VerifyPhoneAccount = (props: Props) => {
         )}
         <OpenWebappButton style={{marginLeft: 8}}>{t('open:openWeb')}</OpenWebappButton>
       </FlexBox>
-      {loginImmediately && window.location.assign(`${WEBAPP_URL}/auth/?immediate_login#login`)}
     </React.Fragment>
   );
 
@@ -112,4 +117,4 @@ const VerifyPhoneAccount = (props: Props) => {
   );
 };
 
-export default withRouter(VerifyPhoneAccount);
+export default VerifyBotAccount;

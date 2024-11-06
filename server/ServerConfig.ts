@@ -38,7 +38,6 @@ export interface ServerConfig {
       IMPRINT: string;
       OPEN_GRAPH_IMAGE: string;
       REDIRECT_CONVERSATION_JOIN_BASE: string;
-      REDIRECT_PHONE_BASE: string;
       REDIRECT_RESET_BASE: string;
       REDIRECT_START_SSO_BASE: string;
       REDIRECT_VERIFY_BASE: string;
@@ -46,6 +45,8 @@ export interface ServerConfig {
       TEAMS_BASE: string;
       WEBAPP_BASE: string;
       WEBSITE_BASE: string;
+      URL_TERMS_OF_USE_TEAMS: string;
+      URL_SUPPORT_BACKUP_HISTORY: string;
     };
     VERSION: string;
   };
@@ -58,6 +59,8 @@ export interface ServerConfig {
     CSP: Record<string, Iterable<string>>;
     ENFORCE_HTTPS: boolean;
     ENVIRONMENT: string;
+    SSL_CERTIFICATE_KEY_PATH?: string;
+    SSL_CERTIFICATE_PATH?: string;
     PORT_HTTP: number;
     ROBOTS: {
       ALLOWED_HOSTS: string[];

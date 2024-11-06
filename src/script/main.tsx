@@ -19,14 +19,10 @@
 
 const ReactPostprocessor = require('i18next-react-postprocessor');
 import i18n from 'i18next';
+import {createRoot} from 'react-dom/client';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import 'intersection-observer';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {AppContainer} from 'react-hot-loader';
 import {initReactI18next} from 'react-i18next';
 import Root from 'script/Root';
-import 'url-search-params-polyfill';
 import {CommonConfig} from '@wireapp/commons';
 const deDE = require('i18n/de-DE.json');
 const enUS = require('i18n/en-US.json');
@@ -66,12 +62,8 @@ i18n
   });
 
 const render = (Component: any) => {
-  ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    document.getElementById('main'),
-  );
+  const root = createRoot(document.getElementById('main'));
+  root.render(<Component />);
 };
 
 runApp();

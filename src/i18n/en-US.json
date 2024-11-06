@@ -19,10 +19,11 @@
     "errorAlreadyProcessing": "We already sent you an email. The link is valid for 1 hour.",
     "errorInvalidEmail": "That does not look like an email.",
     "errorUnknown": "Something went wrong, please try again.",
-    "errorUnusedEmail": "This email is not in use.",
     "successDescription": "We sent you a link to reset your password. It is valid for 1 hour.",
     "successTitle": "Check your email",
-    "title": "Change Password"
+    "title": "Reset password",
+    "description": "We will send you a link to reset your password via email.",
+    "login": "Log in"
   },
   "general": {
     "loading": "Please wait…"
@@ -62,18 +63,15 @@
     "successBotTitle": "Thank you for registering",
     "successEmailAppDescription": "Install the app to start using {{company}}.",
     "successEmailTitle": "Email verified",
-    "successPhoneDescription": "Phone verification in progress",
     "title": "Verifying",
     "titleBot": "Verify Bot",
-    "titleEmail": "Verify Account",
-    "titlePhone": "Verify Phone"
+    "titleEmail": "Verify Account"
   },
   "conversationJoin": {
-    "loading": "Verifying link…",
+    "loading": "Verifying link...",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
-    "wirelessHeadline": "Don't want to create a {{brandName}} account?",
-    "wirelessLink": "Join the conversation as a temporary guest",
-    "wirelessNote": "(access expires after 24 hours)",
+    "conversationLocation": "The conversation takes place on {{domain}}",
+    "wirelessHeadline": "Don't have a {{brandName}} account? You can join as temporary guest in the browser.",
     "errorConversationNotFoundDescription": "The link to this group conversation has expired or is no longer valid.",
     "errorConversationNotFoundHeadline": "Conversation not found",
     "title": "You have been invited to join a conversation in {{brandName}}",
@@ -83,10 +81,7 @@
     "cannotJoinOnMobile": "At the moment, you can't join this conversation on your mobile device. Please open this link on your desktop instead."
   },
   "conversationJoinSelfHosted": {
-    "title": "You have been invited to join a Wire conversation on the domain \"{{domain}}\"",
-    "wirelessHeadline": "Don't have a Wire account on this domain?",
-    "wirelessLink": "Join the conversation as a temporary guest on this domain",
-    "openWithBrowser": "Join with a Wire account from this domain"
+    "title": "You have been invited to join a conversation in Wire"
   },
   "userProfile": {
     "title": "You have been invited to view a user profile in {{brandName}}",
@@ -94,5 +89,48 @@
     "downloadApp": "Download {{brandName}}",
     "openWithApp": "Open in App",
     "openWithBrowser": "Open in Browser"
+  },
+  "migration": {
+    "wrongCredentialsError": "Please enter valid credentials.",
+    "passwordLabel": "Password (personal account)",
+    "passwordPlaceholder": "Password",
+    "continueBtnText": "Continue",
+    "layoutSubHeader": "The most secure collaboration",
+    "layoutListHeader1": "Use the same level of security and enjoy extra features and benefits for free, like:",
+    "layoutListHeader2": "What’s next",
+    "layoutListItem1": "Join video conferences",
+    "layoutListItem2": "Guest rooms and external communication",
+    "layoutListItem3": "Availability status",
+    "layoutListItem4": "Option to upgrade to Wire for Enterprise to get full collaboration benefits",
+    "layoutListItem5": "Open Wire and get connected with your new team members",
+    "layoutListItem6": "Enjoy conference calls with a single click",
+    "welcomePageHeader": "Congratulations, you joined your team on Wire!",
+    "welcomePageSubHeader": "Welcome to <b>{{teamName}}</b><br/> We transferred your personal account into a team member account.",
+    "welcomePageAppOpenText": "Open Wire",
+    "welcomePageTMOpenText": "Open Team Management",
+    "welcomePageOr": "or",
+    "confirmPageHeader": "Join your team",
+    "confirmPageSubHeader": "To ensure a secure transfer and prevent unauthorized access, please enter the password of your personal account again.",
+    "termsPageHeader": "Join your team",
+    "termsPageSubHeader": "You’re about to join the team.",
+    "termsPageListHeader": "Things to know",
+    "termsPageListItem1": "Your <b>personal account will be transferred</b> to a team account.",
+    "termsPageListItem2": "<b>This change is permanent</b> and irrevocable.",
+    "termsPageListItem3": "<b>One team limit:</b> You can only be part of one team with this email address.",
+    "termsPageListItem4": "<b>You keep your contacts</b> and your conversation history.",
+    "termsPageListItem5": "<b>Profile details:</b> You keep your email, profile name, and username, as well as your password and profile picture.",
+    "termsPageAccountManagerHeader": "Account Management",
+    "termsPageAccountManagerText": "As you will be part of a team, the admin can remove you from the team. In that case, you will immediately lose access to your account, contacts, history, and username.",
+    "termsPageRecommendationsHeader": "We recommend to",
+    "termsPageRecommendationItem1": "Verify the admin’s identity before accepting, and if you’re unsure, close this window.",
+    "termsPageRecommendationItem2": "Back up your history",
+    "termsPageMigrationTerms": "I agree to the migration terms and understand that this change is irreversible.",
+    "termsPageTermsOfUse": "I accept",
+    "termsPageTermsOfUseLink": "Wire's Terms of Use (Business).",
+    "invitationPageHeader": "Join your team",
+    "invitationPageSubHeader": "Log in with your personal account's email or username and password.",
+    "invitationPagLoginLabel": "Email or username",
+    "emailOrUsernamePlaceholder": "Enter email or username",
+    "forgotPassword": "Forgot password?"
   }
 }
