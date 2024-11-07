@@ -69,20 +69,16 @@ jobs:
         id: output_target_branches
         with:
           key: '${{github.ref}}'
-          # TODO add production and staging once wire-builds has those branches
-          #
-          # "production": {
-          #  "targets": "[\"TDB\"]"
-          # },
-          # "staging": {
+          # TODO  Add staging if we ever use a wire-builds as a source for staging (we use k8s)
+          # "[TBD]": {
           #   "targets": "[\"TBD\"]"
           # },
           map: |
             {
-              "production": {
+              "release*": {
                "targets": "[\"main\"]"
               },
-              "dev": {
+              "staging": {
                 "targets": "[\"dev\"]"
               },
               "q1-2024": {
