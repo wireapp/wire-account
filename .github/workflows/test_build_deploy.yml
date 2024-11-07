@@ -75,7 +75,7 @@ jobs:
           # },
           map: |
             {
-              "release*": {
+              "main": {
                "targets": "[\"main\"]"
               },
               "staging": {
