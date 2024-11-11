@@ -107,13 +107,15 @@ export const termsListItemCss: CSSObject = {
   },
 };
 
-export const termsContentGrayBox: CSSObject = {
-  background: COLOR_V2.GRAY_20,
+export const termsContentWarningBox: CSSObject = {
+  background: COLOR_V2.AMBER_DARK_50,
+  border: '1px solid',
+  borderColor: COLOR_V2.AMBER_DARK_600,
   padding: '1rem',
   borderRadius: '1rem',
   margin: '0 2rem',
 };
-export const termsContentGrayBoxContent: CSSObject = {
+export const termsContentWarningBoxContent: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
   color: COLOR_V2.GRAY_90,
@@ -123,8 +125,8 @@ export const termsContentGrayBoxContent: CSSObject = {
 };
 
 export const termsContentBlueBox: CSSObject = {
-  background: COLOR_V2.BLUE_LIGHT_50,
-  padding: '1rem',
+  background: COLOR_V2.GRAY_20,
+  padding: '0.75rem',
   borderRadius: '1rem',
   margin: '1rem 0',
   display: 'flex',

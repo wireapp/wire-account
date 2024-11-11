@@ -23,6 +23,7 @@ import {
   Checkbox,
   COLOR_V2,
   Link,
+  Loading,
   Logo,
   QUERY,
   QueryKeys,
@@ -36,27 +37,51 @@ import {
   termsContentHeaderCss,
   termsListCss,
   termsListItemCss,
-  termsContentGrayBox,
-  termsContentGrayBoxContent,
+  termsContentWarningBox,
+  termsContentWarningBoxContent,
   termsContentBlueBox,
   termsContentBlueBoxContent,
   buttonCss,
   termsCheckboxLabelCss,
+  loginContainerCss,
 } from './styles';
 import {ShieldIcon} from './ShieldIcon';
 import {OutlinedCheckIcon} from './OutlinedCheckIcon';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {EXTERNAL_ROUTE, ROUTE} from 'script/route';
 import {useTranslation} from 'react-i18next';
 import MarkupTranslation from 'script/component/MarkupTranslation';
+import {useActionContext} from 'script/module/action';
+import {getTeamInvitationCode} from './utils';
 
 export const TermsAcknowledgement = () => {
   const navigate = useNavigate();
+  const {teamAction} = useActionContext();
   const {t} = useTranslation('migration');
   const isTablet = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
+  const code = getTeamInvitationCode();
+  const [loading, setLoading] = useState(true);
   const [isMigrationAccepted, setIsMigrationAccepted] = useState(false);
   const [isTermOfUseAccepted, setIsTermOfUseAccepted] = useState(false);
+  const [inviterEmail, setInviterEmail] = useState('');
+
+  useEffect(() => {
+    teamAction
+      .getInvitationInfo(code)
+      .then(res => {
+        setInviterEmail(res.created_by_email);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div css={loginContainerCss}>
+        <Loading style={{margin: 'auto'}} />
+      </div>
+    );
+  }
 
   return (
     <div css={termsContainerCss}>
@@ -66,7 +91,7 @@ export const TermsAcknowledgement = () => {
         </div>
       )}
       <Text css={headerCss}>{t('termsPageHeader')}</Text>
-      <Text css={termsSubHeaderCss}>{t('termsPageHeader')}</Text>
+      <Text css={termsSubHeaderCss}>{t('termsPageSubHeader', {email: inviterEmail})}</Text>
       <div css={{margin: '2rem', textAlign: 'left'}}>
         <Bold css={termsContentHeaderCss}>{t('termsPageListHeader')}</Bold>
         <ul css={termsListCss}>
@@ -87,8 +112,8 @@ export const TermsAcknowledgement = () => {
           </li>
         </ul>
       </div>
-      <div css={termsContentGrayBox}>
-        <div css={termsContentGrayBoxContent}>
+      <div css={termsContentWarningBox}>
+        <div css={termsContentWarningBoxContent}>
           <ShieldIcon /> <b css={{marginLeft: '1.5rem'}}>{t('termsPageAccountManagerHeader')}</b>
           <div css={{marginTop: '1rem'}}>{t('termsPageAccountManagerText')}</div>
         </div>
