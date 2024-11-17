@@ -13,7 +13,7 @@
     "logdown": "3.3.1",
     "moment": "2.30.1",
     "nocache": "4.0.0",
-    "pm2": "5.4.2",
+    "pm2": "5.4.3",
     "uuid": "11.0.2"
   },
   "devDependencies": {
