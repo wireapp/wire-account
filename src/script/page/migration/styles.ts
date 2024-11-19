@@ -154,9 +154,6 @@ export const forgotPasswordCss: CSSObject = {
 
 export const buttonCss: CSSObject = {
   width: '100%',
-  ':disabled': {
-    background: COLOR_V2.GRAY_60,
-  },
 };
 
 export const termsCheckboxLabelCss: CSSObject = {
