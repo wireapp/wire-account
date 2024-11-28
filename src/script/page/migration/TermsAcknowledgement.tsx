@@ -54,6 +54,8 @@ import {useTranslation} from 'react-i18next';
 import MarkupTranslation from 'script/component/MarkupTranslation';
 import {useActionContext} from 'script/module/action';
 import {getTeamInvitationCode} from './utils';
+import {reportEvent} from 'script/util/Tracking/Tracking';
+import {EventName, SegmentationKey, SegmentationValue} from 'script/util/Tracking/types';
 
 export const TermsAcknowledgement = () => {
   const navigate = useNavigate();
@@ -66,7 +68,14 @@ export const TermsAcknowledgement = () => {
   const [isTermOfUseAccepted, setIsTermOfUseAccepted] = useState(false);
   const [inviterEmail, setInviterEmail] = useState('');
 
+  const handleEvent = (step: SegmentationValue) => {
+    reportEvent(EventName.USER_MIGRATION_TERMS_ACKNOWLEDGEMENT, {
+      [SegmentationKey.STEP]: step,
+    });
+  };
+
   useEffect(() => {
+    handleEvent(SegmentationValue.OPENED);
     teamAction
       .getInvitationInfo(code)
       .then(res => {
@@ -82,6 +91,11 @@ export const TermsAcknowledgement = () => {
       </div>
     );
   }
+
+  const handleSubmit = () => {
+    navigate(ROUTE.CONFIRM_INVITATION);
+    handleEvent(SegmentationValue.CONTINUE_CLICKED);
+  };
 
   return (
     <div css={termsContainerCss}>
@@ -141,6 +155,7 @@ export const TermsAcknowledgement = () => {
           checked={isMigrationAccepted}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setIsMigrationAccepted(event.target.checked);
+            handleEvent(SegmentationValue.AGREE_MIGRATION_TERMS_CHECK);
           }}
           id="do-accept-migration"
           data-uie-name="do-accept-migration"
@@ -152,6 +167,7 @@ export const TermsAcknowledgement = () => {
           checked={isTermOfUseAccepted}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setIsTermOfUseAccepted(event.target.checked);
+            handleEvent(SegmentationValue.AGREE_TOC_CHECK);
           }}
           id="do-accept-terms"
           data-uie-name="do-accept-terms"
@@ -166,7 +182,7 @@ export const TermsAcknowledgement = () => {
       </div>
       <div css={{margin: '0 2rem'}}>
         <Button
-          onClick={() => navigate(ROUTE.CONFIRM_INVITATION)}
+          onClick={handleSubmit}
           disabled={!isTermOfUseAccepted || !isMigrationAccepted}
           data-uie-name="do-continue"
           aria-label=""

@@ -33,6 +33,8 @@ declare global {
         NEW_PASSWORD_MINIMUM_LENGTH: number;
         RAYGUN_API_KEY: string;
         STRIPE_API_KEY: string;
+        COUNTLY_SERVER_URL: string;
+        COUNTLY_API_KEY: string;
         URL: {
           ACCOUNT_DELETE_SURVEY: string;
           DOWNLOAD_ANDROID_BASE: string;
@@ -98,4 +100,5 @@ export const SUPPORT_URL = window.wire.env.URL.SUPPORT_BASE;
 export const TEAMS_URL = window.wire.env.URL.TEAMS_BASE;
 export const WEBSITE_URL = window.wire.env.URL.WEBSITE_BASE;
 export const URL_SUPPORT_BACKUP_HISTORY = window.wire.env.URL.URL_SUPPORT_BACKUP_HISTORY;
-export const URL_TERMS_OF_USE_TEAMS = window.wire.env.URL.URL_TERMS_OF_USE_TEAMS;
+export const COUNTLY_SERVER_URL = window.wire.env.COUNTLY_SERVER_URL;
+export const COUNTLY_API_KEY = window.wire.env.COUNTLY_API_KEY;

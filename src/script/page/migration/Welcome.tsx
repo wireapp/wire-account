@@ -42,6 +42,8 @@ import {isOwner, MemberData} from '@wireapp/api-client/lib/team/member';
 import {TeamData} from '@wireapp/api-client/lib/team';
 import {secureOpen} from 'script/util/urlUtil';
 import MarkupTranslation from 'script/component/MarkupTranslation';
+import {reportEvent} from 'script/util/Tracking/Tracking';
+import {EventName, SegmentationKey, SegmentationValue} from 'script/util/Tracking/types';
 
 export const Welcome = () => {
   const [t] = useTranslation(['migration']);
@@ -61,7 +63,14 @@ export const Welcome = () => {
     return {member, team};
   };
 
+  const handleEvent = (step: SegmentationValue) => {
+    reportEvent(EventName.USER_MIGRATION_WELCOME, {
+      [SegmentationKey.STEP]: step,
+    });
+  };
+
   useEffect(() => {
+    handleEvent(SegmentationValue.OPENED);
     getData()
       .then(res => {
         setSelfMember(res.member);
@@ -83,6 +92,16 @@ export const Welcome = () => {
     );
   }
 
+  const handleAppOpen = () => {
+    handleEvent(SegmentationValue.OPENED_WEB_APP);
+    secureOpen(EXTERNAL_ROUTE.APP_WIRE);
+  };
+
+  const handleTMOpen = () => {
+    handleEvent(SegmentationValue.OPENED_TM);
+    secureOpen(EXTERNAL_ROUTE.TEAM_SETTINGS);
+  };
+
   return (
     <div css={loginContainerCss}>
       {isTablet && <Logo />}
@@ -90,12 +109,7 @@ export const Welcome = () => {
       <Text css={loginSubHeaderCss}>
         <MarkupTranslation translation={t('welcomePageSubHeader', {teamName: team.name})} />
       </Text>
-      <Button
-        variant={ButtonVariant.PRIMARY}
-        data-uie-name="do-open-app"
-        block
-        onClick={() => secureOpen(EXTERNAL_ROUTE.APP_WIRE)}
-      >
+      <Button variant={ButtonVariant.PRIMARY} data-uie-name="do-open-app" block onClick={handleAppOpen}>
         {t('welcomePageAppOpenText')}
       </Button>
       {isOwner(selfMember.permissions) && (
@@ -118,7 +132,7 @@ export const Welcome = () => {
             data-uie-name="do-go-to-team-management"
             block
             variant={ButtonVariant.SECONDARY}
-            onClick={() => secureOpen(EXTERNAL_ROUTE.TEAM_SETTINGS)}
+            onClick={handleTMOpen}
           >
             {t('welcomePageTMOpenText')}
             <ArrowIcon color={COLOR.BLUE} direction="right" css={{marginLeft: 12}} />

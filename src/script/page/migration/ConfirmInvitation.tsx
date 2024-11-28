@@ -30,12 +30,14 @@ import {
   useMatchMedia,
 } from '@wireapp/react-ui-kit';
 import {loginContainerCss, loginSubHeaderCss, headerCss, forgotPasswordCss, buttonCss} from './styles';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ROUTE} from 'script/route';
 import {useNavigate} from 'react-router-dom';
 import {getTeamInvitationCode, removeTeamInvitationCode} from './utils';
 import {useTranslation} from 'react-i18next';
 import {useActionContext} from 'script/module/action';
+import {reportEvent} from 'script/util/Tracking/Tracking';
+import {EventName, SegmentationKey, SegmentationValue} from 'script/util/Tracking/types';
 
 export const ConfirmInvitation = () => {
   const isTablet = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
@@ -48,8 +50,14 @@ export const ConfirmInvitation = () => {
   const [loading, setLoading] = useState(false);
   const code = getTeamInvitationCode();
 
+  const handleEvent = (step: SegmentationValue) => {
+    reportEvent(EventName.USER_MIGRATION_CONFIRMATION, {
+      [SegmentationKey.STEP]: step,
+    });
+  };
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    handleEvent(SegmentationValue.CONTINUE_CLICKED);
     setLoading(true);
     teamAction
       .acceptInvitation({
@@ -67,6 +75,10 @@ export const ConfirmInvitation = () => {
         setLoading(false);
       });
   };
+
+  useEffect(() => {
+    handleEvent(SegmentationValue.OPENED);
+  }, []);
 
   return (
     <div css={loginContainerCss}>
@@ -86,6 +98,7 @@ export const ConfirmInvitation = () => {
           type="password"
           value={password}
           data-uie-name="enter-login-password"
+          onBlur={() => handleEvent(SegmentationValue.PASSWORD_ENTERED)}
         />
         <div css={forgotPasswordCss}>
           <Link href={ROUTE.PASSWORD_FORGOT} data-uie-name="go-forgot-password">

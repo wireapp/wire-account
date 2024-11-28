@@ -3685,6 +3685,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:10.0.0":
+  version: 10.0.0
+  resolution: "@types/uuid@npm:10.0.0"
+  checksum: e3958f8b0fe551c86c14431f5940c3470127293280830684154b91dc7eb3514aeb79fe3216968833cf79d4d1c67f580f054b5be2cd562bebf4f728913e73e944
+  languageName: node
+  linkType: hard
+
 "@types/webpack-env@npm:1.18.5":
   version: 1.18.5
   resolution: "@types/webpack-env@npm:1.18.5"
@@ -4232,6 +4239,15 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 41736f71de8a6307f43fadab57a4bf04f6de5a8862b23e81c97a2d571ef0ebfd72d519afed85c66f609d7c3c1b521efbf9ad0ffb8e51b563ad0624c3d588eaf7
+  languageName: node
+  linkType: hard
+
+"@wireapp/telemetry@npm:0.1.2":
+  version: 0.1.2
+  resolution: "@wireapp/telemetry@npm:0.1.2"
+  dependencies:
+    countly-sdk-web: 24.4.1
+  checksum: 7b68979acc3d25a9ff80b2f043f9a9d58f189ea26a016a099083626f0bfb5973c1ced28d171df85cd75e85b195404046953015778110563ee234c7cda738791d
   languageName: node
   linkType: hard
 
@@ -5794,6 +5810,13 @@ __metadata:
     path-type: ^4.0.0
     yaml: ^1.10.0
   checksum: 4be63e7117955fd88333d7460e4c466a90f556df6ef34efd59034d2463484e339666c41f02b523d574a797ec61f4a91918c5b89a316db2ea2f834e0d2d09465b
+  languageName: node
+  linkType: hard
+
+"countly-sdk-web@npm:24.4.1":
+  version: 24.4.1
+  resolution: "countly-sdk-web@npm:24.4.1"
+  checksum: f2c358790b11a7cdf4f438cbe0555120a8d65026032538fc592606ccb6c14d1ed30eb66323331338e7b81850d8ccd40ecacb0f20d7b03dd78ae746088985ad36
   languageName: node
   linkType: hard
 
@@ -13750,6 +13773,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uuid@npm:11.0.3":
+  version: 11.0.3
+  resolution: "uuid@npm:11.0.3"
+  bin:
+    uuid: dist/esm/bin/uuid
+  checksum: 646181c77e8b8df9bd07254faa703943e1c4d5ccde7d080312edf12f443f6c5750801fd9b27bf2e628594182165e6b1b880c0382538f7eca00b26622203741dc
+  languageName: node
+  linkType: hard
+
 "v8-to-istanbul@npm:^9.0.1":
   version: 9.2.0
   resolution: "v8-to-istanbul@npm:9.2.0"
@@ -14204,6 +14236,7 @@ __metadata:
     "@types/react": 18.3.12
     "@types/react-dom": 18.3.1
     "@types/react-router-dom": 5.3.3
+    "@types/uuid": 10.0.0
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 8.15.0
     "@typescript-eslint/parser": 7.17.0
@@ -14212,6 +14245,7 @@ __metadata:
     "@wireapp/copy-config": 2.2.10
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.26.3
+    "@wireapp/telemetry": 0.1.2
     adm-zip: 0.5.16
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
@@ -14256,6 +14290,7 @@ __metadata:
     terser-webpack-plugin: 5.3.10
     ts-jest: 29.2.5
     typescript: 5.6.3
+    uuid: 11.0.3
     webpack: 5.96.1
     webpack-bundle-analyzer: 4.10.2
     webpack-cli: 5.1.4

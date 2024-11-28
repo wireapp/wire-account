@@ -48,6 +48,8 @@ export interface ServerConfig {
       URL_TERMS_OF_USE_TEAMS: string;
       URL_SUPPORT_BACKUP_HISTORY: string;
     };
+    COUNTLY_SERVER_URL: string;
+    COUNTLY_API_KEY: string;
     VERSION: string;
   };
   COMMIT: string;
