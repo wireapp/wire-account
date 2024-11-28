@@ -21,7 +21,6 @@ import {CSSObject} from '@emotion/react';
 import {COLOR_V2, QUERY, QueryKeys} from '@wireapp/react-ui-kit';
 
 export const headerCss: CSSObject = {
-  color: COLOR_V2.GRAY_90,
   fontSize: '3rem',
   display: 'block',
   textAlign: 'center',
@@ -32,7 +31,6 @@ export const headerCss: CSSObject = {
 };
 
 export const loginSubHeaderCss: CSSObject = {
-  color: COLOR_V2.GRAY_70,
   lineHeight: '2.5rem',
   margin: '5rem 0',
   fontSize: '1.75rem',
@@ -101,7 +99,6 @@ export const termsListCss: CSSObject = {
 export const termsListItemCss: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  color: COLOR_V2.GRAY_70,
   [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
@@ -118,7 +115,6 @@ export const termsContentWarningBox: CSSObject = {
 export const termsContentWarningBoxContent: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  color: COLOR_V2.GRAY_90,
   [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
@@ -136,7 +132,6 @@ export const termsContentBlueBoxContent: CSSObject = {
   marginLeft: '1.5rem',
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  color: COLOR_V2.GRAY_80,
   textTransform: 'none',
   [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
@@ -148,7 +143,7 @@ export const forgotPasswordCss: CSSObject = {
   marginTop: '-0.25rem',
   marginBottom: '0.75rem',
   '& a:link': {
-    color: COLOR_V2.GRAY_60,
+    color: COLOR_V2.BLACK,
   },
 };
 
