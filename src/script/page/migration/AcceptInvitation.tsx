@@ -56,14 +56,14 @@ export const AcceptInvitation = () => {
   const code = searchParams.get(QUERY_KEY.TEAM_CODE);
   const cachedCode = getTeamInvitationCode();
 
-  const handleEvent = (step: SegmentationValue) => {
+  const trackEvent = (step: SegmentationValue) => {
     reportEvent(EventName.USER_MIGRATION_LOGIN, {
       [SegmentationKey.STEP]: step,
     });
   };
 
   useEffect(() => {
-    handleEvent(SegmentationValue.OPENED);
+    trackEvent(SegmentationValue.OPENED);
 
     if (!code && !cachedCode) {
       navigate(ROUTE.HOME);
@@ -85,7 +85,7 @@ export const AcceptInvitation = () => {
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError('');
-    handleEvent(SegmentationValue.CONTINUE_CLICKED);
+    trackEvent(SegmentationValue.CONTINUE_CLICKED);
 
     const login: LoginData = {
       clientType: ClientType.PERMANENT,
@@ -127,7 +127,7 @@ export const AcceptInvitation = () => {
             title={t('invitationPagLoginLabel')}
             value={email}
             data-uie-name="enter-login-identifier"
-            onBlur={() => handleEvent(SegmentationValue.EMAIL_ENTERED)}
+            onBlur={() => trackEvent(SegmentationValue.EMAIL_ENTERED)}
           />
 
           <Input
@@ -142,12 +142,12 @@ export const AcceptInvitation = () => {
             type="password"
             value={password}
             data-uie-name="enter-login-password"
-            onBlur={() => handleEvent(SegmentationValue.PASSWORD_ENTERED)}
+            onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
           />
           <div css={forgotPasswordCss}>
             <Link
               href={ROUTE.PASSWORD_FORGOT}
-              onClick={() => handleEvent(SegmentationValue.PASSWORD_FORGOTTEN)}
+              onClick={() => trackEvent(SegmentationValue.PASSWORD_FORGOTTEN)}
               data-uie-name="go-forgot-password"
             >
               {t('forgotPassword')}

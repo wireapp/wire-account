@@ -50,14 +50,14 @@ export const ConfirmInvitation = () => {
   const [loading, setLoading] = useState(false);
   const code = getTeamInvitationCode();
 
-  const handleEvent = (step: SegmentationValue) => {
+  const trackEvent = (step: SegmentationValue) => {
     reportEvent(EventName.USER_MIGRATION_CONFIRMATION, {
       [SegmentationKey.STEP]: step,
     });
   };
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    handleEvent(SegmentationValue.CONTINUE_CLICKED);
+    trackEvent(SegmentationValue.CONTINUE_CLICKED);
     setLoading(true);
     teamAction
       .acceptInvitation({
@@ -77,7 +77,7 @@ export const ConfirmInvitation = () => {
   };
 
   useEffect(() => {
-    handleEvent(SegmentationValue.OPENED);
+    trackEvent(SegmentationValue.OPENED);
   }, []);
 
   return (
@@ -98,7 +98,7 @@ export const ConfirmInvitation = () => {
           type="password"
           value={password}
           data-uie-name="enter-login-password"
-          onBlur={() => handleEvent(SegmentationValue.PASSWORD_ENTERED)}
+          onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
         />
         <div css={forgotPasswordCss}>
           <Link href={ROUTE.PASSWORD_FORGOT} data-uie-name="go-forgot-password">

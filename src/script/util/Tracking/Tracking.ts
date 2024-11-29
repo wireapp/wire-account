@@ -26,12 +26,15 @@ import {REPORTING_DEVICE_ID} from './constants';
 let isProductReportingActivated = false;
 
 const getDeviceId = () => {
-  let deviceId = window.localStorage.getItem(REPORTING_DEVICE_ID);
-  if (!deviceId) {
-    deviceId = createUUID();
-    window.localStorage.setItem(REPORTING_DEVICE_ID, deviceId);
+  const deviceIdFromStorage = window.localStorage.getItem(REPORTING_DEVICE_ID);
+
+  if (!deviceIdFromStorage) {
+    const newDeviceId = createUUID();
+    window.localStorage.setItem(REPORTING_DEVICE_ID, newDeviceId);
+    return newDeviceId;
   }
-  return deviceId;
+
+  return deviceIdFromStorage;
 };
 
 export const initializeTelemetry = () => {
@@ -57,10 +60,10 @@ export const initializeTelemetry = () => {
 
   telemetry.addAllConsentFeatures();
 
-  const device_id = getDeviceId();
+  const deviceId = getDeviceId();
 
-  telemetry.changeDeviceId(device_id);
-  telemetry.disableOfflineMode(device_id);
+  telemetry.changeDeviceId(deviceId);
+  telemetry.disableOfflineMode(deviceId);
 
   telemetry.beginSession();
 

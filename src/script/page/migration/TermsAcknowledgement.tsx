@@ -68,14 +68,14 @@ export const TermsAcknowledgement = () => {
   const [isTermOfUseAccepted, setIsTermOfUseAccepted] = useState(false);
   const [inviterEmail, setInviterEmail] = useState('');
 
-  const handleEvent = (step: SegmentationValue) => {
+  const trackEvent = (step: SegmentationValue) => {
     reportEvent(EventName.USER_MIGRATION_TERMS_ACKNOWLEDGEMENT, {
       [SegmentationKey.STEP]: step,
     });
   };
 
   useEffect(() => {
-    handleEvent(SegmentationValue.OPENED);
+    trackEvent(SegmentationValue.OPENED);
     teamAction
       .getInvitationInfo(code)
       .then(res => {
@@ -94,7 +94,7 @@ export const TermsAcknowledgement = () => {
 
   const handleSubmit = () => {
     navigate(ROUTE.CONFIRM_INVITATION);
-    handleEvent(SegmentationValue.CONTINUE_CLICKED);
+    trackEvent(SegmentationValue.CONTINUE_CLICKED);
   };
 
   return (
@@ -155,7 +155,7 @@ export const TermsAcknowledgement = () => {
           checked={isMigrationAccepted}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setIsMigrationAccepted(event.target.checked);
-            handleEvent(SegmentationValue.AGREE_MIGRATION_TERMS_CHECK);
+            trackEvent(SegmentationValue.AGREE_MIGRATION_TERMS_CHECK);
           }}
           id="do-accept-migration"
           data-uie-name="do-accept-migration"
@@ -167,7 +167,7 @@ export const TermsAcknowledgement = () => {
           checked={isTermOfUseAccepted}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setIsTermOfUseAccepted(event.target.checked);
-            handleEvent(SegmentationValue.AGREE_TOC_CHECK);
+            trackEvent(SegmentationValue.AGREE_TOC_CHECK);
           }}
           id="do-accept-terms"
           data-uie-name="do-accept-terms"

@@ -63,14 +63,14 @@ export const Welcome = () => {
     return {member, team};
   };
 
-  const handleEvent = (step: SegmentationValue) => {
+  const trackEvent = (step: SegmentationValue) => {
     reportEvent(EventName.USER_MIGRATION_WELCOME, {
       [SegmentationKey.STEP]: step,
     });
   };
 
   useEffect(() => {
-    handleEvent(SegmentationValue.OPENED);
+    trackEvent(SegmentationValue.OPENED);
     getData()
       .then(res => {
         setSelfMember(res.member);
@@ -93,12 +93,12 @@ export const Welcome = () => {
   }
 
   const handleAppOpen = () => {
-    handleEvent(SegmentationValue.OPENED_WEB_APP);
+    trackEvent(SegmentationValue.OPENED_WEB_APP);
     secureOpen(EXTERNAL_ROUTE.APP_WIRE);
   };
 
   const handleTMOpen = () => {
-    handleEvent(SegmentationValue.OPENED_TM);
+    trackEvent(SegmentationValue.OPENED_TM);
     secureOpen(EXTERNAL_ROUTE.TEAM_SETTINGS);
   };
 
