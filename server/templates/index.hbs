@@ -17,7 +17,9 @@
   <meta property="og:title" content="Wire">
   <meta property="og:type" content="website">
   <meta property="og:image" content="{{config.CLIENT.URL.OPEN_GRAPH_IMAGE}}">
-
+  {{#if config.CLIENT.COUNTLY_API_KEY}}
+  <script src="/libs/wire/telemetry/embed.js"></script>
+  {{/if}}
   <title>Wire</title>
 </head>
 

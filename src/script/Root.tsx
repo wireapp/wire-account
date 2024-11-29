@@ -27,6 +27,7 @@ import {TermsAcknowledgement} from './page/migration/TermsAcknowledgement';
 import {ConfirmInvitation} from './page/migration/ConfirmInvitation';
 import {Welcome} from './page/migration/Welcome';
 import {AcceptInvitation} from './page/migration/AcceptInvitation';
+import {initializeTelemetry} from './util/Tracking/Tracking';
 
 const LazyIndex = lazy(() => import('./page/Index'));
 const LazyDeleteAccount = lazy(() => import('./page/DeleteAccount'));
@@ -44,6 +45,8 @@ const Root = () => {
     const queryParams = new URLSearchParams(window.location.search);
     const hlParam = queryParams.get(QUERY_KEY.LANG);
     const userLocale = navigator.languages?.length ? navigator.languages[0] : navigator.language;
+
+    initializeTelemetry();
 
     if (!hlParam && !userLocale.includes('en')) {
       queryParams.set(QUERY_KEY.LANG, userLocale);

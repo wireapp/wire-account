@@ -134,6 +134,8 @@ const config: ServerConfig = {
       URL_SUPPORT_BACKUP_HISTORY: process.env.URL_SUPPORT_BACKUP_HISTORY,
     },
     VERSION: readFile(VERSION_FILE, '0.0.0'),
+    COUNTLY_SERVER_URL: process.env.COUNTLY_SERVER_URL,
+    COUNTLY_API_KEY: process.env.COUNTLY_API_KEY,
   },
   COMMIT: readFile(COMMIT_FILE, ''),
   PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
