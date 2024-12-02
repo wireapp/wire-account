@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-
 /*
  * Wire
- * Copyright (C) 2019 Wire Swiss GmbH
+ * Copyright (C) 2024 Wire Swiss GmbH
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,20 +17,5 @@
  *
  */
 
-const fs = require('fs-extra');
-const path = require('path');
-
-const srcFolder = '../';
-const distFolder = '../dist/';
-const npmModulesFolder = '../../node_modules/';
-
-const assetFolders = ['.ebextensions/', 'img/', 'robots/', 'templates/', 'certificate'];
-
-assetFolders.forEach(assetFolder => {
-  fs.copySync(path.resolve(__dirname, srcFolder, assetFolder), path.resolve(__dirname, distFolder, assetFolder));
-});
-
-fs.copySync(
-  path.resolve(__dirname, npmModulesFolder, '@wireapp/telemetry/lib/embed.js'),
-  path.resolve(__dirname, distFolder, 'libs/wire/telemetry/embed.js'),
-);
+export const REPORTING_DEVICE_ID = 'REPORTING_DEVICE_ID';
+export const APP_NAME = 'account';

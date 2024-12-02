@@ -36,4 +36,8 @@ export class TeamAction {
   acceptInvitation = async (payload: {code: string; password: string}) => {
     return this.apiClient.api.teams.invitation.acceptInvitation(payload);
   };
+
+  getInvitationInfo = async (code: string) => {
+    return this.apiClient.api.teams.invitation.getInvitationFromCode(code);
+  };
 }

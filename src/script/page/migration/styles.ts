@@ -21,7 +21,6 @@ import {CSSObject} from '@emotion/react';
 import {COLOR_V2, QUERY, QueryKeys} from '@wireapp/react-ui-kit';
 
 export const headerCss: CSSObject = {
-  color: COLOR_V2.GRAY_90,
   fontSize: '3rem',
   display: 'block',
   textAlign: 'center',
@@ -32,7 +31,6 @@ export const headerCss: CSSObject = {
 };
 
 export const loginSubHeaderCss: CSSObject = {
-  color: COLOR_V2.GRAY_70,
   lineHeight: '2.5rem',
   margin: '5rem 0',
   fontSize: '1.75rem',
@@ -101,30 +99,30 @@ export const termsListCss: CSSObject = {
 export const termsListItemCss: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  color: COLOR_V2.GRAY_70,
   [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
 };
 
-export const termsContentGrayBox: CSSObject = {
-  background: COLOR_V2.GRAY_20,
+export const termsContentWarningBox: CSSObject = {
+  background: COLOR_V2.AMBER_DARK_50,
+  border: '1px solid',
+  borderColor: COLOR_V2.AMBER_DARK_600,
   padding: '1rem',
   borderRadius: '1rem',
   margin: '0 2rem',
 };
-export const termsContentGrayBoxContent: CSSObject = {
+export const termsContentWarningBoxContent: CSSObject = {
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  color: COLOR_V2.GRAY_90,
   [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
   },
 };
 
 export const termsContentBlueBox: CSSObject = {
-  background: COLOR_V2.BLUE_LIGHT_50,
-  padding: '1rem',
+  background: COLOR_V2.GRAY_20,
+  padding: '0.75rem',
   borderRadius: '1rem',
   margin: '1rem 0',
   display: 'flex',
@@ -134,7 +132,6 @@ export const termsContentBlueBoxContent: CSSObject = {
   marginLeft: '1.5rem',
   fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  color: COLOR_V2.GRAY_80,
   textTransform: 'none',
   [QUERY[QueryKeys.TABLET_DOWN]]: {
     fontSize: '1rem',
@@ -146,15 +143,12 @@ export const forgotPasswordCss: CSSObject = {
   marginTop: '-0.25rem',
   marginBottom: '0.75rem',
   '& a:link': {
-    color: COLOR_V2.GRAY_60,
+    color: COLOR_V2.BLACK,
   },
 };
 
 export const buttonCss: CSSObject = {
   width: '100%',
-  ':disabled': {
-    background: COLOR_V2.GRAY_60,
-  },
 };
 
 export const termsCheckboxLabelCss: CSSObject = {

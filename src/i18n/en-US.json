@@ -112,7 +112,7 @@
     "confirmPageHeader": "Join your team",
     "confirmPageSubHeader": "To ensure a secure transfer and prevent unauthorized access, please enter the password of your personal account again.",
     "termsPageHeader": "Join your team",
-    "termsPageSubHeader": "You’re about to join the team.",
+    "termsPageSubHeader": "You’re about to join the team managed by {{email}}.",
     "termsPageListHeader": "Things to know",
     "termsPageListItem1": "Your <b>personal account will be transferred</b> to a team account.",
     "termsPageListItem2": "<b>This change is permanent</b> and irrevocable.",

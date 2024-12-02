@@ -40,6 +40,8 @@ import {useTranslation} from 'react-i18next';
 import {LoginData} from '@wireapp/api-client/lib/auth';
 import {ClientType} from '@wireapp/api-client/lib/client';
 import {useActionContext} from 'script/module/action';
+import {reportEvent} from 'script/util/Tracking/Tracking';
+import {EventName, SegmentationKey, SegmentationValue} from 'script/util/Tracking/types';
 
 export const AcceptInvitation = () => {
   const [searchParams] = useSearchParams();
@@ -54,7 +56,15 @@ export const AcceptInvitation = () => {
   const code = searchParams.get(QUERY_KEY.TEAM_CODE);
   const cachedCode = getTeamInvitationCode();
 
+  const trackEvent = (step: SegmentationValue) => {
+    reportEvent(EventName.USER_MIGRATION_LOGIN, {
+      [SegmentationKey.STEP]: step,
+    });
+  };
+
   useEffect(() => {
+    trackEvent(SegmentationValue.OPENED);
+
     if (!code && !cachedCode) {
       navigate(ROUTE.HOME);
     }
@@ -75,6 +85,7 @@ export const AcceptInvitation = () => {
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError('');
+    trackEvent(SegmentationValue.CONTINUE_CLICKED);
 
     const login: LoginData = {
       clientType: ClientType.PERMANENT,
@@ -116,6 +127,7 @@ export const AcceptInvitation = () => {
             title={t('invitationPagLoginLabel')}
             value={email}
             data-uie-name="enter-login-identifier"
+            onBlur={() => trackEvent(SegmentationValue.EMAIL_ENTERED)}
           />
 
           <Input
@@ -130,9 +142,14 @@ export const AcceptInvitation = () => {
             type="password"
             value={password}
             data-uie-name="enter-login-password"
+            onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
           />
           <div css={forgotPasswordCss}>
-            <Link href={ROUTE.PASSWORD_FORGOT} data-uie-name="go-forgot-password">
+            <Link
+              href={ROUTE.PASSWORD_FORGOT}
+              onClick={() => trackEvent(SegmentationValue.PASSWORD_FORGOTTEN)}
+              data-uie-name="go-forgot-password"
+            >
               {t('forgotPassword')}
             </Link>
           </div>
