@@ -135,17 +135,21 @@ export const TermsAcknowledgement = () => {
       <div css={{margin: '2.5rem 2rem', textAlign: 'left'}}>
         <Bold css={termsContentHeaderCss}>{t('termsPageRecommendationsHeader')}</Bold>
         <div css={termsContentBlueBox}>
-          <div css={{margin: '0.4rem 0'}}>
+          <div css={{marginTop: '5px'}}>
             <OutlinedCheckIcon />
           </div>
           <div css={termsContentBlueBoxContent}>{t('termsPageRecommendationItem1')}</div>
         </div>
         <div css={termsContentBlueBox}>
-          <div css={{margin: '0.4rem 0'}}>
+          <div css={{marginTop: '5px'}}>
             <OutlinedCheckIcon />
           </div>
 
-          <Link href={EXTERNAL_ROUTE.SUPPORT_BACKUP_HISTORY} target="_blank" css={{textDecoration: 'underline'}}>
+          <Link
+            href={EXTERNAL_ROUTE.SUPPORT_BACKUP_HISTORY}
+            target="_blank"
+            css={{textDecoration: 'underline', alignContent: 'center'}}
+          >
             <b css={termsContentBlueBoxContent}>{t('termsPageRecommendationItem2')}</b>
           </Link>
         </div>

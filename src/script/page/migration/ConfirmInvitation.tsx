@@ -99,6 +99,7 @@ export const ConfirmInvitation = () => {
           value={password}
           data-uie-name="enter-login-password"
           onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
+          markInvalid={!!error}
         />
         <div css={forgotPasswordCss}>
           <Link href={ROUTE.PASSWORD_FORGOT} data-uie-name="go-forgot-password">
