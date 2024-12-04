@@ -78,12 +78,9 @@ export const termsSubHeaderCss: CSSObject = {
 };
 
 export const termsContentHeaderCss: CSSObject = {
-  fontSize: '1.25rem',
   marginBottom: '1rem',
+  fontSize: '1rem',
   display: 'block',
-  [media[QueryKeys.TABLET_DOWN]]: {
-    fontSize: '1rem',
-  },
 };
 
 export const termsListCss: CSSObject = {
@@ -97,11 +94,8 @@ export const termsListCss: CSSObject = {
 };
 
 export const termsListItemCss: CSSObject = {
-  fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  [media[QueryKeys.TABLET_DOWN]]: {
-    fontSize: '1rem',
-  },
+  fontSize: '1rem',
 };
 
 export const termsContentWarningBox: CSSObject = {
@@ -113,11 +107,8 @@ export const termsContentWarningBox: CSSObject = {
   margin: '0 2rem',
 };
 export const termsContentWarningBoxContent: CSSObject = {
-  fontSize: '1.25rem',
   lineHeight: '1.75rem',
-  [media[QueryKeys.TABLET_DOWN]]: {
-    fontSize: '1rem',
-  },
+  fontSize: '1rem',
 };
 
 export const termsContentBlueBox: CSSObject = {
@@ -130,12 +121,9 @@ export const termsContentBlueBox: CSSObject = {
 
 export const termsContentBlueBoxContent: CSSObject = {
   marginLeft: '1.5rem',
-  fontSize: '1.25rem',
+  fontSize: '1rem',
   lineHeight: '1.75rem',
   textTransform: 'none',
-  [media[QueryKeys.TABLET_DOWN]]: {
-    fontSize: '1rem',
-  },
 };
 
 export const forgotPasswordCss: CSSObject = {
