@@ -3,7 +3,7 @@
     "@wireapp/commons": "5.4.0",
     "dotenv": "16.4.7",
     "dotenv-extended": "2.9.0",
-    "express": "4.21.1",
+    "express": "4.21.2",
     "express-hbs": "2.5.0",
     "fs-extra": "10.1.0",
     "handlebars": "4.7.7",
