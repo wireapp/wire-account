@@ -4242,12 +4242,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/telemetry@npm:0.1.3":
-  version: 0.1.3
-  resolution: "@wireapp/telemetry@npm:0.1.3"
+"@wireapp/telemetry@npm:0.1.4":
+  version: 0.1.4
+  resolution: "@wireapp/telemetry@npm:0.1.4"
   dependencies:
-    countly-sdk-web: 24.11.0
-  checksum: d172d6ed72c052b0641f25fab64ae994916df3b025e7e60c2220d6fef15f06a68a72ba65aeb0c7f965fa369edcde9521c234c19e9b5271fb4147d2c4c86654d7
+    countly-sdk-web: 24.11.1
+  checksum: e16b7a813384f10a177541cbe56bed0d601bb60b788190c913100ccfdce2ddf6f2fa88355d1486ebd28a058911cc2fda6db76f58fc253de2fb642965bf6e0a5a
   languageName: node
   linkType: hard
 
@@ -5813,10 +5813,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"countly-sdk-web@npm:24.11.0":
-  version: 24.11.0
-  resolution: "countly-sdk-web@npm:24.11.0"
-  checksum: 055bd4cae49d79bea602503de5636db1381f90395057aed373f976ac1e4286fcc2cb569bde57e86229af1b367b3ab4137ad9824ae7ff48a10e03c004cb9dc972
+"countly-sdk-web@npm:24.11.1":
+  version: 24.11.1
+  resolution: "countly-sdk-web@npm:24.11.1"
+  checksum: dea6f5f8f93dfefe56eb690646d8b7f2b849c77999371433f7ad09c72cd9d37631a843a8e9d32e36669780a2e6a753d5d4de981afd11f95fefce1b4b548306c4
   languageName: node
   linkType: hard
 
@@ -14245,7 +14245,7 @@ __metadata:
     "@wireapp/copy-config": 2.2.10
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.28.0
-    "@wireapp/telemetry": 0.1.3
+    "@wireapp/telemetry": 0.1.4
     adm-zip: 0.5.16
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
