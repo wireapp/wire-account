@@ -4133,9 +4133,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.11.0":
-  version: 27.11.0
-  resolution: "@wireapp/api-client@npm:27.11.0"
+"@wireapp/api-client@npm:27.13.1":
+  version: 27.13.1
+  resolution: "@wireapp/api-client@npm:27.13.1"
   dependencies:
     "@wireapp/commons": ^5.4.0
     "@wireapp/priority-queue": ^2.1.11
@@ -4150,7 +4150,7 @@ __metadata:
     tough-cookie: 4.1.4
     ws: 8.18.0
     zod: 3.23.8
-  checksum: f9f7481ec3556ee471cf8d7c2db4b8833cceac053331fff6a2d389a1a72ea52daab34c2d5cb074d9982d021bf2a46138a30e21fcd457bf7c804ca7059f356622
+  checksum: e1a1fee95602c9fed65dea36761dfc01e64aa6d3845686387c5c0011077977730dd021b938ffcc61b49c3641c5160c1dc632aade7a4e3e8499f6ec9ab85721ee
   languageName: node
   linkType: hard
 
@@ -14240,7 +14240,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 8.16.0
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.11.0
+    "@wireapp/api-client": 27.13.1
     "@wireapp/commons": 5.4.0
     "@wireapp/copy-config": 2.2.10
     "@wireapp/eslint-config": 1.4.0
