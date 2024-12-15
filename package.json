@@ -37,7 +37,7 @@
     "@types/webpack-env": "1.18.5",
     "@typescript-eslint/eslint-plugin": "8.17.0",
     "@typescript-eslint/parser": "7.17.0",
-    "@wireapp/copy-config": "2.2.10",
+    "@wireapp/copy-config": "2.2.11",
     "@wireapp/eslint-config": "1.4.0",
     "adm-zip": "0.5.16",
     "babel-eslint": "10.1.0",
