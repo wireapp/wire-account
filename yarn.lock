@@ -4126,9 +4126,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.16.1":
-  version: 27.16.1
-  resolution: "@wireapp/api-client@npm:27.16.1"
+"@wireapp/api-client@npm:27.17.0":
+  version: 27.17.0
+  resolution: "@wireapp/api-client@npm:27.17.0"
   dependencies:
     "@wireapp/commons": ^5.4.0
     "@wireapp/priority-queue": ^2.1.11
@@ -4142,8 +4142,8 @@ __metadata:
     spark-md5: 3.0.2
     tough-cookie: 4.1.4
     ws: 8.18.0
-    zod: 3.23.8
-  checksum: 61349003a50528f221ffc038e1de824bc114046c35d69b3714de0519621e1ac8829bc75b522dccf0068534d7241870d1e6d33a08efd4c634eb8d34e66014ef38
+    zod: 3.24.1
+  checksum: 054bdc3c6750fe2e276093273ccdf20fb53e76093ad6c75662387c0a758924f296954c16ed82e544b10499faf63f7152cd409ce4989b3a6b590449a43b6c5963
   languageName: node
   linkType: hard
 
@@ -14333,7 +14333,7 @@ __metadata:
     "@types/webpack-env": 1.18.5
     "@typescript-eslint/eslint-plugin": 8.18.0
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.16.1
+    "@wireapp/api-client": 27.17.0
     "@wireapp/commons": 5.4.0
     "@wireapp/copy-config": 2.2.11
     "@wireapp/eslint-config": 1.4.0
@@ -14588,9 +14588,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.23.8":
-  version: 3.23.8
-  resolution: "zod@npm:3.23.8"
-  checksum: 15949ff82118f59c893dacd9d3c766d02b6fa2e71cf474d5aa888570c469dbf5446ac5ad562bb035bf7ac9650da94f290655c194f4a6de3e766f43febd432c5c
+"zod@npm:3.24.1":
+  version: 3.24.1
+  resolution: "zod@npm:3.24.1"
+  checksum: dcd5334725b29555593c186fd6505878bb7ccb4f5954f728d2de24bf71f9397492d83bdb69d5b8a376eb500a02273ae0691b57deb1eb8718df3f64c77cc5534a
   languageName: node
   linkType: hard
