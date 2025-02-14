@@ -50,15 +50,15 @@ function readFile(path: string, fallback?: string): string {
 const nodeEnvironment = process.env.NODE_ENV || 'production';
 
 const defaultCSP = {
-  connectSrc: ["'self'", 'https://*.wire.com', 'https://*.zinfra.io', 'https://wire.innocraft.cloud'],
+  connectSrc: ["'self'", 'https://*.wire.com', 'https://*.zinfra.io'],
   defaultSrc: ["'self'"],
   fontSrc: ["'self'"],
   frameSrc: ["'self'"],
-  imgSrc: ["'self'", 'data:', 'https://wire.innocraft.cloud'],
+  imgSrc: ["'self'", 'data:'],
   manifestSrc: ["'self'"],
   mediaSrc: ["'self'"],
   objectSrc: ["'self'"],
-  scriptSrc: ["'self'", 'https://wire.innocraft.cloud'],
+  scriptSrc: ["'self'"],
   styleSrc: ["'self'", "'unsafe-inline'"],
   workerSrc: ["'self'"],
 };
@@ -138,8 +138,6 @@ const config: ServerConfig = {
     COUNTLY_API_KEY: process.env.COUNTLY_API_KEY,
   },
   COMMIT: readFile(COMMIT_FILE, ''),
-  PIWIK_HOSTNAME: process.env.PIWIK_HOSTNAME,
-  PIWIK_ID: process.env.PIWIK_ID,
   SERVER: {
     APP_BASE: process.env.APP_BASE,
     CACHE_DURATION_SECONDS: 300,
