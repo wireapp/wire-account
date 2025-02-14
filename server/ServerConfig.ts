@@ -53,8 +53,6 @@ export interface ServerConfig {
     VERSION: string;
   };
   COMMIT: string;
-  PIWIK_HOSTNAME: string;
-  PIWIK_ID: string;
   SERVER: {
     APP_BASE: string;
     CACHE_DURATION_SECONDS: number;
