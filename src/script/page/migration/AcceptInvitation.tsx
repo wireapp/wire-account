@@ -46,7 +46,7 @@ import {EventName, SegmentationKey, SegmentationValue} from 'script/util/Trackin
 export const AcceptInvitation = () => {
   const [searchParams] = useSearchParams();
   const {accountAction} = useActionContext();
-  const [t] = useTranslation(['migration', 'login']);
+  const [t] = useTranslation(['migration']);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
@@ -138,7 +138,7 @@ export const AcceptInvitation = () => {
             pattern=".{1,1024}"
             placeholder={t('password')}
             required
-            title={t('passwordTitle')}
+            title={t('password')}
             type="password"
             value={password}
             data-uie-name="enter-login-password"
@@ -158,11 +158,11 @@ export const AcceptInvitation = () => {
             type="submit"
             disabled={!password || !email}
             data-uie-name="do-login"
-            aria-label={t('logIn')}
+            aria-label={t('login')}
             showLoading={loading}
             css={buttonCss}
           >
-            {t('logIn')}
+            {t('login')}
           </Button>
         </Form>
 
