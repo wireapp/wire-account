@@ -13850,9 +13850,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:5.3.12":
-  version: 5.3.12
-  resolution: "terser-webpack-plugin@npm:5.3.12"
+"terser-webpack-plugin@npm:5.3.14":
+  version: 5.3.14
+  resolution: "terser-webpack-plugin@npm:5.3.14"
   dependencies:
     "@jridgewell/trace-mapping": ^0.3.25
     jest-worker: ^27.4.5
@@ -13868,7 +13868,7 @@ __metadata:
       optional: true
     uglify-js:
       optional: true
-  checksum: 7e33658f5f096547bd4bcdfa2d1d5ab4e87fe4b9aa65b4086f30049b69e7a4edb267635960788f694f37bf99228b9e270b255b4831213342b177df8a49b6f8c1
+  checksum: 13a1e67f1675a473b18d25cb0ce65c3f0a19b5e9a93213a99ea61dc4ca996ea93aa17a221965b526f5788d242836a8249ad00538fbb322e25cb69076eb55feab
   languageName: node
   linkType: hard
 
@@ -15173,7 +15173,7 @@ __metadata:
     simple-git: 3.27.0
     sort-json: 2.0.1
     svg-inline-loader: 0.8.2
-    terser-webpack-plugin: 5.3.12
+    terser-webpack-plugin: 5.3.14
     ts-jest: 29.2.6
     typescript: 5.6.3
     uuid: 11.1.0
