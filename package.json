@@ -123,6 +123,6 @@
     "webpack:dev": "webpack --config webpack.config.dev.js",
     "changelog": "node ./bin/changelog.js"
   },
-  "version": "2.6.2",
+  "version": "2.7.0",
   "packageManager": "yarn@3.5.0"
 }
