@@ -32,7 +32,6 @@ import ConfigRoute from './routes/config/ConfigRoute';
 import DefaultRoute from './routes/error/DefaultRoute';
 import ErrorRoute from './routes/error/ErrorRoute';
 import GeneratedAppleRoute from './routes/generated/GeneratedAppleRoute';
-import GeneratedPiwikRoute from './routes/generated/GeneratedPiwikRoute';
 import SSOStartRoute from './routes/redirect/SSOStartRoute';
 import {ServerConfig} from './ServerConfig';
 
@@ -70,7 +69,6 @@ class Server {
     this.app.use(SSOStartRoute(this.config));
     this.app.use(CommitRoute(this.config));
     this.app.use(GeneratedAppleRoute(this.config));
-    this.app.use(GeneratedPiwikRoute(this.config));
     this.app.use(DefaultRoute(this.config));
     this.app.use(ErrorRoute(this.config));
   }
