@@ -125,12 +125,14 @@
     "termsPageRecommendationItem1": "Verify the admin’s identity before accepting, and if you’re unsure, close this window.",
     "termsPageRecommendationItem2": "Back up your history",
     "termsPageMigrationTerms": "I agree to the migration terms and understand that this change is irreversible.",
-    "termsPageTermsOfUse": "I accept",
+    "termsPageTermsOfUse": "මම පිළිගනිමි",
     "termsPageTermsOfUseLink": "Wire's Terms of Use (Business).",
-    "invitationPageHeader": "Join your team",
+    "invitationPageHeader": "කණ්ඩායමකට එක්වන්න",
     "invitationPageSubHeader": "Log in with your personal account's email or username and password.",
-    "invitationPagLoginLabel": "Email or username",
-    "emailOrUsernamePlaceholder": "Enter email or username",
-    "forgotPassword": "Forgot password?"
+    "invitationPagLoginLabel": "වි-තැපෑල හෝ පරිශ්‍රීලක නාමය",
+    "emailOrUsernamePlaceholder": "වි-තැපෑල හෝ පරිශ්‍රීලක නාමය ලියන්න",
+    "forgotPassword": "මුරපදය අමතකද?",
+    "login": "Log in",
+    "password": "Password"
   }
 }
