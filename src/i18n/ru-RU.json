@@ -1,10 +1,10 @@
 {
   "delete": {
-    "button": "Delete Account",
+    "button": "Удалить аккаунт",
     "confirmation": "All your data on {{company}} is now erased.",
     "description": "We’ve received a request to delete your {{company}} account. Click on the button below to proceed. It is valid for 10 minutes.",
     "errorDescription": "Please try again to delete your account.",
-    "errorTitle": "Something went wrong",
+    "errorTitle": "Что-то пошло не так",
     "greeting": "Hi there,",
     "headline": "Account deleted",
     "resetLink": "reset your {{company}} password.",
