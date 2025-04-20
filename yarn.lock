@@ -3634,13 +3634,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cookie@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@types/cookie@npm:0.6.0"
-  checksum: 5edce7995775b0b196b142883e4d4f71fd93c294eaec973670f1fa2540b70ea7390408ed513ddefef5fcb12a578100c76596e8f2a714b0c2ae9f70ee773f4510
-  languageName: node
-  linkType: hard
-
 "@types/eslint-scope@npm:^3.7.7":
   version: 3.7.7
   resolution: "@types/eslint-scope@npm:3.7.7"
@@ -12398,11 +12391,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:7.5.0":
-  version: 7.5.0
-  resolution: "react-router@npm:7.5.0"
+"react-router@npm:7.5.1":
+  version: 7.5.1
+  resolution: "react-router@npm:7.5.1"
   dependencies:
-    "@types/cookie": ^0.6.0
     cookie: ^1.0.1
     set-cookie-parser: ^2.6.0
     turbo-stream: 2.4.0
@@ -12412,7 +12404,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 475ce0ad1be1ab8e1278e59640de711c6f9cae55b0f68f384ce0314ff3f9ff719c1baec591852183617e5efffc0f7825febbb0084eb84c2f096e3a732170e534
+  checksum: e0ab3ad239447761567e4b01cee19e6f334698914cdc32ec0ef90b09e4538494b37acd9059bbfefd1313a48feba8d0a64ecfe4cc5232b160c6ac23e8f7b9a3e7
   languageName: node
   linkType: hard
 
@@ -15340,7 +15332,7 @@ __metadata:
     react: 18.3.1
     react-dom: 18.3.1
     react-i18next: 11.18.6
-    react-router: 7.5.0
+    react-router: 7.5.1
     react-router-dom: 6.28.0
     simple-git: 3.27.0
     sort-json: 2.0.1
