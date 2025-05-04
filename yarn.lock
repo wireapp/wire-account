@@ -3969,31 +3969,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:7.17.0":
-  version: 7.17.0
-  resolution: "@typescript-eslint/parser@npm:7.17.0"
+"@typescript-eslint/parser@npm:8.31.1":
+  version: 8.31.1
+  resolution: "@typescript-eslint/parser@npm:8.31.1"
   dependencies:
-    "@typescript-eslint/scope-manager": 7.17.0
-    "@typescript-eslint/types": 7.17.0
-    "@typescript-eslint/typescript-estree": 7.17.0
-    "@typescript-eslint/visitor-keys": 7.17.0
+    "@typescript-eslint/scope-manager": 8.31.1
+    "@typescript-eslint/types": 8.31.1
+    "@typescript-eslint/typescript-estree": 8.31.1
+    "@typescript-eslint/visitor-keys": 8.31.1
     debug: ^4.3.4
   peerDependencies:
-    eslint: ^8.56.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: f0525317af174b5547d0a7ed8eadbbb7bbc1da9e9ab86882ed616b0ffb053170818a48cab2aaa627001ee991ee559630fbe5ad632b3df7cdf4a2b1b07a571907
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/scope-manager@npm:7.17.0":
-  version: 7.17.0
-  resolution: "@typescript-eslint/scope-manager@npm:7.17.0"
-  dependencies:
-    "@typescript-eslint/types": 7.17.0
-    "@typescript-eslint/visitor-keys": 7.17.0
-  checksum: 0cb77db6243455b47947df693d9b16f8e2b07e14994d755918dcc98693dba97036806d8f80a12bbd5c82f61883d134dd42d25880f20448c1e2376a9d873f9ef8
+    eslint: ^8.57.0 || ^9.0.0
+    typescript: ">=4.8.4 <5.9.0"
+  checksum: b056a509806f6762ea8b0e127d5f80b586fa5a6126968f54c3b797015b7762aa83de55e4498c17524e2a3399903d4b5c4776bf414ed2f78b5877590a7958465f
   languageName: node
   linkType: hard
 
@@ -4017,6 +4005,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/scope-manager@npm:8.31.1":
+  version: 8.31.1
+  resolution: "@typescript-eslint/scope-manager@npm:8.31.1"
+  dependencies:
+    "@typescript-eslint/types": 8.31.1
+    "@typescript-eslint/visitor-keys": 8.31.1
+  checksum: 54831c52a87facc9c2fb47c65a7928143181e2e550843d067f8e8dd17cc59c3568a244c5e8fc50fd7b7a896fba6ea82184bdee75c1be2b624795b8e7d62fd7ba
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/type-utils@npm:8.29.1":
   version: 8.29.1
   resolution: "@typescript-eslint/type-utils@npm:8.29.1"
@@ -4029,13 +4027,6 @@ __metadata:
     eslint: ^8.57.0 || ^9.0.0
     typescript: ">=4.8.4 <5.9.0"
   checksum: c5b7cf3f7b097d51b505b136ae6e8fe3d9b10882d2c4a2e299234f33a8032459c0a9fd9383405e52a32eb4f92a0417fecd1a67d6a83f99d52b38f9b145bce127
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/types@npm:7.17.0":
-  version: 7.17.0
-  resolution: "@typescript-eslint/types@npm:7.17.0"
-  checksum: efd4fadf8f3f2496d813338f873564b903fbaaff53f3ce496159c76d49e01f6e2dbbf037f5e7318d0292cca7b6191c8f8462fa31cba1b5c50a11676bbb5df9ba
   languageName: node
   linkType: hard
 
@@ -4053,22 +4044,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:7.17.0":
-  version: 7.17.0
-  resolution: "@typescript-eslint/typescript-estree@npm:7.17.0"
-  dependencies:
-    "@typescript-eslint/types": 7.17.0
-    "@typescript-eslint/visitor-keys": 7.17.0
-    debug: ^4.3.4
-    globby: ^11.1.0
-    is-glob: ^4.0.3
-    minimatch: ^9.0.4
-    semver: ^7.6.0
-    ts-api-utils: ^1.3.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 0f7a7618431c94603c742d1bcb1cb3a5aa646a6ebb3adff89b35db1fe014f9a060d550e6ca5f0ab152615ae129e8a0f84020dda56cd2d2c73386f657dccf7e34
+"@typescript-eslint/types@npm:8.31.1":
+  version: 8.31.1
+  resolution: "@typescript-eslint/types@npm:8.31.1"
+  checksum: 25307384fee650bcb7fbbdb383185c2b82691db6d88db1a1168868fe9f554255b46dd8812d2ef10f83335d8383cf838a920ea347edef4545950c56a5e19b84de
   languageName: node
   linkType: hard
 
@@ -4109,6 +4088,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/typescript-estree@npm:8.31.1":
+  version: 8.31.1
+  resolution: "@typescript-eslint/typescript-estree@npm:8.31.1"
+  dependencies:
+    "@typescript-eslint/types": 8.31.1
+    "@typescript-eslint/visitor-keys": 8.31.1
+    debug: ^4.3.4
+    fast-glob: ^3.3.2
+    is-glob: ^4.0.3
+    minimatch: ^9.0.4
+    semver: ^7.6.0
+    ts-api-utils: ^2.0.1
+  peerDependencies:
+    typescript: ">=4.8.4 <5.9.0"
+  checksum: 93ed0853c84a0ecf8eac1716b2161821b252cc218f2084c6235672783446943e358cf4f0996d87514fb0e75d6a2eb491b18fff1e1617eabe8faada37e4810aaf
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/utils@npm:8.29.1":
   version: 8.29.1
   resolution: "@typescript-eslint/utils@npm:8.29.1"
@@ -4138,16 +4135,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:7.17.0":
-  version: 7.17.0
-  resolution: "@typescript-eslint/visitor-keys@npm:7.17.0"
-  dependencies:
-    "@typescript-eslint/types": 7.17.0
-    eslint-visitor-keys: ^3.4.3
-  checksum: fae45049d06c15473784fc442271a9ebab1d1139246d47f185645a64407669c85c7519ef083886d74c921e34fcc68889f35caa858b345469d8bb26eb9f26728e
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/visitor-keys@npm:8.0.0":
   version: 8.0.0
   resolution: "@typescript-eslint/visitor-keys@npm:8.0.0"
@@ -4165,6 +4152,16 @@ __metadata:
     "@typescript-eslint/types": 8.29.1
     eslint-visitor-keys: ^4.2.0
   checksum: 82bd4efa0ed982d80bfda85151e11da95c5c79fcf54389f37cdd168ae7a83abc6f72a5b8fb2c90f7a568f02e8bd3d7752cb5671b51faff13a06434a999ea346e
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/visitor-keys@npm:8.31.1":
+  version: 8.31.1
+  resolution: "@typescript-eslint/visitor-keys@npm:8.31.1"
+  dependencies:
+    "@typescript-eslint/types": 8.31.1
+    eslint-visitor-keys: ^4.2.0
+  checksum: fe425abdf44d38afb1a94726411de4a9df540d4a05b8c7db5517b8edfcd02be8a6d7fbd532f5a0377a634956440d0757eca0abb52cecfe683cd17d5c2d02473e
   languageName: node
   linkType: hard
 
@@ -15297,7 +15294,7 @@ __metadata:
     "@types/uuid": 10.0.0
     "@types/webpack-env": 1.18.8
     "@typescript-eslint/eslint-plugin": 8.29.1
-    "@typescript-eslint/parser": 7.17.0
+    "@typescript-eslint/parser": 8.31.1
     "@wireapp/api-client": 27.19.0
     "@wireapp/commons": 5.4.2
     "@wireapp/copy-config": 2.3.0
