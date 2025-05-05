@@ -32,20 +32,14 @@ export const UserProfile = () => {
 
   const params = new URLSearchParams(location.search);
   const idParam = params.get(USER_ID_KEY);
+  const [userId = '', domain = ''] = idParam ? idParam.split('@') : ['', ''];
 
-  let userId = '';
-  let domain = '';
-
-  if (idParam) {
-    const [uid, dom] = idParam.split('@');
-    userId = uid;
-    domain = dom || ''; // domain is optional
-  } else {
+  if (!idParam) {
     console.error('Invalid or missing id parameter in URL');
   }
 
-  const app = domain ? `user/${domain}/${userId}` : `user/${userId}`;
-  const webapp = domain ? `/#/user/${domain}/${userId}` : `/#/user/${userId}`;
+  const app = `user/${domain ? `${domain}/` : ''}${userId}`;
+  const webapp = `/#/user/${domain ? `${domain}/` : ''}${userId}`;
 
   return (
     <Document>
