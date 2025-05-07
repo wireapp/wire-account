@@ -19,8 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Yarn cache
-        uses: c-hive/gha-yarn-cache@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
 
       - name: Install JS dependencies
         run: yarn --frozen-lockfile

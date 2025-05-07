@@ -31,7 +31,15 @@ export const UserProfile = () => {
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
 
   const params = new URLSearchParams(location.search);
-  const userId = params.get(USER_ID_KEY);
+  const idParam = params.get(USER_ID_KEY);
+  const [userId = '', domain = ''] = idParam ? idParam.split('@') : ['', ''];
+
+  if (!idParam) {
+    console.error('Invalid or missing id parameter in URL');
+  }
+
+  const app = `user/${domain ? `${domain}/` : ''}${userId}`;
+  const webapp = `/#/user/${domain ? `${domain}/` : ''}${userId}`;
 
   return (
     <Document>
@@ -40,11 +48,7 @@ export const UserProfile = () => {
           <H2 style={{fontWeight: 500, marginBottom: 40, marginTop: '0'}}>{t('title', {brandName: BRAND_NAME})}</H2>
           <Text block>{t('description')}</Text>
           <FlexBox column={isMobile} css={{marginTop: 24}}>
-            <OpenWireButtons
-              translate={t}
-              uieName="open-user-profile"
-              paths={{app: `user/${userId}`, webapp: `/#/user/${userId}`}}
-            />
+            <OpenWireButtons translate={t} uieName="open-user-profile" paths={{app, webapp}} />
           </FlexBox>
         </>
       </ContainerSM>
