@@ -7467,9 +7467,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:5.2":
-  version: 5.2.6
-  resolution: "eslint-plugin-prettier@npm:5.2.6"
+"eslint-plugin-prettier@npm:5.4":
+  version: 5.4.0
+  resolution: "eslint-plugin-prettier@npm:5.4.0"
   dependencies:
     prettier-linter-helpers: ^1.0.0
     synckit: ^0.11.0
@@ -7483,7 +7483,7 @@ __metadata:
       optional: true
     eslint-config-prettier:
       optional: true
-  checksum: 2626c123916c4afe88d423bac9c3644d30af8beac4963b77bf447f42ba75ab592076716dfa9d43333bfde0ac482d8f8b6a49699403d128aee5effd609ca54bec
+  checksum: 1d71d4fb42b8f9654232c6f9c6805549f7e9da6ee3207069dac122ab1c55eae90a0840f5c109e821e3a5145ec223dbbdfa7cfd3c3a28267316d08d55d5812e21
   languageName: node
   linkType: hard
 
@@ -15290,7 +15290,7 @@ __metadata:
     eslint-plugin-jest: 28.11.0
     eslint-plugin-jsdoc: 50.6.14
     eslint-plugin-no-unsanitized: 4.1.2
-    eslint-plugin-prettier: 5.2
+    eslint-plugin-prettier: 5.4
     eslint-plugin-react: 7.37.5
     eslint-plugin-react-hooks: 5.2.0
     eslint-plugin-simple-import-sort: 8.0.0
