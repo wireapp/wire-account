@@ -1,6 +1,5 @@
-#### 2.6.2 (2025-04-11)
+#### 2.7.0 (2025-05-14)
 
-##### Bug Fixes
+##### New Features
 
-- add missing translations for login button and password input WPB-15471 ([#5317](https://github.com/wireapp/wire-account/pull/5317)) ([7b625a33](https://github.com/wireapp/wire-account/commit/7b625a3334ab40feb28107bd56f0071263929b07))
-- Remove Piwik/Matomo Integration (WPB-15252) ([#5274](https://github.com/wireapp/wire-account/pull/5274)) ([1231b346](https://github.com/wireapp/wire-account/commit/1231b346ea2219855967d071aef4228c49d9486a))
+- Add support for profile domain (WPB-10532) ([#5423](https://github.com/wireapp/wire-account/pull/5423)) ([04db5a3d](https://github.com/wireapp/wire-account/commit/04db5a3de3700b80f78e1b457536fe50f86ff6d2))
