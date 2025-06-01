@@ -4686,15 +4686,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/react-ui-kit@npm:9.53.0":
-  version: 9.53.0
-  resolution: "@wireapp/react-ui-kit@npm:9.53.0"
+"@wireapp/react-ui-kit@npm:9.55.0":
+  version: 9.55.0
+  resolution: "@wireapp/react-ui-kit@npm:9.55.0"
   dependencies:
     "@radix-ui/react-dropdown-menu": 2.1.14
     "@types/color": 3.0.6
     color: 4.2.3
     emotion-normalize: 11.0.1
-    react-select: 5.7.7
+    react-select: 5.10.1
     react-transition-group: 4.4.5
   peerDependencies:
     "@emotion/react": ^11
@@ -4704,7 +4704,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 259c348ffa29621f0a0e687ea52b9c89677b95e5c182d767e366e46ba5c798ea8b9b982d9e31908005d95c16146dae72238c424d01c77de92fdac42ed15bb70b
+  checksum: ed1558f64163475be20187800d74afb76aafebfe15743966d2b9ed9ab293be83aad72a420edaf0ad64dea2b064602d0e76abd4b8378c0b110f2bf19abb9d4de4
   languageName: node
   linkType: hard
 
@@ -12635,9 +12635,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-select@npm:5.7.7":
-  version: 5.7.7
-  resolution: "react-select@npm:5.7.7"
+"react-select@npm:5.10.1":
+  version: 5.10.1
+  resolution: "react-select@npm:5.10.1"
   dependencies:
     "@babel/runtime": ^7.12.0
     "@emotion/cache": ^11.4.0
@@ -12647,11 +12647,11 @@ __metadata:
     memoize-one: ^6.0.0
     prop-types: ^15.6.0
     react-transition-group: ^4.3.0
-    use-isomorphic-layout-effect: ^1.1.2
+    use-isomorphic-layout-effect: ^1.2.0
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 6fd0c211d377addba6e6762a614ae674936df39a3f46ec19fd06e7acae8d6cadeb93d4723b10e25eff1ff8235077bae9459f293936334d82b28fe5071081c057
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: b3050e46936416b024a8e76821beeb8b4275c1835db689aaaf1c8c3cae8afdade17a1711b53b63c72109b1c12711d64234285ea1468e95aaf33d5e6b0bb356e3
   languageName: node
   linkType: hard
 
@@ -15007,15 +15007,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-isomorphic-layout-effect@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "use-isomorphic-layout-effect@npm:1.1.2"
+"use-isomorphic-layout-effect@npm:^1.2.0":
+  version: 1.2.1
+  resolution: "use-isomorphic-layout-effect@npm:1.2.1"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: a6532f7fc9ae222c3725ff0308aaf1f1ddbd3c00d685ef9eee6714fd0684de5cb9741b432fbf51e61a784e2955424864f7ea9f99734a02f237b17ad3e18ea5cb
+  checksum: a52155ffa7d67a5107ef2033ae2c63f5290c3e3b198de30d4d4f78cd7921e1ab1ea31eeec387defb67ef61adb672d3b8d25b54b7dcc089bacc4f885abde96e9d
   languageName: node
   linkType: hard
 
@@ -15541,7 +15541,7 @@ __metadata:
     "@wireapp/commons": 5.4.2
     "@wireapp/copy-config": 2.3.0
     "@wireapp/eslint-config": 1.4.0
-    "@wireapp/react-ui-kit": 9.53.0
+    "@wireapp/react-ui-kit": 9.55.0
     "@wireapp/telemetry": 0.3.1
     adm-zip: 0.5.16
     babel-eslint: 10.1.0
