@@ -6229,10 +6229,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^13.1.0":
-  version: 13.1.0
-  resolution: "commander@npm:13.1.0"
-  checksum: 8ca2fcb33caf2aa06fba3722d7a9440921331d54019dabf906f3603313e7bf334b009b862257b44083ff65d5a3ab19e83ad73af282bd5319f01dc228bdf87ef0
+"commander@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "commander@npm:14.0.0"
+  checksum: 6e9bdaf2e8e4f512855ffc10579eeae2e84c4a7697a91b1a5f62aab3c9849182207855268dd7c3952ae7a2334312a7138f58e929e4b428aef5bf8af862685c9b
   languageName: node
   linkType: hard
 
@@ -6606,15 +6606,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "debug@npm:4.4.0"
+"debug@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "debug@npm:4.4.1"
   dependencies:
     ms: ^2.1.3
   peerDependenciesMeta:
     supports-color:
       optional: true
-  checksum: fb42df878dd0e22816fc56e1fdca9da73caa85212fbe40c868b1295a6878f9101ae684f4eeef516c13acfc700f5ea07f1136954f43d4cd2d477a811144136479
+  checksum: a43826a01cda685ee4cec00fb2d3322eaa90ccadbef60d9287debc2a886be3e835d9199c80070ede75a409ee57828c4c6cd80e4b154f2843f0dc95a570dc0729
   languageName: node
   linkType: hard
 
@@ -11082,23 +11082,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:16.0.0":
-  version: 16.0.0
-  resolution: "lint-staged@npm:16.0.0"
+"lint-staged@npm:16.1.0":
+  version: 16.1.0
+  resolution: "lint-staged@npm:16.1.0"
   dependencies:
     chalk: ^5.4.1
-    commander: ^13.1.0
-    debug: ^4.4.0
+    commander: ^14.0.0
+    debug: ^4.4.1
     lilconfig: ^3.1.3
     listr2: ^8.3.3
     micromatch: ^4.0.8
-    nano-spawn: ^1.0.0
+    nano-spawn: ^1.0.2
     pidtree: ^0.6.0
     string-argv: ^0.3.2
-    yaml: ^2.7.1
+    yaml: ^2.8.0
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: f57d710dac15179c013a6df457286cb60c4c6094a20f23aa0e3021acf8d9e612469131f415ea1a3f5a25cad5875a2e540eab068f788344d6b33c127a4457b02d
+  checksum: e882bfee0f0ddaf4af4d58925af2591ac994a805242fc73205aa950201c3d094de82927d12d766f9d1173917b2e5e71c3ce20b69a0a8d214b22a2264bab5355f
   languageName: node
   linkType: hard
 
@@ -11648,10 +11648,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nano-spawn@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "nano-spawn@npm:1.0.1"
-  checksum: 408041247a293248401d20d6453211169d07b29800280c1f5839ce1096eda02f1996083525f1cd1cd86f681d7db843f9db0fa2fa0485a753590786eef50ef7e7
+"nano-spawn@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "nano-spawn@npm:1.0.2"
+  checksum: 195eb751f5f32bebb622c57e3fdb2ebac8b9ffea301c94412a0fb0d3c0035854884e505a0518ff2dd50faf12d005843a0409b1316dd3746e3c5e696a77ccff16
   languageName: node
   linkType: hard
 
@@ -15572,7 +15572,7 @@ __metadata:
     i18next-scanner: 4.6.0
     jest: 29.7.0
     jest-environment-jsdom: 29.7.0
-    lint-staged: 16.0.0
+    lint-staged: 16.1.0
     os-browserify: 0.3.0
     path-browserify: 1.0.1
     prettier: 3.2.4
@@ -15754,12 +15754,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.7.1":
-  version: 2.7.1
-  resolution: "yaml@npm:2.7.1"
+"yaml@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "yaml@npm:2.8.0"
   bin:
     yaml: bin.mjs
-  checksum: 385f8115ddfafdf8e599813cca8b2bf4e3f6a01b919fff5ae7da277e164df684d7dfe558b4085172094792b5a04786d3c55fa8b74abb0ee029873f031150bb80
+  checksum: 66f103ca5a2f02dac0526895cc7ae7626d91aa8c43aad6fdcff15edf68b1199be4012140b390063877913441aaa5288fdf57eca30e06268a8282dd741525e626
   languageName: node
   linkType: hard
 
