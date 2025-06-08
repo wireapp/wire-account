@@ -65,7 +65,7 @@
     "os-browserify": "0.3.0",
     "path-browserify": "1.0.1",
     "prettier": "3.2.4",
-    "simple-git": "3.27.0",
+    "simple-git": "3.28.0",
     "sort-json": "2.0.1",
     "svg-inline-loader": "0.8.2",
     "terser-webpack-plugin": "5.3.14",
