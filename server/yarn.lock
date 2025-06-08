@@ -2195,10 +2195,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansis@npm:4.0.0":
-  version: 4.0.0
-  resolution: "ansis@npm:4.0.0"
-  checksum: ce300b4c4618d70a8f31d5d7cb373578c33fe6c3aee6a2848221529fb5b6cc5372ed527b6c3d0ea880cb8802e4138ddedce5c5fb1c02260b6e4f59897185e29f
+"ansis@npm:4.0.0-node10":
+  version: 4.0.0-node10
+  resolution: "ansis@npm:4.0.0-node10"
+  checksum: 164f2f5751cbb7f675eafc2f52502692f2fdad7d2dcde4a75af517829681faf7708446893eadba8f68d09cb5bb5906e46e7ee23c61c6990324490838edd69ea9
   languageName: node
   linkType: hard
 
@@ -4966,15 +4966,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pm2@npm:6.0.6":
-  version: 6.0.6
-  resolution: "pm2@npm:6.0.6"
+"pm2@npm:6.0.8":
+  version: 6.0.8
+  resolution: "pm2@npm:6.0.8"
   dependencies:
     "@pm2/agent": ~2.1.1
     "@pm2/io": ~6.1.0
     "@pm2/js-api": ~0.8.0
     "@pm2/pm2-version-check": latest
-    ansis: 4.0.0
+    ansis: 4.0.0-node10
     async: ~3.2.6
     blessed: 0.1.81
     chokidar: ^3.5.3
@@ -5008,7 +5008,7 @@ __metadata:
     pm2-dev: bin/pm2-dev
     pm2-docker: bin/pm2-docker
     pm2-runtime: bin/pm2-runtime
-  checksum: 6f1a9fae503dbce70dd3590fbaf5c4ba6599a2502b9f7cfdd35d7b7acfd4740df3dce14dabfc22e2caa766a1aebec634a2c98a7bc3bc55a9beb3bbca2ba8a277
+  checksum: 73479d99961b6fa1ebdfc84d1e233059033f32e04cc88ca2d4b3fb6a9aa5c4da91f8f1714514c87384eaa9669b889e28aa31240f39893b308c339d8797c3021a
   languageName: node
   linkType: hard
 
@@ -6186,7 +6186,7 @@ __metadata:
     nocache: 4.0.0
     nodemon: 3.1.10
     opn: 6.0.0
-    pm2: 6.0.6
+    pm2: 6.0.8
     prettier: 3.5.3
     rimraf: 6.0.1
     typescript: 5.8.3
