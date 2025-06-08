@@ -30,7 +30,7 @@
     "@types/uuid": "9.0.8",
     "cross-env": "7.0.3",
     "generate-changelog": "1.8.0",
-    "jasmine": "5.7.1",
+    "jasmine": "5.8.0",
     "jszip": "3.10.1",
     "nodemon": "3.1.10",
     "opn": "6.0.0",
