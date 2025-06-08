@@ -6644,18 +6644,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.3.5":
-  version: 4.3.5
-  resolution: "debug@npm:4.3.5"
-  dependencies:
-    ms: 2.1.2
-  peerDependenciesMeta:
-    supports-color:
-      optional: true
-  checksum: 7c002b51e256257f936dda09eb37167df952758c57badf6bf44bdc40b89a4bcb8e5a0a2e4c7b53f97c69e2970dd5272d33a757378a12c8f8e64ea7bf99e8e86e
-  languageName: node
-  linkType: hard
-
 "debug@npm:^4.3.6":
   version: 4.3.6
   resolution: "debug@npm:4.3.6"
@@ -6668,7 +6656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.4.1":
+"debug@npm:^4.4.0, debug@npm:^4.4.1":
   version: 4.4.1
   resolution: "debug@npm:4.4.1"
   dependencies:
@@ -13625,14 +13613,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-git@npm:3.27.0":
-  version: 3.27.0
-  resolution: "simple-git@npm:3.27.0"
+"simple-git@npm:3.28.0":
+  version: 3.28.0
+  resolution: "simple-git@npm:3.28.0"
   dependencies:
     "@kwsites/file-exists": ^1.1.1
     "@kwsites/promise-deferred": ^1.1.1
-    debug: ^4.3.5
-  checksum: bc602d67317a5421363f4cbe446bc71336387a7ea9864b23993dcbbd7e4847e346a234aa5b46bf9d80130d2448cbaeb21cf8f7b62572dce093fb4643ff7ffafd
+    debug: ^4.4.0
+  checksum: d4f4a56f0eaf916e3c4b801342f6e6c32e73a3eb8c5497f61f71ff21f30462c64537ba76f2cc835d6cd1ffe6198bd52b3e242b0a70444c8cd21faa9f61f75634
   languageName: node
   linkType: hard
 
@@ -15643,7 +15631,7 @@ __metadata:
     react-i18next: 11.18.6
     react-router: 7.6.1
     react-router-dom: 6.28.0
-    simple-git: 3.27.0
+    simple-git: 3.28.0
     sort-json: 2.0.1
     svg-inline-loader: 0.8.2
     terser-webpack-plugin: 5.3.14
