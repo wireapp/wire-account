@@ -131,6 +131,8 @@
     "invitationPageSubHeader": "Melden Sie sich mit der E-Mail-Adresse oder dem Benutzernamen und dem Passwort Ihres privaten Benutzerkontos an.",
     "invitationPagLoginLabel": "E-Mail-Adresse oder Benutzername",
     "emailOrUsernamePlaceholder": "E-Mail-Adresse oder Benutzername eingeben",
-    "forgotPassword": "Passwort vergessen?"
+    "forgotPassword": "Passwort vergessen?",
+    "login": "Anmelden",
+    "password": "Passwort"
   }
 }
