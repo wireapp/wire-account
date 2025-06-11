@@ -41,7 +41,7 @@
     "webpack-hot-middleware": "2.26.1"
   },
   "engines": {
-    "node": ">= 20.14.0"
+    "node": ">= 22.16.0"
   },
   "name": "wire-web-server",
   "private": true,
