@@ -125,7 +125,7 @@ jobs:
           environment_name: wire-account-staging-node22
           region: eu-central-1
           deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
-          wait_for_deployment: false
+          wait_for_deployment: true
           wait_for_environment_recovery: ${{env.DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS}}
           version_label: ${{github.run_id}}
           version_description: ${{github.sha}}
@@ -140,7 +140,7 @@ jobs:
           environment_name: wire-account-prod-node22
           region: eu-central-1
           deployment_package: ${{env.AWS_BUILD_ZIP_PATH}}
-          wait_for_deployment: false
+          wait_for_deployment: true
           wait_for_environment_recovery: ${{env.DEPLOYMENT_RECOVERY_TIMEOUT_SECONDS}}
           version_label: ${{env.TAG}}-${{github.run_id}}
           version_description: ${{github.sha}}
