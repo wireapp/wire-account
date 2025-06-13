@@ -62,7 +62,7 @@ jobs:
 
       - name: Skip CI
         if: contains(env.TITLE || env.COMMIT_MESSAGE, '[skip ci]') || contains(env.TITLE || env.COMMIT_MESSAGE, '[ci skip]')
-        uses: andymckay/cancel-action@0.4
+        uses: andymckay/cancel-action@0.5
 
       # generates a mapping between branches/tag to wire-build branches
       - name: Define target branches in wireapp/wire-builds to bump
