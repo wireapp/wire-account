@@ -11479,9 +11479,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:16.1.0":
-  version: 16.1.0
-  resolution: "lint-staged@npm:16.1.0"
+"lint-staged@npm:16.1.1":
+  version: 16.1.1
+  resolution: "lint-staged@npm:16.1.1"
   dependencies:
     chalk: ^5.4.1
     commander: ^14.0.0
@@ -11495,7 +11495,7 @@ __metadata:
     yaml: ^2.8.0
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: e882bfee0f0ddaf4af4d58925af2591ac994a805242fc73205aa950201c3d094de82927d12d766f9d1173917b2e5e71c3ce20b69a0a8d214b22a2264bab5355f
+  checksum: ddaab1af6c9b9e5c74b27682b37e2fa581a9355e06faadea732fde88d00b9a4a40db0deb6c211476b6a6a400ecad78f08ec28c5acdb6d14794d7dd26ff51dda0
   languageName: node
   linkType: hard
 
@@ -16077,7 +16077,7 @@ __metadata:
     i18next-scanner: 4.6.0
     jest: 30.0.0
     jest-environment-jsdom: 30.0.0
-    lint-staged: 16.1.0
+    lint-staged: 16.1.1
     os-browserify: 0.3.0
     path-browserify: 1.0.1
     prettier: 3.2.4
