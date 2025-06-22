@@ -2486,16 +2486,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@es-joy/jsdoccomment@npm:~0.50.2":
-  version: 0.50.2
-  resolution: "@es-joy/jsdoccomment@npm:0.50.2"
+"@es-joy/jsdoccomment@npm:~0.51.1":
+  version: 0.51.1
+  resolution: "@es-joy/jsdoccomment@npm:0.51.1"
   dependencies:
-    "@types/estree": ^1.0.6
-    "@typescript-eslint/types": ^8.11.0
+    "@types/estree": ^1.0.8
+    "@typescript-eslint/types": ^8.34.1
     comment-parser: 1.4.1
     esquery: ^1.6.0
     jsdoc-type-pratt-parser: ~4.1.0
-  checksum: 5bbbc4e6f85a729c3353d3cb395a4b4766a405ce6228994b662cb2c755060f07ee45e507c091b8f8d6c4fdc805d017f1ff6ec2686afa54c8bd4e91c480ab932b
+  checksum: d2ecd1d414b03e42c5d3066d1cac1efac40ab774e77c4c15d250c44095b0b5a266a9b1a2bf87a29e6e8b28ffc1a587ef4750b8b4db087f0cd44827236361235d
   languageName: node
   linkType: hard
 
@@ -4169,6 +4169,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/estree@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "@types/estree@npm:1.0.8"
+  checksum: bd93e2e415b6f182ec4da1074e1f36c480f1d26add3e696d54fb30c09bc470897e41361c8fd957bf0985024f8fbf1e6e2aff977d79352ef7eb93a5c6dcff6c11
+  languageName: node
+  linkType: hard
+
 "@types/history@npm:*, @types/history@npm:^4.7.11":
   version: 4.7.11
   resolution: "@types/history@npm:4.7.11"
@@ -4596,13 +4603,6 @@ __metadata:
   version: 8.34.1
   resolution: "@typescript-eslint/types@npm:8.34.1"
   checksum: e05a8e56f8b624edc4b6bf8229133410b0e1e1431cc451a25dbc2ab68c3af580a096dcb7e2d609407ff7052b157ecb55337d2c5f51934d9820fcfac6f9dfd21b
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/types@npm:^8.11.0":
-  version: 8.32.1
-  resolution: "@typescript-eslint/types@npm:8.32.1"
-  checksum: e7062c51507c5aa2a18991965b1212ffd02d9ed815277c99e51985d55d4f2e692861e807e1d5c2e0a56dfbe655de3971a9be9e1215b8b72683f29473554c014b
   languageName: node
   linkType: hard
 
@@ -5316,6 +5316,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"acorn@npm:^8.15.0":
+  version: 8.15.0
+  resolution: "acorn@npm:8.15.0"
+  bin:
+    acorn: bin/acorn
+  checksum: 309c6b49aedf1a2e34aaf266de06de04aab6eb097c02375c66fdeb0f64556a6a823540409914fb364d9a11bc30d79d485a2eba29af47992d3490e9886c4391c3
+  languageName: node
+  linkType: hard
+
 "acorn@npm:^8.8.2, acorn@npm:^8.9.0":
   version: 8.11.3
   resolution: "acorn@npm:8.11.3"
@@ -5563,10 +5572,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"are-docs-informative@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "are-docs-informative@npm:0.1.1"
-  checksum: ff11f64767b7151154f8f039bfa917a8f7ff4ace781eb142e62b21570e6b97eb5d56b78e382d420d87549f1b10c6f6fccfa08b1927d34df40954e8f391efb862
+"are-docs-informative@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "are-docs-informative@npm:0.0.2"
+  checksum: 7a48ca90d66e29afebc4387d7029d86cfe97bad7e796c8e7de01309e02dcfc027250231c02d4ca208d2984170d09026390b946df5d3d02ac638ab35f74501c74
   languageName: node
   linkType: hard
 
@@ -7978,23 +7987,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:51.0.1":
-  version: 51.0.1
-  resolution: "eslint-plugin-jsdoc@npm:51.0.1"
+"eslint-plugin-jsdoc@npm:51.1.1":
+  version: 51.1.1
+  resolution: "eslint-plugin-jsdoc@npm:51.1.1"
   dependencies:
-    "@es-joy/jsdoccomment": ~0.50.2
-    are-docs-informative: ^0.1.1
+    "@es-joy/jsdoccomment": ~0.51.1
+    are-docs-informative: ^0.0.2
     comment-parser: 1.4.1
     debug: ^4.4.1
     escape-string-regexp: ^4.0.0
-    espree: ^10.3.0
+    espree: ^10.4.0
     esquery: ^1.6.0
     parse-imports-exports: ^0.2.4
     semver: ^7.7.2
     spdx-expression-parse: ^4.0.0
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: 3e486c4fc35d9dd1bab2a1651835c709948cf80291df1d81500243856d02c184c6b38d61b656f14b5879fcf733ba2636ad6389e1c6fd47bc236e4ea7fae426a1
+  checksum: 10a8e752eed4b93edefbb756c629d583d5fb38d2773bb72d1a9e8f3a4d8bc7d27b39d76631b6991bb1dab4e204c52aca630405f2b26878f33c24bf02480cfb67
   languageName: node
   linkType: hard
 
@@ -8126,13 +8135,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "eslint-visitor-keys@npm:4.2.0"
-  checksum: 779c604672b570bb4da84cef32f6abb085ac78379779c1122d7879eade8bb38ae715645324597cf23232d03cef06032c9844d25c73625bc282a5bfd30247e5b5
-  languageName: node
-  linkType: hard
-
 "eslint-visitor-keys@npm:^4.2.1":
   version: 4.2.1
   resolution: "eslint-visitor-keys@npm:4.2.1"
@@ -8188,14 +8190,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"espree@npm:^10.3.0":
-  version: 10.3.0
-  resolution: "espree@npm:10.3.0"
+"espree@npm:^10.4.0":
+  version: 10.4.0
+  resolution: "espree@npm:10.4.0"
   dependencies:
-    acorn: ^8.14.0
+    acorn: ^8.15.0
     acorn-jsx: ^5.3.2
-    eslint-visitor-keys: ^4.2.0
-  checksum: 63e8030ff5a98cea7f8b3e3a1487c998665e28d674af08b9b3100ed991670eb3cbb0e308c4548c79e03762753838fbe530c783f17309450d6b47a889fee72bef
+    eslint-visitor-keys: ^4.2.1
+  checksum: 5f9d0d7c81c1bca4bfd29a55270067ff9d575adb8c729a5d7f779c2c7b910bfc68ccf8ec19b29844b707440fc159a83868f22c8e87bbf7cbcb225ed067df6c85
   languageName: node
   linkType: hard
 
@@ -16188,7 +16190,7 @@ __metadata:
     eslint-plugin-babel: 5.3.1
     eslint-plugin-import: 2.31.0
     eslint-plugin-jest: 28.13.5
-    eslint-plugin-jsdoc: 51.0.1
+    eslint-plugin-jsdoc: 51.1.1
     eslint-plugin-no-unsanitized: 4.1.2
     eslint-plugin-prettier: 5.5
     eslint-plugin-react: 7.37.5
