@@ -36,7 +36,7 @@ If you would like your browser to trust the certificate from "local.zinfra.io":
 
 Depending on the branch name it will be automatically deployed to the following environments:
 
-- `staging` -> `wire-account-staging`
+- `staging` -> `wire-account-staging-node22`
 
 ### Translations
 

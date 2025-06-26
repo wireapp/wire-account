@@ -1,8 +1,8 @@
 branch-defaults:
   staging:
-    environment: wire-account-staging
+    environment: wire-account-staging-node22
   main:
-    environment: wire-account-prod
+    environment: wire-account-prod-node22
 deploy:
   artifact: wire-account.zip
 global:
