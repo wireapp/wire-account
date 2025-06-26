@@ -126,6 +126,6 @@
     "webpack:dev": "webpack --config webpack.config.dev.js",
     "changelog": "node ./bin/changelog.js"
   },
-  "version": "2.8.0",
+  "version": "2.8.1",
   "packageManager": "yarn@3.5.0"
 }
