@@ -7159,10 +7159,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:17.0.0":
-  version: 17.0.0
-  resolution: "dotenv@npm:17.0.0"
-  checksum: b652b59d8443878564d4bba12d652508f322d112b9528a1197b246854a306775b8c2f0ce6a2b02bfb83f2bdd76bdc4bd1b585f358e268da32373e73999c3003d
+"dotenv@npm:17.0.1":
+  version: 17.0.1
+  resolution: "dotenv@npm:17.0.1"
+  checksum: e8c0261ef103de9fcd33266c312425f30417b1ffa822d5e8091788574555bb75f4640ed194d174095085d6416a56b2f43b28dc4e4c60c99c6dc1a124a8b80348
   languageName: node
   linkType: hard
 
@@ -16180,7 +16180,7 @@ __metadata:
     babel-plugin-remove-jsx-attributes: 0.0.2
     core-js: 3.43.0
     cross-env: 7.0.3
-    dotenv: 17.0.0
+    dotenv: 17.0.1
     dotenv-extended: 2.9.0
     eslint: 8.57.0
     eslint-config-prettier: 10.1.5
