@@ -131,6 +131,8 @@
     "invitationPageSubHeader": "Log in with your personal account's email or username and password.",
     "invitationPagLoginLabel": "Email or username",
     "emailOrUsernamePlaceholder": "Enter email or username",
-    "forgotPassword": "Forgot password?"
+    "forgotPassword": "Forgot password?",
+    "login": "Log in",
+    "password": "Password"
   }
 }
