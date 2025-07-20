@@ -4095,22 +4095,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:~5.8.0":
-  version: 5.8.0
-  resolution: "jasmine-core@npm:5.8.0"
-  checksum: 3119023463fb41443fb2ae2747b6568e3cffaef76f1c907bfef6aa1fe9b281da0f20427d8a31a34868ca20d04eb320a366f6900e935282bd42dbad44f9050873
+"jasmine-core@npm:~5.9.0":
+  version: 5.9.0
+  resolution: "jasmine-core@npm:5.9.0"
+  checksum: 7bdef11a4de90dc366c50583fc90fa125cab99d9579215fd92026bdea26b3b18e244b9049a8e454a9d052104b1692abac6c5bfd46abdd2eeb967fc05e289f159
   languageName: node
   linkType: hard
 
-"jasmine@npm:5.8.0":
-  version: 5.8.0
-  resolution: "jasmine@npm:5.8.0"
+"jasmine@npm:5.9.0":
+  version: 5.9.0
+  resolution: "jasmine@npm:5.9.0"
   dependencies:
     glob: ^10.2.2
-    jasmine-core: ~5.8.0
+    jasmine-core: ~5.9.0
   bin:
     jasmine: bin/jasmine.js
-  checksum: aba791bee9c6622fcf9dea91c782b02f8dabac0017ec329e1e10f4bd94c263404392e91616e759e4d3ae20366824c6917849f624efbbfd7956bdd4f1f2b33f22
+  checksum: f0b76adb8ef1eb606597519219a265964915ffdaa8e93b58f93deb56009c8309013c9403bc86cf41d0abcd35ac2c1a6d7e38bfa0b4417f428207f2bd0afa08bc
   languageName: node
   linkType: hard
 
@@ -6215,7 +6215,7 @@ __metadata:
     helmet: 4.6.0
     helmet-csp: 3.4.0
     http-proxy-middleware: 3.0.5
-    jasmine: 5.8.0
+    jasmine: 5.9.0
     jszip: 3.10.1
     logdown: 3.3.1
     moment: 2.30.1
