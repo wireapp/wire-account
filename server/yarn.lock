@@ -3028,10 +3028,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:17.2.0":
-  version: 17.2.0
-  resolution: "dotenv@npm:17.2.0"
-  checksum: 389d25dac7afeb1890bcd113c84d8d8175e95967559e90b8a6c8dc19bfc81ad3ede0036873c459cd8de1f90055a88232ddf74c550bcd2ea7a94b8d570f116470
+"dotenv@npm:17.2.1":
+  version: 17.2.1
+  resolution: "dotenv@npm:17.2.1"
+  checksum: 2a3842a5451eb64f41cd11bd30d4d9d83941058f952f5e3adc3ca470d381e46ed8acbb0c0e3059da9725df91b42796987fa1deb032fafac992c37b94870ef085
   languageName: node
   linkType: hard
 
@@ -6314,7 +6314,7 @@ __metadata:
     "@types/uuid": 9.0.8
     "@wireapp/commons": 5.4.3
     cross-env: 7.0.3
-    dotenv: 17.2.0
+    dotenv: 17.2.1
     dotenv-extended: 2.9.0
     express: 4.21.2
     express-hbs: 2.5.0
