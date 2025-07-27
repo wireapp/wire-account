@@ -8,7 +8,7 @@
     "@wireapp/react-ui-kit": "9.62.0",
     "@wireapp/telemetry": "0.3.1",
     "core-js": "3.44.0",
-    "dotenv": "17.2.0",
+    "dotenv": "17.2.1",
     "dotenv-extended": "2.9.0",
     "i18next": "25.3.2",
     "i18next-browser-languagedetector": "8.2.0",
