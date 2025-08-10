@@ -10124,6 +10124,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:11.3.1":
+  version: 11.3.1
+  resolution: "fs-extra@npm:11.3.1"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: 12968b8b426f298c9ddfa9c2163e828a3bdf295b222895073faaec9798286102d771f54374498b934520cab6ef900ee3d643ea53b98a82703d5c546e16975538
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0, fs-minipass@npm:^2.1.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -17694,7 +17705,7 @@ __metadata:
     eslint-plugin-react-hooks: 5.2.0
     eslint-plugin-simple-import-sort: 8.0.0
     eslint-plugin-sort-keys-fix: 1.1.2
-    fs-extra: 11.3.0
+    fs-extra: 11.3.1
     generate-changelog: 1.8.0
     husky: 4.3.8
     i18next: 25.3.2
