@@ -61,9 +61,6 @@ jobs:
         with:
           access_token: ${{github.token}}
 
-      - name: Yarn cache
-        uses: c-hive/gha-yarn-cache@v2.1.0
-
       - name: Authenticate git clone
         env:
           GH_TOKEN: ${{secrets.OTTO_THE_BOT_GH_TOKEN}}
