@@ -34,6 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'yarn'
 
       - name: Set environment variables
         env:
@@ -98,9 +99,6 @@ jobs:
         uses: styfle/cancel-workflow-action@0.12.1
         with:
           access_token: ${{github.token}}
-
-      - name: Yarn cache
-        uses: c-hive/gha-yarn-cache@v2.1.0
 
       - name: Authenticate git clone
         env:
