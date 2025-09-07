@@ -17235,6 +17235,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uuid@npm:12.0.0":
+  version: 12.0.0
+  resolution: "uuid@npm:12.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 0e0c2d137f61c7a44a9aefcd58e8df3957960ae2899f8dea42d2842304d8c0a42a052fc23240f4bc83fb96403f20af5b3c92b1e4402bb48f708dabee62ecd1a7
+  languageName: node
+  linkType: hard
+
 "uuid@npm:^9.0.1":
   version: 9.0.1
   resolution: "uuid@npm:9.0.1"
@@ -17796,7 +17805,7 @@ __metadata:
     terser-webpack-plugin: 5.3.14
     ts-jest: 29.4.1
     typescript: 5.6.3
-    uuid: 11.1.0
+    uuid: 12.0.0
     webpack: 5.101.3
     webpack-bundle-analyzer: 4.10.2
     webpack-cli: 6.0.1
