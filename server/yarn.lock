@@ -4575,12 +4575,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.12, mime-types@npm:^2.1.31, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
+"mime-db@npm:^1.54.0":
+  version: 1.54.0
+  resolution: "mime-db@npm:1.54.0"
+  checksum: e99aaf2f23f5bd607deb08c83faba5dd25cf2fec90a7cc5b92d8260867ee08dab65312e1a589e60093dc7796d41e5fae013268418482f1db4c7d52d0a0960ac9
+  languageName: node
+  linkType: hard
+
+"mime-types@npm:^2.1.12, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
   version: 2.1.34
   resolution: "mime-types@npm:2.1.34"
   dependencies:
     mime-db: 1.51.0
   checksum: 67013de9e9d6799bde6d669d18785b7e18bcd212e710d3e04a4727f92f67a8ad4e74aee24be28b685adb794944814bde649119b58ee3282ffdbee58f9278d9f3
+  languageName: node
+  linkType: hard
+
+"mime-types@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "mime-types@npm:3.0.1"
+  dependencies:
+    mime-db: ^1.54.0
+  checksum: 8d497ad5cb2dd1210ac7d049b5de94af0b24b45a314961e145b44389344604d54752f03bc00bf880c0da60a214be6fb6d423d318104f02c28d95dd8ebeea4fb4
   languageName: node
   linkType: hard
 
@@ -6318,13 +6334,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-dev-middleware@npm:7.4.2":
-  version: 7.4.2
-  resolution: "webpack-dev-middleware@npm:7.4.2"
+"webpack-dev-middleware@npm:7.4.3":
+  version: 7.4.3
+  resolution: "webpack-dev-middleware@npm:7.4.3"
   dependencies:
     colorette: ^2.0.10
     memfs: ^4.6.0
-    mime-types: ^2.1.31
+    mime-types: ^3.0.1
     on-finished: ^2.4.1
     range-parser: ^1.2.1
     schema-utils: ^4.0.0
@@ -6333,7 +6349,7 @@ __metadata:
   peerDependenciesMeta:
     webpack:
       optional: true
-  checksum: 39314ec5e4468d177dd61fb51af87ec097e920fe0f0dc101e1bf71796740a7e49fd4f7f939cf91e130232714d6d2fffd948d72dc65dec10f87ac30339929f018
+  checksum: 3f4a0cbf32483804c92b5d19cc8ac9a00a8411008d33122e85b9d4c4ae87fcfb46c1a18911389c96bdddd340529a823e5e83a276cd4f0edad27416f8212971dc
   languageName: node
   linkType: hard
 
@@ -6407,7 +6423,7 @@ __metadata:
     rimraf: 6.0.1
     typescript: 5.9.2
     uuid: 12.0.0
-    webpack-dev-middleware: 7.4.2
+    webpack-dev-middleware: 7.4.3
     webpack-hot-middleware: 2.26.1
   languageName: unknown
   linkType: soft
