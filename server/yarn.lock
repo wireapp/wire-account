@@ -6290,12 +6290,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:11.1.0":
-  version: 11.1.0
-  resolution: "uuid@npm:11.1.0"
+"uuid@npm:12.0.0":
+  version: 12.0.0
+  resolution: "uuid@npm:12.0.0"
   bin:
-    uuid: dist/esm/bin/uuid
-  checksum: 840f19758543c4631e58a29439e51b5b669d5f34b4dd2700b6a1d15c5708c7a6e0c3e2c8c4a2eae761a3a7caa7e9884d00c86c02622ba91137bd3deade6b4b4a
+    uuid: dist/bin/uuid
+  checksum: 0e0c2d137f61c7a44a9aefcd58e8df3957960ae2899f8dea42d2842304d8c0a42a052fc23240f4bc83fb96403f20af5b3c92b1e4402bb48f708dabee62ecd1a7
   languageName: node
   linkType: hard
 
@@ -6406,7 +6406,7 @@ __metadata:
     prettier: 3.6.2
     rimraf: 6.0.1
     typescript: 5.9.2
-    uuid: 11.1.0
+    uuid: 12.0.0
     webpack-dev-middleware: 7.4.2
     webpack-hot-middleware: 2.26.1
   languageName: unknown
