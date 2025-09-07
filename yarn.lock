@@ -3589,12 +3589,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/environment-jsdom-abstract@npm:30.0.5":
-  version: 30.0.5
-  resolution: "@jest/environment-jsdom-abstract@npm:30.0.5"
+"@jest/environment-jsdom-abstract@npm:30.1.2":
+  version: 30.1.2
+  resolution: "@jest/environment-jsdom-abstract@npm:30.1.2"
   dependencies:
-    "@jest/environment": 30.0.5
-    "@jest/fake-timers": 30.0.5
+    "@jest/environment": 30.1.2
+    "@jest/fake-timers": 30.1.2
     "@jest/types": 30.0.5
     "@types/jsdom": ^21.1.7
     "@types/node": "*"
@@ -3606,7 +3606,7 @@ __metadata:
   peerDependenciesMeta:
     canvas:
       optional: true
-  checksum: 7ecc35ef5866a50e2933d5c2d8c2ffa3d821168209e1c19f74e85a66c4a566a731dbafd5ad7ac055fd6b3bb51ba4baf3c7eea2994f5277772f5b173aa6505fe5
+  checksum: 872f4d79b9aa473c4e161714a9fb09abb7458c82e4ff7494af0fd74dc1ae8c78e6c5a81fe3d666f806d683affc89f77b083bf127c26edc5790c3143e7a5898d2
   languageName: node
   linkType: hard
 
@@ -3619,6 +3619,18 @@ __metadata:
     "@types/node": "*"
     jest-mock: 30.0.5
   checksum: 0c2c27a4ee3d4e5054e36202185da4943b1c7fb4b2f65ddf5ddbe25bcb29dcb9c3c6c1e8b53f93dd5753ccc707c36ef3db6fc0120bb055014fd3c854929d505c
+  languageName: node
+  linkType: hard
+
+"@jest/environment@npm:30.1.2":
+  version: 30.1.2
+  resolution: "@jest/environment@npm:30.1.2"
+  dependencies:
+    "@jest/fake-timers": 30.1.2
+    "@jest/types": 30.0.5
+    "@types/node": "*"
+    jest-mock: 30.0.5
+  checksum: cc14648ec0ec7fd1b2a0f0e261bb70c4fd320cdf00962a27eb2bff5158b1302665e58aa91c0fcda7d465e952df6b4e55eb6be87e5325253ba0379d076ed88e89
   languageName: node
   linkType: hard
 
@@ -3661,6 +3673,20 @@ __metadata:
     jest-mock: 30.0.5
     jest-util: 30.0.5
   checksum: c748528b5cb04ebec28174e98009198e1a4a881e63627c7740ffbeefa8810eec674f9dc36401611431875a15a984b695b79c6efdf3f602ba9ab64a2920eb2c9b
+  languageName: node
+  linkType: hard
+
+"@jest/fake-timers@npm:30.1.2":
+  version: 30.1.2
+  resolution: "@jest/fake-timers@npm:30.1.2"
+  dependencies:
+    "@jest/types": 30.0.5
+    "@sinonjs/fake-timers": ^13.0.0
+    "@types/node": "*"
+    jest-message-util: 30.1.0
+    jest-mock: 30.0.5
+    jest-util: 30.0.5
+  checksum: 12077a48c2ae11519be1d9e0366ff23501d3119057b560deab3139af47c0234c927cf14ec1ba686f6c624c4c39454dc7b30fd7e8c40ae1a6275538281fb603c0
   languageName: node
   linkType: hard
 
@@ -12337,12 +12363,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:30.0.5":
-  version: 30.0.5
-  resolution: "jest-environment-jsdom@npm:30.0.5"
+"jest-environment-jsdom@npm:30.1.2":
+  version: 30.1.2
+  resolution: "jest-environment-jsdom@npm:30.1.2"
   dependencies:
-    "@jest/environment": 30.0.5
-    "@jest/environment-jsdom-abstract": 30.0.5
+    "@jest/environment": 30.1.2
+    "@jest/environment-jsdom-abstract": 30.1.2
     "@types/jsdom": ^21.1.7
     "@types/node": "*"
     jsdom: ^26.1.0
@@ -12351,7 +12377,7 @@ __metadata:
   peerDependenciesMeta:
     canvas:
       optional: true
-  checksum: 672b67d02bc237700c846eee0bae8ed67f0f6ce0d2713829f25c896c84c366cd01941642d503dc963c0061fc10b63743376df9cdec4444a757763843ec6dd38e
+  checksum: 8a3e1674228452ba1746418fbc25d4f3c06546811e2f9d9cbc4586e0af8be8a45137ba2fc4d6b946ebe2a903109540ba7c009b1ea937a434b3a915dff4c2d3a3
   languageName: node
   linkType: hard
 
@@ -12457,6 +12483,23 @@ __metadata:
     slash: ^3.0.0
     stack-utils: ^2.0.6
   checksum: 3acd0a99cbec60d1e37de884e0f3fb9e2126e6c10226d27f1247c1bdd83c40e15c9bb183a61609f136d03058d4aa758101dd1fbd42f2409626fbfe207672a5c5
+  languageName: node
+  linkType: hard
+
+"jest-message-util@npm:30.1.0":
+  version: 30.1.0
+  resolution: "jest-message-util@npm:30.1.0"
+  dependencies:
+    "@babel/code-frame": ^7.27.1
+    "@jest/types": 30.0.5
+    "@types/stack-utils": ^2.0.3
+    chalk: ^4.1.2
+    graceful-fs: ^4.2.11
+    micromatch: ^4.0.8
+    pretty-format: 30.0.5
+    slash: ^3.0.0
+    stack-utils: ^2.0.6
+  checksum: 89e01ee89cbc7412d905fe56a154ec9f4389be40cd1fd705567c3caaeb969287056d713d17b40be12282c9a52cd22b229668c7a4b543182847616d80be9d2916
   languageName: node
   linkType: hard
 
@@ -17780,7 +17823,7 @@ __metadata:
     i18next-react-postprocessor: 3.1.0
     i18next-scanner: 4.6.0
     jest: 30.0.5
-    jest-environment-jsdom: 30.0.5
+    jest-environment-jsdom: 30.1.2
     lint-staged: 16.1.5
     os-browserify: 0.3.0
     path-browserify: 1.0.1
