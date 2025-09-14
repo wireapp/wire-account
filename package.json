@@ -3,7 +3,7 @@
     "node": ">=22.16.0"
   },
   "dependencies": {
-    "@wireapp/api-client": "27.75.3",
+    "@wireapp/api-client": "27.75.6",
     "@wireapp/commons": "5.4.4",
     "@wireapp/react-ui-kit": "9.63.0",
     "@wireapp/telemetry": "0.3.1",
