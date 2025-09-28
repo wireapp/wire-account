@@ -2003,6 +2003,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pm2/blessed@npm:0.1.81":
+  version: 0.1.81
+  resolution: "@pm2/blessed@npm:0.1.81"
+  bin:
+    blessed: bin/tput.js
+  checksum: 2e35e3d279e068f9532b51b3cf05fe757e12bce5348c3704ea0d73d90e75e212b7c8969a14e8d3b4397d1943a7e9d07c6274a566149c1b13284aef88a8ce5f66
+  languageName: node
+  linkType: hard
+
 "@pm2/io@npm:~6.1.0":
   version: 6.1.0
   resolution: "@pm2/io@npm:6.1.0"
@@ -2446,6 +2455,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async@npm:3.2.6":
+  version: 3.2.6
+  resolution: "async@npm:3.2.6"
+  checksum: ee6eb8cd8a0ab1b58bd2a3ed6c415e93e773573a91d31df9d5ef559baafa9dab37d3b096fa7993e84585cac3697b2af6ddb9086f45d3ac8cae821bb2aab65682
+  languageName: node
+  linkType: hard
+
 "async@npm:^2.6.3, async@npm:~2.6.1":
   version: 2.6.4
   resolution: "async@npm:2.6.4"
@@ -2459,13 +2475,6 @@ __metadata:
   version: 3.2.0
   resolution: "async@npm:3.2.0"
   checksum: 6739fae769e6c9f76b272558f118ef041d45c979c573a8fe93f8cfbc32eb9c92da032e9effe6bbcc9b1131292cde6c4a9e61a442894aa06a262addd8dd3adda1
-  languageName: node
-  linkType: hard
-
-"async@npm:~3.2.6":
-  version: 3.2.6
-  resolution: "async@npm:3.2.6"
-  checksum: ee6eb8cd8a0ab1b58bd2a3ed6c415e93e773573a91d31df9d5ef559baafa9dab37d3b096fa7993e84585cac3697b2af6ddb9086f45d3ac8cae821bb2aab65682
   languageName: node
   linkType: hard
 
@@ -2539,15 +2548,6 @@ __metadata:
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
   checksum: ccd267956c58d2315f5d3ea6757cf09863c5fc703e50fbeb13a7dc849b812ef76e3cf9ca8f35a0c48498776a7478d7b4a0418e1e2b8cb9cb9731f2922aaad7f8
-  languageName: node
-  linkType: hard
-
-"blessed@npm:0.1.81":
-  version: 0.1.81
-  resolution: "blessed@npm:0.1.81"
-  bin:
-    blessed: ./bin/tput.js
-  checksum: a8f96978cc8e3e5ac887c43df8523074ba4352b9a055d8b078c60ae1f9f62837c9eb620e5fc78ccbb005119167234fcf788915a16428c1c397a7fbf9f630b42c
   languageName: node
   linkType: hard
 
@@ -2753,7 +2753,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.5.2, chokidar@npm:^3.5.3":
+"chokidar@npm:3.6.0":
+  version: 3.6.0
+  resolution: "chokidar@npm:3.6.0"
+  dependencies:
+    anymatch: ~3.1.2
+    braces: ~3.0.2
+    fsevents: ~2.3.2
+    glob-parent: ~5.1.2
+    is-binary-path: ~2.1.0
+    is-glob: ~4.0.1
+    normalize-path: ~3.0.0
+    readdirp: ~3.6.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: d2f29f499705dcd4f6f3bbed79a9ce2388cf530460122eed3b9c48efeab7a4e28739c6551fd15bec9245c6b9eeca7a32baa64694d64d9b6faeb74ddb8c4a413d
+  languageName: node
+  linkType: hard
+
+"chokidar@npm:^3.5.2":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
   dependencies:
@@ -2786,7 +2805,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-tableau@npm:^2.0.0":
+"cli-tableau@npm:2.0.1":
   version: 2.0.1
   resolution: "cli-tableau@npm:2.0.1"
   dependencies:
@@ -2950,7 +2969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"croner@npm:~4.1.92":
+"croner@npm:4.1.97":
   version: 4.1.97
   resolution: "croner@npm:4.1.97"
   checksum: f4af304ee263685ee727a96ecceff9bff02b840582ab937b1254f9eacfc2248e014e51438165448d3ba5d03952ab6f8cd2e24080d1cb5d73d051536df8f184d3
@@ -3006,10 +3025,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:~1.11.13":
-  version: 1.11.13
-  resolution: "dayjs@npm:1.11.13"
-  checksum: f388db88a6aa93956c1f6121644e783391c7b738b73dbc54485578736565c8931bdfba4bb94e9b1535c6e509c97d5deb918bbe1ae6b34358d994de735055cca9
+"dayjs@npm:1.11.15":
+  version: 1.11.15
+  resolution: "dayjs@npm:1.11.15"
+  checksum: e7d9a0eac598b6a9c835d2f4ce11ffeeb3904a836c7eda611331ae6cdfe8bc69cc177dc7efa72bb2fec83e02a632480ed1cb1c3db39afea0d93557f2ab4fe2c0
   languageName: node
   linkType: hard
 
@@ -3041,6 +3060,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:4.4.3":
+  version: 4.4.3
+  resolution: "debug@npm:4.4.3"
+  dependencies:
+    ms: ^2.1.3
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 4805abd570e601acdca85b6aa3757186084a45cff9b2fa6eee1f3b173caa776b45f478b2a71a572d616d2010cea9211d0ac4a02a610e4c18ac4324bde3760834
+  languageName: node
+  linkType: hard
+
 "debug@npm:^3.2.6":
   version: 3.2.7
   resolution: "debug@npm:3.2.7"
@@ -3062,7 +3093,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.3.4, debug@npm:^4.3.7":
+"debug@npm:^4.3.4":
   version: 4.4.0
   resolution: "debug@npm:4.4.0"
   dependencies:
@@ -4409,7 +4440,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:~4.1.0":
+"js-yaml@npm:4.1.0":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
   dependencies:
@@ -5212,21 +5243,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pidusage@npm:3.0.2":
+  version: 3.0.2
+  resolution: "pidusage@npm:3.0.2"
+  dependencies:
+    safe-buffer: ^5.2.1
+  checksum: 4939ce5a5efa1238986ea631ad22588104779c8a48e5c8949e0e38662cbaf80cef6d57c699c15f87b7ae129091401a3f140f82d1d3ff7809a9217620f1d6e5da
+  languageName: node
+  linkType: hard
+
 "pidusage@npm:^2.0.21":
   version: 2.0.21
   resolution: "pidusage@npm:2.0.21"
   dependencies:
     safe-buffer: ^5.2.1
   checksum: af26115e48de2368138fceb7a99b418ab6c4dd9d6e1ed6991aef2d09e49d076987f395cddd8340ecdf1ccaf126574c2bc5b5c9c392ffacff8ee8a642271f9b12
-  languageName: node
-  linkType: hard
-
-"pidusage@npm:~3.0":
-  version: 3.0.0
-  resolution: "pidusage@npm:3.0.0"
-  dependencies:
-    safe-buffer: ^5.2.1
-  checksum: 1bf9303f8e335b22c297ded9bc9d4569c78c59e9470ac15f00df27bac83b872e9bbaee2256fa5f86704977b924c268941e867ece038d66ee92ec7cccca77a1cf
   languageName: node
   linkType: hard
 
@@ -5290,37 +5321,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pm2@npm:6.0.10":
-  version: 6.0.10
-  resolution: "pm2@npm:6.0.10"
+"pm2@npm:6.0.13":
+  version: 6.0.13
+  resolution: "pm2@npm:6.0.13"
   dependencies:
     "@pm2/agent": ~2.1.1
+    "@pm2/blessed": 0.1.81
     "@pm2/io": ~6.1.0
     "@pm2/js-api": ~0.8.0
     "@pm2/pm2-version-check": latest
     ansis: 4.0.0-node10
-    async: ~3.2.6
-    blessed: 0.1.81
-    chokidar: ^3.5.3
-    cli-tableau: ^2.0.0
+    async: 3.2.6
+    chokidar: 3.6.0
+    cli-tableau: 2.0.1
     commander: 2.15.1
-    croner: ~4.1.92
-    dayjs: ~1.11.13
-    debug: ^4.3.7
+    croner: 4.1.97
+    dayjs: 1.11.15
+    debug: 4.4.3
     enquirer: 2.3.6
     eventemitter2: 5.0.1
     fclone: 1.0.11
-    js-yaml: ~4.1.0
+    js-yaml: 4.1.0
     mkdirp: 1.0.4
     needle: 2.4.0
-    pidusage: ~3.0
+    pidusage: 3.0.2
     pm2-axon: ~4.0.1
     pm2-axon-rpc: ~0.7.1
     pm2-deploy: ~1.0.2
     pm2-multimeter: ^0.1.2
     pm2-sysmonit: ^1.2.8
-    promptly: ^2
-    semver: ^7.6.2
+    promptly: 2.2.0
+    semver: 7.7.2
     source-map-support: 0.5.21
     sprintf-js: 1.1.2
     vizion: ~2.2.1
@@ -5332,7 +5363,7 @@ __metadata:
     pm2-dev: bin/pm2-dev
     pm2-docker: bin/pm2-docker
     pm2-runtime: bin/pm2-runtime
-  checksum: dd243bfced9bf38f27dc1fef702aadb43de871d9ac1df3bc31932fa28f75a516322301f166b255a88969c8468551c89cdc09943eee26caa37a84256ebdf78b01
+  checksum: 609b33fe30e9396e1266ac896ebd438019d32378fef868bd29d8f63d5662aa36bb7990730f45e9e942386fb98e9ccd9a03cbf8aa174b54fa6d67229e51144b52
   languageName: node
   linkType: hard
 
@@ -5369,7 +5400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"promptly@npm:^2":
+"promptly@npm:2.2.0":
   version: 2.2.0
   resolution: "promptly@npm:2.2.0"
   dependencies:
@@ -5748,6 +5779,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:7.7.2":
+  version: 7.7.2
+  resolution: "semver@npm:7.7.2"
+  bin:
+    semver: bin/semver.js
+  checksum: dd94ba8f1cbc903d8eeb4dd8bf19f46b3deb14262b6717d0de3c804b594058ae785ef2e4b46c5c3b58733c99c83339068203002f9e37cfe44f7e2cc5e3d2f621
+  languageName: node
+  linkType: hard
+
 "semver@npm:^5.6.0":
   version: 5.7.2
   resolution: "semver@npm:5.7.2"
@@ -5785,15 +5825,6 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 7427f05b70786c696640edc29fdd4bc33b2acf3bbe1740b955029044f80575fc664e1a512e4113c3af21e767154a94b4aa214bf6cd6e42a1f6dba5914e0b208c
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.6.2":
-  version: 7.7.1
-  resolution: "semver@npm:7.7.1"
-  bin:
-    semver: bin/semver.js
-  checksum: 586b825d36874007c9382d9e1ad8f93888d8670040add24a28e06a910aeebd673a2eb9e3bf169c6679d9245e66efb9057e0852e70d9daa6c27372aab1dda7104
   languageName: node
   linkType: hard
 
@@ -6527,7 +6558,7 @@ __metadata:
     nocache: 4.0.0
     nodemon: 3.1.10
     opn: 6.0.0
-    pm2: 6.0.10
+    pm2: 6.0.13
     prettier: 3.6.2
     rimraf: 6.0.1
     typescript: 5.9.2
