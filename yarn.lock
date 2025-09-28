@@ -4774,13 +4774,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.21.0":
-  version: 1.21.0
-  resolution: "@remix-run/router@npm:1.21.0"
-  checksum: d9477a7772053ad0ffcf03385cfb1a54e56f8a56d1f9f5062de3b1dfcbd019dd73282a00a5a72aa55c120771110982448c165c1405d64540aaef13051a8e45cc
-  languageName: node
-  linkType: hard
-
 "@rtsao/scc@npm:^1.1.0":
   version: 1.1.0
   resolution: "@rtsao/scc@npm:1.1.0"
@@ -14624,27 +14617,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:6.28.0":
-  version: 6.28.0
-  resolution: "react-router-dom@npm:6.28.0"
+"react-router-dom@npm:7.9.3":
+  version: 7.9.3
+  resolution: "react-router-dom@npm:7.9.3"
   dependencies:
-    "@remix-run/router": 1.21.0
-    react-router: 6.28.0
+    react-router: 7.9.3
   peerDependencies:
-    react: ">=16.8"
-    react-dom: ">=16.8"
-  checksum: 0cf4658a92bc66f50ec9d8518c36aa5a402bcadce71fb624ed6f900d73a29ea87ff904a4f2c42279107e75e80cc08c6192563fadcc5d4e642e6d476e38e83b21
-  languageName: node
-  linkType: hard
-
-"react-router@npm:6.28.0":
-  version: 6.28.0
-  resolution: "react-router@npm:6.28.0"
-  dependencies:
-    "@remix-run/router": 1.21.0
-  peerDependencies:
-    react: ">=16.8"
-  checksum: 23246ca957b5c2bc8d6f9a81fee2df2ce4fc3feca3ec27c2fd85999568fc1299a4e8273e4ab70b6f3acd43a1fb45e0c93cb01ef77e68c9f9e1f7e4f42a1419ea
+    react: ">=18"
+    react-dom: ">=18"
+  checksum: 57d9471a390d8178733f96a5e857bbabb1623c1e43cdf1f2cb2de8451d0b0e3ef9b57010e0b4a6450bfdabb1a2b74d04ec33669d3709f8a1365dcd6507c2b3a8
   languageName: node
   linkType: hard
 
@@ -14661,6 +14642,22 @@ __metadata:
     react-dom:
       optional: true
   checksum: 1d0d7257a63bc65bd06c020c70c706d371c82c93e81e0567f37fbce7f1c7ecb876a978b33483314e4e8dd38753a1a45e025415be647e5a1e6f310e941fa34cae
+  languageName: node
+  linkType: hard
+
+"react-router@npm:7.9.3":
+  version: 7.9.3
+  resolution: "react-router@npm:7.9.3"
+  dependencies:
+    cookie: ^1.0.1
+    set-cookie-parser: ^2.6.0
+  peerDependencies:
+    react: ">=18"
+    react-dom: ">=18"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  checksum: 3aaac7c446cedf7f6d54e6acb6c81112d509a5ef410e678a0621d5ad229eadcbddf0d0e1c5f962e9592f9d51fadc1ad2f1cccc1cbea1bc0887547b13b3547892
   languageName: node
   linkType: hard
 
@@ -17789,7 +17786,7 @@ __metadata:
     react-dom: 18.3.1
     react-i18next: 11.18.6
     react-router: 7.8.2
-    react-router-dom: 6.28.0
+    react-router-dom: 7.9.3
     simple-git: 3.28.0
     sort-json: 2.0.1
     svg-inline-loader: 0.8.2
