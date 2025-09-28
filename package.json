@@ -64,7 +64,7 @@
     "husky": "4.3.8",
     "i18next-scanner": "4.6.0",
     "jest": "30.0.5",
-    "lint-staged": "16.1.5",
+    "lint-staged": "16.2.1",
     "os-browserify": "0.3.0",
     "path-browserify": "1.0.1",
     "prettier": "3.2.4",
