@@ -7635,6 +7635,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"baseline-browser-mapping@npm:^2.8.9":
+  version: 2.8.18
+  resolution: "baseline-browser-mapping@npm:2.8.18"
+  bin:
+    baseline-browser-mapping: dist/cli.js
+  checksum: 833787afd8b6566da1866903b46497d6bff3139d5e41053d80df3632bcea3008f9097ecdaeff9c4f73f0b12785ec19e4e7449bca8fb6e014e526a10489c2bff5
+  languageName: node
+  linkType: hard
+
 "big.js@npm:^5.2.2":
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
@@ -7734,6 +7743,21 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: 2a7e4317e809b09a436456221a1fcb8ccbd101bada187ed217f7a07a9e42ced822c7c86a0a4333d7d1b4e6e0c859d201732ffff1585d6bcacd8d226f6ddce7e3
+  languageName: node
+  linkType: hard
+
+"browserslist@npm:^4.26.3":
+  version: 4.26.3
+  resolution: "browserslist@npm:4.26.3"
+  dependencies:
+    baseline-browser-mapping: ^2.8.9
+    caniuse-lite: ^1.0.30001746
+    electron-to-chromium: ^1.5.227
+    node-releases: ^2.0.21
+    update-browserslist-db: ^1.1.3
+  bin:
+    browserslist: cli.js
+  checksum: aa5bbcda9db1eeb9952b4c2f11f9a5a2247da7bcce7fa14d3cc215e67246a93394eda2f86378a41c3f73e6e1a1561bf0e7eade93c5392cb6d37bc66f70d0c53f
   languageName: node
   linkType: hard
 
@@ -7943,6 +7967,13 @@ __metadata:
   version: 1.0.30001727
   resolution: "caniuse-lite@npm:1.0.30001727"
   checksum: 2bc6112f242701198a99c17713d4409be9b404d09005f34f351ec29a4ea46c054e7aa4982bc16f06b81b7a375cbc61c937e89650170cbce84db772a376ed3963
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001746":
+  version: 1.0.30001751
+  resolution: "caniuse-lite@npm:1.0.30001751"
+  checksum: d11e25c44e40c21e7b7492a25c9fd60f4c04e94aa265573f7c487666f5e1b5ca3ed09d09560336f959237063616255cb294d415511bb6cf0486eb2cb6a3a4318
   languageName: node
   linkType: hard
 
@@ -8843,6 +8874,13 @@ __metadata:
   version: 1.5.182
   resolution: "electron-to-chromium@npm:1.5.182"
   checksum: 7c698db2733aea35cc76b3914af73ee46e4fe47009100a58e18313fca0b1179ddda3c37166354895765a918a2984cec2e18d4652c2f7b51dd76268ca84b718d3
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.5.227":
+  version: 1.5.237
+  resolution: "electron-to-chromium@npm:1.5.237"
+  checksum: 5905e2808dc6243ced0a83537afbafedec20c063feb6403a678b612a7855d79bc6ecb7d094bdab71f54173cf2ae5d1d8070b0c31572025001c94de62af84f5f8
   languageName: node
   linkType: hard
 
@@ -13957,6 +13995,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-releases@npm:^2.0.21":
+  version: 2.0.25
+  resolution: "node-releases@npm:2.0.25"
+  checksum: 9a23149cf3f6778e62440b1f26f91927aff06c3606a29996f3d196c7c0f5e31c17c24c324b5ef1f571cebef6b5a8db9adce9c09381ca271bc6422aac91463f75
+  languageName: node
+  linkType: hard
+
 "noop6@npm:^1.0.1":
   version: 1.0.9
   resolution: "noop6@npm:1.0.9"
@@ -15636,15 +15681,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "schema-utils@npm:4.3.2"
+"schema-utils@npm:^4.3.3":
+  version: 4.3.3
+  resolution: "schema-utils@npm:4.3.3"
   dependencies:
     "@types/json-schema": ^7.0.9
     ajv: ^8.9.0
     ajv-formats: ^2.1.1
     ajv-keywords: ^5.1.0
-  checksum: d798b341ffa1371f8471629e8861af3aa99e8e15b89da2c0db28c5a80a02ee8c6ffc7daefbe28a2b8c1bc8e3f3e02d028775145d7ab3d9d1a413a9651a835466
+  checksum: 4e20404962fd45d5feb5942f7c9ab334a3d3dab94e15001049bd49e2959015f2c59089353953d4976fe664462c79121dea50392968182d4e2c4b75803f822fa3
   languageName: node
   linkType: hard
 
@@ -16554,10 +16599,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tapable@npm:^2.1.1, tapable@npm:^2.2.0":
+"tapable@npm:^2.2.0":
   version: 2.2.0
   resolution: "tapable@npm:2.2.0"
   checksum: 5a7e31ddd2400d524b68e7ba0373e492ba52b321b8e1eb15b65956e9c1b9ba90dd175210a1318b6752538cbe3b284f4a7218a714be942aeeb812623c243aea25
+  languageName: node
+  linkType: hard
+
+"tapable@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "tapable@npm:2.3.0"
+  checksum: ada1194219ad550e3626d15019d87a2b8e77521d8463ab1135f46356e987a4c37eff1e87ffdd5acd573590962e519cc81e8ea6f7ed632c66bb58c0f12bd772a4
   languageName: node
   linkType: hard
 
@@ -17646,13 +17698,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watchpack@npm:^2.4.1":
-  version: 2.4.1
-  resolution: "watchpack@npm:2.4.1"
+"watchpack@npm:^2.4.4":
+  version: 2.4.4
+  resolution: "watchpack@npm:2.4.4"
   dependencies:
     glob-to-regexp: ^0.4.1
     graceful-fs: ^4.1.2
-  checksum: 5b0179348655dcdf19cac7cb4ff923fdc024d630650c0bf6bec8899cf47c60e19d4f810a88dba692ed0e7f684cf0fcffea86efdbf6c35d81f031e328043b7fab
+  checksum: 469514a04bcdd7ea77d4b3c62d1f087eafbce64cbc728c89355d5710ee01311533456122da7c585d3654d5bfcf09e6085db1a6eb274c4762a18e370526d17561
   languageName: node
   linkType: hard
 
@@ -17763,9 +17815,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.101.3":
-  version: 5.101.3
-  resolution: "webpack@npm:5.101.3"
+"webpack@npm:5.102.1":
+  version: 5.102.1
+  resolution: "webpack@npm:5.102.1"
   dependencies:
     "@types/eslint-scope": ^3.7.7
     "@types/estree": ^1.0.8
@@ -17775,7 +17827,7 @@ __metadata:
     "@webassemblyjs/wasm-parser": ^1.14.1
     acorn: ^8.15.0
     acorn-import-phases: ^1.0.3
-    browserslist: ^4.24.0
+    browserslist: ^4.26.3
     chrome-trace-event: ^1.0.2
     enhanced-resolve: ^5.17.3
     es-module-lexer: ^1.2.1
@@ -17787,17 +17839,17 @@ __metadata:
     loader-runner: ^4.2.0
     mime-types: ^2.1.27
     neo-async: ^2.6.2
-    schema-utils: ^4.3.2
-    tapable: ^2.1.1
+    schema-utils: ^4.3.3
+    tapable: ^2.3.0
     terser-webpack-plugin: ^5.3.11
-    watchpack: ^2.4.1
+    watchpack: ^2.4.4
     webpack-sources: ^3.3.3
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: d23fd86b6bc9854f9b488830d9aa123a7f654ee22849bc8670d0a22add88951f6d9cab1d04087758b642fc31115e3b97e0ac56b80b2200c04c486067aa945663
+  checksum: b43be23872e6743b47a2b9840bb3494ec512a9fa012b5e04d47d210f16462db0f741f29b3aa42d83f3859f8965a9a7990e33134e71402df19c6f78480e80c12c
   languageName: node
   linkType: hard
 
@@ -18086,7 +18138,7 @@ __metadata:
     ts-jest: 29.4.5
     typescript: 5.6.3
     uuid: 11.1.0
-    webpack: 5.101.3
+    webpack: 5.102.1
     webpack-bundle-analyzer: 4.10.2
     webpack-cli: 6.0.1
     webpack-dev-middleware: 7.4.5
