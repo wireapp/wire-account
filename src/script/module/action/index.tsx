@@ -37,7 +37,9 @@ interface ActionProviderProps extends HTMLProps<HTMLElement> {
 }
 
 let actionRoot: ActionRoot | null = null;
-let initializing: Promise<ActionRoot> | null = null;
+
+// Wrap the promise to avoid using a Promise directly in conditionals
+let initRef: {promise: Promise<ActionRoot>} | null = null;
 
 const createActionRoot = (apiClient: APIClient): ActionRoot => ({
   accountAction: new AccountAction(apiClient),
@@ -50,8 +52,9 @@ export const initializeAPIClient = async (): Promise<ActionRoot> => {
   if (actionRoot) {
     return actionRoot;
   }
-  if (initializing) {
-    return initializing;
+
+  if (initRef !== null) {
+    return initRef.promise;
   }
 
   const [apiVersionMin, apiVersionMax] = SUPPORTED_API_RANGE;
@@ -60,20 +63,22 @@ export const initializeAPIClient = async (): Promise<ActionRoot> => {
   });
 
   // Make the promise immediately to avoid races.
-  initializing = (async () => {
-    try {
-      await apiClient.useVersion(apiVersionMin, apiVersionMax, ENABLE_DEV_BACKEND_API);
-      actionRoot = createActionRoot(apiClient);
-      return actionRoot;
-    } catch (err) {
-      actionRoot = null;
-      throw new Error(`Failed to initialize API client, Error: ${err}`);
-    } finally {
-      initializing = null;
-    }
-  })();
+  initRef = {
+    promise: (async () => {
+      try {
+        await apiClient.useVersion(apiVersionMin, apiVersionMax, ENABLE_DEV_BACKEND_API);
+        actionRoot = createActionRoot(apiClient);
+        return actionRoot;
+      } catch (err) {
+        actionRoot = null;
+        throw new Error(`Failed to initialize API client, Error: ${err}`);
+      } finally {
+        initRef = null;
+      }
+    })(),
+  };
 
-  return initializing;
+  return initRef.promise;
 };
 
 const getActionRoot = (): ActionRoot => {
