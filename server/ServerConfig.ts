@@ -25,6 +25,7 @@ export interface ServerConfig {
     ENVIRONMENT: string;
     FEATURE: {
       ENABLE_DEBUG: boolean;
+      ENABLE_DEV_BACKEND_API: boolean;
     };
     NEW_PASSWORD_MINIMUM_LENGTH: number;
     /** true if the server is not a wire public cloud instance */

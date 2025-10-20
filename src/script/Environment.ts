@@ -57,6 +57,7 @@ declare global {
         VERSION: string;
         FEATURE: {
           ENABLE_DEBUG: boolean;
+          ENABLE_DEV_BACKEND_API: boolean;
         };
       };
     };
@@ -82,6 +83,9 @@ export const HOST_HTTP = window.wire.env.BACKEND_REST;
 export const IS_SELF_HOSTED = window.wire.env.IS_SELF_HOSTED;
 export const NEW_PASSWORD_MINIMUM_LENGTH = window.wire.env.NEW_PASSWORD_MINIMUM_LENGTH || DEFAULT_PASSWORD_MIN_LENGTH;
 export const VERSION = window.wire.env.VERSION;
+
+export const ENABLE_DEV_BACKEND_API = window.wire.env.FEATURE.ENABLE_DEV_BACKEND_API;
+export const SUPPORTED_API_RANGE = [1, window.wire.env.FEATURE.ENABLE_DEV_BACKEND_API ? Infinity : 10];
 
 // URLs
 export const ACCOUNT_DELETE_SURVEY_URL = window.wire.env.URL.ACCOUNT_DELETE_SURVEY;
