@@ -85,7 +85,7 @@ export const NEW_PASSWORD_MINIMUM_LENGTH = window.wire.env.NEW_PASSWORD_MINIMUM_
 export const VERSION = window.wire.env.VERSION;
 
 export const ENABLE_DEV_BACKEND_API = window.wire.env.FEATURE.ENABLE_DEV_BACKEND_API;
-export const SUPPORTED_API_RANGE = [1, window.wire.env.FEATURE.ENABLE_DEV_BACKEND_API ? Infinity : 10];
+export const SUPPORTED_API_RANGE = [1, window.wire.env.FEATURE.ENABLE_DEV_BACKEND_API ? Infinity : 11];
 
 // URLs
 export const ACCOUNT_DELETE_SURVEY_URL = window.wire.env.URL.ACCOUNT_DELETE_SURVEY;
