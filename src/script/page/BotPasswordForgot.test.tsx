@@ -21,6 +21,7 @@ import '../util/test/mock/matchMediaMock';
 
 import BotPasswordForgot from './BotPasswordForgot';
 import TestPage from '../util/test/TestPage';
+import {ActionProvider, ActionRoot} from '../module/action';
 
 jest.mock('script/util/SVGProvider', () => {
   return {logo: undefined};
@@ -28,7 +29,18 @@ jest.mock('script/util/SVGProvider', () => {
 
 class BotPasswordForgotPage extends TestPage<{}> {
   constructor(props?: {}) {
-    super(BotPasswordForgot, props);
+    super(() => {
+      const mockContext = {
+        accountAction: {},
+        selfAction: {},
+        teamAction: {},
+      } as ActionRoot;
+      return (
+        <ActionProvider contextData={mockContext}>
+          <BotPasswordForgot {...props} />
+        </ActionProvider>
+      );
+    });
   }
 
   getEmailInput = () => this.queryByTestId('enter-email');

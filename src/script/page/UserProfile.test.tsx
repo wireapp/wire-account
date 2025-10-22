@@ -21,7 +21,7 @@ import '../util/test/mock/matchMediaMock';
 
 import {UserProfile} from './UserProfile';
 import TestPage from '../util/test/TestPage';
-import {ActionProvider} from '../module/action';
+import {ActionProvider, ActionRoot} from '../module/action';
 import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 
@@ -31,11 +31,18 @@ jest.mock('script/util/SVGProvider', () => {
 
 class UserProfilePage extends TestPage {
   constructor() {
-    super(() => (
-      <ActionProvider>
-        <UserProfile />
-      </ActionProvider>
-    ));
+    super(() => {
+      const mockContext = {
+        accountAction: {},
+        selfAction: {},
+        teamAction: {},
+      } as ActionRoot;
+      return (
+        <ActionProvider contextData={mockContext}>
+          <UserProfile />
+        </ActionProvider>
+      );
+    });
   }
 
   getOpenApp = () => this.queryByTestId('open-user-profile-app');

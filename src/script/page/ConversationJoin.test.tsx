@@ -21,7 +21,7 @@ import '../util/test/mock/matchMediaMock';
 
 import {ConversationJoin} from './ConversationJoin';
 import TestPage from '../util/test/TestPage';
-import {ActionProvider, useActionContext} from '../module/action/';
+import {ActionProvider, ActionRoot} from '../module/action/';
 import {RecursivePartial} from '@wireapp/commons/lib/util/TypeUtil';
 import {act} from 'react-dom/test-utils';
 import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
@@ -35,9 +35,13 @@ jest.mock('script/util/SVGProvider', () => {
 class ConversationJoinPage extends TestPage {
   constructor(root?: RecursivePartial<AccountAction>) {
     super(() => {
-      const actionContext = useActionContext();
+      const mockContext = {
+        accountAction: root,
+        selfAction: {},
+        teamAction: {},
+      } as ActionRoot;
       return (
-        <ActionProvider contextData={{...actionContext, accountAction: root as AccountAction}}>
+        <ActionProvider contextData={mockContext}>
           <ConversationJoin />
         </ActionProvider>
       );

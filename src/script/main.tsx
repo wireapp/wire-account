@@ -24,6 +24,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import {initReactI18next} from 'react-i18next';
 import Root from 'script/Root';
 import {CommonConfig} from '@wireapp/commons';
+import {initializeAPIClient} from './module/action';
 const deDE = require('i18n/de-DE.json');
 const enUS = require('i18n/en-US.json');
 const frFR = require('i18n/fr-FR.json');
@@ -66,9 +67,11 @@ const render = (Component: any) => {
   root.render(<Component />);
 };
 
-runApp();
+async function runApp() {
+  // Initialize API Client before rendering
+  await initializeAPIClient();
 
-function runApp() {
+  // Now render the app
   render(Root);
   if (module.hot) {
     module.hot.accept('./Root', () => {
@@ -77,3 +80,5 @@ function runApp() {
     });
   }
 }
+
+runApp();

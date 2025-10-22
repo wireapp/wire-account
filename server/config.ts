@@ -109,6 +109,7 @@ const config: ServerConfig = {
     ENVIRONMENT: nodeEnvironment,
     FEATURE: {
       ENABLE_DEBUG: process.env.FEATURE_ENABLE_DEBUG == 'true',
+      ENABLE_DEV_BACKEND_API: process.env.FEATURE_ENABLE_DEV_BACKEND_API == 'true',
     },
     IS_SELF_HOSTED: process.env.IS_SELF_HOSTED === 'true',
     NEW_PASSWORD_MINIMUM_LENGTH:
