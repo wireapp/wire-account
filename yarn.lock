@@ -3450,6 +3450,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@es-joy/resolve.exports@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@es-joy/resolve.exports@npm:1.0.0"
+  checksum: b5ba5ace9ad08fa4086d8e8bc05d8834a4066ea1643dd66d5c5e17d5d0ee66486a8183a2b0730507cf9967a9adf20555729df04e8408bec41786e16c23aa9bf7
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -5003,10 +5010,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sindresorhus/base62@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@sindresorhus/base62@npm:0.1.0"
-  checksum: 1c2bca5a83805f64dc566612b18a82d4e3667b80ba83366ae2c6b39e7119f4f9ea1a98563e3c642da0d6130032870d979139d3dff51e8169dc5cf19315c11aac
+"@sindresorhus/base62@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@sindresorhus/base62@npm:1.0.0"
+  checksum: ba1a1ccfc9de0995f0e4506b8cabff3436fd1a9815f9c1a44f6833694bba6b3db7fa61fa5fc2f63180edda01abf3c26ffd16325be0ab25409f992ba91ea6dcd0
   languageName: node
   linkType: hard
 
@@ -9714,11 +9721,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:61.1.4":
-  version: 61.1.4
-  resolution: "eslint-plugin-jsdoc@npm:61.1.4"
+"eslint-plugin-jsdoc@npm:61.1.8":
+  version: 61.1.8
+  resolution: "eslint-plugin-jsdoc@npm:61.1.8"
   dependencies:
     "@es-joy/jsdoccomment": ~0.76.0
+    "@es-joy/resolve.exports": 1.0.0
     are-docs-informative: ^0.0.2
     comment-parser: 1.4.1
     debug: ^4.4.3
@@ -9726,14 +9734,14 @@ __metadata:
     espree: ^10.4.0
     esquery: ^1.6.0
     html-entities: ^2.6.0
-    object-deep-merge: ^1.0.5
+    object-deep-merge: ^2.0.0
     parse-imports-exports: ^0.2.4
     semver: ^7.7.3
     spdx-expression-parse: ^4.0.0
-    to-valid-identifier: ^0.1.1
+    to-valid-identifier: ^1.0.0
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: a8c03df89a07757c886a499c149739a75b7146d1e1a7e2b4f41b0f13f5ad92f7be4301d3004fa0070424a14f5746dc9815a353e0dea9f91a27199bcbf3a02731
+  checksum: 072a6530402564bbe10b05f1de7c4360f21a7f8e57fb495641804545d61c69d626051b766bd18780db3685c1d42cfd95f1311908cb7fc606958ae9fce21d689c
   languageName: node
   linkType: hard
 
@@ -14117,12 +14125,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-deep-merge@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "object-deep-merge@npm:1.0.5"
-  dependencies:
-    type-fest: 4.2.0
-  checksum: 823f7e691775535a0f85fabe49204faaf6531dac6566b294f3fc4f3c929f228545076e5795c2c402a469330f223cffc282d913b90123e1ed1847864b81c39b02
+"object-deep-merge@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "object-deep-merge@npm:2.0.0"
+  checksum: d2f9aa0b2160118f3e261fe51634a958b9f19993f64479911df3d3b4daa0212cb01bf2a7cf2c3ab1a1830cc167151a408ecf8c3e47efa44343b516777d6ef11c
   languageName: node
   linkType: hard
 
@@ -16877,13 +16883,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"to-valid-identifier@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "to-valid-identifier@npm:0.1.1"
+"to-valid-identifier@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "to-valid-identifier@npm:1.0.0"
   dependencies:
-    "@sindresorhus/base62": ^0.1.0
+    "@sindresorhus/base62": ^1.0.0
     reserved-identifiers: ^1.0.0
-  checksum: 48d544d705cc5445c89bf3bc3655bd2880ec9b987f40e25d52eb7a2e10a4f33a7d54448972034fa2d395880c0fb00a6f85dc21adbbed216ab1a6f9033e64c222
+  checksum: fba7ebdf464c92c92ccde887f917c9461792f99b738d36bebe5c3bd07562c3fdceedfd120ac115da359162b115798136bb8b9ea7417d7e3a663db9425ff1bcc1
   languageName: node
   linkType: hard
 
@@ -17046,13 +17052,6 @@ __metadata:
   version: 4.0.8
   resolution: "type-detect@npm:4.0.8"
   checksum: 62b5628bff67c0eb0b66afa371bd73e230399a8d2ad30d852716efcc4656a7516904570cd8631a49a3ce57c10225adf5d0cbdcb47f6b0255fe6557c453925a15
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:4.2.0":
-  version: 4.2.0
-  resolution: "type-fest@npm:4.2.0"
-  checksum: 76c5dfde9293b1b185b266a07df669f68d58ae3e19c06e33f0ff0dd0ba68628f05389bc26bcee8476e29a79ab7da054653670b9778399ceb079c4c259bac29f0
   languageName: node
   linkType: hard
 
@@ -18152,7 +18151,7 @@ __metadata:
     eslint-plugin-babel: 5.3.1
     eslint-plugin-import: 2.32.0
     eslint-plugin-jest: 29.0.1
-    eslint-plugin-jsdoc: 61.1.4
+    eslint-plugin-jsdoc: 61.1.8
     eslint-plugin-no-unsanitized: 4.1.2
     eslint-plugin-prettier: 5.5
     eslint-plugin-react: 7.37.5
