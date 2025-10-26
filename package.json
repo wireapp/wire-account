@@ -6,7 +6,7 @@
     "@wireapp/api-client": "27.82.0",
     "@wireapp/commons": "5.4.5",
     "@wireapp/react-ui-kit": "9.69.0",
-    "@wireapp/telemetry": "0.3.1",
+    "@wireapp/telemetry": "0.3.2",
     "core-js": "3.46.0",
     "dotenv": "17.2.3",
     "dotenv-extended": "2.9.0",
