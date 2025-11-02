@@ -16069,14 +16069,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-git@npm:3.28.0":
-  version: 3.28.0
-  resolution: "simple-git@npm:3.28.0"
+"simple-git@npm:3.29.0":
+  version: 3.29.0
+  resolution: "simple-git@npm:3.29.0"
   dependencies:
     "@kwsites/file-exists": ^1.1.1
     "@kwsites/promise-deferred": ^1.1.1
     debug: ^4.4.0
-  checksum: d4f4a56f0eaf916e3c4b801342f6e6c32e73a3eb8c5497f61f71ff21f30462c64537ba76f2cc835d6cd1ffe6198bd52b3e242b0a70444c8cd21faa9f61f75634
+  checksum: e86ab9a7a5d8ccdbd03ced0a934e061e61b64ced69493917c9610fada3e0ea55965ab5f18e1bd77c19e94e7567e0135693f2e25d6cf5e9d1fc9dc257a361fdad
   languageName: node
   linkType: hard
 
@@ -18241,7 +18241,7 @@ __metadata:
     react-i18next: 11.18.6
     react-router: 7.9.4
     react-router-dom: 6.28.0
-    simple-git: 3.28.0
+    simple-git: 3.29.0
     sort-json: 2.0.1
     svg-inline-loader: 0.8.2
     terser-webpack-plugin: 5.3.14
