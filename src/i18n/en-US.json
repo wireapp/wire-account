@@ -29,7 +29,9 @@
     "loading": "Please wait…"
   },
   "header": {
-    "support": "Support"
+    "support": "Support",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "index": {
     "description": "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.",

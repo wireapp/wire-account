@@ -36,7 +36,7 @@ const Header: React.FC<Props> = ({}) => {
     </RRLink>
   );
   return (
-    <HeaderMenu logoElement={headerLogo}>
+    <HeaderMenu logoElement={headerLogo} openMenuLabel={t('menuOpen')} closeMenuLabel={t('menuClose')}>
       <MenuLink rel="noopener noreferrer" target="_blank" href={SUPPORT_URL} data-uie-name="go-support-header">
         {t('support')}
       </MenuLink>
