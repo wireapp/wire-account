@@ -6733,9 +6733,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.88.0":
-  version: 27.88.0
-  resolution: "@wireapp/api-client@npm:27.88.0"
+"@wireapp/api-client@npm:27.90.0":
+  version: 27.90.0
+  resolution: "@wireapp/api-client@npm:27.90.0"
   dependencies:
     "@aws-sdk/client-s3": 3.908.0
     "@aws-sdk/lib-storage": 3.908.0
@@ -6754,7 +6754,7 @@ __metadata:
     uuid: 11.1.0
     ws: 8.18.1
     zod: 3.24.2
-  checksum: e701d796a519127009432f9459fd585e9033fe1d62a6dafdeb9380d90ad6f6acdac31c6e36afbd13f6c48696ae1ce747ac3765e971e77dc821543361990201f1
+  checksum: ed3d1d05a2c0284770c1f4c04f5a9fb158a288dacddc6aab18398576220884f9ccf18cba198d3440ca8eff01b0794690eadb4c7f399f9db15b16b9eb82792b7f
   languageName: node
   linkType: hard
 
@@ -18186,7 +18186,7 @@ __metadata:
     "@types/webpack-env": 1.18.8
     "@typescript-eslint/eslint-plugin": 8.46.3
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.88.0
+    "@wireapp/api-client": 27.90.0
     "@wireapp/commons": 5.4.9
     "@wireapp/copy-config": 2.3.4
     "@wireapp/eslint-config": 1.4.0
