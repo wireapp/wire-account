@@ -2899,10 +2899,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.27.6":
-  version: 7.27.6
-  resolution: "@babel/runtime@npm:7.27.6"
-  checksum: 3f7b879df1823c0926bd5dbc941c62f5d60faa790c1aab9758c04799e1f04ee8d93553be9ec059d4e5882f19fe03cbe8933ee4f46212dced0f6d8205992c9c9a
+"@babel/runtime@npm:^7.28.4":
+  version: 7.28.4
+  resolution: "@babel/runtime@npm:7.28.4"
+  checksum: 934b0a0460f7d06637d93fcd1a44ac49adc33518d17253b5a0b55ff4cb90a45d8fe78bf034b448911dbec7aff2a90b918697559f78d21c99ff8dbadae9565b55
   languageName: node
   linkType: hard
 
@@ -11527,17 +11527,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:25.6.2":
-  version: 25.6.2
-  resolution: "i18next@npm:25.6.2"
+"i18next@npm:25.7.1":
+  version: 25.7.1
+  resolution: "i18next@npm:25.7.1"
   dependencies:
-    "@babel/runtime": ^7.27.6
+    "@babel/runtime": ^7.28.4
   peerDependencies:
     typescript: ^5
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 9376e5b269dd777b813dd8dfe62e864e035e550ce8cfe057a6bf517237e944a3d5ab0cddb22e5d3aea0277ed67e1c5899ef57b3ec84680e909c87c30e6b99145
+  checksum: c462fb96b90a370c7bd236f2c5e3618db39a647d96e9dff4207189d9839747f83e887146694eb093cc3570b16d1280a9ba34b06c28ef60263fbfb4803dc52fdb
   languageName: node
   linkType: hard
 
@@ -18215,7 +18215,7 @@ __metadata:
     fs-extra: 11.3.2
     generate-changelog: 1.8.0
     husky: 4.3.8
-    i18next: 25.6.2
+    i18next: 25.7.1
     i18next-browser-languagedetector: 8.2.0
     i18next-react-postprocessor: 3.1.0
     i18next-scanner: 4.6.0
