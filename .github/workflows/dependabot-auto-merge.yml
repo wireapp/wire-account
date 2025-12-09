@@ -17,12 +17,14 @@ jobs:
           github-token: '${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}'
 
       - name: Approve a PR
+        if: ${{ github.actor == 'otto-the-bot' || (github.actor == 'dependabot[bot]' && steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major') }}
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: '${{secrets.WEBTEAM_AUTOMERGE_TOKEN}}'
 
       - name: Enable auto-merge for Dependabot PRs
+        if: ${{ github.actor == 'otto-the-bot' || (github.actor == 'dependabot[bot]' && steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major') }}
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
