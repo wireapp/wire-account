@@ -143,6 +143,8 @@ export const AcceptInvitation = () => {
             value={password}
             data-uie-name="enter-login-password"
             onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
+            showTogglePasswordLabel={t('passwordShow')}
+            hideTogglePasswordLabel={t('passwordHide')}
           />
           <div css={forgotPasswordCss}>
             <Link
