@@ -135,6 +135,8 @@
     "emailOrUsernamePlaceholder": "Enter email or username",
     "forgotPassword": "Forgot password?",
     "login": "Log in",
-    "password": "Password"
+    "password": "Password",
+    "passwordHide": "Hide password",
+    "passwordShow": "Show password"
   }
 }
