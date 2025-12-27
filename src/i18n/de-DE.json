@@ -29,7 +29,9 @@
     "loading": "Bitte warten…"
   },
   "header": {
-    "support": "Hilfe"
+    "support": "Hilfe",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen"
   },
   "index": {
     "description": "Business-Chats, Telefonkonferenzen und Dateifreigabe - alles durch Ende-zu-Ende-Verschlüsselung geschützt. Auch erhältlich für den persönlichen Gebrauch.",
@@ -131,6 +133,10 @@
     "invitationPageSubHeader": "Melden Sie sich mit der E-Mail-Adresse oder dem Benutzernamen und dem Passwort Ihres privaten Benutzerkontos an.",
     "invitationPagLoginLabel": "E-Mail-Adresse oder Benutzername",
     "emailOrUsernamePlaceholder": "E-Mail-Adresse oder Benutzername eingeben",
-    "forgotPassword": "Passwort vergessen?"
+    "forgotPassword": "Passwort vergessen?",
+    "login": "Anmelden",
+    "password": "Passwort",
+    "passwordHide": "Passwort ausblenden",
+    "passwordShow": "Passwort anzeigen"
   }
 }

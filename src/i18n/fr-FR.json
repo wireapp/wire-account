@@ -22,14 +22,16 @@
     "successDescription": "Nous vous avons envoyé un lien pour réinitialiser votre mot de passe. Il est valable pendant 1 heure.",
     "successTitle": "Consultez vos e-mails",
     "title": "Réinitialiser le mot de passe",
-    "description": "We will send you a link to reset your password via email.",
-    "login": "Log in"
+    "description": "Nous allons vous envoyer un lien pour réinitialiser votre mot de passe via l'email.",
+    "login": "Se connecter"
   },
   "general": {
     "loading": "Veuillez patienter…"
   },
   "header": {
-    "support": "Assistance"
+    "support": "Assistance",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "index": {
     "description": "Conversations professionnelles, visioconférences en un clic et documents partagés – protégés avec le chiffrement de bout-en-bout. Également disponible pour votre utilisation personnelle.",
@@ -81,7 +83,7 @@
     "cannotJoinOnMobile": "Pour le moment, vous ne pouvez pas rejoindre cette conversation sur votre appareil mobile. Veuillez ouvrir ce lien sur votre bureau."
   },
   "conversationJoinSelfHosted": {
-    "title": "You have been invited to join a conversation in Wire"
+    "title": "Vous avez été invité à rejoindre une conversation dans Wire"
   },
   "userProfile": {
     "title": "Vous avez été invité·e à consulter un profil d'utilisateur dans {{brandName}} ",
@@ -92,9 +94,9 @@
   },
   "migration": {
     "wrongCredentialsError": "Please enter valid credentials.",
-    "passwordLabel": "Password (personal account)",
-    "passwordPlaceholder": "Password",
-    "continueBtnText": "Continue",
+    "passwordLabel": "Mot de passe (compte personnel)",
+    "passwordPlaceholder": "Mot de passe",
+    "continueBtnText": "Continuer",
     "layoutSubHeader": "The most secure collaboration",
     "layoutListHeader1": "Use the same level of security and enjoy extra features and benefits for free, like:",
     "layoutListHeader2": "What’s next",
@@ -103,34 +105,38 @@
     "layoutListItem3": "Availability status",
     "layoutListItem4": "Option to upgrade to Wire for Enterprise to get full collaboration benefits",
     "layoutListItem5": "Open Wire and get connected with your new team members",
-    "layoutListItem6": "Enjoy conference calls with a single click",
-    "welcomePageHeader": "Congratulations, you joined your team on Wire!",
-    "welcomePageSubHeader": "Welcome to <b>{{teamName}}</b><br/> We transferred your personal account into a team member account.",
-    "welcomePageAppOpenText": "Open Wire",
+    "layoutListItem6": "Profitez de visioconférences en un seul clic",
+    "welcomePageHeader": "Félicitations, vous avez rejoint votre équipe sur Wire !",
+    "welcomePageSubHeader": "Bienvenue dans <b>{{teamName}}</b><br/> Nous avons transféré votre compte personnel vers un compte de membre de l'équipe.",
+    "welcomePageAppOpenText": "Ouvrir Wire",
     "welcomePageTMOpenText": "Open Team Management",
-    "welcomePageOr": "or",
-    "confirmPageHeader": "Join your team",
+    "welcomePageOr": "ou",
+    "confirmPageHeader": "Rejoignez votre équipe",
     "confirmPageSubHeader": "To ensure a secure transfer and prevent unauthorized access, please enter the password of your personal account again.",
-    "termsPageHeader": "Join your team",
-    "termsPageSubHeader": "You’re about to join the team managed by {{email}}.",
-    "termsPageListHeader": "Things to know",
+    "termsPageHeader": "Rejoignez votre équipe",
+    "termsPageSubHeader": "Vous vous apprêtez à rejoindre l'équipe gérée par {{email}}.",
+    "termsPageListHeader": "Informations à savoir",
     "termsPageListItem1": "Your <b>personal account will be transferred</b> to a team account.",
-    "termsPageListItem2": "<b>This change is permanent</b> and irrevocable.",
+    "termsPageListItem2": "<b>Cette modification est permanente</b> et définitive.",
     "termsPageListItem3": "<b>One team limit:</b> You can only be part of one team with this email address.",
     "termsPageListItem4": "<b>You keep your contacts</b> and your conversation history.",
     "termsPageListItem5": "<b>Profile details:</b> You keep your email, profile name, and username, as well as your password and profile picture.",
     "termsPageAccountManagerHeader": "Account Management",
     "termsPageAccountManagerText": "As you will be part of a team, the admin can remove you from the team. In that case, you will immediately lose access to your account, contacts, history, and username.",
-    "termsPageRecommendationsHeader": "We recommend to",
+    "termsPageRecommendationsHeader": "Nous recommandons de",
     "termsPageRecommendationItem1": "Verify the admin’s identity before accepting, and if you’re unsure, close this window.",
     "termsPageRecommendationItem2": "Back up your history",
-    "termsPageMigrationTerms": "I agree to the migration terms and understand that this change is irreversible.",
-    "termsPageTermsOfUse": "I accept",
-    "termsPageTermsOfUseLink": "Wire's Terms of Use (Business).",
-    "invitationPageHeader": "Join your team",
-    "invitationPageSubHeader": "Log in with your personal account's email or username and password.",
-    "invitationPagLoginLabel": "Email or username",
-    "emailOrUsernamePlaceholder": "Enter email or username",
-    "forgotPassword": "Forgot password?"
+    "termsPageMigrationTerms": "J'accepte les conditions de migration et je comprends que ce changement est irréversible.",
+    "termsPageTermsOfUse": "J'accepte",
+    "termsPageTermsOfUseLink": "Conditions d'utilisation de Wire (Entreprise).\n",
+    "invitationPageHeader": "Rejoignez votre équipe",
+    "invitationPageSubHeader": "Connectez-vous avec l'email de votre compte personnel ou nom d'utilisateur et votre mot de passe",
+    "invitationPagLoginLabel": "Email ou nom d'utilisateur",
+    "emailOrUsernamePlaceholder": "Entrez votre email ou votre nom d'utilisateur",
+    "forgotPassword": "Mot de passe oublié ?",
+    "login": "Se connecter",
+    "password": "Mot de passe",
+    "passwordHide": "Hide password",
+    "passwordShow": "Show password"
   }
 }
