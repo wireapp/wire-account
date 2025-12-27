@@ -1,57 +1,57 @@
 {
   "delete": {
-    "button": "Eliminar Cuenta",
+    "button": "Удалить аккаунт",
     "confirmation": "All your data on {{company}} is now erased.",
     "description": "We’ve received a request to delete your {{company}} account. Click on the button below to proceed. It is valid for 10 minutes.",
     "errorDescription": "Please try again to delete your account.",
-    "errorTitle": "Something went wrong",
+    "errorTitle": "Что-то пошло не так",
     "greeting": "Hi there,",
-    "headline": "Account deleted",
+    "headline": "Аккаунт удален",
     "resetLink": "reset your {{company}} password.",
     "resetText": "If you did not ask for this, you should <link>",
     "surveyLink": "share your thoughts about it.",
     "surveyText": "Thanks for using {{company}}. <br>If you’d like, you can <link> <br>This will take no longer than a minute.",
-    "title": "Delete Account"
+    "title": "Удалить аккаунт"
   },
   "forgot": {
-    "button": "Reset password",
+    "button": "Сбросить пароль",
     "emailPlaceholder": "Email",
     "errorAlreadyProcessing": "We already sent you an email. The link is valid for 1 hour.",
     "errorInvalidEmail": "That does not look like an email.",
     "errorUnknown": "Something went wrong, please try again.",
     "successDescription": "We sent you a link to reset your password. It is valid for 1 hour.",
-    "successTitle": "Check your email",
-    "title": "Reset password",
+    "successTitle": "Проверьте свою почту",
+    "title": "Сбросить пароль",
     "description": "We will send you a link to reset your password via email.",
-    "login": "Log in"
+    "login": "Вход"
   },
   "general": {
-    "loading": "Please wait…"
+    "loading": "Пожалуйста, подождите…"
   },
   "header": {
-    "support": "Support",
-    "menuOpen": "Open menu",
-    "menuClose": "Close menu"
+    "support": "Служба поддержки",
+    "menuOpen": "Открыть меню",
+    "menuClose": "Закрыть меню"
   },
   "index": {
     "description": "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.",
-    "title": "The most secure collaboration platform"
+    "title": "Самая защищенная платформа для совместной работы"
   },
   "open": {
     "description": "To sign in and start using {{company}}, launch the application.",
     "downloadButton": "Get {{company}}",
     "openMac": "OPEN macOS APP",
     "openWeb": "Open in Web",
-    "openWire": "Open {{company}}"
+    "openWire": "Открыть {{company}}"
   },
   "reset": {
-    "button": "Reset password",
+    "button": "Сбросить пароль",
     "errorInvalidLink": "The link is not valid. Please try again.",
     "errorPasswordAlreadyUsed": "Please choose a new password.",
     "errorTitle": "Something went wrong",
     "errorUnknown": "Something went wrong, please try again.",
     "passwordInfo": "Use at least {{minPasswordLength}} characters, with one lowercase letter, one capital letter, a number, and a special character.",
-    "passwordPlaceholder": "Enter new password",
+    "passwordPlaceholder": "Введите новый пароль",
     "successDescription": "You can now log in with your new password.",
     "title": "Password reset"
   },
@@ -64,7 +64,7 @@
     "successBotDescriptionEmail": "You will be informed of the approval via a separate e-mail.",
     "successBotTitle": "Thank you for registering",
     "successEmailAppDescription": "Install the app to start using {{company}}.",
-    "successEmailTitle": "Email verified",
+    "successEmailTitle": "Email подтвержден",
     "title": "Verifying",
     "titleBot": "Verify Bot",
     "titleEmail": "Verify Account"
