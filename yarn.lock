@@ -8998,13 +8998,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"duplexer@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "duplexer@npm:0.1.2"
-  checksum: 62ba61a830c56801db28ff6305c7d289b6dc9f859054e8c982abd8ee0b0a14d2e9a8e7d086ffee12e868d43e2bbe8a964be55ddbd8c8957714c87373c7a4f9b0
-  languageName: node
-  linkType: hard
-
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -11150,15 +11143,6 @@ __metadata:
   dependencies:
     through2: ^2.0.1
   checksum: 8645d80b26990290e8623ccf38420e319a4ea67b64ac3e4f2b5de6c20b9006973001fd989dfe0fe3b2560044d3dfbc005685126826536e01718a2628aa45d0c5
-  languageName: node
-  linkType: hard
-
-"gzip-size@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "gzip-size@npm:6.0.0"
-  dependencies:
-    duplexer: ^0.1.2
-  checksum: 2df97f359696ad154fc171dcb55bc883fe6e833bca7a65e457b9358f3cb6312405ed70a8da24a77c1baac0639906cd52358dc0ce2ec1a937eaa631b934c94194
   languageName: node
   linkType: hard
 
@@ -17874,9 +17858,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:4.10.2":
-  version: 4.10.2
-  resolution: "webpack-bundle-analyzer@npm:4.10.2"
+"webpack-bundle-analyzer@npm:5.1.0":
+  version: 5.1.0
+  resolution: "webpack-bundle-analyzer@npm:5.1.0"
   dependencies:
     "@discoveryjs/json-ext": 0.5.7
     acorn: ^8.0.4
@@ -17884,7 +17868,6 @@ __metadata:
     commander: ^7.2.0
     debounce: ^1.2.1
     escape-string-regexp: ^4.0.0
-    gzip-size: ^6.0.0
     html-escaper: ^2.0.2
     opener: ^1.5.2
     picocolors: ^1.0.0
@@ -17892,7 +17875,7 @@ __metadata:
     ws: ^7.3.1
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
-  checksum: 4f0275e7d87bb6203a618ca5d2d4953943979d986fa2b91be1bf1ad0bcd22bec13398803273d11699f9fbcf106896311208a72d63fe5f8a47b687a226e598dc1
+  checksum: 0c202ff0ce08a2cc47274fb87381f9f8f87f024b970cd960b2cfcd3ea70fc8d63c0421f0509a2176666a43e61531d9ece129ce6674a0b640774b9299f678c3de
   languageName: node
   linkType: hard
 
@@ -18298,7 +18281,7 @@ __metadata:
     typescript: 5.6.3
     uuid: 11.1.0
     webpack: 5.102.1
-    webpack-bundle-analyzer: 4.10.2
+    webpack-bundle-analyzer: 5.1.0
     webpack-cli: 6.0.1
     webpack-dev-middleware: 7.4.5
     webpack-hot-middleware: 2.26.1
