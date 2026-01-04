@@ -6849,9 +6849,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/react-ui-kit@npm:9.69.5":
-  version: 9.69.5
-  resolution: "@wireapp/react-ui-kit@npm:9.69.5"
+"@wireapp/react-ui-kit@npm:9.72.1":
+  version: 9.72.1
+  resolution: "@wireapp/react-ui-kit@npm:9.72.1"
   dependencies:
     "@radix-ui/react-accordion": 1.2.11
     "@radix-ui/react-dropdown-menu": 2.1.14
@@ -6868,7 +6868,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 5f7023f32c8a2273dc17bd8709ee6c407019196ddcf5b2e3f2d532f3b9e763d325b98472132da0201dc4e07e802a54b27d9bf665059eaeff31a761020b8e87a9
+  checksum: 939c7aeaef4cd57718b92a34a99cb7183b8660d4ed54a5b25143cda21f9ea2382f521d92135736bc5429933eed5ee4298f6da6f6cd69e83b65c151c358d16d2a
   languageName: node
   linkType: hard
 
@@ -18257,7 +18257,7 @@ __metadata:
     "@wireapp/commons": 5.4.11
     "@wireapp/copy-config": 2.3.4
     "@wireapp/eslint-config": 1.4.0
-    "@wireapp/react-ui-kit": 9.69.5
+    "@wireapp/react-ui-kit": 9.72.1
     "@wireapp/telemetry": 0.3.7
     adm-zip: 0.5.16
     babel-eslint: 10.1.0

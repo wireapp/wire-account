@@ -5,7 +5,7 @@
   "dependencies": {
     "@wireapp/api-client": "27.95.0",
     "@wireapp/commons": "5.4.11",
-    "@wireapp/react-ui-kit": "9.69.5",
+    "@wireapp/react-ui-kit": "9.72.1",
     "@wireapp/telemetry": "0.3.7",
     "core-js": "3.46.0",
     "dotenv": "17.2.3",
