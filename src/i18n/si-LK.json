@@ -29,7 +29,9 @@
     "loading": "කරුණාකර රැඳෙන්න…"
   },
   "header": {
-    "support": "සහාය"
+    "support": "සහාය",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "index": {
     "description": "ව්‍යාපාරික සංවාද, ක්‍ෂණික සම්මන්ත්‍රණ ඇමතුම් සහ බෙදාගත් ලේඛන - සියල්ල අන්ත සංකේතනයෙන් ආරක්‍ෂිතයි. පෞද්ගලික භාවිතය සඳහා ද ඇත.",
@@ -93,8 +95,8 @@
   "migration": {
     "wrongCredentialsError": "Please enter valid credentials.",
     "passwordLabel": "Password (personal account)",
-    "passwordPlaceholder": "Password",
-    "continueBtnText": "Continue",
+    "passwordPlaceholder": "මුරපදය",
+    "continueBtnText": "ඉදිරියට",
     "layoutSubHeader": "The most secure collaboration",
     "layoutListHeader1": "Use the same level of security and enjoy extra features and benefits for free, like:",
     "layoutListHeader2": "What’s next",
@@ -106,12 +108,12 @@
     "layoutListItem6": "Enjoy conference calls with a single click",
     "welcomePageHeader": "Congratulations, you joined your team on Wire!",
     "welcomePageSubHeader": "Welcome to <b>{{teamName}}</b><br/> We transferred your personal account into a team member account.",
-    "welcomePageAppOpenText": "Open Wire",
+    "welcomePageAppOpenText": "වයර් අරින්න",
     "welcomePageTMOpenText": "Open Team Management",
-    "welcomePageOr": "or",
-    "confirmPageHeader": "Join your team",
+    "welcomePageOr": "හෝ",
+    "confirmPageHeader": "කණ්ඩායමකට එක්වන්න",
     "confirmPageSubHeader": "To ensure a secure transfer and prevent unauthorized access, please enter the password of your personal account again.",
-    "termsPageHeader": "Join your team",
+    "termsPageHeader": "කණ්ඩායමකට එක්වන්න",
     "termsPageSubHeader": "You’re about to join the team managed by {{email}}.",
     "termsPageListHeader": "Things to know",
     "termsPageListItem1": "Your <b>personal account will be transferred</b> to a team account.",
@@ -125,12 +127,16 @@
     "termsPageRecommendationItem1": "Verify the admin’s identity before accepting, and if you’re unsure, close this window.",
     "termsPageRecommendationItem2": "Back up your history",
     "termsPageMigrationTerms": "I agree to the migration terms and understand that this change is irreversible.",
-    "termsPageTermsOfUse": "I accept",
+    "termsPageTermsOfUse": "මම පිළිගනිමි",
     "termsPageTermsOfUseLink": "Wire's Terms of Use (Business).",
-    "invitationPageHeader": "Join your team",
+    "invitationPageHeader": "කණ්ඩායමකට එක්වන්න",
     "invitationPageSubHeader": "Log in with your personal account's email or username and password.",
-    "invitationPagLoginLabel": "Email or username",
-    "emailOrUsernamePlaceholder": "Enter email or username",
-    "forgotPassword": "Forgot password?"
+    "invitationPagLoginLabel": "වි-තැපෑල හෝ පරිශ්‍රීලක නාමය",
+    "emailOrUsernamePlaceholder": "වි-තැපෑල හෝ පරිශ්‍රීලක නාමය ලියන්න",
+    "forgotPassword": "මුරපදය අමතකද?",
+    "login": "පිවිසෙන්න",
+    "password": "මුරපදය",
+    "passwordHide": "Hide password",
+    "passwordShow": "Show password"
   }
 }
