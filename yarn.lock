@@ -117,15 +117,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/client-s3@npm:3.958.0":
-  version: 3.958.0
-  resolution: "@aws-sdk/client-s3@npm:3.958.0"
+"@aws-sdk/client-s3@npm:3.962.0":
+  version: 3.962.0
+  resolution: "@aws-sdk/client-s3@npm:3.962.0"
   dependencies:
     "@aws-crypto/sha1-browser": 5.2.0
     "@aws-crypto/sha256-browser": 5.2.0
     "@aws-crypto/sha256-js": 5.2.0
     "@aws-sdk/core": 3.957.0
-    "@aws-sdk/credential-provider-node": 3.958.0
+    "@aws-sdk/credential-provider-node": 3.962.0
     "@aws-sdk/middleware-bucket-endpoint": 3.957.0
     "@aws-sdk/middleware-expect-continue": 3.957.0
     "@aws-sdk/middleware-flexible-checksums": 3.957.0
@@ -176,7 +176,7 @@ __metadata:
     "@smithy/util-utf8": ^4.2.0
     "@smithy/util-waiter": ^4.2.7
     tslib: ^2.6.2
-  checksum: 3b5374af4ea17e63fb50cbe8691a76336d8907d34b32fce34c0cb890d1c5608d91086f81f932bb9d3a6a9f0ac61360734a214dd707c9b20700dd032b2a48aa42
+  checksum: b61b62d9cca443fe443e211c3ce3080f8682542e11d8304ce281ee7c30398d5b8c53ecce46edc34217ea067bd853bc74f4efc830bcaa5ee1682ff2280f91e25e
   languageName: node
   linkType: hard
 
@@ -288,14 +288,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/credential-provider-ini@npm:3.958.0":
-  version: 3.958.0
-  resolution: "@aws-sdk/credential-provider-ini@npm:3.958.0"
+"@aws-sdk/credential-provider-ini@npm:3.962.0":
+  version: 3.962.0
+  resolution: "@aws-sdk/credential-provider-ini@npm:3.962.0"
   dependencies:
     "@aws-sdk/core": 3.957.0
     "@aws-sdk/credential-provider-env": 3.957.0
     "@aws-sdk/credential-provider-http": 3.957.0
-    "@aws-sdk/credential-provider-login": 3.958.0
+    "@aws-sdk/credential-provider-login": 3.962.0
     "@aws-sdk/credential-provider-process": 3.957.0
     "@aws-sdk/credential-provider-sso": 3.958.0
     "@aws-sdk/credential-provider-web-identity": 3.958.0
@@ -306,13 +306,13 @@ __metadata:
     "@smithy/shared-ini-file-loader": ^4.4.2
     "@smithy/types": ^4.11.0
     tslib: ^2.6.2
-  checksum: d1041cad363e89ae91f81024164e29eab94839f1c46a7d8ff6bfd21db04c6926b05db4a11bb121b996d1ce5a833c6e591a3d49b9c6453849d251c34f0860ec0c
+  checksum: e9876d2e7177021e592fc9dafb13b93da26e05ac7f8d3617d40d8311d8af87aa6a20524621051b140154b408211e628bfac7e7f8cc27dc9f8659302a1dce7b14
   languageName: node
   linkType: hard
 
-"@aws-sdk/credential-provider-login@npm:3.958.0":
-  version: 3.958.0
-  resolution: "@aws-sdk/credential-provider-login@npm:3.958.0"
+"@aws-sdk/credential-provider-login@npm:3.962.0":
+  version: 3.962.0
+  resolution: "@aws-sdk/credential-provider-login@npm:3.962.0"
   dependencies:
     "@aws-sdk/core": 3.957.0
     "@aws-sdk/nested-clients": 3.958.0
@@ -322,17 +322,17 @@ __metadata:
     "@smithy/shared-ini-file-loader": ^4.4.2
     "@smithy/types": ^4.11.0
     tslib: ^2.6.2
-  checksum: 2924fbb53bbd610a2c24f5082a68762a42a1ada576ed8e401e1e9494d74cdc6ef77017c8b564cf0225d1bf1ea61befc9409fd23518e326d1c6af78a3b42ebbd4
+  checksum: 2f4e7fa0fd9c82f6693e06e9e6489b57968abb05c76e134de8ee2666bf4f06b7dc5dcbdf3520b63d06c7de55f32e223e9ac9a6a726a4349af69693d19577726e
   languageName: node
   linkType: hard
 
-"@aws-sdk/credential-provider-node@npm:3.958.0":
-  version: 3.958.0
-  resolution: "@aws-sdk/credential-provider-node@npm:3.958.0"
+"@aws-sdk/credential-provider-node@npm:3.962.0":
+  version: 3.962.0
+  resolution: "@aws-sdk/credential-provider-node@npm:3.962.0"
   dependencies:
     "@aws-sdk/credential-provider-env": 3.957.0
     "@aws-sdk/credential-provider-http": 3.957.0
-    "@aws-sdk/credential-provider-ini": 3.958.0
+    "@aws-sdk/credential-provider-ini": 3.962.0
     "@aws-sdk/credential-provider-process": 3.957.0
     "@aws-sdk/credential-provider-sso": 3.958.0
     "@aws-sdk/credential-provider-web-identity": 3.958.0
@@ -342,7 +342,7 @@ __metadata:
     "@smithy/shared-ini-file-loader": ^4.4.2
     "@smithy/types": ^4.11.0
     tslib: ^2.6.2
-  checksum: ae991076af8265ecfbd9ff1a13a0564fe60028537bb81d691efd71f7bddf57e0736e86003b7b6d8cb215aa2382a270b2f97e48e824607724a7006562a96f4725
+  checksum: 02338ffc6d0937777c32d5989c5df8b9a089fde23b863de3d55ce7ef4b17a8109ac4a1cfd9266c324ee10c46b4fe7dcb66124dba70e84e86b894d5e95353cdf0
   languageName: node
   linkType: hard
 
@@ -391,9 +391,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/lib-storage@npm:3.958.0":
-  version: 3.958.0
-  resolution: "@aws-sdk/lib-storage@npm:3.958.0"
+"@aws-sdk/lib-storage@npm:3.962.0":
+  version: 3.962.0
+  resolution: "@aws-sdk/lib-storage@npm:3.962.0"
   dependencies:
     "@smithy/abort-controller": ^4.2.7
     "@smithy/middleware-endpoint": ^4.4.1
@@ -403,8 +403,8 @@ __metadata:
     stream-browserify: 3.0.0
     tslib: ^2.6.2
   peerDependencies:
-    "@aws-sdk/client-s3": ^3.958.0
-  checksum: c68cb58032646af3af4552e012f3bb73d70ce95915d3671bdab9348df478123898c36b9a527104cd959171b9fe99adec70e5b307728829b1262f6d56b46dea82
+    "@aws-sdk/client-s3": ^3.962.0
+  checksum: 36efca3ece30b4bdcb3637250bac7d138f6446b64b9d519c611f18a27c233a034e4606d7a263b7c79bb29bb06701ab86191b6ca4e7353eba925c65f92c2f78bf
   languageName: node
   linkType: hard
 
@@ -6791,12 +6791,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wireapp/api-client@npm:27.95.0":
-  version: 27.95.0
-  resolution: "@wireapp/api-client@npm:27.95.0"
+"@wireapp/api-client@npm:27.95.2":
+  version: 27.95.2
+  resolution: "@wireapp/api-client@npm:27.95.2"
   dependencies:
-    "@aws-sdk/client-s3": 3.958.0
-    "@aws-sdk/lib-storage": 3.958.0
+    "@aws-sdk/client-s3": 3.962.0
+    "@aws-sdk/lib-storage": 3.962.0
     "@wireapp/commons": ^5.4.11
     "@wireapp/priority-queue": ^2.1.17
     "@wireapp/protocol-messaging": 1.56.0
@@ -6812,7 +6812,7 @@ __metadata:
     uuid: 11.1.0
     ws: 8.18.1
     zod: 3.24.2
-  checksum: 3effce618d3209e5f4416c7f91e534af5dd402965056651709dc36558f40d02ce44a54f031291d807d7ec7f17c3550a1ace6fcf8d266cab7ec0f172587864a52
+  checksum: 0fca398bf608977dc138b2b0020d546845ebc8361fd3ade4563670db1532285824e37a7c0eac30337a89d929f1f3fdb65d137182ee96de32f261bde32e9442ca
   languageName: node
   linkType: hard
 
@@ -18255,7 +18255,7 @@ __metadata:
     "@types/webpack-env": 1.18.8
     "@typescript-eslint/eslint-plugin": 8.52.0
     "@typescript-eslint/parser": 7.17.0
-    "@wireapp/api-client": 27.95.0
+    "@wireapp/api-client": 27.95.2
     "@wireapp/commons": 5.4.11
     "@wireapp/copy-config": 2.3.10
     "@wireapp/eslint-config": 1.4.0
