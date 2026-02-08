@@ -7,7 +7,7 @@
     "@wireapp/commons": "5.4.11",
     "@wireapp/react-ui-kit": "9.73.0",
     "@wireapp/telemetry": "0.3.10",
-    "core-js": "3.46.0",
+    "core-js": "3.48.0",
     "dotenv": "17.2.3",
     "dotenv-extended": "2.9.0",
     "i18next": "25.7.4",
