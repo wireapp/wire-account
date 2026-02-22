@@ -4857,7 +4857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^10.2.2":
+"minimatch@npm:^10.2.1, minimatch@npm:^10.2.2":
   version: 10.2.2
   resolution: "minimatch@npm:10.2.2"
   dependencies:
@@ -4866,7 +4866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^3.0.4, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
+"minimatch@npm:^3.0.4, minimatch@npm:^3.1.1":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
   dependencies:
@@ -5124,14 +5124,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemon@npm:3.1.11":
-  version: 3.1.11
-  resolution: "nodemon@npm:3.1.11"
+"nodemon@npm:3.1.14":
+  version: 3.1.14
+  resolution: "nodemon@npm:3.1.14"
   dependencies:
     chokidar: ^3.5.2
     debug: ^4
     ignore-by-default: ^1.0.1
-    minimatch: ^3.1.2
+    minimatch: ^10.2.1
     pstree.remy: ^1.1.8
     semver: ^7.5.3
     simple-update-notifier: ^2.0.0
@@ -5140,7 +5140,7 @@ __metadata:
     undefsafe: ^2.0.5
   bin:
     nodemon: bin/nodemon.js
-  checksum: 9af4cce5260eee5410151cc887bcf1e6e0c72e607fe77df652da4ad92f866db97b631eb38cf29bdd86c07ddd845916949f9b6478df4b0381497829bb7d9d2d41
+  checksum: c9f5a4662784f7843b6a90d6a05ecc96cb491d0b789a524da23db849f5818bb7e2e681492c4f349650cc291afb3107700dcf037d6ad59811c224125b3c627f94
   languageName: node
   linkType: hard
 
@@ -6738,7 +6738,7 @@ __metadata:
     logdown: 3.3.1
     moment: 2.30.1
     nocache: 4.0.0
-    nodemon: 3.1.11
+    nodemon: 3.1.14
     opn: 6.0.0
     pm2: 6.0.14
     prettier: 3.8.1
