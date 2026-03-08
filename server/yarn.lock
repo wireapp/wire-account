@@ -3777,6 +3777,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:11.3.4":
+  version: 11.3.4
+  resolution: "fs-extra@npm:11.3.4"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: 3d1453db564b20ad58adf7c9583d0821546bd05e158865407fa2767af774ad8353418118655005f48c5bd0dbda19ea4bd053f8a5dcef2ce2e97580f7a039a221
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0, fs-minipass@npm:^2.1.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -6727,7 +6738,7 @@ __metadata:
     dotenv-extended: 2.9.0
     express: 4.21.2
     express-hbs: 2.5.0
-    fs-extra: 11.3.3
+    fs-extra: 11.3.4
     generate-changelog: 1.8.0
     handlebars: 4.7.7
     helmet: 4.6.0
