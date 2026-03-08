@@ -2606,15 +2606,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"auto-parse@npm:^1.3.0":
-  version: 1.8.0
-  resolution: "auto-parse@npm:1.8.0"
-  dependencies:
-    typpy: 2.3.11
-  checksum: 05c6562edd290b04bd73e8aace2a627b755e66a3320be7306b594296aa73490a5591595ac50f00f9a2325c8eeddab7a35fdb4a370ad823c9e2656c35db91a244
-  languageName: node
-  linkType: hard
-
 "babel-plugin-polyfill-corejs2@npm:^0.4.15":
   version: 0.4.15
   resolution: "babel-plugin-polyfill-corejs2@npm:0.4.15"
@@ -2848,13 +2839,6 @@ __metadata:
     get-intrinsic: ^1.2.4
     set-function-length: ^1.2.1
   checksum: 295c0c62b90dd6522e6db3b0ab1ce26bdf9e7404215bda13cfee25b626b5ff1a7761324d58d38b1ef1607fc65aca2d06e44d2e18d0dfc6c14b465b00d8660029
-  languageName: node
-  linkType: hard
-
-"camelcase@npm:^5.3.1":
-  version: 5.3.1
-  resolution: "camelcase@npm:5.3.1"
-  checksum: e6effce26b9404e3c0f301498184f243811c30dfe6d0b9051863bd8e4034d09c8c2923794f280d6827e5aa055f6c434115ff97864a16a963366fb35fd673024b
   languageName: node
   linkType: hard
 
@@ -3136,7 +3120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.1":
+"cross-spawn@npm:^7.0.0":
   version: 7.0.5
   resolution: "cross-spawn@npm:7.0.5"
   dependencies:
@@ -3314,17 +3298,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-extended@npm:2.9.0":
-  version: 2.9.0
-  resolution: "dotenv-extended@npm:2.9.0"
+"dotenv-extended@npm:3.1.0":
+  version: 3.1.0
+  resolution: "dotenv-extended@npm:3.1.0"
   dependencies:
-    auto-parse: ^1.3.0
-    camelcase: ^5.3.1
-    cross-spawn: ^7.0.1
-    dotenv: ^8.2.0
+    dotenv: ^16.6.1
   bin:
-    dotenv-extended: lib/bin/index.js
-  checksum: e7daf245c8c59c0ccb6861a942ae0a9893bf7a4871442fbe83322c7792d3a6da6fef07b82fa9db3c46dc2bcc199528c574feb72c4c1074116d5693608923e2ef
+    dee: lib/bin/cli.js
+    dotenv-extended: lib/bin/cli.js
+  checksum: 1a984bad044fd2d89615a9ab373022f9f1d6e9208ca449644e5e02b8cbc3ea2009bc597fda8e93328e348be1d9ccf2395e2be96920a8737a3840c2a386e4ff6f
   languageName: node
   linkType: hard
 
@@ -3342,10 +3324,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^8.2.0":
-  version: 8.2.0
-  resolution: "dotenv@npm:8.2.0"
-  checksum: ad4c8e0df3e24b4811c8e93377d048a10a9b213dcd9f062483b4a2d3168f08f10ec9c618c23f5639060d230ccdb174c08761479e9baa29610aa978e1ee66df76
+"dotenv@npm:^16.6.1":
+  version: 16.6.1
+  resolution: "dotenv@npm:16.6.1"
+  checksum: e8bd63c9a37f57934f7938a9cf35de698097fadf980cb6edb61d33b3e424ceccfe4d10f37130b904a973b9038627c2646a3365a904b4406514ea94d7f1816b69
   languageName: node
   linkType: hard
 
@@ -3834,15 +3816,6 @@ __metadata:
   version: 1.1.2
   resolution: "function-bind@npm:1.1.2"
   checksum: 2b0ff4ce708d99715ad14a6d1f894e2a83242e4a52ccfcefaee5e40050562e5f6dafc1adbb4ce2d4ab47279a45dc736ab91ea5042d843c3c092820dfe032efb1
-  languageName: node
-  linkType: hard
-
-"function.name@npm:^1.0.3":
-  version: 1.0.13
-  resolution: "function.name@npm:1.0.13"
-  dependencies:
-    noop6: ^1.0.1
-  checksum: 376bd4247cacffb50ae425c64e99c42fd10a875197e09db7e65002a5bc0f539608b03f1ff7e27234516cd5b3bbfd9d9d8e912fa9aaeec52d3b422d501f290fff
   languageName: node
   linkType: hard
 
@@ -5152,13 +5125,6 @@ __metadata:
   bin:
     nodemon: bin/nodemon.js
   checksum: c9f5a4662784f7843b6a90d6a05ecc96cb491d0b789a524da23db849f5818bb7e2e681492c4f349650cc291afb3107700dcf037d6ad59811c224125b3c627f94
-  languageName: node
-  linkType: hard
-
-"noop6@npm:^1.0.1":
-  version: 1.0.9
-  resolution: "noop6@npm:1.0.9"
-  checksum: cc46d03eb22c5a990b3ce5e3ff71a82628efadcdeefdae566639657d2a947033ea919d1f4bfc7bfbcf674d43c21b3e580c2f07c8043e7ef487ac527237e2532f
   languageName: node
   linkType: hard
 
@@ -6486,15 +6452,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typpy@npm:2.3.11":
-  version: 2.3.11
-  resolution: "typpy@npm:2.3.11"
-  dependencies:
-    function.name: ^1.0.3
-  checksum: 9bbef6a83a70e123cce6466d268ddebcb58251decec431f57c91be4b62c79511e986427b21efb47f5053e4b2e8287ecc305e8f57966517f689166490aeed51fc
-  languageName: node
-  linkType: hard
-
 "uglify-js@npm:^3.1.4":
   version: 3.12.4
   resolution: "uglify-js@npm:3.12.4"
@@ -6735,7 +6692,7 @@ __metadata:
     "@wireapp/commons": 5.4.13
     cross-env: 10.1.0
     dotenv: 17.3.1
-    dotenv-extended: 2.9.0
+    dotenv-extended: 3.1.0
     express: 4.21.2
     express-hbs: 2.5.0
     fs-extra: 11.3.4
