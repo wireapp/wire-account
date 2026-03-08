@@ -13795,20 +13795,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:16.3.0":
-  version: 16.3.0
-  resolution: "lint-staged@npm:16.3.0"
+"lint-staged@npm:16.3.2":
+  version: 16.3.2
+  resolution: "lint-staged@npm:16.3.2"
   dependencies:
     commander: ^14.0.3
     listr2: ^9.0.5
     micromatch: ^4.0.8
-    nano-spawn: ^2.0.0
     string-argv: ^0.3.2
     tinyexec: ^1.0.2
     yaml: ^2.8.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 1c1dc765c7760d4e739d2606ba1624ced1092f9015c5de6baed16dc878c56c7166e607cbaaf956fb170db5ac1d46d1130262575d36c2b7c8fa67ef31d2f44ac0
+  checksum: 0b8724f145c5f27897b929e65d14bc0ac8b9a8fa26b50e54747a570af14ad8936727fd34c421ea0cc0da76d28de9426386c90fff54a12e8e4f513614c7503417
   languageName: node
   linkType: hard
 
@@ -14392,13 +14391,6 @@ __metadata:
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: aa92de608021b242401676e35cfa5aa42dd70cbdc082b916da7fb925c542173e36bce97ea3e804923fe92c0ad991434e4a38327e15a1b5b5f945d66df615ae6d
-  languageName: node
-  linkType: hard
-
-"nano-spawn@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "nano-spawn@npm:2.0.0"
-  checksum: 48223f6f5b2ab3f7562d0e6e85abb9b9c4ee52f5c096bd50012c0776664ddc63cd2602c9e4dc3d6cd47ae5189e9c71b51afb2d44b2746d8ca80cb52fc8013904
   languageName: node
   linkType: hard
 
@@ -18642,7 +18634,7 @@ __metadata:
     i18next-scanner: 4.6.0
     jest: 30.2.0
     jest-environment-jsdom: 30.2.0
-    lint-staged: 16.3.0
+    lint-staged: 16.3.2
     os-browserify: 0.3.0
     path-browserify: 1.0.1
     prettier: 3.2.4
