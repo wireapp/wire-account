@@ -5187,6 +5187,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@simple-git/args-pathspec@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@simple-git/args-pathspec@npm:1.0.2"
+  checksum: 8ff2289110aa1c556aadb67da55c01f9430af6a647a9e4823aa023c59b11d3406819cfaead8a9c71c7fd44231271be9e71179ec817b6a3cb99d1da36cd17788e
+  languageName: node
+  linkType: hard
+
+"@simple-git/argv-parser@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@simple-git/argv-parser@npm:1.0.3"
+  dependencies:
+    "@simple-git/args-pathspec": ^1.0.2
+  checksum: b770dedde67af0a609aa870a58f90e8738b21862b204f252199058c07f09b5fd7688679b836d8757d57ad88d8739f0e70c60f192ee74cced5b5064a36061eb17
+  languageName: node
+  linkType: hard
+
 "@sinclair/typebox@npm:^0.34.0":
   version: 0.34.35
   resolution: "@sinclair/typebox@npm:0.34.35"
@@ -16440,14 +16456,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-git@npm:3.33.0":
-  version: 3.33.0
-  resolution: "simple-git@npm:3.33.0"
+"simple-git@npm:3.35.2":
+  version: 3.35.2
+  resolution: "simple-git@npm:3.35.2"
   dependencies:
     "@kwsites/file-exists": ^1.1.1
     "@kwsites/promise-deferred": ^1.1.1
+    "@simple-git/args-pathspec": ^1.0.2
+    "@simple-git/argv-parser": ^1.0.3
     debug: ^4.4.0
-  checksum: 9c0105f21781d9761d6a82444b7f6c85c21c72b63b38c0e7b53420d248f08541d5b008866d043155cddcc89ea71bb0028d7ed3ec7e0b885a59ee4fd9cce1a99e
+  checksum: bd96ba34e332849f7682a4ed05f2d45b0c12a4d441bc2ca66cce2bb2fd39783dc679dd37f80735e4c441a4b2779f9730d2f035b96d00ff5a87ceb622a27e4c11
   languageName: node
   linkType: hard
 
@@ -18623,7 +18641,7 @@ __metadata:
     react-i18next: 11.18.6
     react-router: 7.13.1
     react-router-dom: 6.28.0
-    simple-git: 3.33.0
+    simple-git: 3.35.2
     sort-json: 2.0.1
     svg-inline-loader: 0.8.2
     terser-webpack-plugin: 5.4.0
