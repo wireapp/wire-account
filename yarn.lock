@@ -10197,9 +10197,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:7.0.1":
-  version: 7.0.1
-  resolution: "eslint-plugin-react-hooks@npm:7.0.1"
+"eslint-plugin-react-hooks@npm:7.1.1":
+  version: 7.1.1
+  resolution: "eslint-plugin-react-hooks@npm:7.1.1"
   dependencies:
     "@babel/core": ^7.24.4
     "@babel/parser": ^7.24.4
@@ -10207,8 +10207,8 @@ __metadata:
     zod: ^3.25.0 || ^4.0.0
     zod-validation-error: ^3.5.0 || ^4.0.0
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
-  checksum: d2216919137e6593309640c47d5cbeb903a2989b2ddc1197107b4b1967a8ec2e696d9586015c02cfa2468bdb4ce28b6866f9fd2b555ccbec635556f0a4e1f434
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0
+  checksum: 8562764538a08e6dcc147cd1e42e4f6a7fa60e7c39affa7c8a9eb283998cfc5caced6785e6e5d68ab1c0ac472096a06b2104d18cb215b8da6b0fb02fb146a1b2
   languageName: node
   linkType: hard
 
@@ -18603,7 +18603,7 @@ __metadata:
     eslint-plugin-no-unsanitized: 4.1.5
     eslint-plugin-prettier: 5.5
     eslint-plugin-react: 7.37.5
-    eslint-plugin-react-hooks: 7.0.1
+    eslint-plugin-react-hooks: 7.1.1
     eslint-plugin-simple-import-sort: 8.0.0
     eslint-plugin-sort-keys-fix: 1.1.2
     fs-extra: 11.3.4
