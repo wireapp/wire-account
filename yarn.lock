@@ -15432,9 +15432,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:7.15.1":
-  version: 7.15.1
-  resolution: "react-router@npm:7.15.1"
+"react-router@npm:7.16.0":
+  version: 7.16.0
+  resolution: "react-router@npm:7.16.0"
   dependencies:
     cookie: ^1.0.1
     set-cookie-parser: ^2.6.0
@@ -15444,7 +15444,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: b00a33bb4611279463a2e3801bc212e5a03694c52c6c5da8ac6ec13c59d6fa669faf4da2f6a0359301f84748276f48802ae5293eadf0b3381f63bd01855f85ec
+  checksum: 63ad64f81cce990938e8519ab785c5d7379b5ea5c89a737fd2c4e025bc3b3d84226f9d07bfc809fec10331dfec6319223f523110907ec70344ff2c71759b532b
   languageName: node
   linkType: hard
 
@@ -18683,7 +18683,7 @@ __metadata:
     react: 18.3.1
     react-dom: 18.3.1
     react-i18next: 11.18.6
-    react-router: 7.15.1
+    react-router: 7.16.0
     react-router-dom: 6.28.0
     simple-git: 3.36.0
     sort-json: 2.0.1
