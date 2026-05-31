@@ -2988,13 +2988,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.29.2":
-  version: 7.29.2
-  resolution: "@babel/runtime@npm:7.29.2"
-  checksum: d5548d1165de8995f8afc93a5694b8625409be16cd1f2250ac13e331335858ddac3cb9fd278e6c43956a130101a2203f09417938a1a96f9fb70f02b4b4172e1d
-  languageName: node
-  linkType: hard
-
 "@babel/template@npm:^7.18.10":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -11928,17 +11921,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:25.10.9":
-  version: 25.10.9
-  resolution: "i18next@npm:25.10.9"
-  dependencies:
-    "@babel/runtime": ^7.29.2
+"i18next@npm:26.3.0":
+  version: 26.3.0
+  resolution: "i18next@npm:26.3.0"
   peerDependencies:
     typescript: ^5 || ^6
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 93e90c968d4a77fd651e29b6dd20e7d3ace1586852f12fecdbedb452cadfc5ec77f4a285d0b5890100aa11638f922d6a31019cd91d3cdad072d59a38fe1589c1
+  checksum: 4f6fd594fc51ad022d3f5af6426d766e515a41737c787c5f3fdbe6c089ab075aa66a97022a9f8cb3ba55a06915fe0c21952b3f54fa6fc34fd792f43ed425b286
   languageName: node
   linkType: hard
 
@@ -18670,7 +18661,7 @@ __metadata:
     fs-extra: 11.3.5
     generate-changelog: 1.8.0
     husky: 4.3.8
-    i18next: 25.10.9
+    i18next: 26.3.0
     i18next-browser-languagedetector: 8.2.1
     i18next-react-postprocessor: 3.1.0
     i18next-scanner: 4.6.0
