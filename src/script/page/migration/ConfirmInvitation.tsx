@@ -82,7 +82,7 @@ export const ConfirmInvitation = () => {
 
   return (
     <div css={loginContainerCss}>
-      {isTablet && <Logo />}
+      {isTablet && <Logo aria-label={t('logoAriaLabel')} />}
       <Text css={headerCss}>{t('confirmPageHeader')}</Text>
       <Text css={loginSubHeaderCss}>{t('confirmPageSubHeader')}</Text>
       <Form style={{marginTop: 30, textAlign: 'left'}} onSubmit={handleSubmit}>

@@ -35,7 +35,7 @@ export const MigrationLayout = ({children}: {children: ReactNode}) => {
     <FlexBox css={{flexDirection: 'row', background: COLOR_V2.WHITE, height: '100%', minHeight: '100vh'}}>
       {!isTablet && (
         <div css={leftSectionCss}>
-          <Logo color={COLOR_V2.WHITE} scale={1.9} />
+          <Logo color={COLOR_V2.WHITE} scale={1.9} aria-label={t('logoAriaLabel')} />
           <div css={{margin: '1.25rem 0'}}>
             <Text css={whiteFontCss} fontSize="1.25rem">
               {t('layoutSubHeader')}
