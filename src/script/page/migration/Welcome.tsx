@@ -104,7 +104,7 @@ export const Welcome = () => {
 
   return (
     <div css={loginContainerCss}>
-      {isTablet && <Logo />}
+      {isTablet && <Logo aria-label={t('logoAriaLabel')} />}
       <Text css={headerCss}>{t('welcomePageHeader')}</Text>
       <Text css={loginSubHeaderCss}>
         <MarkupTranslation translation={t('welcomePageSubHeader', {teamName: team.name})} />

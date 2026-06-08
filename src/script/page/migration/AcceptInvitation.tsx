@@ -110,7 +110,7 @@ export const AcceptInvitation = () => {
   return (
     <MigrationLayout>
       <div css={loginContainerCss}>
-        {isTablet && <Logo />}
+        {isTablet && <Logo aria-label={t('logoAriaLabel')} />}
 
         <Text css={headerCss}>{t('invitationPageHeader')}</Text>
         <Text css={loginSubHeaderCss}>{t('invitationPageSubHeader')}</Text>
