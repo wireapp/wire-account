@@ -31,7 +31,8 @@
   "header": {
     "support": "Support",
     "menuOpen": "Open menu",
-    "menuClose": "Close menu"
+    "menuClose": "Close menu",
+    "logoAriaLabel": "Wire, open website, button"
   },
   "index": {
     "description": "Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also available for personal use.",
