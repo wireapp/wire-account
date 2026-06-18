@@ -33,6 +33,7 @@ import DefaultRoute from './routes/error/DefaultRoute';
 import ErrorRoute from './routes/error/ErrorRoute';
 import GeneratedAppleRoute from './routes/generated/GeneratedAppleRoute';
 import SSOStartRoute from './routes/redirect/SSOStartRoute';
+import ProfileRoute from './routes/profile/Profile';
 import {ServerConfig} from './ServerConfig';
 
 hbs.registerHelper('ifAnd', (v1: any, v2: any, options: any) => (v1 && v2 ? options.fn(this) : options.inverse(this)));
@@ -69,6 +70,7 @@ class Server {
     this.app.use(SSOStartRoute(this.config));
     this.app.use(CommitRoute(this.config));
     this.app.use(GeneratedAppleRoute(this.config));
+    this.app.use(ProfileRoute(this.config));
     this.app.use(DefaultRoute(this.config));
     this.app.use(ErrorRoute(this.config));
   }

@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Wire, Copyright (C) 2019 Wire Swiss GmbH -->
+<!-- version {{config.CLIENT.VERSION}} -->
+<html class="profile" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <link rel="shortcut icon" href="/favicon.ico" sizes="48x48">
+
+  <meta name="twitter:site" content="@wire">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta property="og:title" content="Wire">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{config.CLIENT.URL.OPEN_GRAPH_IMAGE}}">
+  <title>Wire</title>
+</head>
+
+<body>
+  <div id="handle">@{{ profile.handle }}</div>
+  {{#profile.bio}}
+  <div id="bio">{{ profile.bio }}</div>
+  {{/profile.bio}}
+  {{#profile.links}}
+    <div class="link">
+      <span class="link-name">{{ name }}</span>
+      <span class="link-url">
+        <a href="{{ url }}" rel="me">{{ url }}</a>
+      </span>
+      {{#verified}}
+      <span class="verified">verified</span>
+      {{/verified}}
+    </div>
+  {{/profile.links}}
+  <div>
+    <a href="{{ config.CLIENT.URL.WEBAPP_BASE }}/#/user/{{ profile.qualified_id.domain }}/{{ profile.qualified_id.id }}">Open in Browser</a>
+  </div>
+</body>
+
+</html>
