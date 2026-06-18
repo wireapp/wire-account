@@ -101,7 +101,7 @@ export const TermsAcknowledgement = () => {
     <div css={termsContainerCss}>
       {isTablet && (
         <div css={{textAlign: 'center', marginTop: '2rem'}}>
-          <Logo />
+          <Logo aria-label={t('logoAriaLabel')} />
         </div>
       )}
       <Text css={headerCss}>{t('termsPageHeader')}</Text>

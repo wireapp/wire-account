@@ -31,12 +31,12 @@ interface Props extends React.HTMLProps<Document> {}
 const Header: React.FC<Props> = ({}) => {
   const [t] = useTranslation('header');
   const headerLogo = (
-    <RRLink to={pathWithParams(ROUTE.HOME)} title={BRAND_NAME}>
+    <RRLink to={pathWithParams(ROUTE.HOME)} title={BRAND_NAME} aria-label={t('logoAriaLabel')}>
       <span dangerouslySetInnerHTML={{__html: SVGProvider.logo}} />
     </RRLink>
   );
   return (
-    <HeaderMenu logoElement={headerLogo}>
+    <HeaderMenu logoElement={headerLogo} openMenuLabel={t('menuOpen')} closeMenuLabel={t('menuClose')}>
       <MenuLink rel="noopener noreferrer" target="_blank" href={SUPPORT_URL} data-uie-name="go-support-header">
         {t('support')}
       </MenuLink>

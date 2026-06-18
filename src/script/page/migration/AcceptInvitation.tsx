@@ -110,7 +110,7 @@ export const AcceptInvitation = () => {
   return (
     <MigrationLayout>
       <div css={loginContainerCss}>
-        {isTablet && <Logo />}
+        {isTablet && <Logo aria-label={t('logoAriaLabel')} />}
 
         <Text css={headerCss}>{t('invitationPageHeader')}</Text>
         <Text css={loginSubHeaderCss}>{t('invitationPageSubHeader')}</Text>
@@ -143,6 +143,8 @@ export const AcceptInvitation = () => {
             value={password}
             data-uie-name="enter-login-password"
             onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
+            showTogglePasswordLabel={t('passwordShow')}
+            hideTogglePasswordLabel={t('passwordHide')}
           />
           <div css={forgotPasswordCss}>
             <Link

@@ -82,7 +82,7 @@ export const ConfirmInvitation = () => {
 
   return (
     <div css={loginContainerCss}>
-      {isTablet && <Logo />}
+      {isTablet && <Logo aria-label={t('logoAriaLabel')} />}
       <Text css={headerCss}>{t('confirmPageHeader')}</Text>
       <Text css={loginSubHeaderCss}>{t('confirmPageSubHeader')}</Text>
       <Form style={{marginTop: 30, textAlign: 'left'}} onSubmit={handleSubmit}>
@@ -100,6 +100,8 @@ export const ConfirmInvitation = () => {
           data-uie-name="enter-login-password"
           onBlur={() => trackEvent(SegmentationValue.PASSWORD_ENTERED)}
           markInvalid={!!error}
+          showTogglePasswordLabel={t('passwordShow')}
+          hideTogglePasswordLabel={t('passwordHide')}
         />
         <div css={forgotPasswordCss}>
           <Link href={ROUTE.PASSWORD_FORGOT} data-uie-name="go-forgot-password">

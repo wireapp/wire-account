@@ -120,6 +120,8 @@ const PasswordReset = () => {
                   pattern={ValidationUtil.getNewPasswordPattern(NEW_PASSWORD_MINIMUM_LENGTH)}
                   required
                   data-uie-name="enter-new-service-password"
+                  showTogglePasswordLabel={t('passwordShow')}
+                  hideTogglePasswordLabel={t('passwordHide')}
                 />
                 {error ? (
                   <Text color={COLOR.RED} center data-uie-name="error-message">
