@@ -1,6 +1,6 @@
 {
   "delete": {
-    "button": "Eliminar Cuenta",
+    "button": "Delete Account",
     "confirmation": "All your data on {{company}} is now erased.",
     "description": "We’ve received a request to delete your {{company}} account. Click on the button below to proceed. It is valid for 10 minutes.",
     "errorDescription": "Please try again to delete your account.",

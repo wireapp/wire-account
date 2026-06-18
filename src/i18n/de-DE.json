@@ -29,7 +29,10 @@
     "loading": "Bitte warten…"
   },
   "header": {
-    "support": "Hilfe"
+    "support": "Hilfe",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen",
+    "logoAriaLabel": "Wire, Webseite öffnen, Schaltfläche"
   },
   "index": {
     "description": "Business-Chats, Telefonkonferenzen und Dateifreigabe - alles durch Ende-zu-Ende-Verschlüsselung geschützt. Auch erhältlich für den persönlichen Gebrauch.",
@@ -105,8 +108,8 @@
     "layoutListItem5": "Öffnen Sie Wire und verbinden Sie sich mit Ihren neuen Team-Mitgliedern",
     "layoutListItem6": "Erleben Sie Telefonkonferenzen mit nur einem Klick",
     "welcomePageHeader": "Herzlichen Glückwunsch, Sie sind Ihrem Team auf Wire beigetreten!",
-    "welcomePageSubHeaderBeforeTeamName": "Willkommen bei",
-    "welcomePageSubHeaderAfterTeamName": "Wir haben Ihr privates Benutzerkonto in ein Team-Mitgliedskonto umgewandelt.",
+    "welcomePageSubHeaderBeforeTeamName": "Welcome to",
+    "welcomePageSubHeaderAfterTeamName": "We transferred your personal account into a team member account.",
     "welcomePageAppOpenText": "Wire öffnen",
     "welcomePageTMOpenText": "Team-Management öffnen",
     "welcomePageOr": "oder",
@@ -132,6 +135,10 @@
     "invitationPageSubHeader": "Melden Sie sich mit der E-Mail-Adresse oder dem Benutzernamen und dem Passwort Ihres privaten Benutzerkontos an.",
     "invitationPagLoginLabel": "E-Mail-Adresse oder Benutzername",
     "emailOrUsernamePlaceholder": "E-Mail-Adresse oder Benutzername eingeben",
-    "forgotPassword": "Passwort vergessen?"
+    "forgotPassword": "Passwort vergessen?",
+    "login": "Anmelden",
+    "password": "Passwort",
+    "passwordHide": "Passwort ausblenden",
+    "passwordShow": "Passwort anzeigen"
   }
 }
