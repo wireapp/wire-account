@@ -7,7 +7,7 @@
     "express-hbs": "2.5.0",
     "fs-extra": "11.3.5",
     "handlebars": "4.7.9",
-    "helmet": "4.6.0",
+    "helmet": "8.2.0",
     "helmet-csp": "3.4.0",
     "http-proxy-middleware": "3.0.7",
     "logdown": "3.3.1",
