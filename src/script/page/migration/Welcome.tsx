@@ -41,7 +41,6 @@ import {useActionContext} from 'script/module/action';
 import {isOwner, MemberData} from '@wireapp/api-client/lib/team/member';
 import {TeamData} from '@wireapp/api-client/lib/team';
 import {secureOpen} from 'script/util/urlUtil';
-import MarkupTranslation from 'script/component/MarkupTranslation';
 import {reportEvent} from 'script/util/Tracking/Tracking';
 import {EventName, SegmentationKey, SegmentationValue} from 'script/util/Tracking/types';
 
@@ -107,7 +106,8 @@ export const Welcome = () => {
       {isTablet && <Logo aria-label={t('logoAriaLabel')} />}
       <Text css={headerCss}>{t('welcomePageHeader')}</Text>
       <Text css={loginSubHeaderCss}>
-        <MarkupTranslation translation={t('welcomePageSubHeader', {teamName: team.name})} />
+        {t('welcomePageSubHeaderBeforeTeamName')} <b>{team?.name ?? ''}</b>
+        <br /> {t('welcomePageSubHeaderAfterTeamName')}
       </Text>
       <Button variant={ButtonVariant.PRIMARY} data-uie-name="do-open-app" block onClick={handleAppOpen}>
         {t('welcomePageAppOpenText')}

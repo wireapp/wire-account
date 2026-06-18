@@ -17,7 +17,8 @@
  *
  */
 
-// Handle HTML markup within translation text
+// Handle static trusted HTML markup within translation text.
+// Never pass translations with interpolated or user-controlled values to this component.
 export default function MarkupTranslation({translation}: {translation: string[]}) {
   return <span dangerouslySetInnerHTML={{__html: translation.join('')}} />;
 }
