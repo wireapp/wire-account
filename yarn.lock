@@ -6421,12 +6421,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:^24":
+"@types/node@npm:*, @types/node@npm:>=13.7.0":
   version: 24.10.1
   resolution: "@types/node@npm:24.10.1"
   dependencies:
     undici-types: ~7.16.0
   checksum: c2f370ae7a97c04991e0eee6b57e588a2abef0814a5f6e41fda5a9200cf02ae6654fad51c8372ee203ae4134bab80f5bf441c586f7f50e0fda3ba422f35eb3c0
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^26":
+  version: 26.0.1
+  resolution: "@types/node@npm:26.0.1"
+  dependencies:
+    undici-types: ~8.3.0
+  checksum: 561615c0a31236709a5f525aac98564d9588ea84da511a6db7db064ebae28d32a120ae4bd3dcccfc05f1eacf5db5b7c5ecf24dad509b0e753f63846e3b7ee5a1
   languageName: node
   linkType: hard
 
@@ -17963,6 +17972,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~8.3.0":
+  version: 8.3.0
+  resolution: "undici-types@npm:8.3.0"
+  checksum: bdc1d54d8b48f3f2a801f7707a2ad53b76711039dd9a276382d4bdbbded79355574309425096127a42313731bde7a76cc299855fc06872797edd0acbfcef5bc0
+  languageName: node
+  linkType: hard
+
 "unicode-canonical-property-names-ecmascript@npm:^2.0.0":
   version: 2.0.0
   resolution: "unicode-canonical-property-names-ecmascript@npm:2.0.0"
@@ -18707,7 +18723,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": 11.12.0
     "@testing-library/react": 12.1.4
     "@types/jest": 30.0.0
-    "@types/node": ^24
+    "@types/node": ^26
     "@types/platform": 1.3.6
     "@types/react": 18.3.12
     "@types/react-dom": 18.3.1
