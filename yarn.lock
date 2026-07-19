@@ -7453,10 +7453,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"adm-zip@npm:0.5.17":
-  version: 0.5.17
-  resolution: "adm-zip@npm:0.5.17"
-  checksum: 1b05b8b76538cdf7d34369961866602859941ffbdacf20e10459394f99a60e161ee3b937f15bf485f514745f2376531d42553a6667a67841cb1585a5d7611319
+"adm-zip@npm:0.6.0":
+  version: 0.6.0
+  resolution: "adm-zip@npm:0.6.0"
+  checksum: b564eb6dd877c1c93c52acef5f18f092a6286e3c6392c7d186ede6765e5c7d1b5006cb870284ec04a01aedc18c1e931cdc294f77ee33488d1e93b29a5c74a5ca
   languageName: node
   linkType: hard
 
@@ -18722,7 +18722,7 @@ __metadata:
     "@wireapp/eslint-config": 1.4.0
     "@wireapp/react-ui-kit": 9.79.0
     "@wireapp/telemetry": 0.3.10
-    adm-zip: 0.5.17
+    adm-zip: 0.6.0
     babel-eslint: 10.1.0
     babel-loader: 8.2.5
     babel-plugin-remove-jsx-attributes: 0.0.2
