@@ -16364,12 +16364,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.8.0":
-  version: 7.8.1
-  resolution: "semver@npm:7.8.1"
+"semver@npm:^7.8.5":
+  version: 7.8.5
+  resolution: "semver@npm:7.8.5"
   bin:
     semver: bin/semver.js
-  checksum: c6486ac12dc85120fc1daac8001350a4cd8126933720da496b0e8b841f170a35d4856b898b5288dfe7c1771bcadbf32c582254eade40ba16f8b6d296625d2b33
+  checksum: 0c580f17e88e2b45806dc5cf3d824f719c946999d3554bf30307c2b68b3300ab3c8bfcd84d8f489b93b4cbb5362f5fc8de4d2858954f18d834253c4450fc9f6b
   languageName: node
   linkType: hard
 
@@ -17547,9 +17547,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.4.11":
-  version: 29.4.11
-  resolution: "ts-jest@npm:29.4.11"
+"ts-jest@npm:29.4.12":
+  version: 29.4.12
+  resolution: "ts-jest@npm:29.4.12"
   dependencies:
     bs-logger: ^0.2.6
     fast-json-stable-stringify: ^2.1.0
@@ -17557,7 +17557,7 @@ __metadata:
     json5: ^2.2.3
     lodash.memoize: ^4.1.2
     make-error: ^1.3.6
-    semver: ^7.8.0
+    semver: ^7.8.5
     type-fest: ^4.41.0
     yargs-parser: ^21.1.1
   peerDependencies:
@@ -17583,7 +17583,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 47ddb0db6193f8fb5aee5d493881daa14a005286ef9ec844ea56e02074900cf89d85ee51eac59a92a90b6a2656d92fe7b20a8dc496aefa658e90bfffb498752c
+  checksum: 8efdb268e12c193f2d4e9661d886dbc82ed128b2820ada95e8416b092c7073edb09a414e5bd6f8e495989bbda8b933fe34c89b040efc2f70d75f7aa285546f3a
   languageName: node
   linkType: hard
 
@@ -18764,7 +18764,7 @@ __metadata:
     sort-json: 2.0.1
     svg-inline-loader: 0.8.2
     terser-webpack-plugin: 5.6.1
-    ts-jest: 29.4.11
+    ts-jest: 29.4.12
     typescript: 5.6.3
     uuid: 11.1.0
     webpack: 5.108.4
