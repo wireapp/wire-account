@@ -3,3 +3,8 @@ description: A Helm chart for the Wire account pages in Kubernetes
 name: account-pages
 version: 0.0.42
 appVersion: 0.0.1
+annotations:
+  # must conform to https://github.com/helm/community/blob/main/hips/hip-0015.md
+  helm.sh/images: |
+    - name: webapp
+      image: quay.io/wire/account:do-not-use

@@ -196,6 +196,7 @@ jobs:
 
           chart_patched="$(yq -Mr ".version = \"$chart_version\" | .appVersion = \"${DOCKER_IMAGE_TAG}\"" ./charts/account-pages/Chart.yaml)"
           echo "$chart_patched" > ./charts/account-pages/Chart.yaml
+          sed -i "s/:do-not-use/:${DOCKER_IMAGE_TAG}/g" ./charts/account-pages/Chart.yaml
 
           helm package ./charts/account-pages
 
