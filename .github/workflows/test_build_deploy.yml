@@ -202,6 +202,21 @@ jobs:
 
           helm s3 push --relative account-pages-*.tgz charts-webapp
 
+          # Push to Quay OCI registry
+          echo "Logging in to Quay with Helm..."
+          echo "${{ secrets.WEBTEAM_QUAY_PASSWORD }}" | helm registry login -u "${{ secrets.WEBTEAM_QUAY_USERNAME }}" --password-stdin quay.io
+
+          echo "Pushing chart to OCI Quay..."
+          helm_output=$(helm push ./account-pages-*.tgz oci://quay.io/wire/charts/stable 2>&1) || {
+            echo "Helm push to Quay failed with exit code $?"
+            echo "Output: $helm_output"
+            exit 1
+          }
+          echo "$helm_output"
+
+          digest=$(echo "$helm_output" | grep -oP 'sha256:\K[a-f0-9]{64}' | head -1)
+          echo "chart_digest=sha256:$digest" >> $GITHUB_OUTPUT
+
       - name: Create GitHub release
         id: create_release
         if: env.TAG != '' && matrix.DISTRIBUTION == 'DISTRIBUTION_0'
