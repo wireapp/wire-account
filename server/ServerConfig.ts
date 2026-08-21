@@ -58,6 +58,7 @@ export interface ServerConfig {
     APP_BASE: string;
     CACHE_DURATION_SECONDS: number;
     CSP: Record<string, Iterable<string>>;
+    ENABLE_DYNAMIC_HOSTNAME: boolean;
     ENFORCE_HTTPS: boolean;
     ENVIRONMENT: string;
     SSL_CERTIFICATE_KEY_PATH?: string;

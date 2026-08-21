@@ -20,6 +20,7 @@
 import {Router} from 'express';
 
 import {ServerConfig} from '../../ServerConfig';
+import {replaceHostname} from '../../util/hostnameReplacer';
 
 const ConfigRoute = (config: ServerConfig) =>
   Router().get('/config.js', (req, res) => {
@@ -28,10 +29,13 @@ const ConfigRoute = (config: ServerConfig) =>
       APP_BASE: config.SERVER.APP_BASE,
     };
 
-    res.type('application/javascript').send(`
+    const serializedConfig = `
       window.wire = window.wire || {};
       window.wire.env = ${JSON.stringify(clientConfig)};
-    `);
+    `;
+    const payload = config.SERVER.ENABLE_DYNAMIC_HOSTNAME ? replaceHostname(serializedConfig, req) : serializedConfig;
+
+    res.type('application/javascript').send(payload);
   });
 
 export default ConfigRoute;
