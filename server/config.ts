@@ -143,6 +143,7 @@ const config: ServerConfig = {
     APP_BASE: process.env.APP_BASE,
     CACHE_DURATION_SECONDS: 300,
     CSP: mergedCSP(),
+    ENABLE_DYNAMIC_HOSTNAME: process.env.ENABLE_DYNAMIC_HOSTNAME === 'true',
     ENFORCE_HTTPS: process.env.ENFORCE_HTTPS != 'false',
     ENVIRONMENT: nodeEnvironment,
     PORT_HTTP: Number(process.env.PORT) || DEFAULT_PORT,

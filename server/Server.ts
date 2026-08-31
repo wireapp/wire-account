@@ -34,6 +34,7 @@ import ErrorRoute from './routes/error/ErrorRoute';
 import GeneratedAppleRoute from './routes/generated/GeneratedAppleRoute';
 import SSOStartRoute from './routes/redirect/SSOStartRoute';
 import {ServerConfig} from './ServerConfig';
+import {replaceHostnameInObject} from './util/hostnameReplacer';
 
 hbs.registerHelper('ifAnd', (v1: any, v2: any, options: any) => (v1 && v2 ? options.fn(this) : options.inverse(this)));
 
@@ -160,12 +161,14 @@ class Server {
         preload: true,
       }),
     );
-    this.app.use(
+    this.app.use((req, res, next) => {
       helmet.contentSecurityPolicy({
-        directives: this.config.SERVER.CSP,
+        directives: this.config.SERVER.ENABLE_DYNAMIC_HOSTNAME
+          ? replaceHostnameInObject(this.config.SERVER.CSP, req)
+          : this.config.SERVER.CSP,
         reportOnly: false,
-      }),
-    );
+      })(req, res, next);
+    });
     this.app.use(
       helmet.referrerPolicy({
         policy: 'same-origin',
