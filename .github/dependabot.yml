@@ -14,6 +14,11 @@ updates:
       - dependency-name: husky
         versions:
           - '>= 5.a'
+      # Babel major versions must be upgraded together with their presets,
+      # plugins, loader, and configuration.
+      - dependency-name: '@babel/*'
+        update-types:
+          - 'version-update:semver-major'
   - package-ecosystem: npm
     directory: '/server'
     schedule:
@@ -24,6 +29,10 @@ updates:
     open-pull-requests-limit: 99
     labels:
       - 'type: chore 🧹'
+    ignore:
+      - dependency-name: '@babel/*'
+        update-types:
+          - 'version-update:semver-major'
   - package-ecosystem: npm
     directory: '/app-config'
     schedule:
