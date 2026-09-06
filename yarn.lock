@@ -18429,9 +18429,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.110.1":
-  version: 5.110.1
-  resolution: "webpack@npm:5.110.1"
+"webpack@npm:5.110.3":
+  version: 5.110.3
+  resolution: "webpack@npm:5.110.3"
   dependencies:
     "@types/estree": ^1.0.8
     "@types/json-schema": ^7.0.15
@@ -18457,7 +18457,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 21995dab240d7df9955746631f343df7094294fe53f328ea22802f7a6ef967122e8c5ac89cdbe89bdb0e5a781bb2840a5969f48342412fcff8e63c277396db95
+  checksum: 3950eeb941539ef577463004fd717f50c14c4fe76fa5dd4fa9e30950914184173fbf126094ae2d53074f55ffc8be122cbc9ab269d34aec4a843caecf88b06ada
   languageName: node
   linkType: hard
 
@@ -18746,7 +18746,7 @@ __metadata:
     ts-jest: 29.4.12
     typescript: 5.6.3
     uuid: 11.1.0
-    webpack: 5.110.1
+    webpack: 5.110.3
     webpack-bundle-analyzer: 5.3.2
     webpack-cli: 6.0.1
     webpack-dev-middleware: 7.4.5
