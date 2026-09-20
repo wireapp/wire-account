@@ -33,6 +33,7 @@ import DefaultRoute from './routes/error/DefaultRoute';
 import ErrorRoute from './routes/error/ErrorRoute';
 import GeneratedAppleRoute from './routes/generated/GeneratedAppleRoute';
 import SSOStartRoute from './routes/redirect/SSOStartRoute';
+import ProfileRoute from './routes/profile/Profile';
 import {ServerConfig} from './ServerConfig';
 import {replaceHostnameInObject} from './util/hostnameReplacer';
 
@@ -70,6 +71,7 @@ class Server {
     this.app.use(SSOStartRoute(this.config));
     this.app.use(CommitRoute(this.config));
     this.app.use(GeneratedAppleRoute(this.config));
+    this.app.use(ProfileRoute(this.config));
     this.app.use(DefaultRoute(this.config));
     this.app.use(ErrorRoute(this.config));
   }
