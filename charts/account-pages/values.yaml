@@ -34,6 +34,8 @@ envVars: {}
 # E.g.
 # envVars:
 #   FEATURE_ENABLE_DEBUG: "true"
+#   Set to "true" to replace [[hostname]] placeholders with the request's base domain
+#   ENABLE_DYNAMIC_HOSTNAME: "false"
 #   You are likely to need at least following CSP headers
 #   due to the fact that you are likely to do cross sub-domain requests
 #   i.e., from account.wire.example to nginz-https.wire.example
