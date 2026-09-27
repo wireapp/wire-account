@@ -3478,14 +3478,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:11.4.0":
-  version: 11.4.0
-  resolution: "fs-extra@npm:11.4.0"
+"fs-extra@npm:11.4.1":
+  version: 11.4.1
+  resolution: "fs-extra@npm:11.4.1"
   dependencies:
     graceful-fs: ^4.2.0
     jsonfile: ^6.0.1
     universalify: ^2.0.0
-  checksum: ff66c192c9f069f2d83fe110bab858655c4af16f14c932a055d88a3d18d2ae4f824997335a6b6fe169d3f358afe24266fda58a91e90b1ed0bbeb14a99b6a0749
+  checksum: fa01cdefc9478e8255038beb70a0e723ea18bd9d310dbda28860f5d70488a5df31f42d095a571ee2010cbc385fda0b96b72d1b70cf58104d982d52dbc20514cf
   languageName: node
   linkType: hard
 
@@ -6406,7 +6406,7 @@ __metadata:
     dotenv-extended: 2.9.0
     express: 4.21.2
     express-hbs: 2.5.0
-    fs-extra: 11.4.0
+    fs-extra: 11.4.1
     generate-changelog: 1.8.0
     handlebars: 4.7.9
     helmet: 4.6.0
