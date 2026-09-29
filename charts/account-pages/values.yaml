@@ -48,7 +48,6 @@ envVars: {}
 #   CSP_EXTRA_MANIFEST_SRC: "https://*.wire.example"
 #   CSP_EXTRA_OBJECT_SRC: "https://*.wire.example"
 #   CSP_EXTRA_MEDIA_SRC: "https://*.wire.example"
-#   CSP_EXTRA_PREFETCH_SRC: "https://*.wire.example"
 #   CSP_EXTRA_STYLE_SRC: "https://*.wire.example"
 #   CSP_EXTRA_WORKER_SRC: "https://*.wire.example"
 
