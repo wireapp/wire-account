@@ -6,7 +6,7 @@
     "express": "4.21.2",
     "express-hbs": "2.5.0",
     "fs-extra": "11.4.1",
-    "handlebars": "4.7.9",
+    "handlebars": "4.7.10",
     "helmet": "4.6.0",
     "helmet-csp": "3.4.0",
     "http-proxy-middleware": "3.0.7",
