@@ -2919,7 +2919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
   version: 7.26.10
   resolution: "@babel/runtime@npm:7.26.10"
   dependencies:
@@ -2932,6 +2932,13 @@ __metadata:
   version: 7.29.2
   resolution: "@babel/runtime@npm:7.29.2"
   checksum: d5548d1165de8995f8afc93a5694b8625409be16cd1f2250ac13e331335858ddac3cb9fd278e6c43956a130101a2203f09417938a1a96f9fb70f02b4b4172e1d
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.29.7":
+  version: 7.29.10
+  resolution: "@babel/runtime@npm:7.29.10"
+  checksum: b0ea4fdc84105e46d4a22fe6af7f835397294b0291795f9c0c3e1ad917a5bfdbd38914ea717007e12904ec4ccb8b5a4b05a1acd45ccae3e424cdc0ef2df4912a
   languageName: node
   linkType: hard
 
@@ -11795,12 +11802,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-parse-stringify@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "html-parse-stringify@npm:3.0.1"
-  dependencies:
-    void-elements: 3.1.0
-  checksum: 334fdebd4b5c355dba8e95284cead6f62bf865a2359da2759b039db58c805646350016d2017875718bc3c4b9bf81a0d11be5ee0cf4774a3a5a7b97cde21cfd67
+"html-parse-stringify@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "html-parse-stringify@npm:4.0.1"
+  checksum: 190d96883f6849098ca3fcbb76637f3a4f923d0ae902417d86db2ad2279b9ce19e4789945794ae2365a6a9e41da2dcf7c56b3f2dca67142487e51411eb1bf3ec
   languageName: node
   linkType: hard
 
@@ -15391,21 +15396,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:11.18.6":
-  version: 11.18.6
-  resolution: "react-i18next@npm:11.18.6"
+"react-i18next@npm:17.0.16":
+  version: 17.0.16
+  resolution: "react-i18next@npm:17.0.16"
   dependencies:
-    "@babel/runtime": ^7.14.5
-    html-parse-stringify: ^3.0.1
+    "@babel/runtime": ^7.29.7
+    html-parse-stringify: ^4.0.1
+    use-sync-external-store: ^1.6.0
   peerDependencies:
-    i18next: ">= 19.0.0"
+    i18next: ">= 26.2.0"
     react: ">= 16.8.0"
+    typescript: ^5 || ^6 || ^7
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: 624c0a0313fac4e0d18560b83c99a8bd0a83abc02e5db8d01984e0643ac409d178668aa3a4720d01f7a0d9520d38598dcbff801d6f69a970bae67461de6cd852
+    typescript:
+      optional: true
+  checksum: 4ce5859c72b09fe8a63f32ded8cd776e4b49615525fe6608eea9f45bfad41e0c0a342d2b6b3f6cc4dc158bb23c35c795a163bea85a042c62b5fd274133e0342d
   languageName: node
   linkType: hard
 
@@ -18126,6 +18135,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"use-sync-external-store@npm:^1.6.0":
+  version: 1.7.0
+  resolution: "use-sync-external-store@npm:1.7.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 55e36d54531a778ec8521123ced6cec974dae28585bf2544429245025e989b3d63822f61a1fadc537d10976c0042f54f66c28de8216c2cde0edcbbe8abdf972f
+  languageName: node
+  linkType: hard
+
 "util-deprecate@npm:^1.0.1, util-deprecate@npm:~1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
@@ -18227,13 +18245,6 @@ __metadata:
     replace-ext: ^2.0.0
     teex: ^1.0.1
   checksum: 29c563d6a027d49ec216bc8259b494bd048d1f9df39103aea6877e02af1d0a6956b11ad977206b5a807b331ef5431bed9f6b8890de5e55188389d31cf7af7fbe
-  languageName: node
-  linkType: hard
-
-"void-elements@npm:3.1.0":
-  version: 3.1.0
-  resolution: "void-elements@npm:3.1.0"
-  checksum: 0390f818107fa8fce55bb0a5c3f661056001c1d5a2a48c28d582d4d847347c2ab5b7f8272314cac58acf62345126b6b09bea623a185935f6b1c3bbce0dfd7f7f
   languageName: node
   linkType: hard
 
@@ -18665,7 +18676,7 @@ __metadata:
     prettier: 3.2.4
     react: 18.3.1
     react-dom: 18.3.1
-    react-i18next: 11.18.6
+    react-i18next: 17.0.16
     react-router: 7.18.2
     react-router-dom: 6.28.0
     simple-git: 3.36.0
