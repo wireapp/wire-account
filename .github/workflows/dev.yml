@@ -1,0 +1,178 @@
+name: Dev
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+concurrency:
+  group: dev-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  test:
+    name: Lint and test
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Authenticate git clone
+        env:
+          GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+        run: printf 'machine github.com\n  login %s\n' "$GH_TOKEN" > ~/.netrc
+
+      - name: Install JS dependencies
+        run: yarn --immutable
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
+
+  build:
+    name: Build
+    permissions:
+      contents: read
+    uses: ./.github/workflows/build.yml
+    secrets:
+      OTTO_THE_BOT_GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+
+  image:
+    name: Push the image
+    needs: build
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      repository: ${{ steps.push.outputs.image }}
+      digest: ${{ steps.push.outputs.digest }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Download the bundle
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: wire-account-zip
+          path: ${{ runner.temp }}/bundle
+
+      - name: Unpack the bundle into server/dist
+        env:
+          BUNDLE: ${{ runner.temp }}/bundle/wire-account.zip
+        run: |
+          set -euo pipefail
+          mkdir -p server/dist
+          unzip -q "$BUNDLE" -d server/dist -x 'package.json' 'Procfile'
+          mv server/dist/.env.defaults server/.env.defaults
+          test -f server/dist/index.js
+          echo "Unpacked $(find server/dist -type f | wc -l) files into server/dist"
+
+      - name: Login to quay.io with the OIDC token of the job
+        id: quay
+        uses: wireapp/wire-rm-actions/quay-login@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          robot: wire+gha_wire-account
+
+      - name: Build and push the image
+        id: push
+        uses: wireapp/wire-rm-actions/build-image@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          dockerfile: Dockerfile
+          image: quay.io/wire/account
+          version: ${{ needs.build.outputs.version }}
+          provenance: 'false'
+          sbom: 'false'
+          expires-after: 90d
+
+  chart:
+    name: Publish the chart and declare to the release manager
+    needs:
+      - build
+      - image
+    runs-on: ubuntu-26.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: '3.12.2'
+
+      - uses: oras-project/setup-oras@22ce207df3b08e061f537244349aac6ae1d214f6 # v1.2.4
+
+      - name: Login to quay.io with the OIDC token of the job
+        id: quay
+        uses: wireapp/wire-rm-actions/quay-login@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          robot: wire+gha_wire-account
+          docker-login: 'false'
+
+      - name: Publish the chart to the dev channel
+        id: chart
+        uses: wireapp/wire-rm-actions/publish-chart@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          chart-path: charts/account-pages
+          version: ${{ needs.build.outputs.version }}
+          channel: dev
+          expires-after: 90d
+          username: ${{ steps.quay.outputs.username }}
+          password: ${{ steps.quay.outputs.token }}
+
+      - name: Write the dev release manifest
+        id: manifest
+        continue-on-error: true
+        uses: wireapp/wire-rm-actions/release-manifest@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: write
+          manifest: ${{ runner.temp }}/release-manifest.json
+          component: account-pages
+          release-type: dev
+          version: ${{ needs.build.outputs.version }}
+          source-repository: ${{ github.server_url }}/${{ github.repository }}
+          source-ref: ${{ github.ref_name }}
+          source-commit: ${{ github.sha }}
+          image-repository: ${{ needs.image.outputs.repository }}
+          image-digest: ${{ needs.image.outputs.digest }}
+          chart-repository: ${{ steps.chart.outputs.repository }}
+          chart-digest: ${{ steps.chart.outputs.digest }}
+          expires-after: 90d
+
+      - name: Declare the dev build to the release managers
+        if: github.ref == 'refs/heads/dev'
+        uses: wireapp/wire-rm-actions/notify-rm@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          rm-staging-url: ${{ vars.RM_STAGING_URL }}
+          rm-staging-audience: wire-release-manager-staging
+          rm-prod-url: ${{ vars.RM_PROD_URL }}
+          rm-prod-audience: wire-release-manager-prod
+          component: account-pages
+          version: ${{ needs.build.outputs.version }}
+          kind: ${{ needs.build.outputs.kind }}
+          repository: ${{ steps.chart.outputs.repository }}
+          digest: ${{ steps.chart.outputs.digest }}
+          release-manifest-file: ${{ steps.manifest.outcome == 'success' && steps.manifest.outputs.manifest || '' }}

@@ -47,7 +47,7 @@ jobs:
         run: |
           set -euo pipefail
           actionlint -version
-          actionlint -color .github/workflows/pr.yml .github/workflows/workflows-lint.yml
+          actionlint -color .github/workflows/pr.yml .github/workflows/workflows-lint.yml .github/workflows/build.yml .github/workflows/dev.yml
 
       - name: Install zizmor
         run: |
@@ -61,6 +61,6 @@ jobs:
         run: |
           set -euo pipefail
           zizmor --version
-          zizmor --offline --format github --min-severity medium --min-confidence medium .github/workflows/pr.yml .github/workflows/workflows-lint.yml
+          zizmor --offline --format github --min-severity medium --min-confidence medium .github/workflows/pr.yml .github/workflows/workflows-lint.yml .github/workflows/build.yml .github/workflows/dev.yml
           echo "--- every finding, for information (does not fail the job):"
           zizmor --offline --format plain --no-exit-codes .github/workflows
