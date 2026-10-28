@@ -1,0 +1,137 @@
+name: Build
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        description: 'Branch to build, empty for the ref of the calling run'
+        type: string
+        required: false
+        default: ''
+      expected_commit:
+        description: 'Full sha the checked-out ref must be at, empty for no check'
+        type: string
+        required: false
+        default: ''
+      version:
+        description: 'Version to build, empty to compute the dev version'
+        type: string
+        required: false
+        default: ''
+      artifact_name:
+        description: 'Name of the bundle artifact'
+        type: string
+        required: false
+        default: wire-account-zip
+      retention_days:
+        description: 'Retention period in days for the bundle artifact'
+        type: number
+        required: false
+        default: 1
+    outputs:
+      version:
+        description: 'Version of the build: X.Y.Z, X.Y.Z-<alpha|beta|rc>.N or the dev version'
+        value: ${{ jobs.build.outputs.version }}
+      kind:
+        description: 'dev, ga or prerelease'
+        value: ${{ jobs.build.outputs.kind }}
+      sha256:
+        description: 'sha256 of the bundle, wire-account.zip'
+        value: ${{ jobs.build.outputs.sha256 }}
+    secrets:
+      OTTO_THE_BOT_GH_TOKEN:
+        description: 'Reads the configuration repositories during yarn install'
+        required: true
+
+permissions: {}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+
+    outputs:
+      version: ${{ steps.given.outputs.version || steps.version.outputs.version }}
+      kind: ${{ steps.given.outputs.kind || steps.version.outputs.kind }}
+      sha256: ${{ steps.bundle.outputs.sha256 }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check the commit
+        if: inputs.expected_commit != ''
+        env:
+          EXPECTED_COMMIT: ${{ inputs.expected_commit }}
+          REF: ${{ inputs.ref }}
+        run: |
+          set -euo pipefail
+          actual=$(git rev-parse HEAD)
+          if [[ "$actual" != "$EXPECTED_COMMIT" ]]; then
+            echo "error: ${REF} is at $actual, not at the prepared commit $EXPECTED_COMMIT: prepare again" >&2
+            exit 1
+          fi
+
+      - name: Compute the version
+        id: version
+        if: inputs.version == ''
+        uses: wireapp/wire-rm-actions/version@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+
+      - name: Use the given version
+        id: given
+        if: inputs.version != ''
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)\.[1-9][0-9]*)?$ ]]; then
+            echo "error: version '$VERSION' is not a release version (X.Y.Z or X.Y.Z-<alpha|beta|rc>.N)" >&2
+            exit 1
+          fi
+          kind=ga
+          if [[ "$VERSION" == *-* ]]; then kind=prerelease; fi
+          {
+            echo "version=$VERSION"
+            echo "kind=$kind"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Authenticate git clone
+        env:
+          GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+        run: printf 'machine github.com\n  login %s\n' "$GH_TOKEN" > ~/.netrc
+
+      - name: Install JS dependencies
+        run: yarn --immutable
+
+      - name: Build
+        env:
+          APP_VERSION: ${{ steps.given.outputs.version || steps.version.outputs.version }}
+        run: yarn bundle:prod
+
+      - name: Record the bundle checksum
+        id: bundle
+        run: |
+          set -euo pipefail
+          sha256=$(sha256sum wire-account.zip | awk '{print $1}')
+          echo "sha256=$sha256" >> "$GITHUB_OUTPUT"
+          echo "Bundle sha256: $sha256"
+
+      - name: Upload the bundle
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: wire-account.zip
+          retention-days: ${{ inputs.retention_days }}
