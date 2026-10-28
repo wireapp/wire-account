@@ -1,0 +1,17 @@
+providesApis: []
+
+consumesApis:
+  - api: wire-server/client-api
+    versions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    class: mandatory
+    reason: Account verification, password reset and account deletion; the client negotiates the highest common version through /api-version.
+
+dependsOn:
+  - component: nginx-ingress-services
+    range: '>=1.0.0'
+    class: mandatory
+    reason: The chart has no Ingress of its own; the account host is exposed by nginx-ingress-services.
+  - platform: kubernetes
+    range: '>=1.24.0'
+
+includes: []

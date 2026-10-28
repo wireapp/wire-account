@@ -1,0 +1,93 @@
+name: PR
+
+on:
+  pull_request:
+    branches: [dev, release/*]
+
+concurrency:
+  group: pr-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  test:
+    name: Lint and test
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Authenticate git clone
+        env:
+          GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+        run: printf 'machine github.com\n  login %s\n' "$GH_TOKEN" > ~/.netrc
+
+      - name: Install JS dependencies
+        run: yarn --immutable
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
+
+  release-files:
+    name: Release files
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check the files
+        id: touched
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet "$BASE_SHA" HEAD -- publication/; then
+            echo "publication/ is not touched by this PR."
+            echo "touched=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "touched=true" >> "$GITHUB_OUTPUT"
+          for f in publication/release-note.md publication/declaration.json publication/compatibility.yaml; do
+            [[ -s "$f" ]] || { echo "error: $f is missing or empty" >&2; exit 1; }
+          done
+          version=$(jq -r '.version // ""' publication/declaration.json)
+          if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "error: publication/declaration.json version '$version' is not a plain X.Y.Z" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Compatibility
+        if: steps.touched.outputs.touched == 'true'
+        uses: wireapp/wire-rm-actions/compatibility@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          file: publication/compatibility.yaml
+
+      - name: Declaration
+        if: steps.touched.outputs.touched == 'true'
+        uses: wireapp/wire-rm-actions/release-declaration@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          file: publication/declaration.json
+          component: account-pages
+          version: ${{ steps.touched.outputs.version }}
