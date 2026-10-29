@@ -16,7 +16,17 @@
  * along with this program. If not, see http://www.gnu.org/licenses/.
  *
  */
-import {Button, COLOR, ContainerSM, ContainerXS, ContainerXXS, Form, H1, Text, TextLink} from '@wireapp/react-ui-kit';
+import {
+  Button,
+  ButtonVariant,
+  ContainerSM,
+  ContainerXS,
+  ContainerXXS,
+  Form,
+  H1,
+  Text,
+  TextLink,
+} from '@wireapp/react-ui-kit';
 import React, {useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useLocation} from 'react-router-dom';
@@ -77,7 +87,7 @@ const DeleteAccount = () => {
                     <Button
                       type="submit"
                       data-uie-name="do-delete-account"
-                      backgroundColor={COLOR.RED}
+                      variant={ButtonVariant.CANCEL}
                       style={{marginTop: 34}}
                     >
                       {t('button')}
