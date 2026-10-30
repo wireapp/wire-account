@@ -26,4 +26,4 @@ const pkg = require('../package.json');
 const distFolder = 'server/dist';
 const distFile = 'version';
 
-fs.outputFileSync(path.resolve(distFolder, distFile), pkg.version);
+fs.outputFileSync(path.resolve(distFolder, distFile), process.env.APP_VERSION || pkg.version);
