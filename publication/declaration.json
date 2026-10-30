@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "wire.component-release/v1alpha2",
+  "component": "account-pages",
+  "version": "2.11.1",
+  "summary": "Fixes the Delete account button, which looked disabled while it was active, and refreshes dependencies.",
+  "upgrade_from": ">=2.10.0",
+  "changes": [
+    {
+      "kind": "fixed",
+      "description": "Delete account page: the Delete account button no longer looks disabled while it is active; it uses the red cancel style.",
+      "breaking": false,
+      "links": ["https://wearezeta.atlassian.net/browse/WPB-23643"]
+    },
+    {
+      "kind": "changed",
+      "description": "Dependencies refreshed within their current major versions.",
+      "breaking": false,
+      "links": []
+    }
+  ],
+  "migrations": [],
+  "configuration": []
+}
