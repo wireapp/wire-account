@@ -70,6 +70,9 @@
     "titleBot": "Verify Bot",
     "titleEmail": "Verify Account"
   },
+  "meetingJoin": {
+    "title": "You are invited to a meeting"
+  },
   "conversationJoin": {
     "loading": "Verifying link...",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",

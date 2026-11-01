@@ -58,6 +58,16 @@ export class AccountAction {
     return this.apiClient.api.conversation.postConversationCodeCheck({code, key});
   };
 
+  // We are soon going to move wire-account inside webapp
+  // then I will update the api-client library and then use it here.
+  validateMeetingJoin = async (domain: string, key: string, code: string, password?: string): Promise<void> => {
+    await this.apiClient.transport.http.sendJSON({
+      method: 'get',
+      url: `/meeting/${encodeURIComponent(domain)}/${encodeURIComponent(key)}/${encodeURIComponent(code)}/code-check`,
+      params: password === undefined ? undefined : {password},
+    });
+  };
+
   login = (login: LoginData) => {
     return this.apiClient.login(login);
   };
