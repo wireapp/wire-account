@@ -70,6 +70,11 @@
     "titleBot": "Verify Bot",
     "titleEmail": "Verify Account"
   },
+  "meetingJoin": {
+    "title": "You are invited to a meeting",
+    "unsupportedHeadline": "Meeting links are unavailable",
+    "unsupportedDescription": "This server does not support joining meetings through a link."
+  },
   "conversationJoin": {
     "loading": "Verifying link...",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
