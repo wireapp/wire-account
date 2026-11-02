@@ -18,6 +18,7 @@
  */
 import {APIClient} from '@wireapp/api-client';
 import {LoginData} from '@wireapp/api-client/lib/auth';
+import {MIN_MEETINGS_SUPPORTED_API_VERSION} from 'script/Environment';
 
 export class AccountAction {
   private readonly apiClient: APIClient;
@@ -61,6 +62,9 @@ export class AccountAction {
   // We are soon going to move wire-account inside webapp
   // then I will update the api-client library and then use it here.
   validateMeetingJoin = async (domain: string, key: string, code: string, password?: string): Promise<void> => {
+    if (this.apiClient.backendFeatures.version < MIN_MEETINGS_SUPPORTED_API_VERSION) {
+      throw Object.assign(new Error('Meeting links require API v19 or newer'), {label: 'meeting-api-unsupported'});
+    }
     await this.apiClient.transport.http.sendJSON({
       method: 'get',
       url: `/meeting/${encodeURIComponent(domain)}/${encodeURIComponent(key)}/${encodeURIComponent(code)}/code-check`,

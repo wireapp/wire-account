@@ -98,14 +98,18 @@ describe('MeetingJoin', () => {
     expect(browserUrl.pathname).toContain('/meeting-join');
     expect(browserUrl.searchParams.get('domain')).toBe('example.com');
     expect(browserUrl.searchParams.get('password')).toBe('meeting password');
+    const appUrl = new URL(screen.getByRole('link', {name: 'Join in App'}).getAttribute('href')!);
+    expect(appUrl.hostname).toBe('meeting-join');
+    expect(appUrl.searchParams.get('domain')).toBe('example.com');
+    expect(appUrl.searchParams.get('password')).toBe('meeting password');
   });
 
-  it('preserves app and browser destinations and desktop website download', async () => {
+  it('uses meeting destinations and preserves desktop website download', async () => {
     renderMeetingJoin();
 
     await screen.findByRole('heading', {name: 'You are invited to a meeting'});
     expect(screen.getByRole('link', {name: 'Join in App'}).getAttribute('href')).toBe(
-      `${Environment.WIRE_APP_SCHEME}${pathWithParams('conversation-join/', {code: 'code', key: 'key'})}`,
+      `${Environment.WIRE_APP_SCHEME}${pathWithParams('meeting-join/', {domain: 'example.com', code: 'code', key: 'key'})}`,
     );
     expect(screen.getByRole('link', {name: 'Join in Browser'}).getAttribute('href')).toBe(
       `${Environment.WEBAPP_URL}${pathWithParams('/meeting-join', {domain: 'example.com', code: 'code', key: 'key'})}`,
@@ -181,5 +185,38 @@ describe('MeetingJoin', () => {
     expect(await screen.findByRole('heading', {name: 'Conversation not found'})).toBeTruthy();
     expect(screen.getByText('The link to this group conversation has expired or is no longer valid.')).toBeTruthy();
     expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
+  });
+
+  it('keeps join actions available when the meeting requires a password', async () => {
+    const error = Object.assign(new Error('Password required'), {label: 'invalid-meeting-password', code: 403});
+    renderMeetingJoin(jest.fn().mockRejectedValue(error));
+
+    expect(await screen.findByRole('heading', {name: 'You are invited to a meeting'})).toBeTruthy();
+    expect(screen.getByRole('link', {name: 'Join in App'})).toBeTruthy();
+    expect(screen.getByRole('link', {name: 'Join in Browser'})).toBeTruthy();
+    expect(screen.queryByText('Conversation not found')).toBeNull();
+  });
+
+  it('shows an unsupported API error without offering join actions', async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const error = Object.assign(new Error('Meeting links require API v19 or newer'), {
+      label: 'meeting-api-unsupported',
+    });
+    renderMeetingJoin(jest.fn().mockRejectedValue(error));
+
+    expect(await screen.findByRole('heading', {name: 'Meeting links are unavailable'})).toBeTruthy();
+    expect(screen.getByText('This server does not support joining meetings through a link.')).toBeTruthy();
+    expect(screen.queryByText('Conversation not found')).toBeNull();
+    expect(screen.queryByRole('link', {name: 'Join in Browser'})).toBeNull();
+    expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
+  });
+
+  it('does not treat unrelated forbidden errors as password-required links', async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const error = Object.assign(new Error('Access denied'), {label: 'access-denied', code: 403});
+    renderMeetingJoin(jest.fn().mockRejectedValue(error));
+
+    expect(await screen.findByRole('heading', {name: 'Conversation not found'})).toBeTruthy();
+    expect(screen.queryByRole('link', {name: 'Join in Browser'})).toBeNull();
   });
 });

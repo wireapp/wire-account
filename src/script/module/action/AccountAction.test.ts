@@ -25,6 +25,7 @@ describe('AccountAction meeting validation', () => {
   const createAction = (version = 19) => {
     const apiClient = new APIClient({urls: {name: 'test', rest: 'https://backend.example.com', ws: undefined}});
     apiClient.transport.http.useVersion(version);
+    apiClient.backendFeatures = {...apiClient.backendFeatures, version};
     const request = jest.fn().mockResolvedValue({
       data: {title: 'Private meeting', start_time: '2099-01-01T12:00:00Z'},
       status: 200,
@@ -72,12 +73,20 @@ describe('AccountAction meeting validation', () => {
   it.each([12, 19])('keeps conversation checks on negotiated API version %s', async version => {
     const {action, request} = createAction(version);
 
-    await action.validateMeetingJoin('example.com', 'key', 'code');
     await action.validateConversationJoin('group-key', 'group-code');
 
-    const config = request.mock.calls[1][0];
+    const config = request.mock.calls[0][0];
     expect(config.method).toBe('post');
     expect(config.url).toBe(`/v${version}/conversations/code-check`);
     expect(JSON.parse(config.data)).toEqual({key: 'group-key', code: 'group-code'});
+  });
+
+  it.each([12, 18])('rejects meeting validation at API version %s without a request', async version => {
+    const {action, request} = createAction(version);
+
+    await expect(action.validateMeetingJoin('example.com', 'key', 'code')).rejects.toMatchObject({
+      label: 'meeting-api-unsupported',
+    });
+    expect(request).not.toHaveBeenCalled();
   });
 });

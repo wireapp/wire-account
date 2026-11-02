@@ -71,7 +71,9 @@
     "titleEmail": "Verify Account"
   },
   "meetingJoin": {
-    "title": "You are invited to a meeting"
+    "title": "You are invited to a meeting",
+    "unsupportedHeadline": "Meeting links are unavailable",
+    "unsupportedDescription": "This server does not support joining meetings through a link."
   },
   "conversationJoin": {
     "loading": "Verifying link...",

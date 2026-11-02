@@ -70,8 +70,11 @@ export const MeetingJoin = () => {
     accountAction
       .validateMeetingJoin(domain, key, code, password)
       .catch(error => {
+        if (error?.label === 'invalid-meeting-password') {
+          return;
+        }
         console.warn('Join link is not valid', error);
-        setError(error.toString());
+        setError(error?.label === 'meeting-api-unsupported' ? error.label : error.toString());
       })
       .finally(() => {
         setIsLoading(false);
@@ -91,9 +94,19 @@ export const MeetingJoin = () => {
         <ContainerSM css={{margin: 'auto 0'}}>
           {error ? (
             <>
-              <H1 data-uie-name="element-meeting-join-error-headline">{t('errorConversationNotFoundHeadline')}</H1>
+              <H1 data-uie-name="element-meeting-join-error-headline">
+                {t(
+                  error === 'meeting-api-unsupported'
+                    ? 'meetingJoin:unsupportedHeadline'
+                    : 'errorConversationNotFoundHeadline',
+                )}
+              </H1>
               <Text center data-uie-name="element-meeting-join-error-description">
-                {t('errorConversationNotFoundDescription')}
+                {t(
+                  error === 'meeting-api-unsupported'
+                    ? 'meetingJoin:unsupportedDescription'
+                    : 'errorConversationNotFoundDescription',
+                )}
               </Text>
             </>
           ) : (
@@ -115,7 +128,12 @@ export const MeetingJoin = () => {
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
                       uieName="do-meeting-join"
                       paths={{
-                        app: pathWithParams('conversation-join/', {code, key}),
+                        app: pathWithParams('meeting-join/', {
+                          domain,
+                          code,
+                          key,
+                          ...(password === undefined ? {} : {password}),
+                        }),
                         webapp: pathWithParams('/meeting-join', {
                           domain,
                           code,
