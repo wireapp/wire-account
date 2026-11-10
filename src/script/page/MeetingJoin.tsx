@@ -1,6 +1,6 @@
 /*
  * Wire
- * Copyright (C) 2021 Wire Swiss GmbH
+ * Copyright (C) 2026 Wire Swiss GmbH
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
  */
 import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
 import {
+  Button,
   ContainerSM,
   FlexBox,
   H1,
@@ -42,6 +43,13 @@ const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 const QUERY_DOMAIN_KEY = 'domain';
 
+type ValidationOutcome = 'valid' | 'invalid' | 'unsupported' | 'failed';
+const ERROR_COPY: Record<Exclude<ValidationOutcome, 'valid'>, {headline: string; description: string}> = {
+  invalid: {headline: 'invalidHeadline', description: 'invalidDescription'},
+  unsupported: {headline: 'unsupportedHeadline', description: 'unsupportedDescription'},
+  failed: {headline: 'checkFailedHeadline', description: 'checkFailedDescription'},
+};
+
 export const MeetingJoin = () => {
   const location = useLocation();
   const translationNamespaces = IS_SELF_HOSTED ? ['conversationJoinSelfHosted', 'conversationJoin'] : undefined;
@@ -49,39 +57,61 @@ export const MeetingJoin = () => {
   const isMobile = useMatchMedia(QUERY[QueryKeys.TABLET_DOWN]);
   const {accountAction} = useActionContext();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [validation, setValidation] = useState<{requestKey: string; outcome: ValidationOutcome} | undefined>();
+  const [retryAttempt, setRetryAttempt] = useState(0);
 
   const params = new URLSearchParams(location.search);
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
   const domain = params.get(QUERY_DOMAIN_KEY);
+  const requestKey = JSON.stringify([domain, key, code, retryAttempt]);
 
   useEffect(() => {
+    let active = true;
+
     if (!domain || !key || !code) {
-      console.warn('Missing domain, key or code');
-      setError('Missing domain, key or code');
-      return;
+      setValidation({requestKey, outcome: 'invalid'});
+      return () => {
+        active = false;
+      };
     }
 
-    setIsLoading(true);
     accountAction
       .validateMeetingJoin(domain, key, code)
+      .then(() => {
+        if (active) {
+          setValidation({requestKey, outcome: 'valid'});
+        }
+      })
       .catch(error => {
-        if (error?.label === 'invalid-meeting-password') {
+        if (!active) {
           return;
         }
-        console.warn('Join link is not valid', error);
-        setError(error?.label === 'meeting-api-unsupported' ? error.label : error.toString());
-      })
-      .finally(() => {
-        setIsLoading(false);
+        if (error?.label === 'invalid-meeting-password') {
+          setValidation({requestKey, outcome: 'valid'});
+          return;
+        }
+        const outcome =
+          error?.label === 'meeting-api-unsupported'
+            ? 'unsupported'
+            : error?.label === 'meeting-not-found' || error?.code === 404
+              ? 'invalid'
+              : 'failed';
+        console.warn('Meeting link validation failed', error);
+        setValidation({requestKey, outcome});
       });
-  }, []);
+
+    return () => {
+      active = false;
+    };
+  }, [accountAction, domain, key, code, requestKey]);
+
+  const outcome = validation?.requestKey === requestKey ? validation.outcome : undefined;
+  const errorCopy = outcome && outcome !== 'valid' ? ERROR_COPY[outcome] : undefined;
 
   return (
     <Document>
-      {isLoading ? (
+      {!outcome ? (
         <FlexBox column align="center" css={{margin: 'auto'}}>
           <Loading css={{margin: 'auto'}} />
           <Small muted center css={{margin: '16px 0'}}>
@@ -90,22 +120,20 @@ export const MeetingJoin = () => {
         </FlexBox>
       ) : (
         <ContainerSM css={{margin: 'auto 0'}}>
-          {error ? (
+          {errorCopy ? (
             <>
-              <H1 data-uie-name="element-meeting-join-error-headline">
-                {t(
-                  error === 'meeting-api-unsupported'
-                    ? 'meetingJoin:unsupportedHeadline'
-                    : 'errorConversationNotFoundHeadline',
-                )}
-              </H1>
+              <H1 data-uie-name="element-meeting-join-error-headline">{t(`meetingJoin:${errorCopy.headline}`)}</H1>
               <Text center data-uie-name="element-meeting-join-error-description">
-                {t(
-                  error === 'meeting-api-unsupported'
-                    ? 'meetingJoin:unsupportedDescription'
-                    : 'errorConversationNotFoundDescription',
-                )}
+                {t(`meetingJoin:${errorCopy.description}`)}
               </Text>
+              {outcome === 'failed' && (
+                <Button
+                  data-uie-name="do-retry-meeting-validation"
+                  onClick={() => setRetryAttempt(attempt => attempt + 1)}
+                >
+                  {t('meetingJoin:retry')}
+                </Button>
+              )}
             </>
           ) : (
             <>
@@ -115,33 +143,25 @@ export const MeetingJoin = () => {
                   <Text block>{t('description', {ns: translationNamespaces})}</Text>
                   {IS_SELF_HOSTED && (
                     <Paragraph muted css={{marginTop: '8px'}}>
-                      {t('conversationLocation', {domain, ns: translationNamespaces})}
+                      {t('meetingJoin:conversationLocation', {domain})}
                     </Paragraph>
                   )}
                   <Paragraph muted css={{marginTop: '8px'}}>
-                    {t('wirelessHeadline', {brandName: BRAND_NAME, domain, ns: translationNamespaces})}
+                    {t('meetingJoin:wirelessHeadline', {brandName: BRAND_NAME})}
                   </Paragraph>
                   <FlexBox flexWrap="wrap" column={isMobile} css={{marginTop: 24}}>
                     <OpenWireButtons
                       translate={(key, substitutes) => t(key, {...substitutes, ns: translationNamespaces})}
                       uieName="do-meeting-join"
                       paths={{
-                        app: pathWithParams('meeting-join/', {
-                          domain,
-                          code,
-                          key,
-                        }),
-                        webapp: pathWithParams('/meeting-join', {
-                          domain,
-                          code,
-                          key,
-                        }),
+                        app: pathWithParams('meeting-join/', {domain, code, key}),
+                        webapp: pathWithParams('/meeting-join', {domain, code, key}),
                       }}
                     />
                   </FlexBox>
                 </>
               ) : (
-                <Text color="#696C6E">{t('cannotJoinOnMobile')}</Text>
+                <Text color="#696C6E">{t('meetingJoin:cannotJoinOnMobile')}</Text>
               )}
             </>
           )}

@@ -21,7 +21,7 @@ import '../util/test/mock/matchMediaMock';
 
 import {Runtime} from '@wireapp/commons';
 import {pathWithParams} from '@wireapp/commons/lib/util/UrlUtil';
-import {act, screen} from '@testing-library/react';
+import {act, fireEvent, screen, waitFor} from '@testing-library/react';
 import {Route, Routes} from 'react-router-dom';
 import * as Environment from 'script/Environment';
 import {ActionProvider, ActionRoot} from 'script/module/action';
@@ -50,6 +50,7 @@ describe('MeetingJoin', () => {
   beforeEach(() => {
     jest.spyOn(Runtime, 'isMobileOS').mockReturnValue(false);
     jest.spyOn(Runtime, 'isMacOS').mockReturnValue(false);
+    jest.replaceProperty(Environment, 'BRAND_NAME', 'Wire');
     window.history.pushState({}, '', `${ROUTE.MEETING_JOIN}?domain=example.com&key=key&code=code`);
   });
 
@@ -64,6 +65,11 @@ describe('MeetingJoin', () => {
       expect(await screen.findByRole('heading', {name: 'You are invited to a meeting'})).toBeTruthy();
       expect(validateMeetingJoin).toHaveBeenCalledTimes(1);
       expect(validateMeetingJoin).toHaveBeenCalledWith('example.com', 'key', 'code');
+      expect(
+        screen.getByText(
+          `Don’t have a ${Environment.BRAND_NAME} account? You can join this meeting as a temporary guest in your browser.`,
+        ),
+      ).toBeTruthy();
       expect(screen.queryByText(/You have been invited to join a conversation/)).toBeNull();
     },
   );
@@ -116,6 +122,13 @@ describe('MeetingJoin', () => {
     renderMeetingJoin();
 
     expect(await screen.findByRole('heading', {name: 'You are invited to a meeting'})).toBeTruthy();
+    expect(screen.getByText('The meeting takes place on example.com')).toBeTruthy();
+    expect(screen.queryByText('The conversation takes place on example.com')).toBeNull();
+    expect(
+      screen.getByText(
+        `Don’t have a ${Environment.BRAND_NAME} account? You can join this meeting as a temporary guest in your browser.`,
+      ),
+    ).toBeTruthy();
     expect(screen.getByRole('link', {name: 'Join in Browser'})).toBeTruthy();
     expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
     expect(screen.queryByTestId('go-website-download')).toBeNull();
@@ -127,7 +140,7 @@ describe('MeetingJoin', () => {
     renderMeetingJoin();
 
     await screen.findByRole('heading', {name: 'You are invited to a meeting'});
-    expect(screen.getByText(/At the moment, you can't join this conversation on your mobile device/)).toBeTruthy();
+    expect(screen.getByText(/At the moment, you can’t join this meeting on your mobile device/)).toBeTruthy();
     expect(screen.queryByRole('link', {name: 'Join in Browser'})).toBeNull();
   });
 
@@ -153,18 +166,64 @@ describe('MeetingJoin', () => {
       window.history.pushState({}, '', `${ROUTE.MEETING_JOIN}${query}`);
       const validateMeetingJoin = renderMeetingJoin();
 
-      expect(await screen.findByRole('heading', {name: 'Conversation not found'})).toBeTruthy();
+      expect(await screen.findByRole('heading', {name: 'Meeting link is invalid'})).toBeTruthy();
       expect(validateMeetingJoin).not.toHaveBeenCalled();
       expect(screen.queryByTestId('do-meeting-join-app')).toBeNull();
     },
   );
 
-  it('shows the existing error when validation fails', async () => {
+  it('shows meeting-specific copy for a missing meeting', async () => {
     jest.spyOn(console, 'warn').mockImplementation(() => undefined);
-    renderMeetingJoin(jest.fn().mockRejectedValue(new Error('Invalid link')));
+    renderMeetingJoin(jest.fn().mockRejectedValue(Object.assign(new Error('Not found'), {code: 404})));
 
-    expect(await screen.findByRole('heading', {name: 'Conversation not found'})).toBeTruthy();
-    expect(screen.getByText('The link to this group conversation has expired or is no longer valid.')).toBeTruthy();
+    expect(await screen.findByRole('heading', {name: 'Meeting link is invalid'})).toBeTruthy();
+    expect(screen.getByText('This meeting link has expired or is no longer valid.')).toBeTruthy();
+    expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
+  });
+
+  it('allows retry after a network failure', async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const validateMeetingJoin = jest
+      .fn()
+      .mockRejectedValueOnce(new Error('Network unavailable'))
+      .mockResolvedValue(undefined);
+    renderMeetingJoin(validateMeetingJoin);
+
+    expect(await screen.findByRole('heading', {name: 'Unable to check the meeting link'})).toBeTruthy();
+    expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
+
+    fireEvent.click(screen.getByRole('button', {name: 'Try again'}));
+    expect(await screen.findByRole('heading', {name: 'You are invited to a meeting'})).toBeTruthy();
+    expect(validateMeetingJoin).toHaveBeenCalledTimes(2);
+  });
+
+  it('uses only the latest validation after meeting credentials change', async () => {
+    let resolveFirst: () => void = () => undefined;
+    let rejectSecond: (reason: Error) => void = () => undefined;
+    const first = new Promise<void>(resolve => {
+      resolveFirst = resolve;
+    });
+    const second = new Promise<void>((resolve, reject) => {
+      void resolve;
+      rejectSecond = reject;
+    });
+    const validateMeetingJoin = jest.fn().mockReturnValueOnce(first).mockReturnValueOnce(second);
+    renderMeetingJoin(validateMeetingJoin);
+
+    await act(async () => {
+      window.history.pushState({}, '', `${ROUTE.MEETING_JOIN}?domain=example.com&key=next&code=second`);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+    await waitFor(() => expect(validateMeetingJoin).toHaveBeenCalledTimes(2));
+    expect(validateMeetingJoin).toHaveBeenLastCalledWith('example.com', 'next', 'second');
+    expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
+
+    await act(async () => resolveFirst());
+    expect(screen.getByText('Verifying link...')).toBeTruthy();
+
+    jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    await act(async () => rejectSecond(Object.assign(new Error('Not found'), {code: 404})));
+    expect(screen.getByRole('heading', {name: 'Meeting link is invalid'})).toBeTruthy();
     expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
   });
 
@@ -175,7 +234,7 @@ describe('MeetingJoin', () => {
     expect(await screen.findByRole('heading', {name: 'You are invited to a meeting'})).toBeTruthy();
     expect(screen.getByRole('link', {name: 'Join in App'})).toBeTruthy();
     expect(screen.getByRole('link', {name: 'Join in Browser'})).toBeTruthy();
-    expect(screen.queryByText('Conversation not found')).toBeNull();
+    expect(screen.queryByText('Meeting link is invalid')).toBeNull();
   });
 
   it('shows an unsupported API error without offering join actions', async () => {
@@ -187,7 +246,7 @@ describe('MeetingJoin', () => {
 
     expect(await screen.findByRole('heading', {name: 'Meeting links are unavailable'})).toBeTruthy();
     expect(screen.getByText('This server does not support joining meetings through a link.')).toBeTruthy();
-    expect(screen.queryByText('Conversation not found')).toBeNull();
+    expect(screen.queryByText('Meeting link is invalid')).toBeNull();
     expect(screen.queryByRole('link', {name: 'Join in Browser'})).toBeNull();
     expect(screen.queryByRole('link', {name: 'Join in App'})).toBeNull();
   });
@@ -197,7 +256,7 @@ describe('MeetingJoin', () => {
     const error = Object.assign(new Error('Access denied'), {label: 'access-denied', code: 403});
     renderMeetingJoin(jest.fn().mockRejectedValue(error));
 
-    expect(await screen.findByRole('heading', {name: 'Conversation not found'})).toBeTruthy();
+    expect(await screen.findByRole('heading', {name: 'Unable to check the meeting link'})).toBeTruthy();
     expect(screen.queryByRole('link', {name: 'Join in Browser'})).toBeNull();
   });
 });
