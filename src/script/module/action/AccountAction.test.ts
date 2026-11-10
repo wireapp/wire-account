@@ -52,14 +52,13 @@ describe('AccountAction meeting validation', () => {
     expect(config.data).toBeUndefined();
   });
 
-  it('encodes path parameters and sends an optional password as a query parameter', async () => {
+  it('encodes path parameters', async () => {
     const {action, request} = createAction();
 
-    await action.validateMeetingJoin('example.com', 'key/segment', 'code?value#fragment', 'meeting password');
+    await action.validateMeetingJoin('example.com', 'key/segment', 'code?value#fragment');
 
     const config = request.mock.calls[0][0];
     expect(config.url).toBe('/v19/meeting/example.com/key%2Fsegment/code%3Fvalue%23fragment/code-check');
-    expect(config.params).toEqual({password: 'meeting password'});
   });
 
   it.each([403, 404])('propagates a rejected meeting check (%s)', async status => {

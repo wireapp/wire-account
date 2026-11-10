@@ -41,7 +41,6 @@ import {useActionContext} from 'script/module/action';
 const QUERY_CODE_KEY = 'code';
 const QUERY_KEY_KEY = 'key';
 const QUERY_DOMAIN_KEY = 'domain';
-const QUERY_PASSWORD_KEY = 'password';
 
 export const MeetingJoin = () => {
   const location = useLocation();
@@ -57,7 +56,6 @@ export const MeetingJoin = () => {
   const code = params.get(QUERY_CODE_KEY);
   const key = params.get(QUERY_KEY_KEY);
   const domain = params.get(QUERY_DOMAIN_KEY);
-  const password = params.get(QUERY_PASSWORD_KEY) ?? undefined;
 
   useEffect(() => {
     if (!domain || !key || !code) {
@@ -68,7 +66,7 @@ export const MeetingJoin = () => {
 
     setIsLoading(true);
     accountAction
-      .validateMeetingJoin(domain, key, code, password)
+      .validateMeetingJoin(domain, key, code)
       .catch(error => {
         if (error?.label === 'invalid-meeting-password') {
           return;
@@ -132,13 +130,11 @@ export const MeetingJoin = () => {
                           domain,
                           code,
                           key,
-                          ...(password === undefined ? {} : {password}),
                         }),
                         webapp: pathWithParams('/meeting-join', {
                           domain,
                           code,
                           key,
-                          ...(password === undefined ? {} : {password}),
                         }),
                       }}
                     />

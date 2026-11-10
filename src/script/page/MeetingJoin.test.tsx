@@ -63,7 +63,7 @@ describe('MeetingJoin', () => {
 
       expect(await screen.findByRole('heading', {name: 'You are invited to a meeting'})).toBeTruthy();
       expect(validateMeetingJoin).toHaveBeenCalledTimes(1);
-      expect(validateMeetingJoin).toHaveBeenCalledWith('example.com', 'key', 'code', undefined);
+      expect(validateMeetingJoin).toHaveBeenCalledWith('example.com', 'key', 'code');
       expect(screen.queryByText(/You have been invited to join a conversation/)).toBeNull();
     },
   );
@@ -83,25 +83,6 @@ describe('MeetingJoin', () => {
 
     await screen.findByRole('heading', {name: 'You are invited to a meeting'});
     expect(screen.queryByText(/Private meeting|Private organizer|Confidential title|2099-01-01/)).toBeNull();
-  });
-
-  it('forwards a password from the meeting link to validation', async () => {
-    window.history.pushState({}, '', pathWithParams(ROUTE.MEETING_JOIN, {password: 'meeting password'}));
-    const validateMeetingJoin = renderMeetingJoin();
-
-    await screen.findByRole('heading', {name: 'You are invited to a meeting'});
-    expect(validateMeetingJoin).toHaveBeenCalledWith('example.com', 'key', 'code', 'meeting password');
-    const browserUrl = new URL(
-      screen.getByRole('link', {name: 'Join in Browser'}).getAttribute('href')!,
-      window.location.origin,
-    );
-    expect(browserUrl.pathname).toContain('/meeting-join');
-    expect(browserUrl.searchParams.get('domain')).toBe('example.com');
-    expect(browserUrl.searchParams.get('password')).toBe('meeting password');
-    const appUrl = new URL(screen.getByRole('link', {name: 'Join in App'}).getAttribute('href')!);
-    expect(appUrl.hostname).toBe('meeting-join');
-    expect(appUrl.searchParams.get('domain')).toBe('example.com');
-    expect(appUrl.searchParams.get('password')).toBe('meeting password');
   });
 
   it('uses meeting destinations and preserves desktop website download', async () => {
