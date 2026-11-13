@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": ">=22.16.0"
+    "node": ">=22.23.4"
   },
   "dependencies": {
     "@wireapp/api-client": "27.96.0",
