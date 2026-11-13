@@ -38,6 +38,7 @@ const LazyBotPasswordReset = lazy(() => import('./page/BotPasswordReset'));
 const LazyVerifyEmailAccount = lazy(() => import('./page/VerifyEmailAccount'));
 const LazyVerifyBotAccount = lazy(() => import('./page/VerifyBotAccount'));
 const LazyConversationJoin = lazy(() => import('./page/ConversationJoin'));
+const LazyMeetingJoin = lazy(() => import('./page/MeetingJoin'));
 const LazyUserProfile = lazy(() => import('./page/UserProfile'));
 
 const Root = () => {
@@ -75,6 +76,7 @@ const Root = () => {
             <Route path={ROUTE.VERIFY_ACCOUNT_EMAIL} element={<LazyVerifyEmailAccount />} />
             <Route path={ROUTE.VERIFY_ACCOUNT_BOT} element={<LazyVerifyBotAccount />} />
             <Route path={ROUTE.CONVERSATION_JOIN} element={<LazyConversationJoin />} />
+            <Route path={ROUTE.MEETING_JOIN} element={<LazyMeetingJoin />} />
             <Route path={ROUTE.USER_PROFILE} element={<LazyUserProfile />} />
             <Route path={ROUTE.ACCEPT_INVITATION} element={<AcceptInvitation />} />
             <Route element={<PrivateRoot />}>
