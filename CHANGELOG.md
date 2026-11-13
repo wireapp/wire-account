@@ -1,3 +1,9 @@
+#### 2.11.1 (2026-11-13)
+
+##### Security Fixes
+
+- Update Node.js to 22.23.4 to include the Brotli security fix (CVE-2026-111497).
+
 #### 2.10.0 (2026-09-23)
 
 ##### New Features

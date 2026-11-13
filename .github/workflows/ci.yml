@@ -27,6 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
       - name: Set environment variables
         env:
           # DISTRIBUTIONS are saved in the format `distribution-{name}`
