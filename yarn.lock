@@ -16238,18 +16238,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "schema-utils@npm:4.5.0"
-  dependencies:
-    "@types/json-schema": ^7.0.15
-    ajv: ^8.20.0
-    ajv-formats: ^3.0.1
-    ajv-keywords: ^5.1.0
-  checksum: dcab419755a27cb5e80e29c0fcfb3037edbaa90ba1ea8c8f2db2d1ba8595ad879298317a51ce76fab8e49213bd384947fbd79937e7487a8f5dcac61e9871c01c
-  languageName: node
-  linkType: hard
-
 "schema-utils@npm:^4.6.0":
   version: 4.8.1
   resolution: "schema-utils@npm:4.8.1"
@@ -16266,6 +16254,25 @@ __metadata:
   bin:
     schema-utils: bin/schema-utils.js
   checksum: 27b48726b7e33b50cfba1c0c325759c863318ac850d950da01035098f1c10edef7606d4abffa6683d9c855a3e5b5e347c940a8f8968e1e07757d16a903f23bed
+  languageName: node
+  linkType: hard
+
+"schema-utils@npm:^4.8.1":
+  version: 4.8.3
+  resolution: "schema-utils@npm:4.8.3"
+  dependencies:
+    "@types/json-schema": ^7.0.15
+    ajv: ^8.20.0
+    ajv-formats: ^3.0.1
+    ajv-keywords: ^5.1.0
+  peerDependencies:
+    webpack: ^5.0.0
+  peerDependenciesMeta:
+    webpack:
+      optional: true
+  bin:
+    schema-utils: bin/schema-utils.js
+  checksum: 17b4eb7b5e2e74f5a2e6ff19458f99c890725f614bb02cfa4c216412a80182bc7b3c8f5bbad6cc6aec4bda468968cf7ad299894ba81cac1a05c66622a7a0b454
   languageName: node
   linkType: hard
 
@@ -18269,12 +18276,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watchpack@npm:^2.6.1":
-  version: 2.6.3
-  resolution: "watchpack@npm:2.6.3"
+"watchpack@npm:^2.6.3":
+  version: 2.6.4
+  resolution: "watchpack@npm:2.6.4"
   dependencies:
     graceful-fs: ^4.1.2
-  checksum: 948fb4a7f3929776d7936a5a55540d2b22295dd75ee1c17306973ad11dda48406cf43511e4f8882e595a297014d77ef2bf7c8da97c888680c5cb5c0af50e08e9
+  checksum: d51670c2b640b03f8551d818e09e24be5f802afd1dd18a892baaf102eaac837cfa4ab00addb898566c068c3ce07da0839dfa2b95454333ee210f534aedea1fb5
   languageName: node
   linkType: hard
 
@@ -18383,9 +18390,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.112.0":
-  version: 5.112.0
-  resolution: "webpack@npm:5.112.0"
+"webpack@npm:5.112.2":
+  version: 5.112.2
+  resolution: "webpack@npm:5.112.2"
   dependencies:
     "@types/estree": ^1.0.8
     "@types/json-schema": ^7.0.15
@@ -18400,16 +18407,16 @@ __metadata:
     graceful-fs: ^4.2.11
     mime-db: ^1.54.0
     minimizer-webpack-plugin: ^5.13.0
-    schema-utils: ^4.5.0
+    schema-utils: ^4.8.1
     tapable: ^2.3.0
-    watchpack: ^2.6.1
+    watchpack: ^2.6.3
     webpack-sources: ^3.6.0
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 75180ad98b4024923cd1d350f22543c68d9f86dc7ac1711269bcf8741d4b0c599bf13959be10b55a1460d535adecaec87669b186236456851e6005e51a047f73
+  checksum: dcb5f35f694d06ae235b826b9ed38a26c35326ee70ed1c58a52366c85e53ef38783efd4d1608e172918233b055b58f56b2c5026c7043a4764682f9716bb27430
   languageName: node
   linkType: hard
 
@@ -18698,7 +18705,7 @@ __metadata:
     ts-jest: 29.4.15
     typescript: 5.6.3
     uuid: 11.1.0
-    webpack: 5.112.0
+    webpack: 5.112.2
     webpack-bundle-analyzer: 5.4.0
     webpack-cli: 6.0.1
     webpack-dev-middleware: 7.4.5
