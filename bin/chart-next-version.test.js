@@ -5,13 +5,14 @@ const {mkdtempSync, writeFileSync, rmSync} = require('node:fs');
 const {tmpdir} = require('node:os');
 const {join, resolve} = require('node:path');
 
-function runChartVersionSelection({
-  releaseType = 'release',
-  indexedVersion = '0.8.0',
-  archivedVersions = [],
-  sourceVersion = '0.0.42',
-  storageExitStatus = 0,
-}) {
+function runChartVersionSelection(versionSelection) {
+  const {
+    releaseType = 'release',
+    indexedVersion = '0.8.0',
+    archivedVersions = [],
+    sourceVersion = '0.0.42',
+    storageExitStatus = 0,
+  } = versionSelection;
   const commandDirectory = mkdtempSync(join(tmpdir(), 'account-chart-version-'));
   const commandScripts = {
     helm: 'printf "NAME\\tCHART VERSION\\tAPP VERSION\\ncharts-webapp/account-pages\\t%s\\told\\n" "$TEST_INDEXED_VERSION"',
@@ -20,7 +21,8 @@ function runChartVersionSelection({
   };
 
   try {
-    Object.entries(commandScripts).forEach(([commandName, commandScript]) => {
+    Object.entries(commandScripts).forEach(commandEntry => {
+      const [commandName, commandScript] = commandEntry;
       writeFileSync(join(commandDirectory, commandName), `#!/bin/bash\n${commandScript}\n`, {mode: 0o755});
     });
 
@@ -89,7 +91,8 @@ test.each([
     scenario: 'the archive listing is empty',
     expectedVersion: '0.9.0',
   },
-])('selects an unused version when $scenario', ({scenario, expectedVersion, ...versionSelection}) => {
+])('selects an unused version when $scenario', versionSelection => {
+  const {expectedVersion} = versionSelection;
   const actualResult = runChartVersionSelection(versionSelection);
 
   expect(actualResult.status).toBe(0);
