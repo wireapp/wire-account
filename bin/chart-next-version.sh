@@ -17,10 +17,9 @@
 
 
 #
-# This scripts determines the latest published release or prelease version
-# of the sftd helm chart returns a semver bump of it on stdout.
+# Determine the next account-pages chart version from the index and archives.
 #
-# If the version in the helm chart source in ./charts/sftd/Chart.yaml
+# If the version in ./charts/account-pages/Chart.yaml
 # is greater than the published version it is used in place of the latest
 # published version.
 #
@@ -52,6 +51,37 @@ else
     exit 1
   fi
 fi
+
+# An interrupted publish or concurrent index update can leave an archive
+# missing from the index. Published archives still reserve their versions.
+published_chart_object_keys=$(aws s3api list-objects-v2 \
+  --bucket public.wire.com \
+  --prefix charts-webapp/account-pages- \
+  --region eu-west-1 \
+  --query 'Contents[].Key' \
+  --output text)
+
+while IFS= read -r published_chart_object_key; do
+  case "$published_chart_object_key" in
+    charts-webapp/account-pages-*.tgz)
+      published_chart_version=${published_chart_object_key#charts-webapp/account-pages-}
+      published_chart_version=${published_chart_version%.tgz}
+      ;;
+    *) continue ;;
+  esac
+
+  if [ "$(./bin/semver validate "$published_chart_version")" != "valid" ]; then
+    continue
+  fi
+
+  if [ "$bump_type" = "release" ] && [ "$(./bin/semver get prerelease "$published_chart_version")" != "" ]; then
+    continue
+  fi
+
+  if [ "$(./bin/semver compare "$published_chart_version" "$version_latest")" = "1" ]; then
+    version_latest="$published_chart_version"
+  fi
+done <<< "$(tr '\t' '\n' <<< "$published_chart_object_keys")"
 
 # is hardcoded bigger? if yes then use it instead
 version_src=$(yq -Mr '.version' ./charts/account-pages/Chart.yaml)

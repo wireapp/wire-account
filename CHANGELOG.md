@@ -1,3 +1,10 @@
+#### 2.11.2 (2026-11-13)
+
+##### Bug Fixes
+
+- Reserve published Helm chart versions even when their archives are missing from the repository index.
+- Let the changelog workflow create GitHub releases without a duplicate creation step.
+
 #### 2.11.1 (2026-11-13)
 
 ##### Security Fixes
