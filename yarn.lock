@@ -15299,12 +15299,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.2.4":
-  version: 3.2.4
-  resolution: "prettier@npm:3.2.4"
+"prettier@npm:3.10.0":
+  version: 3.10.0
+  resolution: "prettier@npm:3.10.0"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 6ec9385a836e0b9bac549e585101c086d1521c31d7b882d5c8bb7d7646da0693da5f31f4fff6dc080710e5e2d34c85e6fb2f8766876b3645c8be2f33b9c3d1a3
+  checksum: 8eb987e6b31dde7f8d3f65b99341931deb781ae09b7f36c2bcc223063bfa0bf1368f6fef418c8ab19bf9b061b284faf908844236581074548f1adddc5f275584
   languageName: node
   linkType: hard
 
@@ -18774,7 +18774,7 @@ __metadata:
     lint-staged: 16.4.0
     os-browserify: 0.3.0
     path-browserify: 1.0.1
-    prettier: 3.2.4
+    prettier: 3.10.0
     react: 18.3.1
     react-dom: 18.3.1
     react-i18next: 11.18.6
