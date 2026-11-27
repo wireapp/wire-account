@@ -21,10 +21,11 @@ const fs = require('fs');
 const Changelog = require('generate-changelog');
 const path = require('path');
 const pkg = require('../package.json');
-const simpleGit = require('simple-git')();
+const {simpleGit} = require('simple-git');
+const git = simpleGit();
 
 const options = {'--list': null};
-simpleGit.tags(options, async (error, tags) => {
+git.tags(options, async (error, tags) => {
   const outputPath = path.join(__dirname, '../CHANGELOG.md');
 
   const latestTags = tags.all.reverse();
