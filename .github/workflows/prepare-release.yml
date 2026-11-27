@@ -83,7 +83,21 @@ jobs:
       sha: ${{ steps.source.outputs.sha }}
 
     steps:
-      # First step, before any checkout: every input is matched against its
+      # The workflow file itself must come from dev or a release/X.Y line: a
+      # run dispatched from any other branch would execute that branch's copy
+      # of this workflow. Checked first, with a clear message, before the
+      # Quay OIDC trust and the release-publication environment refuse it.
+      - name: Require a release ref
+        env:
+          WORKFLOW_REF: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [[ "$WORKFLOW_REF" != "dev" && ! "$WORKFLOW_REF" =~ ^release/[0-9]+\.[0-9]+$ ]]; then
+            echo "error: run this workflow from dev or a release/X.Y branch (got '${WORKFLOW_REF}')." >&2
+            exit 1
+          fi
+
+      # Before any checkout: every input is matched against its
       # contract (ADR-0021 §1) before it is used in an API path, a ref, a file
       # name or a summary line.
       - name: Validate inputs
