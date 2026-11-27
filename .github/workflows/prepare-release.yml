@@ -1,0 +1,690 @@
+name: Prepare release
+
+# Shown as the run title in the Actions list instead of "Prepare release #8".
+# `run-name` is evaluated at dispatch time and it can only use the inputs.
+run-name: Prepare ${{ inputs.type }} from ${{ inputs.source_branch }} (by @${{ github.actor }})
+
+# ADR 0006 — preparation step of the PREPARED -> VALIDATED -> PUBLISHED process.
+#
+# Builds every release artifact exactly once (application bundle, Docker candidate image, Helm chart package),
+# records their identities in a release manifest, and opens a DRAFT GitHub Release carrying all three as assets.
+#
+# It **never**:
+# - creates the release Git tag
+# - publishes the final Docker tag or Helm chart version
+# - touches wire-builds or a deployment environment,
+# - creates a commit or branch.
+#
+# Publication — promoting these exact artifacts and publishing the draft —
+# is performed by the reusable `publish-release` workflow, gated on human approval of the `release-publication` environment.
+#
+# Launched by a person with their own GitHub rights (ADR-0021 §1 in wire-onprem-first-decisions): the release
+# manager launches nothing here. Everything but the four inputs below is read from `publication/`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: 'Branch to release from: dev, or a maintained release/X.Y line'
+        # A validated string rather than a choice list: the list had to be
+        # maintained by hand for every LTS line. `Validate inputs` below
+        # rejects anything but dev or release/X.Y before the value is used
+        # anywhere.
+        type: string
+        default: dev
+        required: true
+      type:
+        description: 'Release channel'
+        type: choice
+        options: [ga, alpha, beta, rc]
+        default: ga
+        required: true
+      bump:
+        description: 'Applies when the latest release is a GA: the next GA, or the first pre-release of the next line (ignored when continuing or promoting a pre-release)'
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+        required: true
+      force:
+        description: 'Bypass the CI status gate on the source commit (logged loudly)'
+        type: boolean
+        default: false
+        required: false
+
+permissions: {}
+
+# Serialise preparation per source branch + channel. GitHub permits several
+# drafts sharing one tag_name, and the "does a release already exist" check
+# necessarily runs before `gh release create`. Two overlapping runs would both
+# pass that check and both create a fully-populated draft, after which the
+# version can be neither prepared (a release already exists) nor published
+# (publication requires exactly one draft) without manual deletion.
+concurrency:
+  group: prepare-release-${{ inputs.source_branch }}-${{ inputs.type }}
+  cancel-in-progress: false
+
+jobs:
+  # ── 1. PREPARE ───────────────────────────────────────────────────────────────
+  # Everything that can fail before the build is checked here, in seconds: the
+  # inputs, the version, the release files, the CI gate. What was validated is
+  # handed to the `candidate` job as the `release-inputs` artifact.
+  prepare:
+    name: Prepare release candidate
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      checks: read
+      statuses: read
+      actions: read
+
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      sha: ${{ steps.source.outputs.sha }}
+
+    steps:
+      # First step, before any checkout: every input is matched against its
+      # contract (ADR-0021 §1) before it is used in an API path, a ref, a file
+      # name or a summary line.
+      - name: Validate inputs
+        id: inputs
+        uses: wireapp/wire-rm-actions/release-inputs@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          source-branch: ${{ inputs.source_branch }}
+          type: ${{ inputs.type }}
+          version-bump: ${{ inputs.bump }}
+          force: ${{ inputs.force }}
+
+      # Before the checkout: a branch that does not exist (a release line not
+      # cut yet) fails in seconds, the summary listing the release/* branches.
+      - name: Verify source branch exists
+        uses: wireapp/wire-rm-actions/release-source@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: verify
+          source-branch: ${{ inputs.source_branch }}
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.source_branch }}
+          fetch-depth: 0
+          token: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+
+      # The exact commit is recorded now: a later push to source_branch must
+      # not change the prepared candidate (ADR 0006 step 1).
+      - name: Resolve source commit
+        id: source
+        uses: wireapp/wire-rm-actions/release-source@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: resolve
+          source-branch: ${{ inputs.source_branch }}
+
+      # The next release version of the source branch (ADR-0018, ADR 0006
+      # "Version computation") and the changelog base: the preceding GA for a
+      # GA or the first pre-release of a channel, the previous tag otherwise.
+      - name: Compute target version
+        id: version
+        uses: wireapp/wire-rm-actions/version@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: release
+          source-branch: ${{ inputs.source_branch }}
+          release-type: ${{ steps.inputs.outputs.release-type }}
+          version-bump: ${{ inputs.bump }}
+
+      # Written as soon as the version is known, so the run's Summary page
+      # identifies the candidate while preparation is still in progress —
+      # the run title cannot carry it, being fixed at dispatch time.
+      - name: Summarise the candidate
+        uses: wireapp/wire-rm-actions/release-source@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: summary
+          source-branch: ${{ inputs.source_branch }}
+          version: ${{ steps.version.outputs.version }}
+          release-type: ${{ steps.inputs.outputs.release-type }}
+          source-sha: ${{ steps.source.outputs.sha }}
+          base-tag: ${{ steps.version.outputs.base-tag }}
+          from-tag: ${{ steps.version.outputs.from-tag }}
+          note: Building the bundle, then the Docker candidate image and the Helm chart. The draft release link appears here once created.
+
+      # The version action warns when the bump is ignored; the run's Summary
+      # page says so too — otherwise an operator who picked "minor" silently
+      # gets a patch. Tested on the latest release reachable, not on the
+      # changelog base, which is a GA for a GA.
+      - name: Report an ignored bump
+        if: inputs.type == 'ga' && inputs.bump != 'patch'
+        env:
+          TARGET: ${{ steps.version.outputs.version }}
+          LATEST_TAG: ${{ steps.version.outputs.base-tag }}
+          BUMP: ${{ inputs.bump }}
+        run: |
+          set -euo pipefail
+          if [[ "$LATEST_TAG" =~ -(alpha|beta|rc)\.?[0-9]+$ ]]; then
+            echo "> :warning: \`bump: ${BUMP}\` was ignored — ${LATEST_TAG} is a pre-release, so this GA promotes it to \`${TARGET}\`." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # The three release files (ADR-0020 §2) are resolved here, before any
+      # expensive work, so a candidate without them fails in seconds rather
+      # than after the build. They live in publication/ with no version in
+      # their names and describe the version being prepared, not a history:
+      #
+      #   publication/release-note.md      the human-readable note
+      #   publication/declaration.json     the release declaration
+      #                                    (wire.component-release/v1alpha2),
+      #                                    `version` = the base version X.Y.Z,
+      #                                    shared by every candidate of that GA
+      #   publication/compatibility.yaml   provides / requires / includes
+      #
+      # A pre-release and a GA both need the three files (ADR-0020), where the
+      # shared action only requires them for a GA: checked here first. The
+      # action then copies the note and the declaration to /tmp/release-documents
+      # and validates the declaration against its schema; they are attached to
+      # the draft release and hashed in the release manifest.
+      - name: Require the release files
+        env:
+          TARGET: ${{ steps.version.outputs.version }}
+          SOURCE_BRANCH: ${{ inputs.source_branch }}
+        run: |
+          set -euo pipefail
+          for f in publication/release-note.md publication/declaration.json publication/compatibility.yaml; do
+            if [[ ! -s "$f" ]]; then
+              echo "error: no $f for ${TARGET} on ${SOURCE_BRANCH} (ADR-0020 §2): a pre-release needs the three release files, like a GA." >&2
+              exit 1
+            fi
+          done
+
+      - name: Resolve release documents
+        id: documents
+        uses: wireapp/wire-rm-actions/release-documents@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          component: account-pages
+          version: ${{ steps.version.outputs.version }}
+          release-type: ${{ inputs.type }}
+          out-dir: /tmp/release-documents
+
+      - name: Check the compatibility file
+        id: compatibility
+        uses: wireapp/wire-rm-actions/compatibility@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          file: publication/compatibility.yaml
+
+      # The third release file rides along as an asset too, and its hash is
+      # listed in the manifest `documents`: the shared action only gathers the
+      # note and the declaration.
+      - name: Copy the compatibility file
+        id: compatibility_copy
+        run: |
+          set -euo pipefail
+          cp publication/compatibility.yaml /tmp/release-documents/compatibility.yaml
+          sha256=$(sha256sum /tmp/release-documents/compatibility.yaml | awk '{print $1}')
+          echo "sha256=$sha256" >> "$GITHUB_OUTPUT"
+          echo "Compatibility: sha256 ${sha256}"
+
+      # Two gates before the build: no release (draft or published) nor tag
+      # exists for the version, and every check run on the source commit
+      # passed, judged by its latest outcome, without this workflow's own runs
+      # and the GitHub-managed dynamic workflows (ADR 0006 Correction 4).
+      # `force` only bypasses the checks gate, logged loudly.
+      - name: CI gate
+        uses: wireapp/wire-rm-actions/ci-gate@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          version: ${{ steps.version.outputs.version }}
+          source-commit: ${{ steps.source.outputs.sha }}
+          force: ${{ steps.inputs.outputs.force }}
+          checks-from: all
+
+      - name: Resolve config repository ref
+        id: config
+        run: |
+          set -euo pipefail
+          # Records the config repository identity in the release manifest as
+          # build metadata (ADR 0005 — config identity is tracked, but never
+          # folded into an artifact version).
+          #
+          # NOTE: this reads the `-main` entry, but it does NOT select it.
+          # `.copyconfigrc.js` chooses the config repository from the
+          # checked-out branch name, so what actually gets installed can differ
+          # from what is recorded here. Configuration *defaults* are unaffected
+          # — those come from the in-repo `server/.env.defaults.ci` template
+          # copied below, identically for every build type. Reconciling the
+          # recorded and installed config identity is tracked separately
+          # (ADR 0006, "Configuration defaults" open question).
+          dep=$(node -pe "require('./app-config/package.json').dependencies['wire-web-config-default-main']")
+          echo "repo=${dep%%#*}" >> "$GITHUB_OUTPUT"
+          echo "ref=${dep##*#}" >> "$GITHUB_OUTPUT"
+
+      - name: Authenticate git clone
+        env:
+          GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+        run: echo -e "machine github.com\n  login ${GH_TOKEN}" > ~/.netrc
+
+      - name: Resolve config commit
+        id: config_commit
+        run: |
+          set -euo pipefail
+          # `awk NR==1` rather than `| head -n1`: head exiting early can SIGPIPE
+          # awk, and under `pipefail` that aborts the step before the friendly
+          # error below is ever reached.
+          commit=$(git ls-remote "${{ steps.config.outputs.repo }}" "${{ steps.config.outputs.ref }}" | awk 'NR==1 {print $1}')
+          if [[ -z "$commit" ]]; then
+            echo "error: could not resolve config ref '${{ steps.config.outputs.ref }}' on ${{ steps.config.outputs.repo }}" >&2
+            exit 1
+          fi
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+
+      # The commits since the changelog base, in the release format. No
+      # heading: the release title already carries the version and GitHub
+      # renders the date.
+      - name: Generate release notes
+        id: changelog
+        uses: wireapp/wire-rm-actions/changelog@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          from-tag: ${{ steps.version.outputs.from-tag }}
+          to-ref: ${{ steps.source.outputs.sha }}
+          version: ${{ steps.version.outputs.version }}
+          heading: false
+
+      # What the `candidate` job needs from here, as one artifact: the three
+      # release files, the changelog, the provides / requires / includes object
+      # of the manifest and the values the manifest records. The files are the
+      # ones validated above, so what is attached to the draft is what passed.
+      - name: Collect the release inputs
+        env:
+          DOCS: /tmp/release-documents
+          CHANGELOG_FILE: ${{ steps.changelog.outputs.file }}
+          NOTE_FILE: ${{ steps.documents.outputs.note-file }}
+          NOTE_PATH: ${{ steps.documents.outputs.note-path }}
+          DOCUMENTS_JSON: ${{ steps.documents.outputs.documents-json }}
+          COMPATIBILITY_SHA256: ${{ steps.compatibility_copy.outputs.sha256 }}
+          FROM_TAG: ${{ steps.version.outputs.from-tag }}
+          CONFIG_REPO: ${{ steps.config.outputs.repo }}
+          CONFIG_REF: ${{ steps.config.outputs.ref }}
+          CONFIG_COMMIT: ${{ steps.config_commit.outputs.commit }}
+        run: |
+          set -euo pipefail
+          out="${RUNNER_TEMP}/release-inputs"
+          mkdir -p "$out"
+          cp "$DOCS"/release-note.md "$DOCS"/release-declaration.json "$DOCS"/compatibility.yaml "$out/"
+          cp "$CHANGELOG_FILE" "$out/changelog.md"
+
+          # The manifest `documents` (the shared action lists the note and the
+          # declaration, the compatibility file is added here) and `inputs` (the
+          # configuration repository, ADR 0005), as the compact JSON that
+          # release-manifest takes.
+          documents_json=$(jq -c --arg sha "$COMPATIBILITY_SHA256" \
+            '. + {compatibility: {file: "compatibility.yaml", sha256: $sha}}' <<<"$DOCUMENTS_JSON")
+          inputs_json=$(jq -cn --arg repository "$CONFIG_REPO" --arg ref "$CONFIG_REF" --arg commit "$CONFIG_COMMIT" \
+            '[{name: "config", repository: $repository, ref: $ref, commit: $commit}]')
+          jq -n \
+            --arg note_file "$NOTE_FILE" --arg note_path "$NOTE_PATH" --arg from_tag "$FROM_TAG" \
+            --arg documents_json "$documents_json" --arg inputs_json "$inputs_json" \
+            '$ARGS.named' > "$out/values.json"
+
+      - name: Upload the release inputs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-inputs
+          path: ${{ runner.temp }}/release-inputs
+          retention-days: 1
+
+  # ── 2. BUILD ─────────────────────────────────────────────────────────────────
+  # The bundle is built exactly once, by the workflow every build of this
+  # repository uses, at the version computed above and from the commit that was
+  # resolved above (the branch is checked out, as the configuration repository
+  # is selected from its name, and must still be at that commit).
+  build:
+    name: Build
+    needs: prepare
+    permissions:
+      contents: read
+    uses: ./.github/workflows/build.yml
+    with:
+      ref: ${{ inputs.source_branch }}
+      expected_commit: ${{ needs.prepare.outputs.sha }}
+      version: ${{ needs.prepare.outputs.version }}
+      artifact_name: wire-account-candidate
+    secrets:
+      OTTO_THE_BOT_GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+
+  # ── 3. CANDIDATE ─────────────────────────────────────────────────────────────
+  # The Docker candidate image from the bundle that was built, the Helm chart
+  # package, the release manifest and the draft GitHub Release.
+  candidate:
+    name: Prepare release candidate
+    needs:
+      - prepare
+      - build
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write # OIDC token of the job, exchanged for a Quay robot token
+
+    outputs:
+      release_id: ${{ steps.release.outputs.id }}
+
+    steps:
+      # The Dockerfile, run.sh and server/package.json of the prepared
+      # commit; the bundle comes from the artifact.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+          persist-credentials: false
+
+      - name: Download the release inputs
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: release-inputs
+          path: /tmp/release-inputs
+
+      - name: Read the release inputs
+        id: values
+        run: |
+          set -euo pipefail
+          jq -r 'to_entries[] | "\(.key)=\(.value)"' /tmp/release-inputs/values.json >> "$GITHUB_OUTPUT"
+
+      # No robot password: the federated robot wire+gha_wire-account accepts the OIDC token of
+      # this job (ADR-0020). The robot token lasts one hour: obtained here, right before the push.
+      - name: Login to quay.io with the OIDC token of the job
+        id: quay
+        uses: wireapp/wire-rm-actions/quay-login@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          robot: wire+gha_wire-account
+
+      - name: Download the bundle
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: wire-account-candidate
+          path: ${{ runner.temp }}/bundle
+
+      # The image ships the same bundle the Elastic Beanstalk zip does: one
+      # build per commit. Only `.env.defaults` is needed outside `dist/`, the
+      # other files belong to the Elastic Beanstalk layout.
+      - name: Unpack the bundle into server/dist
+        env:
+          BUNDLE: ${{ runner.temp }}/bundle/wire-account.zip
+        run: |
+          set -euo pipefail
+          mkdir -p server/dist
+          unzip -q "$BUNDLE" -d server/dist -x 'package.json' 'Procfile'
+          mv server/dist/.env.defaults server/.env.defaults
+          test -f server/dist/index.js
+          echo "Unpacked $(find server/dist -type f | wc -l) files into server/dist"
+
+      # Non-release candidate identity (ADR 0006): the tag is
+      # `<version>-candidate-<run id>`, and no mutable alias (dev, production,
+      # latest) is pushed. No expiry: the promoted release tag shares the
+      # manifest of the candidate.
+      - name: Push candidate Docker image
+        id: docker
+        uses: wireapp/wire-rm-actions/build-image@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          dockerfile: Dockerfile
+          image: quay.io/wire/account
+          version: ${{ needs.prepare.outputs.version }}
+          tag: ${{ needs.prepare.outputs.version }}-candidate-${{ github.run_id }}
+          revision: ${{ needs.prepare.outputs.sha }}
+          provenance: 'false'
+          sbom: 'false'
+          username: ${{ steps.quay.outputs.username }}
+          password: ${{ steps.quay.outputs.token }}
+
+      - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: '3.12.2'
+
+      - name: Package candidate Helm chart
+        id: helm
+        env:
+          TARGET: ${{ needs.prepare.outputs.version }}
+        run: |
+          set -euo pipefail
+
+          # Chart content carries its real, final version/appVersion (ADR 0005).
+          # Packaging is purely local, and the workspace is not modified: the
+          # .tgz is attached to the draft release and not pushed to the final
+          # chart repository yet.
+          package_dir="${RUNNER_TEMP}/chart"
+          helm package charts/account-pages --version "$TARGET" --app-version "$TARGET" --destination "$package_dir"
+          package_file="account-pages-${TARGET}.tgz"
+          sha256=$(sha256sum "${package_dir}/${package_file}" | awk '{print $1}')
+
+          {
+            echo "package_file=$package_file"
+            echo "package_path=${package_dir}/${package_file}"
+            echo "sha256=$sha256"
+          } >> "$GITHUB_OUTPUT"
+          echo "Candidate chart: $package_file (sha256 $sha256)"
+
+      # Written by the shared action (ADR-0020 §2, wire.component-release-manifest/v1alpha1):
+      # source, inputs (the configuration repository), artifacts (image, chart and the
+      # deployment bundle), compatibility, build and documents. The account-pages keys of
+      # the earlier manifests (`bundle`, `docker`, `helm`, `config_*`, ...) are gone: the
+      # publication and deployment workflows read `artifacts[type=bundle]` and fall back
+      # to `.bundle` for a release prepared before.
+      - name: Write release manifest
+        id: manifest
+        uses: wireapp/wire-rm-actions/release-manifest@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: write
+          manifest: ${{ runner.temp }}/release-manifest.json
+          component: account-pages
+          version: ${{ needs.prepare.outputs.version }}
+          release-type: ${{ inputs.type }}
+          source-repository: ${{ github.server_url }}/${{ github.repository }}
+          source-ref: ${{ inputs.source_branch }}
+          source-commit: ${{ needs.prepare.outputs.sha }}
+          image-repository: ${{ steps.docker.outputs.image }}
+          image-digest: ${{ steps.docker.outputs.digest }}
+          image-candidate-tag: ${{ steps.docker.outputs.tag }}
+          chart-repository: oci://quay.io/wire/charts/${{ inputs.type == 'ga' && 'stable' || 'dev' }}/account-pages
+          chart-file: ${{ steps.helm.outputs.package_file }}
+          chart-sha256: ${{ steps.helm.outputs.sha256 }}
+          compatibility-file: /tmp/release-inputs/compatibility.yaml
+          documents-json: ${{ steps.values.outputs.documents_json }}
+          inputs-json: ${{ steps.values.outputs.inputs_json }}
+          extra-artifacts-json: ${{ format('[{{"type":"bundle","file":"wire-account.zip","sha256":"{0}"}}]', needs.build.outputs.sha256) }}
+
+      # The release body is composed here (it stays local: it embeds the note or links it,
+      # the changelog and the artifact identities); the shared action creates the draft.
+      - name: Compose the release body
+        id: body
+        env:
+          RELEASE_TYPE: ${{ inputs.type }}
+          TARGET: ${{ needs.prepare.outputs.version }}
+          SOURCE_COMMIT: ${{ needs.prepare.outputs.sha }}
+          BUNDLE_SHA256: ${{ needs.build.outputs.sha256 }}
+          DOCKER_DIGEST: ${{ steps.docker.outputs.digest }}
+          DOCKER_REPOSITORY: ${{ steps.docker.outputs.image }}
+          HELM_SHA256: ${{ steps.helm.outputs.sha256 }}
+          REPOSITORY: ${{ github.repository }}
+          SERVER_URL: ${{ github.server_url }}
+          FROM_TAG: ${{ steps.values.outputs.from_tag }}
+          NOTES_DOC: /tmp/release-inputs/${{ steps.values.outputs.note_file }}
+          NOTES_PATH: ${{ steps.values.outputs.note_path }}
+          CHANGELOG_FILE: /tmp/release-inputs/changelog.md
+        run: |
+          set -euo pipefail
+          target="$TARGET"
+          source_commit="$SOURCE_COMMIT"
+
+          # The release body is written once, here, and never rewritten — so it
+          # must read correctly *after* publication, when its audience is users
+          # and self-hosters rather than the release operator. Operator-facing
+          # material (validation steps, candidate identities) therefore lives in
+          # the run summary and in release-manifest.json, not here.
+          #
+          # The changelog was written without its "#### <version> (<date>)"
+          # heading: the release title already carries the version and GitHub
+          # renders the date, so it would be pure duplication here.
+          notes_file="$CHANGELOG_FILE"
+
+          # The high-level release note was resolved by "Resolve release
+          # documents" above (the repository file). GA embeds it verbatim,
+          # above the changelog: at that point the note *is* the release
+          # announcement. A pre-release only links to it, because the note
+          # describes the version that will eventually ship; reproducing it
+          # on a candidate would read as though the candidate were that
+          # shipped version.
+          base_version="${target%%-*}"
+          # `notes_doc` is the runner copy a GA embeds; a pre-release links the
+          # file of the repository, `notes_path`.
+          notes_doc="$NOTES_DOC"
+          notes_path="$NOTES_PATH"
+
+          # Linked at the source commit, not at the tag or a branch: the tag
+          # does not exist until publication (this is still a draft), and a
+          # branch link would drift away from what this release describes.
+          notes_url=""
+          if [[ -n "$notes_path" ]]; then
+            notes_url="${SERVER_URL}/${REPOSITORY}/blob/${source_commit}/${notes_path}"
+          fi
+
+          # A GA goes to the stable chart channel, a pre-release to dev
+          # (ADR-0020 §1); publication reads it from the manifest.
+          chart_channel=dev
+          if [[ "$RELEASE_TYPE" == "ga" ]]; then chart_channel=stable; fi
+
+          body_file="${RUNNER_TEMP}/release-body.md"
+          {
+            if [[ "$RELEASE_TYPE" == "ga" ]]; then
+              cat "$notes_doc"
+              echo
+              echo "---"
+              echo
+            else
+              echo "> [!IMPORTANT]"
+              echo "> **This is a pre-release (\`${RELEASE_TYPE}\`) and must be treated accordingly.** It is a candidate for \`${base_version}\`, not a shipped release: deploy it to non-production environments only, and expect it to be superseded."
+              if [[ -n "$notes_url" ]]; then
+                echo ">"
+                echo "> High-level release notes for ${base_version}: [\`${notes_path}\`](${notes_url})"
+              else
+                echo ">"
+                echo "> High-level release notes for ${base_version} are not written yet; they will accompany the GA."
+              fi
+              echo
+              echo "---"
+              echo
+            fi
+            if grep -q '[^[:space:]]' "$notes_file"; then
+              cat "$notes_file"
+            else
+              # The changelog excludes chore/build/docs/refactor/style/
+              # test/runfix, so a release made only of those commits produces an
+              # empty changelog. Say so explicitly — otherwise the separator
+              # above and the one below end up adjacent with a blank gap
+              # between them, which reads as a rendering bug.
+              echo "_No user-facing changes since \`${FROM_TAG}\`._"
+            fi
+            echo
+            echo "---"
+            echo
+            echo "### Artifacts"
+            echo
+            echo "| | |"
+            echo "| --- | --- |"
+            echo "| Docker image | \`${DOCKER_REPOSITORY}:${target}\` |"
+            echo "| Helm chart | \`account-pages\` \`${target}\` |"
+            echo "| Chart repositories | \`charts-webapp\` (S3) · \`oci://quay.io/wire/charts/${chart_channel}\` |"
+            echo "| Deployment bundle | \`wire-account.zip\`, attached below |"
+            echo
+            echo "<details>"
+            echo "<summary>Checksums and provenance</summary>"
+            echo
+            echo "| | |"
+            echo "| --- | --- |"
+            echo "| Source commit | \`${source_commit}\` |"
+            echo "| Bundle SHA256 | \`${BUNDLE_SHA256}\` |"
+            echo "| Image digest | \`${DOCKER_DIGEST}\` |"
+            echo "| Chart SHA256 | \`${HELM_SHA256}\` |"
+            echo
+            echo "These identities are fixed before approval and are not recomputed at publication; \`release-manifest.json\` attached to this release is the authoritative record."
+            echo
+            echo "</details>"
+          } > "$body_file"
+          echo "file=$body_file" >> "$GITHUB_OUTPUT"
+
+      # Repeated immediately before draft creation to reduce race exposure.
+      - name: Check for existing release (pre-draft)
+        uses: wireapp/wire-rm-actions/ci-gate@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          version: ${{ needs.prepare.outputs.version }}
+          checks-gate: false
+
+      # The three release files ride along as assets (see "Resolve release documents"): the
+      # release is the versioned record of them. The action refuses a tag that already has a
+      # release, retries the lookup of the numeric id the publish job needs, and writes the
+      # "Draft release ready" section of the run summary.
+      - name: Create the draft release
+        id: release
+        uses: wireapp/wire-rm-actions/draft-release@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: create
+          version: ${{ needs.prepare.outputs.version }}
+          target: ${{ needs.prepare.outputs.sha }}
+          title: v${{ needs.prepare.outputs.version }}
+          body-file: ${{ steps.body.outputs.file }}
+          assets: |
+            wire-account.zip
+            ${{ steps.helm.outputs.package_path }}
+            ${{ steps.manifest.outputs.manifest }}
+            /tmp/release-inputs/release-note.md
+            /tmp/release-inputs/release-declaration.json
+            /tmp/release-inputs/compatibility.yaml
+          token: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+
+      # Surface the candidate on the Summary page, so the operator can review and approve
+      # publication without digging through step logs.
+      - name: Summarise the candidate
+        env:
+          BUNDLE_SHA256: ${{ needs.build.outputs.sha256 }}
+          DOCKER_DIGEST: ${{ steps.docker.outputs.digest }}
+          DOCKER_REPOSITORY: ${{ steps.docker.outputs.image }}
+          DOCKER_CANDIDATE_TAG: ${{ steps.docker.outputs.tag }}
+          HELM_SHA256: ${{ steps.helm.outputs.sha256 }}
+        run: |
+          set -euo pipefail
+          {
+            echo
+            echo "| Artifact | Identity |"
+            echo "| --- | --- |"
+            echo "| Bundle | \`${BUNDLE_SHA256}\` |"
+            echo "| Docker candidate (\`${DOCKER_REPOSITORY}:${DOCKER_CANDIDATE_TAG}\`) | \`${DOCKER_DIGEST}\` |"
+            echo "| Helm package | \`${HELM_SHA256}\` |"
+            echo
+            echo "#### Before approving"
+            echo
+            echo "Deploy the attached \`wire-account.zip\` to a non-production Elastic Beanstalk environment, and/or install the attached Helm chart with the candidate image \`${DOCKER_REPOSITORY}:${DOCKER_CANDIDATE_TAG}\` in a Kubernetes validation environment. See ADR 0006."
+            echo
+            echo "Then approve the \`release-publication\` environment on this run to publish. Publication promotes these exact artifacts — it never rebuilds them."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # ── 4. PUBLISH (waits on release-publication environment approval) ─────────
+  publish:
+    name: Publish
+    needs:
+      - prepare
+      - candidate
+    # A called workflow's GITHUB_TOKEN permissions can only be maintained or
+    # reduced through the chain, never elevated — with this workflow's
+    # top-level `permissions: {}`, publish-release's own `contents: write`
+    # would be granted nothing. It must be granted here, by the caller.
+    permissions:
+      contents: write
+      id-token: write # granted to publish-release, for its Quay login by OIDC
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      version: ${{ needs.prepare.outputs.version }}
+      release_id: ${{ needs.candidate.outputs.release_id }}
+    # Passed explicitly, not via `secrets: inherit` — publication receives only
+    # the credentials it uses (chart-repository AWS, the git token, the
+    # wire-builds token and the Elastic Beanstalk keys for the staging
+    # deployment), never the repository's full secret set. Quay and the
+    # release managers take the OIDC token of the job.
+    secrets:
+      OTTO_THE_BOT_GH_TOKEN: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+      CHARTS_WEBAPP_AUTOMATION_AWS_ACCESS_KEY_ID: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_ACCESS_KEY_ID }}
+      CHARTS_WEBAPP_AUTOMATION_AWS_SECRET_ACCESS_KEY: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_SECRET_ACCESS_KEY }}
+      WIRE_BUILDS_WRITE_ACCESS_GH_TOKEN: ${{ secrets.WIRE_BUILDS_WRITE_ACCESS_GH_TOKEN }}
+      WEBTEAM_AWS_ACCESS_KEY_ID: ${{ secrets.WEBTEAM_AWS_ACCESS_KEY_ID }}
+      WEBTEAM_AWS_SECRET_ACCESS_KEY: ${{ secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY }}
