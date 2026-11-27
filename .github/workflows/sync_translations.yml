@@ -1,8 +1,6 @@
 name: Download translations
 
 on:
-  push:
-    branches: [staging]
   schedule:
     - cron: '0 8 * * *'
 
