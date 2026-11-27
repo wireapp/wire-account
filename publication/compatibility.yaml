@@ -8,7 +8,7 @@ consumesApis:
 
 dependsOn:
   - component: nginx-ingress-services
-    range: '>=1.0.0'
+    range: '>=5.0.0'
     class: mandatory
     reason: The chart has no Ingress of its own; the account host is exposed by nginx-ingress-services.
   - platform: kubernetes

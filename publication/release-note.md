@@ -1,12 +1,12 @@
 ## Overview
 
-Version 2.11.1 covers everything merged since the 2.11.0 GA (2026-09-23). It is a **patch release** with one user-facing fix. The structured release declaration of this version is [`declaration.json`](declaration.json).
+Version 2.11.3 covers everything merged since the 2.11.2 GA (2026-11-13). It is a **patch release** with one user-facing fix and a new release pipeline. The structured release declaration of this version is [`declaration.json`](declaration.json).
 
 ### Release Stats
 
 - **0 Features**: patch release
 - **1 Bug Fix**: Delete account button
-- **Maintenance**: dependencies refreshed within their major versions
+- **Maintenance**: dependencies refreshed, release and dev build pipelines moved to the shared actions
 
 ---
 
@@ -18,6 +18,7 @@ Version 2.11.1 covers everything merged since the 2.11.0 GA (2026-09-23). It is 
 
 - Dependencies refreshed within their current major versions
 - Release pipeline: release files in `publication/`, validated on every pull request that touches them
+- Dev images and charts are built on the `dev` branch with the shared actions
 
 ## Configuration
 

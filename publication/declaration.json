@@ -1,8 +1,8 @@
 {
   "schemaVersion": "wire.component-release/v1alpha2",
   "component": "account-pages",
-  "version": "2.11.1",
-  "summary": "Fixes the Delete account button, which looked disabled while it was active, and refreshes dependencies.",
+  "version": "2.11.3",
+  "summary": "Fixes the Delete account button, which looked disabled while it was active, refreshes dependencies and moves the release and dev build pipelines to the shared actions.",
   "upgrade_from": ">=2.10.0",
   "changes": [
     {
@@ -14,6 +14,12 @@
     {
       "kind": "changed",
       "description": "Dependencies refreshed within their current major versions.",
+      "breaking": false,
+      "links": []
+    },
+    {
+      "kind": "changed",
+      "description": "Releases are now prepared from the release files in publication/, which are validated on every pull request that touches them, and dev images and charts are built on the dev branch with the shared actions.",
       "breaking": false,
       "links": []
     }
