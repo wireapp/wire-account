@@ -9648,13 +9648,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.26.0":
-  version: 5.26.0
-  resolution: "enhanced-resolve@npm:5.26.0"
+"enhanced-resolve@npm:^5.27.0":
+  version: 5.27.0
+  resolution: "enhanced-resolve@npm:5.27.0"
   dependencies:
     graceful-fs: ^4.2.4
     tapable: ^2.3.3
-  checksum: 8eac908768d228f0fa8e189cc3c604d1352ddb3cbdf87b5b2321dffea149278caf77c30de876dfe72d7103bf7345daaaa05f5741503daa05febefd1868e4723e
+  checksum: 6a037b214e6d29f2136c80e90444938d1314b0ffb9744e7da3f8353292c747e752f547e630e5108385dcceaa6ddba7599063c4825d1ceed21887b4dab834734e
   languageName: node
   linkType: hard
 
@@ -14486,13 +14486,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimizer-webpack-plugin@npm:^5.13.0":
-  version: 5.13.1
-  resolution: "minimizer-webpack-plugin@npm:5.13.1"
+"minimizer-webpack-plugin@npm:^5.14.0":
+  version: 5.14.1
+  resolution: "minimizer-webpack-plugin@npm:5.14.1"
   dependencies:
-    "@jridgewell/trace-mapping": ^0.3.31
     jest-worker: ^27.4.5
-    schema-utils: ^4.6.0
+    schema-utils: ^4.8.5
     terser: ^5.51.0
   peerDependencies:
     webpack: ^5.1.0
@@ -14529,7 +14528,7 @@ __metadata:
       optional: true
     uglify-js:
       optional: true
-  checksum: 943d083014f3bb52be08639659c48b486ffc7624599cb010e94ae48f984c0b55ec2bd0856d97ce785ec905305c04a1026a0f52a99a45f6d3e901fbf2d62b37e7
+  checksum: f27574dcc526f24208c768686e7a0d592ee2d5e3fc2746b0a43b3dab80b1a2a6e1b8dcc3b32f57449a0988cc9a9242e570f940f41082d3bd37b14fc2cf398a88
   languageName: node
   linkType: hard
 
@@ -16401,28 +16400,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"schema-utils@npm:^4.6.0":
-  version: 4.8.1
-  resolution: "schema-utils@npm:4.8.1"
-  dependencies:
-    "@types/json-schema": ^7.0.15
-    ajv: ^8.20.0
-    ajv-formats: ^3.0.1
-    ajv-keywords: ^5.1.0
-  peerDependencies:
-    webpack: ^5.112.0
-  peerDependenciesMeta:
-    webpack:
-      optional: true
-  bin:
-    schema-utils: bin/schema-utils.js
-  checksum: 27b48726b7e33b50cfba1c0c325759c863318ac850d950da01035098f1c10edef7606d4abffa6683d9c855a3e5b5e347c940a8f8968e1e07757d16a903f23bed
-  languageName: node
-  linkType: hard
-
-"schema-utils@npm:^4.8.1":
-  version: 4.8.3
-  resolution: "schema-utils@npm:4.8.3"
+"schema-utils@npm:^4.8.2, schema-utils@npm:^4.8.5":
+  version: 4.8.5
+  resolution: "schema-utils@npm:4.8.5"
   dependencies:
     "@types/json-schema": ^7.0.15
     ajv: ^8.20.0
@@ -16435,7 +16415,7 @@ __metadata:
       optional: true
   bin:
     schema-utils: bin/schema-utils.js
-  checksum: 17b4eb7b5e2e74f5a2e6ff19458f99c890725f614bb02cfa4c216412a80182bc7b3c8f5bbad6cc6aec4bda468968cf7ad299894ba81cac1a05c66622a7a0b454
+  checksum: ce7fb31d647ac3b47616e1d36552015109f6127aeae26067d2eb3c13fed930c322f837cdef650ebdf546da9145e9e97c09c8a089129c65c94bd96f15c698a6fc
   languageName: node
   linkType: hard
 
@@ -17347,17 +17327,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tapable@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "tapable@npm:2.3.0"
-  checksum: ada1194219ad550e3626d15019d87a2b8e77521d8463ab1135f46356e987a4c37eff1e87ffdd5acd573590962e519cc81e8ea6f7ed632c66bb58c0f12bd772a4
-  languageName: node
-  linkType: hard
-
 "tapable@npm:^2.3.3":
   version: 2.3.3
   resolution: "tapable@npm:2.3.3"
   checksum: 6f37a59e82a2daedd0fbfc231f6e6004389a9d4bcf8ab8f2d61f96f9f4fd4cbb087799627c5d644d75f518df2abbbc9b9ac699945e0c9a0c610f2a3ca92e0265
+  languageName: node
+  linkType: hard
+
+"tapable@npm:^2.3.4":
+  version: 2.3.4
+  resolution: "tapable@npm:2.3.4"
+  checksum: 51c3b099cc4116c0e469576332fddab2d9662472851d579395ef67611bcb2bee0689bbfbdb7497bc0e2fc052c12f473d238fdb112fa07ec50bdea99c2feecb39
   languageName: node
   linkType: hard
 
@@ -18439,7 +18419,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watchpack@npm:^2.6.3":
+"watchpack@npm:^2.6.4":
   version: 2.6.4
   resolution: "watchpack@npm:2.6.4"
   dependencies:
@@ -18546,16 +18526,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-sources@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "webpack-sources@npm:3.6.0"
-  checksum: bf42251f35ccff1ed0fe6516716e6e55560fc6bd95b5f804d5e1f18d40b5b9d66ccf1c28bc3436ff2f40019728552b168fce8293e8f20b40a877f15b999143cd
+"webpack-sources@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "webpack-sources@npm:3.7.1"
+  checksum: 773052db806b0964741f77581d93b2e139936f1ffd09d827034c69e18e3305c7deb2da888100e762deeac584bde4b8d727b90a378cf9712f0f5effd7d0c217ae
   languageName: node
   linkType: hard
 
-"webpack@npm:5.112.2":
-  version: 5.112.2
-  resolution: "webpack@npm:5.112.2"
+"webpack@npm:5.113.0":
+  version: 5.113.0
+  resolution: "webpack@npm:5.113.0"
   dependencies:
     "@types/estree": ^1.0.8
     "@types/json-schema": ^7.0.15
@@ -18564,22 +18544,21 @@ __metadata:
     "@webassemblyjs/wasm-parser": ^1.14.1
     browserslist: ^4.28.1
     chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.26.0
-    es-module-lexer: ^2.1.0
+    enhanced-resolve: ^5.27.0
     events: ^3.2.0
     graceful-fs: ^4.2.11
     mime-db: ^1.54.0
-    minimizer-webpack-plugin: ^5.13.0
-    schema-utils: ^4.8.1
-    tapable: ^2.3.0
-    watchpack: ^2.6.3
-    webpack-sources: ^3.6.0
+    minimizer-webpack-plugin: ^5.14.0
+    schema-utils: ^4.8.2
+    tapable: ^2.3.4
+    watchpack: ^2.6.4
+    webpack-sources: ^3.7.1
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: dcb5f35f694d06ae235b826b9ed38a26c35326ee70ed1c58a52366c85e53ef38783efd4d1608e172918233b055b58f56b2c5026c7043a4764682f9716bb27430
+  checksum: 88cfda028b6e0df7a377369748483401faab731f9e75314bd46a070792750dc501e37f2cf22049a617edabfa0a64f165b11e9931d689f6fcc80b71e2d7c304c6
   languageName: node
   linkType: hard
 
@@ -18868,7 +18847,7 @@ __metadata:
     ts-jest: 29.4.15
     typescript: 5.6.3
     uuid: 11.1.0
-    webpack: 5.112.2
+    webpack: 5.113.0
     webpack-bundle-analyzer: 5.4.3
     webpack-cli: 6.0.1
     webpack-dev-middleware: 7.4.5
