@@ -1,0 +1,265 @@
+<!doctype html>
+<!-- Wire, Copyright (C) 2019 Wire Swiss GmbH -->
+<!-- version {{config.CLIENT.VERSION}} -->
+<html class="profile" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#f4f1ea">
+
+  <link rel="shortcut icon" href="/favicon.ico" sizes="48x48">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <meta name="twitter:site" content="@wire">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta property="og:title" content="Wire">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{config.CLIENT.URL.OPEN_GRAPH_IMAGE}}">
+  <title>Wire</title>
+
+  <style>
+    :root {
+      --bg-top: #f4f1ea;
+      --bg-bottom: #dce9df;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-stroke: rgba(16, 40, 23, 0.15);
+      --text-main: #123425;
+      --text-muted: #446652;
+      --link: #145f42;
+      --link-hover: #0f4631;
+      --accent: #1b8f5a;
+      --verified-bg: #e6f8ee;
+      --verified-text: #0d6b43;
+      --shadow: 0 26px 80px rgba(20, 44, 30, 0.18);
+      --radius-xl: 28px;
+      --radius-md: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+      color: var(--text-main);
+      background:
+        radial-gradient(1100px 600px at 8% -10%, rgba(253, 203, 110, 0.33), transparent 60%),
+        radial-gradient(900px 600px at 98% 6%, rgba(56, 189, 137, 0.22), transparent 62%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-shell {
+      width: min(860px, 100%);
+      border: 1px solid var(--surface-stroke);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: fade-slide 520ms ease-out;
+    }
+
+    .profile-header {
+      padding: 42px 42px 24px;
+      background:
+        linear-gradient(132deg, rgba(255, 255, 255, 0.74), rgba(236, 249, 241, 0.74));
+      border-bottom: 1px solid rgba(16, 40, 23, 0.1);
+    }
+
+    .label {
+      margin: 0;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .handle {
+      margin: 10px 0 0;
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.05;
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .bio {
+      margin: 16px 0 0;
+      color: var(--text-muted);
+      font-size: clamp(16px, 2.6vw, 20px);
+      line-height: 1.45;
+      max-width: 62ch;
+    }
+
+    .links-section {
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .link-card {
+      display: grid;
+      grid-template-columns: minmax(110px, 190px) 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(17, 52, 37, 0.12);
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .link-name {
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .link-url,
+    .link-url a {
+      min-width: 0;
+      color: var(--link);
+      font-size: 15px;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .link-url a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .verified {
+      justify-self: end;
+      background: var(--verified-bg);
+      color: var(--verified-text);
+      border: 1px solid rgba(13, 107, 67, 0.25);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .profile-footer {
+      padding: 20px 22px 26px;
+      border-top: 1px solid rgba(16, 40, 23, 0.08);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .open-app {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      transition: transform 140ms ease, filter 140ms ease;
+    }
+
+    .open-app:hover {
+      transform: translateY(-1px);
+      filter: brightness(0.95);
+    }
+
+    @keyframes fade-slide {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 740px) {
+      body {
+        padding: 14px;
+      }
+
+      .profile-header {
+        padding: 30px 20px 18px;
+      }
+
+      .links-section,
+      .profile-footer {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .link-card {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .verified {
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="profile-shell">
+    <header class="profile-header">
+      <p class="label">Public profile</p>
+      <h1 id="handle" class="handle">@{{ profile.handle }}</h1>
+      {{#profile.bio}}
+      <p id="bio" class="bio">{{ profile.bio }}</p>
+      {{/profile.bio}}
+    </header>
+
+    <section class="links-section" aria-label="Profile links">
+      {{#profile.links}}
+      <article class="link-card">
+        <span class="link-name">{{ name }}</span>
+        <span class="link-url">
+          <a href="{{ url }}" rel="me noopener noreferrer" target="_blank">{{ url }}</a>
+        </span>
+        {{#verified}}
+        <span class="verified">Verified</span>
+        {{/verified}}
+      </article>
+      {{/profile.links}}
+    </section>
+
+    <footer class="profile-footer">
+      <a class="open-app" href="{{ config.CLIENT.URL.WEBAPP_BASE }}/#/user/{{ profile.qualified_id.domain }}/{{ profile.qualified_id.id }}">Open in Browser</a>
+    </footer>
+  </main>
+</body>
+
+</html>
