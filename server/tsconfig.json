@@ -14,7 +14,7 @@
     "rootDirs": ["."],
     "sourceMap": true,
     "target": "es6",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }
