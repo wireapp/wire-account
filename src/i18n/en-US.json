@@ -70,6 +70,19 @@
     "titleBot": "Verify Bot",
     "titleEmail": "Verify Account"
   },
+  "meetingJoin": {
+    "title": "You are invited to a meeting",
+    "conversationLocation": "The meeting takes place on {{domain}}",
+    "cannotJoinOnMobile": "At the moment, you can’t join this meeting on your mobile device. Please open this link on your desktop instead.",
+    "wirelessHeadline": "Don’t have a {{brandName}} account? You can join this meeting as a temporary guest in your browser.",
+    "invalidHeadline": "Meeting link is invalid",
+    "invalidDescription": "This meeting link has expired or is no longer valid.",
+    "checkFailedHeadline": "Unable to check the meeting link",
+    "checkFailedDescription": "Please check your connection and try again.",
+    "retry": "Try again",
+    "unsupportedHeadline": "Meeting links are unavailable",
+    "unsupportedDescription": "This server does not support joining meetings through a link."
+  },
   "conversationJoin": {
     "loading": "Verifying link...",
     "description": "Audio and video conferencing, text messaging, file sharing, and screen sharing, all end-to-end-encrypted.",
