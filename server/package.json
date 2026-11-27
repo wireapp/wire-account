@@ -3,7 +3,7 @@
     "@wireapp/commons": "5.4.13",
     "dotenv": "17.4.2",
     "dotenv-extended": "2.9.0",
-    "express": "4.21.2",
+    "express": "4.22.3",
     "express-hbs": "2.5.0",
     "fs-extra": "11.4.1",
     "handlebars": "4.7.10",
@@ -13,7 +13,7 @@
     "logdown": "3.3.1",
     "moment": "2.31.0",
     "nocache": "4.0.0",
-    "pm2": "6.0.14",
+    "pm2": "7.1.2",
     "uuid": "13.0.0"
   },
   "devDependencies": {
@@ -56,5 +56,8 @@
     "start:prod": "pm2 start \"./index.js\" --name \"Account Management\" && pm2 logs",
     "test": "exit 0",
     "test:types": "tsc --noEmit"
+  },
+  "resolutions": {
+    "tar": "^7.5.19"
   }
 }
