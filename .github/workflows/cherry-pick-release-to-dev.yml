@@ -5,6 +5,11 @@ on:
   push:
     branches:
       - release/*
+# contents: write is for the push of the cherry-pick branch (checkout persists the
+# job token); the pull request itself is opened with the OTTO_THE_BOT_GH_TOKEN secret.
+permissions:
+  contents: write
+
 jobs:
   cherry_pick:
     runs-on: ubuntu-latest
