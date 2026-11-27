@@ -47,7 +47,7 @@ jobs:
         run: |
           set -euo pipefail
           actionlint -version
-          actionlint -color .github/workflows/pr.yml .github/workflows/workflows-lint.yml .github/workflows/build.yml .github/workflows/dev.yml
+          actionlint -color .github/workflows/pr.yml .github/workflows/workflows-lint.yml .github/workflows/build.yml .github/workflows/dev.yml .github/workflows/eb-deploy.yml .github/workflows/deploy.yml .github/workflows/prepare-release.yml .github/workflows/publish-release.yml
 
       - name: Install zizmor
         run: |
@@ -61,6 +61,6 @@ jobs:
         run: |
           set -euo pipefail
           zizmor --version
-          zizmor --offline --format github --min-severity medium --min-confidence medium .github/workflows/pr.yml .github/workflows/workflows-lint.yml .github/workflows/build.yml .github/workflows/dev.yml
+          zizmor --offline --format github --min-severity medium --min-confidence medium .github/workflows/pr.yml .github/workflows/workflows-lint.yml .github/workflows/build.yml .github/workflows/dev.yml .github/workflows/eb-deploy.yml .github/workflows/deploy.yml .github/workflows/prepare-release.yml .github/workflows/publish-release.yml
           echo "--- every finding, for information (does not fail the job):"
           zizmor --offline --format plain --no-exit-codes .github/workflows

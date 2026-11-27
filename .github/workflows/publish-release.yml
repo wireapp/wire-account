@@ -1,0 +1,625 @@
+name: Publish release
+
+# Shown as the run title on a manual dispatch (a run chained from
+# prepare-release keeps that run's title).
+run-name: Publish v${{ inputs.version }} (by @${{ github.actor }})
+
+# ADR 0006 — publication step. Contains no build operations: it never runs
+# yarn install, yarn bundle:*, docker build, or helm package. It verifies the
+# candidate produced by `prepare-release` against its release manifest, then
+# promotes (never rebuilds) the exact already-built Docker image and Helm
+# package, and publishes the draft GitHub Release — only once the image and
+# the OCI chart have been promoted successfully. The release is then declared
+# to the release managers (ADR-0021 §6), and the legacy steps run last, after
+# that declaration: the interim S3 chart and the wire-builds bump. Every
+# destination is idempotent: already-published-identical is a no-op,
+# already-published-different is a hard failure. Publication never touches a
+# mutable :production alias.
+#
+# EXCEPTION (interim, see ADR 0006 "Separation from deployment"): after
+# publishing, this workflow deploys the published bundle to the staging
+# Elastic Beanstalk environment for dev-sourced releases. That deviates from
+# ADR 0006 principle 3; the intended end state is to dispatch `deploy.yml`
+# (which already takes a `release_version`) rather than deploy here.
+#
+# Normally invoked as a reusable workflow from `prepare-release` once its
+# candidate is ready, gated on approval of the `release-publication`
+# environment below. `workflow_dispatch` remains as a manual recovery path for
+# a pending or partially-published candidate — it resolves the draft by
+# `version` (list-and-filter on tag_name) instead of by a known release id.
+#
+# Gated on the `release-publication` environment on every path (ADR-0021 §5):
+# required reviewers, created by hand in the repository settings. There is no
+# other approval and the release manager dispatches nothing here.
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: 'Target version to publish, as computed by prepare-release'
+        type: string
+        required: true
+      release_id:
+        description: 'Numeric id of the draft GitHub Release created by prepare-release (job outputs are always strings)'
+        type: string
+        required: true
+    secrets:
+      # Declared explicitly rather than relying on `secrets: inherit` in the
+      # caller: publication needs exactly these, and least privilege means it
+      # must not receive every other repository secret. The release managers
+      # need none: `notify-rm` authenticates with the OIDC token of the job.
+      OTTO_THE_BOT_GH_TOKEN:
+        description: 'Checkout token; also pushes the release/X.Y maintenance branch'
+        required: true
+      CHARTS_WEBAPP_AUTOMATION_AWS_ACCESS_KEY_ID:
+        description: 'Publishes the exact Helm package to the S3 chart repository'
+        required: true
+      CHARTS_WEBAPP_AUTOMATION_AWS_SECRET_ACCESS_KEY:
+        description: 'Publishes the exact Helm package to the S3 chart repository'
+        required: true
+      WEBTEAM_AWS_ACCESS_KEY_ID:
+        description: 'Deploys the published bundle to the staging Elastic Beanstalk environment (dev-sourced releases only)'
+        required: false
+      WEBTEAM_AWS_SECRET_ACCESS_KEY:
+        description: 'Deploys the published bundle to the staging Elastic Beanstalk environment (dev-sourced releases only)'
+        required: false
+      WIRE_BUILDS_WRITE_ACCESS_GH_TOKEN:
+        description: 'Commits the published chart coordinates to wireapp/wire-builds build.json, which is what triggers the Concourse rollout to the Wire-internal clusters (dev-sourced releases only)'
+        required: false
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Target version to publish (X.Y.Z or X.Y.Z-<channel>.N) — manual recovery path; resolves the draft release by tag_name'
+        type: string
+        required: true
+
+permissions: {}
+
+jobs:
+  # ── 1. PUBLISH ──────────────────────────────────────────────────────────────
+  publish:
+    name: Publish
+    # PREREQUISITE: the `release-publication` environment must exist in the
+    # repository settings WITH a required reviewer. GitHub silently
+    # auto-creates a referenced environment that has no protection rules, in
+    # which case this job runs immediately and publishes with no human
+    # approval at all — defeating the second operator action ADR 0006
+    # requires. Create and protect it before the first release.
+    environment:
+      name: release-publication
+    runs-on: ubuntu-26.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write # OIDC token of the job, exchanged for a Quay robot token
+
+    # Read by `deploy-staging` below, also when a step after the publication fails.
+    outputs:
+      published: ${{ steps.published.outputs.value }}
+      version: ${{ steps.verify.outputs.version }}
+      type: ${{ steps.verify.outputs.type }}
+      source_branch: ${{ steps.verify.outputs.source-ref }}
+
+    steps:
+      # The draft of the candidate (by id when prepare-release chains here, else
+      # the only draft of the tag), its manifest, and every file the manifest
+      # names. The bundle is not in the manifest `artifacts` of a candidate
+      # prepared before the bundle became an artifact, so it is named. The
+      # files go outside $GITHUB_WORKSPACE: the checkout below removes the
+      # contents of a non-repository workspace.
+      - name: Resolve the draft release and download the candidate
+        id: draft
+        uses: wireapp/wire-rm-actions/draft-release@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: resolve
+          version: ${{ inputs.version }}
+          release-id: ${{ inputs.release_id }}
+          download: manifest-files
+          assets: wire-account.zip
+          asset-dir: ${{ runner.temp }}/candidate
+
+      # The manifest against what was downloaded: version, the commit the draft
+      # targets, the source branch, and the sha256 of the chart and of the
+      # release note and declaration.
+      - name: Verify the candidate against its release manifest
+        id: verify
+        uses: wireapp/wire-rm-actions/release-manifest@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: verify
+          manifest: ${{ steps.draft.outputs.manifest }}
+          asset-dir: ${{ steps.draft.outputs.asset-dir }}
+          version: ${{ inputs.version }}
+          source-commit: ${{ steps.draft.outputs.target-commitish }}
+
+      # What the action does not know: the bundle (`artifacts` of type bundle,
+      # else `.bundle` of a manifest written before) and the documents other
+      # than the note and the declaration (compatibility.yaml). A file that does
+      # not match its recorded sha256 is as disqualifying as a tampered chart.
+      - name: Verify the bundle and the other documents
+        id: files
+        env:
+          MANIFEST: ${{ steps.draft.outputs.manifest }}
+          ASSET_DIR: ${{ steps.draft.outputs.asset-dir }}
+        run: |
+          set -euo pipefail
+          bundle_file=$(jq -r '[.artifacts[]? | select(.type == "bundle") | .file][0] // .bundle.file // empty' "$MANIFEST")
+          expected=$(jq -r '[.artifacts[]? | select(.type == "bundle") | .sha256][0] // .bundle.sha256 // empty' "$MANIFEST")
+          if [[ -z "$bundle_file" || -z "$expected" ]]; then
+            echo "error: the release manifest names no bundle" >&2
+            exit 1
+          fi
+          actual=$(sha256sum "${ASSET_DIR}/${bundle_file}" | awk '{print $1}')
+          if [[ "$actual" != "$expected" ]]; then
+            echo "error: downloaded bundle sha256 $actual does not match manifest $expected — refusing to publish" >&2
+            exit 1
+          fi
+          echo "Verified ${bundle_file} (sha256 ${expected})"
+          while IFS=$'\t' read -r doc_file doc_sha256; do
+            [[ -z "$doc_file" ]] && continue
+            actual=$(sha256sum "${ASSET_DIR}/${doc_file}" | awk '{print $1}')
+            if [[ "$actual" != "$doc_sha256" ]]; then
+              echo "error: downloaded ${doc_file} sha256 $actual does not match manifest $doc_sha256 — refusing to publish" >&2
+              exit 1
+            fi
+            echo "Verified ${doc_file} (sha256 ${doc_sha256})"
+          done < <(jq -r '(.documents // {})[] | [.file, .sha256] | @tsv' "$MANIFEST")
+          echo "bundle_path=${ASSET_DIR}/${bundle_file}" >> "$GITHUB_OUTPUT"
+          echo "bundle_sha256=$expected" >> "$GITHUB_OUTPUT"
+
+      # No robot password: the federated robot wire+gha_wire-account accepts the OIDC token of
+      # this job (ADR-0020). The robot token lasts one hour: obtained here, right before the pushes.
+      - name: Login to quay.io with the OIDC token of the job
+        id: quay
+        uses: wireapp/wire-rm-actions/quay-login@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          robot: wire+gha_wire-account
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ steps.verify.outputs.source-ref }}
+          fetch-depth: 0
+          token: ${{ secrets.OTTO_THE_BOT_GH_TOKEN }}
+
+      - name: Verify source is not stale
+        run: |
+          set -euo pipefail
+          source_commit="${{ steps.verify.outputs.source-commit }}"
+          source_branch="${{ steps.verify.outputs.source-ref }}"
+          if ! git merge-base --is-ancestor "$source_commit" "origin/${source_branch}"; then
+            echo "error: prepared source commit $source_commit is no longer an ancestor of origin/${source_branch} — the candidate is stale and must be re-prepared" >&2
+            exit 1
+          fi
+          echo "Source commit $source_commit is still an ancestor of origin/${source_branch}."
+
+      # The candidate must still be in the registry, the release tag is written
+      # by digest (never a rebuild), a tag already at the digest is a no-op and
+      # another digest a failure. The draft was already checked against a tag
+      # that exists at another commit (resolve).
+      - name: Promote the Docker image (no rebuild)
+        uses: wireapp/wire-rm-actions/promote-image@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          repository: ${{ steps.verify.outputs.image-repository }}
+          digest: ${{ steps.verify.outputs.image-digest }}
+          tag: ${{ steps.verify.outputs.version }}
+
+      - uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+        with:
+          version: '3.12.2'
+
+      # The chart goes where the manifest says (`dev` for a pre-release,
+      # `stable` for a GA, ADR-0020 §1), so a candidate prepared before the
+      # channel depended on the type still publishes where it was prepared
+      # (`stable`).
+      - name: Chart channel of the candidate
+        id: channel
+        env:
+          CHART_REPOSITORY: ${{ steps.verify.outputs.chart-repository }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$CHART_REPOSITORY" =~ ^oci://quay\.io/wire/charts/(dev|stable)/account-pages$ ]]; then
+            echo "error: manifest chart repository '${CHART_REPOSITORY}' is not oci://quay.io/wire/charts/(dev|stable)/account-pages" >&2
+            exit 1
+          fi
+          echo "value=${BASH_REMATCH[1]}" >> "$GITHUB_OUTPUT"
+
+      # The OCI distribution of the chart package. Runs BEFORE the GitHub
+      # Release is published: the release record only becomes public once the
+      # image and this chart are in place, and a failure here blocks
+      # publication rather than leaving a public release pointing at a chart
+      # that was never pushed. Quay has returned `500` on the manifest PUT of a
+      # chart that had been committed: the push is tried three times, the
+      # presence check running again before each attempt, so a chart that
+      # landed is never pushed twice.
+      - name: Publish the Helm chart to the OCI registry (Quay)
+        id: oci_chart
+        uses: wireapp/wire-rm-actions/publish-chart@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          chart-file: ${{ steps.verify.outputs.chart-path }}
+          chart-name: account-pages
+          version: ${{ steps.verify.outputs.version }}
+          channel: ${{ steps.channel.outputs.value }}
+          attempts: '3'
+          username: ${{ steps.quay.outputs.username }}
+          password: ${{ steps.quay.outputs.token }}
+
+      - name: Create or verify release/X.Y for first GA of a new minor
+        if: steps.verify.outputs.type == 'ga'
+        run: |
+          set -euo pipefail
+          target="${{ steps.verify.outputs.version }}"
+          source_commit="${{ steps.verify.outputs.source-commit }}"
+
+          if [[ "$target" =~ ^([0-9]+)\.([0-9]+)\.0$ ]]; then
+            line="${BASH_REMATCH[1]}.${BASH_REMATCH[2]}"
+            if git ls-remote --exit-code --heads origin "release/${line}" >/dev/null 2>&1; then
+              existing=$(git ls-remote --heads origin "release/${line}" | awk 'NR==1 {print $1}')
+              if [[ "$existing" == "$source_commit" ]]; then
+                echo "release/${line} already exists at the expected commit — treating as already completed."
+              elif git merge-base --is-ancestor "$source_commit" "$existing" 2>/dev/null; then
+                # The line exists and has moved on since preparation. That is
+                # normal — it is the same tolerance `Verify source is not stale`
+                # applies, and requiring exact equality here would hard-fail
+                # every rc-to-GA promotion where anything landed on the
+                # maintenance branch after the candidate was prepared. The
+                # branch is never moved; it already contains this commit.
+                echo "release/${line} already exists at $existing, which already contains $source_commit — nothing to do."
+              else
+                echo "error: release/${line} already exists at $existing, which does not contain $source_commit — refusing to move an existing maintenance branch" >&2
+                exit 1
+              fi
+            else
+              git push origin "${source_commit}:refs/heads/release/${line}"
+              echo "Created release/${line} at $source_commit"
+            fi
+          else
+            echo "Not the first GA of a new minor (patch != 0) — no maintenance branch created."
+          fi
+
+      - name: Final verification before publishing
+        env:
+          IMAGE_REPOSITORY: ${{ steps.verify.outputs.image-repository }}
+          IMAGE_DIGEST: ${{ steps.verify.outputs.image-digest }}
+          RELEASE_TAG: ${{ steps.verify.outputs.version }}
+          BUNDLE_PATH: ${{ steps.files.outputs.bundle_path }}
+          BUNDLE_SHA256: ${{ steps.files.outputs.bundle_sha256 }}
+        run: |
+          set -euo pipefail
+          release_ref="${IMAGE_REPOSITORY}:${RELEASE_TAG}"
+
+          final_digest=$(docker buildx imagetools inspect "$release_ref" --format '{{.Manifest.Digest}}')
+          if [[ "$final_digest" != "$IMAGE_DIGEST" ]]; then
+            echo "error: final Docker tag $release_ref resolves to $final_digest, expected $IMAGE_DIGEST" >&2
+            exit 1
+          fi
+
+          bundle_sha256=$(sha256sum "$BUNDLE_PATH" | awk '{print $1}')
+          if [[ "$bundle_sha256" != "$BUNDLE_SHA256" ]]; then
+            echo "error: bundle sha256 $bundle_sha256 no longer matches manifest $BUNDLE_SHA256" >&2
+            exit 1
+          fi
+
+          echo "All release artifacts verified against the release manifest — ready to publish."
+
+      - name: Docker logout
+        if: always()
+        run: docker logout quay.io
+
+      # The manifest completed with the publication facts (date, run, the
+      # digest of the OCI chart); the frozen part is never edited. It replaces
+      # the candidate's manifest on the draft below and goes to the release
+      # managers.
+      - name: Complete the release manifest
+        id: completed
+        uses: wireapp/wire-rm-actions/release-manifest@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: complete
+          manifest: ${{ steps.draft.outputs.manifest }}
+          out: ${{ steps.draft.outputs.asset-dir }}/release-manifest.completed.json
+          run-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          digests-json: ${{ format('{{"{0}:{1}":"{2}"}}', steps.oci_chart.outputs.repository, steps.verify.outputs.version, steps.oci_chart.outputs.digest) }}
+
+      # Same checks as the resolve, then the completed manifest replaces the
+      # frozen one on the draft and the draft is published: the tag v<version>
+      # is born here, on the draft's target commit. A GA from `dev` is Latest,
+      # unless a newer GA went out while the approval waited.
+      - name: Publish the GitHub Release
+        id: publish_release
+        uses: wireapp/wire-rm-actions/draft-release@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          mode: publish
+          version: ${{ steps.verify.outputs.version }}
+          release-id: ${{ steps.draft.outputs.id }}
+          expected-commit: ${{ steps.verify.outputs.source-commit }}
+          replace-assets: release-manifest.json=${{ steps.completed.outputs.manifest }}
+          source-ref: ${{ steps.verify.outputs.source-ref }}
+          latest-branches: ^dev$
+
+      - name: Record the publication
+        id: published
+        run: echo "value=true" >> "$GITHUB_OUTPUT"
+
+      # The staging deployment is the `deploy-staging` job below, which
+      # deploys the exact bundle that was just published — the same file whose
+      # SHA256 was verified against the manifest above, straight off disk. No
+      # rebuild, so what reaches staging is bit-identical to the release asset.
+      #
+      # Restricted to dev-sourced releases: a release/X.Y candidate is a
+      # backport for a line that staging is not tracking, and pushing it there
+      # would silently roll staging backwards. Every release reaching this
+      # workflow is ga / alpha / beta / rc (dev builds never do), so "GA or
+      # pre-release" needs no type filter — the same reasoning as the
+      # registration step below.
+      - name: Upload the bundle for the staging deployment
+        if: steps.verify.outputs.source-ref == 'dev'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: wire-account-zip
+          path: ${{ steps.files.outputs.bundle_path }}
+          retention-days: 1
+
+      # Declared right after the publication (ADR-0021 §6); the legacy steps
+      # below (S3 chart, wire-builds bump) come after it and run even if
+      # registering with the release manager fails.
+      #
+      # `!cancelled()` rather than the default: a failed step before must not
+      # suppress the registry record of a release that is already published.
+      # Still gated on publication itself having succeeded — registering an
+      # unpublished release would be worse than not registering one.
+      #
+      # It records an already-published release, so it must not gate
+      # publication. Only explicit releases reach this workflow (ga / alpha /
+      # beta / rc) — dev builds never do — so "pre-releases and GA only" is
+      # satisfied structurally and needs no type filter.
+      #
+      # The endpoint is an upsert, so re-running publication safely re-registers
+      # the same version rather than duplicating it.
+      - name: Release date
+        id: released_at
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' }}
+        run: echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+      # The release body as the release manager's note description: the file
+      # the draft was resolved into, as a multiline step output.
+      - name: Release note body
+        id: note
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' }}
+        env:
+          BODY_FILE: ${{ steps.draft.outputs.body-file }}
+        run: |
+          set -euo pipefail
+          delimiter="note_$(openssl rand -hex 8)"
+          {
+            echo "body<<${delimiter}"
+            cat "$BODY_FILE"
+            echo
+            echo "${delimiter}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Register the release with the release managers
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' }}
+        uses: wireapp/wire-rm-actions/notify-rm@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          # Both release managers in OIDC mode: a GitHub OIDC token of this job for each
+          # audience, no stored secret. An unset URL is skipped, a failure only warns.
+          rm-staging-url: ${{ vars.RM_STAGING_URL }}
+          rm-staging-audience: wire-release-manager-staging
+          rm-prod-url: ${{ vars.RM_PROD_URL }}
+          rm-prod-audience: wire-release-manager-prod
+          component: account-pages
+          version: ${{ steps.verify.outputs.version }}
+          kind: ${{ steps.verify.outputs.type == 'ga' && 'ga' || 'prerelease' }}
+          repository: ${{ steps.oci_chart.outputs.repository }}
+          digest: ${{ steps.oci_chart.outputs.digest }}
+          released-at: ${{ steps.released_at.outputs.date }}
+          release-url: ${{ github.server_url }}/${{ github.repository }}/releases/tag/v${{ steps.verify.outputs.version }}
+          # title mirrors the GitHub release title; description is the GitHub
+          # release body verbatim, from "Release note body".
+          release-note-title: v${{ steps.verify.outputs.version }}
+          release-note-description: ${{ steps.note.outputs.body }}
+          meta: |
+            team=web
+          # The declaration downloaded and verified above, when the manifest
+          # lists one.
+          release-declaration-file: ${{ steps.verify.outputs.declaration-file != '' && format('{0}/{1}', steps.draft.outputs.asset-dir, steps.verify.outputs.declaration-file) || '' }}
+          # The release manifest verified above and completed with the
+          # publication; it is a wire.component-release-manifest/v1alpha1
+          # document (ADR-0020 §5).
+          release-manifest-file: ${{ steps.completed.outputs.manifest }}
+
+      # ── Legacy steps, last: they run after the declaration to the release
+      # managers, and a failure of one of them no longer blocks the publication.
+      #
+      # INTERIM: the exact package of the candidate in the S3 chart repository
+      # that the wire-builds pin below points at, never overwriting a published
+      # version: the same sha256 is a no-op, another content fails.
+      - name: Promote the Helm chart to the S3 repository (no rebuild)
+        id: s3_chart
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' }}
+        uses: wireapp/wire-rm-actions/publish-chart-s3@813f008b900b1ad3284502f97cac343d80b1836b # v0.1.0
+        with:
+          chart-file: ${{ steps.verify.outputs.chart-path }}
+          s3-repository: charts-webapp
+          aws-access-key-id: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.CHARTS_WEBAPP_AUTOMATION_AWS_SECRET_ACCESS_KEY }}
+
+      # LEGACY BEHAVIOUR, deliberately reinstated — see ADR 0006
+      # "Separation from deployment". Committing to wire-builds is what makes
+      # Concourse roll a version out to the Wire-internal Kubernetes clusters,
+      # so this step *is* a deployment trigger and contradicts principle 3.
+      #
+      # It exists to restore the automation that `test_build_deploy.yml`
+      # provided before the pipeline rewrite: without it, every release needs a
+      # manual commit to another repository before the internal clusters see
+      # it. It should be replaced by a proper hand-off (see the ADR TODO)
+      # rather than kept indefinitely.
+      #
+      # Differences from the pre-rewrite job, all intentional:
+      #   - it runs on *publication* only, never on a merge to dev, so the
+      #     clusters follow releases rather than every commit;
+      #   - a GA updates both `dev` and `main`, where the old job wrote to one
+      #     branch or the other, so `dev` cannot appear to regress after a GA;
+      #   - `release/X.Y` sources are skipped entirely for now — an LTS backport
+      #     must not move either branch.
+      #
+      # It points at the chart in the S3 repository: it only runs once that
+      # chart is there.
+      - name: Bump account-pages in wire-builds
+        id: wire_builds
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' && steps.s3_chart.outcome == 'success' && steps.verify.outputs.source-ref == 'dev' }}
+        env:
+          WIRE_BUILDS_TOKEN: ${{ secrets.WIRE_BUILDS_WRITE_ACCESS_GH_TOKEN }}
+          VERSION: ${{ steps.verify.outputs.version }}
+          RELEASE_TYPE: ${{ steps.verify.outputs.type }}
+          SOURCE_COMMIT: ${{ steps.verify.outputs.source-commit }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${WIRE_BUILDS_TOKEN:-}" ]]; then
+            echo "error: WIRE_BUILDS_WRITE_ACCESS_GH_TOKEN is not set — cannot update wire-builds." >&2
+            exit 1
+          fi
+
+          # A GA lands on both branches; a pre-release only on dev.
+          targets=(dev)
+          if [[ "$RELEASE_TYPE" == "ga" ]]; then
+            targets+=(main)
+          fi
+
+          workdir=$(mktemp -d)
+          git clone --depth 1 --no-single-branch \
+            "https://x-access-token:${WIRE_BUILDS_TOKEN}@github.com/wireapp/wire-builds.git" \
+            "$workdir/wire-builds" >/dev/null 2>&1
+          cd "$workdir/wire-builds"
+          git config user.email "zebot@users.noreply.github.com"
+          git config user.name "Zebot"
+
+          updated=()
+          skipped=()
+
+          for branch in "${targets[@]}"; do
+            pushed=false
+            for attempt in 1 2 3; do
+              # Re-fetch before every attempt: build.json carries ~51 charts and
+              # other components' pipelines push to it concurrently, so a losing
+              # race must be replayed on top of the winner rather than retried
+              # against a stale tree.
+              git fetch --depth 1 origin "$branch" >/dev/null
+              git checkout -q "$branch" 2>/dev/null || git checkout -q -b "$branch" "origin/${branch}"
+              git reset --hard -q "origin/${branch}"
+
+              current=$(jq -r '.helmCharts["account-pages"].version // ""' ./build.json)
+              if [[ "$current" == "$VERSION" ]]; then
+                echo "wire-builds:${branch} already pins account-pages ${VERSION} — nothing to do."
+                skipped+=("$branch")
+                pushed=true
+                break
+              fi
+
+              # Same helpers the pre-rewrite job used. set-chart-fields writes
+              # the chart entry; bump-prerelease increments build.json's own
+              # top-level version, which is what Concourse keys on.
+              build_json=$(
+                ./bin/set-chart-fields account-pages \
+                  "version=${VERSION}" \
+                  "repo=https://s3-eu-west-1.amazonaws.com/public.wire.com/charts-webapp" \
+                  "meta.appVersion=${VERSION}" \
+                  "meta.commitURL=${SERVER_URL}/${REPOSITORY}/commit/${SOURCE_COMMIT}" \
+                  "meta.commit=${SOURCE_COMMIT}" \
+                  < ./build.json \
+                | ./bin/bump-prerelease
+              )
+              printf '%s\n' "$build_json" > ./build.json
+
+              git add build.json
+              git commit -q -m "chore: bump account-pages to ${VERSION}"
+
+              if git push -q origin "$branch" 2>/dev/null; then
+                echo "wire-builds:${branch} bumped to ${VERSION} (attempt ${attempt})."
+                updated+=("$branch")
+                pushed=true
+                break
+              fi
+              echo "push to wire-builds:${branch} failed (attempt ${attempt}) — replaying on the new tip."
+            done
+
+            if [[ "$pushed" != "true" ]]; then
+              echo "error: could not push account-pages ${VERSION} to wire-builds:${branch} after 3 attempts." >&2
+              exit 1
+            fi
+          done
+
+          {
+            echo "updated=$(IFS=,; echo "${updated[*]-}")"
+            echo "skipped=$(IFS=,; echo "${skipped[*]-}")"
+          } >> "$GITHUB_OUTPUT"
+
+      # The deployment itself reports in the `deploy-staging` job; a release/X.Y
+      # source must still say that nothing was deployed rather than leaving the
+      # summary silent about it.
+      - name: Report the skipped staging deployment
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' && steps.verify.outputs.source-ref != 'dev' }}
+        env:
+          SOURCE_BRANCH: ${{ steps.verify.outputs.source-ref }}
+        run: |
+          set -euo pipefail
+          echo "> :information_source: Staging deployment skipped — this release was prepared from \`${SOURCE_BRANCH}\`, and only \`dev\`-sourced releases are pushed to staging." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report the S3 chart and the wire-builds bump
+        if: ${{ !cancelled() && steps.publish_release.outcome == 'success' }}
+        env:
+          S3_OUTCOME: ${{ steps.s3_chart.outcome }}
+          OUTCOME: ${{ steps.wire_builds.outcome }}
+          UPDATED: ${{ steps.wire_builds.outputs.updated }}
+          SKIPPED: ${{ steps.wire_builds.outputs.skipped }}
+          SOURCE_BRANCH: ${{ steps.verify.outputs.source-ref }}
+          VERSION: ${{ steps.verify.outputs.version }}
+        run: |
+          set -euo pipefail
+          {
+            echo
+            if [[ "$S3_OUTCOME" != "success" ]]; then
+              echo "> :x: The chart package of v${VERSION} was **not** pushed to the S3 chart repository (${S3_OUTCOME}). The release is published; re-run this workflow to push it. \`wire-builds\` is not bumped before the chart is there."
+            fi
+            case "$OUTCOME" in
+              success)
+                if [[ -n "${UPDATED:-}" ]]; then
+                  echo "> :arrow_up: \`wire-builds\` bumped to account-pages \`${VERSION}\` on: \`${UPDATED}\`. Concourse will roll this out to the Wire-internal clusters — watch the [pipelines](https://concourse.ops.zinfra.io/teams/main/pipelines/)."
+                fi
+                if [[ -n "${SKIPPED:-}" ]]; then
+                  echo "> :information_source: \`wire-builds\` already pinned \`${VERSION}\` on: \`${SKIPPED}\` — left untouched."
+                fi
+                ;;
+              skipped)
+                if [[ "$S3_OUTCOME" == "success" ]]; then
+                  echo "> :information_source: \`wire-builds\` not updated — this release was prepared from \`${SOURCE_BRANCH}\`, and only \`dev\`-sourced releases bump it. The internal clusters keep their current version."
+                fi
+                ;;
+              *)
+                echo "> :x: \`wire-builds\` bump **${OUTCOME}** for v${VERSION}. The release is published, but the Wire-internal clusters will not pick it up until \`build.json\` is updated — commit it by hand, or re-run this workflow."
+                ;;
+            esac
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # ── 2. DEPLOY TO STAGING ────────────────────────────────────────────────────
+  # After the publication, also when a later step of the publish job failed
+  # (wire-builds): the release is public by then and staging follows it. A
+  # failed deployment is reported by the called workflow; the release itself
+  # stays published and can be re-deployed with the `Deploy` workflow
+  # (`release_version`, `environment: wire-account-staging-node22`).
+  deploy-staging:
+    name: Deploy to staging (Elastic Beanstalk)
+    needs: publish
+    if: ${{ !cancelled() && needs.publish.outputs.published == 'true' && needs.publish.outputs.source_branch == 'dev' }}
+    permissions:
+      contents: read
+    uses: ./.github/workflows/eb-deploy.yml
+    with:
+      environment_name: wire-account-staging-node22
+      version_label: ${{ needs.publish.outputs.version }}-${{ github.run_id }}
+      version_description: v${{ needs.publish.outputs.version }} (${{ needs.publish.outputs.type }})
+    secrets:
+      WEBTEAM_AWS_ACCESS_KEY_ID: ${{ secrets.WEBTEAM_AWS_ACCESS_KEY_ID }}
+      WEBTEAM_AWS_SECRET_ACCESS_KEY: ${{ secrets.WEBTEAM_AWS_SECRET_ACCESS_KEY }}
