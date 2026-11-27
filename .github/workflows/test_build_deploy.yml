@@ -2,7 +2,7 @@ name: Test, Build & Deploy
 
 on:
   push:
-    branches: [staging, main, release/*]
+    branches: [release/*]
     tags:
       - v*
       - '*q1-2024*'
