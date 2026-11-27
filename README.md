@@ -22,6 +22,8 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 
 ## Build Instructions
 
+Requirements: the Node.js version of [`.nvmrc`](.nvmrc) and Yarn (the version is pinned in `package.json`).
+
 1. Run `yarn`
 1. Run `yarn start`
 1. Open [http://localhost:8081/](http://localhost:8081/)
@@ -29,27 +31,87 @@ No license is granted to the Wire trademark and its associated logos, all of whi
 If you would like your browser to trust the certificate from "local.zinfra.io":
 
 1. Download [mkcert](https://github.com/FiloSottile/mkcert/releases/latest)
-2. Set the `CAROOT` environment variable to `<TM App Dir>/server/certificate`
+2. Set the `CAROOT` environment variable to `<repository>/server/certificate`
 3. Run `mkcert -install`
 
-## Deployment
+Before pushing, `yarn lint` and `yarn test` are what the CI runs.
 
-Depending on the branch name it will be automatically deployed to the following environments:
+## CI and deployment
 
-- `staging` -> `wire-account-staging-node22`
+| Trigger | Workflow | What it does |
+| --- | --- | --- |
+| Pull request to `dev` or `release/*` | `PR` | Lint and test. When the PR touches `publication/`, also checks the three publication files. |
+| Push to `dev` | `Dev` | Lint, test, build, push the image and the chart as a dev build, declare it to the release managers. Nothing is deployed. |
+| Manual | `Prepare release` and `Publish release` | Cut a release, see [Release flow](#release-flow). |
+| Manual | `Deploy` | Deploy to an Elastic Beanstalk environment (`wire-account-staging-node22` or `wire-account-prod-node22`). Give `release_version` to deploy the artifacts of a prepared or published release instead of rebuilding from source. Production also needs `confirm_prod`. |
 
-### Translations
+There is no deployment triggered by a branch name any more, and the `main` and `staging` branches are not part of the flow.
 
-1. Verify you have a "keys/crowdin.yaml" in place with "api_key" and "api_token" in it
-1. Add string variable and text to "i18n/en-US.json"
-1. Run `yarn translate:upload`
-1. Verify your string shows up on [Crowdin project: wire-account](https://crowdin.com/translate/wire-account/all/en-en)
-1. Add translation on Crowdin
-1. Approve translation on Crowdin
-1. Run `yarn translate:download`
+## Release flow
 
-### Release flow
+A release is cut entirely by CI, from `dev` or from a maintained `release/X.Y` line. The version is **computed** by CI from the latest release, the channel and the bump: it is never typed by hand, there is no `npm version`, no tag to push and no branch to merge. The artifacts are built once, then promoted by digest, never rebuilt.
 
-1. Merge `staging` branch into `main` branch
-1. Create a tag with `npm version <version bump type>`. Possible values for `version bump type` are `patch`, `minor` or `major`.
-1. The tag will be pushed to `main` and the CI will deploy the new version. Manual deployment can be triggered via `eb deploy`.
+The full contract (versions, the `publication/` folder, what each step checks, repository settings) is in the release documentation of `wire-rm-actions`: [Releasing a component](https://github.com/wireapp/wire-rm-actions/blob/main/docs/releasing.md).
+
+### 1. Prepare the publication documents
+
+The three files of [`publication/`](publication) are rewritten for every release and reviewed in a pull request to `dev`, like code:
+
+- `release-note.md`: what a reader learns about the version, and what to do before upgrading.
+- `declaration.json`: what an operator must know before upgrading to the next GA (changes, migrations, configuration keys, and the support dates on `X.Y.0`).
+- `compatibility.yaml`: the APIs the component serves and consumes, and what it depends on.
+
+A GA is refused without the note and the declaration, and this repository requires the three files for a pre-release too.
+
+You can write them by hand, or with the `prepare-release` skill of [wire-onprem-first-decisions](https://github.com/wireapp/wire-onprem-first-decisions/tree/main/resources/shared-skills/prepare-release): it audits the repository, reads the commits since the last GA, writes the files, opens the pull request once you agree, and gives you the command that launches the release. Merge that pull request before the next step.
+
+### 2. Launch the release
+
+Run the `Prepare release` workflow, from the GitHub interface (`Actions` > `Prepare release` > `Run workflow`) or from the command line:
+
+```sh
+gh workflow run prepare-release.yml -f source_branch=dev -f type=ga -f bump=patch
+```
+
+| Input | Value |
+| --- | --- |
+| `source_branch` | `dev`, or a maintained `release/X.Y` line. |
+| `type` | The channel: `ga`, `alpha`, `beta` or `rc`. |
+| `bump` | `patch`, `minor` or `major`. Used only when the latest release is a GA: the next GA, or the first pre-release of the next line. |
+| `force` | Bypasses the CI status gate on the source commit. Logged loudly, keep it off. |
+
+CI resolves the source commit, checks that its CI passed, builds the bundle, the image and the chart once, and opens a **draft GitHub Release** carrying them with `release-manifest.json`. It creates no tag, no commit and no branch.
+
+### 3. Validate
+
+1. Open the draft GitHub Release and check the version, the release note and the assets.
+2. Approve the `release-publication` environment on the waiting `Publish release` run. Its required reviewers are the only approval.
+3. CI then promotes the exact artifacts (image and chart by digest), publishes the draft, which creates the `vX.Y.Z` tag, and declares the release to the release managers.
+4. For a release cut from `dev`, the published bundle is deployed to the staging environment, bit for bit. Check the application there.
+
+If the approval expired or the publication stopped half way, run `Publish release` by hand with the `version`: it is idempotent, what is already published and identical is skipped, what conflicts fails.
+
+### 4. GA: deploy to production explicitly
+
+Publishing a release never deploys to production. Once the GA is validated on staging, run the `Deploy` workflow:
+
+- `environment`: `wire-account-prod-node22`
+- `release_version`: the GA version, `X.Y.Z`
+- `confirm_prod`: `true`
+
+Always give `release_version`: left empty, the workflow builds from the source of the ref instead of deploying the published bundle. A draft candidate cannot be deployed to production.
+
+## Translations
+
+The English source is [`src/i18n/en-US.json`](src/i18n/en-US.json). Translations are managed on [Crowdin](https://crowdin.com/translate/wire-account/all/en-en).
+
+The `Download translations` workflow runs daily: it uploads the sources, downloads the translations that are ready and opens a pull request.
+
+To add a string:
+
+1. Add the string variable and text to `src/i18n/en-US.json`.
+1. Merge it to `dev`: the next daily run uploads it to Crowdin.
+1. Add and approve the translation on Crowdin.
+1. Merge the pull request opened by the next run.
+
+To upload without waiting for the daily run, put a `keys/crowdin.yaml` with `api_key` and `api_token` in place and run `yarn translate:upload`. `yarn translate:download` pulls the translations down locally.
