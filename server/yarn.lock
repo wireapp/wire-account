@@ -4612,14 +4612,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment@npm:*":
-  version: 2.29.4
-  resolution: "moment@npm:2.29.4"
-  checksum: 0ec3f9c2bcba38dc2451b1daed5daded747f17610b92427bebe1d08d48d8b7bdd8d9197500b072d14e326dd0ccf3e326b9e3d07c5895d3d49e39b6803b76e80e
-  languageName: node
-  linkType: hard
-
-"moment@npm:2.31.0":
+"moment@npm:*, moment@npm:2.31.0":
   version: 2.31.0
   resolution: "moment@npm:2.31.0"
   checksum: e29cff3850438c66228cc43373ea8b6c480c7c3cfaf17ef9327653811d194734e7e2c1108b5cf2527ab0b2ba8907cbcb4f5dc3e764c044d5766eb7c4582759eb
@@ -5897,12 +5890,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:*, uuid@npm:13.0.0":
-  version: 13.0.0
-  resolution: "uuid@npm:13.0.0"
+"uuid@npm:13.0.1":
+  version: 13.0.1
+  resolution: "uuid@npm:13.0.1"
   bin:
     uuid: dist-node/bin/uuid
-  checksum: 7510ee1ab371be5339ef26ff8cabc2f4a2c60640ff880652968f758072f53bd4f4af1c8b0e671a8c9bb29ef926a24dec3ef0e3861d78183b39291a85743a9f96
+  checksum: 27a9533ea74ab19378dd176afae91c4f82cb84f294df834652fd78681b912de8b9dfac9fb378581391406c06f994e46d7718ad2e1155119712f5c24cf32d6e6e
   languageName: node
   linkType: hard
 
@@ -6001,7 +5994,7 @@ __metadata:
     prettier: 3.10.1
     rimraf: 6.1.4
     typescript: 5.9.3
-    uuid: 13.0.0
+    uuid: 13.0.1
     webpack-dev-middleware: 7.4.5
     webpack-hot-middleware: 2.26.1
   languageName: unknown
