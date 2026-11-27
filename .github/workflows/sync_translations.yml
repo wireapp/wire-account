@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 8 * * *'
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   download_translations:
     runs-on: ubuntu-latest
