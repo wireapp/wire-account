@@ -1,6 +1,4 @@
-# Wire™
-
-## wire-account
+# wire-account
 
 > For account verifications and forgotten passwords.
 
