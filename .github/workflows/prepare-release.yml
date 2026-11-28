@@ -639,7 +639,7 @@ jobs:
           title: v${{ needs.prepare.outputs.version }}
           body-file: ${{ steps.body.outputs.file }}
           assets: |
-            wire-account.zip
+            ${{ runner.temp }}/bundle/wire-account.zip
             ${{ steps.helm.outputs.package_path }}
             ${{ steps.manifest.outputs.manifest }}
             /tmp/release-inputs/release-note.md
