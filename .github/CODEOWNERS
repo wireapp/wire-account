@@ -1,0 +1,10 @@
+# Code owners: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# The last matching pattern wins, so the narrower rules below restate the web team.
+# On a line with several owners, the approval of any one of them is enough.
+
+# Everything: the web team.
+*             @wireapp/web
+
+# The workflows and the release files also belong to the release managers.
+/.github/     @wireapp/web @wireapp/release-managers
+/publication/ @wireapp/web @wireapp/release-managers

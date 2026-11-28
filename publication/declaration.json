@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "wire.component-release/v1alpha2",
+  "component": "account-pages",
+  "version": "2.11.3",
+  "summary": "Fixes the Delete account button, which looked disabled while it was active, updates third-party libraries to close known vulnerabilities and is the first release cut with the new release pipeline. Nothing to do before upgrading.",
+  "upgrade_from": ">=2.10.0",
+  "changes": [
+    {
+      "kind": "fixed",
+      "description": "Delete account page: the Delete account button no longer looks disabled while it is active; it uses the red cancel style.",
+      "breaking": false,
+      "links": ["https://wearezeta.atlassian.net/browse/WPB-23643", "https://github.com/wireapp/wire-account/pull/6510"]
+    },
+    {
+      "kind": "security",
+      "description": "Third-party libraries of the web app and of the server are updated to close known vulnerabilities, including express, body-parser and handlebars on the server.",
+      "breaking": false,
+      "links": [
+        "https://github.com/wireapp/wire-account/pull/6591",
+        "https://github.com/wireapp/wire-account/pull/6592",
+        "https://github.com/wireapp/wire-account/pull/6595",
+        "https://github.com/wireapp/wire-account/pull/6596"
+      ]
+    },
+    {
+      "kind": "changed",
+      "description": "The server's process manager pm2, used by the start:prod script, moves from version 6 to 7, and express from 4.21 to 4.22. No configuration change.",
+      "breaking": false,
+      "links": ["https://github.com/wireapp/wire-account/pull/6591"]
+    },
+    {
+      "kind": "changed",
+      "description": "The Helm chart is now apiVersion v2 and sets kubeVersion to >=1.24.0-0, in line with the Kubernetes range of the compatibility file; its version is set at release time.",
+      "breaking": false,
+      "links": ["https://github.com/wireapp/wire-account/commit/2a2068c5"]
+    },
+    {
+      "kind": "changed",
+      "description": "Releases are now prepared from the release files in publication/, published after an approval and declared to the release managers; the old test environment deployment is removed.",
+      "breaking": false,
+      "links": ["https://github.com/wireapp/wire-account/pull/6582", "https://github.com/wireapp/wire-account/pull/6581"]
+    }
+  ],
+  "migrations": [],
+  "configuration": []
+}

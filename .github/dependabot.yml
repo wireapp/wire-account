@@ -1,4 +1,14 @@
 version: 2
+
+# Every ecosystem below declares a `cooldown`: Dependabot will not propose a
+# release younger than that many days. It closes a supply-chain window — a
+# compromised or typosquatted version would otherwise reach a PR within
+# minutes of publication, wearing the trusted Dependabot badge, and is easy to
+# wave through as routine.
+#
+# This costs nothing in vulnerability response: per GitHub's documentation the
+# cooldown applies to *version* updates only, never to *security* updates, so
+# advisories are still surfaced immediately.
 updates:
   - package-ecosystem: npm
     directory: '/'
@@ -7,6 +17,8 @@ updates:
       day: sunday
       time: '02:00'
       timezone: 'Europe/Berlin'
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 99
     labels:
       - 'type: chore 🧹'
@@ -19,6 +31,10 @@ updates:
       - dependency-name: '@babel/*'
         update-types:
           - 'version-update:semver-major'
+    groups:
+      major-updates:
+        update-types:
+          - major
   - package-ecosystem: npm
     directory: '/server'
     schedule:
@@ -26,6 +42,8 @@ updates:
       day: sunday
       time: '02:00'
       timezone: 'Europe/Berlin'
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 99
     labels:
       - 'type: chore 🧹'
@@ -33,19 +51,35 @@ updates:
       - dependency-name: '@babel/*'
         update-types:
           - 'version-update:semver-major'
+    groups:
+      major-updates:
+        update-types:
+          - major
   - package-ecosystem: npm
     directory: '/app-config'
     schedule:
       interval: daily
       time: '02:00'
       timezone: 'Europe/Berlin'
+    cooldown:
+      default-days: 7
     open-pull-requests-limit: 99
     labels:
       - 'type: chore 🧹'
+    groups:
+      major-updates:
+        update-types:
+          - major
 
   # Github actions
   - package-ecosystem: 'github-actions'
     directory: '/'
-    open-pull-requests-limit: 99
     schedule:
       interval: 'daily'
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 99
+    groups:
+      major-updates:
+        update-types:
+          - major
